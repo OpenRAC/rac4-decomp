@@ -79,11 +79,11 @@ Each distinct function counts once: frontbin's copy of the menus is the main ima
 <!-- progress:begin SCES_532.85 (tools/progress.py --write) -->
 | | Functions (exact) | Code (exact) | Fuzzy |
 | --- | ---: | ---: | ---: |
-| **Main program** | 2,136 of 8,945 | 159,908 of 2,202,512 bytes (7.26%) | 7.43% |
+| **Main program** | 2,137 of 8,945 | 159,920 of 2,202,512 bytes (7.26%) | 7.43% |
 | Engine core (core.text) | 706 of 1,699 | 67,072 of 299,052 bytes (22.43%) | 22.70% |
 | libgcc | 2 of 2 | 16 of 16 bytes (100.00%) | 100.00% |
 | Network (net.text) | 376 of 2,441 | 11,132 of 465,620 bytes (2.39%) | 2.56% |
-| Resident menus (.text) | 1,052 of 4,786 | 81,688 of 1,422,048 bytes (5.74%) | 5.90% |
+| Resident menus (.text) | 1,053 of 4,786 | 81,700 of 1,422,048 bytes (5.75%) | 5.90% |
 | frontbin's own code | 0 of 17 | 0 of 15,776 bytes (0.00%) | 0.00% |
 | **Shared level code** | 1,091 of 5,088 | 87,076 of 2,008,520 bytes (4.34%) | 5.00% |
 | **Level-specific code** | 616 of 4,080 | 64,028 of 1,601,892 bytes (4.00%) | 4.56% |
@@ -101,9 +101,9 @@ Each distinct function counts once: frontbin's copy of the menus is the main ima
 | Level 14: Ghost Station (and 34) | 6 of 23 | 444 of 8,884 bytes (5.00%) | 5.00% |
 | Level 15: Control Level (and 35) | 13 of 134 | 932 of 116,624 bytes (0.80%) | 0.80% |
 | Level 41: Battledome Tower (all 22 multiplayer maps) | 81 of 374 | 11,296 of 140,340 bytes (8.05%) | 9.91% |
-| **Total** | 3,843 of 18,113 | 311,012 of 5,812,924 bytes (5.35%) | 5.80% |
+| **Total** | 3,844 of 18,113 | 311,024 of 5,812,924 bytes (5.35%) | 5.80% |
 
-Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 159,908 bytes (2.75%) are in units with nothing left to decompile.
+Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 159,920 bytes (2.75%) are in units with nothing left to decompile.
 <!-- progress:end -->
 
 </details>
