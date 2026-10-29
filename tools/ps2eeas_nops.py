@@ -235,6 +235,8 @@ def move_sites(lines, start, end):
             continue
         if not stripped or stripped.startswith("#"):
             continue
+        if stripped.split() in ([".set", "noat"], [".set", "at"]):
+            continue        # around tools/ps2eeas_lis.py's $at sequences; no instruction
         if stripped.endswith(":") and not stripped.startswith("."):
             continue        # a label reached by fallthrough: the read after it still counts, as in scan()
         m = INSN_LINE.match(stripped)

@@ -71,13 +71,15 @@ because that assembler is not usable here:
 
 1. compile to assembly (`-S`);
 2. `tools/ps2eeas_dli.py`: expand 64-bit constants the way SN's assembler does;
-3. `tools/ps2eeas_sdata.py`: reach each small global through `$gp` or with
+3. `tools/ps2eeas_lis.py`: expand float constants (`li.s`) the way SN's
+   assembler does (below);
+4. `tools/ps2eeas_sdata.py`: reach each small global through `$gp` or with
    `lui` where SN's assembler does (below);
-4. assemble once with the compiler driver's GNU `as`;
-5. `tools/ps2eeas_nops.py`: add the nops SN's assembler adds (it pads short
+5. assemble once with the compiler driver's GNU `as`;
+6. `tools/ps2eeas_nops.py`: add the nops SN's assembler adds (it pads short
    loops, and puts a nop after an `mtc1` whose result is read next, and between
    a float compare and its `bc1`);
-6. assemble again.
+7. assemble again.
 
 A source file can add compiler flags on its first line:
 
@@ -118,6 +120,16 @@ reaches a global both ways, 1231 of 1252 `$gp` accesses sit in delay slots.
 `ps2eeas_dli` + `ps2eeas_sdata` + GNU `as` give the same text as `ps2eeas`
 wherever the old pipeline did, and two files more (the rest differ only in
 the nops step 5 adds).
+
+Float constants: GCC writes them as `li.s $fN, value`. `ps2eeas` (1.9.25 in the
+SN 3.01 mirror) always builds the value in `$at`: `lui`, `ori` when the low half
+is not zero, then `mtc1`. GNU `as` does the same only for a zero low half; at -G8
+it puts any other value in `.lit4` and loads it with one `lwc1 ...($gp)`.
+`tools/ps2eeas_lis.py` writes the `ps2eeas` sequence out before the first
+assembly. In the PAL text the `lui`/`ori`/`mtc1 $at` form appears 13,207 times.
+A file whose matched code relies on the `.lit4` load can keep it with the token
+`@lit4` in its cflags (`/* cflags: @lit4 */`); `tools/cc.sh` removes the token
+and skips the step for that file.
 
 Not explained yet: retail has two nops before most `div.s` (281 of 435 in level code,
 including library code), while the compilers in the mirrors emit none and `ps2eeas` on

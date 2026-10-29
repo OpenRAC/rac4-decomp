@@ -1,0 +1,41 @@
+#include "common.h"
+
+typedef int u128 __attribute__((mode(TI)));
+
+extern u8 *D_00223900;
+
+extern u8 *func_0046C1F0(s32, s32);
+extern f32 func_00472EB8(f32, f32);
+extern void func_00470FD0(u8 *);
+
+// Creates a moby of class 0x201C with 0x80 bytes of data: copies pos and dir, random angles
+// from func_00472EB8(-pi, pi), twice its class scale at +0x70, the arguments, then calls
+// func_00470FD0 and stores it in D_00223900. Returns the moby or NULL.
+u8 *func_L01_00434678(u128 *pos, u128 *dir, s32 arg2, s32 arg3, s32 arg4, u128 *arg5) {
+    u8 *moby = func_0046C1F0(0x201C, 0x80);
+
+    if (moby != NULL) {
+        u8 *vars;
+        moby[0x30] = 0xFF;
+        *(s16 *)(moby + 0x32) = 0x1FF;
+        moby[0x31] = 1;
+        moby[0x20] = 0;
+        vars = *(u8 **)(moby + 0xAC);
+        *(u128 *)(moby + 0x10) = *pos;
+        *(u128 *)(vars + 0) = *dir;
+        *(s32 *)(vars + 0x50) = 0;
+        *(f32 *)(moby + 0xF0) = func_00472EB8(-3.1415927f, 3.1415927f);
+        *(f32 *)(moby + 0xF4) = func_00472EB8(-3.1415927f, 3.1415927f);
+        *(f32 *)(moby + 0xF8) = func_00472EB8(-3.1415927f, 3.1415927f);
+        *(s32 *)(moby + 0xFC) = 0;
+        *(f32 *)(moby + 0x70) = 2.0f * *(f32 *)(*(u8 **)(moby + 0x24) + 0x24);
+        *(s32 *)(vars + 0x68) = arg4;
+        *(u128 *)(vars + 0x40) = *arg5;
+        func_00470FD0(moby);
+        D_00223900 = moby;
+        *(s32 *)(vars + 0x58) = 0x2A;
+        *(s32 *)(vars + 0x60) = arg3;
+        *(s32 *)(vars + 0x64) = arg2;
+    }
+    return moby;
+}
