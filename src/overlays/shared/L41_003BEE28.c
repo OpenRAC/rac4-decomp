@@ -1,3 +1,4 @@
+/* cflags: @lit4 */
 #include "common.h"
 
 extern void func_L00_005DE048(void *, s32, void *);
