@@ -85,10 +85,10 @@ Each distinct function counts once: frontbin's copy of the menus is the main ima
 | Network (net.text) | 479 of 2,441 | 15,168 of 465,620 bytes (3.26%) | 3.57% |
 | Resident menus (.text) | 1,324 of 4,786 | 99,116 of 1,422,048 bytes (6.97%) | 7.12% |
 | frontbin's own code | 3 of 17 | 580 of 15,776 bytes (3.68%) | 3.68% |
-| **Shared level code** | 1,331 of 5,088 | 98,016 of 2,008,520 bytes (4.88%) | 5.54% |
-| **Level-specific code** | 857 of 4,080 | 78,096 of 1,601,892 bytes (4.88%) | 5.44% |
-| Level 00: Multiplayer Menu | 638 of 2,826 | 54,412 of 943,820 bytes (5.77%) | 6.44% |
-| Level 01: Dreadzone Station (and 21) | 69 of 357 | 5,224 of 189,772 bytes (2.75%) | 2.75% |
+| **Shared level code** | 1,338 of 5,088 | 98,212 of 2,008,520 bytes (4.89%) | 5.55% |
+| **Level-specific code** | 860 of 4,080 | 78,180 of 1,601,892 bytes (4.88%) | 5.45% |
+| Level 00: Multiplayer Menu | 640 of 2,826 | 54,468 of 943,820 bytes (5.77%) | 6.45% |
+| Level 01: Dreadzone Station (and 21) | 70 of 357 | 5,252 of 189,772 bytes (2.77%) | 2.77% |
 | Level 02: Catacrom Graveyard (and 22) | 2 of 29 | 124 of 21,232 bytes (0.58%) | 0.58% |
 | Level 04: Sarathos Swamp (and 24) | 2 of 19 | 196 of 11,868 bytes (1.65%) | 1.65% |
 | Level 05: Dark Cathedral (and 25) | 4 of 106 | 376 of 61,960 bytes (0.61%) | 0.76% |
@@ -101,7 +101,7 @@ Each distinct function counts once: frontbin's copy of the menus is the main ima
 | Level 14: Ghost Station (and 34) | 6 of 23 | 444 of 8,884 bytes (5.00%) | 5.00% |
 | Level 15: Control Level (and 35) | 18 of 134 | 2,048 of 116,624 bytes (1.76%) | 1.76% |
 | Level 41: Battledome Tower (all 22 multiplayer maps) | 85 of 374 | 11,488 of 140,340 bytes (8.19%) | 10.04% |
-| **Total** | 4,733 of 18,113 | 361,316 of 5,812,924 bytes (6.22%) | 6.67% |
+| **Total** | 4,743 of 18,113 | 361,596 of 5,812,924 bytes (6.22%) | 6.68% |
 
 Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 185,204 bytes (3.19%) are in units with nothing left to decompile.
 <!-- progress:end -->
