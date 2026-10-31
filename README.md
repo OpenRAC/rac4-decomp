@@ -85,23 +85,23 @@ Each distinct function counts once: frontbin's copy of the menus is the main ima
 | Network (net.text) | 479 of 2,441 | 15,168 of 465,620 bytes (3.26%) | 3.57% |
 | Resident menus (.text) | 1,323 of 4,786 | 98,876 of 1,422,048 bytes (6.95%) | 7.10% |
 | frontbin's own code | 3 of 17 | 580 of 15,776 bytes (3.68%) | 3.68% |
-| **Shared level code** | 1,328 of 5,088 | 97,072 of 2,008,520 bytes (4.83%) | 5.49% |
-| **Level-specific code** | 842 of 4,080 | 76,156 of 1,601,892 bytes (4.75%) | 5.32% |
-| Level 00: Multiplayer Menu | 630 of 2,826 | 53,864 of 943,820 bytes (5.71%) | 6.38% |
+| **Shared level code** | 1,329 of 5,088 | 97,444 of 2,008,520 bytes (4.85%) | 5.51% |
+| **Level-specific code** | 851 of 4,080 | 77,216 of 1,601,892 bytes (4.82%) | 5.39% |
+| Level 00: Multiplayer Menu | 638 of 2,826 | 54,412 of 943,820 bytes (5.77%) | 6.44% |
 | Level 01: Dreadzone Station (and 21) | 69 of 357 | 5,224 of 189,772 bytes (2.75%) | 2.75% |
 | Level 02: Catacrom Graveyard (and 22) | 2 of 29 | 124 of 21,232 bytes (0.58%) | 0.58% |
 | Level 04: Sarathos Swamp (and 24) | 2 of 19 | 196 of 11,868 bytes (1.65%) | 1.65% |
 | Level 05: Dark Cathedral (and 25) | 4 of 106 | 376 of 61,960 bytes (0.61%) | 0.76% |
 | Level 06: Temple Of Shaar (and 26) | 7 of 31 | 460 of 9,440 bytes (4.87%) | 4.87% |
 | Level 07: Valix Lighthouse (and 27) | 4 of 44 | 464 of 27,640 bytes (1.68%) | 1.68% |
-| Level 08: Mining Facility (and 28) | 7 of 48 | 800 of 24,900 bytes (3.21%) | 3.21% |
+| Level 08: Mining Facility (and 28) | 8 of 48 | 1,312 of 24,900 bytes (5.27%) | 5.27% |
 | Level 10: Torval Ruins (and 30) | 4 of 38 | 396 of 20,392 bytes (1.94%) | 1.94% |
 | Level 11: Tempus Station (and 31) | 2 of 17 | 104 of 9,024 bytes (1.15%) | 1.15% |
 | Level 13: Maraxus Prison (and 33) | 5 of 34 | 508 of 15,996 bytes (3.18%) | 3.18% |
 | Level 14: Ghost Station (and 34) | 6 of 23 | 444 of 8,884 bytes (5.00%) | 5.00% |
 | Level 15: Control Level (and 35) | 17 of 134 | 1,740 of 116,624 bytes (1.49%) | 1.49% |
 | Level 41: Battledome Tower (all 22 multiplayer maps) | 83 of 374 | 11,456 of 140,340 bytes (8.16%) | 10.02% |
-| **Total** | 4,713 of 18,113 | 358,132 of 5,812,924 bytes (6.16%) | 6.62% |
+| **Total** | 4,723 of 18,113 | 359,564 of 5,812,924 bytes (6.19%) | 6.64% |
 
 Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 184,904 bytes (3.18%) are in units with nothing left to decompile.
 <!-- progress:end -->
