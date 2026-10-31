@@ -419,3 +419,5 @@ These PAL reconstructions also use the public RAC3 sources pinned below; each ta
 | `src/pal/core/00159748.c` | `src/boot_elf/core/13C8D0.c` | `func_0013D080` | `cd0e7c20fd8a93116566ba2e024fa2f3536bd30c` |
 | `src/pal/overlays/l00_multiplayer_menu/L00_007148A0.c` | `src/levels/39_multiplayer_menu/L39_0067F8A8.c` | `func_L39_0067F8B0` | `cd0e7c20fd8a93116566ba2e024fa2f3536bd30c` |
 | `src/pal/overlays/shared/L00_006F2370.c` | `src/levels/shared/L39_00662678.c` | `func_L39_00665CC0` | `cd0e7c20fd8a93116566ba2e024fa2f3536bd30c` |
+| `src/pal/overlays/l41_battledome_tower/L41_00411F80.c` | `src/levels/shared/L40_00420998.c` | `func_L40_004224F8` | `cd0e7c20fd8a93116566ba2e024fa2f3536bd30c` |
+| `src/pal/overlays/l41_battledome_tower/L41_00621CE8.c` | `src/levels/shared/L40_005416F0.c` | `func_L40_005416F0` | `cd0e7c20fd8a93116566ba2e024fa2f3536bd30c` |
