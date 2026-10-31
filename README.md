@@ -85,9 +85,9 @@ Each distinct function counts once: frontbin's copy of the menus is the main ima
 | Network (net.text) | 487 of 2,441 | 15,768 of 465,620 bytes (3.39%) | 4.02% |
 | Resident menus (.text) | 1,434 of 4,786 | 106,056 of 1,422,048 bytes (7.46%) | 7.64% |
 | frontbin's own code | 1 of 17 | 20 of 15,776 bytes (0.13%) | 0.13% |
-| **Shared level code** | 1,261 of 5,088 | 92,516 of 2,008,520 bytes (4.61%) | 5.27% |
-| **Level-specific code** | 763 of 4,080 | 71,124 of 1,601,892 bytes (4.44%) | 5.01% |
-| Level 00: Multiplayer Menu | 582 of 2,826 | 51,620 of 943,820 bytes (5.47%) | 6.15% |
+| **Shared level code** | 1,287 of 5,088 | 93,452 of 2,008,520 bytes (4.65%) | 5.31% |
+| **Level-specific code** | 781 of 4,080 | 71,780 of 1,601,892 bytes (4.48%) | 5.05% |
+| Level 00: Multiplayer Menu | 590 of 2,826 | 51,880 of 943,820 bytes (5.50%) | 6.17% |
 | Level 01: Dreadzone Station (and 21) | 52 of 357 | 4,404 of 189,772 bytes (2.32%) | 2.32% |
 | Level 02: Catacrom Graveyard (and 22) | 2 of 29 | 124 of 21,232 bytes (0.58%) | 0.58% |
 | Level 04: Sarathos Swamp (and 24) | 2 of 19 | 196 of 11,868 bytes (1.65%) | 1.65% |
