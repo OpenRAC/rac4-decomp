@@ -1,3 +1,5 @@
 #include "common.h"
 
-void func_L00_0076BDC0(void *p) { u8 *state = (u8*)*(u32*)(*(u32*)0x2234a4 + 0x38); *(u8*)(state + 0x1c) = 0; *(u32*)(state + 0x20) = *(u32*)((u8*)p + 0x18); }
+void func_L00_0076BDC0(void *p) {
+    u8 *state = (u8*)*(u32*)(*(u32*)0x2234a4 + 0x38); *(u8*)(state + 0x1c) = 0; *(u32*)(state + 0x20) = *(u32*)((u8*)p + 0x18);
+}

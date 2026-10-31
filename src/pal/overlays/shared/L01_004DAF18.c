@@ -1,3 +1,5 @@
 #include "common.h"
 
-s32 func_L01_004DAF18(void *p) { return *(u8*)(*(u32*)((u8*)p + 0xac) + 0x108) != 0; }
+s32 func_L01_004DAF18(void *p) {
+    return *(u8*)(*(u32*)((u8*)p + 0xac) + 0x108) != 0;
+}
