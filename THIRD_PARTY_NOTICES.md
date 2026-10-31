@@ -408,3 +408,11 @@ All entries below refer to OpenRAC/rac3-decomp commit `403f30a9561324342c8780296
 were retargeted against Deadlocked's retail program; pointer parameters agree
 with the TTY implementation in the public UYA decompilation. The source's
 newlib attribution comments are retained.
+
+### Additional PAL public-decompilation references
+
+These PAL reconstructions also use the public RAC3 sources pinned below; each target was independently checked against RAC4.
+
+| RAC4 source | RAC3 source | Donor function | Commit |
+| --- | --- | --- | --- |
+| `src/pal/overlays/l41_battledome_tower/L41_00449C20.c` | `src/levels/shared/L01_00515DE0.c` | `func_L01_00515DE0` | `cd0e7c20fd8a93116566ba2e024fa2f3536bd30c` |
