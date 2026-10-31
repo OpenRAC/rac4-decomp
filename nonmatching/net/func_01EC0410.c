@@ -1,30 +1,26 @@
-/* Not matching yet: BYTES 18/128 (6 words differ) (tools/try_func.py func_01EC0410 --diff). Not part of the build. */
-#include "common.h"
+/* Not matching yet: BYTES 16/128 (tools/try_func.py func_01EC0410 --diff). Not part of the build. */
 extern void func_01EB6428(s32, s32);
-void func_01EC0410(s32 owner, void *state)
-{
-  s32 *var_s0;
-  s32 temp_a1;
-  s32 var_s2 = 0;
-  s32 var_v1;
-  var_v1 = *((s32 *) (((u8 *) state) + 0x44));
-  if (var_v1 > 0)
-  {
-    var_s0 = (s32 *) state;
-    do
-    {
-      temp_a1 = *var_s0;
-      if (temp_a1 != 0)
-      {
-        func_01EB6428(owner, temp_a1);
-        *var_s0 = 0;
-        var_v1 = *((s32 *) (((u8 *) state) + 0x44));
-      }
-      var_s2 += 1;
-      var_s0 += 2;
+
+// Frees each nonzero 8-byte entry of the table at a1, then clears its count fields.
+void func_01EC0410(s32 a0, u8 *a1) {
+    s32 i;
+    s32 n;
+    u8 *p;
+
+    n = *(s32 *)(a1 + 0x44);
+    i = 0;
+    if (n > 0) {
+        p = a1;
+        do {
+            if (*(s32 *)p != 0) {
+                func_01EB6428(a0, *(s32 *)p);
+                *(s32 *)p = 0;
+                n = *(s32 *)(a1 + 0x44);
+            }
+            i += 1;
+            p += 8;
+        } while (i < n);
     }
-    while (var_s2 < var_v1);
-  }
-  *((s32 *) (((u8 *) state) + 0x40)) = 0;
-  *((s32 *) (((u8 *) state) + 0x44)) = 0;
+    *(s32 *)(a1 + 0x44) = 0;
+    *(s32 *)(a1 + 0x40) = 0;
 }
