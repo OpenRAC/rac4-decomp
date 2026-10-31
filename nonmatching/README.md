@@ -131,7 +131,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_01EC9530`](net/func_01EC9530.c) | net | 80 | BYTES 9/80 |
 | [`func_01EC9580`](net/func_01EC9580.c) | net | 80 | BYTES 9/80 |
 | [`func_004CB0F0`](game/func_004CB0F0.c) | game | 88 | BYTES 10/88 |
-| [`func_004B7558`](game/func_004B7558.c) | game | 96 | BYTES 11/96 |
 | [`func_01F06988`](net/func_01F06988.c) | net | 124 | BYTES 14/124 |
 | [`func_01F06B6C`](net/func_01F06B6C.c) | net | 124 | BYTES 14/124 |
 | [`func_00488E18`](game/func_00488E18.c) | game | 104 | BYTES 12/104 |
