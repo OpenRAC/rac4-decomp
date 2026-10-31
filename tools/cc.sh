@@ -33,10 +33,14 @@ tmp=build/tmp/$(echo "${out%.o}" | tr '/' '_')
 # Keep argv as an array: remove only the marker token, retaining every other
 # flag exactly as supplied (including values containing spaces).
 ee29=0
+lit4=0
 flags29=()
 for flag in "$@"; do
     if [ "$flag" = '@ee29' ]; then
         ee29=1
+    elif [ "$flag" = '@lit4' ]; then
+        # keep GNU as's .lit4 loads for li.s (skip tools/ps2eeas_lis.py)
+        lit4=1
     else
         flags29+=("$flag")
     fi
@@ -70,8 +74,11 @@ if [ ! -f "$CC" ]; then
     echo "error: SN EE compiler not found: $CC" >&2
     exit 1
 fi
-run_compiler "$CC" -O2 -G8 -fopt-stack -mno-check-zero-division "$@" -Iinclude -S "$src" -o "$tmp.s"
+run_compiler "$CC" -O2 -G8 -fopt-stack -mno-check-zero-division ${flags29[@]+"${flags29[@]}"} -Iinclude -S "$src" -o "$tmp.s"
 "$PY" tools/ps2eeas_dli.py "$tmp.s" "$tmp.s"
+if [ "$lit4" -eq 0 ]; then
+    "$PY" tools/ps2eeas_lis.py "$tmp.s" "$tmp.s"
+fi
 "$PY" tools/ps2eeas_sdata.py "$tmp.s" "$tmp.s"
 run_compiler "$CC" -c "$tmp.s" -o "${tmp}_first.o"
 "$PY" tools/ps2eeas_nops.py "$tmp.s" "${tmp}_first.o" "${tmp}_fixed.s"

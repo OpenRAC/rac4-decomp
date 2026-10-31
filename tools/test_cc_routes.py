@@ -77,12 +77,22 @@ class CompilerRouteTests(unittest.TestCase):
         result = self.run_cc("source.c", "build/obj/default.o", "-DVALUE=one two")
         self.assertEqual(result.returncode, 0, result.stderr)
         calls = self.calls()
-        self.assertEqual([call[0] for call in calls], ["wine", "python", "python", "wine", "python", "wine"])
+        self.assertEqual([call[0] for call in calls], ["wine", "python", "python", "python", "wine", "python", "wine"])
         self.assertIn("-DVALUE=one two", calls[0])
         self.assertIn("tools/ps2eeas_dli.py", calls[1])
-        self.assertIn("tools/ps2eeas_sdata.py", calls[2])
-        self.assertIn("tools/ps2eeas_nops.py", calls[4])
+        self.assertIn("tools/ps2eeas_lis.py", calls[2])
+        self.assertIn("tools/ps2eeas_sdata.py", calls[3])
+        self.assertIn("tools/ps2eeas_nops.py", calls[5])
         self.assertTrue((self.root / "build/obj/default.o").exists())
+
+    def test_lit4_marker_skips_lis_and_is_not_passed_on(self) -> None:
+        result = self.run_cc("source.c", "build/obj/lit4.o", "@lit4", "-DVALUE=one two")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        calls = self.calls()
+        self.assertEqual([call[0] for call in calls], ["wine", "python", "python", "wine", "python", "wine"])
+        self.assertNotIn("@lit4", calls[0])
+        self.assertIn("-DVALUE=one two", calls[0])
+        self.assertFalse(any("tools/ps2eeas_lis.py" in call for call in calls))
 
     def test_ee29_route_uses_pinned_compiler_and_assembler_without_fixups(self) -> None:
         result = self.run_cc("source.c", "build/obj/ee29.o", "@ee29", "-O2", "-G2", "-DNAME=two words")

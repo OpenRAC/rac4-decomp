@@ -1,0 +1,18 @@
+#include "common.h"
+
+extern void func_L01_004E5570(u8 *);
+extern void func_L01_005B00B8(u8 *, f32, f32);
+extern void func_00481900(u8 *, s32, void *, s32, s32, s32, f32);
+extern void func_00474368(u8 *, s32, s32);
+extern void func_L01_004E5668(void);
+
+// When arg1 is 0: calls func_L01_004E5570, func_L01_005B00B8 with the two floats at arg2
+// times 0.02, registers func_L01_004E5668 through func_00481900 and sets state 7, 3.
+void func_L05_004DD5F0(u8 *arg0, s32 arg1, f32 *arg2) {
+    if (arg1 == 0) {
+        func_L01_004E5570(arg0);
+        func_L01_005B00B8(arg0, arg2[0] * 0.020000001f, arg2[1] * 0.020000001f);
+        func_00481900(arg0, 2, (void *)func_L01_004E5668, 0, 0, 0, 0.0f);
+        func_00474368(arg0, 7, 3);
+    }
+}
