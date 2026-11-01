@@ -12,7 +12,7 @@ struct Type1 {
 };
 
 s32 func_L01_004AD9F8(void *);
-s32 func_L01_004ADF78(void *);
+void func_L01_004ADF78(void *);
 s32 func_L01_004ADFB0(void *);
 
 

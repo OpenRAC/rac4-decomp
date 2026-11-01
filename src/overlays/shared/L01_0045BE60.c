@@ -4,7 +4,7 @@ extern void func_005A2DC8(void *);
 extern void func_L01_00459BE0(void *);
 extern void func_L01_0045A2D0(void *);
 extern s32 func_L01_0045B3A0(void *);
-extern void func_L01_0056CDB0(void *);
+extern s32 func_L01_0056CDB0(void *);
 
 // Sets the linked halfwords at +0x60E (60) and +0x610 (-1), clears +0x61E, calls func_005A2DC8,
 // func_L01_0056CDB0 and func_L01_0045A2D0, and in state 5 (or 4 when func_L01_0045B3A0 agrees)

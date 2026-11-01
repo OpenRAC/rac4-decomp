@@ -3,7 +3,7 @@
 
 s32 func_00535988(s32);
 void *func_006658C0(s32);
-s32 func_L00_00591410(s32);
+void func_L00_00591410(s32);
 s32 func_L00_005A00F8(void);
 s32 func_L01_005213D8(void *);
 s32 func_L01_00538F40(s32, void *, f32);

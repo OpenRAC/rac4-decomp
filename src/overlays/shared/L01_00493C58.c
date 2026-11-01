@@ -6,7 +6,7 @@ struct Type1 {
     u8 f20;
 };
 
-s32 func_L01_00493B48(void *, s32);
+void func_L01_00493B48(void *, s32);
 
 
 void func_L01_00493C58(Type1 *arg0) {

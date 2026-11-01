@@ -1,6 +1,6 @@
 #include "common.h"
 
-extern void func_L01_0056CDB0(void *);
+extern s32 func_L01_0056CDB0(void *);
 extern void func_L01_0056E7F8(void *);
 extern void func_L01_005A8928(void *);
 extern void func_00591BD8(void *, int, int);

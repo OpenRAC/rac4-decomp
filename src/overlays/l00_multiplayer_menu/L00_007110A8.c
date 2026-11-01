@@ -2,7 +2,7 @@
 
 extern u8 D_004B7E78[];
 s32 func_L00_00710750();
-s32 func_L00_00711120();
+void func_L00_00711120();
 
 s64 func_L00_007110A8(char *arg0, s32 arg1) {
     func_L00_00710750(arg0);

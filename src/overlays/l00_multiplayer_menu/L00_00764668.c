@@ -1,6 +1,6 @@
 #include "common.h"
 
-s32 func_L00_00764530();
+void func_L00_00764530();
 extern s32 D_004EE5E8[];
 #define D_004EE5B8 (D_004EE5E8[0])
 

@@ -2,7 +2,7 @@
 /* cflags: @ee29 -O2 -G8 */
 #include "common.h"
 
-s32 func_L00_007081D8();
+void func_L00_007081D8();
 extern s32 D_002215CC;
 
 s32 func_L00_00755AB0(void) {

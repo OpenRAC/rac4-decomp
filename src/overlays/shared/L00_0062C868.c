@@ -1,7 +1,7 @@
 #include "common.h"
 
 s32 func_L00_0062B4A8(s32);
-s32 func_L00_0062C7C8();
+void func_L00_0062C7C8();
 s32 func_00699138(s32);
 s32 func_0069DC48(s32);
 s32 func_0069DC90();
