@@ -5,6 +5,9 @@
     python3 tools/levels.py [--version us|pal] config   # config/<version>/levels.tsv, programs.tsv
     python3 tools/levels.py [--version us|pal] check    # the dumps agree with the committed tables
 
+For dump and config, --iso PATH reads an existing disc image in place, instead of the default
+baserom/<ID>.iso. It does not change the selected version or where the outputs are written.
+
 Two versions, the same code and layout: `us` (the default, and the primary target), the NTSC-U
 disc `baserom/SCUS_974.65.iso`; `pal`, the PAL disc `baserom/SCES_532.85.iso` ("Ratchet:
 Gladiator", SCES-53285). `--version` (or the environment's RAC_VERSION) selects one for this
@@ -60,6 +63,7 @@ keep the SHA-1 of the ELF and of the program as the disc stores it (the main ima
 loader's WAD unpacks it), the entry point and the sections. The build (tools/build_levels.py)
 compares what it builds with both.
 """
+import argparse
 import hashlib
 import os
 import struct
@@ -358,8 +362,8 @@ def all_programs(progs):
     return out
 
 
-def dump(write=True):
-    progs, loader = read_disc()
+def dump(write=True, iso=None):
+    progs, loader = read_disc(iso)
     rows = []
     if write:
         os.makedirs(os.path.join(dump_dir(), "levels"), exist_ok=True)
@@ -393,8 +397,8 @@ def secs_text(secs):
     return ",".join("%s:%08X:%X:%X" % s for s in secs)
 
 
-def write_config():
-    rows, loader_sha1 = dump(write=False)
+def write_config(iso=None):
+    rows, loader_sha1 = dump(write=False, iso=iso)
     first = {}
     lines = [(TABLE_HEAD % (version_id(), V)).rstrip("\n")]
     plines = [(PROGRAMS_HEAD % (version_id(), version_id())).rstrip("\n")]
@@ -471,14 +475,19 @@ def check():
 
 
 def main():
-    cli_version()
-    args = sys.argv[1:]
-    if not args or args[0] not in ("dump", "config", "check"):
-        sys.exit(__doc__)
-    if args[0] == "dump":
-        dump()
-    elif args[0] == "config":
-        write_config()
+    parser = argparse.ArgumentParser(description="Dump a disc's programs and check their tables.")
+    parser.add_argument("command", choices=("dump", "config", "check"))
+    parser.add_argument("--version", choices=VERSIONS, default=V,
+                        help="disc version (default: RAC_VERSION, or us)")
+    parser.add_argument("--iso", metavar="PATH", help="input disc image for dump/config (default: baserom/<ID>.iso)")
+    args = parser.parse_args()
+    if args.iso is not None and args.command == "check":
+        parser.error("--iso applies to dump and config; check reads the extracted dumps")
+    select(args.version)
+    if args.command == "dump":
+        dump(iso=args.iso)
+    elif args.command == "config":
+        write_config(iso=args.iso)
     else:
         sys.exit(check())
 
