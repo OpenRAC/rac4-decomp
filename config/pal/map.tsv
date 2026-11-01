@@ -156,7 +156,6 @@ func_0012B300	src/core/0012B300.c	match	func_0012B300	main:core.text:0012B300:52
 func_0012C240	src/core/0012C240.c	match	func_0012C240	main:core.text:0012C240:112	100.00
 func_0012C2B0	src/core/0012C2B0.c	match	func_0012C2B0	main:core.text:0012C2B0:128	100.00
 func_0012C330	src/core/0012C330.c	match	func_0012C330	main:core.text:0012C330:120	100.00
-func_0012C3A8	src/libm/erf_gamma.c	differs	-	-	0.00
 func_0012C3C8	src/core/0012C3C8.c	match	func_0012C3C8	main:core.text:0012C3C8:112	100.00
 func_0012C438	src/core/0012C438.c	match	func_0012C438	main:core.text:0012C438:112	100.00
 func_0012C4B8	src/core/0012C4B8.c	match	func_0012C4B8	main:core.text:0012C4B8:256	100.00
@@ -5564,3 +5563,12 @@ func_01EF0550	src/pal/net/01EF0550.c	match	func_01EF0550	main:net.text:01EF0550:
 func_004651C0	src/pal/game/004651C0.c	match	func_004651C0	main:.text:004651C0:252	100.00
 func_L06_004C8750	src/pal/overlays/shared/L06_004C8750.c	match	func_L06_004C8750	level_06:.text:004C8750:248	100.00
 func_L01_004B58F0	src/pal/overlays/shared/L01_004B58F0.c	match	func_L01_004B58F0	level_01:.text:004B58F0:108	100.00
+func_0012C3A8	src/pal/core/0012C3A8.c	match	func_0012C3A8	main:core.text:0012C3A8:28	100.00
+func_L00_0062DA80	src/pal/overlays/shared/L00_0062DA80.c	match	func_L00_0062DA80	level_00:.text:0062DA80:28	100.00
+func_L00_00716368	src/pal/overlays/l00_multiplayer_menu/L00_00716368.c	match	func_L00_00716368	level_00:.text:00716368:84	100.00
+func_L00_0077FCA0	src/pal/overlays/l00_multiplayer_menu/L00_0077FCA0.c	match	func_L00_0077FCA0	level_00:.text:0077FCA0:52	100.00
+func_L00_00782310	src/pal/overlays/l00_multiplayer_menu/L00_00782310.c	match	func_L00_00782310	level_00:.text:00782310:108	100.00
+func_L01_004344E8	src/pal/overlays/shared/L01_004344E8.c	match	func_L01_004344E8	level_01:.text:004344E8:284	100.00
+func_L01_0047F758	src/pal/overlays/shared/L01_0047F758.c	match	func_L01_0047F758	level_01:.text:0047F758:64	100.00
+func_L01_00516DF8	src/pal/overlays/l01_dreadzone_station/L01_00516DF8.c	match	func_L01_00516DF8	level_01:.text:00516DF8:52	100.00
+func_L05_004DD1E0	src/pal/overlays/l05_dark_cathedral/L05_004DD1E0.c	match	func_L05_004DD1E0	level_05:.text:004DD1E0:116	100.00
