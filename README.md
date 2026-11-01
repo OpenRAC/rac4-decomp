@@ -251,7 +251,6 @@ Contributions are warmly welcome! Whether you are interested in decompiling func
 
 This project builds upon years of dedicated reverse-engineering research and tooling by the community:
 
-- **GFI (Game Fuckery Inc.)** – Special thanks to the GFI Discord community for years of reverse engineering, game research, and technical insights that made this decompilation possible.
 - **[rac1-decomp](https://github.com/OpenRAC/rac1-decomp)** – Repository layout, README, progress workflow and report generator, toolchain notes, the libgcc build recipe, and `tools/ps2eeas_nops.py` / `tools/ps2eeas_dli.py` (the nops and constant sequences of SN's assembler).
 - **[rac3-uya-decomp-pal](https://github.com/OpenRAC/rac3-uya-decomp-pal)** – The PAL treatment this repository follows: reading the levels from the disc, the function inventory (rac1-decomp's rules), the catalogue and the report (`tools/inventory.py`, `tools/level_catalogue.py`, `tools/progress.py` are adapted from it).
 - **[rac3-uya-decomp](https://github.com/OpenRAC/rac3-uya-decomp)** by vetusmagnus – *Up Your Arsenal*, the closest engine relative. Compiler research (SN ee-gcc 2.95.3 v1.36) and the `-fopt-stack`, `-G8` and global-declaration findings.
