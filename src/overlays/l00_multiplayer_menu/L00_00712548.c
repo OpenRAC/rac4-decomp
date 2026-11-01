@@ -15,5 +15,3 @@ s32 func_L00_00712548(void *arg0, s32 arg1) {
   }
   return 0;
 }
-
-

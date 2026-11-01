@@ -1,5 +1,5 @@
 #include "common.h"
-/* C adapted from public RAC4 func_L00_006A3B48 at1e460f3a; layout offsets measured per destination. */
+/* C adapted from public RAC4 (OpenRAC/rac4-decomp); same code as src/game/00509088.c and other sources on main. */
 
 extern s32 D_00220488;
 
