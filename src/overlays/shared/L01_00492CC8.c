@@ -6,10 +6,10 @@ struct Type1 {
     u8 fBE;
 };
 
-s32 func_00591BD8(void *, s32, s32);
+void func_00591BD8(u8 *, s32, s32);
 
 
 void func_L01_00492CC8(Type1 *arg0) {
     arg0->fBE = (u8) (arg0->fBE & 0xFB);
-    func_00591BD8(arg0, 2, -1);
+    func_00591BD8((u8 *)arg0, 2, -1);
 }
