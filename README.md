@@ -47,10 +47,10 @@ A function counts as matched on a version when its C, built with its file's own 
 <!-- progress:begin SCUS_974.65 (tools/progress.py --write) -->
 | | Functions (exact) | Code (exact) | Fuzzy |
 | --- | ---: | ---: | ---: |
-| **Main program** | 2,784 of 8,948 | 203,876 of 2,193,280 bytes (9.30%) | 9.81% |
-| Engine core (core.text) | 765 of 1,695 | 72,908 of 298,900 bytes (24.39%) | 24.93% |
+| **Main program** | 2,829 of 8,949 | 205,812 of 2,193,280 bytes (9.38%) | 9.90% |
+| Engine core (core.text) | 770 of 1,695 | 73,292 of 298,900 bytes (24.52%) | 25.06% |
 | libgcc | 2 of 2 | 16 of 16 bytes (100.00%) | 100.00% |
-| Network (net.text) | 478 of 2,441 | 15,372 of 465,620 bytes (3.30%) | 4.31% |
+| Network (net.text) | 518 of 2,442 | 16,924 of 465,620 bytes (3.63%) | 4.65% |
 | Resident menus (.text) | 1,536 of 4,785 | 114,776 of 1,416,576 bytes (8.10%) | 8.45% |
 | frontbin's own code | 3 of 25 | 804 of 12,168 bytes (6.61%) | 6.61% |
 | **Shared level code** | 1,082 of 5,076 | 83,504 of 1,980,204 bytes (4.22%) | 4.90% |
@@ -69,9 +69,9 @@ A function counts as matched on a version when its C, built with its file's own 
 | Level 14: Ghost Station (and 34) | 6 of 29 | 444 of 14,548 bytes (3.05%) | 3.05% |
 | Level 15: Control Level (and 35) | 13 of 135 | 932 of 116,368 bytes (0.80%) | 0.80% |
 | Level 41: Battledome Tower (all 22 multiplayer maps) | 81 of 374 | 11,296 of 139,984 bytes (8.07%) | 9.93% |
-| **Total** | 4,475 of 18,085 | 350,776 of 5,782,424 bytes (6.07%) | 6.68% |
+| **Total** | 4,520 of 18,086 | 352,712 of 5,782,424 bytes (6.10%) | 6.71% |
 
-Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 203,876 bytes (3.53%) are in units with nothing left to decompile.
+Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 205,812 bytes (3.56%) are in units with nothing left to decompile.
 <!-- progress:end -->
 
 **PAL (`SCES_532.85`)**

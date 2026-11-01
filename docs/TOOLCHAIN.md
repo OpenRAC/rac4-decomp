@@ -91,6 +91,176 @@ Options apply to the whole file, never to one function: GCC 2.95 takes them per
 translation unit. If one function needs other flags, it goes in a file of its
 own.
 
+On the SN route, explicit `-Wa,...` options are also forwarded, unchanged,
+to both assembler driver invocations. Other compiler options, including
+the compiler's `-G` setting, retain their existing routing. For example,
+`/* cflags: -Wa,-G0 */` disables assembler literal-pool loads for a whole
+translation unit; this is verified for the global-free `0014C368` and
+`0014DE80` units. It is not a general replacement for the default assembler
+settings: the small-data and nop passes assume the default threshold for
+global accesses, so files with globals, `__gp` aliases or filled delay slots
+need separate byte and relocation evidence before using it. The `@ee29`
+route retains its existing assembler invocation.
+
+### Isolated EE-GCC 2.9-ee-991111-01
+
+`/* cflags: @ee29-01 -O2 -G0 -Wa,-G0 */` selects the original
+`2.9-ee-991111-01` C compiler, then the existing SN assembler driver.
+This profile emits the divide padding needed by `src/core/0014D010.c`.
+No SN output fixups run on this route: its compiler-generated assembly is
+assembled without rewriting it. Existing SN and `@ee29` routes are unchanged.
+
+`tools/ee29_01.py` verifies each required file against its pinned SHA-256
+before executing anything. The default private profile directory is
+`build/isolated/ee-gcc2.9-991111-01/`; `EE29_01_ROOT` can select another
+location. Supply only these files from the public compiler releases:
+
+- [ee-gcc2.9-991111-01.tar.xz](https://github.com/decompme/compilers/releases/download/compilers/ee-gcc2.9-991111-01.tar.xz),
+  archive SHA-256 `ed684fd98f89d36b0121caab311052089103e3b36241fcef4338cc9ea41c75b8`:
+  `bin/ee-gcc`, `lib/gcc-lib/ee/2.9-ee-991111-01/cc1` and `cpp`.
+- [ee-gcc2.9-991111-01-dtls13010.tar.gz](https://github.com/decompme/compilers/releases/download/compilers/ee-gcc2.9-991111-01-dtls13010.tar.gz),
+  archive SHA-256 `3ab52a7ea962100f2a7df3e04d3e7a758aad669eb365251682e769b755d9d586`:
+  put only `lib/ld-2.3.6.so` at `runtime/ld-2.3.6.so`, and a byte-identical
+  copy of `lib/libc-2.3.6.so` at `runtime/libc.so.6`.
+
+The compiler source is public GPL code at
+[GirianSeed/ee-gcc, src-2.9-ee-991111-01](https://github.com/GirianSeed/ee-gcc/tree/src-2.9-ee-991111-01).
+No SDK headers, samples or source are needed. Do not commit these binaries,
+archives or runtime libraries. The installed compiler directories need no changes.
+
+The executables are 32-bit Linux binaries. On Windows the helper uses
+headless WSL (`EE29_01_WSL_DISTRO`, default `docker-desktop`); it does not
+open Docker Desktop or install system libraries. It uses the private loader
+and libc above. Inputs are copied unchanged to a native `/tmp` directory
+because old 32-bit `stat()` cannot represent Windows-mount inode numbers;
+the emitted assembly is copied back unchanged. This changes source paths
+and transports only the source plus project `include/` tree. The route has
+been verified for the self-contained D010 unit, which has no path-dependent
+macros or source-relative includes; arbitrary units need separate validation.
+
+### Isolated EE-GCC 3.2-ee-040921 evaluation
+
+`/* cflags: @ee32-040921 -O2 -G0 */` selects an isolated C compiler from
+the public [decompme compiler bundle](https://github.com/decompme/compilers/releases/download/compilers/ee-gcc3.2-040921.tar.xz).
+The observed archive SHA-256 is
+`8c60ca7482523190e999524a7e4de2379dcf7ffee543c1b5663bfdf6a80ebf0f`.
+This pins the evaluated download; it is not a publisher-supplied checksum
+or proof of correspondence to a particular public GCC source/patch set.
+Its driver and cc1 identify themselves as `3.2-ee-040921`. No SDK headers,
+samples or source are used. The profile is an evaluation route, not evidence
+that retail's NET component used this compiler.
+
+`tools/ee32_040921.py` requires these hash-checked files beneath
+`build/isolated/ee-gcc3.2-040921/` (override with `EE32_040921_ROOT`):
+
+- `bin/ee-gcc`: SHA-256
+  `a5095b5d7b55f91535b12e48e9d808170fa9fb8c0620c43c2fb61379b1a3663a`;
+- `lib/gcc-lib/ee/3.2-ee-040921/cc1`: SHA-256
+  `0bcc90bd23e10698e75047db9a84ea47e753791115fdd23d6f637a544f6d257d`;
+- the same private `runtime/ld-2.3.6.so` and `runtime/libc.so.6`, with
+  the same hashes, as the isolated EE 2.9 profile above. Copies live in
+  the new profile; neither installed toolchain nor the old profile changes.
+
+Windows uses headless WSL, default distro `docker-desktop` (override with
+`EE32_040921_WSL_DISTRO`). It opens no desktop application and installs
+no system runtime. The driver, cc1 wrapper and input/include copies use
+native temporary storage where needed by the old 32-bit filesystem API.
+The emitted assembly is copied back unchanged and assembled by the
+existing SN driver, forwarding explicit `-Wa,...` options. No SN output
+fixups or instruction rewriting run on this route. Options apply to the
+whole source file; conflicting profile markers are rejected.
+
+The function-free probe verifies the expected 64-bit `long`, 32-bit `int`
+and 32-bit pointer ABI using only the project's `common.h`. Arbitrary
+translation units, path-dependent macros and source-relative includes
+need their own validation. Every claimed match still requires independent
+byte, call/global and relocation-target checks.
+
+### Additional isolated EE-GCC 3.2 profiles
+
+Two additional opt-in profiles preserve their original driver, C compiler,
+preprocessor and compiler specs. They never rewrite emitted instructions
+and use the existing SN assembler, forwarding explicit `-Wa,...` options.
+Their defaults are `-O2 -G0`, and profile markers cannot be combined.
+
+| Whole-file marker | Ignored profile directory | Helper |
+|---|---|---|
+| `@ee32-030926` | `build/isolated/ee-gcc3.2-030926/` | `tools/ee32_030926.py` |
+| `@ee32-030210` | `build/isolated/ee-gcc3.2-030210-beta2/` | `tools/ee32_030210.py` |
+
+Each helper records all required file hashes and rejects missing or changed
+inputs before executing anything. The observed public bundle SHA-256 values
+are `6b92b61e40f80835b165d14fadd57d4046dbee82195599f791626180fe79b8e9`
+for [030926](https://github.com/decompme/compilers/releases/download/compilers/ee-gcc3.2-030926.tar.gz)
+and `5244521973d3fa9712cc9f945e6e45c489d69d846ca6639b0c07c3e885a923a1`
+for [030210 beta2](https://github.com/decompme/compilers/releases/download/compilers/ee-gcc3.2-030210-beta2.tar.gz).
+These pin the evaluated downloads; publisher checksums and exact public
+source/patch correspondence have not been established. No SDK source,
+headers or samples are extracted or used.
+
+030926 uses the same private Linux loader/libc as 040921. Its `cc1`, `cpp0`
+and original `specs` are pinned; the shared transport copies their executable
+wrappers and specs onto native temporary storage. Override its root/distro
+with `EE32_030926_ROOT` / `EE32_030926_WSL_DISTRO`.
+
+030210 beta2 is a native Windows/Cygwin profile. Supply its original
+`bin/ee-gcc.exe`, `lib/gcc-lib/ee/3.2-beta2-ee-030210/{cc1.exe,cpp0.exe,specs}`
+and bundled `dll/{cygwin1.dll,cygintl-2.dll,cygiconv-2.dll}`. Its DLL path
+is added only to the compiler child's environment, with no system install
+or global environment change. The helper suppresses system loader/crash
+dialogs and starts the compiler without a new console window. It has no
+alternate runtime fallback. Override its root with `EE32_030210_ROOT`.
+Both profiles passed function-free scalar/pointer ABI probes; this is not
+proof of a source match. Every candidate still requires full byte and
+relocation-target verification. The existing installed compiler files stay
+unchanged.
+
+### Installed older SN compiler evaluations
+
+The opt-in whole-file markers `@sn114` and `@sn274` select the already
+installed SN 1.14 (GCC 2.95.3) and SN 2.74 (GCC 2.95.2) drivers respectively
+from `toolchain/sn-prodg-24/local/sce/ee/gcc/`. Each uses an explicit matching
+`lib/gcc-lib/ee/<version>/` prefix. Missing backends fail rather than falling
+back to another compiler. The defaults remain `-O2 -G8
+-mno-check-zero-division`; the unsupported `-fopt-stack` is omitted. Both
+retain the existing SN assembly passes and the default SN assembler driver.
+These routes do not alter the installed files or the default compiler.
+Function-free probes verified this project's scalar/pointer ABI; candidate
+byte/target checks remain mandatory and no match follows from the probes.
+
+`@sn107` selects another already installed compiler. Its directory is
+misleadingly named `2.96-ee-001003-1`, but its actual `cc1.exe` and `cpp.exe`
+identify as SN 2.95.3 v1.07. Both are byte-identical to the public
+`ee-gcc2.95.3-107` package in decompme's `ps2_compilers.tar.xz`. The driver
+is shared with the other SN versions. This route explicitly selects the
+unchanged `2.95.3/specs`, which matches that original package, alongside
+the v1.07 backend/preprocessor. Installed files are never renamed or edited.
+
+### Actual isolated EE-GCC 2.96
+
+`/* cflags: @ee296 -O2 -G0 */` selects the distinct Linux compiler from
+[ee-gcc2.96.tar.xz](https://github.com/decompme/compilers/releases/download/compilers/ee-gcc2.96.tar.xz),
+observed archive SHA-256
+`0590d2ca9da8f5903889d66761220d14b47a8d14ba987ca53db84a1650a1fd0a`.
+It reports `2.96-ee-001003-1`; it is not the SN compiler in the same-named
+installed Windows directory. The original driver, `cc1` and `cpp0` hashes
+and private runtime hashes are pinned in `tools/ee296.py`. No specs file
+is supplied by this archive, so the original driver uses its built-in specs.
+
+Its default ignored root is `build/isolated/ee-gcc2.96/` (override with
+`EE296_ROOT`); `EE296_WSL_DISTRO` selects the headless WSL distro, default
+`docker-desktop`. It uses the shared native-storage transport, private
+loader/libc and existing SN assembler, with no SN output fixups and no
+compiler-output edits. No SDK source, headers or samples are used. As with
+the other mirrored compiler bundles, exact public source/patch correspondence
+has not been established; hashes identify the evaluated binary inputs.
+
+The canonical early-return source for `func_01EA4EE8` matches with this
+profile. Its complete opcode/register/constant fields, HI16/LO16 target,
+scalar ABI and integrated rebuild were verified. The relocation pair resolves
+to the address `0x001AFD28`, not the contents at that address. This is a
+per-function proof, not identification of the compiler for the whole NET unit.
+
 ## The assembler
 
 Retail's code was assembled by SN's own assembler (`ps2eeas`), not by the GNU
