@@ -47,19 +47,6 @@ The C of 5 functions (`src/core/00155908.c`, `src/game/0046D6A8.c`, `src/game/00
 request #43 (Shaar-games), and was then checked against this game's SCUS_974.65 bytes. Each file says so in its first-line
 comment.
 
-The PAL function `func_L01_004C0048` in `src/pal/overlays/shared/L01_004C0048.c`
-also adapts RAC3 matching C: `func_L03_0034BAF0` in
-[`src/levels/shared/L03_0034B440.c`](https://github.com/OpenRAC/rac3-decomp/blob/cd0e7c20fd8a93116566ba2e024fa2f3536bd30c/src/levels/shared/L03_0034B440.c),
-commit `cd0e7c20fd8a93116566ba2e024fa2f3536bd30c`. Its declarations, field widths,
-calls and relocated bytes were checked against RAC4 PAL. The pinned
-[`LEGAL.md`](https://github.com/OpenRAC/rac3-decomp/blob/cd0e7c20fd8a93116566ba2e024fa2f3536bd30c/LEGAL.md)
-excludes this decompiled game source from the project's GPL-3.0 licence; its
-contributors claim no copyright over it and grant no licence. This is a credited
-public-decompilation adaptation under this repository's Sources policy. The
-pinned [`CREDITS.md`](https://github.com/OpenRAC/rac3-decomp/blob/cd0e7c20fd8a93116566ba2e024fa2f3536bd30c/CREDITS.md)
-credits rac3-uya-decomp, vetusmagnus, Louis-Philippe Le Sieur (llesieur99),
-Veradictus, and their contributors.
-
 ## PAL engine-family reference reconstructions
 
 The PAL functions listed in [`config/pal/crossgame_sources.tsv`](config/pal/crossgame_sources.tsv)
