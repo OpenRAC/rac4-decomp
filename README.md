@@ -85,23 +85,23 @@ Each distinct function counts once: frontbin's copy of the menus is the main ima
 | Network (net.text) | 494 of 2,441 | 16,240 of 465,620 bytes (3.49%) | 4.50% |
 | Resident menus (.text) | 2,000 of 4,786 | 178,156 of 1,422,048 bytes (12.53%) | 12.71% |
 | frontbin's own code | 3 of 17 | 580 of 15,776 bytes (3.68%) | 3.68% |
-| **Shared level code** | 1,642 of 5,088 | 127,004 of 2,008,520 bytes (6.32%) | 6.98% |
-| **Level-specific code** | 1,089 of 4,080 | 94,180 of 1,601,892 bytes (5.88%) | 6.29% |
-| Level 00: Multiplayer Menu | 758 of 2,826 | 63,332 of 943,820 bytes (6.71%) | 7.12% |
-| Level 01: Dreadzone Station (and 21) | 91 of 357 | 7,656 of 189,772 bytes (4.03%) | 4.03% |
+| **Shared level code** | 1,643 of 5,088 | 127,280 of 2,008,520 bytes (6.34%) | 6.99% |
+| **Level-specific code** | 1,094 of 4,080 | 95,808 of 1,601,892 bytes (5.98%) | 6.39% |
+| Level 00: Multiplayer Menu | 759 of 2,826 | 63,712 of 943,820 bytes (6.75%) | 7.16% |
+| Level 01: Dreadzone Station (and 21) | 92 of 357 | 7,936 of 189,772 bytes (4.18%) | 4.18% |
 | Level 02: Catacrom Graveyard (and 22) | 5 of 29 | 188 of 21,232 bytes (0.89%) | 0.89% |
 | Level 04: Sarathos Swamp (and 24) | 5 of 19 | 600 of 11,868 bytes (5.06%) | 5.06% |
-| Level 05: Dark Cathedral (and 25) | 20 of 106 | 960 of 61,960 bytes (1.55%) | 1.70% |
+| Level 05: Dark Cathedral (and 25) | 21 of 106 | 1,280 of 61,960 bytes (2.07%) | 2.22% |
 | Level 06: Temple Of Shaar (and 26) | 7 of 31 | 460 of 9,440 bytes (4.87%) | 4.87% |
 | Level 07: Valix Lighthouse (and 27) | 4 of 44 | 464 of 27,640 bytes (1.68%) | 1.68% |
 | Level 08: Mining Facility (and 28) | 9 of 48 | 1,492 of 24,900 bytes (5.99%) | 5.99% |
 | Level 10: Torval Ruins (and 30) | 6 of 38 | 424 of 20,392 bytes (2.08%) | 2.08% |
-| Level 11: Tempus Station (and 31) | 3 of 17 | 212 of 9,024 bytes (2.35%) | 2.35% |
-| Level 13: Maraxus Prison (and 33) | 11 of 34 | 840 of 15,996 bytes (5.25%) | 5.25% |
+| Level 11: Tempus Station (and 31) | 4 of 17 | 500 of 9,024 bytes (5.54%) | 5.54% |
+| Level 13: Maraxus Prison (and 33) | 12 of 34 | 1,200 of 15,996 bytes (7.50%) | 7.50% |
 | Level 14: Ghost Station (and 34) | 6 of 23 | 444 of 8,884 bytes (5.00%) | 5.00% |
 | Level 15: Control Level (and 35) | 23 of 134 | 2,540 of 116,624 bytes (2.18%) | 2.18% |
 | Level 41: Battledome Tower (all 22 multiplayer maps) | 141 of 374 | 14,568 of 140,340 bytes (10.38%) | 12.24% |
-| **Total** | 6,026 of 18,113 | 495,712 of 5,812,924 bytes (8.53%) | 9.02% |
+| **Total** | 6,032 of 18,113 | 497,616 of 5,812,924 bytes (8.56%) | 9.05% |
 
 Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 274,528 bytes (4.72%) are in units with nothing left to decompile.
 <!-- progress:end -->
