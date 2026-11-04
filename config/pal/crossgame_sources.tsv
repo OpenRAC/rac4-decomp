@@ -1,0 +1,5 @@
+# Public engine-family references for independently reconstructed PAL C.
+# Fingerprints identify candidates; matching and address checks use RAC4 retail.
+name	repository	commit	path	reference_function	fingerprint
+func_004F0670	OpenRAC/OpenRAC	73f725bf54bb1bf6d8b9bb5b1511ed00d551fbde	games/rac3/ntsc/src/frontbin/3A9CF8.c	func_003AAA00	10e28d86493f2482
+func_00524010	OpenRAC/rac1-decomp	1d8228cc0c81da7bc2bdc3e77479ee050e0ef434	src/overlays/shared/hero_mapped_animations.c	select_hero_slot3_animation_pair	e178c2c2381fbfe5

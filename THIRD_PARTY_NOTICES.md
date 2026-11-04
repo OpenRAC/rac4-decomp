@@ -47,6 +47,24 @@ The C of 5 functions (`src/core/00155908.c`, `src/game/0046D6A8.c`, `src/game/00
 request #43 (Shaar-games), and was then checked against this game's SCUS_974.65 bytes. Each file says so in its first-line
 comment.
 
+## PAL engine-family reference reconstructions
+
+The PAL functions listed in [`config/pal/crossgame_sources.tsv`](config/pal/crossgame_sources.tsv)
+were independently reconstructed against RAC4 retail after comparing public
+engine-family function catalogues and C implementations. The table records an
+immutable repository commit, file and reference function for each reconstruction;
+the C files also carry a reference comment.
+
+References include RAC1 (GPL-3.0 project code) and the unified
+[OpenRAC repository](https://github.com/OpenRAC/OpenRAC). RAC3's decompiled game
+sources have the separate scope described in its `LEGAL.md`, as noted above.
+These credits do not apply one blanket licence to all reference material.
+The original authors and contributors remain credited by those projects.
+
+Addresses, field layouts, argument types and control flow were checked against
+RAC4 PAL rather than inferred from a fingerprint alone. No proprietary SDK source,
+samples or headers were used.
+
 ## Standard C library algorithm references (`src/core/`)
 
 The matching reconstructions in this contribution were written against the retail
