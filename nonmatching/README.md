@@ -119,7 +119,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_01EB6748`](net/func_01EB6748.c) | net | 64 | BYTES 7/64 |
 | [`func_01EF9DD8`](net/func_01EF9DD8.c) | net | 64 | BYTES 7/64 |
 | [`func_00503B88`](game/func_00503B88.c) | game | 168 | BYTES 18/164 (10 words differ) |
-| [`func_L00_00528810`](l00_multiplayer_menu/func_L00_00528810.c) | l00_multiplayer_menu | 168 | BYTES 18/164 |
 | [`func_00148800`](core/func_00148800.c) | core | 180 | BYTES 20/180 |
 | [`func_01EC3240`](net/func_01EC3240.c) | net | 72 | BYTES 8/72 |
 | [`func_01EC52E0`](net/func_01EC52E0.c) | net | 72 | BYTES 8/72 |
