@@ -157,7 +157,22 @@ python3 tools/progress.py --write                   # progress/report.json (SCUS
 python3 tools/progress.py --version pal --write     # progress/pal/report.json (SCES_532.85)
 ```
 
-These need the dumps (`tools/levels.py dump`, `docs/levels.md`). Commit the regenerated
+After compiling C named by the selected disc's catalogue, an existing map can
+instead be updated for complete source files:
+
+```
+python3 tools/match_map.py --version pal --update-native src/pal/overlays/shared/L00_006A3AF0.c --check
+python3 tools/match_map.py --version us --update-native src/pal/overlays/shared/L00_006A3AF0.c --check
+```
+
+This checks every native definition in the selected files and retains unrelated
+map bytes. PAL sources on US are recorded as `other` without reading US binaries.
+US sources on PAL and moved or removed definitions require the full `--write`
+workflow. Resolve colliding names before either workflow. Regenerate both
+progress reports after either map update.
+
+Map searches and native code comparisons need the dumps (`tools/levels.py dump`,
+`docs/levels.md`). Commit the regenerated
 `config/us/map.tsv`, `config/pal/map.tsv`, both reports and the README tables together with your
 source. CI (`.github/workflows/progress.yml`) runs `tools/progress.py --check` for both versions
 and fails if a report disagrees with `src/`; it cannot build the game, so the report always comes from
