@@ -55,7 +55,7 @@ engine-family function catalogues and C implementations. The table records an
 immutable repository commit, file and reference function for each reconstruction;
 the C files also carry a reference comment.
 
-References include RAC1 (GPL-3.0 project code) and the unified
+References include RAC1 and RAC2 (GPL-3.0 project code), RAC3, and the unified
 [OpenRAC repository](https://github.com/OpenRAC/OpenRAC). RAC3's decompiled game
 sources have the separate scope described in its `LEGAL.md`, as noted above.
 These credits do not apply one blanket licence to all reference material.

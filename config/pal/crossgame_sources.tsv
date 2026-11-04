@@ -1,5 +1,33 @@
 # Public engine-family references for independently reconstructed PAL C.
 # Fingerprints identify candidates; matching and address checks use RAC4 retail.
 name	repository	commit	path	reference_function	fingerprint
+func_0011C750	OpenRAC/rac2-decomp	99f35ac2c084fc59cdf3d631f8f960a825e7a49c	src/levels/shared/L08_002F2D10.c	func_L08_0033CD18	f4933e8baccd7b96
+func_0011C978	OpenRAC/rac2-decomp	99f35ac2c084fc59cdf3d631f8f960a825e7a49c	src/levels/shared/L08_002F2D10.c	func_L08_0033CD18	f4933e8baccd7b96
+func_00447A00	OpenRAC/rac2-decomp	99f35ac2c084fc59cdf3d631f8f960a825e7a49c	src/game/0027A0F8.c	func_0027A0F8	abf7208e37f3d448
+func_00447AD8	OpenRAC/rac3-decomp	cd0e7c20fd8a93116566ba2e024fa2f3536bd30c	src/frontbin/382380.c	func_00386678	8220108ff95866dc
+func_004493D8	OpenRAC/rac2-decomp	99f35ac2c084fc59cdf3d631f8f960a825e7a49c	src/game/0027C660-rc2.c	func_0027C660	be6e56ff4c6b1909
+func_0044B268	OpenRAC/rac3-decomp	cd0e7c20fd8a93116566ba2e024fa2f3536bd30c	src/frontbin/382380.c	func_0038C3B0	0236471f1d7cafea
+func_00454E18	OpenRAC/rac3-decomp	cd0e7c20fd8a93116566ba2e024fa2f3536bd30c	src/frontbin/38DED0.c	func_0038E3C8	2a8ef2d0f64df86f
+func_00457E60	OpenRAC/OpenRAC	73f725bf54bb1bf6d8b9bb5b1511ed00d551fbde	games/rac3/ntsc/src/frontbin/3896E8.c	func_0038C840	-
+func_0045F078	OpenRAC/rac1-decomp	1d8228cc0c81da7bc2bdc3e77479ee050e0ef434	src/game/ui/hud.c	LinkHudBank / func_001FF7F0	fc206bca7a66afcf
+func_004635A8	OpenRAC/rac3-decomp	cd0e7c20fd8a93116566ba2e024fa2f3536bd30c	src/frontbin/397D48.c	func_00399810	c6bc1c172c6ef5f9
+func_004694C8	OpenRAC/rac3-decomp	cd0e7c20fd8a93116566ba2e024fa2f3536bd30c	src/frontbin/39A6E0.c	func_0039E788	1422f64c88b54fb5
+func_00469508	OpenRAC/rac3-decomp	cd0e7c20fd8a93116566ba2e024fa2f3536bd30c	src/frontbin/39A6E0.c	func_0039E7C8	67fdf2c53419ef94
+func_0046D780	OpenRAC/OpenRAC	73f725bf54bb1bf6d8b9bb5b1511ed00d551fbde	games/rac3/ntsc/src/frontbin/3BDAC0.c	func_003BDEA8	-
+func_004749A0	OpenRAC/rac3-decomp	cd0e7c20fd8a93116566ba2e024fa2f3536bd30c	src/levels/shared/L01_004463D0.c	func_L01_004463F8	3b7a1d540bec2a9e
+func_00476678	OpenRAC/rac3-decomp	cd0e7c20fd8a93116566ba2e024fa2f3536bd30c	src/levels/shared/L01_004485E0.c	func_L01_00448728	74b2e5bb1d8515dd
+func_00476D30	OpenRAC/rac3-decomp	cd0e7c20fd8a93116566ba2e024fa2f3536bd30c	src/levels/shared/L01_00448CC0.c	func_L01_00448CC0	8370610e20192060
+func_00476DF8	OpenRAC/rac3-decomp	cd0e7c20fd8a93116566ba2e024fa2f3536bd30c	src/levels/shared/L01_00448CC0.c	func_L01_00448D88	93fffc2b6bf7c67d
+func_00479E28	OpenRAC/rac2-decomp	99f35ac2c084fc59cdf3d631f8f960a825e7a49c	src/levels/shared/L00_00316F60.c	func_L00_00322EC8	4d90c88019d280c9
+func_004D4058	OpenRAC/rac3-decomp	cd0e7c20fd8a93116566ba2e024fa2f3536bd30c	src/levels/shared/L01_0047DBB0.c	func_L01_0047DE68	cee158fb529be4d7
+func_004D4D38	OpenRAC/rac3-decomp	cd0e7c20fd8a93116566ba2e024fa2f3536bd30c	src/frontbin/3B3050.c	func_003B3910	f879e157d6c86f3d
+func_004DFED8	OpenRAC/rac2-decomp	99f35ac2c084fc59cdf3d631f8f960a825e7a49c	src/game/002E3820-rc2.c	func_002E3820	6168986a7581918b
+func_004E87F8	OpenRAC/rac2-decomp	99f35ac2c084fc59cdf3d631f8f960a825e7a49c	src/game/002FC468.c	func_002FC468	b47b02c2d8dd48ad
+func_004EB520	OpenRAC/rac2-decomp	99f35ac2c084fc59cdf3d631f8f960a825e7a49c	src/levels/shared/L00_0037B6F0.c	func_L00_0037DD18	e00b49bbdca9142f
+func_004EFAD0	OpenRAC/rac3-decomp	cd0e7c20fd8a93116566ba2e024fa2f3536bd30c	src/frontbin/3AA9D8.c	func_003AACC0	7af571c5dc829dac
 func_004F0670	OpenRAC/OpenRAC	73f725bf54bb1bf6d8b9bb5b1511ed00d551fbde	games/rac3/ntsc/src/frontbin/3A9CF8.c	func_003AAA00	10e28d86493f2482
+func_004F0B38	OpenRAC/rac3-decomp	cd0e7c20fd8a93116566ba2e024fa2f3536bd30c	src/frontbin/3B0048.c	func_003B0470	ef4406041fc87225
+func_004F1C08	OpenRAC/rac3-decomp	cd0e7c20fd8a93116566ba2e024fa2f3536bd30c	src/frontbin/3B0FF0.c	func_003B1530	7ea4ba7258cca28b
+func_00511BA0	OpenRAC/rac3-decomp	cd0e7c20fd8a93116566ba2e024fa2f3536bd30c	src/frontbin/3F2238.c	func_003F2268	a4369948393ac7d2
 func_00524010	OpenRAC/rac1-decomp	1d8228cc0c81da7bc2bdc3e77479ee050e0ef434	src/overlays/shared/hero_mapped_animations.c	select_hero_slot3_animation_pair	e178c2c2381fbfe5
+func_00541A50	OpenRAC/rac3-decomp	cd0e7c20fd8a93116566ba2e024fa2f3536bd30c	src/levels/shared/L39_0066C748.c	func_L39_0066D888	e5670ece16ce88e0
