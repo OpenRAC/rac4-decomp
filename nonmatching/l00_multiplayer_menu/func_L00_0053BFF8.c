@@ -1,11 +1,10 @@
-/* Not matching yet: BYTES 8/616 (tools/try_func.py func_L00_0053BFF8 --diff). Not part of the build. */
+/* Not matching yet: BYTES 7/616 (tools/try_func.py func_L00_0053BFF8 --diff). Not part of the build. */
 /* cflags: @ee29 -O2 -G0 */
 #include "common.h"
 
 typedef struct Type2 {
     char _p0[0xC];
-    u16 fC_lo : 5;
-    u16 fC5 : 1;
+    u16 fC;
 } Type2;
 
 typedef struct Type1 {
@@ -30,10 +29,10 @@ extern void func_L00_004F84C8(s32, s32, s32, s32, s32);
 extern void func_L00_0051A148(s32, char *, char *, char *, char *, char *);
 extern void func_L00_0053BF08(Type1 *arg0);
 
-s32 func_L00_0053BFF8(Type1 *arg0, s32 arg1, s32 arg2, Type3 *arg3) {
+s64 func_L00_0053BFF8(Type1 *arg0, s32 arg1, s32 arg2, Type3 *arg3) {
     char mode[16];
     Type3 args;
-    s32 r = 1;
+    s64 r = 1;
     Type2 *fp = arg0->f20;
 
     switch (arg1) {
@@ -44,7 +43,7 @@ s32 func_L00_0053BFF8(Type1 *arg0, s32 arg1, s32 arg2, Type3 *arg3) {
         }
         break;
     case 2:
-        r = fp->fC5;
+        { u64 t = fp->fC; r = (t >> 5) & 1; }
         break;
     case 3:
     case 133:
