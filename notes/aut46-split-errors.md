@@ -52,3 +52,9 @@ by scanning retail bytes; none has been attempted yet:
 `addiu $sp, $sp, 0x90` and a `nop`; the real entry is `0x00529C58`, size
 `0x520`. `func_L00_00529620` stores `func_L00_00529C50 + 8` as its method
 pointer, which confirms the entry. See `build/try/func_L00_00529C50/NOTES.md`.
+
+## Session 5
+
+`func_L00_00529020` starts on the previous function's delay slot and a
+`0xCDCDCDCD` fill word; the real function is `0x00529028`, 844 bytes. See
+`build/try/func_L00_00529020/NOTES.md`.
