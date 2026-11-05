@@ -25,10 +25,10 @@ extern Allocator *func_00502150(void);
 extern Allocator *func_00502218(Allocator *, s32);
 extern void func_005052C0(s32);
 extern s32 func_005052C8(void);
-extern s32 func_00500980(void *, void *);
+extern s32 func_00500980(void *, u32);
 extern void *func_0015DB90(s32, void *);
 extern Object *func_0050FB98(void *);
-extern s32 func_00501618(void *, Object *, void *);
+extern s32 func_00501618(void *, Object *, u32);
 
 static inline Allocator *get_manager(void) {
     Allocator *manager = D_00222138;
@@ -47,7 +47,7 @@ static inline void *lookup_entry(s32 *state) {
     return NULL;
 }
 
-s32 func_004A15A8(void *arg) {
+s32 func_004A15A8(u32 arg) {
     s32 result = 0;
     Allocator *manager;
     s32 *state;
