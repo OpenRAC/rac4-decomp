@@ -3,7 +3,7 @@
 extern s32 func_0011D920(s8 *arg0, s8 *arg1, ...);
 extern s32 func_L00_005C9F50(s32);
 extern void func_L00_0070AED0(void);
-s32 D_00220A44 = -1;
+s32 D_00220A44 = 0x73; /* retail .sdata value */
 s32 D_00220A48 = -1;
 s8 D_00220A5E = 0;
 extern s8 D_003F3E78[];
