@@ -1,11 +1,11 @@
 #include "common.h"
 
-extern void func_0054B288(s32, s32, s32, s32);
-extern s32 func_00549398(s32, s32);
-extern s32 func_00549368(s32, s32);
-extern void func_00549330(s32, s32, s32);
+extern void func_0054B288(void *, s32, s32, s32);
+extern s32 func_00549398(void *, s32);
+extern s32 func_00549368(void *, s32);
+extern void func_00549330(void *, s32, s32);
 
-s32 func_0054BA08(s32 arg0, s32 arg1, s32 arg2, s32 arg3)
+s32 func_0054BA08(void *arg0, s32 arg1, s32 arg2, s32 arg3)
 {
     u8 *pointer;
     s32 offset;
@@ -17,7 +17,7 @@ s32 func_0054BA08(s32 arg0, s32 arg1, s32 arg2, s32 arg3)
         return 0;
     }
     offset = arg1 * 0x44;
-    pointer = (u8 *)(arg0 + offset);
+    pointer = (u8 *)arg0 + offset;
     for (i = 0; i < 0xA; i++, pointer += 4) {
         if (pointer[0xA44] == arg2) {
             pointer[0xA44] = 0;

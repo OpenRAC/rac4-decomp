@@ -22,7 +22,7 @@ extern void func_001269B0(s32);
 extern s32 func_001276D0(s32);
 extern void func_001268D0(s32, s32);
 extern void func_00139940(u8 *);
-extern void func_004F2CC0(s32);
+extern void func_004F2CC0(Type1 *);
 extern void func_004F07D0(s32);
 extern void func_004F1AF0(s32);
 

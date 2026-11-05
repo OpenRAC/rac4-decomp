@@ -3,8 +3,8 @@
 extern s32 func_004E7EC8(s32 *);
 extern void func_004985F0(s32);
 extern void func_004D6590(s32);
-extern s32 func_0045E850(s32);
-extern void func_0049F4C8(s32, s32, void (*)(s32), s32, s32, s32, s32, f32);
+extern const char *func_0045E850(s32);
+extern void func_0049F4C8(s32, const char *, void (*)(s32), s32, s32, s32, s32, f32);
 extern s32 D_0031CCC4[];
 
 void func_004D66D0(void)
@@ -12,7 +12,7 @@ void func_004D66D0(void)
     s32 index;
     s32 *p;
     s32 *obj;
-    s32 result;
+    const char *result;
 
     if (D_0031CCC4[20] == 0) {
         return;

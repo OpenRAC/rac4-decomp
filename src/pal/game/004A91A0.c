@@ -3,16 +3,17 @@
 extern s32 D_0021DE3C;
 extern f32 func_00454208(f32, f32);
 
-f32 func_004A91A0(s32 arg0, s32 arg1)
+f32 func_004A91A0(const void *arg0)
 {
-    s32 object;
+    const u8 *arg1;
+    const u8 *object;
     f32 result;
     f32 distance;
     f32 x;
     f32 y;
 
     result = 360.0f;
-    arg1 = *(s32 *)(arg0 + 0x2F00);
+    arg1 = *(const u8 **)((const u8 *)arg0 + 0x2F00);
     distance = *(f32 *)(arg1 + 0x140) * *(f32 *)(arg1 + 0x140) +
                *(f32 *)(arg1 + 0x144) * *(f32 *)(arg1 + 0x144);
     if (D_0021DE3C == 4 || (*(s32 *)(arg1 + 0x1A0) & 0x10) != 0) {
@@ -20,7 +21,7 @@ f32 func_004A91A0(s32 arg0, s32 arg1)
                     *(f32 *)(arg1 + 0x14C) * *(f32 *)(arg1 + 0x14C);
     }
     if (0.95f < distance) {
-        object = *(s32 *)(arg0 + 0x2F00);
+        object = *(const u8 **)((const u8 *)arg0 + 0x2F00);
         x = *(f32 *)(object + 0x140);
         y = *(f32 *)(object + 0x144);
         if (D_0021DE3C == 4 || (*(s32 *)(object + 0x1A0) & 0x10) != 0) {

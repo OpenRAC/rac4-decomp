@@ -1,19 +1,25 @@
 #include "common.h"
 
-extern s32 D_002F3CD0[];
+typedef struct {
+    u32 *child;
+    void *object;
+} Node;
+typedef struct {
+    s32 index;
+    s32 reserved;
+    s32 count;
+    Node *nodes[0];
+} Ring;
+extern Ring D_002F3CD0;
 extern void func_00163990(void);
-extern s32 func_004A3AF0(s32, s32, s32);
-
+extern s32 func_004A3AF0(void *, u32, u32);
 s32 D_0021F690 = 0;
 
-/* Advance the ring and periodically flush pending work. */
-void func_0049A410(s32 arg0, s32 arg1)
+void func_0049A410(s32 unused, s32 mode)
 {
-    s32 node;
-    s32 child;
     s32 index;
     s32 next;
-    if (arg1 == 1) {
+    if (mode == 1) {
         D_0021F690++;
         if (D_0021F690 >= 6) {
             D_0021F690 = 0;
@@ -21,17 +27,15 @@ void func_0049A410(s32 arg0, s32 arg1)
         }
         return;
     }
-    if (arg1 == 0) {
-        node = *(s32 *)((s32)D_002F3CD0 + D_002F3CD0[0] * 4 + 0xC);
-        child = *(s32 *)node;
-        if (child != 0) {
-            func_004A3AF0(*(s32 *)(node + 4), *(s32 *)(child + 4), 0);
-        }
+    if (mode == 0) {
+        Node *node = D_002F3CD0.nodes[D_002F3CD0.index];
+        if (node->child != NULL)
+            func_004A3AF0(node->object, node->child[1], 0);
     }
-    index = D_002F3CD0[0];
-    *(volatile s32 *)&D_0021F690 = 0;
+    index = D_002F3CD0.index;
+    D_0021F690 = 0;
     next = index + 1;
     next %= 8;
-    D_002F3CD0[2]--;
-    D_002F3CD0[0] = next;
+    D_002F3CD0.count--;
+    D_002F3CD0.index = next;
 }

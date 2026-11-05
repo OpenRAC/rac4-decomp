@@ -3,7 +3,7 @@
 void func_004A1AB0(void *arg0, f32 *arg1, f32 *arg2, f32 *arg3, f32 *arg4, s32 arg5);
 void func_004A1CD0(void *arg0, s32 arg1, f32 *arg2, f32 *arg3);
 
-void func_004A20D8(void *arg0, f32 *arg1, f32 *arg2, f32 *arg3, f32 *arg4, s32 arg5)
+void func_004A20D8(void *arg0, f32 *arg1, f32 *arg2, f32 *arg3, f32 *arg4)
 {
     f32 local0;
     f32 local1;

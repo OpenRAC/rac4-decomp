@@ -79,11 +79,11 @@ Each distinct function counts once: frontbin's copy of the menus is the main ima
 <!-- progress:begin SCES_532.85 (tools/progress.py --write) -->
 | | Functions (exact) | Code (exact) | Fuzzy |
 | --- | ---: | ---: | ---: |
-| **Main program** | 3,345 of 8,945 | 283,564 of 2,202,512 bytes (12.87%) | 13.27% |
+| **Main program** | 3,343 of 8,945 | 283,136 of 2,202,512 bytes (12.86%) | 13.26% |
 | Engine core (core.text) | 772 of 1,668 | 73,404 of 288,232 bytes (25.47%) | 26.03% |
 | libgcc | 26 of 33 | 6,148 of 10,836 bytes (56.74%) | 56.74% |
 | Network (net.text) | 494 of 2,441 | 16,240 of 465,620 bytes (3.49%) | 4.50% |
-| Resident menus (.text) | 2,050 of 4,786 | 187,192 of 1,422,048 bytes (13.16%) | 13.34% |
+| Resident menus (.text) | 2,048 of 4,786 | 186,764 of 1,422,048 bytes (13.13%) | 13.31% |
 | frontbin's own code | 3 of 17 | 580 of 15,776 bytes (3.68%) | 3.68% |
 | **Shared level code** | 1,643 of 5,088 | 127,280 of 2,008,520 bytes (6.34%) | 6.99% |
 | **Level-specific code** | 1,094 of 4,080 | 95,808 of 1,601,892 bytes (5.98%) | 6.39% |
@@ -101,9 +101,9 @@ Each distinct function counts once: frontbin's copy of the menus is the main ima
 | Level 14: Ghost Station (and 34) | 6 of 23 | 444 of 8,884 bytes (5.00%) | 5.00% |
 | Level 15: Control Level (and 35) | 23 of 134 | 2,540 of 116,624 bytes (2.18%) | 2.18% |
 | Level 41: Battledome Tower (all 22 multiplayer maps) | 141 of 374 | 14,568 of 140,340 bytes (10.38%) | 12.24% |
-| **Total** | 6,082 of 18,113 | 506,652 of 5,812,924 bytes (8.72%) | 9.21% |
+| **Total** | 6,080 of 18,113 | 506,224 of 5,812,924 bytes (8.71%) | 9.20% |
 
-Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 283,564 bytes (4.88%) are in units with nothing left to decompile.
+Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 283,136 bytes (4.87%) are in units with nothing left to decompile.
 <!-- progress:end -->
 
 </details>
