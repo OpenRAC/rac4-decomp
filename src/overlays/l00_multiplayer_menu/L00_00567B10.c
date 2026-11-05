@@ -1,4 +1,3 @@
-/* Not matching yet: BYTES 4/780 (tools/try_func.py func_L00_00567B10 --diff). Not part of the build. */
 /* cflags: @ee29 -O2 -G0 */
 #include "common.h"
 
@@ -108,10 +107,9 @@ s32 func_L00_00567B10(s32 arg0, s32 arg1) {
             return func_L00_00566BA0(ctx, -1);
         }
     }
-    q = so->f0;
     p = so->f4;
-    if (q != NULL) {
-        q->f4 = p;
+    if (so->f0 != NULL) {
+        so->f0->f4 = p;
     } else {
         D_004A9BA4[0] = p;
     }

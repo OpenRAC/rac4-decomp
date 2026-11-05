@@ -1,5 +1,5 @@
-/* Not matching yet: BYTES 3/344 (tools/try_func.py func_L00_0052B6F8 --diff). Not part of the build. */
 /* cflags: @ee29 -O2 -G0 */
+#include "common.h"
 
 typedef struct {
     char pad0[0x184];
@@ -34,7 +34,6 @@ extern s32 func_L00_0052B150(Obj *, void *, void *, s32);
 
 s32 func_L00_0052B6F8(Obj *obj) {
     s32 buf[2];
-    s32 len;
     s32 size;
     void *a;
     void *b;
@@ -48,8 +47,8 @@ s32 func_L00_0052B6F8(Obj *obj) {
     }
     ((Sub54 *)obj->unk54)->unk18C = buf[0];
     ((Sub54 *)obj->unk54)->unk190 = buf[1];
-    len = func_0051A6F8(buf[0]) + func_0051A6E0(buf[1]) + func_0051A700(buf[0]);
-    size = len * 2 + 1;
+    size = func_0051A6F8(buf[0]) + func_0051A6E0(buf[1]) + func_0051A700(buf[0]);
+    size = size * 2 + 1;
     func_L00_00527D88(obj);
     a = func_L00_004FACD8(size);
     if (a != 0 && (b = func_L00_004FACD8(size)) != 0) {

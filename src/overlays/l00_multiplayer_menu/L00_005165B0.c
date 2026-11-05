@@ -1,4 +1,3 @@
-/* Not matching yet: BYTES 8/368 (tools/try_func.py func_L00_005165B0 --diff). Not part of the build. */
 /* cflags: @ee29 -O2 -G0 */
 #include "common.h"
 
@@ -32,9 +31,9 @@ s32 func_L00_005165B0(File *f, char *dst, s32 size) {
     s = f->stream;
     func_L00_004F7228(f);
     for (;;) {
-        found = 0;
         if (s->count > 0) {
             p = s->buf + s->pos;
+            found = 0;
             for (i = 0; i < s->count && i < size; i++) {
                 *dst = p[i];
                 dst++;

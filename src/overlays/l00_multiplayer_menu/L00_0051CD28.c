@@ -1,4 +1,3 @@
-/* Not matching yet: BYTES 1/312 (tools/try_func.py func_L00_0051CD28 --diff). Not part of the build. */
 /* cflags: @ee29 -O2 -G0 */
 #include "common.h"
 
@@ -20,7 +19,7 @@ s32 func_L00_0051CE60(Type1 *);
 void func_L00_00538038(s32);
 s32 func_L00_00538390(s32);
 
-s32 func_L00_0051CD28(Type1 *arg0, Type1 *arg1) {
+s64 func_L00_0051CD28(Type1 *arg0, Type1 *arg1) {
     s32 p;
 
     if (arg0->f0 != arg1->f0) {
