@@ -32,3 +32,16 @@ and some also end on an alignment `nop` or fill word. Each body already matches.
 | `func_L00_00518734 0x00518734 0x7C` | `0x00518738`, `0x74` | `build/try/func_L00_00518734/p1.c` (SIZE 116/124) |
 | `func_L00_00519E50 0x00519E50 0x78` | `0x00519E50`, `0x74` (trailing fill word) | `build/try/func_L00_00519E50/p0.c` (SIZE 116/120) |
 | `func_L00_005202A4 0x005202A4 0xC0` | `0x005202A8`, `0xBC` | `build/try/func_L00_005202A4/p6.c` (SIZE 188/192) |
+
+## Session 3: more fill-word rows
+
+These rows in the same region start or end on a `0xCDCDCDCD` fill word, found
+by scanning retail bytes; none has been attempted yet:
+`func_L00_0052DCC0` (ends on fill, real size 100), `func_L00_00529374`,
+`func_L00_005411CC`, `func_L00_0051B4C4`, `func_L00_0051E97C`,
+`func_L00_0052A9BC`, `func_L00_0054651C`, `func_L00_0052A46C`,
+`func_L00_00553974`.
+
+`func_L00_0051B2A0` starts on a stray `addiu $sp, $sp, 0x20` and an alignment
+`nop`; its real prologue is at `0x0051B2A8` (size 0x1BC). See
+`build/try/func_L00_0051B2A0/NOTES.md`.
