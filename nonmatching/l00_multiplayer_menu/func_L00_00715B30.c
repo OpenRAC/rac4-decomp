@@ -1,4 +1,4 @@
-/* Not matching yet: BYTES 45/1160 (tools/try_func.py func_L00_00715B30 --diff). Not part of the build. */
+/* Not matching yet: BYTES 15/1160 (tools/try_func.py func_L00_00715B30 --diff). Not part of the build. */
 typedef struct Type1 Type1;
 struct Type1 {
     char _p0[0x4];
@@ -38,7 +38,6 @@ void func_L00_00715B30(Type1 *arg0) {
     u32 k;
     u32 len2;
     u32 len;
-    s32 w;
     char *base;
     char *p;
 
@@ -92,6 +91,7 @@ void func_L00_00715B30(Type1 *arg0) {
             if ((u32)p < (u32)(base + arg0->fF7C - 1)) {
                 s32 c1 = 0;
                 s32 c2 = 0;
+                s32 w;
                 w = func_L00_005BD768(p, 0, &c1) + 1;
                 if ((u32)(p + w) < (u32)(base + arg0->fF7C - 1)) {
                     func_L00_005BD768(p, w, &c2);
@@ -124,6 +124,7 @@ void func_L00_00715B30(Type1 *arg0) {
                 if ((u32)p < (u32)(base + arg0->fF7C - 1)) {
                     s32 c3 = 0;
                     s32 c4 = 0;
+                    s32 w;
                     w = func_L00_005BD768(p, 0, &c3) + 1;
                     if ((u32)(p + w) < (u32)(base + arg0->fF7C - 1)) {
                         func_L00_005BD768(p, w, &c4);
