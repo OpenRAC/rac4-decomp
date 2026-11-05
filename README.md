@@ -85,13 +85,13 @@ Each distinct function counts once: frontbin's copy of the menus is the main ima
 | Network (net.text) | 496 of 2,441 | 16,280 of 465,620 bytes (3.50%) | 4.51% |
 | Resident menus (.text) | 2,023 of 4,786 | 183,804 of 1,422,048 bytes (12.93%) | 13.11% |
 | frontbin's own code | 3 of 17 | 580 of 15,776 bytes (3.68%) | 3.68% |
-| **Shared level code** | 1,744 of 5,088 | 142,092 of 2,008,520 bytes (7.07%) | 7.71% |
-| **Level-specific code** | 1,126 of 4,080 | 100,936 of 1,601,892 bytes (6.30%) | 6.71% |
+| **Shared level code** | 1,747 of 5,088 | 142,276 of 2,008,520 bytes (7.08%) | 7.72% |
+| **Level-specific code** | 1,128 of 4,080 | 101,020 of 1,601,892 bytes (6.31%) | 6.72% |
 | Level 00: Multiplayer Menu | 777 of 2,826 | 68,044 of 943,820 bytes (7.21%) | 7.62% |
 | Level 01: Dreadzone Station (and 21) | 92 of 357 | 7,936 of 189,772 bytes (4.18%) | 4.18% |
 | Level 02: Catacrom Graveyard (and 22) | 6 of 29 | 224 of 21,232 bytes (1.06%) | 1.06% |
 | Level 04: Sarathos Swamp (and 24) | 5 of 19 | 600 of 11,868 bytes (5.06%) | 5.06% |
-| Level 05: Dark Cathedral (and 25) | 21 of 106 | 1,280 of 61,960 bytes (2.07%) | 2.22% |
+| Level 05: Dark Cathedral (and 25) | 23 of 106 | 1,364 of 61,960 bytes (2.20%) | 2.35% |
 | Level 06: Temple Of Shaar (and 26) | 7 of 31 | 460 of 9,440 bytes (4.87%) | 4.87% |
 | Level 07: Valix Lighthouse (and 27) | 4 of 44 | 464 of 27,640 bytes (1.68%) | 1.68% |
 | Level 08: Mining Facility (and 28) | 10 of 48 | 1,532 of 24,900 bytes (6.15%) | 6.15% |
@@ -101,7 +101,7 @@ Each distinct function counts once: frontbin's copy of the menus is the main ima
 | Level 14: Ghost Station (and 34) | 6 of 23 | 444 of 8,884 bytes (5.00%) | 5.00% |
 | Level 15: Control Level (and 35) | 27 of 134 | 2,980 of 116,624 bytes (2.56%) | 2.56% |
 | Level 41: Battledome Tower (all 22 multiplayer maps) | 148 of 374 | 14,836 of 140,340 bytes (10.57%) | 12.43% |
-| **Total** | 6,193 of 18,113 | 523,884 of 5,812,924 bytes (9.01%) | 9.50% |
+| **Total** | 6,198 of 18,113 | 524,152 of 5,812,924 bytes (9.02%) | 9.50% |
 
 Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 280,856 bytes (4.83%) are in units with nothing left to decompile.
 <!-- progress:end -->
