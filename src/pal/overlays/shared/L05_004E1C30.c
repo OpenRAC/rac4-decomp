@@ -18,4 +18,3 @@ int func_L05_004E1C30(int a1)
   *(_WORD *)(v2 + 334) = 0;
   return result;
 }
-

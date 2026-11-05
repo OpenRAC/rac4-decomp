@@ -27,4 +27,3 @@ int func_L02_004C7578(int a1)
   }
   return result;
 }
-
