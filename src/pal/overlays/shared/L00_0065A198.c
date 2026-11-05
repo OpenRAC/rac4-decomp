@@ -3,8 +3,8 @@
 
 s32 func_00499120(s32 arg0);
 s32 func_0049BF40(s32 arg0);
-s32 func_004CFDB8(s32 arg0);
-s32 func_004CFEE0(void);
+void func_004CFDB8(s32 arg0);
+void func_004CFEE0(void);
 s32 func_00506BB8(void);
 
 void func_L00_0065A198(void) {
