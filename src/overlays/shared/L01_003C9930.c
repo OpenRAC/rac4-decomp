@@ -1,8 +1,7 @@
-/* Not matching yet: BYTES 4/312 (tools/try_func.py func_L01_003C9930 --diff). Not part of the build. */
 #include "common.h"
 
 extern void func_00585D88(void *);
-extern s32 func_00653498(void *);
+extern s32 func_00653498(void);
 extern void func_L01_00591BD8(u8 *object, s32 new_state, s32 param);
 extern s32 D_0021EBD8;
 extern s32 D_0021DE10;
@@ -32,7 +31,7 @@ s32 func_L01_003C9930(u8 *object) {
         func_L01_00591BD8(object, 1, -1);
         return 1;
     }
-    if (func_00653498(object) == *(s32 *)(data + 0x88)) {
+    if (func_00653498() == *(s32 *)(data + 0x88)) {
         func_00585D88(object);
     }
     func_L01_00591BD8(object, 1, -1);

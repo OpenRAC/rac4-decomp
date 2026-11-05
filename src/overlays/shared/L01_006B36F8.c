@@ -1,4 +1,5 @@
-/* Not matching yet: BYTES 1/584 (tools/try_func.py func_L01_006B36F8 --diff). Not part of the build. */
+#include "common.h"
+
 typedef struct Type4 {
     char pad0[0xC];
     s32 fC;
@@ -74,7 +75,9 @@ s32 func_L01_006B36F8(Type1 *arg0, s32 arg1, s32 arg2) {
     if (mode == 0 && D_0021E828 == 0 && obj->f2B8) {
         return 1;
     }
-    if (mode != 0 || D_0021E828 != 1 || !obj->f2B8 || (!obj->f2BC && (s3->fC & 0x100000))) {
+    if (mode == 0 && D_0021E828 == 1 && obj->f2B8 && (obj->f2BC || !(s3->fC & 0x100000))) {
+        return 1;
+    }
     p = D_003660F8[0];
     i = 0;
     while (i < 10) {
@@ -92,19 +95,10 @@ s32 func_L01_006B36F8(Type1 *arg0, s32 arg1, s32 arg2) {
         i++;
         p = D_003660F8[i];
     }
-    if (obj->f2B8) {
-        return 1;
-    }
-    if (obj->f2BC) {
-        return 1;
-    }
-    if (obj->f328) {
-        return 1;
-    }
-    if (obj->f32C) {
-        return 1;
-    }
-    return arg0->f6A >= 6;
+    if (!obj->f2B8 && !obj->f2BC && !obj->f328 && !obj->f32C) {
+        goto tail;
     }
     return 1;
+tail:
+    return arg0->f6A >= 6;
 }
