@@ -1,0 +1,16 @@
+diff --git a/src/net/01F07E5C.c b/src/net/01F07E5C.c
+new file mode 100644
+--- /dev/null
++++ b/src/net/01F07E5C.c
+@@ -0,0 +1,11 @@
++/* cflags: -mno-split-addresses */
++#include "common.h"
++
++void func_01F07D54();
++extern s32 D_00170EF0_[];
++#define D_00170EF0 (D_00170EF0_[0])
++
++void func_01F07E5C(void **arg0) {
++    func_01F07D54();
++    *arg0 = &D_00170EF0;
++}

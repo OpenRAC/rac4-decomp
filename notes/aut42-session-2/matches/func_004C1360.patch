@@ -1,0 +1,36 @@
+diff --git a/src/game/004C1360.c b/src/game/004C1360.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004C1360.c
+@@ -0,0 +1,31 @@
++#include "common.h"
++
++typedef struct Type1 Type1;
++struct Type1 {
++    char _p0[0x14];
++    s32 f14;
++    s32 f18;
++    s32 f1C;
++    s32 f20;
++};
++
++s32 func_00499CE0(s32);
++s32 func_00505B20();
++s32 func_00505D30(s32);
++extern s32 D_0030B358_[];
++#define D_0030B358 (D_0030B358_[0])
++
++void func_004C1360(void) {
++    Type1 *temp_s0;
++
++    temp_s0 = (func_00505B20() * 0x258) + (u8 *)&D_0030B358;
++    func_00505D30(0xF);
++    func_00499CE0(temp_s0->f14);
++    temp_s0->f14 = 0;
++    func_00499CE0(temp_s0->f18);
++    temp_s0->f18 = 0;
++    func_00499CE0(temp_s0->f1C);
++    temp_s0->f1C = 0;
++    func_00499CE0(temp_s0->f20);
++    temp_s0->f20 = 0;
++}

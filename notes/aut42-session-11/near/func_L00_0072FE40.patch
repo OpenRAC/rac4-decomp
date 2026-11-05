@@ -1,0 +1,127 @@
+diff --git a/nonmatching/l00_multiplayer_menu/func_L00_0072FE40.c b/nonmatching/l00_multiplayer_menu/func_L00_0072FE40.c
+new file mode 100644
+--- /dev/null
++++ b/nonmatching/l00_multiplayer_menu/func_L00_0072FE40.c
+@@ -0,0 +1,122 @@
++/* Not matching yet: BYTES 24/820 (tools/try_func.py func_L00_0072FE40 --diff). Not part of the build. */
++#include "common.h"
++
++
++
++s32 func_L00_005C9F50();
++s32 func_L00_0070CD80();
++s32 func_L00_0070CEB8();
++s32 func_L00_0071B3C8();
++s32 func_L00_0071BE28();
++s32 func_L00_00770AD8();
++s32 func_L00_00770BE8();
++extern s32 D_00220F70_[];
++extern s32 D_00220FA8_[];
++extern void *D_002233A4;
++extern void func_L00_00770C70(void);
++#define D_00220F70 (D_00220F70_[0])
++#define D_00220FA8 (D_00220FA8_[0])
++
++
++void func_L00_0072FE40(void *arg0) {
++    s32 var_a1;
++    s32 var_s0;
++    s32 var_s2;
++    void *temp_a0;
++    void *temp_a0_10;
++    void *temp_a0_11;
++    void *temp_a0_12;
++    void *temp_a0_13;
++    void *temp_a0_14;
++    void *temp_a0_15;
++    void *temp_a0_16;
++    void *temp_a0_17;
++    void *temp_a0_18;
++    void *temp_a0_19;
++    void *temp_a0_20;
++    void *temp_a0_21;
++    void *temp_a0_22;
++    void *temp_a0_23;
++    void *temp_a0_24;
++    void *temp_a0_25;
++    void *temp_a0_2;
++    void *temp_a0_3;
++    void *temp_a0_4;
++    void *temp_a0_5;
++    void *temp_a0_6;
++    void *temp_a0_7;
++    void *temp_a0_8;
++    void *temp_a0_9;
++    void *temp_s0;
++
++    func_L00_0071BE28(arg0,0x21, 0xFFFFFFFF);
++    var_s2 = 0;
++    func_L00_0071B3C8(arg0);
++    temp_a0 = (*(s32 *)((u8 *)(arg0) + 0xFC));
++    ((void (*)(s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0) + 0x58))) + 0xE8)))(temp_a0, &D_00220F70);
++    temp_s0 = (*(s32 *)((u8 *)((*(s32 *)((u8 *)(arg0) + 0x104))) + 0x58));
++    ((void (*)(s32,s32))(*(s32 *)((u8 *)(temp_s0) + 0xE8)))((*(s32 *)((u8 *)(arg0) + 0x104)), func_L00_005C9F50(0xCD5));
++    temp_a0_2 = (*(s32 *)((u8 *)(arg0) + 0xB0));
++    ((void (*)(s32,s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_2) + 0x58))) + 0x20)))(temp_a0_2, 1, 0);
++    temp_a0_3 = (*(s32 *)((u8 *)(arg0) + 0xB4));
++    ((void (*)(s32,s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_3) + 0x58))) + 0x20)))(temp_a0_3, 1, 0);
++    temp_a0_4 = (*(s32 *)((u8 *)(arg0) + 0xB8));
++    ((void (*)(s32,s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_4) + 0x58))) + 0x20)))(temp_a0_4, 1, 0);
++    temp_a0_5 = (*(s32 *)((u8 *)(arg0) + 0xBC));
++    ((void (*)(s32,s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_5) + 0x58))) + 0x20)))(temp_a0_5, 1, 0);
++    temp_a0_6 = (*(s32 *)((u8 *)(arg0) + 0xC0));
++    ((void (*)(s32,s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_6) + 0x58))) + 0x20)))(temp_a0_6, 1, 0);
++    temp_a0_7 = (*(s32 *)((u8 *)(arg0) + 0xC4));
++    ((void (*)(s32,s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_7) + 0x58))) + 0x20)))(temp_a0_7, 1, 0);
++    temp_a0_8 = (*(s32 *)((u8 *)(arg0) + 0xC8));
++    ((void (*)(s32,s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_8) + 0x58))) + 0x20)))(temp_a0_8, 1, 0);
++    temp_a0_9 = (*(s32 *)((u8 *)(arg0) + 0xCC));
++    ((void (*)(s32,s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_9) + 0x58))) + 0x20)))(temp_a0_9, 1, 0);
++    temp_a0_10 = (*(s32 *)((u8 *)(arg0) + 0xD0));
++    ((void (*)(s32,s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_10) + 0x58))) + 0x20)))(temp_a0_10, 1, 0);
++    temp_a0_11 = (*(s32 *)((u8 *)(arg0) + 0xD4));
++    ((void (*)(s32,s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_11) + 0x58))) + 0x20)))(temp_a0_11, 1, 0);
++    temp_a0_12 = (*(s32 *)((u8 *)(arg0) + 0xD8));
++    ((void (*)(s32,s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_12) + 0x58))) + 0x20)))(temp_a0_12, 1, 0);
++    temp_a0_13 = (*(s32 *)((u8 *)(arg0) + 0xDC));
++    ((void (*)(s32,s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_13) + 0x58))) + 0x20)))(temp_a0_13, 1, 0);
++    temp_a0_14 = (*(s32 *)((u8 *)(arg0) + 0xE0));
++    ((void (*)(s32,s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_14) + 0x58))) + 0x20)))(temp_a0_14, 1, 0);
++    temp_a0_15 = (*(s32 *)((u8 *)(arg0) + 0xE4));
++    ((void (*)(s32,s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_15) + 0x58))) + 0x20)))(temp_a0_15, 1, 0);
++    temp_a0_16 = (*(s32 *)((u8 *)(arg0) + 0xE8));
++    ((void (*)(s32,s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_16) + 0x58))) + 0x20)))(temp_a0_16, 1, 0);
++    temp_a0_17 = (*(s32 *)((u8 *)(arg0) + 0xEC));
++    ((void (*)(s32,s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_17) + 0x58))) + 0x20)))(temp_a0_17, 1, 0);
++    temp_a0_18 = (*(s32 *)((u8 *)(arg0) + 0xF0));
++    ((void (*)(s32,s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_18) + 0x58))) + 0x20)))(temp_a0_18, 1, 0);
++    temp_a0_19 = (*(s32 *)((u8 *)(arg0) + 0xF4));
++    ((void (*)(s32,s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_19) + 0x58))) + 0x20)))(temp_a0_19, 1, 0);
++    temp_a0_20 = (*(s32 *)((u8 *)(arg0) + 0xF8));
++    ((void (*)(s32,s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_20) + 0x58))) + 0x20)))(temp_a0_20, 1, 0);
++    temp_a0_21 = (*(s32 *)((u8 *)(arg0) + 0xFC));
++    ((void (*)(s32,s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_21) + 0x58))) + 0x20)))(temp_a0_21, 2, 0);
++    temp_a0_22 = (*(s32 *)((u8 *)(arg0) + 0x100));
++    ((void (*)(s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_22) + 0x58))) + 0x54)))(temp_a0_22, 0);
++    temp_a0_23 = (*(s32 *)((u8 *)(arg0) + 0x100));
++    ((void (*)(s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_23) + 0x58))) + 0xE8)))(temp_a0_23, &D_00220FA8);
++    temp_a0_24 = (*(s32 *)((u8 *)(arg0) + 0x100));
++    ((void (*)(s32,s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_24) + 0x58))) + 0x20)))(temp_a0_24, 2, 0);
++    temp_a0_25 = (*(s32 *)((u8 *)(arg0) + 0x104));
++    ((void (*)(s32,s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_25) + 0x58))) + 0x20)))(temp_a0_25, 2, 0);
++    for (; var_s2<0x46;var_s2++) {
++        func_L00_0070CD80(arg0 + 0xCC8,var_s2);
++    }
++    func_L00_0070CEB8(arg0+0xCC8);
++    var_s0 = 0;
++    if (D_002233A4 != NULL) {
++        var_s0 = (*(s32 *)((u8 *)(D_002233A4) + 0x44));
++    }
++    func_L00_00770AD8(var_s0, &func_L00_00770C70);
++    func_L00_00770BE8(var_s0);
++    (*(volatile s32 *)((u8 *)(arg0) + 0xCC4)) = 0;
++    (*(volatile s8 *)((u8 *)(arg0) + 0x274)) = 0;
++    (*(volatile s8 *)((u8 *)(arg0) + 0x112C)) = 0;
++    (*(volatile s32 *)((u8 *)(arg0) + 0xCBC)) = 0;
++    (*(volatile s32 *)((u8 *)(arg0) + 0xCC0)) = 0;
++}

@@ -1,0 +1,12 @@
+diff --git a/src/overlays/l00_multiplayer_menu/L00_0051CC70.c b/src/overlays/l00_multiplayer_menu/L00_0051CC70.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/l00_multiplayer_menu/L00_0051CC70.c
+@@ -0,0 +1,7 @@
++#include "common.h"
++
++void func_0011A8A0(s32, s32);
++
++void func_L00_0051CC70(void **arg0, void **arg1) {
++    func_0011A8A0((*(s32 *)((u8 *)((*arg0)) + 0x4)), (*(s32 *)((u8 *)((*arg1)) + 0x4)));
++}

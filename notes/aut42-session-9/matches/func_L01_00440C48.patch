@@ -1,0 +1,16 @@
+diff --git a/src/overlays/shared/L01_00440C48.c b/src/overlays/shared/L01_00440C48.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L01_00440C48.c
+@@ -0,0 +1,11 @@
++/* cflags: -mno-split-addresses */
++#include "common.h"
++
++void func_L01_00440C48(void *arg0, s32 arg1) {
++    void *temp_v0;
++
++    temp_v0 = (*(s32 *)((u8 *)(arg0) + 0xAC));
++    (*(f32 *)((u8 *)(temp_v0) + 0x58)) = 1.0f;
++    (*(f32 *)((u8 *)(temp_v0) + 0x4C)) = 1.0f;
++    (*(s8 *)((u8 *)((temp_v0 + arg1)) + 0x40)) = 0;
++}

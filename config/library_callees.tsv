@@ -1,0 +1,5 @@
+# Library callee identities, not source-match claims (tools/audit_relocs.py).
+# symbol	retail US address
+# __udivdi3: the prebuilt EE libgcc object matches all 1488 bytes after relocations;
+# the source rebuild remains unmatched. See src/libgcc/README.md.
+__udivdi3	0x0012FEB0

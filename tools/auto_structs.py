@@ -227,6 +227,11 @@ def already_done():
     return done
 
 
+def is_game_code(name):
+    """Library rows are rebuilt from their own sources, never reconstructed."""
+    return layout.info(name)["area"] not in ("libgcc", "libm")
+
+
 def retail_reader(dirs):
     main = mp.sections(ELFFile(open(ROOT / "baserom" / "SCUS_974.65.elf", "rb")))
     cache = {}
@@ -249,7 +254,7 @@ def prepare(cls, limit):
         asm[p.stem] = p
     # smallest first; among overlay functions the ones shared by most levels first
     cands = sorted((s, -k, n, a, lvl) for n, a, s, lvl, k in rows
-                   if n not in done and n in asm and MIN_SIZE <= s <= MAX_SIZE)
+                   if n not in done and n in asm and is_game_code(n) and MIN_SIZE <= s <= MAX_SIZE)
     cands.sort(key=lambda c: (c[1], c[0]))
     AUTO.mkdir(parents=True, exist_ok=True)
     for old in glob.glob(str(AUTO / "*.c")) + glob.glob(str(AUTO / "obj" / "*.o")):
@@ -281,8 +286,8 @@ def prepare(cls, limit):
 
 
 def check(cls):
-    dirs, rows = load(cls)
-    info = {n: (a, s, lvl) for n, a, s, lvl, _ in rows}
+    dirs, _ = load("overlay")
+    info = check_info()
     read = retail_reader(dirs)
     exact, tried = {}, set()
     for path in sorted(glob.glob(str(AUTO / "obj" / "*.o"))):
@@ -321,6 +326,12 @@ def check(cls):
     print("tried %d functions, %d compile to exactly retail" % (len(tried), len(exact)))
 
 
+def check_info():
+    """Function locations for every object the shared checker may inspect."""
+    rows = load("overlay")[1] + load("main")[1]
+    return {n: (a, s, lvl) for n, a, s, lvl, _ in rows}
+
+
 def renumber(src):
     """Name the generated structures T1, T2 ... in order of appearance."""
     mapping = {}
@@ -343,12 +354,24 @@ def adopt():
     print("adopted %d functions into src/" % n)
 
 
+def parse_args(argv):
+    """Return the command, catalogue class, and optional preparation limit."""
+    command = argv[0] if argv else ""
+    cls = "overlay"
+    limit = 300
+    if command == "prepare":
+        rest = argv[1:]
+        if rest and rest[0] in ("overlay", "main"):
+            cls = rest.pop(0)
+        if rest and rest[0].isdigit():
+            limit = int(rest[0])
+    return command, cls, limit
+
+
 if __name__ == "__main__":
-    cmd = sys.argv[1] if len(sys.argv) > 1 else ""
-    cls = sys.argv[2] if len(sys.argv) > 2 and not sys.argv[2].isdigit() else "overlay"
+    cmd, cls, limit = parse_args(sys.argv[1:])
     if cmd == "prepare":
-        n = int(sys.argv[-1]) if sys.argv[-1].isdigit() else 300
-        prepare(cls, n)
+        prepare(cls, limit)
     elif cmd == "check":
         check(cls)
     elif cmd == "adopt":

@@ -1,0 +1,39 @@
+diff --git a/src/overlays/shared/L05_004DB658.c b/src/overlays/shared/L05_004DB658.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L05_004DB658.c
+@@ -0,0 +1,34 @@
++/* cflags: -mno-split-addresses */
++#include "common.h"
++
++typedef struct Type1 Type1;
++typedef struct Type2 Type2;
++struct Type2 {
++    char _p0[0x530];
++    s32 f530;
++};
++struct Type1 {
++    char _p0[0xAC];
++    s32 fAC;
++};
++
++s32 func_005ADC30(s32, s32, s32);
++s32 func_L00_005DD4A0(void *);
++s32 func_L01_0056CDB0(Type1 *);
++s32 func_L01_0056E7F8(void *);
++s32 func_L01_00591BD8(void *, s32, s32);
++s32 func_L01_005A8928(void *);
++
++void func_L05_004DB658(Type1 *arg0) {
++    Type2 *temp_s1;
++
++    temp_s1 = arg0->fAC;
++    func_L01_0056CDB0(arg0);
++    func_L01_0056E7F8(arg0);
++    func_L01_005A8928(arg0);
++    func_L00_005DD4A0(temp_s1->f530);
++    temp_s1->f530 = NULL;
++    func_005ADC30(0, 0x400, 0);
++    func_L01_00591BD8(arg0, 0x12, 2);
++    func_L00_005DD4A0(arg0);
++}

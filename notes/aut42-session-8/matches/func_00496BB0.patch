@@ -1,0 +1,11 @@
+diff --git a/src/game/00496BB0.c b/src/game/00496BB0.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00496BB0.c
+@@ -0,0 +1,6 @@
++#include "common.h"
++
++extern void func_00497438(s32,s32,s32);
++void func_00496BB0(s32 arg0,s32 arg1) {
++    func_00497438(arg0,arg1,0);
++}

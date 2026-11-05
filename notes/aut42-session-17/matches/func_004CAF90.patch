@@ -1,0 +1,14 @@
+diff --git a/src/game/004CAF90.c b/src/game/004CAF90.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004CAF90.c
+@@ -0,0 +1,9 @@
++#include "common.h"
++s32 func_004CAF30(s32);
++s32 D_0021FA28=0;
++s32 func_004CAF90(s32 arg0) {
++    s32 v;
++    if(D_0021FA28!=0) v=1;
++    else v=func_004CAF30(arg0);
++    return v;
++}

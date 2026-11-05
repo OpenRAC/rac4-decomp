@@ -1,0 +1,51 @@
+{
+  "attempted_new_targets": 562,
+  "targets_producing_function_objects": 258,
+  "new_exact_candidates": 51,
+  "compiled_bytes": 5920,
+  "retail_bytes": 6040,
+  "global_corrections": 25,
+  "full_build_files": 3580,
+  "full_byte_audit_exact": 2896,
+  "full_byte_audit_not_exact": 0,
+  "full_byte_audit_unlisted": 705,
+  "full_relocations_checked": 7688,
+  "new_candidate_relocations_checked": 225,
+  "new_candidate_relocation_mismatches": 0,
+  "new_candidate_unresolved": 0,
+  "remaining_baseline_mismatches": 1,
+  "remaining_baseline_function": "func_L41_003BEE28",
+  "retained_near_miss": {
+    "function": "func_004E6FA0",
+    "verdict": "BYTES 3/96"
+  },
+  "source_adoptions": 0,
+  "candidate_report_statuses": {
+    "candidate-us-map": 0,
+    "candidate-pal-map": 1,
+    "candidate-us-progress": 0,
+    "candidate-pal-progress": 0,
+    "candidate-us-check": 0,
+    "candidate-pal-check": 1
+  },
+  "restored_build_files": 3529,
+  "restored_byte_audit": {
+    "exact": 2845,
+    "not_exact": 0,
+    "unlisted": 705
+  },
+  "restored_relocation_audit": {
+    "checked": 7463,
+    "mismatches": 27,
+    "functions_with_mismatches": 26,
+    "unresolved": 0
+  },
+  "unit_tests_passed": 11,
+  "original_maps_reports_retained": true,
+  "near_mapping_drift_rows_not_adopted": 8,
+  "restored_metadata_checks": {
+    "us": true,
+    "pal": true,
+    "legacy": true
+  }
+}

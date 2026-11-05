@@ -1,0 +1,28 @@
+diff --git a/src/overlays/shared/L05_0048EB88.c b/src/overlays/shared/L05_0048EB88.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L05_0048EB88.c
+@@ -0,0 +1,23 @@
++#include "common.h"
++
++typedef struct Type1 Type1;
++typedef struct Type2 Type2;
++struct Type2 {
++    char _p0[0x34];
++    u16 f34;
++};
++struct Type1 {
++    char _p0[0x34];
++    u16 f34;
++    char _p36[0x82];
++    s32 fB8;
++};
++
++void func_L05_0048EB88(Type1 *arg0) {
++    Type2 *temp_v0;
++
++    temp_v0 = arg0->fB8;
++    if ((temp_v0 != NULL) && (temp_v0->f34 & 1)) {
++        arg0->f34 = (u16) (arg0->f34 | 0x41);
++    }
++}

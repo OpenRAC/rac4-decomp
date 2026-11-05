@@ -1,0 +1,62 @@
+{
+  "reviewed_candidates": 26,
+  "reviewed_existing_corrections": 25,
+  "reviewer": "independent code-review agent",
+  "remaining_critical": 0,
+  "remaining_important": 0,
+  "scope": "Retail instructions and own reconstructed code; ABI inputs, returns, pointer scales, widths, globals, call targets and float/vector arguments. Compilation and full audits handled by primary agent. Indirect callbacks not exhaustively typed.",
+  "findings": [
+    {
+      "function": "func_L00_00779750",
+      "severity": "important",
+      "finding": "Missing a0 input forwarded through func_01ED5D30 into func_0011AFC8.",
+      "resolution": "Wrapper now takes void *arg0 and explicitly forwards it; helper prototype declares the pointer."
+    },
+    {
+      "function": "func_004A1140",
+      "severity": "important",
+      "finding": "Buffer and stored callback declared as scalar integers, incompatible with existing callers.",
+      "resolution": "Use void * for arg1/arg3, pointer store at +0x38, and pointer callee parameter."
+    },
+    {
+      "function": "func_L00_005C0880",
+      "severity": "important",
+      "finding": "Text pointer typed as s32 in wrapper and measurement helper declaration.",
+      "resolution": "Use void *arg0 and void * first callee argument; preserve float f12 and integer return."
+    },
+    {
+      "function": "func_004C3988",
+      "severity": "minor",
+      "finding": "Duplicate lookup declaration.",
+      "resolution": "Duplicate removed before final scratch compilation."
+    }
+  ],
+  "source_sha256": {
+    "func_L01_00400FE8": "b363005d96628a959266049333ef128ba285e7901100c14b51070cc148abb5b8",
+    "func_0048AF30": "36d5c58a9652771ce2ce97c1fcdc98b88e093df685c795bedd9dcf81f8939ae0",
+    "func_L00_0071BB58": "d7561beca262f6ce47951a1042cec6620c5f9b815f03a9bacf43ccf82a865eff",
+    "func_L00_006847D8": "d48259ad0a4107f94ba9a68b4f28546837c5445c4269a3aab8687d23d0a03f3b",
+    "func_0050EF88": "0182dd51d5aac30cdced82fbbcc9645ad93331972aa0467223a76bad7b4ee53d",
+    "func_L01_004D7008": "3edc613001f6f2c9bc36c5a9f6ce418d65e7df93d10f041ce0f0e3e383f6405f",
+    "func_L00_00766EB8": "2bc6ebb3ce790c7948c437a92cb6dc705d8cf1c626024a391856558aaf7fc3a4",
+    "func_L00_0077DF00": "c4f2a77f5cbed78cd293593949cbd8c32e9a6ad0d8113cd98833c9d400078c16",
+    "func_0050F030": "fcf359697c73d695ce2a45584da0af228a6ac60b8748ea5eeac7ec8ec19fcefe",
+    "func_L00_00752638": "6648992aeb3198b6067aaa2e83c2ebefb018bd5682f8cb767e07594971033cf3",
+    "func_L00_00710788": "ab4a5c87542eeaad54d29f4ab1c66e20c89cf0e00007800992a6d31368df4976",
+    "func_L02_004CF4C8": "eaafe78ff2b75ee06dfb794cecd59d689e0cf7eccb2381f6942809a6eb11fee2",
+    "func_L00_00708378": "ae7519f22f7062a999669dcda7639b8de87943b390d5d85580ef87348eca5c0d",
+    "func_004C3988": "c9e479d477c82000bbab1eb9096f07910fb1c5ae5fcafd41bce2d1cbe60f7a1d",
+    "func_0046A320": "83e3cbcdeb2ef4385a890e158bf1cc1b2ac323fdb210b4d5892f7e8a6b1c541e",
+    "func_00497908": "28e93dfbb514418029939c62b19ed332e76c508ce86ee17b23ce18098d3c9e88",
+    "func_0049F010": "0f80638584876fc554f4eb70b6ddd3aebda02757b8b77aca41b764cd101b4646",
+    "func_004A1140": "dc2e2daba249add6d005a01654e9ead82e7976df5c1b5e19b570bda807905023",
+    "func_004A1D58": "b1e1ca7ae9b39d9478402ab11d280f39820c22a0a21fa2a2d60b33bedf547ab0",
+    "func_00549CA0": "1711f087c87b64ff73958d4a50feaed93e914e4134c67d23b406cb1984818103",
+    "func_L01_00468D48": "9e763ad48c36eeea1c955ff5d98494f9199e759cecf5eb8b28787e88dbfca663",
+    "func_L00_00779750": "a12c7d037a68681dac35827d01d6b1c7d967579e1234e72259659c8c7aa85cc7",
+    "func_004FF4C0": "09abd39adcbb07d2b37acfff4e67f7b0094a1d373070b189683e5eaf1f30d5f6",
+    "func_00511298": "1b1c2b72907acf7bb1dd2da2145751c914cae2ff4e4cbae5ecb5419c6d46d41e",
+    "func_004CAF90": "8a89be60a6fed80ba5e96c598caa5ec734f6367035164434231fe4003c31bb60",
+    "func_L00_005C0880": "331a1e5ffad5a5eda5d430364f7593fb824e48a3c4ee44fa1e937dad920dbf6a"
+  }
+}

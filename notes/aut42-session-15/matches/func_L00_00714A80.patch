@@ -1,0 +1,37 @@
+diff --git a/src/overlays/l00_multiplayer_menu/L00_00714A80.c b/src/overlays/l00_multiplayer_menu/L00_00714A80.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/l00_multiplayer_menu/L00_00714A80.c
+@@ -0,0 +1,32 @@
++#include "common.h"
++
++typedef struct Type1 Type1;
++typedef struct Type2 Type2;
++struct Type1 {
++    char _p0[0x5C];
++    s32 f5C;
++    char _p60[0x10];
++    s32 f70;
++    s32 f74;
++    s32 f78;
++    s32 f7C;
++};
++struct Type2 {
++    char _p0[0x40];
++    s32 f40;
++    s32 f44;
++    s32 f48;
++    s32 f4C;
++    s32 f50;
++};
++
++void func_L00_007107F0(Type1 *, Type2 *);
++
++void func_L00_00714A80(Type1 *arg0, Type2 *arg1) {
++    func_L00_007107F0(arg0, arg1);
++    arg0->f5C = (s32) arg1->f40;
++    arg0->f70 = (s32) arg1->f44;
++    arg0->f74 = (s32) arg1->f48;
++    arg0->f78 = (s32) arg1->f4C;
++    arg0->f7C = (s32) arg1->f50;
++}

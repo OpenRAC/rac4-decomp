@@ -1,0 +1,19 @@
+diff --git a/src/game/00511318.c b/src/game/00511318.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00511318.c
+@@ -0,0 +1,14 @@
++#include "common.h"
++
++extern s32 D_00336838_[];
++#define D_00336838 (D_00336838_[0])
++
++s32 func_00511318(s32 arg0, s32 arg1, s32 arg2) {
++    u16 *temp_a3;
++    u16 temp_v1;
++
++    temp_a3 = (arg2 * 2) + (arg0 * 0x600) + (u8 *)&D_00336838;
++    temp_v1 = *temp_a3;
++    *temp_a3 = temp_v1 + 1;
++    return (arg0 << 0x18) | (arg1 << 0x1C) | (arg2 & 0xFFF) | (((s32) (temp_v1 << 0x10) >> 4) & 0xFFF000);
++}

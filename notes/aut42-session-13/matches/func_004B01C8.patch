@@ -1,0 +1,15 @@
+diff --git a/src/game/004B01C8.c b/src/game/004B01C8.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004B01C8.c
+@@ -0,0 +1,10 @@
++#include "common.h"
++
++void func_004B0290();
++extern s8 D_003095B8_[];
++#define D_003095B8 (D_003095B8_[0])
++
++void func_004B01C8(void) {
++    func_004B0290();
++    D_003095B8 = 0;
++}

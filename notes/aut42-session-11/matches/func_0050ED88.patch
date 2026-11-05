@@ -1,0 +1,22 @@
+diff --git a/src/game/0050ED88.c b/src/game/0050ED88.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/0050ED88.c
+@@ -0,0 +1,17 @@
++#include "common.h"
++
++void func_0050ED88(void *arg0) {
++    u16 var_a1;
++    void *temp_v1;
++
++    (*(s8 *)((u8 *)((*(s32 *)((u8 *)(arg0) + 0x40))) + 0x51)) = 0;
++    temp_v1 = (*(s32 *)((u8 *)(arg0) + 0x40));
++    var_a1 = 0;
++    if ((*(u16 *)((u8 *)(temp_v1) + 0x40)) & 8) {
++        var_a1 = (*(u16 *)((u8 *)(temp_v1) + 0x44));
++    }
++    (*(s16 *)((u8 *)(temp_v1) + 0x4E)) = var_a1;
++    (*(s8 *)((u8 *)((*(s32 *)((u8 *)(arg0) + 0x40))) + 0x52)) = 0;
++    (*(s32 *)((u8 *)((*(s32 *)((u8 *)(arg0) + 0x40))) + 0x38)) = 0;
++    (*(s32 *)((u8 *)((*(s32 *)((u8 *)(arg0) + 0x40))) + 0x34)) = 0;
++}

@@ -31,8 +31,9 @@ def normalise(code: bytes):
 
 
 # Relocation types whose field the linker fills in: R_MIPS_26 (j/jal target),
-# R_MIPS_HI16, R_MIPS_LO16, R_MIPS_GPREL16 (immediate). Any other type: the word.
-RELOC_FIELDS = {4: 0x03FFFFFF, 5: 0xFFFF, 6: 0xFFFF, 7: 0xFFFF}
+# R_MIPS_HI16, R_MIPS_LO16, R_MIPS_GPREL16 and R_MIPS_LITERAL (immediate).
+# Any other type: the word.
+RELOC_FIELDS = {4: 0x03FFFFFF, 5: 0xFFFF, 6: 0xFFFF, 7: 0xFFFF, 8: 0xFFFF}
 
 
 def reloc_masks(elf, section: str = ".text") -> dict:

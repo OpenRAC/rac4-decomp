@@ -1,0 +1,14 @@
+diff --git a/src/net/01EEE12C.c b/src/net/01EEE12C.c
+new file mode 100644
+--- /dev/null
++++ b/src/net/01EEE12C.c
+@@ -0,0 +1,9 @@
++/* cflags: -mno-split-addresses */
++#include "common.h"
++
++extern s32 D_0016E430_[];
++#define D_0016E430 (D_0016E430_[0])
++
++s32 func_01EEE12C(void) {
++    return D_0016E430;
++}

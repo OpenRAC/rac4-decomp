@@ -1,0 +1,18 @@
+diff --git a/src/overlays/shared/L15_004DD510.c b/src/overlays/shared/L15_004DD510.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L15_004DD510.c
+@@ -0,0 +1,13 @@
++/* cflags: -fno-schedule-insns */
++#include "common.h"
++
++void func_L15_004DD510(void *arg0, s16 arg1, f32 fparg0) {
++    void *temp_v0;
++
++    temp_v0 = (*(s32 *)((u8 *)(arg0) + 0xAC));
++    (*(s16 *)((u8 *)(temp_v0) + 0x300)) = arg1;
++    (*(f32 *)((u8 *)(temp_v0) + 0x30C)) = fparg0;
++    (*(f32 *)((u8 *)(temp_v0) + 0x208)) = -10.0f;
++    (*(s16 *)((u8 *)(temp_v0) + 0x302)) = 0;
++    (*(s32 *)((u8 *)(temp_v0) + 0x32C)) = 0;
++}

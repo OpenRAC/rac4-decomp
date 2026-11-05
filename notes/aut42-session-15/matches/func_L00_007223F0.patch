@@ -1,0 +1,79 @@
+diff --git a/src/overlays/l00_multiplayer_menu/L00_007223F0.c b/src/overlays/l00_multiplayer_menu/L00_007223F0.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/l00_multiplayer_menu/L00_007223F0.c
+@@ -0,0 +1,74 @@
++#include "common.h"
++
++s32 func_L00_005C9F50();
++s32 func_L00_00769DE0(void *);
++extern void *D_002233A4;
++
++void func_L00_007223F0(void *arg0) {
++    s32 temp_v0;
++    s32 temp_v1;
++    s32 temp_v1_2;
++    void *temp_a0;
++    void *temp_a0_2;
++    void *temp_a0_3;
++    void *temp_a1;
++    void *temp_s0;
++    void *temp_s0_2;
++    void *temp_s0_3;
++    void *temp_s2;
++    void *var_s0;
++
++    var_s0 = NULL;
++    temp_s2 = (*(s32 *)((u8 *)(D_002233A4) + 0x3C));
++    if ((*(u8 *)((u8 *)(temp_s2) + 0x408)) != 0) {
++        temp_v1 = (*(s32 *)((u8 *)(temp_s2) + 0x40C));
++        if (temp_v1 >= 0) {
++            var_s0 = temp_s2 + ((temp_v1 * 0xC) + 0x420);
++        }
++    }
++    if ((*(u8 *)((u8 *)(arg0) + 0x264)) != 0) {
++        if ((*(u8 *)((u8 *)(temp_s2) + 0x410)) == 0) {
++            (*(s32 *)((u8 *)(arg0) + 0x260)) = (s32) (*(s32 *)((u8 *)(temp_s2) + 0x418));
++            func_L00_00769DE0(temp_s2);
++            (*(u8 *)((u8 *)(arg0) + 0x264)) = 0U;
++        }
++        if ((*(u8 *)((u8 *)(arg0) + 0x264)) == 0) {
++            goto block_7;
++        }
++    } else {
++block_7:
++        temp_v1_2 = (*(s32 *)((u8 *)(temp_s2) + 0x418));
++        if ((*(s32 *)((u8 *)(arg0) + 0x260)) != temp_v1_2) {
++            (*(s32 *)((u8 *)(arg0) + 0x260)) = temp_v1_2;
++            temp_v0 = (*(s32 *)((u8 *)(var_s0) + 0x4));
++            (*(s32 *)((u8 *)(arg0) + 0x268)) = temp_v0;
++            if (temp_v0 == 0) {
++                temp_s0 = (*(s32 *)((u8 *)((*(s32 *)((u8 *)(arg0) + 0xB8))) + 0x58));
++                ((void (*)(s32,s32))(*(s32 *)((u8 *)(temp_s0) + 0xE8)))((*(s32 *)((u8 *)(arg0) + 0xB8)), func_L00_005C9F50(0x101E));
++                temp_a0 = (*(s32 *)((u8 *)(arg0) + 0xB8));
++                ((void (*)(s32,s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0) + 0x58))) + 0x20)))(temp_a0, 3, 0);
++                (*(s32 *)((u8 *)(arg0) + 0x26C)) = -1;
++                if ((*(u8 *)((u8 *)(temp_s2) + 0x30)) != 0) {
++                    temp_s0_2 = (*(s32 *)((u8 *)((*(s32 *)((u8 *)(arg0) + 0xC4))) + 0x58));
++                    ((void (*)(s32,s32))(*(s32 *)((u8 *)(temp_s0_2) + 0xE8)))((*(s32 *)((u8 *)(arg0) + 0xC4)), func_L00_005C9F50(0xFD5));
++                }
++            } else {
++                temp_a1 = *(void **)(*(s32 *)((u8 *)(var_s0) + 0x8));
++                if ((*(u8 *)((u8 *)(temp_a1) + 0xC8)) != 0) {
++                    (*(s32 *)((u8 *)(arg0) + 0x26C)) = (s32) (*(s32 *)((u8 *)(temp_a1) + 0xCC));
++                    (*(s32 *)((u8 *)(arg0) + 0x270)) = (s32) (*(s32 *)((u8 *)(temp_a1) + 0xD0));
++                } else {
++                    (*(s32 *)((u8 *)(arg0) + 0x26C)) = -1;
++                }
++                temp_a0_2 = (*(s32 *)((u8 *)(arg0) + 0xB8));
++                ((void (*)(s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_2) + 0x58))) + 0xE8)))(temp_a0_2, temp_a1);
++                temp_a0_3 = (*(s32 *)((u8 *)(arg0) + 0xB8));
++                ((void (*)(s32,s32,s32))(*(s32 *)((u8 *)((*(s32 *)((u8 *)(temp_a0_3) + 0x58))) + 0x20)))(temp_a0_3, 2, 0);
++                if ((*(u8 *)((u8 *)(temp_s2) + 0x30)) != 0) {
++                    temp_s0_3 = (*(s32 *)((u8 *)((*(s32 *)((u8 *)(arg0) + 0xC4))) + 0x58));
++                    ((void (*)(s32,s32))(*(s32 *)((u8 *)(temp_s0_3) + 0xE8)))((*(s32 *)((u8 *)(arg0) + 0xC4)), func_L00_005C9F50(0xFD6));
++                }
++            }
++        }
++    }
++}

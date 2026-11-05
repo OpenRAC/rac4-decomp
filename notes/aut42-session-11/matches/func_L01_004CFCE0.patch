@@ -1,0 +1,26 @@
+diff --git a/src/overlays/shared/L01_004CFCE0.c b/src/overlays/shared/L01_004CFCE0.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L01_004CFCE0.c
+@@ -0,0 +1,21 @@
++#include "common.h"
++
++s32 func_004CA908(void *);
++void func_004CA930(void *);
++
++s32 func_L01_004CFCE0(void *arg0) {
++    u8 var_v0;
++    void *temp_s1;
++
++    temp_s1 = (*(s32 *)((u8 *)(arg0) + 0xAC));
++    if ((*(s32 *)((u8 *)(temp_s1) + 0x2E0)) == 0) {
++        return 0;
++    }
++    var_v0 = 0;
++    if (func_004CA908(arg0) == 0) {
++        func_004CA930(arg0);
++        (*(s8 *)((u8 *)(temp_s1) + 0x2DF)) = 1;
++        var_v0 = 1;
++    }
++    return var_v0;
++}

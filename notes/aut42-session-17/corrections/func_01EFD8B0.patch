@@ -1,0 +1,14 @@
+diff --git a/src/net/01EFD8B0.c b/src/net/01EFD8B0.c
+--- a/src/net/01EFD8B0.c
++++ b/src/net/01EFD8B0.c
+@@ -1,7 +1,7 @@
+ #include "common.h"
+ 
+-void func_01EF3CF0();                                  /* extern */
++void func_01EF3CF0(void *);                                  /* extern */
+ 
+-void func_01EFD8B0(void) {
+-    func_01EF3CF0();
++void func_01EFD8B0(void *arg0) {
++    func_01EF3CF0(arg0);
+ }

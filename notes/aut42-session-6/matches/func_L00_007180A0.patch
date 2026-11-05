@@ -1,0 +1,21 @@
+diff --git a/src/overlays/l00_multiplayer_menu/L00_007180A0.c b/src/overlays/l00_multiplayer_menu/L00_007180A0.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/l00_multiplayer_menu/L00_007180A0.c
+@@ -0,0 +1,16 @@
++#include "common.h"
++
++s32 func_L00_005DF120(s32);
++s32 func_L00_005F4648(s32, s32);
++extern s32 D_00223250_[];
++#define D_00223250 (D_00223250_[0])
++
++void func_L00_007180A0(s32 arg0, s32 arg1) {
++    s32 temp_a0;
++
++    temp_a0 = func_L00_005DF120(arg1);
++    *(s32 *)((arg1 * 4) + (u8 *)&D_00223250) = arg0;
++    if (temp_a0 != 0) {
++        func_L00_005F4648(temp_a0, arg0);
++    }
++}

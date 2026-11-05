@@ -1,0 +1,12 @@
+diff --git a/src/game/004F3440.c b/src/game/004F3440.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004F3440.c
+@@ -0,0 +1,7 @@
++#include "common.h"
++
++s64 func_00464778(void *);
++
++void func_004F3440(void *arg0, s64 *arg1) {
++    *arg1 = func_00464778(arg0);
++}

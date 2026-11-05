@@ -13,18 +13,23 @@ and compares it with the address the retail instruction encodes:
   %lo of each access (a lui without an access is checked on its own);
 - R_MIPS_GPREL16: $gp + offset, with retail's $gp = 0x22597F (and the
   object's own gp0 from .reginfo for its local symbols);
+- R_MIPS_LITERAL: the literal value at the retail $gp address and its pool
+  placement;
 - R_MIPS_32 in .rodata (jump tables): each entry.
 
 Addresses come from the symbol names (`func_XXXXXXXX`, `func_LNN_XXXXXXXX`,
 `D_XXXXXXXX`, six or eight digits, with the `_`, `__gp` and `__lui` alias
 suffixes), from config/libgcc.tsv and config/libm.tsv for the library
-symbols, and for a file's own sections from the functions and the `D_`
-objects it defines. A section with no named symbol (a jump table in
+symbols (and config/library_callees.tsv for identified but unmatched helpers),
+and for a file's own sections from the functions and the `D_` objects it
+defines. A section with no named symbol (a jump table in
 .rodata) gets the address retail implies; all its relocations must agree on
 it. A shared overlay function is named after its address in its first level
 (`func_L00_X`) but lies elsewhere in the others: a call to it from another
 level counts if retail's target there has the same normalised code (the
 function list gives all copies of one code one name, so a twin counts too).
+Resident-function copies in levels must agree with the named placements in
+config/us/functions.tsv.
 
 The libraries (build/libgcc, build/libm) are verbatim GCC and newlib source
 built by their own scripts: --libs checks them too. Their constant pools are
@@ -33,12 +38,14 @@ laid out differently from retail (the values are there), which shows up as
 
 Writes build/relocs.json and prints each mismatch: function, offset in the
 function, relocation type, symbol, our address, retail's address and the
-name retail's address would have. Exit status 1 if anything differs.
+name retail's address would have. Exit status 1 on mismatches or unresolved
+references.
 
 Usage: venv/bin/python tools/audit_relocs.py [-v] [--libs] [func_name ...]
   (after tools/build.sh and tools/audit_matches.py)
 """
 import glob
+import io
 import json
 import os
 import re
@@ -53,7 +60,7 @@ from elftools.elf.elffile import ELFFile  # noqa: E402
 
 ROOT = mp.ROOT
 GP = 0x22597F
-R_32, R_26, R_HI16, R_LO16, R_GPREL16 = 2, 4, 5, 6, 7
+R_32, R_26, R_HI16, R_LO16, R_GPREL16, R_LITERAL = 2, 4, 5, 6, 7, 8
 NAME = re.compile(r"(?:func|D|jtbl)_(?:L\d\d_)?([0-9A-Fa-f]{6,8})(?:_|__gp|__lui)?")
 
 
@@ -92,6 +99,13 @@ def load_tables():
                     obj, sym, a, _ = l.split("\t")
                     alias[(obj[:-2] if obj.endswith(".o") else obj, sym)] = by_addr[int(a, 16)]
                     lib_syms[sym] = int(a, 16)
+    # Identifying a library callee does not claim its source rebuild matches.
+    callees = ROOT / "config" / "library_callees.tsv"
+    if callees.exists():
+        for line in callees.read_text().splitlines():
+            if line and not line.startswith("#"):
+                sym, addr = line.split("\t")
+                lib_syms[sym] = int(addr, 16)
     return sizes, ovl, ovl_dirs, alias, lib_syms
 
 
@@ -103,8 +117,17 @@ class Checker:
         self.ovl_root = Path(os.environ.get("OVERLAYS") or ROOT / "private" / "overlays")
         self.ovl_secs = {}
         self.mismatches, self.unresolved, self.checked = [], [], 0
-        self.by_code = {"unique": 0, "twin": 0}
+        self.by_code = {"unique": 0, "twin": 0, "catalogue": 0}
         self.digests = {}
+        # The resident menu also occurs at different addresses in the levels.
+        # Only the named copy at the catalogue's exact placement is accepted.
+        import level_catalogue
+        self.main_copies = {
+            (name, "L%02d" % level): addr
+            for name, kind, _, _, _, places in level_catalogue.read_catalogue(ROOT / "config/us/functions.tsv")
+            if kind == "main"
+            for level, addr in places
+        }
 
     def overlay_secs(self, i):
         if i not in self.ovl_secs:
@@ -129,7 +152,10 @@ class Checker:
         and lies elsewhere in the other levels. config/overlay_functions.tsv
         gives one name to all copies of one normalised code, so retail's target
         in level lvl is that function if it has that code: 'unique' if the code
-        occurs once in each of the two levels, 'twin' otherwise, else None."""
+        occurs once in each of the two levels, 'twin' otherwise, else None.
+        A resident callee at its named US catalogue placement returns 'catalogue'."""
+        if (name, lvl) in self.main_copies and self.main_copies[name, lvl] == target:
+            return "catalogue"
         m = re.fullmatch(r"(func_L\d\d_[0-9A-F]{8})(?:_|__gp|__lui)?", name)
         if not m or m.group(1) not in self.ovl or lvl is None:
             return None
@@ -154,7 +180,7 @@ class Checker:
         return None
 
     def check_object(self, path, exact, only):
-        elf = ELFFile(open(path, "rb"))
+        elf = ELFFile(io.BytesIO(Path(path).read_bytes()))
         symtab = elf.get_section_by_name(".symtab")
         sec_names = [s.name for s in elf.iter_sections()]
         syms = list(symtab.iter_symbols())
@@ -273,6 +299,28 @@ class Checker:
                 elif typ == R_GPREL16:
                     a = sext16(w & 0xFFFF) + (gp0 if isinstance(sym["st_shndx"], int) else 0)
                     report(f, off, "GPREL16", sym, resolve(sym, a), (GP + sext16(rw & 0xFFFF)) & 0xFFFFFFFF)
+                elif typ == R_LITERAL:
+                    # GNU as places li.s/li.d constants in a local literal pool.
+                    # Check the value, as well as consistent placement of that pool.
+                    shn = sym["st_shndx"]
+                    width = {0x31: 4, 0x35: 8}.get(w >> 26)  # lwc1, ldc1
+                    a = sext16(w & 0xFFFF) + gp0
+                    ret = (GP + sext16(rw & 0xFFFF)) & 0xFFFFFFFF
+                    if (width is None or not isinstance(shn, int)
+                            or sym["st_info"]["type"] != "STT_SECTION"):
+                        report(f, off, "LITERAL", sym, None, ret)
+                        continue
+                    data = elf.get_section(shn).data()
+                    value = data[a:a + width] if a >= 0 else b""
+                    want = mp.read(f[5], ret, width)
+                    if len(value) != width or want is None:
+                        report(f, off, "LITERAL", sym, None, ret)
+                        continue
+                    report(f, off, "LITERAL", sym, ("infer", shn, a), ret)
+                    if value != want and (not only or f[3] in only):
+                        self.mismatches.append({"function": f[3], "offset": off - f[0], "type": "LITERAL",
+                                                "symbol": sym.name, "ours": None, "retail": ret,
+                                                "note": "literal value differs (%s vs %s)" % (value.hex(), want.hex())})
                 elif typ != R_HI16:
                     report(f, off, "type%d" % typ, sym, None, None)
             # a lui no access uses: its %hi alone
@@ -340,8 +388,9 @@ def main() -> int:
     (ROOT / "build" / "relocs.json").write_text(json.dumps({"mismatches": c.mismatches, "unresolved": c.unresolved}, indent=1))
     funcs = sorted({m["function"] for m in c.mismatches})
     print("%d relocations checked in %d exact functions (calls to shared overlay functions in another level,"
-          " found by their code: %d unique, %d twins): %d mismatches in %d functions, %d unresolved"
-          % (c.checked, len(exact), c.by_code["unique"], c.by_code["twin"], len(c.mismatches), len(funcs),
+          " found by their code: %d unique, %d twins; catalogued resident copies: %d): "
+          "%d mismatches in %d functions, %d unresolved"
+          % (c.checked, len(exact), c.by_code["unique"], c.by_code["twin"], c.by_code["catalogue"], len(c.mismatches), len(funcs),
              len(c.unresolved)))
 
     def hx(v):
@@ -356,7 +405,7 @@ def main() -> int:
     if verbose or len(c.unresolved) <= 20:
         for u in c.unresolved:
             print("  unresolved: %s+0x%X %s %s" % (u["function"], u["offset"], u["type"], u["symbol"]))
-    return 1 if c.mismatches else 0
+    return 1 if c.mismatches or c.unresolved else 0
 
 
 if __name__ == "__main__":

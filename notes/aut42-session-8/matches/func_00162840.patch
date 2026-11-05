@@ -1,0 +1,15 @@
+diff --git a/src/core/00162840.c b/src/core/00162840.c
+new file mode 100644
+--- /dev/null
++++ b/src/core/00162840.c
+@@ -0,0 +1,10 @@
++#include "common.h"
++
++extern s32 D_00212738_[];
++#define D_00212738 (D_00212738_[0])
++
++void func_00162840(u32 arg0, s32 arg1) {
++    if (arg0 < 0xAU) {
++        *(s32 *)((arg0 * 4) + (u8 *)&D_00212738) = arg1 != 0;
++    }
++}

@@ -1,0 +1,17 @@
+diff --git a/src/overlays/l00_multiplayer_menu/L00_0077C368.c b/src/overlays/l00_multiplayer_menu/L00_0077C368.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/l00_multiplayer_menu/L00_0077C368.c
+@@ -0,0 +1,12 @@
++/* cflags: -mno-split-addresses */
++#include "common.h"
++
++extern void *D_002233A4;
++
++void func_L00_0077C368(void) {
++    void *temp_v1;
++
++    temp_v1 = (*(s32 *)((u8 *)(D_002233A4) + 0x68));
++    (*(s8 *)((u8 *)(temp_v1) + 0x60)) = 0;
++    (*(s8 *)((u8 *)(temp_v1) + 0x6C)) = 0;
++}

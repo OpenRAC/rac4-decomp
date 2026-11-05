@@ -1,0 +1,36 @@
+diff --git a/src/overlays/shared/L01_005E5AD8.c b/src/overlays/shared/L01_005E5AD8.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L01_005E5AD8.c
+@@ -0,0 +1,31 @@
++#include "common.h"
++
++s32 func_00659E90(s32, s32);
++s32 func_00659F80(s32, s32);
++s32 func_0065A238(s32, s32);
++s32 func_0065A538(s32, f32, f32);
++s32 func_L00_0069C7A8(s32, s32);
++s32 func_L00_0069D028(s32, s32);
++s32 func_L00_0069DC48(s32);
++s32 func_L00_0069DC90();
++typedef struct Type1 { char _p0[4]; s32 f4; f32 f8; f32 fC; char _p10[0x14]; s32 f24; } Type1;
++extern Type1 D_0032FB70;
++
++void func_L01_005E5AD8(s32 arg0, s32 arg1, f32 fparg0) {
++    s32 temp_s2;
++
++    temp_s2 = func_L00_0069DC90();
++    func_L00_0069DC48(4);
++    if (arg0 != 0) {
++        func_L00_0069D028(0xE0001, 1);
++        D_0032FB70.f8 = 2.0f;
++        D_0032FB70.fC = fparg0;
++        D_0032FB70.f4 = arg1;        D_0032FB70.f24 = (s32) (D_0032FB70.f24 | 1);
++        func_00659E90(0xE0001, arg0);
++        func_0065A238(0xE0001, 1);
++        func_00659F80(0xE0001, arg1);
++        func_L00_0069C7A8(0xE0001, 0x40000000);
++        func_0065A538(0xE0001, fparg0, fparg0);
++    }
++    func_L00_0069DC48(temp_s2);
++}

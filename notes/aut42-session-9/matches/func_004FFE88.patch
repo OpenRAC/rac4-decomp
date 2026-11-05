@@ -1,0 +1,21 @@
+diff --git a/src/game/004FFE88.c b/src/game/004FFE88.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004FFE88.c
+@@ -0,0 +1,16 @@
++#include "common.h"
++
++s32 func_004FFB98(void **);
++s32 func_004FFBC8(void **);
++s32 func_004FFDF8(void **);
++s32 func_004FFE28(void **);
++s32 func_00500950(s32);
++
++void func_004FFE88(void **arg0) {
++    func_00500950(*arg0 + 0x1CC);
++    func_004FFBC8(arg0);
++    func_004FFDF8(arg0);
++    func_004FFB98(arg0);
++    func_004FFE28(arg0);
++    (*(s32 *)((u8 *)((*arg0)) + 0x1C4)) = -1;
++}
