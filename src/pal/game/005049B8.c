@@ -18,8 +18,8 @@ extern Manager D_00222138[];
 extern Manager *func_00502150(void);
 extern Object *func_00501658(void *, s32);
 extern u32 D_00220BE8;
-extern s32 func_00500950(void *);
-extern s32 func_005038B8(s32, s32);
+extern void *func_00500950(void *);
+extern void *func_005038B8(void *, s32);
 static inline Manager *getManager(void)
 {
     Manager *p = D_00222138;
@@ -46,13 +46,13 @@ static inline Object *getTyped(s32 id)
 s32 func_005049B8(s32 id, s32 arg1)
 {
     s32 result = 0;
-    s32 other;
+    void *other;
     Object *obj;
     other = func_00500950(getTable(getManager()));
     if (other != 0) {
         obj = getTyped(id);
         if (obj != 0) {
-            s32 status;
+            void *status;
             if (arg1 >= 0) {
                 status = func_005038B8(other, arg1);
             } else {

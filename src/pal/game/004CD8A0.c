@@ -6,7 +6,7 @@ extern s32 D_0021EE58;
 extern s32 func_00506BB8(void);
 extern const char *func_004CD9B8(void);
 extern s32 func_004CDC60(s32);
-extern void *func_0047DB88(void *);
+extern void *func_0047DB88(s32);
 extern s32 func_004CDE78(s32);
 extern void *func_0054A290(s32, s32);
 extern const char *func_0045E850(s32);

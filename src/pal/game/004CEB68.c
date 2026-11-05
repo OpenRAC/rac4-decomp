@@ -4,14 +4,14 @@ extern u8 D_0030ECC0[];
 extern s32 D_00171C88[];
 
 s32 func_00506BB8(void);
-void func_00502520(s32 arg0);
+void func_00502520(void *);
 void func_004CEFD0(void);
 void func_004CED68(void);
 void func_004CEDA8(void);
-void func_004A2468(s32 arg0);
+s32 func_004A2468(void *);
 void func_004CEE80(void);
 
-void func_004CEB68(s32 arg0) {
+void func_004CEB68(void *arg0) {
     s32 index;
     s32 record;
     s32 valueAddress;
@@ -46,7 +46,7 @@ void func_004CEB68(s32 arg0) {
     if ((*(s32 *)(record + 8) & 2) != 0) {
         func_004CEDA8();
     }
-    func_004A2468(record + 0x210);
+    func_004A2468((void *)(record + 0x210));
     state = *(s32 *)(record + 8);
     state &= 4;
     if (state != 0) {

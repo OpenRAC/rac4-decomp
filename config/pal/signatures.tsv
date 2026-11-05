@@ -4,9 +4,7 @@ func_00507270	0x00507270	s32	u32,s32,s32,s32,s32,s32,s32,s32,s32	param9:s32@inco
 func_0044E5B0	0x0044E5B0	s32	s32,u32,s64	-	confirmed	src/pal/game/0044E5B0.c; callers 0044AAB8.c, 0044E528.c; 64-bit producer 00449990.c
 func_0044AAB8	0x0044AAB8	s32	s32,s32,s32,s32,u64,u64,s32,f32,f32,f32,f32	-	confirmed	src/pal/game/0044AAB8.c; 64-bit producer 00449990.c; full-width call into 0044E5B0.c
 func_00506BB8	0x00506BB8	s32	void	-	confirmed_contract	PAL 00506BC8-00506BF0; signed context index or -1; caller invariant required before indexing
-func_005055E8	0x005055E8	unclear	unclear	unclear	unclear	May return without initializing first/second; see build/batch07/a-final-two-review.json
-func_01E9A858	0x01E9A858	unclear	unclear	unclear	unclear	May return -1 before writing the 64-byte output; see build/batch07/a-independent-review.json
-func_004A0230	0x004A0230	void	void	-	unclear	UI f32 reads must not use volatile; bc1f versus bc1fl and delay-slot reload still open; best candidate differs by 7 bytes
+func_004A0230	0x004A0230	void	void	-	confirmed_contract	PAL 004A0230-004A0390; no incoming arguments or constructed return; src/pal/game/004A0230.c
 func_0011D920	0x0011D920	s32	char*,const char*,...	variadic:per-format	confirmed_contract	PAL formatted-string wrapper; consumers 0054A5A0 and 004C3C10; no capacity inferred
 func_00453F30	0x00453F30	void	void*,const void*,u32	-	confirmed_contract	PAL 00453F30-00453FE4 copies a2 bytes; no meaningful return
 func_0045E850	0x0045E850	const char*	s32	-	confirmed_contract	PAL forwards id to 0045EB78; 004C3C10 and 0054A5A0 consume text pointer
