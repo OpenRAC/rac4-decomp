@@ -1,34 +1,34 @@
 {
  "version": 2,
  "measures": {
-  "fuzzy_match_percent": 9.053469,
+  "fuzzy_match_percent": 9.098525,
   "total_code": "5812924",
-  "matched_code": "497616",
-  "matched_code_percent": 8.560511,
+  "matched_code": "497644",
+  "matched_code_percent": 8.560993,
   "total_functions": 18113,
-  "matched_functions": 6032,
-  "matched_functions_percent": 33.302048,
-  "complete_code": "274528",
-  "complete_code_percent": 4.722718,
-  "total_units": 3329,
-  "complete_units": 3270
+  "matched_functions": 6033,
+  "matched_functions_percent": 33.307569,
+  "complete_code": "274556",
+  "complete_code_percent": 4.7232,
+  "total_units": 3330,
+  "complete_units": 3271
  },
  "categories": [
   {
    "id": "core",
    "name": "Main program",
    "measures": {
-    "fuzzy_match_percent": 12.868671,
+    "fuzzy_match_percent": 12.869942,
     "total_code": "2202512",
-    "matched_code": "274528",
-    "matched_code_percent": 12.464313,
+    "matched_code": "274556",
+    "matched_code_percent": 12.465585,
     "total_functions": 8945,
-    "matched_functions": 3295,
-    "matched_functions_percent": 36.836221,
-    "complete_code": "274528",
-    "complete_code_percent": 12.464313,
-    "total_units": 3314,
-    "complete_units": 3270
+    "matched_functions": 3296,
+    "matched_functions_percent": 36.847401,
+    "complete_code": "274556",
+    "complete_code_percent": 12.465585,
+    "total_units": 3315,
+    "complete_units": 3271
    }
   },
   {
@@ -86,17 +86,17 @@
    "id": "menu_text",
    "name": "Resident menus (.text)",
    "measures": {
-    "fuzzy_match_percent": 12.709067,
+    "fuzzy_match_percent": 12.711036,
     "total_code": "1422048",
-    "matched_code": "178156",
-    "matched_code_percent": 12.528128,
+    "matched_code": "178184",
+    "matched_code_percent": 12.530097,
     "total_functions": 4786,
-    "matched_functions": 2000,
-    "matched_functions_percent": 41.78855,
+    "matched_functions": 2001,
+    "matched_functions_percent": 41.809444,
     "complete_code": "0",
     "complete_code_percent": 0.0,
-    "total_units": 2022,
-    "complete_units": 2000
+    "total_units": 2023,
+    "complete_units": 2001
    }
   },
   {
@@ -120,7 +120,7 @@
    "id": "level_code",
    "name": "Level code",
    "measures": {
-    "fuzzy_match_percent": 6.726025,
+    "fuzzy_match_percent": 6.797792,
     "total_code": "3610412",
     "matched_code": "223088",
     "matched_code_percent": 6.179018,
@@ -137,7 +137,7 @@
    "id": "common",
    "name": "Shared level code",
    "measures": {
-    "fuzzy_match_percent": 6.991126,
+    "fuzzy_match_percent": 6.996736,
     "total_code": "2008520",
     "matched_code": "127280",
     "matched_code_percent": 6.337004,
@@ -154,7 +154,7 @@
    "id": "levels",
    "name": "Level-specific code",
    "measures": {
-    "fuzzy_match_percent": 6.393631,
+    "fuzzy_match_percent": 6.548347,
     "total_code": "1601892",
     "matched_code": "95808",
     "matched_code_percent": 5.980928,
@@ -171,7 +171,7 @@
    "id": "level_00",
    "name": "Level 00: Multiplayer Menu",
    "measures": {
-    "fuzzy_match_percent": 7.16461,
+    "fuzzy_match_percent": 7.4272,
     "total_code": "943820",
     "matched_code": "63712",
     "matched_code_percent": 6.75044,
@@ -37239,6 +37239,41 @@
    "metadata": {
     "complete": true,
     "source_path": "src/game/00488E80.c",
+    "progress_categories": [
+     "core",
+     "menu_text"
+    ]
+   }
+  },
+  {
+   "name": "game/00489478",
+   "measures": {
+    "fuzzy_match_percent": 100.0,
+    "total_code": "28",
+    "matched_code": "28",
+    "matched_code_percent": 100.0,
+    "total_functions": 1,
+    "matched_functions": 1,
+    "matched_functions_percent": 100.0,
+    "complete_code": "28",
+    "complete_code_percent": 100.0,
+    "total_units": 1,
+    "complete_units": 1
+   },
+   "functions": [
+    {
+     "name": "func_00489F30",
+     "size": "28",
+     "fuzzy_match_percent": 100.0,
+     "address": "0",
+     "metadata": {
+      "virtual_address": "4759344"
+     }
+    }
+   ],
+   "metadata": {
+    "complete": true,
+    "source_path": "src/game/00489478.c",
     "progress_categories": [
      "core",
      "menu_text"
@@ -126337,11 +126372,11 @@
   {
    "name": "main/.text/0048xxxx",
    "measures": {
-    "fuzzy_match_percent": 0.264818,
-    "total_code": "60796",
+    "fuzzy_match_percent": 0.26494,
+    "total_code": "60768",
     "matched_code": "0",
     "matched_code_percent": 0.0,
-    "total_functions": 111,
+    "total_functions": 110,
     "matched_functions": 0,
     "matched_functions_percent": 0.0,
     "complete_code": "0",
@@ -126753,15 +126788,6 @@
      "address": "40304",
      "metadata": {
       "virtual_address": "4759072"
-     }
-    },
-    {
-     "name": "func_00489F30",
-     "size": "28",
-     "fuzzy_match_percent": 0.0,
-     "address": "40576",
-     "metadata": {
-      "virtual_address": "4759344"
      }
     },
     {
@@ -167082,7 +167108,7 @@
   {
    "name": "Shared level code",
    "measures": {
-    "fuzzy_match_percent": 6.991126,
+    "fuzzy_match_percent": 6.996736,
     "total_code": "2008520",
     "matched_code": "127280",
     "matched_code_percent": 6.337004,
@@ -208426,7 +208452,7 @@
     {
      "name": "func_L01_006B95B0",
      "size": "136",
-     "fuzzy_match_percent": 0.0,
+     "fuzzy_match_percent": 82.86,
      "address": "3097168",
      "metadata": {
       "virtual_address": "7050672"
@@ -212900,7 +212926,7 @@
   {
    "name": "Level 00: Multiplayer Menu",
    "measures": {
-    "fuzzy_match_percent": 7.16461,
+    "fuzzy_match_percent": 7.4272,
     "total_code": "943820",
     "matched_code": "63712",
     "matched_code_percent": 6.75044,
@@ -217137,7 +217163,7 @@
     {
      "name": "func_L00_005195D8",
      "size": "104",
-     "fuzzy_match_percent": 0.0,
+     "fuzzy_match_percent": 96.0,
      "address": "172504",
      "metadata": {
       "virtual_address": "5346776"
@@ -218100,7 +218126,7 @@
     {
      "name": "func_L00_0051E750",
      "size": "2256",
-     "fuzzy_match_percent": 0.0,
+     "fuzzy_match_percent": 95.19,
      "address": "193360",
      "metadata": {
       "virtual_address": "5367632"
@@ -220854,7 +220880,7 @@
     {
      "name": "func_L00_00536790",
      "size": "104",
-     "fuzzy_match_percent": 0.0,
+     "fuzzy_match_percent": 93.0,
      "address": "291728",
      "metadata": {
       "virtual_address": "5466000"
@@ -222177,7 +222203,7 @@
     {
      "name": "func_L00_00542408",
      "size": "156",
-     "fuzzy_match_percent": 0.0,
+     "fuzzy_match_percent": 86.11,
      "address": "339976",
      "metadata": {
       "virtual_address": "5514248"
