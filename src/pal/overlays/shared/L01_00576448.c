@@ -20,4 +20,3 @@ float func_L01_00576448(void *arg0, void *arg1)
   *((_WORD *)v3 + 12) = v4;
   return result;
 }
-
