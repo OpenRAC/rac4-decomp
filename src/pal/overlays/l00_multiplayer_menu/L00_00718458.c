@@ -1,7 +1,7 @@
 #include "common.h"
 
 extern void func_0011D920(void *, void *, s32);
-extern void func_L00_006A0428(void *, s32, s32);
+extern s32 func_L00_006A0428(s32, s32, s32);
 extern s32 func_L00_006A0AF8(s32, u8 *);
 extern s32 func_L00_006A0BE8(s32, u32);
 extern s32 func_0045E850(s32);
@@ -15,12 +15,12 @@ void func_L00_00718458(u8 *item) {
     if (*(s32 *)(item + 4) == 0) return;
     if (*(u8 **)(item + 0x14) == 0 && *(u8 **)(item + 0x5C) == 0) return;
     if (*(s32 *)(item + 4) == 1) {
-        if (*(u8 **)(item + 0x14) != 0) func_L00_006A0428(*(u8 **)(item + 0x14), 1, 0);
-        if (*(u8 **)(item + 0x5C) != 0) func_L00_006A0428(*(u8 **)(item + 0x5C), 1, 0);
+        if (*(u8 **)(item + 0x14) != 0) func_L00_006A0428((s32)*(u8 **)(item + 0x14), 1, 0);
+        if (*(u8 **)(item + 0x5C) != 0) func_L00_006A0428((s32)*(u8 **)(item + 0x5C), 1, 0);
         return;
     }
-    if (*(u8 **)(item + 0x14) != 0) func_L00_006A0428(*(u8 **)(item + 0x14), 1, 1);
-    if (*(u8 **)(item + 0x5C) != 0) func_L00_006A0428(*(u8 **)(item + 0x5C), 1, 1);
+    if (*(u8 **)(item + 0x14) != 0) func_L00_006A0428((s32)*(u8 **)(item + 0x14), 1, 1);
+    if (*(u8 **)(item + 0x5C) != 0) func_L00_006A0428((s32)*(u8 **)(item + 0x5C), 1, 1);
     type = *(s32 *)(item + 4);
     if (type == 3) color = 0x80808080;
     else if (type == 4) color = 0x80D6CBBE;
