@@ -1,8 +1,8 @@
 #include "common.h"
 
 extern void func_L00_006A0428(void *, s32, s32);
-extern void func_L00_006A0AF8(void *, void *);
-extern void func_L00_006A0BE8(void *, s32);
+extern s32 func_L00_006A0AF8(s32, u8 *);
+extern s32 func_L00_006A0BE8(s32, u32);
 extern s32 func_L00_005E8CF8(s32, s32, s32, s32, s32, s32);
 extern char D_00220CD0[];
 
@@ -30,12 +30,12 @@ void func_L00_007158A0(u8 *item) {
     else if (type == 6) color = 0x66A6BEFA;
     else color = 0x80D6CBBE;
     if (*(u8 **)(item + 0x14) != 0) {
-        func_L00_006A0BE8(*(u8 **)(item + 0x14), color);
-        func_L00_006A0AF8(*(u8 **)(item + 0x14), item + 0x18);
+        func_L00_006A0BE8((s32)*(u8 **)(item + 0x14), color);
+        func_L00_006A0AF8((s32)*(u8 **)(item + 0x14), item + 0x18);
     }
     if (*(u8 **)(item + 0x5C) == 0) return;
-    func_L00_006A0BE8(*(u8 **)(item + 0x5C), color);
+    func_L00_006A0BE8((s32)*(u8 **)(item + 0x5C), color);
     index = *(s32 *)(item + 0x14A8);
-    if (index >= 0) func_L00_006A0AF8(*(u8 **)(item + 0x5C), item + 0x64 + index * 0x50);
-    else func_L00_006A0AF8(*(u8 **)(item + 0x5C), D_00220CD0);
+    if (index >= 0) func_L00_006A0AF8((s32)*(u8 **)(item + 0x5C), item + 0x64 + index * 0x50);
+    else func_L00_006A0AF8((s32)*(u8 **)(item + 0x5C), (u8 *)D_00220CD0);
 }
