@@ -1,0 +1,30 @@
+# Evidence-backed PAL function signatures. No signature is inferred from a byte match alone.
+# name	address	return_type	parameters	stack_parameters	status	evidence
+func_00507270	0x00507270	s32	u32,s32,s32,s32,s32,s32,s32,s32,s32	param9:s32@incoming_sp+0	confirmed_abi	PAL 00507270-005072C4 and 005073AC-005073BC; ninth argument explicit; exact typedef unresolved
+func_0044E5B0	0x0044E5B0	s32	s32,u32,s64	-	confirmed	src/pal/game/0044E5B0.c; callers 0044AAB8.c, 0044E528.c; 64-bit producer 00449990.c
+func_0044AAB8	0x0044AAB8	s32	s32,s32,s32,s32,u64,u64,s32,f32,f32,f32,f32	-	confirmed	src/pal/game/0044AAB8.c; 64-bit producer 00449990.c; full-width call into 0044E5B0.c
+func_00506BB8	0x00506BB8	s32	void	-	confirmed_contract	PAL 00506BC8-00506BF0; signed context index or -1; caller invariant required before indexing
+func_005055E8	0x005055E8	unclear	unclear	unclear	unclear	May return without initializing first/second; see build/batch07/a-final-two-review.json
+func_01E9A858	0x01E9A858	unclear	unclear	unclear	unclear	May return -1 before writing the 64-byte output; see build/batch07/a-independent-review.json
+func_004A0230	0x004A0230	void	void	-	unclear	UI f32 reads must not use volatile; bc1f versus bc1fl and delay-slot reload still open; best candidate differs by 7 bytes
+func_0011D920	0x0011D920	s32	char*,const char*,...	variadic:per-format	confirmed_contract	PAL formatted-string wrapper; consumers 0054A5A0 and 004C3C10; no capacity inferred
+func_00453F30	0x00453F30	void	void*,const void*,u32	-	confirmed_contract	PAL 00453F30-00453FE4 copies a2 bytes; no meaningful return
+func_0045E850	0x0045E850	const char*	s32	-	confirmed_contract	PAL forwards id to 0045EB78; 004C3C10 and 0054A5A0 consume text pointer
+func_0048C2D0	0x0048C2D0	void*	u32,u8**,const u8*	-	confirmed_contract	PAL 0048C2D0-0048C2F0; cursor advances on failure; success advanced<end
+func_004999D0	0x004999D0	void	void*	-	confirmed_contract	PAL 004999E0-00499A18; 24-byte record; input words0/4; all24 output bytes overwritten
+func_0049AA18	0x0049AA18	void	s32	-	confirmed_contract	PAL compares scalar resource id; caller 004CCCB0 ignores v0
+func_0049B418	0x0049B418	s32	f32*,f32	-	confirmed_contract	a0 float input/output; f12 target; f13/f14 initialized internally
+func_004A2798	0x004A2798	s32	const s32*,s32	-	confirmed_contract	PAL adds offset to base handle word; numeric handle not pointer
+func_004A91A0	0x004A91A0	f32	const void*	-	confirmed_abi	PAL 004A91BC and 004A9278; f0 angle or360 sentinel; pointer role confirmed
+func_004A9340	0x004A9340	s32	f32	-	confirmed_abi	f12 angle forwarded to 004A9288; unsigned byte direction in v0
+func_004CD8A0	0x004CD8A0	const char*	s32	-	confirmed_contract	PAL 004CD990-004CD99C; text pointer consumed by 005062D0 at 004CCEC4
+func_004CDA88	0x004CDA88	const char*	s32	-	confirmed_contract	PAL 004CDB48-004CDB58; text pointer consumed by 005062D0 at 004CCE9C
+func_004E33A0	0x004E33A0	void	s32,s32*	-	confirmed_contract	PAL conditionally stores completion through nonnull a1; registered at 004F35C4
+func_004E88B8	0x004E88B8	void	s32,u64,s32	-	confirmed_contract	src/pal/game/004E88B8.c; full 64-bit packet value forwarded at 0044E554-0044E590
+func_004E8AB0	0x004E8AB0	void	void	-	confirmed_contract	US source alias func_004E7B88; src/game/004E7B88.c; direct PAL callers ignore v0
+func_00502520	0x00502520	void	void*	-	confirmed_contract	PAL calls 00502518 with a1=0; no reviewed caller consumes return
+func_005062D0	0x005062D0	s32	u32,const char*	-	confirmed_contract	src/pal/game/005062D0.c; handle and text pointer; zero on failed resolution or absent callback
+func_00549050	0x00549050	void	const char*,s32,s32	-	confirmed_contract	PAL 0054905C-005490E4; rejects null/nonpositive/negative; copies text during call
+func_005492C0	0x005492C0	s32	void*,s32	-	confirmed_contract	inventory pointer plus item id; signed16 upgrade level; callers 0049902C-00499068
+func_0054A290	0x0054A290	void*	s32,s32	-	confirmed_abi	scalar item id; descriptor at 003DF190+item*0xB0; alternate retained but no address effect
+func_0054A308	0x0054A308	u32	const void*,s32	-	confirmed_abi	PAL clamps signed index0..31; reads config+index*0x44+0xA30; boolean bit7 result
