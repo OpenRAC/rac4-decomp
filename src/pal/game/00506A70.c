@@ -17,10 +17,10 @@ typedef struct {
 } Manager;
 extern Manager D_00222138[];
 extern u32 D_00220B50;
-extern Manager *func_00502150(void);
+extern void *func_00502150(void);
 extern Object *func_00501658(void *, u32);
 typedef s32 (*Callback)(Object *, f32);
-extern Callback func_00508C08(void *, u32);
+extern void *func_00508C08(void *, u32);
 static inline Manager *getManager(void)
 {
     Manager *p = D_00222138;
@@ -46,7 +46,7 @@ static inline Object *getTyped(u32 id)
 extern char D_00336738[];
 static inline Callback handler(u32 kind)
 {
-    return func_00508C08(D_00336738, kind);
+    return (Callback)func_00508C08(D_00336738, kind);
 }
 s32 func_00506A70(u32 id, f32 amount)
 {
