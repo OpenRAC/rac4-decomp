@@ -14,6 +14,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_00526FD8`](game/func_00526FD8.c) | game | 112 | BYTES 1/112 |
 | [`func_L00_0053F930`](l00_multiplayer_menu/func_L00_0053F930.c) | l00_multiplayer_menu | 2004 | BYTES 18/2004 |
 | [`func_01F0C720`](net/func_01F0C720.c) | net | 104 | BYTES 1/104 |
+| [`func_L00_0076F770`](l00_multiplayer_menu/func_L00_0076F770.c) | l00_multiplayer_menu | 208 | BYTES 2/204 |
 | [`func_01EA4F08`](net/func_01EA4F08.c) | net | 96 | BYTES 1/96 |
 | [`func_L00_0053BFF8`](l00_multiplayer_menu/func_L00_0053BFF8.c) | l00_multiplayer_menu | 616 | BYTES 7/616 |
 | [`func_01E9E798`](net/func_01E9E798.c) | net | 80 | BYTES 1/80 |
@@ -58,6 +59,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_0013BBD0`](core/func_0013BBD0.c) | core | 88 | BYTES 4/88 |
 | [`func_0014B490`](core/func_0014B490.c) | core | 108 | BYTES 5/108 |
 | [`func_L41_0061C668`](shared/func_L41_0061C668.c) | shared | 152 | BYTES 7/148 |
+| [`func_L00_006AA1F0`](shared/func_L00_006AA1F0.c) | shared | 272 | BYTES 13/272 |
 | [`func_004B9330`](game/func_004B9330.c) | game | 128 | BYTES 6/124 |
 | [`func_0012DD90`](core/func_0012DD90.c) | core | 144 | BYTES 7/144 |
 | [`func_004B1F38`](game/func_004B1F38.c) | game | 512 | BYTES 25/508 |
@@ -89,6 +91,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_00498368`](game/func_00498368.c) | game | 120 | BYTES 9/120 |
 | [`func_L00_006ED020`](shared/func_L00_006ED020.c) | shared | 200 | BYTES 15/200 |
 | [`func_01ECF658`](net/func_01ECF658.c) | net | 92 | BYTES 7/92 |
+| [`func_L00_005C5428`](shared/func_L00_005C5428.c) | shared | 128 | BYTES 10/128 |
 | [`func_L00_00538DE0`](l00_multiplayer_menu/func_L00_00538DE0.c) | l00_multiplayer_menu | 292 | BYTES 23/292 |
 | [`func_01ED6218`](net/func_01ED6218.c) | net | 60 | BYTES 5/60 |
 | [`func_01ED9088`](net/func_01ED9088.c) | net | 24 | BYTES 2/24 |
@@ -209,7 +212,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_00162698`](core/func_00162698.c) | core | 132 | BYTES 20/132 |
 | [`func_L41_0044C720`](shared/func_L41_0044C720.c) | shared | 272 | BYTES 42/272 |
 | [`func_L01_005AC9D0`](shared/func_L01_005AC9D0.c) | shared | 280 | BYTES 44/280 |
-| [`func_L00_006A97A8`](shared/func_L00_006A97A8.c) | shared | 280 | BYTES 44/276 |
 | [`func_L01_005A5878`](shared/func_L01_005A5878.c) | shared | 176 | BYTES 30/176 |
 | [`func_L01_006B3FE8`](shared/func_L01_006B3FE8.c) | shared | 144 | BYTES 24/140 |
 | [`func_0014D058`](core/func_0014D058.c) | core | 132 | BYTES 23/132 |
@@ -232,7 +234,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L01_00443C98`](shared/func_L01_00443C98.c) | shared | 152 | BYTES 61/152 |
 | [`func_004B8928`](game/func_004B8928.c) | game | 184 | BYTES 89/184 |
 | [`func_L00_005908F0`](shared/func_L00_005908F0.c) | shared | 200 | BYTES 113/200 |
-| [`func_L00_006AA1F0`](shared/func_L00_006AA1F0.c) | shared | 272 | BYTES 177/272 |
 | [`func_001559E0`](core/func_001559E0.c) | core | 36 | SIZE 60/36 (tail-call form; tools/try_func.py func_001559E0 build/try/func_001559E0/p1.c --diff) |
 | [`func_004C6070`](game/func_004C6070.c) | game | 328 | SIZE ours 300 / retail 328 |
 | [`func_004C8388`](game/func_004C8388.c) | game | 8 | not recorded |
@@ -241,7 +242,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L00_006AA5F8`](shared/func_L00_006AA5F8.c) | shared | 280 | SIZE ours 212 / retail 280 |
 | [`func_L00_006D1C68`](shared/func_L00_006D1C68.c) | shared | 304 | SIZE ours 288 / retail 304 |
 | [`func_L00_006EE598`](shared/func_L00_006EE598.c) | shared | 368 | SIZE 208/368 |
-| [`func_L00_006F4038`](shared/func_L00_006F4038.c) | shared | 296 | SIZE ours 284 / retail 296 |
 | [`func_L00_006FEDE8`](shared/func_L00_006FEDE8.c) | shared | 256 | SIZE ours 244 / retail 256 |
 | [`func_L00_00713270_pal`](l00_multiplayer_menu/func_L00_00713270_pal.c) | l00_multiplayer_menu | 0 | NOT IN US (PAL code from PR #16; no US overlay function has these bytes, and US 0x00713270 is the 0x531 check, now in src) |
 | [`func_L00_00770CA8`](l00_multiplayer_menu/func_L00_00770CA8.c) | l00_multiplayer_menu | 40 | COMPILE failed |
