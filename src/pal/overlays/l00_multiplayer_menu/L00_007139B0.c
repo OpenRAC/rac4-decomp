@@ -2,8 +2,7 @@
 #include "common.h"
 extern int func_0045E850(int);
 extern void func_L00_00713698(int);
-extern void func_L00_0071DD50(void);
-extern void func_L00_0071D890(float, void *, int, int, int, void (*)(void), int, int);
+#include "pal/dialog_71d890.h"
 struct Obj { char pad[168]; unsigned char type; };
 struct Context { char pad[264]; struct Obj *obj; };
 extern struct Context *D_00220DD4;
