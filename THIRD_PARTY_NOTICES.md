@@ -1,5 +1,30 @@
 # Third-party notices
 
+## PAL video-stream control-flow adaptations
+
+The following PAL implementations adapt C control-flow structure from the
+OpenRAC RAC3 decompilation contributors' work in the unified
+[OpenRAC repository](https://github.com/OpenRAC/OpenRAC), pinned to commit
+`73f725bf54bb1bf6d8b9bb5b1511ed00d551fbde`:
+
+| RAC4 source | Donor function | Donor lines |
+| --- | --- | --- |
+| `src/pal/game/004F1B18.c` | `func_003ABE98` | 171–210 |
+| `src/pal/game/004F2078.c` | `func_003AC3F8` | 371–423 |
+
+Both donors are in
+[`games/rac3/ntsc/src/frontbin/3ABA48.c`](https://github.com/OpenRAC/OpenRAC/blob/73f725bf54bb1bf6d8b9bb5b1511ed00d551fbde/games/rac3/ntsc/src/frontbin/3ABA48.c)
+under GNU GPL version 3, as recorded in that tree's
+[`games/rac3/ntsc/LICENSE`](https://github.com/OpenRAC/OpenRAC/blob/73f725bf54bb1bf6d8b9bb5b1511ed00d551fbde/games/rac3/ntsc/LICENSE).
+See also this repository's `LICENSE`. This notice concerns these pinned unified
+repository sources, separately from the other RAC3 source scope described below.
+
+The adaptations retain the polling/submission and ring-refill control flow.
+RAC4 PAL addresses, physical argument contracts, data layouts, MMIO accesses
+and defined wrapping arithmetic were checked against RAC4 retail separately.
+Donor assembly, compiler workarounds and proprietary SDK implementation sources
+were not copied.
+
 ## GCC runtime library (`src/libgcc/`)
 
 `libgcc2.c`, `gbl-ctors.h`, `longlong.h` (GCC trunk, 1999-09-09) and
