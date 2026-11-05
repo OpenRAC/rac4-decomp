@@ -45,3 +45,10 @@ by scanning retail bytes; none has been attempted yet:
 `func_L00_0051B2A0` starts on a stray `addiu $sp, $sp, 0x20` and an alignment
 `nop`; its real prologue is at `0x0051B2A8` (size 0x1BC). See
 `build/try/func_L00_0051B2A0/NOTES.md`.
+
+## Session 4
+
+`func_L00_00529C50` (SHA-1 block transform) starts on a stray
+`addiu $sp, $sp, 0x90` and a `nop`; the real entry is `0x00529C58`, size
+`0x520`. `func_L00_00529620` stores `func_L00_00529C50 + 8` as its method
+pointer, which confirms the entry. See `build/try/func_L00_00529C50/NOTES.md`.
