@@ -66,10 +66,10 @@ Run everything from the repository root.
 - Names are by address only: `func_...`, `D_...`, types `Type1`, members
   by offset (`f20`). Never a name from another project or from memory.
 - A hardware register (0x10000000 and up, 0x70000000 scratchpad, the
-  uncached 0xB0000000 range) is a global named by its address,
-  `extern u32 D_10000000;`, never `*(volatile int *)0x10000000`. Without
-  `volatile` the compiler may merge or drop accesses retail makes; if
-  retail rereads a register or reads one only for its side effect, stop.
+  uncached 0xB0000000 range) that retail reaches as a constant address
+  (`lui`/`ori`, then an access at offset 0) needs
+  `*(volatile int *)0x10000000`, which is not allowed: stop. A global
+  named by its address gives `lui`/`%lo` and does not match.
 
 ## Candidate file
 

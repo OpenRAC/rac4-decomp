@@ -25,11 +25,11 @@ yours here. The compiler and its flags are in [`TOOLCHAIN.md`](TOOLCHAIN.md).
   Retail's assembler only took data it had already seen for small
   (`tools/ps2eeas_sdata.py`).
 - **Hardware registers** (0x10000000 and up, the 0x70000000 scratchpad, the
-  uncached 0xB0000000 range) are globals named by their address,
-  `extern u32 D_1000F520;` (or `extern u32 D_B0001000[];` when retail passes
-  the address), never a cast of a number. They are not `volatile`: a function
-  whose retail code rereads a register, or reads one only for its side effect,
-  stays in `nonmatching/`.
+  uncached 0xB0000000 range): retail builds their addresses as constants
+  (`lui`/`ori`, then an access at offset 0), which only a cast of the number
+  gives. A global named by its address (`extern u32 D_1000F520;`) compiles to
+  `lui`/`%lo` instead and does not match (checked on 13 functions), so a
+  function that touches registers that way stays in `nonmatching/`.
 - **Array indexing**: `p = array + i` and `array[i].field` give different
   register orders; `*(T *)((u32)p + (i << 2))` differs again. Try them all.
 - **Return values**: `return x == -1 ? 0 : x;` often matches where a temporary

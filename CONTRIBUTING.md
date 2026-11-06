@@ -47,8 +47,8 @@ did to its output ([`docs/TOOLCHAIN.md`](docs/TOOLCHAIN.md)). So:
   `tools/ps2eeas_nops.py` with evidence from retail, not the C;
 - matched C is plain C: no `volatile`, no inline assembly (`__asm__`, register
   pins, barriers), no `#define` that renames a global or an address, and no
-  hardcoded addresses (a number cast to a pointer; name the global by its
-  address instead, `extern u32 D_1000F520;`). A function that only matches with
+  hardcoded addresses (a number cast to a pointer, hardware registers
+  included). A function that only matches with
   one of them stays in `nonmatching/` ([`docs/LEVERS.md`](docs/LEVERS.md)).
 
 The check is not link-time yet: `tools/audit_matches.py` masks the fields the
