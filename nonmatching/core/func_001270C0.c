@@ -1,3 +1,4 @@
+/* Not matching yet: SIZE ours 152 / disc 164: retail's two sync instructions need inline asm (tools/try_func.py func_001270C0 --diff). Not part of the build. */
 /* cflags: @ee29 -O2 -G0 */
 /* libgraph: 2.9-ee-991111, @ee29 -O2 -G0. The library's sceGsSyncV: waits for the next vertical
  * blank (INTC_STAT bit 2, or the flag func_00126F10 sets from the vblank handler) and returns the
@@ -17,7 +18,6 @@ long func_001270C0(void) {
     func_00126F10(&flag, &csr);
     s = func_0012D420();
     *(volatile u32 *)0x1000F000 = 4;
-    __asm__ volatile("sync");
     if (s != 0) {
         func_0012D470();
     }
@@ -25,7 +25,6 @@ long func_001270C0(void) {
     }
     s = func_0012D420();
     *(volatile u32 *)0x1000F000 = 4;
-    __asm__ volatile("sync");
     if (s != 0) {
         func_0012D470();
     }
