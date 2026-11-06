@@ -154,3 +154,19 @@ Type4 *func_L00_00753C68(Type4 *arg0) {
     }
     return arg0;
 }
+
+extern s32 func_L00_005F5068(s32, s32, s32, u32, u32);
+extern s32 D_00171950[];
+extern u32 D_0021DE80;
+
+s32 func_L00_00754DA0(s32 object) {
+    s32 result = 3;
+    if (D_00171950[0] == 2) {
+        func_L00_005F5068(16, 1, 3, 0, 0);
+        D_0021DE80 = 6;
+        (*(void (**)(s32))(*(u32 *)(object + 0x58) + 0x140))(object);
+        result = 3;
+    }
+    D_002215CC = result;
+    return result;
+}

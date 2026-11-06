@@ -358,6 +358,7 @@ def status(args) -> None:
 
 
 BANNED = [
+    (re.compile(r"\b__asm__\s*(?:__volatile__\s*)?\("), "inline assembly"),
     (re.compile(r"\b__asm__\s*\(\s*\"[^\"]*\"\s*:"), "inline assembly"),
     (re.compile(r"\basm\s*(volatile\s*)?\("), "inline assembly"),
     (re.compile(r"\bregister\b[^;]*\b(?:__asm__|asm)\s*\("), "a register pin"),
