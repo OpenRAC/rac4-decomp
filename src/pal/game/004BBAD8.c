@@ -23,3 +23,36 @@ void func_004BBAD8(int a)
     p = func_004A2798(&D_002218E0, D_003D9624[0]);
     func_005062D0(p, D_0030A4E0 + D_0021DEF4 * 48);
 }
+
+extern s32 func_00499120(s32 mode);
+extern s32 func_00506BB8(void);
+extern void func_0049BF40(s32 context);
+extern void func_004BB638(s32 direction);
+extern void func_004BB5B8(s32 direction);
+extern void func_004BB740(void);
+
+void func_004BB6A0(void)
+{
+    if (!D_0021F97A) {
+        s32 direction = 0;
+        switch (func_00499120(6)) {
+        case 2:
+            func_0049BF40(func_00506BB8());
+            break;
+        case 7:
+            direction = 1;
+        case 1:
+        case 8:
+            func_004BB638(direction);
+            break;
+        case 5:
+            direction = 1;
+        case 6:
+            func_004BB5B8(direction);
+            break;
+        case 13:
+            func_004BB740();
+            break;
+        }
+    }
+}
