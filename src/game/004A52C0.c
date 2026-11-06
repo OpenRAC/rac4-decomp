@@ -1,10 +1,12 @@
 #include "common.h"
-
-extern u8 D_307B58[];
-
-// Stores the float ARG1 at offset 0xD0 of the 0xEC-byte entry ARG0.
-void func_004A52C0(s32 arg0, f32 arg1) {
-    u8 *entry = D_307B58 - (-(arg0 * 0xEC));
-
-    *(f32 *)(entry + 0xD0) = arg1;
+typedef struct {
+    char p0[0xD0];
+    f32 fD0;
+    char pD4[24];
+} Type1;
+extern Type1 D_00307B58[];
+/* Stores the float in the selected record. */
+void func_004A52C0(s32 index, f32 value)
+{
+    D_00307B58[index].fD0 = value;
 }

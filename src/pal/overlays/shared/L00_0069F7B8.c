@@ -1,0 +1,52 @@
+#include "common.h"
+typedef struct Object Object;
+typedef struct {
+    char pad[0x14];
+    s32 (*isType)(Object *, u32);
+} VTable;
+struct Object {
+    char pad[8];
+    VTable *vtable;
+    char padC[8];
+    f32 value;
+};
+typedef struct {
+    s32 pad;
+    char *table;
+} Manager;
+extern Manager D_00223248[];
+extern u32 D_00220520;
+extern void *func_00502150(void);
+extern void *func_00501658(void *, u32);
+static inline Manager *getManager(void)
+{
+    Manager *p = D_00223248;
+    if (p->table)
+        return p;
+    return func_00502150();
+}
+static inline Object *valid(Object *p)
+{
+    if (p && p->vtable->isType(p, D_00220520))
+        return p;
+    return 0;
+}
+static inline Object *getTyped(u32 id)
+{
+    Manager *m = getManager();
+    char *state = m->table;
+    void *table = 0;
+    if (state)
+        table = *(void **)(state + ((u32)*(s32 *)(state + 0x14) << 2));
+    return valid(func_00501658(table, id));
+}
+s32 func_L00_0069F7B8(u32 id, f32 value)
+{
+    s32 result = 0;
+    Object *p = getTyped(id);
+    if (p) {
+        p->value = value;
+        result = 1;
+    }
+    return result;
+}

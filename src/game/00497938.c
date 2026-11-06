@@ -1,10 +1,13 @@
 #include "common.h"
 
-extern u8 D_2F32B8[];
+typedef struct Type1 {
+    s32 f0, f4;
+    char pad8[0x4C];
+} Type1;
+extern Type1 D_002F32B8[];
 
-// Stores ARG1 into the second word of the 0x54-byte record ARG0.
-void func_00497938(s32 arg0, s32 arg1) {
-    s32 *p = (s32 *)(D_2F32B8 - (-(arg0 * 0x54)));
-
-    p[1] = arg1;
+/* Store the indexed record's mode. */
+void func_00497938(s32 index, s32 mode)
+{
+    D_002F32B8[index].f4 = mode;
 }

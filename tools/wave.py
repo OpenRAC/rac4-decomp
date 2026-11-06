@@ -152,7 +152,9 @@ def declarations() -> dict[str, str]:
         for line in p.read_text(errors="replace").splitlines():
             if line.startswith("extern ") and line.rstrip().endswith(";"):
                 for sym in re.findall(r"\b((?:func|D)_(?:L\d\d_)?[0-9A-F]{8}_?)\b", line):
-                    out.setdefault(sym.rstrip("_"), line.strip())
+                    # an old `D_x_[]` + `#define D_x (D_x_[0])` pair: show the plain form
+                    out.setdefault(sym.rstrip("_"), re.sub(r"\b((?:func|D)_(?:L\d\d_)?[0-9A-F]{8})_\b", r"\1",
+                                                           line.strip()))
             m = layout.DEF.match(line)
             if m:
                 out[m.group(1)] = "extern " + line.split("{")[0].strip() + ";"
@@ -360,6 +362,10 @@ BANNED = [
     (re.compile(r"\basm\s*(volatile\s*)?\("), "inline assembly"),
     (re.compile(r"\bregister\b[^;]*\b(?:__asm__|asm)\s*\("), "a register pin"),
     (re.compile(r"__asm__\s*\(\s*\"[^\"]*[+\-][^\"]*\"\s*\)"), "an alias naming an expression"),
+    (re.compile(r"\bvolatile\b"), "volatile"),
+    (re.compile(r"^\s*#\s*define\s+\w+\s+[^\n]*\b(?:D|func)_(?:L\d\d_)?[0-9A-Fa-f]{6,8}", re.M), "a #define alias"),
+    (re.compile(r"\(\s*[\w\s]*\*+\s*\)\s*\(?\s*0x[0-9A-Fa-f]{5,}|\(\s*\*\s*\)\s*\([^)]*\)\s*\)\s*0x[0-9A-Fa-f]{5,}"),
+     "a hardcoded address"),
 ]
 
 

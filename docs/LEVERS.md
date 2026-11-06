@@ -3,13 +3,20 @@
 What tends to make a function match. These came out of the work so far; add
 yours here. The compiler and its flags are in [`TOOLCHAIN.md`](TOOLCHAIN.md).
 
+- **Not allowed in matched C**: `volatile`, inline assembly (`__asm__`,
+  `asm`, register pins, barriers), `#define` aliases that rename a global or
+  an address, and hardcoded addresses (`*(u32 *)0x1000F520`,
+  `((void (*)(void))0x00123450)()`). A function that only matches with one of
+  them is not matched: it stays in `nonmatching/`
+  ([`NONMATCHING.md`](NONMATCHING.md)).
 - **Globals read with `lui`/`lw`** (not through `$gp`): declare them without a
-  size so the compiler keeps them out of small data:
+  size so the compiler keeps them out of small data, and index them where
+  they are used:
   ```c
-  extern s32 D_00221ED8_[];
-  #define D_00221ED8 (D_00221ED8_[0])
+  extern s32 D_00221ED8[];
+  ... D_00221ED8[0] ...
   ```
-  and add `/* cflags: -mno-split-addresses */` if the destination register is the
+  (never a `#define D_00221ED8 (D_00221ED8_[0])` alias), and add `/* cflags: -mno-split-addresses */` if the destination register is the
   `lui` temporary in retail.
 - **`-G8`**: variables of up to 8 bytes are plain `extern` declarations when
   retail reaches them with `lui` (the destination register as temporary)
@@ -17,8 +24,12 @@ yours here. The compiler and its flags are in [`TOOLCHAIN.md`](TOOLCHAIN.md).
   they are defined above the function in the same file (`s32 D_x = 0;`).
   Retail's assembler only took data it had already seen for small
   (`tools/ps2eeas_sdata.py`).
-- **`volatile`**: a counter that retail reloads from memory, or a store that
-  retail leaves a nop delay slot after, is usually `volatile`.
+- **Hardware registers** (0x10000000 and up, the 0x70000000 scratchpad, the
+  uncached 0xB0000000 range): retail builds their addresses as constants
+  (`lui`/`ori`, then an access at offset 0), which only a cast of the number
+  gives. A global named by its address (`extern u32 D_1000F520;`) compiles to
+  `lui`/`%lo` instead and does not match (checked on 13 functions), so a
+  function that touches registers that way stays in `nonmatching/`.
 - **Array indexing**: `p = array + i` and `array[i].field` give different
   register orders; `*(T *)((u32)p + (i << 2))` differs again. Try them all.
 - **Return values**: `return x == -1 ? 0 : x;` often matches where a temporary

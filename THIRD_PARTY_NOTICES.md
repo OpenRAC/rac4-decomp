@@ -1,5 +1,30 @@
 # Third-party notices
 
+## PAL video-stream control-flow adaptations
+
+The following PAL implementations adapt C control-flow structure from the
+OpenRAC RAC3 decompilation contributors' work in the unified
+[OpenRAC repository](https://github.com/OpenRAC/OpenRAC), pinned to commit
+`73f725bf54bb1bf6d8b9bb5b1511ed00d551fbde`:
+
+| RAC4 source | Donor function | Donor lines |
+| --- | --- | --- |
+| `src/pal/game/004F1B18.c` | `func_003ABE98` | 171–210 |
+| `src/pal/game/004F2078.c` | `func_003AC3F8` | 371–423 |
+
+Both donors are in
+[`games/rac3/ntsc/src/frontbin/3ABA48.c`](https://github.com/OpenRAC/OpenRAC/blob/73f725bf54bb1bf6d8b9bb5b1511ed00d551fbde/games/rac3/ntsc/src/frontbin/3ABA48.c)
+under GNU GPL version 3, as recorded in that tree's
+[`games/rac3/ntsc/LICENSE`](https://github.com/OpenRAC/OpenRAC/blob/73f725bf54bb1bf6d8b9bb5b1511ed00d551fbde/games/rac3/ntsc/LICENSE).
+See also this repository's `LICENSE`. This notice concerns these pinned unified
+repository sources, separately from the other RAC3 source scope described below.
+
+The adaptations retain the polling/submission and ring-refill control flow.
+RAC4 PAL addresses, physical argument contracts, data layouts, MMIO accesses
+and defined wrapping arithmetic were checked against RAC4 retail separately.
+Donor assembly, compiler workarounds and proprietary SDK implementation sources
+were not copied.
+
 ## GCC runtime library (`src/libgcc/`)
 
 `libgcc2.c`, `gbl-ctors.h`, `longlong.h` (GCC trunk, 1999-09-09) and
@@ -439,3 +464,71 @@ These PAL reconstructions also use the public RAC3 sources pinned below; each ta
 | `src/pal/overlays/shared/L00_006F2370.c` | `src/levels/shared/L39_00662678.c` | `func_L39_00665CC0` | `cd0e7c20fd8a93116566ba2e024fa2f3536bd30c` |
 | `src/pal/overlays/l41_battledome_tower/L41_00411F80.c` | `src/levels/shared/L40_00420998.c` | `func_L40_004224F8` | `cd0e7c20fd8a93116566ba2e024fa2f3536bd30c` |
 | `src/pal/overlays/l41_battledome_tower/L41_00621CE8.c` | `src/levels/shared/L40_005416F0.c` | `func_L40_005416F0` | `cd0e7c20fd8a93116566ba2e024fa2f3536bd30c` |
+
+## Further PAL engine-family references
+
+The additional PAL reconstructions listed in
+[`config/pal/crossgame_parallel01.tsv`](config/pal/crossgame_parallel01.tsv)
+use public RAC3 decompilations as algorithm and interface references, including
+the unified OpenRAC checkout. Each row records the repository, immutable commit,
+file and reference function; the C sources also carry their credits.
+
+The RAC3 game-source scope is described in the earlier public-decompilations
+notice and the reference project's `LEGAL.md`. Fingerprints identify candidates;
+these reconstructions were checked independently against RAC4 PAL instructions,
+actual address targets and caller/callee interfaces. No proprietary SDK source,
+samples or headers were used.
+
+### PAL video acquisition and tile loop
+
+`src/pal/game/004F2F08.c` adapts the acquisition and tile-loop C structure
+from the OpenRAC RAC3 decompilation contributors' [`func_003AD288`](https://github.com/OpenRAC/OpenRAC/blob/73f725bf54bb1bf6d8b9bb5b1511ed00d551fbde/games/rac3/ntsc/src/frontbin/3ABA48.c#L697-L732),
+in `games/rac3/ntsc/src/frontbin/3ABA48.c` at commit
+`73f725bf54bb1bf6d8b9bb5b1511ed00d551fbde`. The donor project uses
+[GNU GPL version 3](https://github.com/OpenRAC/OpenRAC/blob/73f725bf54bb1bf6d8b9bb5b1511ed00d551fbde/games/rac3/ntsc/LICENSE),
+also included in this repository's `LICENSE`.
+
+The adapted parts include the acquisition-loop assignment test, reuse and
+reload of the current video pointer, and direct tile-index products in the
+guarded tile loop. RAC4 PAL addresses, call interfaces and data layout were
+checked against its retail executable. This attribution is to the project
+contributors; no individual authorship of the donor function is asserted.
+
+
+### PAL angular interpolation references (RAC2)
+
+These PAL functions use the public [OpenRAC RAC2 decompilation](https://github.com/OpenRAC/rac2-decomp)
+at commit `99f35ac2c084fc59cdf3d631f8f960a825e7a49c` as a reference.
+The immutable revision's `LICENSE` and `LEGAL.md` cover its authored C under GPL-3.0;
+RAC4 addresses, operation order, physical interfaces and compiler output were checked independently.
+
+| RAC4 source | RAC2 source | Donor function |
+| --- | --- | --- |
+| `src/pal/overlays/shared/L01_00596268.c` | `src/levels/shared/L00_00316F60.c` | `func_L00_0031AD40` |
+| `src/pal/overlays/shared/L01_00596140.c` | `src/levels/shared/L00_00316F60.c` | `func_L00_0031ABE0` |
+
+The upstream revision also retains this earlier MIT notice in its `THIRD_PARTY_NOTICES.md`:
+
+```
+MIT License
+
+Copyright (c) 2026 llesieur99
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```

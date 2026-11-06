@@ -44,7 +44,12 @@ did to its output ([`docs/TOOLCHAIN.md`](docs/TOOLCHAIN.md)). So:
 - options apply to whole source files (a `/* cflags: ... */` first line), never
   to one function: GCC 2.95 takes them per translation unit;
 - if one function's nops differ from retail, refine the rule in
-  `tools/ps2eeas_nops.py` with evidence from retail, not the C.
+  `tools/ps2eeas_nops.py` with evidence from retail, not the C;
+- matched C is plain C: no `volatile`, no inline assembly (`__asm__`, register
+  pins, barriers), no `#define` that renames a global or an address, and no
+  hardcoded addresses (a number cast to a pointer, hardware registers
+  included). A function that only matches with
+  one of them stays in `nonmatching/` ([`docs/LEVERS.md`](docs/LEVERS.md)).
 
 The check is not link-time yet: `tools/audit_matches.py` masks the fields the
 compiled object relocates (constants and offsets must equal retail), so a

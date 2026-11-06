@@ -1,7 +1,7 @@
 #include "common.h"
 
-extern s32 D_004A22E0;
+extern s32 D_0021F66C;
 
 s32 func_004A22E0(void) {
-    return D_004A22E0;
+    return D_0021F66C;
 }
