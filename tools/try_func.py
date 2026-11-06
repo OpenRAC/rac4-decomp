@@ -45,6 +45,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import layout  # noqa: E402
 import retail  # noqa: E402
+import elf_layout  # noqa: E402
 
 ROOT = layout.ROOT
 TRY = ROOT / "build/try"
@@ -81,13 +82,15 @@ def source_text(name: str, candidate: str) -> str:
     return candidate
 
 
-def in_container() -> bool:
+def in_container(env: dict[str, str] | None = None) -> bool:
     """True where the compiler runs without starting the container: inside it
     (wine on PATH), or natively on Windows (Git Bash)."""
-    return shutil.which("wine") is not None or os.name == "nt"
+    environment = os.environ if env is None else env
+    return os.name == "nt" or shutil.which("wine", path=environment.get("PATH", os.defpath)) is not None
 
 
-def compile_all(jobs: list[tuple[Path, Path, list[str]]], work: Path) -> None:
+def compile_all(jobs: list[tuple[Path, Path, list[str]]], work: Path,
+                env: dict[str, str] | None = None) -> None:
     """Compiles every (source, object, flags) in one container start."""
     script = work / "compile.sh"
     lines = ["set +e", "export WINEDEBUG=-all"]
@@ -97,11 +100,17 @@ def compile_all(jobs: list[tuple[Path, Path, list[str]]], work: Path) -> None:
         # as_posix: on Windows relative_to() gives backslashes, which bash reads as escapes
         lines.append(f"bash tools/cc.sh {src.relative_to(ROOT).as_posix()} {obj.relative_to(ROOT).as_posix()} "
                      f"{' '.join(flags)} > {log.relative_to(ROOT).as_posix()} 2>&1")
-    script.write_text("\n".join(lines) + "\n")
-    cmd = ["bash", script.relative_to(ROOT).as_posix()]
-    if not in_container():
-        cmd = ["bash", "tools/docker/run.sh"] + cmd
-    subprocess.run(cmd, cwd=ROOT, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    script.write_text("\n".join(lines) + "\n", newline="\n")
+    # Windows otherwise searches system32 before PATH and can launch WSL bash.
+    environment = dict(os.environ if env is None else env)
+    bash = shutil.which("bash", path=environment.get("PATH", os.defpath))
+    if bash is None:
+        raise FileNotFoundError("bash not found in compiler environment PATH")
+    cmd = [bash, script.relative_to(ROOT).as_posix()]
+    if not in_container(environment):
+        cmd = [bash, "tools/docker/run.sh", "bash", script.relative_to(ROOT).as_posix()]
+    subprocess.run(cmd, cwd=ROOT, env=environment,
+                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 
 def compiled(obj: Path, name: str) -> tuple[bytes, dict, int] | None:
@@ -109,11 +118,9 @@ def compiled(obj: Path, name: str) -> tuple[bytes, dict, int] | None:
     from elftools.elf.elffile import ELFFile
     with open(obj, "rb") as f:
         elf = ELFFile(f)
-        text = elf.get_section_by_name(".text")
-        for s in elf.get_section_by_name(".symtab").iter_symbols():
-            if s.name == name and s["st_info"]["type"] == "STT_FUNC":
-                start = s["st_value"]
-                return text.data()[start: start + s["st_size"]], retail.reloc_masks(elf), start
+        for function in elf_layout.functions(elf):
+            if function.name == name:
+                return function.code, retail.reloc_masks(elf, function.section_index), function.start
     return None
 
 

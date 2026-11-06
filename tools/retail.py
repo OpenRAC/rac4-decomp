@@ -9,6 +9,7 @@ after this masking are the same code at different addresses.
 """
 import struct
 from pathlib import Path
+from elf_layout import relocation_sections
 
 ROOT = Path(__file__).resolve().parent.parent
 J, JAL, LUI = 2, 3, 0x0F
@@ -35,15 +36,13 @@ def normalise(code: bytes):
 RELOC_FIELDS = {4: 0x03FFFFFF, 5: 0xFFFF, 6: 0xFFFF, 7: 0xFFFF}
 
 
-def reloc_masks(elf, section: str = ".text") -> dict:
+def reloc_masks(elf, section: int | str = ".text") -> dict:
     """offset -> the bits a relocation fills in, for one section of a
     relocatable object (a compiled source file)."""
-    idx = next((i for i, s in enumerate(elf.iter_sections()) if s.name == section), None)
     masks = {}
-    for s in elf.iter_sections():
-        if s["sh_type"] in ("SHT_REL", "SHT_RELA") and s["sh_info"] == idx:
-            for r in s.iter_relocations():
-                masks[r["r_offset"]] = masks.get(r["r_offset"], 0) | RELOC_FIELDS.get(r["r_info_type"], 0xFFFFFFFF)
+    for s in relocation_sections(elf, section):
+        for r in s.iter_relocations():
+            masks[r["r_offset"]] = masks.get(r["r_offset"], 0) | RELOC_FIELDS.get(r["r_info_type"], 0xFFFFFFFF)
     return masks
 
 

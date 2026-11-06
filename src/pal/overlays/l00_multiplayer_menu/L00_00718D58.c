@@ -1,9 +1,9 @@
 #include "common.h"
 
-extern void func_L00_006A0428(s32, s32, s32);
+extern s32 func_L00_006A0428(s32, s32, s32);
 extern u32 func_L00_005E8CF8(u32, u32, s32, s32, s32, s32);
-extern void func_L00_006A0AF8(s32, u8 *);
-extern void func_L00_006A0BE8(s32, u32);
+extern s32 func_L00_006A0AF8(s32, u8 *);
+extern s32 func_L00_006A0BE8(s32, u32);
 extern void func_L00_006A1F88(s32, s32);
 
 // Updates a menu item made of two parts, +0x14 (placed at +0x18) and +0x5C (placed at +0x60):

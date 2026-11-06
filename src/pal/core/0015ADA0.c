@@ -1,6 +1,6 @@
 #include "common.h"
 
-extern s32 D_001721E0[];
+#include "pal/profile_001721E0.h"
 s32 D_0021E030 = 0;
 
 // PAL version of func_0015AD70: increments a global counter and adds 20 (one 50 Hz frame in
@@ -8,5 +8,5 @@ s32 D_0021E030 = 0;
 void func_0015ADA0(void) {
     s32 count = D_0021E030 + 1;
     D_0021E030 = count;
-    D_001721E0[0x86] = D_001721E0[0x86] + 0x14;
+    D_001721E0.region20.words.f218 = D_001721E0.region20.words.f218 + 0x14;
 }
