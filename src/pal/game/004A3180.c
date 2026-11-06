@@ -13,7 +13,6 @@ typedef struct {
     int f1d4;
 } Data;
 extern char D_001719C8[];
-#define DATA (*(Data *)D_001719C8)
 extern int *D_0021DDF8;
 extern int D_0021EE3C, D_002213E0;
 int D_0021F710 = 0, D_0021F714 = 0;
@@ -40,9 +39,9 @@ void func_004A3180(void)
             D_0021F710 = 1;
         break;
     case 1:
-        if (DATA.f1c4 < 3 && DATA.f1cc < 0) {
-            DATA.f1b0 = 0;
-            if (DATA.f18 < -1 || !func_00469A80(p, 0x10000))
+        if (((Data *)D_001719C8)->f1c4 < 3 && ((Data *)D_001719C8)->f1cc < 0) {
+            ((Data *)D_001719C8)->f1b0 = 0;
+            if (((Data *)D_001719C8)->f18 < -1 || !func_00469A80(p, 0x10000))
                 goto reset;
             D_0021F710 = 2;
         }
@@ -50,9 +49,9 @@ void func_004A3180(void)
     case 2:
         x = func_00469B10(p);
         if (x >= 0) {
-            if (DATA.f1d4) {
+            if (((Data *)D_001719C8)->f1d4) {
                 *p = 0;
-                DATA.f1d4 = 0;
+                ((Data *)D_001719C8)->f1d4 = 0;
                 D_0021F710 = 4;
             } else if (x > 0) {
                 if (!func_00469D70(p, 0x10000, &temp)) {

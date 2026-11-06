@@ -3,12 +3,7 @@
 
 #include "common.h"
 
-#ifndef PAL_TYPED_LOOKUP_TYPE
-#error PAL_TYPED_LOOKUP_TYPE must name the type identifier
-#endif
-
 #include "pal/object_lookup_types.h"
-extern u32 PAL_TYPED_LOOKUP_TYPE;
 
 static inline Manager *getManager(void)
 {
@@ -17,20 +12,21 @@ static inline Manager *getManager(void)
         return p;
     return func_00502150();
 }
-static inline Object *valid(Object *p)
+/* TYPE is the address of the global holding the type identifier, read at the check. */
+static inline Object *valid(Object *p, const u32 *type)
 {
-    if (p && p->vtable->isType(p, PAL_TYPED_LOOKUP_TYPE))
+    if (p && p->vtable->isType(p, *type))
         return p;
     return 0;
 }
-static inline Object *getTyped(u32 id)
+static inline Object *getTyped(u32 id, const u32 *type)
 {
     Manager *m = getManager();
     char *state = m->context;
     void *table = 0;
     if (state)
         table = *(void **)(state + ((u32)*(s32 *)(state + 0x14) << 2));
-    return valid(func_00501658(table, id));
+    return valid(func_00501658(table, id), type);
 }
 
 #endif
