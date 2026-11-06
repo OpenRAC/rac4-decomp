@@ -1,12 +1,20 @@
+/* cflags: -mno-split-addresses */
 #include "common.h"
-s32 func_L08_004CE858(const u8 *owner)
+
+typedef struct {
+    char pad0[0x20];
+    u8 f20;
+} Type1;
+
+/* Tests whether the type byte is two or four. */
+s32 func_L08_004CE858(Type1 *arg0)
 {
-    s32 result = 0;
-    switch (owner[0x20]) {
-    case 2:
-    case 4:
+    s32 result;
+    u8 type;
+
+    type = arg0->f20;
+    result = 0;
+    if (type == 2 || type == 4)
         result = 1;
-        break;
-    }
     return result;
 }

@@ -1,8 +1,9 @@
+/* cflags: -mno-split-addresses */
+/* cflags: -mno-split-addresses */
 #include "common.h"
 
-extern s32 func_00158A40(s32 command, s32 byte_count, const void *payload);
+s32 func_00158A40(s32, s32, s32);
 
-s32 func_00159718(void)
-{
-    return func_00158A40(0x4B, 0, 0);
+void func_00159718(void) {
+    func_00158A40(75, 0, 0);
 }

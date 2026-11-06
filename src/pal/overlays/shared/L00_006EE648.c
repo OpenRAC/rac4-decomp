@@ -2,7 +2,7 @@
 extern s32 D_00171E80[];
 extern s32 D_00171EF8[];
 extern s32 D_00171F70[];
-extern s32 D_001721E0[];
+#include "pal/profile_001721E0.h"
 typedef struct { char pad[0x4c]; s32 time; s32 data[12]; } Obj;
 typedef struct { char pad[4]; Obj *obj; } Link;
 typedef struct { char pad[0x2f10]; s32 index; char pad2[0x14]; Link *link; } Arg;
@@ -20,6 +20,6 @@ void func_L00_006EE648(Arg *arg) {
         out[0] = *c; c += 10;
         out++;
     } while (--i >= 0);
-    if (obj->time < D_001721E0[0x218/4] - 0x4b0)
-        obj->time = D_001721E0[0x218/4];
+    if (obj->time < (s32)(D_001721E0.region20.words.f218 - 0x4B0U))
+        obj->time = (s32)D_001721E0.region20.words.f218;
 }
