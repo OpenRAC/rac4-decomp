@@ -6,12 +6,12 @@ extern long func_01ED7F10(void *, void *, int);
 extern void func_0015B558(long);
 extern long func_0015B568(void);
 extern u16 D_00221970[];
-extern int D_002234A4;
+#include "pal/global_002234A4.h"
 extern char D_0015D3E0[];
 int func_L00_0077D028(int *a1)
 {
     int result = 1;
-    int base = D_002234A4;
+    int base = (s32)(u32)D_002234A4;
     int error;
     u16 x;
     int value = *a1;

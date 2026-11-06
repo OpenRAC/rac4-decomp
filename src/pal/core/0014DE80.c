@@ -1,13 +1,16 @@
+/* cflags: -O2 -G8 -Wa,-G0 -Wuninitialized */
 #include "common.h"
-typedef struct {
-    u8 unknown0[0x14];
-    s8 enabled;
-    s8 mode;
-} Record;
-s32 func_0014DE80(const Record *record, s16 mode, f32 amount)
+
+/* Test the two descriptor states and the input threshold. */
+s32 func_0014DE80(void *record, s16 state_id, f32 value)
 {
-    s32 result = 0;
-    if (record->enabled == 1 && mode == 1 && record->mode == 1 && 0.44999998807907104f <= amount) {
+    s32 result;
+    s8 state;
+
+    state = *(s8 *)((u8 *)record + 0x14);
+    result = 0;
+    if (state == 1 && state_id == state &&
+        *(s8 *)((u8 *)record + 0x15) == state_id && value >= 0.45f) {
         result = 1;
     }
     return result;

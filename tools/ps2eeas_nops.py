@@ -63,6 +63,7 @@ import sys
 
 import rabbitizer as rz
 from elftools.elf.elffile import ELFFile
+from elf_layout import functions
 
 MIN_SPAN = 5   # target through the branch, not counting its own delay slot (6 with it)
 # Objects whose retail code is hand-written noreorder assembly: none known here yet.
@@ -254,13 +255,10 @@ def move_sites(lines, start, end):
 
 def main() -> None:
     src_path, obj_path, dst_path = sys.argv[1:4]
-    lines = open(src_path).readlines()
-    elf = ELFFile(open(obj_path, "rb"))
-    text = elf.get_section_by_name(".text").data()
-    tidx = next(i for i, s in enumerate(elf.iter_sections()) if s.name == ".text")
-    funcs = {s.name: (s["st_value"], s["st_size"])
-             for s in elf.get_section_by_name(".symtab").iter_symbols()
-             if s["st_shndx"] == tidx and s["st_info"]["type"] == "STT_FUNC" and s["st_size"]}
+    with open(src_path) as source:
+        lines = source.readlines()
+    with open(obj_path, "rb") as stream:
+        funcs = {function.name: function for function in functions(ELFFile(stream)) if function.size}
 
     inserts = {}  # line index -> number of nops to put before it
     as_words = set()  # branch lines to write as .word (GNU as over-padded them)
@@ -289,7 +287,8 @@ def main() -> None:
             if bm and is_local_branch(bm.group(1), bm.group(2)) \
                     and bm.group(2).split(",")[-1].strip() in seen:
                 src_back.append(j)
-        start, size = funcs[name]
+        function = funcs[name]
+        text, start, size = function.section_data, function.start, function.size
         obj_back, obj_fp, obj_moves = scan(start, size, text)
         src_moves = move_sites(lines, i, end)
         vram = int(name[5:], 16) if re.fullmatch(r"func_[0-9A-Fa-f]{8}", name) else None
@@ -346,7 +345,8 @@ def main() -> None:
                          f"than ps2eeas did, and it cannot be written as a .word here: {stripped}")
             line = word
         out.append(line)
-    open(dst_path, "w").writelines(out)
+    with open(dst_path, "w") as destination:
+        destination.writelines(out)
     print(f"ps2eeas_nops: padded {loops} short loop(s), {fps} FP compare(s), "
           f"{moves} mtc1 use(s), unpadded {len(as_words)} branch(es) {src_path} -> {dst_path}")
 

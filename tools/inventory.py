@@ -160,7 +160,10 @@ class Section:
                     k = (x - base) // 4 - 1
                     while k > 0 and w[k] == 0:
                         k -= 1
-                    if k >= 1 and (w[k - 1] == JR_RA or w[k - 1] >> 26 == 2 or w[k] == JR_RA or w[k] >> 26 == 2):
+                    # the jump in w[k] needs a zero delay slot before x: right after it, x is
+                    # its delay slot (a data word that only looks like a pointer)
+                    if k >= 1 and (w[k - 1] == JR_RA or w[k - 1] >> 26 == 2 or
+                                   ((w[k] == JR_RA or w[k] >> 26 == 2) and k < (x - base) // 4 - 1)):
                         after.add(x)
         raw = split(w, base, set(extra) | after | self.vtable)
         if proven:
