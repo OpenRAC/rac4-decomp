@@ -1,4 +1,9 @@
+/* Not matching yet on PAL: BYTES 17/152 (8 words differ) (tools/check_func.py --version pal func_004F0670 --diff). Not part of the build. */
+/* Retail builds each hardware register's address as a constant (lui/ori, then an access at 0):
+ * only a cast of the number, `*(volatile u32 *)0x...`, gives that, and matched C may use neither
+ * volatile nor hardcoded addresses. A global named by its address gives lui/%lo instead. */
 #include "common.h"
+extern u32 D_1000E000;
 
 /* Interface reference: OpenRAC/OpenRAC @ 73f725bf54bb1bf6d8b9bb5b1511ed00d551fbde,
  * games/rac3/ntsc/src/frontbin/3A9CF8.c, func_003AAA00.
@@ -38,5 +43,5 @@ void func_004F0670(void)
     func_004F2CC0(D_00221FD4);
     func_004F07D0(D_00221FD8);
     func_004F1AF0(D_00221FD0);
-    *(volatile u32 *)0x1000E000 &= 0xFFFFFFFD;
+    D_1000E000 &= 0xFFFFFFFD;
 }

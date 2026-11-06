@@ -11,3 +11,6 @@ parameters. Read that file first and follow it exactly. Work alone, from
 the repository root, and write only inside build/try/<func>/.
 The build is fixed: a function that would need a new build step or a flag
 of its own to match is not a match (CONTRIBUTING.md, "Build fidelity").
+Plain C only: no `volatile`, inline assembly, `#define` aliases or
+hardcoded addresses (docs/QUEUE.md, "Rules"); a function that needs one
+is not a match.

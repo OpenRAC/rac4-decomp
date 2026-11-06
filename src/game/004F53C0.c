@@ -4,8 +4,7 @@ extern void func_004E4DF0(s32);
 extern void func_004E5070(s32, s32, s32, s32, s32, s32);
 extern void func_004E4FA0(void);
 extern s32 D_00221464;
-extern s32 D_0023ABAC_[];
-#define D_0023ABAC (D_0023ABAC_[0])
+extern s32 D_0023ABAC[];
 
 s32 D_00220980 = 0;
 
@@ -14,6 +13,6 @@ s32 D_00220980 = 0;
 void func_004F53C0(void) {
     func_004E4DF0(D_00220980);
     D_00221464 = 0;
-    func_004E5070(0, 0, 0, 0, D_0023ABAC - 0x2C0000, 0x2C0000);
+    func_004E5070(0, 0, 0, 0, D_0023ABAC[0] - 0x2C0000, 0x2C0000);
     func_004E4FA0();
 }

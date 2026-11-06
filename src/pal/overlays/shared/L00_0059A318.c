@@ -11,8 +11,6 @@ struct Type1 {
 };
 extern struct Type1 D_0023BF00[];
 extern u8 *D_00343E78[];
-#define COUNT (D_0023BF00[0].f84)
-#define MODE (D_0023BF00[0].f70)
 #define ID(p) (*(s16 *)((p) + 0xbc))
 #define FLAGS(p) (*(u16 *)((p) + 0x74))
 /* Set class-specific scene flags and clear the ten player state bytes. */
@@ -21,7 +19,7 @@ void func_L00_0059A318(void) {
 
     u8 *m;
     i = 0;
-    if (COUNT > 0) {
+    if (D_0023BF00[0].f84 > 0) {
 
         do {
             m = ((u8 **)((u8 *)D_0023BF00 + 0x1f0))[i];
@@ -34,7 +32,7 @@ void func_L00_0059A318(void) {
                     FLAGS(((u8 **)((u8 *)D_0023BF00 + 0x1f0))[i]) |= 0x1000;
                 if (ID(m) == 10) {
                     u8 *p = ((u8 **)((u8 *)D_0023BF00 + 0x1f0))[i];
-                    if (MODE == 2)
+                    if (D_0023BF00[0].f70 == 2)
                         FLAGS(p) |= 0x1000;
                     else
                         FLAGS(p) |= 0x1002;
@@ -46,7 +44,7 @@ void func_L00_0059A318(void) {
                     func_L00_00597628(i, 75, 0xffc0c0c0, 0xb0505050);
             }
             i++;
-        } while (i < COUNT);
+        } while (i < D_0023BF00[0].f84);
     }
     func_L00_00598D18(0);
     {

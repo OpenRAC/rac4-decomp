@@ -203,6 +203,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_001270C0`](core/func_001270C0.c) | core | 164 | SIZE ours 152 / disc 164: retail's two sync instructions need inline asm |
 | [`func_004C6070`](game/func_004C6070.c) | game | 328 | SIZE ours 300 / retail 328 |
 | [`func_004C8388`](game/func_004C8388.c) | game | 8 | not recorded |
+| [`func_004E80F8`](game/func_004E80F8.c) | game | 112 | SIZE ours 104 / disc 112 |
 | [`func_004F8B60`](game/func_004F8B60.c) | game | 664 | SIZE ours 580 / retail 664 |
 | [`func_L00_005D5CE0`](shared/func_L00_005D5CE0.c) | shared | 400 | SIZE ours 340 / retail 400 |
 | [`func_L00_0067FE68`](shared/func_L00_0067FE68.c) | shared | 184 | SIZE ours 176 / retail 184 |
