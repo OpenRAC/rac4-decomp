@@ -1,4 +1,4 @@
-/* cflags: -O2 -G8 -Wa,-G0 */
+/* cflags: -O2 -G8 */
 #include "common.h"
 extern int func_0045E850(int);
 extern void func_L00_00713698(int);

@@ -1,4 +1,4 @@
-/* cflags: -O2 -G8 -Wuninitialized -Wa,-G0 */
+/* cflags: -O2 -G8 -Wuninitialized */
 #include "common.h"
 extern s32 D_0021DE40;
 extern s16 D_0024798C[];
