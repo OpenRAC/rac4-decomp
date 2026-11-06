@@ -31,6 +31,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import layout  # noqa: E402
 import retail as mp  # noqa: E402
+import elf_layout  # noqa: E402
 from elftools.elf.elffile import ELFFile  # noqa: E402
 
 ROOT = mp.ROOT
@@ -289,24 +290,21 @@ def check(cls):
         base = Path(path).name[:-2]
         name, _, variant = base.partition(".")
         tried.add(name)
-        elf = ELFFile(open(path, "rb"))
-        text = elf.get_section_by_name(".text")
-        if text is None:
-            continue
-        data = text.data()
-        masks = mp.reloc_masks(elf)
-        for s in elf.get_section_by_name(".symtab").iter_symbols():
-            if s.name != name or s["st_info"]["type"] != "STT_FUNC":
-                continue
-            code = data[s["st_value"]: s["st_value"] + s["st_size"]]
-            addr, size, lvl = info[name]
-            r = read(lvl, addr, size)
-            pad = size - len(code)
-            if 0 < pad <= 12 and not any(r[len(code):]):
-                r = r[:len(code)]
-            start = s["st_value"]
-            if len(code) == len(r) and mp.fields(code, masks, start) == mp.fields(r, masks, start):
-                exact.setdefault(name, []).append(variant)
+        with open(path, "rb") as source:
+            elf = ELFFile(source)
+            for function in elf_layout.functions(elf):
+                if function.name != name:
+                    continue
+                code = function.code
+                masks = mp.reloc_masks(elf, function.section_index)
+                addr, size, lvl = info[name]
+                r = read(lvl, addr, size)
+                pad = size - len(code)
+                if 0 < pad <= 12 and not any(r[len(code):]):
+                    r = r[:len(code)]
+                start = function.start
+                if len(code) == len(r) and mp.fields(code, masks, start) == mp.fields(r, masks, start):
+                    exact.setdefault(name, []).append(variant)
     out = AUTO / "exact"
     out.mkdir(exist_ok=True)
     for old in out.glob("*"):
