@@ -1,25 +1,29 @@
 #include "common.h"
-typedef struct {
-    u8 prefix[8];
-    s16 text;
-} Descriptor;
-extern Descriptor *func_0054A290(s32, s32);
-extern char *func_0045E850(s32);
-extern s32 func_0011D920(char *, const char *, ...);
-extern void func_00549050(const char *, s32, s32);
+
 extern const char D_00220F58[];
 
-void func_0054A5A0(s32 item, s32 slot, s32 duration, s32 level)
+void *func_0054A290(s32 arg0, s32 arg1);
+const char *func_0045E850(s32 arg0);
+s32 func_0011D920(char *, const char *, ...);
+void func_00549050(const char *arg0, s32 arg1, s32 arg2);
+
+void func_0054A5A0(s32 arg0, s32 arg1, s32 arg2, s32 arg3)
 {
-    char text[128];
-    s32 suffix;
-    const char *name, *label, *format;
-    if (duration > 0 && item > 0 && slot >= 0 && level >= 0) {
-        suffix = item == 2 ? 0x25A5 : 0x2557;
-        format = D_00220F58;
-        name = func_0045E850(func_0054A290(item, 0)->text);
-        label = func_0045E850(suffix);
-        func_0011D920(text, format, name, label, level + 1);
-        func_00549050(text, slot, duration);
+    char local[128];
+    s32 selector;
+    const char *address;
+    u8 *first;
+    const char *second;
+    const char *third;
+
+    if (arg2 <= 0 || arg0 <= 0 || arg1 < 0 || arg3 < 0) {
+        return;
     }
+    selector = arg0 == 2 ? 0x25A5 : 0x2557;
+    address = D_00220F58;
+    first = func_0054A290(arg0, 0);
+    second = func_0045E850(*(s16 *)(first + 8));
+    third = func_0045E850(selector);
+    func_0011D920(local, address, second, third, arg3 + 1);
+    func_00549050(local, arg1, arg2);
 }

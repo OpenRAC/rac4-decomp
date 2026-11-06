@@ -49,6 +49,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import retail as mp  # noqa: E402
 import split_overlays as so  # noqa: E402
+import elf_layout  # noqa: E402
 from elftools.elf.elffile import ELFFile  # noqa: E402
 
 ROOT = mp.ROOT
@@ -154,28 +155,30 @@ class Checker:
         return None
 
     def check_object(self, path, exact, only):
-        elf = ELFFile(open(path, "rb"))
+        with open(path, "rb") as stream:
+            self.check_elf(ELFFile(stream), path, exact, only)
+
+    def check_elf(self, elf, path, exact, only):
+        """Check a relocatable object, keeping section-relative offsets distinct."""
         symtab = elf.get_section_by_name(".symtab")
         sec_names = [s.name for s in elf.iter_sections()]
         syms = list(symtab.iter_symbols())
-        text_idx = sec_names.index(".text") if ".text" in sec_names else None
-        if text_idx is None:
-            return
-        text = elf.get_section(text_idx).data()
-        # this file's functions: (start, end, our name, retail name, address, sections)
+        layouts = list(elf_layout.functions(elf))
+        code_sections = {f.section_index: f.section_data for f in layouts}
+        # (start, end, our name, retail name, address, retail sections, level,
+        # owning object section index). Offsets are local to that last section.
         funcs = []
-        for s in syms:
-            if s["st_info"]["type"] != "STT_FUNC" or s["st_shndx"] != text_idx:
-                continue
-            name = self.alias.get((Path(path).stem, s.name), s.name)
+        for layout in layouts:
+            name = self.alias.get((Path(path).stem, layout.name), layout.name)
             p = self.place(name)
             if p:
                 lvl = self.ovl[name][0] if name in self.ovl else None
-                funcs.append((s["st_value"], s["st_value"] + s["st_size"], s.name, name, p[0], p[1], lvl))
+                funcs.append((layout.start, layout.end, layout.name, name,
+                              p[0], p[1], lvl, layout.section_index))
 
-        def func_at(off):
+        def func_at(section_index, off):
             for f in funcs:
-                if f[0] <= off < f[1]:
+                if f[7] == section_index and f[0] <= off < f[1]:
                     return f
             return None
 
@@ -199,8 +202,8 @@ class Checker:
                 if not isinstance(shn, int):
                     return None
                 o = base + off
-                if shn == text_idx:
-                    f = func_at(o)
+                if shn in code_sections:
+                    f = func_at(shn, o)
                     return f[4] + o - f[0] if f else None
                 cands = [d for d in defined.get(shn, []) if d[0] <= o]
                 if cands:
@@ -232,24 +235,25 @@ class Checker:
             b = mp.read(f[5], f[4] + off - f[0], 4)
             return struct.unpack("<I", b)[0]
 
-        def our_word(off):
-            return struct.unpack("<I", text[off:off + 4])[0]
+        def our_word(section_index, off):
+            return struct.unpack_from("<I", code_sections[section_index], off)[0]
 
         for rs in elf.iter_sections():
-            if rs["sh_type"] != "SHT_REL" or rs["sh_info"] != text_idx:
+            if rs["sh_type"] != "SHT_REL" or rs["sh_info"] not in code_sections:
                 continue
+            section_index = rs["sh_info"]
             last_hi = {}  # symbol index -> offset of its latest HI16
             hi_used = {}
             for r in rs.iter_relocations():
                 off, typ, si = r["r_offset"], r["r_info_type"], r["r_info_sym"]
                 sym = syms[si]
-                f = func_at(off)
+                f = func_at(section_index, off)
                 if typ == R_HI16:
                     last_hi[si] = off
                     hi_used[off] = False
                 if f is None or f[3] not in exact:
                     continue
-                w, rw = our_word(off), retail_word(f, off)
+                w, rw = our_word(section_index, off), retail_word(f, off)
                 if typ == R_26:
                     a = (w & 0x3FFFFFF) << 2
                     if sym["st_info"]["type"] != "STT_SECTION" and a & 0x8000000:
@@ -263,11 +267,11 @@ class Checker:
                     report(f, off, "26", sym, ours, ret)
                 elif typ == R_LO16:
                     h = last_hi.get(si)
-                    if h is None:
+                    if h is None or func_at(section_index, h) is not f:
                         report(f, off, "LO16", sym, None, None)
                         continue
                     hi_used[h] = True
-                    a = ((our_word(h) & 0xFFFF) << 16) + sext16(w & 0xFFFF)
+                    a = ((our_word(section_index, h) & 0xFFFF) << 16) + sext16(w & 0xFFFF)
                     ret = ((((retail_word(f, h) & 0xFFFF) << 16) + sext16(rw & 0xFFFF)) & 0xFFFFFFFF)
                     report(f, off, "HI16/LO16", sym, resolve(sym, a), ret)
                 elif typ == R_GPREL16:
@@ -280,10 +284,10 @@ class Checker:
                 off, si = r["r_offset"], r["r_info_sym"]
                 if r["r_info_type"] != R_HI16 or hi_used.get(off):
                     continue
-                f = func_at(off)
+                f = func_at(section_index, off)
                 if f is None or f[3] not in exact:
                     continue
-                ours = resolve(syms[si], (our_word(off) & 0xFFFF) << 16)
+                ours = resolve(syms[si], (our_word(section_index, off) & 0xFFFF) << 16)
                 if isinstance(ours, int):
                     ours = (ours + 0x8000) >> 16 << 16
                 report(f, off, "HI16", syms[si], ours, (retail_word(f, off) & 0xFFFF) << 16)
@@ -302,9 +306,9 @@ class Checker:
                                                 "symbol": sym.name, "ours": None, "retail": b,
                                                 "note": "%s placed at 0x%08X by the other relocations" % (sec_names[shn], common)})
             bases[shn] = common
-        # jump tables: .rodata words relocated against .text
+        # Jump tables: data words relocated against any owning function section.
         for rs in elf.iter_sections():
-            if rs["sh_type"] != "SHT_REL" or rs["sh_info"] == text_idx or rs["sh_info"] not in bases:
+            if rs["sh_type"] != "SHT_REL" or rs["sh_info"] in code_sections or rs["sh_info"] not in bases:
                 continue
             shn = rs["sh_info"]
             data = elf.get_section(shn).data()
@@ -313,8 +317,11 @@ class Checker:
                     continue
                 off, sym = r["r_offset"], syms[r["r_info_sym"]]
                 ours = resolve(sym, struct.unpack("<I", data[off:off + 4])[0])
-                # the function that loads the table
-                user = next((f for f in funcs if f[3] in exact), None)
+                # Use a function whose relocation proved this table's placement.
+                # Another function can have the same object offset in a distinct
+                # section, or belong to a different retail overlay.
+                user = next((f for f, _, _, _ in inferred[shn][bases[shn]]
+                             if f[3] in exact and (not only or f[3] in only)), None)
                 if user is None or isinstance(ours, tuple):
                     continue
                 if only and user[3] not in only:
