@@ -1,18 +1,18 @@
 #include "common.h"
 
-extern s32 D_00220B70;
-
-/* Calls the handler at +0x14 of arg0's +8 object with the global; returns arg0 if it reports nonzero, else NULL. */
-void *func_004FF4F0(void *arg0) {
-    s32 (*fn)(void *, s32);
-    s32 r;
-
-    if (arg0 != NULL) {
-        fn = *(s32 (**)(void *, s32))(*(u8 **)((u8 *)arg0 + 8) + 0x14);
-        r = fn(arg0, D_00220B70);
-        if (r != 0) {
-            return arg0;
-        }
-    }
-    return NULL;
+extern int D_00220B70;
+typedef struct Type1 {
+    char p[20];
+    int (*f14)(void *, int);
+} Type1;
+typedef struct Type2 {
+    char p[8];
+    Type1 *f8;
+} Type2;
+/* Return the object if its virtual predicate succeeds. */
+void *func_004FF4F0(Type2 *p)
+{
+    if (p && p->f8->f14(p, D_00220B70))
+        return p;
+    return 0;
 }

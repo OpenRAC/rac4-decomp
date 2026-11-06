@@ -1,22 +1,12 @@
 /* cflags: @ee29 -O2 -G0 */
 #include "common.h"
 
-typedef struct Type1 Type1;
-struct Type1 {
-    u64 f0;
-    s32 f8;
-    s16 f10;
-    char _pE[0x6];
-    u8 f14;
-    char _p15[1];
-    u8 f16;
-};
+extern void func_L00_00553638(u8 *descriptor, u32 flags, u32 type, u32 properties);
+extern void func_L00_00553678(u8 *descriptor, const void *data, u32 length);
 
-extern void func_L00_00553638(Type1 *arg0, s32 arg1, s32 arg2, s32 arg3);
-extern void func_L00_00553678(Type1 *arg0, s32 arg1, s64 arg2);
-
-void func_L00_005535D0(Type1 *arg0, s32 arg1, s32 arg2, s32 arg3, s64 arg4, s32 arg5, s32 arg6) {
-    func_L00_00553638(arg0, arg1, arg2, arg5);
-    func_L00_00553678(arg0, arg3, arg4);
-    arg0->f16 |= arg6;
+void func_L00_005535D0(u8 *descriptor, u32 flags, u32 type, const void *data, u32 length, u32 properties, u32 extraFlags)
+{
+    func_L00_00553638(descriptor, flags, type, properties);
+    func_L00_00553678(descriptor, data, length);
+    descriptor[0x16] |= extraFlags;
 }

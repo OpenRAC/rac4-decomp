@@ -1,7 +1,7 @@
 #include "common.h"
 
-extern s8 D_004F5420;
+extern s8 D_00220975;
 
 void func_004F5420(s8 arg0) {
-    D_004F5420 = arg0;
+    D_00220975 = arg0;
 }

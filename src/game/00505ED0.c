@@ -1,31 +1,49 @@
 #include "common.h"
-extern void *func_005005E8(s32, s32);
-extern void *func_005010E0();
-extern s32 func_0050CAC0(void *, s32, s32);
-extern s32 D_00220B54;
-extern s32 D_222038_[];
-s32 func_00505ED0(s32 arg0, s32 arg1, s32 arg2) {
-    void *var_v0;
-    void *temp_v1;
-    s32 var_a0;
-    s32 var_s3;
-    u8 *handle;
-    u8 *obj;
-
-    var_s3 = 0;
-    temp_v1 = D_222038_;
-    if (*(void **)((u8 *)temp_v1 + 4) != NULL) {
-        var_v0 = temp_v1;
-    } else {
-        var_v0 = func_005010E0();
-    }
-    temp_v1 = *(void **)((u8 *)var_v0 + 4);
-    var_a0 = 0;
-    if (temp_v1 != NULL) {
-        var_a0 = *(s32 *)((u8 *)temp_v1 + (*(s32 *)((u8 *)temp_v1 + 0x14) << 2));
-    }
-    handle = func_005005E8(var_a0, arg0);
-    obj = (handle != 0 && (*(s32 (**)(void *, s32))(*(u8 **)(handle + 8) + 0x14))(handle, D_00220B54) != 0) ? handle : 0;
-    if (obj != 0) var_s3 = func_0050CAC0(obj, arg1, arg2);
-    return var_s3;
+typedef struct Object Object;
+typedef struct {
+    char pad[0x14];
+    s32 (*isType)(Object *, u32);
+} VTable;
+struct Object {
+    char pad[8];
+    VTable *vtable;
+};
+typedef struct {
+    s32 pad;
+    char *table;
+} Manager;
+extern Manager D_00222038[];
+extern u32 D_00220B54;
+extern Manager *func_005010E0(void);
+extern Object *func_005005E8(void *, u32);
+extern s32 func_0050CAC0(Object *, u32, s32);
+static inline Manager *getManager(void)
+{
+    Manager *p = D_00222038;
+    if (p->table)
+        return p;
+    return func_005010E0();
+}
+static inline Object *valid(Object *p)
+{
+    if (p && p->vtable->isType(p, D_00220B54))
+        return p;
+    return 0;
+}
+static inline Object *getTyped(u32 id)
+{
+    Manager *m = getManager();
+    char *state = m->table;
+    void *table = 0;
+    if (state)
+        table = *(void **)(state + (*(s32 *)(state + 0x14) << 2));
+    return valid(func_005005E8(table, id));
+}
+s32 func_00505ED0(u32 id, u32 child, s32 index)
+{
+    s32 result = 0;
+    Object *p = getTyped(id);
+    if (p)
+        result = func_0050CAC0(p, child, index);
+    return result;
 }

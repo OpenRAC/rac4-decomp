@@ -1,16 +1,20 @@
-/* cflags: @ee29 -O2 -G0 */
+/* cflags: @ee29 */
 #include "common.h"
+s32 func_L00_004FAD28(void *);                  /* extern */
+s32 func_L00_00537FB0(s32);                     /* extern */
 
-void func_004FAD28(void *);
-void func_L00_00537FB0(void *);
+void func_L00_00538258(void *arg0) {
+    s32 var_s0;
+    s32 var_s1;
 
-void func_L00_00538258(u8 *object) {
-    s32 remaining = 0xB;
-    u8 *entry = object + 4;
+    var_s1 = 0xB;
+    var_s0 = arg0 + 4;
     do {
-        func_L00_00537FB0(entry);
-        remaining -= 1;
-        entry += 0x14;
-    } while (remaining >= 0);
-    if (*(s32 *)(object + 0x108) & 1) func_004FAD28(object);
+        var_s1 -= 1;
+        func_L00_00537FB0(var_s0);
+        var_s0 += 0x14;
+    } while (var_s1 >= 0);
+    if ((*(s32 *)((u8 *)(arg0) + 0x108)) & 1) {
+        func_L00_004FAD28(arg0);
+    }
 }

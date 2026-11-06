@@ -1,23 +1,29 @@
 #include "common.h"
 
-extern s32 func_0011D920(s8 *arg0, s8 *arg1, ...);
-extern s32 func_0045E038(s32);
-extern void func_00547B08(s8 *, s32, s32);
-extern void *func_00548D28(s32, s32);
-extern s8 D_00220EB8[];
+extern const char D_00220EB8[];
 
-// Formats a string from two looked-up names and a counter, then passes it to func_00547B08
-void func_00549038(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    s8 buf[0x80];
-    s32 id;
-    s8 *fmt;
-    s32 a;
+void *func_00548D28(s32 arg0, s32 arg1);
+const char *func_0045E038(s32 arg0);
+s32 func_0011D920(char *, const char *, ...);
+void func_00547B08(const char *arg0, s32 arg1, s32 arg2);
 
-    if (arg2 > 0 && arg0 > 0 && arg1 >= 0 && arg3 >= 0) {
-        id = (arg0 == 2) ? 0x25A5 : 0x2557;
-        fmt = D_00220EB8;
-        a = func_0045E038(*(s16 *)((u8 *)func_00548D28(arg0, 0) + 8));
-        func_0011D920(buf, fmt, a, func_0045E038(id), arg3 + 1);
-        func_00547B08(buf, arg1, arg2);
+void func_00549038(s32 arg0, s32 arg1, s32 arg2, s32 arg3)
+{
+    char local[128];
+    s32 selector;
+    const char *address;
+    u8 *first;
+    const char *second;
+    const char *third;
+
+    if (arg2 <= 0 || arg0 <= 0 || arg1 < 0 || arg3 < 0) {
+        return;
     }
+    selector = arg0 == 2 ? 0x25A5 : 0x2557;
+    address = D_00220EB8;
+    first = func_00548D28(arg0, 0);
+    second = func_0045E038(*(s16 *)(first + 8));
+    third = func_0045E038(selector);
+    func_0011D920(local, address, second, third, arg3 + 1);
+    func_00547B08(local, arg1, arg2);
 }

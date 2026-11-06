@@ -31,8 +31,7 @@ typedef struct Type1 {
 extern s32 D_0021DDB4;
 extern s32 D_0021E824;
 extern s32 D_0021E828;
-extern Type3 *D_003660F8_[];
-#define D_003660F8 D_003660F8_
+extern Type3 *D_003660F8[];
 s32 func_L00_005A00F8(void);
 Type2 *func_L00_006EF370(Type1 *);
 void func_L00_006EF678(Type2 *, Type3 *);

@@ -1,8 +1,7 @@
 /* cflags: -mno-split-addresses */
 #include "common.h"
 
-extern u8 *D_00222D14_[];
-#define D_00222D14 (D_00222D14_[0])
+extern u8 *D_00222D14[];
 extern void func_L01_0064EA50(u8 *, s32);
 extern void func_L01_0064EAC0(s32, s32);
 
@@ -16,7 +15,7 @@ void func_L01_0047E690(u8 *arg0, s32 arg1) {
         s32 index = *p;
         count--;
         if (index != -1) {
-            func_L01_0064EA50(D_00222D14 + (index << 8), arg1);
+            func_L01_0064EA50(D_00222D14[0] + (index << 8), arg1);
         }
         p++;
     } while (count >= 0);

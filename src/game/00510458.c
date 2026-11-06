@@ -1,35 +1,26 @@
 #include "common.h"
 
-typedef struct {
-    u8 pad0[0x34];
-    f32 f34;
-    f32 f38;
-    u8 pad3C[0x4];
+typedef struct Type2 {
+    char pad[0x34];
+    f32 f34, f38;
+    char pad3C[4];
     u16 f40;
-    u8 pad42[0xE];
+    char pad42[14];
     u8 f50;
 } Type2;
-
-typedef struct {
-    u8 pad0[0x1C];
-    f32 f1C;
-    f32 f20;
-    u8 pad24[0x1C];
+typedef struct Type1 {
+    char pad[0x1C];
+    f32 f1C, f20;
+    char pad24[0x1C];
     Type2 *f40;
-    u8 pad44[0x4];
-    f32 f48;
-    f32 f4C;
+    char pad44[4];
+    f32 f48, f4C;
 } Type1;
-
-extern void func_00454350(s32);
-extern void func_0050F080(Type1 *);
-extern void func_0050F438(Type1 *, f32 *, f32, f32);
-
-// Pick a mode by the state byte, then update the two axes when flagged.
-s32 func_00510458(Type1 *arg0) {
-    Type2 *p;
-
-    switch (arg0->f40->f50) {
+extern void func_00454350(s32), func_0050F080(Type1 *), func_0050F438(Type1 *, f32 *, f32, f32);
+s32 func_00510458(Type1 *p)
+{
+    s32 mode = p->f40->f50;
+    switch (mode) {
     case 1:
         func_00454350(1);
         break;
@@ -41,14 +32,14 @@ s32 func_00510458(Type1 *arg0) {
         func_00454350(0);
         break;
     }
-    if (arg0->f40->f40 & 4) {
-        func_0050F080(arg0);
-        p = arg0->f40;
-        if (p->f40 & 0x80) {
-            func_0050F438(arg0, &p->f34, arg0->f1C, arg0->f48);
-        } else {
-            func_0050F438(arg0, &p->f38, arg0->f20, arg0->f4C);
-        }
+    if (p->f40->f40 & 4) {
+        Type2 *state;
+        func_0050F080(p);
+        state = p->f40;
+        if (state->f40 & 0x80)
+            func_0050F438(p, &state->f34, p->f1C, p->f48);
+        else
+            func_0050F438(p, &state->f38, p->f20, p->f4C);
     }
     return 0;
 }

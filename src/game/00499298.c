@@ -1,25 +1,25 @@
 #include "common.h"
 
-extern void *func_004A2D10(void *arg0);
-extern s32 D_002F34D0_[];
-#define D_002F34D0 (D_002F34D0_[0])
+typedef struct PoolObject {
+    s32 active;
+    void *vtable;
+    u32 first, second, third;
+} PoolObject;
+extern u8 D_002F34D0[];
+s32 D_00221538 = 0;
+extern void *func_004A2D10(PoolObject *object);
 
-volatile s32 D_00221538 = 0;
-
-// Initializes D_002F34D0 array and returns pointer to indexed element
-void *func_00499298(s32 arg0) {
-    void *var_s1;
-    s32 var_s0;
-
-    if (!D_00221538) {
-        var_s1 = (void *)&D_002F34D0;
-        var_s0 = 0x1F;
+PoolObject *func_00499298(s32 index)
+{
+    if (D_00221538 == 0) {
+        PoolObject *object = (PoolObject *)D_002F34D0;
+        s32 count = 31;
         do {
-            func_004A2D10(var_s1);
-            var_s1 = (void *)((u32)var_s1 + 0x14);
-            var_s0 -= 1;
-        } while (var_s0 != -1);
+            func_004A2D10(object);
+            count--;
+            object++;
+        } while (count != -1);
         D_00221538 = 1;
     }
-    return (void *)((u32)&D_002F34D0 + (arg0 * 0x14));
+    return (PoolObject *)((u32)D_002F34D0 + (u32)index * 20u);
 }

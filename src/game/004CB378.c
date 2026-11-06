@@ -1,31 +1,52 @@
 #include "common.h"
 
-extern void func_00437CD8(s32);
-extern s32 func_00465C08(void);
-extern s32 func_004CA8E8();
-extern u8 D_00171D38[];
 extern s32 D_0021DE10;
 extern s32 D_0021EDBC;
 extern s32 D_002212E0;
+extern u8 D_00171D38[];
+extern s32 func_00465C08(void);
+extern s32 func_004CA8E8(void);
+extern void func_00437CD8(s32);
+
 s32 D_0021FA30 = 0;
 
-// Updates mode state when the current mode is not 0x16
-s32 func_004CB378(void) {
-    if (func_00465C08() != 0x16) {
-        D_0021EDBC = 1;
-        if (D_0021DE10 == 0xF || D_0021DE10 == 0x23) {
-            D_0021DE10 = 1;
-        }
-        if (func_004CA8E8() != 0) {
-            D_0021DE10 = D_0021DE10 % 20 + 20;
-        } else {
-            D_0021DE10 = D_0021DE10 % 20;
-        }
-        D_002212E0 = D_0021DE10;
-        if (D_0021FA30 != D_00171D38[0xBD]) {
-            func_00437CD8(D_00171D38[0xBD]);
-            D_0021FA30 = D_00171D38[0xBD];
-        }
+/* Update the selected mode and synchronize its public byte. */
+s32 func_004CB378(void)
+{
+    s32 initial;
+    s32 mode_zero;
+    s32 mode_nonzero;
+    s32 current;
+    s32 base;
+    s32 result;
+    s32 one;
+    result = func_00465C08();
+    if (result == 0x16) {
+        result = 0;
+        goto done;
     }
-    return 0;
+    one = 1;
+    initial = D_0021DE10;
+    D_0021EDBC = one;
+    if (initial == 0x0F || initial == 0x23) {
+        D_0021DE10 = one;
+    }
+    result = func_004CA8E8();
+    if (result != 0) {
+        mode_nonzero = D_0021DE10;
+        D_0021DE10 = mode_nonzero % 0x14 + 0x14;
+    } else {
+        mode_zero = D_0021DE10;
+        D_0021DE10 = mode_zero % 0x14;
+    }
+    base = (s32)D_00171D38;
+    current = D_0021DE10;
+    D_002212E0 = current;
+    if (D_0021FA30 != *(u8 *)(base + 0xBD)) {
+        func_00437CD8(*(u8 *)(base + 0xBD));
+        D_0021FA30 = *(u8 *)(base + 0xBD);
+    }
+    result = 0;
+done:
+    return result;
 }

@@ -1,0 +1,315 @@
+{
+  "version": 1,
+  "target": "SCES_532.85 PAL main image",
+  "scope": "Reviewed call contracts, not a claim to recover unique original C declarations",
+  "functions": {
+    "func_0011D920": {
+      "status": "confirmed_contract",
+      "declaration": "s32 func_0011D920(char *destination, const char *format, ...);",
+      "abi": {
+        "a0": "destination character buffer",
+        "a1": "format string pointer",
+        "a2-a3,t0-t3,stack": "variadic arguments according to the format"
+      },
+      "evidence": [
+        "PAL 0011D920 is the resident formatted-string wrapper.",
+        "PAL 0054A5A0 supplies two string pointers and one integer; 004C3C10 supplies multiple string pointers."
+      ],
+      "notes": "Do not infer buffer capacity or omit later variadic arguments. No SDK implementation source is included."
+    },
+    "func_00453F30": {
+      "status": "confirmed_contract",
+      "declaration": "void func_00453F30(void *destination, const void *source, u32 bytes);",
+      "abi": {
+        "a0": "destination pointer",
+        "a1": "source pointer",
+        "a2": "byte count"
+      },
+      "evidence": [
+        "PAL 00453F30-00453FE4 copies bytes and has no meaningful return contract",
+        "PAL 0048C8C8-0048C8D8 supplies a four-byte local output before reading it"
+      ],
+      "notes": "The destination must cover bytes; no containing structure size follows from a call alone. Do not declare a pointer return just because a scratch register happens to retain a pointer."
+    },
+    "func_0045E850": {
+      "status": "confirmed_contract",
+      "declaration": "const char *func_0045E850(s32 id);",
+      "abi": {
+        "a0": "localized text identifier",
+        "v0": "text pointer"
+      },
+      "evidence": [
+        "PAL 0045E850 forwards the identifier to 0045EB78 and returns a string address.",
+        "PAL 004C3C10 and 0054A5A0 consume the results as sprintf string arguments."
+      ],
+      "notes": "Const describes the reviewed read-only consumer contract; original return qualification is unknown."
+    },
+    "func_0048C2D0": {
+      "status": "confirmed_contract",
+      "declaration": "void *func_0048C2D0(u32 bytes, u8 **cursor, const u8 *end);",
+      "abi": {
+        "a0": "byte count",
+        "a1": "address of cursor pointer",
+        "a2": "end address",
+        "v0": "old cursor on success, zero on failure"
+      },
+      "evidence": [
+        "PAL 0048C2D0-0048C2F0 rounds bytes up to 16 and compares the advanced cursor with end",
+        "PAL 0048C8DC-0048C8FC passes cursor/end and stores the returned address"
+      ],
+      "notes": "The cursor is updated even on failure. Success requires advanced_cursor < end, not <= end. Arithmetic is the target's 32-bit address arithmetic."
+    },
+    "func_004999D0": {
+      "status": "confirmed_contract",
+      "declaration": "void func_004999D0(void *request);",
+      "abi": {
+        "a0": "address of a 24-byte input/output record"
+      },
+      "evidence": [
+        "PAL 004999E0-004999E8 reads only record words0 and4 as lookup inputs.",
+        "PAL 004999EC-00499A18 overwrites all24 bytes from the record returned by 004FD000.",
+        "PAL 004CD748 reads result word8 only after the call."
+      ],
+      "notes": "The two input words must be initialized. Remaining output words need not be initialized before this call; they are completely overwritten. 004FD000 returns the first resident record on a lookup miss."
+    },
+    "func_0049AA18": {
+      "status": "confirmed_contract",
+      "declaration": "void func_0049AA18(s32 resource);",
+      "abi": {
+        "a0": "32-bit resource identifier"
+      },
+      "evidence": [
+        "PAL 0049AA18 compares a0 with registry record word4 and calls 0049A218 with the matching record pointer.",
+        "PAL 004CCCB0 performs resource cleanup and ignores v0."
+      ],
+      "notes": ""
+    },
+    "func_0049B418": {
+      "status": "confirmed_contract",
+      "declaration": "s32 func_0049B418(f32 *value, f32 target);",
+      "abi": {
+        "a0": "float input/output pointer",
+        "f12": "target value",
+        "v0": "zero or one"
+      },
+      "evidence": [
+        "PAL 0049B418 reads and updates *a0 and consumes f12; it initializes f13 and f14 internally.",
+        "PAL 004A62F8 calls it for the context fade field."
+      ],
+      "notes": "Extra incoming float registers are not arguments merely because the caller left values there."
+    },
+    "func_004A2798": {
+      "status": "confirmed_contract",
+      "declaration": "s32 func_004A2798(const s32 *base, s32 offset);",
+      "abi": {
+        "a0": "address of base handle word",
+        "a1": "scalar handle offset",
+        "v0": "numeric UI handle"
+      },
+      "evidence": [
+        "PAL 004A2798 loads the word at a0 and adds a1.",
+        "PAL 004C3C10 passes the result as a UI handle, not a pointer."
+      ],
+      "notes": "Handle arithmetic follows target 32-bit word behavior. This is not a pointer lookup."
+    },
+    "func_004A91A0": {
+      "status": "confirmed_abi",
+      "declaration": "f32 func_004A91A0(const void *player);",
+      "abi": {
+        "a0": "player pointer",
+        "f0": "angle in degrees, or360 sentinel"
+      },
+      "evidence": [
+        "PAL 004A91BC reads player+0x2F00; 004A9278 returns the angle in f0.",
+        "PAL 004A93AC-004A93B4 passes Player* and consumes f0 as f12."
+      ],
+      "notes": "The pointed-to class name is descriptive; only the observed fields and pointer role are established."
+    },
+    "func_004A9340": {
+      "status": "confirmed_abi",
+      "declaration": "s32 func_004A9340(f32 angle);",
+      "abi": {
+        "f12": "angle",
+        "v0": "unsigned byte direction value promoted to a word"
+      },
+      "evidence": [
+        "PAL 004A9348 forwards f12 to 004A9288 with a0=32.",
+        "PAL 004A9360 loads the resulting table byte into v0."
+      ],
+      "notes": ""
+    },
+    "func_004CD8A0": {
+      "status": "confirmed_contract",
+      "declaration": "const char *func_004CD8A0(s32 selection);",
+      "abi": {
+        "a0": "selection identifier",
+        "v0": "localized text pointer"
+      },
+      "evidence": [
+        "PAL 004CD990-004CD99C calls 0054A290 then 0045E850 using the signed16 descriptor label at+0xA.",
+        "PAL 004CCEC4-004CCED4 forwards the result to the text input of 005062D0."
+      ],
+      "notes": ""
+    },
+    "func_004CDA88": {
+      "status": "confirmed_contract",
+      "declaration": "const char *func_004CDA88(s32 selection);",
+      "abi": {
+        "a0": "selection identifier",
+        "v0": "localized text pointer"
+      },
+      "evidence": [
+        "PAL 004CDB48-004CDB58 calls 0054A290 then 0045E850 using the signed16 descriptor label at+8.",
+        "PAL 004CCE9C-004CCEAC forwards the result to the text input of 005062D0."
+      ],
+      "notes": ""
+    },
+    "func_004E33A0": {
+      "status": "confirmed_contract",
+      "declaration": "void func_004E33A0(s32 status, s32 *completion);",
+      "abi": {
+        "a0": "completion status",
+        "a1": "completion output pointer"
+      },
+      "evidence": [
+        "PAL 004E33A0 conditionally stores a0 through a non-null a1.",
+        "PAL 004F35C4-004F35CC registers it as a completion callback."
+      ],
+      "notes": "A null completion pointer suppresses the store; this callback does not construct a meaningful return value."
+    },
+    "func_004E88B8": {
+      "status": "confirmed_contract",
+      "declaration": "void func_004E88B8(s32 command, u64 value, s32 unused);",
+      "abi": {
+        "a0": "32-bit command",
+        "a1": "complete 64-bit packet value",
+        "a2": "unused by this implementation"
+      },
+      "evidence": [
+        "src/pal/game/004E88B8.c",
+        "PAL 0044E554-0044E590 forwards the original full-width value in both branches"
+      ],
+      "notes": "A 64-bit saved register alone is insufficient evidence of a 64-bit argument. Here the value is actually stored as an eight-byte packet field."
+    },
+    "func_004E8AB0": {
+      "status": "confirmed_contract",
+      "declaration": "void func_004E8AB0(void);",
+      "source_alias": "func_004E7B88",
+      "evidence": [
+        "config/pal/map.tsv maps func_004E7B88 to PAL 004E8AB0",
+        "src/game/004E7B88.c",
+        "PAL direct callers ignore v0 before replacing it"
+      ],
+      "notes": "A cursor left in v0 at the end is not evidence of a returned pointer. Use the existing void contract. Source names outside src/pal can be US-address aliases."
+    },
+    "func_00502520": {
+      "status": "confirmed_contract",
+      "declaration": "void func_00502520(void *object);",
+      "abi": {
+        "a0": "object pointer"
+      },
+      "evidence": [
+        "PAL 00502520 calls 00502518 with a1=0; 00502518 stores a1 at object+0."
+      ],
+      "notes": "Concrete object class is unresolved; no returned value is consumed by reviewed callers."
+    },
+    "func_005062D0": {
+      "status": "confirmed_contract",
+      "declaration": "s32 func_005062D0(u32 handle, const char *text);",
+      "abi": {
+        "a0": "32-bit object handle",
+        "a1": "text pointer",
+        "v0": "32-bit status"
+      },
+      "evidence": [
+        "src/pal/game/005062D0.c"
+      ],
+      "notes": "The pointer is forwarded to the selected text callback. Preserve it as a pointer rather than an integer. A failed resolution or absent callback returns zero."
+    },
+    "func_00506BB8": {
+      "status": "confirmed_contract",
+      "declaration": "s32 func_00506BB8(void);",
+      "abi": {
+        "v0": "signed context index or -1"
+      },
+      "evidence": [
+        "PAL 00506BC8-00506BF0 obtains context+0x14 or returns -1"
+      ],
+      "notes": "Do not assume the result is nonnegative solely because a caller uses it as an index. Check that caller's context invariant."
+    },
+    "func_00507270": {
+      "status": "confirmed_abi",
+      "declaration": "s32 func_00507270(u32 handle, s32 f1, s32 f2, s32 f3, s32 f4, s32 f5, s32 f6, s32 f7, s32 f8);",
+      "abi": {
+        "a0": "handle",
+        "a1-a3,t0-t3": "seven scalar flag values",
+        "incoming_sp+0": "ninth argument; callee consumes its low unsigned byte",
+        "v0": "32-bit status"
+      },
+      "evidence": [
+        "PAL 00507270-005072C4 saves all eight GPR arguments and reads the ninth at frame+0xB0",
+        "PAL 005073AC-005073BC passes the ninth value to the 0x200 flag setter and loads status",
+        "PAL 004D0018 stores the outgoing ninth zero before the call at 004D0020",
+        "PAL 004CA27C stores the outgoing ninth zero before the call at 004CA288"
+      ],
+      "notes": "The word-sized C ninth parameter expresses a valid calling contract; only its low byte is consumed. Exact original typedef/signedness is not established. Pass the ninth argument explicitly. An unrelated volatile local at sp+0 is not an argument."
+    },
+    "func_00549050": {
+      "status": "confirmed_contract",
+      "declaration": "void func_00549050(const char *text, s32 slot, s32 duration);",
+      "abi": {
+        "a0": "text pointer",
+        "a1": "nonnegative slot",
+        "a2": "positive duration"
+      },
+      "evidence": [
+        "PAL 0054905C-0054906C rejects null text, nonpositive duration and negative slot.",
+        "PAL 005490C0-005490E4 computes a duration and copies the string to a resident message buffer.",
+        "PAL 0054A5A0 and src/pal/game/0054AFA0.c pass a real stack character buffer."
+      ],
+      "notes": "The callee copies text during the call; it does not retain the caller stack pointer."
+    },
+    "func_005492C0": {
+      "status": "confirmed_contract",
+      "declaration": "s32 func_005492C0(void *inventory, s32 item);",
+      "abi": {
+        "a0": "inventory pointer",
+        "a1": "item identifier",
+        "v0": "signed upgrade level"
+      },
+      "evidence": [
+        "PAL 0049902C-00499040 loads hero inventory at+0x26E4, checks it, and supplies the item.",
+        "PAL 00499044-00499068 compares the level and formats level+1."
+      ],
+      "notes": "The callee obtains a signed 16-bit level. A physical pointer argument must not be replaced by an item identifier."
+    },
+    "func_0054A290": {
+      "status": "confirmed_abi",
+      "declaration": "void *func_0054A290(s32 item, s32 alternate);",
+      "abi": {
+        "a0": "scalar item identifier",
+        "a1": "retained scalar selector",
+        "v0": "descriptor pointer"
+      },
+      "evidence": [
+        "PAL 0054A2A8-0054A2B4 and 0054A2BC-0054A2C8 both compute 003DF190 + item*0xB0.",
+        "PAL 0054A5A0 reads a signed text identifier at descriptor+8; 004CD748 reads an unsigned identifier at+0x36."
+      ],
+      "notes": "The second argument has no address effect in this resident implementation. Descriptor class, original pointer typedef and total object extent are not inferred from these field accesses."
+    },
+    "func_0054A308": {
+      "status": "confirmed_abi",
+      "declaration": "u32 func_0054A308(const void *config, s32 index);",
+      "abi": {
+        "a0": "configuration pointer",
+        "a1": "signed index clamped to0..31",
+        "v0": "zero or one"
+      },
+      "evidence": [
+        "PAL 0054A308-0054A320 clamps the signed index.",
+        "PAL 0054A324-0054A338 reads byte config+index*0x44+0xA30, toggles bit7, then shifts right7."
+      ],
+      "notes": "The Boolean result reports that bit7 was clear. Exact original Boolean typedef is unresolved."
+    }
+  }
+}

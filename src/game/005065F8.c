@@ -1,43 +1,51 @@
 #include "common.h"
-
-extern void *func_005005E8(s32 arg0, s32 arg1);
-extern void *func_005010E0();
-extern void func_0050EF88(void *arg0, s32 arg1, s32 arg2);
-extern s32 D_222038_[];
-extern s32 D_00220B68;
-
-static inline u8 *func_005065F8_cast(u8 *obj) {
-    if (obj != NULL && (*(s32 (**)(void *, s32))(*(u8 **)(obj + 8) + 0x14))(obj, D_00220B68) != 0) {
-        return obj;
-    }
-    return NULL;
+typedef struct Object Object;
+typedef struct {
+    char pad[0x14];
+    s32 (*isType)(Object *, u32);
+} VTable;
+struct Object {
+    char pad[8];
+    VTable *vtable;
+};
+typedef struct {
+    s32 pad;
+    char *table;
+} Manager;
+extern Manager D_00222038[];
+extern u32 D_00220B68;
+extern Manager *func_005010E0(void);
+extern Object *func_005005E8(void *, u32);
+extern void func_0050EF88(Object *, s32, s32);
+static inline Manager *getManager(void)
+{
+    Manager *p = D_00222038;
+    if (p->table)
+        return p;
+    return func_005010E0();
 }
-
-/* Looks up an object by arg0 in the current table entry; if it supports D_00220B68, runs func_0050EF88 on it with arg1/arg2 and returns 1. */
-s32 func_005065F8(s32 arg0, s32 arg1, s32 arg2) {
-    u8 *var_v0;
-    u8 *temp_v1;
-    s32 var_a0;
-    s32 var_s3;
-    u8 *obj;
-    u8 *hit;
-
-    var_s3 = 0;
-    if (D_222038_[1] != 0) {
-        var_v0 = (u8 *)D_222038_;
-    } else {
-        var_v0 = func_005010E0();
+static inline Object *valid(Object *p)
+{
+    if (p && p->vtable->isType(p, D_00220B68))
+        return p;
+    return 0;
+}
+static inline Object *getTyped(u32 id)
+{
+    Manager *m = getManager();
+    char *state = m->table;
+    void *table = 0;
+    if (state)
+        table = *(void **)(state + (*(s32 *)(state + 0x14) << 2));
+    return valid(func_005005E8(table, id));
+}
+s32 func_005065F8(u32 id, s32 mask, s32 enabled)
+{
+    s32 result = 0;
+    Object *p = getTyped(id);
+    if (p) {
+        func_0050EF88(p, mask, enabled);
+        result = 1;
     }
-    temp_v1 = *(u8 **)(var_v0 + 4);
-    var_a0 = 0;
-    if (temp_v1 != NULL) {
-        var_a0 = *(s32 *)(temp_v1 + (*(s32 *)(temp_v1 + 0x14) << 2));
-    }
-    obj = func_005005E8(var_a0, arg0);
-    hit = func_005065F8_cast(obj);
-    if (hit != NULL) {
-        var_s3 = 1;
-        func_0050EF88(hit, arg1, arg2);
-    }
-    return var_s3;
+    return result;
 }

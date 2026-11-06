@@ -1,30 +1,50 @@
 #include "common.h"
-
-typedef struct { s32 x0; u8 *x4; s32 x8; s32 xC; } Type1;
-extern void *func_005005E8(s32, s32);
-extern void *func_005010E0(void);
-extern s32 func_00503FA8(s32, void *, f32);
-extern s32 D_00220B50;
-extern Type1 D_222038;
-
-static inline void *func_00503EE0_cast(void *h) {
-    if (h != 0 && ((s32 (*)(void *, s32))(*(s32 *)(*(u8 **)((u8 *)h + 8) + 0x14)))(h, D_00220B50) != 0) return h;
+typedef struct Object Object;
+typedef struct {
+    char pad[0x14];
+    s32 (*isType)(Object *, u32);
+} VTable;
+struct Object {
+    char pad[8];
+    VTable *vtable;
+};
+typedef struct {
+    s32 pad;
+    char *table;
+} Manager;
+extern Manager D_00222038[];
+extern u32 D_00220B50;
+extern Manager *func_005010E0(void);
+extern Object *func_005005E8(void *, u32);
+extern s32 func_00503FA8(void *, Object *, f32);
+static inline Manager *getManager(void)
+{
+    Manager *p = D_00222038;
+    if (p->table)
+        return p;
+    return func_005010E0();
+}
+static inline Object *valid(Object *p)
+{
+    if (p && p->vtable->isType(p, D_00220B50))
+        return p;
     return 0;
 }
-
-// Look up the current entry of the D_222038 list, fetch its object for arg1 and apply func_00503FA8 when it supports D_00220B50.
-s32 func_00503EE0(s32 arg0, s32 arg1, f32 arg2) {
+static inline Object *getTyped(u32 id)
+{
+    Manager *m = getManager();
+    char *state = m->table;
+    void *table = 0;
+    if (state)
+        table = *(void **)(state + (*(s32 *)(state + 0x14) << 2));
+    return valid(func_005005E8(table, id));
+}
+s32 func_00503EE0(void *context, u32 id, f32 time)
+{
     s32 result = 0;
-    Type1 *base;
-    u8 *list;
-    s32 key;
-    void *obj;
-    if (D_222038.x4 != 0) base = &D_222038;
-    else base = func_005010E0();
-    list = base->x4;
-    key = 0;
-    if (list != 0) key = *(s32 *)((u32)list + (*(s32 *)(list + 0x14) << 2));
-    obj = func_00503EE0_cast(func_005005E8(key, arg1));
-    if (obj != 0) result = func_00503FA8(arg0, obj, arg2);
+    Object *p = getTyped(id);
+    if (p) {
+        result = func_00503FA8(context, p, time);
+    }
     return result;
 }

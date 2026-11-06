@@ -12,8 +12,7 @@ extern s32 D_0021EE14;
 extern u8 D_001D2200[];
 extern s32 D_0021DAD8;
 extern s32 D_00221E14;
-extern s32 D_0023A860_[];
-#define D_0023A860 (D_0023A860_[0])
+extern s32 D_0023A860[];
 
 /* Init sequence, then run and clear a pending callback when allowed */
 void func_004E4FA0(void) {
@@ -29,7 +28,7 @@ void func_004E4FA0(void) {
     D_001D2200[0x43] |= 0x10;
     func_004E7638();
     cb = D_0021EE10;
-    if (cb != 0 && D_0023A860 == 0 && D_0021EDC4 != 2 && D_0021EDC4 != 1) {
+    if (cb != 0 && D_0023A860[0] == 0 && D_0021EDC4 != 2 && D_0021EDC4 != 1) {
         cb(D_0021EE14);
         D_0021EE10 = 0;
         D_0021EE14 = 0;

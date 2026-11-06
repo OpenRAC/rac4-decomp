@@ -6,8 +6,7 @@ extern void func_005362F8(s32);
 extern void func_00542440(s32);
 extern s32 func_L00_004FAAF0(void *, s32, s32, void *, s32);
 extern void func_L00_0052F258(s32);
-extern u8 D_004AFCE8_[];
-#define D_004AFCE8 ((u8 *)D_004AFCE8_)
+extern u8 D_004AFCE8[];
 void func_L00_00530618(s32 *arg0) {
     if (arg0 != 0) {
         if (func_L00_004FAAF0(arg0 + 5, -1, 3, D_004AFCE8, 0x6B) <= 0) {
