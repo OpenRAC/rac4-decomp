@@ -1,4 +1,10 @@
+/* Not matching yet on PAL: SIZE ours 472 / disc 488 (tools/check_func.py --version pal func_004F2078 --diff). Not part of the build. */
+/* Retail builds each hardware register's address as a constant (lui/ori, then an access at 0):
+ * only a cast of the number, `*(volatile u32 *)0x...`, gives that, and matched C may use neither
+ * volatile nor hardcoded addresses. A global named by its address gives lui/%lo instead. */
 #include "common.h"
+extern u32 D_1000B400;
+extern u32 D_1000B410;
 /* Control-flow reference: OpenRAC RAC3 func_003AC3F8, 3ABA48.c,
  * commit 73f725bf54bb1bf6d8b9bb5b1511ed00d551fbde (GPL-3.0).
  * PAL targets, semaphore/pointer ABI and wrapping arithmetic are independently recovered. */
@@ -31,8 +37,8 @@ s32 func_004F2078(Stream *stream)
         return 0;
     }
     func_004F1CC0(5);
-    control = *(volatile u32 *)0x1000B400;
-    position = func_004F1C08(stream, *(volatile u32 *)0x1000B410);
+    control = D_1000B400;
+    position = func_004F1C08(stream, D_1000B410);
     advance = (s32)((u32)position + (u32)stream->capacity - (u32)stream->head) % stream->capacity;
     count = stream->bytes / 0x800;
     stream->bytes = (s32)((u32)stream->bytes - ((u32)count << 11));
