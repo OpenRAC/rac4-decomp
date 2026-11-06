@@ -6,10 +6,19 @@ typedef struct Type1 {
 } Type1;
 extern Type1 D_00354EA0[];
 extern void func_00453F30(void *, const void *, s32);
+extern void func_00544928(Type1 *event);
 
 /* Append a fixed-size record to the shared queue. */
 void func_005448E0(const void *record)
 {
     func_00453F30(&D_00354EA0[D_00220EEC], record, 0x18);
     D_00220EEC++;
+}
+
+void func_00544880(void)
+{
+    s32 i;
+    for (i = 0; i < D_00220EEC; i++)
+        func_00544928(&D_00354EA0[i]);
+    D_00220EEC = 0;
 }
