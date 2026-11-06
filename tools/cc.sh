@@ -88,8 +88,8 @@ if [ "$ee296" -eq 1 ]; then
     if [ "${#flags29[@]}" -eq 0 ]; then
         flags29=(-O2 -G0)
     fi
-    "$PY" tools/ee296.py "$src" "$tmp.s" "${flags29[@]}"
-    run_compiler "$CC" "${sn_asflags[@]}" -c "$tmp.s" -o "$out"
+    "$PY" tools/ee296.py "$src" "$tmp.s" ${flags29[@]+"${flags29[@]}"}
+    run_compiler "$CC" ${sn_asflags[@]+"${sn_asflags[@]}"} -c "$tmp.s" -o "$out"
     exit 0
 fi
 
@@ -110,8 +110,8 @@ if [ "$ee32_030926" -eq 1 ]; then
     if [ "${#flags29[@]}" -eq 0 ]; then
         flags29=(-O2 -G0)
     fi
-    "$PY" tools/ee32_030926.py "$src" "$tmp.s" "${flags29[@]}"
-    run_compiler "$CC" "${sn_asflags[@]}" -c "$tmp.s" -o "$out"
+    "$PY" tools/ee32_030926.py "$src" "$tmp.s" ${flags29[@]+"${flags29[@]}"}
+    run_compiler "$CC" ${sn_asflags[@]+"${sn_asflags[@]}"} -c "$tmp.s" -o "$out"
     exit 0
 fi
 
@@ -127,8 +127,8 @@ if [ "$ee32_030210" -eq 1 ]; then
     if [ "${#flags29[@]}" -eq 0 ]; then
         flags29=(-O2 -G0)
     fi
-    "$PY" tools/ee32_030210.py "$src" "$tmp.s" "${flags29[@]}"
-    run_compiler "$CC" "${sn_asflags[@]}" -c "$tmp.s" -o "$out"
+    "$PY" tools/ee32_030210.py "$src" "$tmp.s" ${flags29[@]+"${flags29[@]}"}
+    run_compiler "$CC" ${sn_asflags[@]+"${sn_asflags[@]}"} -c "$tmp.s" -o "$out"
     exit 0
 fi
 
@@ -144,8 +144,8 @@ if [ "$ee32_040921" -eq 1 ]; then
     if [ "${#flags29[@]}" -eq 0 ]; then
         flags29=(-O2 -G0)
     fi
-    "$PY" tools/ee32_040921.py "$src" "$tmp.s" "${flags29[@]}"
-    run_compiler "$CC" "${sn_asflags[@]}" -c "$tmp.s" -o "$out"
+    "$PY" tools/ee32_040921.py "$src" "$tmp.s" ${flags29[@]+"${flags29[@]}"}
+    run_compiler "$CC" ${sn_asflags[@]+"${sn_asflags[@]}"} -c "$tmp.s" -o "$out"
     exit 0
 fi
 
@@ -161,8 +161,8 @@ if [ "$ee29_01" -eq 1 ]; then
     if [ "${#flags29[@]}" -eq 0 ]; then
         flags29=(-O2 -G0)
     fi
-    "$PY" tools/ee29_01.py "$src" "$tmp.s" "${flags29[@]}"
-    run_compiler "$CC" "${sn_asflags[@]}" -c "$tmp.s" -o "$out"
+    "$PY" tools/ee29_01.py "$src" "$tmp.s" ${flags29[@]+"${flags29[@]}"}
+    run_compiler "$CC" ${sn_asflags[@]+"${sn_asflags[@]}"} -c "$tmp.s" -o "$out"
     exit 0
 fi
 
@@ -185,7 +185,7 @@ if [ "$ee29" -eq 1 ]; then
     if [ "${#flags29[@]}" -eq 0 ]; then
         flags29=(-O2 -G0)
     fi
-    run_compiler "$E29_CC" -B"$E29_LIB/" "${flags29[@]}" -Iinclude -S "$src" -o "$tmp.s"
+    run_compiler "$E29_CC" -B"$E29_LIB/" ${flags29[@]+"${flags29[@]}"} -Iinclude -S "$src" -o "$tmp.s"
     run_compiler "$CC" -c "$tmp.s" -o "$out"
     exit 0
 fi
@@ -225,12 +225,12 @@ if [ "$sn114" -eq 1 ] || [ "$sn274" -eq 1 ] || [ "$sn107" -eq 1 ]; then
         exit 1
     fi
 fi
-run_compiler "$compiler" "${compiler_prefix[@]}" "${compiler_defaults[@]}" "${flags29[@]}" -Iinclude -S "$src" -o "$tmp.s"
+run_compiler "$compiler" ${compiler_prefix[@]+"${compiler_prefix[@]}"} "${compiler_defaults[@]}" ${flags29[@]+"${flags29[@]}"} -Iinclude -S "$src" -o "$tmp.s"
 "$PY" tools/ps2eeas_dli.py "$tmp.s" "$tmp.s"
 if [ "$lit4" -eq 0 ]; then
     "$PY" tools/ps2eeas_lis.py "$tmp.s" "$tmp.s"
 fi
 "$PY" tools/ps2eeas_sdata.py "$tmp.s" "$tmp.s"
-run_compiler "$CC" "${sn_asflags[@]}" -c "$tmp.s" -o "${tmp}_first.o"
+run_compiler "$CC" ${sn_asflags[@]+"${sn_asflags[@]}"} -c "$tmp.s" -o "${tmp}_first.o"
 "$PY" tools/ps2eeas_nops.py "$tmp.s" "${tmp}_first.o" "${tmp}_fixed.s"
-run_compiler "$CC" "${sn_asflags[@]}" -c "${tmp}_fixed.s" -o "$out"
+run_compiler "$CC" ${sn_asflags[@]+"${sn_asflags[@]}"} -c "${tmp}_fixed.s" -o "$out"
