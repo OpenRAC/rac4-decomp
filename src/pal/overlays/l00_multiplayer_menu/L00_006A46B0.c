@@ -109,9 +109,9 @@ extern void *func_003F0708();
 
 /* localdecomp:start func_L00_006A46B0 */
 typedef struct { u8 pad[20]; s32 (*isA)(void *, s32); } VT_E;
-extern s32 D_00220530[];
+extern s32 D_00220530;
 s32 func_L00_006A46B0(u8 *p, f32 a, f32 b) {
-    if ((*(VT_E **)(p + 8))->isA(p, D_00220530[0])) {
+    if ((*(VT_E **)(p + 8))->isA(p, D_00220530)) {
         *(f32 *)(p + 20) = a;
         *(f32 *)(p + 24) = b;
         return 1;

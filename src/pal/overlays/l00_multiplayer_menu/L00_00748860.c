@@ -55,19 +55,7 @@ extern s32 func_L00_00769D60(void);
 extern s32 func_L00_00769D68(s32);
 extern s16 func_L00_00769430(s32);
 extern s32 *func_L00_00769E58(s32);
-typedef struct Type4 {
-    u8 pad0[0x1C];
-    s32 f1C;
-    u8 pad20[0x228 - 0x20];
-    s32 f228;
-    u8 pad22C[0x258 - 0x22C];
-    s32 f258;
-    s32 f25C;
-    u8 f260;
-    u8 pad261[0x6C9 - 0x261];
-    u8 f6C9;
-} Type4;
-extern Type4 D_001721E0;
+#include "pal/profile_001721E0.h"
 typedef struct Type5 {
     s8 b[0x3C];
     s32 f3C;
