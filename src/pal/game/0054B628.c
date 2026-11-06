@@ -1,15 +1,23 @@
-/* cflags: -O2 -G8 -Wuninitialized */
 #include "common.h"
-typedef struct { u8 f00[13]; u8 f0D[10]; u8 f17[33]; } Type1;
-void *func_0054B050(int);
-// Check the entry's ten byte identifiers after copying its 56-byte record.
-int func_0054B628(int a1, int a2)
+
+typedef struct {
+    u8 unknown0[0xD];
+    u8 allowed[10];
+    u8 unknown17[0x21];
+} Definition;
+
+extern const Definition *func_0054B050(s32);
+
+s32 func_0054B628(s32 item, s32 mode)
 {
-    Type1 entry;
-    int i;
-    entry = *(Type1 *)func_0054B050(a2);
+    Definition definition;
+    s32 i;
+
+    definition = *func_0054B050(mode);
     for (i = 0; i < 10; i++) {
-        if (entry.f0D[i] == a1) return 1;
+        if (definition.allowed[i] == item) {
+            return 1;
+        }
     }
     return 0;
 }

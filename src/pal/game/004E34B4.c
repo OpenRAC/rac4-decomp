@@ -1,18 +1,7 @@
-/* cflags: -fno-delayed-branch -Wuninitialized */
+/* cflags: -fno-delayed-branch */
 #include "common.h"
-#define __int128 long long
-#define __int64 long
-#define __int16 short
-#define __int8 char
-typedef int bool;
-typedef u8 _BYTE; typedef u16 _WORD; typedef u32 _DWORD; typedef u64 _QWORD; typedef unsigned long long _OWORD;
-typedef u8 _BOOL1; typedef u16 _BOOL2; typedef u32 _BOOL4; typedef u64 _BOOL8;
 
-__int64 func_004E34B4(__int64 a1, __int64 a2, int *a3, int a4)
+void func_004E34B4(s32 arg0, s32 arg1, s32 *arg2, s32 *arg3)
 {
-  int result; // $v0
-
-  result = *a3;
-  *(_DWORD *)(a4 + 24) = result;
-  return result;
+    arg3[6] = *arg2;
 }

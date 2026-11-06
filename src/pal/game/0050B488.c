@@ -23,7 +23,6 @@ static inline void init(Rect *p)
     p->a = 0;
     p->b = 0;
 }
-/* Query initialized bounds through the supported object interface. */
 s32 func_0050B488(Object *p, f32 *x, f32 *y, f32 *w, f32 *h)
 {
     Rect input, output;

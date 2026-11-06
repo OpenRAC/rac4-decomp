@@ -15,7 +15,7 @@ typedef struct {
     void *context;
 } Manager;
 extern Manager D_00222138[];
-extern void *func_00502150(void);
+extern Manager *func_00502150(void);
 extern Object *func_00501658(void *, s32);
 extern u32 D_00220B50;
 static inline Object *resolve(s32 handle)
@@ -37,15 +37,14 @@ static inline Object *resolve(s32 handle)
 }
 typedef s32 (*Callback)(Object *, f32, f32);
 extern char D_00335FF0[];
-extern void *func_00508A38(void *, u32);
-/* Resolve a supported object and dispatch its registered type callback. */
+extern Callback func_00508A38(void *, u32);
 s32 func_00506978(s32 handle, f32 a, f32 b)
 {
     s32 result = 0;
     Object *obj = resolve(handle);
     if (obj) {
         u32 type = obj->vtable->type(obj);
-        Callback callback = (Callback)func_00508A38(D_00335FF0, type);
+        Callback callback = func_00508A38(D_00335FF0, type);
         if (callback)
             result = callback(obj, a, b);
     }

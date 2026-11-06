@@ -1,34 +1,36 @@
-/* cflags: -O2 -G8 -Wuninitialized */
 #include "common.h"
 
-s32 func_004C0A58(void *); /* extern */
-s32 func_004C1320(void *); /* extern */
-s32 func_00506BB8();       /* extern */
 extern u8 D_0030B358[];
 
-void func_004C09B0(void) {
-    s32 temp_3_2;
-    s32 temp_4;
-    void *temp_16;
-    void *temp_3;
-    void *temp_4_2;
-    u32 var_2;
-    temp_16 = ((u32)func_00506BB8() * 0x258U) + D_0030B358;
-    temp_3 = (void *)(((unsigned char *)temp_16) + 492);
-    if ((*((s32 *)(((u8 *)temp_3) + 0x50))) > 0) {
-        temp_4 = *((s32 *)(((u8 *)temp_3) + 0x54));
-        if (temp_4 < 0) {
-            var_2 = 0;
+s32 func_00506BB8(void);
+void func_004C0A58(s32 arg0);
+void func_004C1320(s32 arg0);
+
+void func_004C09B0(void)
+{
+    s32 object;
+    s32 auxiliary;
+    s32 index;
+    s32 pointer;
+    s32 argument;
+    s32 value;
+
+    object = (s32)(D_0030B358 + func_00506BB8() * 0x258);
+    auxiliary = object + 0x1EC;
+    if (*(s32 *)(auxiliary + 0x50) > 0) {
+        index = *(s32 *)(auxiliary + 0x54);
+        if (index < 0) {
+            pointer = 0;
         } else {
-            var_2 = *((u32 *)(((u8 *)temp_3) + 0x34)) + ((u32)temp_4 * 0x18U);
+            pointer = *(s32 *)(auxiliary + 0x34) + index * 0x18;
         }
-        temp_4_2 = *((void **)(var_2 + 8));
-        temp_3_2 = *((s32 *)(((u8 *)temp_4_2) + 8));
-        if (temp_3_2 == 0) {
-            func_004C0A58(temp_4_2);
-        } else if (temp_3_2 == 1) {
-            func_004C1320(temp_4_2);
+        argument = *(s32 *)(pointer + 8);
+        value = *(s32 *)(argument + 8);
+        if (value == 0) {
+            func_004C0A58(argument);
+        } else if (value == 1) {
+            func_004C1320(argument);
         }
     }
-    *((s32 *)(((u8 *)temp_16) + 4)) = (s32)((*((s32 *)(((u8 *)temp_16) + 4))) & (~4));
+    *(s32 *)(object + 4) &= -5;
 }
