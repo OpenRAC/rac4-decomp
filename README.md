@@ -243,6 +243,7 @@ Contributions are warmly welcome! Whether you are interested in decompiling func
 
 - See [`CONTRIBUTING.md`](CONTRIBUTING.md) for contribution guidelines and rules.
 - See [`docs/WORKFLOW.md`](docs/WORKFLOW.md) for the step-by-step function matching guide.
+- Check [`docs/PAL_SIGNATURES.md`](docs/PAL_SIGNATURES.md) for reviewed PAL argument, return and output contracts before reconstructing callers.
 - Join our **[Discord Community](https://discord.gg/Sfd2B54PDG)** to discuss progress, ask questions, and collaborate!
 
 ---
