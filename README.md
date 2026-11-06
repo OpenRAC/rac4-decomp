@@ -47,10 +47,10 @@ A function counts as matched on a version when its C, built with its file's own 
 <!-- progress:begin SCUS_974.65 (tools/progress.py --write) -->
 | | Functions (exact) | Code (exact) | Fuzzy |
 | --- | ---: | ---: | ---: |
-| **Main program** | 3,678 of 8,989 | 300,676 of 2,193,276 bytes (13.71%) | 13.99% |
+| **Main program** | 3,678 of 8,989 | 300,676 of 2,193,276 bytes (13.71%) | 14.00% |
 | Engine core (core.text) | 792 of 1,663 | 74,876 of 288,080 bytes (25.99%) | 26.50% |
 | libgcc | 26 of 33 | 6,148 of 10,836 bytes (56.74%) | 56.74% |
-| Network (net.text) | 704 of 2,441 | 31,784 of 465,620 bytes (6.83%) | 7.43% |
+| Network (net.text) | 704 of 2,441 | 31,784 of 465,620 bytes (6.83%) | 7.45% |
 | Resident menus (.text) | 2,152 of 4,827 | 187,000 of 1,416,572 bytes (13.20%) | 13.34% |
 | frontbin's own code | 4 of 25 | 868 of 12,168 bytes (7.13%) | 7.13% |
 | **Shared level code** | 1,890 of 5,096 | 149,352 of 1,980,624 bytes (7.54%) | 8.19% |
@@ -82,7 +82,7 @@ Each distinct function counts once: frontbin's copy of the menus is the main ima
 | **Main program** | 3,948 of 8,952 | 391,728 of 2,202,184 bytes (17.79%) | 18.06% |
 | Engine core (core.text) | 819 of 1,666 | 80,692 of 288,232 bytes (28.00%) | 28.50% |
 | libgcc | 26 of 33 | 6,148 of 10,836 bytes (56.74%) | 56.74% |
-| Network (net.text) | 704 of 2,441 | 31,828 of 465,620 bytes (6.84%) | 7.44% |
+| Network (net.text) | 704 of 2,441 | 31,828 of 465,620 bytes (6.84%) | 7.46% |
 | Resident menus (.text) | 2,397 of 4,797 | 272,500 of 1,422,048 bytes (19.16%) | 19.28% |
 | frontbin's own code | 2 of 15 | 560 of 15,448 bytes (3.63%) | 3.63% |
 | **Shared level code** | 1,948 of 5,089 | 165,372 of 2,008,632 bytes (8.23%) | 8.85% |
