@@ -49,8 +49,8 @@ The Up Your Arsenal decomp reports the same compiler (its
 - **`-G8`**: of retail's `$gp`-relative accesses, 1,799 are `lw`, 917 `sw`, 330
   `lwc1` and 18 are 8-byte `ld`/`sd`, so the small-data threshold is 8. Globals
   that retail reads with `lui`/`lw` are declared without a size
-  (`extern T x[];` plus `#define x (x[0])`) so the compiler does not put them in
-  `.sdata`.
+  (`extern T x[];`, used as `x[0]`; never a `#define` alias) so the compiler
+  does not put them in `.sdata`.
 - **`-mno-split-addresses`**: makes the compiler emit a global access as one
   assembler macro, and the assembler then uses the destination register as the
   temporary (`lui $a0; lw $a0, lo($a0)`). Without it the compiler splits the
@@ -58,8 +58,10 @@ The Up Your Arsenal decomp reports the same compiler (its
   Your Arsenal decomp reports the same, in runs of consecutive functions).
 - **`-mno-check-zero-division`**: no `break 7` after `div` (not yet needed here).
 
-Source-level findings: a counter that retail reloads from memory needs
-`volatile`; `p = array + i` gives a different register order than
+Source-level findings: a counter that retail reloads from memory needs a
+call or a store through a pointer between the reads (`volatile` is not allowed
+in matched C, nor are inline assembly, `#define` aliases or hardcoded
+addresses: [`LEVERS.md`](LEVERS.md)); `p = array + i` gives a different register order than
 `array[i].field`; an `s8` parameter compared with -1 adds sign extensions that
 retail does not have (use `s32`).
 

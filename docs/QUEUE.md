@@ -43,10 +43,12 @@ Run everything from the repository root.
   delete anything; never commit, build the game, start sub-agents or use
   the web.
 - Compile only through try_func. No compiler runs or harnesses of your own.
-- Plain C: no register pins, no inline assembly in a function, no barriers
-  (`__asm__("" : ...)`, `do { } while (0)`), no `volatile` added only to
-  pin an order, no read of a local that was never assigned. A match that
-  needs one is not a match: stop instead. A function that reads a register
+- Plain C: no register pins, no inline assembly, no barriers
+  (`__asm__("" : ...)`, `do { } while (0)`), no `volatile` at all, no
+  `#define` that renames a global or an address, no hardcoded address (a
+  number cast to a pointer), no read of a local that was never assigned. A
+  match that needs one is not a match: stop instead (the function stays in
+  `nonmatching/`). A function that reads a register
   it never sets, or branches outside itself, is a fragment: stop at once.
 - The build is fixed: no step may change what the compiler emitted, and
   flags apply only to whole files (GCC 2.95 has no per-function options).
@@ -63,8 +65,11 @@ Run everything from the repository root.
   looks like SDK sample code, decode it from the assembly like any other.
 - Names are by address only: `func_...`, `D_...`, types `Type1`, members
   by offset (`f20`). Never a name from another project or from memory.
-- A hardware register (0x10000000 and up, 0x70000000 scratchpad) is
-  `*(volatile int *)0x10000000`.
+- A hardware register (0x10000000 and up, 0x70000000 scratchpad, the
+  uncached 0xB0000000 range) is a global named by its address,
+  `extern u32 D_10000000;`, never `*(volatile int *)0x10000000`. Without
+  `volatile` the compiler may merge or drop accesses retail makes; if
+  retail rereads a register or reads one only for its side effect, stop.
 
 ## Candidate file
 
@@ -119,12 +124,13 @@ stop and say in NOTES.md which instructions are left.
   from `.reginfo`): `-0x37F7($gp)` is `D_00222188`.
 - A global retail reaches with `lui` + `%lo` where the `lui` is shared by
   several accesses or uses another temporary, and never through `$gp`:
-  declare it without a size,
+  declare it without a size and index it where you use it,
   ```c
-  extern s32 D_00221ED8_[];
-  #define D_00221ED8 (D_00221ED8_[0])
+  extern s32 D_00221ED8[];
+  ... D_00221ED8[0] ...
   ```
-  or as an array or struct of unknown size (`extern Type1 D_x[];`).
+  or as an array or struct of unknown size (`extern Type1 D_x[];`). Never
+  a `#define D_00221ED8 (D_00221ED8_[0])` alias.
 - `lui $a0, %hi(D_x)` then `lw $a0, %lo(D_x)($a0)` (the destination register
   as the temporary): the file needs `-mno-split-addresses`; start the
   candidate with `/* cflags: -mno-split-addresses */`.
@@ -134,7 +140,9 @@ stop and say in NOTES.md which instructions are left.
 Verified on this repository's matches:
 
 - A counter retail reloads from memory, or a store retail leaves a nop
-  delay slot after, is usually `volatile`.
+  delay slot after: look for a call or a store through a pointer between
+  the accesses (they force the reload). `volatile` is not allowed; if
+  nothing else gives the reload, stop.
 - `p = array + i` and `array[i].field` give different register orders;
   `*(T *)((u32)p + (i << 2))` differs again. Try them all.
 - `return x == -1 ? 0 : x;` often matches where a temporary holding `~x`

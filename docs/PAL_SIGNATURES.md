@@ -3,7 +3,7 @@
 [`config/pal/function_signatures.json`](../config/pal/function_signatures.json)
 records reusable interfaces checked against RAC4 PAL main-image code. Consult it
 before reconstructing a caller. It is evidence metadata, not a shared C header:
-opaque structure views and address-based aliases still need local declarations.
+opaque structure views and address-named globals still need local declarations.
 
 `confirmed_contract` means the listed interface is supported by implementation
 and caller behavior. `confirmed_abi` records a physical calling requirement when

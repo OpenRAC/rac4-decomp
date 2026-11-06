@@ -114,7 +114,8 @@ python3 tools/claims.py unlock gpt    # right after
 
 They are in QUEUE.md, so the one-line prompt is enough:
 
-- plain C: no register pins, inline assembly, barriers;
+- plain C: no register pins, inline assembly, barriers, `volatile`,
+  `#define` aliases or hardcoded addresses;
 - write only in `build/try/<func>/`, never delete, never commit, no
   sub-agents, no web;
 - compile only through try_func;
