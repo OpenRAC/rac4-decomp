@@ -3,8 +3,8 @@
 int func_L01_00576158();
 int func_L01_005761A0();
 int func_L01_00576280();
-int func_L01_00576370();
-int func_L01_005763B8();
+f32 func_L01_00576370();
+f32 func_L01_005763B8();
 int func_L01_00576400();
 int func_L01_00576448();
 unsigned int func_L01_00576490(unsigned char *p)

@@ -12,6 +12,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import retail as mp  # noqa: E402
+import elf_layout  # noqa: E402
 import rabbitizer  # noqa: E402
 from elftools.elf.elffile import ELFFile  # noqa: E402
 
@@ -41,11 +42,12 @@ def main() -> int:
     retail = mp.read(secs, addr, size)
     code, masks, start = b"", {}, 0
     for path in glob.glob(str(ROOT / "build" / "obj" / "*.o")):
-        elf = ELFFile(open(path, "rb"))
-        for s in elf.get_section_by_name(".symtab").iter_symbols():
-            if s.name == name and s["st_info"]["type"] == "STT_FUNC":
-                code = elf.get_section_by_name(".text").data()[s["st_value"]: s["st_value"] + s["st_size"]]
-                masks, start = mp.reloc_masks(elf), s["st_value"]
+        with open(path, "rb") as source:
+            elf = ELFFile(source)
+            for function in elf_layout.functions(elf):
+                if function.name == name:
+                    code = function.code
+                    masks, start = mp.reloc_masks(elf, function.section_index), function.start
     dis = lambda w: rabbitizer.Instruction(w, 0, category=rabbitizer.InstrCategory.R5900).disassemble()
     n = max(len(code), len(retail)) // 4
     rn, cn = mp.fields(retail, masks, start), mp.fields(code, masks, start)

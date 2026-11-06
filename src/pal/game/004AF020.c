@@ -1,8 +1,7 @@
 #include "common.h"
 typedef struct { s32 a; s32 b; u8 c; u8 pad[3]; } Entry;
-typedef struct { u8 pad[24]; s32 value[4][4]; u8 tail[12]; } Group;
+#include "pal/record_003093A0.h"
 extern Entry D_003D9318[];
-extern Group D_003093A0[];
 s32 D_0021F7D8 = 0;
 s32 D_0021F7DC = 0;
 void func_004AF020(void) {
