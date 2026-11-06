@@ -493,3 +493,42 @@ reload of the current video pointer, and direct tile-index products in the
 guarded tile loop. RAC4 PAL addresses, call interfaces and data layout were
 checked against its retail executable. This attribution is to the project
 contributors; no individual authorship of the donor function is asserted.
+
+
+### PAL angular interpolation references (RAC2)
+
+These PAL functions use the public [OpenRAC RAC2 decompilation](https://github.com/OpenRAC/rac2-decomp)
+at commit `99f35ac2c084fc59cdf3d631f8f960a825e7a49c` as a reference.
+The immutable revision's `LICENSE` and `LEGAL.md` cover its authored C under GPL-3.0;
+RAC4 addresses, operation order, physical interfaces and compiler output were checked independently.
+
+| RAC4 source | RAC2 source | Donor function |
+| --- | --- | --- |
+| `src/pal/overlays/shared/L01_00596268.c` | `src/levels/shared/L00_00316F60.c` | `func_L00_0031AD40` |
+| `src/pal/overlays/shared/L01_00596140.c` | `src/levels/shared/L00_00316F60.c` | `func_L00_0031ABE0` |
+
+The upstream revision also retains this earlier MIT notice in its `THIRD_PARTY_NOTICES.md`:
+
+```
+MIT License
+
+Copyright (c) 2026 llesieur99
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
