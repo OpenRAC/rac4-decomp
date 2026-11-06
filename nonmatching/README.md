@@ -22,6 +22,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L00_00715B30`](l00_multiplayer_menu/func_L00_00715B30.c) | l00_multiplayer_menu | 1160 | BYTES 15/1160 |
 | [`func_L00_0068AC58`](shared/func_L00_0068AC58.c) | shared | 688 | BYTES 9/684 |
 | [`func_L41_0040F218`](shared/func_L41_0040F218.c) | shared | 376 | BYTES 5/376 |
+| [`func_004C9090`](game/func_004C9090.c) | game | 216 | BYTES 3/216 |
 | [`func_0011C750`](core/func_0011C750.c) | core | 68 | BYTES 1/68 (variadic spill pointer uses sp+0x80; retail sp+0x50; tools/try_func.py func_0011C750 --diff) |
 | [`func_00147BA8`](core/func_00147BA8.c) | core | 132 | BYTES 2/132 |
 | [`func_004C72E0`](game/func_004C72E0.c) | game | 200 | BYTES 3/196 |
@@ -94,6 +95,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L00_0051F4B0`](l00_multiplayer_menu/func_L00_0051F4B0.c) | l00_multiplayer_menu | 148 | BYTES 11/148 |
 | [`func_00498368`](game/func_00498368.c) | game | 120 | BYTES 9/120 |
 | [`func_L00_006ED020`](shared/func_L00_006ED020.c) | shared | 200 | BYTES 15/200 |
+| [`func_0046E9E8`](game/func_0046E9E8.c) | game | 224 | BYTES 17/224 |
 | [`func_01ECF658`](net/func_01ECF658.c) | net | 92 | BYTES 7/92 |
 | [`func_L00_005C5428`](shared/func_L00_005C5428.c) | shared | 128 | BYTES 10/128 |
 | [`func_L00_00538DE0`](l00_multiplayer_menu/func_L00_00538DE0.c) | l00_multiplayer_menu | 292 | BYTES 23/292 |
