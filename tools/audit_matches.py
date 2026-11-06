@@ -25,6 +25,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import retail as mp  # noqa: E402
+import elf_layout  # noqa: E402
 from elftools.elf.elffile import ELFFile  # noqa: E402
 
 ROOT = mp.ROOT
@@ -80,51 +81,48 @@ def main() -> int:
     # --version pal, tools/match_map.py): not US functions, so not audited here.
     objs = [p for p in glob.glob(str(ROOT / "build" / "obj" / "*.o")) if not Path(p).name.startswith("pal_")]
     for path in sorted(objs + glob.glob(str(ROOT / "build" / "libgcc" / "*.o")) + glob.glob(str(ROOT / "build" / "libm" / "*.o"))):
-        elf = ELFFile(open(path, "rb"))
-        text = elf.get_section_by_name(".text")
-        data = text.data() if text else b""
-        masks = mp.reloc_masks(elf)
-        for s in elf.get_section_by_name(".symtab").iter_symbols():
-            if s["st_info"]["type"] != "STT_FUNC":
-                continue
-            name = alias.get((Path(path).stem, s.name))
-            if name is None:
-                if not re.fullmatch(r"func_(L\d\d_|FB_)?[0-9A-F]{8}", s.name):
+        with open(path, "rb") as source:
+            elf = ELFFile(source)
+            for function in elf_layout.functions(elf):
+                s = function.symbol
+                name = alias.get((Path(path).stem, s.name))
+                if name is None:
+                    if not re.fullmatch(r"func_(L\d\d_|FB_)?[0-9A-F]{8}", s.name):
+                        continue
+                    name = s.name
+                if name not in ovl and name not in sizes:
+                    # a US catalogue name the old lists (config/functions.tsv,
+                    # config/overlay_functions.tsv) do not have: tools/match_map.py checks it
+                    # against its place on the disc
+                    unlisted.append(s.name)
                     continue
-                name = s.name
-            if name not in ovl and name not in sizes:
-                # a US catalogue name the old lists (config/functions.tsv,
-                # config/overlay_functions.tsv) do not have: tools/match_map.py checks it
-                # against its place on the disc
-                unlisted.append(s.name)
-                continue
-            if name in ovl:
-                lvl, addr, size = ovl[name]
-                osecs = overlay_secs(lvl)
-                if osecs is None:
-                    bad.append((s.name, "overlay data not found (set OVERLAYS, or tools/levels.py dump)"))
-                    continue
-                code = data[s["st_value"]: s["st_value"] + s["st_size"]]
-                retail = mp.read(osecs, addr, size)
-            else:
-                addr, size = sizes.get(name, (None, None))
-                if addr is None:
-                    bad.append((s.name, "not in config/functions.tsv"))
-                    continue
-                code = data[s["st_value"]: s["st_value"] + s["st_size"]]
-                retail = mp.read(secs, addr, size)
-            # The linker pads functions to 8 bytes with nops: those belong to
-            # the retail function but not to the compiled one.
-            pad = size - len(code)
-            if 0 < pad <= 12 and not any(retail[len(code):]):
-                retail = retail[:len(code)]
-                size = len(code)
-            start = s["st_value"]
-            if len(code) == size and mp.fields(code, masks, start) == mp.fields(retail, masks, start):
-                exact.append(name)
-            else:
-                bad.append((s.name, "size %d vs retail %d" % (len(code), size)
-                            if len(code) != size else "bytes differ"))
+                code = function.code
+                if name in ovl:
+                    lvl, addr, size = ovl[name]
+                    osecs = overlay_secs(lvl)
+                    if osecs is None:
+                        bad.append((s.name, "overlay data not found (set OVERLAYS, or tools/levels.py dump)"))
+                        continue
+                    retail = mp.read(osecs, addr, size)
+                else:
+                    addr, size = sizes.get(name, (None, None))
+                    if addr is None:
+                        bad.append((s.name, "not in config/functions.tsv"))
+                        continue
+                    retail = mp.read(secs, addr, size)
+                # The linker pads functions to 8 bytes with nops: those belong to
+                # the retail function but not to the compiled one.
+                pad = size - len(code)
+                if 0 < pad <= 12 and not any(retail[len(code):]):
+                    retail = retail[:len(code)]
+                    size = len(code)
+                start = function.start
+                masks = mp.reloc_masks(elf, function.section_index)
+                if len(code) == size and mp.fields(code, masks, start) == mp.fields(retail, masks, start):
+                    exact.append(name)
+                else:
+                    bad.append((s.name, "size %d vs retail %d" % (len(code), size)
+                                if len(code) != size else "bytes differ"))
     (ROOT / "build").mkdir(exist_ok=True)
     (ROOT / "build" / "matches.json").write_text(json.dumps({"exact": sorted(exact)}, indent=1))
     print("%d exact, %d not exact" % (len(exact), len(bad)))

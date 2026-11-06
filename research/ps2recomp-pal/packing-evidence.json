@@ -1,0 +1,23 @@
+{
+  "name": "func_00470970",
+  "version": "SCES_532.85",
+  "program": "main",
+  "address": "00470970",
+  "size": 32,
+  "source_sha256": "b51b113bd5759bb67b66f3194a7b79f5f4b3a945b6391f8efd870f4337be920e",
+  "retail_elf_sha256": "091675dacb5bae631b208f875ffe635bbceb33b0c1087e64dc0e15aeb5036307",
+  "object_elf_sha256": "416a47991b75fe25d2387f0ee4e41a89d00242320ae0393503f182c46e0faf8e",
+  "differing_bytes": 1,
+  "differing_words": 1,
+  "difference": "OR source operands exchanged at function offset 0xC",
+  "symbolic_result": "Identical lower 64 bits of all GPRs, ordered store and return target for every input bit pattern",
+  "method": "Exact bit-origin disjunctions for logical shift and OR; no sampling",
+  "negative_controls": "Changed shift breaks equivalence; unsupported AND rejected",
+  "relocations": 0,
+  "limitations": [
+    "Not a byte-exact match",
+    "Original C prototype unconfirmed",
+    "Not a whole-game runtime test",
+    "Upper 64 bits of 128-bit GPRs not modeled"
+  ]
+}

@@ -28,6 +28,16 @@ is the same 0x97330 bytes in every program of a disc; it is counted once, in the
     python3 tools/levels.py check     # the dumps against the committed SHA-1s
     python3 tools/levels.py --version pal dump      # the same for PAL: baserom/pal/, config/pal/
 
+To use an ISO where it already lives, pass `--iso` to `dump` or `config`. Quote paths with
+spaces, for example:
+
+    python3 tools/levels.py --version pal dump --iso "/path/to/Ratchet Gladiator.iso"
+    python3 tools/levels.py --version pal check
+
+The version still needs to match the disc (`--version pal` for `SCES_532.85`); `--iso` only
+changes the input path. Dumps and tables stay under `baserom/<version>/` and `config/<version>/`.
+`check` needs only the dumps, so it does not accept `--iso`.
+
 `dump` reads the ISO directly (no Wrench unpack): the loader from the ISO9660 root, its WAD
 unpacked by `tools/unpack_wad.py`; frontbin through the MISC wad; the levels through the table
 of contents at sector 1001. Deadlocked's table is not laid out like UYA's: the docstring of
