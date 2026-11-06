@@ -47,31 +47,32 @@ A function counts as matched on a version when its C, built with its file's own 
 <!-- progress:begin SCUS_974.65 (tools/progress.py --write) -->
 | | Functions (exact) | Code (exact) | Fuzzy |
 | --- | ---: | ---: | ---: |
-| **Main program** | 2,863 of 8,948 | 216,224 of 2,193,280 bytes (9.86%) | 10.36% |
-| Engine core (core.text) | 765 of 1,664 | 72,908 of 288,080 bytes (25.31%) | 25.87% |
+| **Main program** | 3,190 of 8,949 | 259,072 of 2,193,280 bytes (11.81%) | 12.24% |
+| Engine core (core.text) | 772 of 1,638 | 73,500 of 280,364 bytes (26.22%) | 26.74% |
 | libgcc | 26 of 33 | 6,148 of 10,836 bytes (56.74%) | 56.74% |
-| Network (net.text) | 478 of 2,441 | 15,372 of 465,620 bytes (3.30%) | 4.31% |
-| Resident menus (.text) | 1,591 of 4,785 | 120,992 of 1,416,576 bytes (8.54%) | 8.87% |
+| libm | 26 of 26 | 7,716 of 7,716 bytes (100.00%) | 100.00% |
+| Network (net.text) | 525 of 2,442 | 17,292 of 465,620 bytes (3.71%) | 4.66% |
+| Resident menus (.text) | 1,838 of 4,785 | 153,612 of 1,416,576 bytes (10.84%) | 11.09% |
 | frontbin's own code | 3 of 25 | 804 of 12,168 bytes (6.61%) | 6.61% |
-| **Shared level code** | 1,575 of 5,076 | 112,432 of 1,980,204 bytes (5.68%) | 6.34% |
-| **Level-specific code** | 1,054 of 4,061 | 89,852 of 1,608,940 bytes (5.58%) | 6.09% |
-| Level 00: Multiplayer Menu | 751 of 2,798 | 64,248 of 943,140 bytes (6.81%) | 7.39% |
-| Level 01: Dreadzone Station (and 21) | 83 of 356 | 5,864 of 188,848 bytes (3.11%) | 3.11% |
+| **Shared level code** | 1,606 of 5,076 | 114,120 of 1,980,204 bytes (5.76%) | 6.42% |
+| **Level-specific code** | 1,089 of 4,061 | 91,696 of 1,608,940 bytes (5.70%) | 6.36% |
+| Level 00: Multiplayer Menu | 780 of 2,798 | 65,748 of 943,140 bytes (6.97%) | 7.82% |
+| Level 01: Dreadzone Station (and 21) | 84 of 356 | 5,916 of 188,848 bytes (3.13%) | 3.13% |
 | Level 02: Catacrom Graveyard (and 22) | 5 of 35 | 188 of 26,596 bytes (0.71%) | 0.71% |
 | Level 04: Sarathos Swamp (and 24) | 4 of 19 | 224 of 11,708 bytes (1.91%) | 1.91% |
-| Level 05: Dark Cathedral (and 25) | 18 of 102 | 700 of 59,824 bytes (1.17%) | 1.33% |
+| Level 05: Dark Cathedral (and 25) | 19 of 102 | 744 of 59,824 bytes (1.24%) | 1.40% |
 | Level 06: Temple Of Shaar (and 26) | 6 of 31 | 376 of 9,360 bytes (4.02%) | 4.02% |
 | Level 07: Valix Lighthouse (and 27) | 4 of 46 | 464 of 28,304 bytes (1.64%) | 1.64% |
-| Level 08: Mining Facility (and 28) | 7 of 48 | 1,188 of 24,400 bytes (4.87%) | 4.87% |
+| Level 08: Mining Facility (and 28) | 8 of 48 | 1,228 of 24,400 bytes (5.03%) | 5.03% |
 | Level 10: Torval Ruins (and 30) | 5 of 37 | 284 of 20,140 bytes (1.41%) | 1.41% |
 | Level 11: Tempus Station (and 31) | 3 of 17 | 212 of 8,804 bytes (2.41%) | 2.41% |
 | Level 13: Maraxus Prison (and 33) | 9 of 34 | 524 of 16,916 bytes (3.10%) | 3.10% |
 | Level 14: Ghost Station (and 34) | 6 of 29 | 444 of 14,548 bytes (3.05%) | 3.05% |
 | Level 15: Control Level (and 35) | 17 of 135 | 1,188 of 116,368 bytes (1.02%) | 1.02% |
-| Level 41: Battledome Tower (all 22 multiplayer maps) | 136 of 374 | 13,948 of 139,984 bytes (9.96%) | 11.83% |
-| **Total** | 5,492 of 18,085 | 418,508 of 5,782,424 bytes (7.24%) | 7.80% |
+| Level 41: Battledome Tower (all 22 multiplayer maps) | 139 of 374 | 14,156 of 139,984 bytes (10.11%) | 11.97% |
+| **Total** | 5,885 of 18,086 | 464,888 of 5,782,424 bytes (8.04%) | 8.61% |
 
-Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 216,224 bytes (3.74%) are in units with nothing left to decompile.
+Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 259,072 bytes (4.48%) are in units with nothing left to decompile.
 <!-- progress:end -->
 
 **PAL (`SCES_532.85`)**
@@ -79,31 +80,32 @@ Each distinct function counts once: frontbin's copy of the menus is the main ima
 <!-- progress:begin SCES_532.85 (tools/progress.py --write) -->
 | | Functions (exact) | Code (exact) | Fuzzy |
 | --- | ---: | ---: | ---: |
-| **Main program** | 3,295 of 8,945 | 274,528 of 2,202,512 bytes (12.46%) | 12.87% |
-| Engine core (core.text) | 772 of 1,668 | 73,404 of 288,232 bytes (25.47%) | 26.03% |
+| **Main program** | 3,783 of 8,945 | 385,076 of 2,202,512 bytes (17.48%) | 17.83% |
+| Engine core (core.text) | 822 of 1,642 | 81,048 of 280,516 bytes (28.89%) | 29.41% |
 | libgcc | 26 of 33 | 6,148 of 10,836 bytes (56.74%) | 56.74% |
-| Network (net.text) | 494 of 2,441 | 16,240 of 465,620 bytes (3.49%) | 4.50% |
-| Resident menus (.text) | 2,000 of 4,786 | 178,156 of 1,422,048 bytes (12.53%) | 12.71% |
+| libm | 26 of 26 | 7,716 of 7,716 bytes (100.00%) | 100.00% |
+| Network (net.text) | 546 of 2,441 | 18,312 of 465,620 bytes (3.93%) | 4.88% |
+| Resident menus (.text) | 2,360 of 4,786 | 271,272 of 1,422,048 bytes (19.08%) | 19.19% |
 | frontbin's own code | 3 of 17 | 580 of 15,776 bytes (3.68%) | 3.68% |
-| **Shared level code** | 1,658 of 5,088 | 128,048 of 2,008,520 bytes (6.38%) | 7.03% |
-| **Level-specific code** | 1,130 of 4,080 | 98,988 of 1,601,892 bytes (6.18%) | 6.58% |
-| Level 00: Multiplayer Menu | 792 of 2,826 | 66,728 of 943,820 bytes (7.07%) | 7.47% |
-| Level 01: Dreadzone Station (and 21) | 94 of 357 | 8,016 of 189,772 bytes (4.22%) | 4.22% |
-| Level 02: Catacrom Graveyard (and 22) | 5 of 29 | 188 of 21,232 bytes (0.89%) | 0.89% |
+| **Shared level code** | 1,806 of 5,088 | 146,964 of 2,008,520 bytes (7.32%) | 7.94% |
+| **Level-specific code** | 1,200 of 4,080 | 109,692 of 1,601,892 bytes (6.85%) | 7.41% |
+| Level 00: Multiplayer Menu | 830 of 2,826 | 73,472 of 943,820 bytes (7.78%) | 8.45% |
+| Level 01: Dreadzone Station (and 21) | 99 of 357 | 8,972 of 189,772 bytes (4.73%) | 4.73% |
+| Level 02: Catacrom Graveyard (and 22) | 6 of 29 | 224 of 21,232 bytes (1.06%) | 1.06% |
 | Level 04: Sarathos Swamp (and 24) | 5 of 19 | 600 of 11,868 bytes (5.06%) | 5.06% |
-| Level 05: Dark Cathedral (and 25) | 21 of 106 | 1,280 of 61,960 bytes (2.07%) | 2.22% |
-| Level 06: Temple Of Shaar (and 26) | 7 of 31 | 460 of 9,440 bytes (4.87%) | 4.87% |
+| Level 05: Dark Cathedral (and 25) | 26 of 106 | 1,996 of 61,960 bytes (3.22%) | 3.37% |
+| Level 06: Temple Of Shaar (and 26) | 8 of 31 | 996 of 9,440 bytes (10.55%) | 10.55% |
 | Level 07: Valix Lighthouse (and 27) | 4 of 44 | 464 of 27,640 bytes (1.68%) | 1.68% |
-| Level 08: Mining Facility (and 28) | 9 of 48 | 1,492 of 24,900 bytes (5.99%) | 5.99% |
-| Level 10: Torval Ruins (and 30) | 6 of 38 | 424 of 20,392 bytes (2.08%) | 2.08% |
+| Level 08: Mining Facility (and 28) | 10 of 48 | 1,532 of 24,900 bytes (6.15%) | 6.15% |
+| Level 10: Torval Ruins (and 30) | 8 of 38 | 452 of 20,392 bytes (2.22%) | 2.22% |
 | Level 11: Tempus Station (and 31) | 4 of 17 | 500 of 9,024 bytes (5.54%) | 5.54% |
 | Level 13: Maraxus Prison (and 33) | 12 of 34 | 1,200 of 15,996 bytes (7.50%) | 7.50% |
-| Level 14: Ghost Station (and 34) | 6 of 23 | 444 of 8,884 bytes (5.00%) | 5.00% |
-| Level 15: Control Level (and 35) | 23 of 134 | 2,540 of 116,624 bytes (2.18%) | 2.18% |
-| Level 41: Battledome Tower (all 22 multiplayer maps) | 142 of 374 | 14,652 of 140,340 bytes (10.44%) | 12.30% |
-| **Total** | 6,083 of 18,113 | 501,564 of 5,812,924 bytes (8.63%) | 9.12% |
+| Level 14: Ghost Station (and 34) | 7 of 23 | 1,000 of 8,884 bytes (11.26%) | 11.26% |
+| Level 15: Control Level (and 35) | 28 of 134 | 3,024 of 116,624 bytes (2.59%) | 2.59% |
+| Level 41: Battledome Tower (all 22 multiplayer maps) | 153 of 374 | 15,260 of 140,340 bytes (10.87%) | 12.73% |
+| **Total** | 6,789 of 18,113 | 641,732 of 5,812,924 bytes (11.04%) | 11.54% |
 
-Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 274,528 bytes (4.72%) are in units with nothing left to decompile.
+Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 385,076 bytes (6.62%) are in units with nothing left to decompile.
 <!-- progress:end -->
 
 </details>
