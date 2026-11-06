@@ -47,12 +47,12 @@ A function counts as matched on a version when its C, built with its file's own 
 <!-- progress:begin SCUS_974.65 (tools/progress.py --write) -->
 | | Functions (exact) | Code (exact) | Fuzzy |
 | --- | ---: | ---: | ---: |
-| **Main program** | 2,914 of 8,948 | 228,120 of 2,193,280 bytes (10.40%) | 10.94% |
+| **Main program** | 2,926 of 8,948 | 230,540 of 2,193,280 bytes (10.51%) | 11.06% |
 | Engine core (core.text) | 769 of 1,638 | 73,816 of 280,364 bytes (26.33%) | 26.90% |
 | libgcc | 26 of 33 | 6,148 of 10,836 bytes (56.74%) | 56.74% |
 | libm | 26 of 26 | 7,716 of 7,716 bytes (100.00%) | 100.00% |
 | Network (net.text) | 478 of 2,441 | 15,372 of 465,620 bytes (3.30%) | 4.31% |
-| Resident menus (.text) | 1,612 of 4,785 | 124,264 of 1,416,576 bytes (8.77%) | 9.16% |
+| Resident menus (.text) | 1,624 of 4,785 | 126,684 of 1,416,576 bytes (8.94%) | 9.34% |
 | frontbin's own code | 3 of 25 | 804 of 12,168 bytes (6.61%) | 6.61% |
 | **Shared level code** | 1,581 of 5,076 | 116,760 of 1,980,204 bytes (5.90%) | 6.44% |
 | **Level-specific code** | 1,123 of 4,061 | 137,484 of 1,608,940 bytes (8.55%) | 9.35% |
@@ -70,9 +70,9 @@ A function counts as matched on a version when its C, built with its file's own 
 | Level 14: Ghost Station (and 34) | 6 of 29 | 444 of 14,548 bytes (3.05%) | 3.05% |
 | Level 15: Control Level (and 35) | 18 of 135 | 1,392 of 116,368 bytes (1.20%) | 1.20% |
 | Level 41: Battledome Tower (all 22 multiplayer maps) | 136 of 374 | 14,080 of 139,984 bytes (10.06%) | 11.77% |
-| **Total** | 5,618 of 18,085 | 482,364 of 5,782,424 bytes (8.34%) | 8.96% |
+| **Total** | 5,630 of 18,085 | 484,784 of 5,782,424 bytes (8.38%) | 9.00% |
 
-Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 228,120 bytes (3.95%) are in units with nothing left to decompile.
+Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 230,540 bytes (3.99%) are in units with nothing left to decompile.
 <!-- progress:end -->
 
 **PAL (`SCES_532.85`)**
