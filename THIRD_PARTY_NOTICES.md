@@ -464,3 +464,32 @@ These PAL reconstructions also use the public RAC3 sources pinned below; each ta
 | `src/pal/overlays/shared/L00_006F2370.c` | `src/levels/shared/L39_00662678.c` | `func_L39_00665CC0` | `cd0e7c20fd8a93116566ba2e024fa2f3536bd30c` |
 | `src/pal/overlays/l41_battledome_tower/L41_00411F80.c` | `src/levels/shared/L40_00420998.c` | `func_L40_004224F8` | `cd0e7c20fd8a93116566ba2e024fa2f3536bd30c` |
 | `src/pal/overlays/l41_battledome_tower/L41_00621CE8.c` | `src/levels/shared/L40_005416F0.c` | `func_L40_005416F0` | `cd0e7c20fd8a93116566ba2e024fa2f3536bd30c` |
+
+## Further PAL engine-family references
+
+The additional PAL reconstructions listed in
+[`config/pal/crossgame_parallel01.tsv`](config/pal/crossgame_parallel01.tsv)
+use public RAC3 decompilations as algorithm and interface references, including
+the unified OpenRAC checkout. Each row records the repository, immutable commit,
+file and reference function; the C sources also carry their credits.
+
+The RAC3 game-source scope is described in the earlier public-decompilations
+notice and the reference project's `LEGAL.md`. Fingerprints identify candidates;
+these reconstructions were checked independently against RAC4 PAL instructions,
+actual address targets and caller/callee interfaces. No proprietary SDK source,
+samples or headers were used.
+
+### PAL video acquisition and tile loop
+
+`src/pal/game/004F2F08.c` adapts the acquisition and tile-loop C structure
+from the OpenRAC RAC3 decompilation contributors' [`func_003AD288`](https://github.com/OpenRAC/OpenRAC/blob/73f725bf54bb1bf6d8b9bb5b1511ed00d551fbde/games/rac3/ntsc/src/frontbin/3ABA48.c#L697-L732),
+in `games/rac3/ntsc/src/frontbin/3ABA48.c` at commit
+`73f725bf54bb1bf6d8b9bb5b1511ed00d551fbde`. The donor project uses
+[GNU GPL version 3](https://github.com/OpenRAC/OpenRAC/blob/73f725bf54bb1bf6d8b9bb5b1511ed00d551fbde/games/rac3/ntsc/LICENSE),
+also included in this repository's `LICENSE`.
+
+The adapted parts include the acquisition-loop assignment test, reuse and
+reload of the current video pointer, and direct tile-index products in the
+guarded tile loop. RAC4 PAL addresses, call interfaces and data layout were
+checked against its retail executable. This attribution is to the project
+contributors; no individual authorship of the donor function is asserted.

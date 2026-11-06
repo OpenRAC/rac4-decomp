@@ -1,7 +1,9 @@
+/* cflags: -O2 -G8 -fopt-stack -Wuninitialized */
 #include "common.h"
+
 char D_00222211 = 0;
-void *func_00501A90(void *table, u32 key)
-{
+
+void *func_00501A90(void *table, u32 key) {
     u8 *keys = (u8 *)table + 8;
     s32 i;
     u32 step;

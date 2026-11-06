@@ -2,6 +2,7 @@
 """match_map.py: where each function of src/ is on one disc, and whether its C matches there.
 
     python3 tools/match_map.py [--version us|pal] --write   # config/<version>/map.tsv from a build (needs the dumps)
+    python3 tools/match_map.py [--version us|pal] --update-native SOURCE...  # checked native rows; retain the baseline
     python3 tools/match_map.py [--version us|pal] --check   # every src/ function and near miss has a row (CI)
 
 The C in src/ is named by US addresses (func_XXXXXXXX, func_LNN_XXXXXXXX: the US executable's
@@ -46,11 +47,14 @@ import collections
 import glob
 import os
 import re
+import stat
 import struct
 import sys
+import tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "tools"))
+import elf_layout
 NAME = re.compile(r"^func_(?:(L\d\d)_|FB_)?([0-9A-F]{8})$")
 HEAD = """# Each function of src/ (and each near miss in nonmatching/) on the %s disc (tools/match_map.py --write):
 # source name (US names; PAL names in src/pal/), source file, status (match: its C builds to this disc's bytes;
@@ -67,16 +71,17 @@ def read_map(path=None):
     out = []
     if not os.path.exists(path):
         return out
-    for line in open(path, encoding="utf-8"):
-        if line.startswith("#") or not line.strip():
-            continue
-        n, f, st, pal, places, close = line.rstrip("\n").split("\t")
-        pl = []
-        for p in places.split(",") if places != "-" else []:
-            prog, sec, a, sz = p.split(":")
-            pl.append((prog, sec, int(a, 16), int(sz)))
-        out.append({"name": n, "file": f, "status": st, "names": [] if pal == "-" else pal.split(","),
-                    "places": pl, "closeness": float(close)})
+    with open(path, encoding="utf-8") as source:
+        for line in source:
+            if line.startswith("#") or not line.strip():
+                continue
+            n, f, st, pal, places, close = line.rstrip("\n").split("\t")
+            pl = []
+            for p in places.split(",") if places != "-" else []:
+                prog, sec, a, sz = p.split(":")
+                pl.append((prog, sec, int(a, 16), int(sz)))
+            out.append({"name": n, "file": f, "status": st, "names": [] if pal == "-" else pal.split(","),
+                        "places": pl, "closeness": float(close)})
     return out
 
 
@@ -106,44 +111,44 @@ def object_of(src):
     return os.path.join(ROOT, "build", "obj", src[len("src/"):].replace("/", "_")[:-2] + ".o")
 
 
-def compiled():
+def compiled(paths=None):
     """{US name: (code, {offset: mask})} of every compiled function (tools/audit_matches.py's
     names: libgcc and libm symbols through config/libgcc.tsv, config/libm.tsv)."""
     import retail
     from elftools.elf.elffile import ELFFile
     sizes = {}
-    for l in open(os.path.join(ROOT, "config", "functions.tsv")):
-        if l.strip() and not l.startswith("#"):
-            n, a, s, _ = l.rstrip("\n").split("\t")
-            sizes[int(a, 16)] = n
+    with open(os.path.join(ROOT, "config", "functions.tsv")) as source:
+        for l in source:
+            if l.strip() and not l.startswith("#"):
+                n, a, s, _ = l.rstrip("\n").split("\t")
+                sizes[int(a, 16)] = n
     alias = {}
     for tsv in ("libgcc.tsv", "libm.tsv"):
         p = os.path.join(ROOT, "config", tsv)
         if os.path.exists(p):
-            for l in open(p):
-                if l.strip() and not l.startswith("#"):
-                    obj, sym, a, _ = l.rstrip("\n").split("\t")
-                    alias[(obj[:-2] if obj.endswith(".o") else obj, sym)] = sizes[int(a, 16)]
+            with open(p) as source:
+                for l in source:
+                    if l.strip() and not l.startswith("#"):
+                        obj, sym, a, _ = l.rstrip("\n").split("\t")
+                        alias[(obj[:-2] if obj.endswith(".o") else obj, sym)] = sizes[int(a, 16)]
     out = {}
-    paths = sorted(glob.glob(os.path.join(ROOT, "build", "obj", "*.o")) + glob.glob(os.path.join(ROOT, "build", "libgcc", "*.o"))
-                   + glob.glob(os.path.join(ROOT, "build", "libm", "*.o")))
+    if paths is None:
+        paths = sorted(glob.glob(os.path.join(ROOT, "build", "obj", "*.o")) + glob.glob(os.path.join(ROOT, "build", "libgcc", "*.o"))
+                       + glob.glob(os.path.join(ROOT, "build", "libm", "*.o")))
     for path in paths:
-        elf = ELFFile(open(path, "rb"))
-        text = elf.get_section_by_name(".text")
-        data = text.data() if text else b""
-        masks = retail.reloc_masks(elf)
-        for s in elf.get_section_by_name(".symtab").iter_symbols():
-            if s["st_info"]["type"] != "STT_FUNC":
-                continue
-            name = alias.get((os.path.splitext(os.path.basename(path))[0], s.name))
-            if name is None:
-                if not NAME.match(s.name):
-                    continue
-                name = s.name
-            start = s["st_value"]
-            code = data[start:start + s["st_size"]]
-            m = {k - start: v for k, v in masks.items() if start <= k < start + len(code)}
-            out[name] = (code, m)
+        with open(path, "rb") as source:
+            elf = ELFFile(source)
+            for function in elf_layout.functions(elf):
+                s = function.symbol
+                name = alias.get((os.path.splitext(os.path.basename(path))[0], s.name))
+                if name is None:
+                    if not NAME.match(s.name):
+                        continue
+                    name = s.name
+                start, code = function.start, function.code
+                masks = retail.reloc_masks(elf, function.section_index)
+                m = {k - start: v for k, v in masks.items() if start <= k < start + len(code)}
+                out[name] = (code, m)
     return out
 
 
@@ -370,6 +375,49 @@ def closeness(path):
     return round(100.0 * (1 - int(m.group(1)) / int(m.group(2))), 2) if m else 0.0
 
 
+def native_row(name, source, built, table):
+    """Compare C named by this disc's catalogue, or inventory PAL C on US."""
+    import levels
+    if source.startswith("src/pal/") and levels.V == "us":
+        return (name, source, "other", "-", "-", 0.0)
+    import check_func
+    import retail
+    place = table.get(name)
+    if name not in built or place is None:
+        return (name, source, "nomatch", "-", "-", 0.0)
+    code, masks = built[name]
+    want = check_func.disc_bytes(place[:4])
+    ok = (len(code) == len(want) == place[3]
+          and retail.fields(code, masks, 0) == retail.fields(want, masks, 0))
+    return (name, source, "match" if ok else "nomatch", name,
+            "%s:%s:%08X:%d" % place[:4], 100.0 if ok else 0.0)
+
+
+def serialize_row(row):
+    """The shared on-disk representation of a generated map row."""
+    return ("%s\t%s\t%s\t%s\t%s\t%.2f\n" % row).encode("utf-8")
+
+
+def write_payload(path, payload, expected=None):
+    """Replace one complete map after validation; never publish a partial write."""
+    directory = os.path.dirname(os.path.abspath(path))
+    mode = stat.S_IMODE(os.stat(path).st_mode) if os.path.exists(path) else None
+    fd, temporary = tempfile.mkstemp(prefix=os.path.basename(path) + ".", suffix=".tmp", dir=directory)
+    try:
+        with os.fdopen(fd, "wb") as destination:
+            destination.write(payload)
+        if mode is not None:
+            os.chmod(temporary, mode)
+        if expected is not None:
+            with open(path, "rb") as source:
+                if source.read() != expected:
+                    raise ValueError("baseline map changed during validation: %s" % path)
+        os.replace(temporary, path)
+    finally:
+        if os.path.exists(temporary):
+            os.unlink(temporary)
+
+
 def write():
     import levels
     pal = Disc()
@@ -415,22 +463,10 @@ def write():
     fb_hits = resolve(fb_hits, fb_info)
     rows = []
     import check_func
-    import retail
     table = check_func.places()
     for name, f in sorted(src.items()):
-        if f.startswith("src/pal/") and levels.V != "pal":
-            rows.append((name, f, "other", "-", "-", 0.0))
-            continue
         if f.startswith("src/pal/") or (levels.V == "us" and name in new):
-            # C written under this disc's catalogue name: compared at that function's place
-            p = table.get(name)
-            if name not in built or p is None:
-                rows.append((name, f, "nomatch", "-", "-", 0.0))
-                continue
-            code, masks = built[name]
-            want = check_func.disc_bytes(p[:4])
-            ok = len(code) == len(want) and retail.fields(code, masks, 0) == retail.fields(want, masks, 0)
-            rows.append((name, f, "match" if ok else "nomatch", name, "%s:%s:%08X:%d" % p[:4], 100.0 if ok else 0.0))
+            rows.append(native_row(name, f, built, table))
             continue
         if name not in built:
             rows.append((name, f, "differs", "-", "-", 0.0))
@@ -462,13 +498,104 @@ def write():
             (prog, sec), a, c = v
             nm, size = pal.names[(prog, sec, a)]
             rows.append((name, near[name], "near", nm, "%s:%s:%08X:%d" % (prog, sec, a, size), c))
-    with open(levels.cfg("map.tsv"), "w", newline="\n") as f:
-        f.write(HEAD % levels.version_id())
-        for r in rows:
-            f.write("%s\t%s\t%s\t%s\t%s\t%.2f\n" % r)
+    write_payload(levels.cfg("map.tsv"), (HEAD % levels.version_id()).encode("utf-8")
+                  + b"".join(serialize_row(row) for row in rows))
     c = collections.Counter(r[2] for r in rows)
     print("wrote %s: %s" % (os.path.relpath(levels.cfg("map.tsv"), ROOT), ", ".join(
         "%d %s" % (c[k], k) for k in ("match", "differs", "nomatch", "other", "near", "none") if c[k])))
+
+
+def update_native(paths):
+    """Update selected native sources only, keeping every unrelated baseline byte."""
+    import check_func
+    import gen_progress_report as g
+    import levels
+
+    root = os.path.realpath(ROOT)
+    src_root = os.path.realpath(os.path.join(root, "src"))
+    selected = set()
+    for path in paths:
+        absolute = os.path.realpath(path)
+        if (os.path.commonpath((src_root, absolute)) != src_root
+                or not absolute.endswith(".c") or not os.path.isfile(absolute)):
+            raise ValueError("expected an existing C source under src/: %s" % path)
+        relative = os.path.relpath(absolute, root).replace(os.sep, "/")
+        if relative in selected:
+            raise ValueError("duplicate selected source: %s" % relative)
+        selected.add(relative)
+    if not selected:
+        raise ValueError("no native sources selected")
+    if levels.V == "pal" and any(not path.startswith("src/pal/") for path in selected):
+        raise ValueError("US sources on PAL require the full --write search")
+
+    definitions = g.source_functions()
+    owners = collections.defaultdict(list)
+    for path, names in definitions.items():
+        for name in names:
+            owners[name].append(path.split(":")[0])
+    chosen = {}
+    for path in sorted(selected):
+        names = definitions.get(path, [])
+        if not names:
+            raise ValueError("no canonical function definitions in %s" % path)
+        for name in names:
+            if not NAME.fullmatch(name) or owners[name] != [path] or name in chosen:
+                raise ValueError("duplicate, colliding or noncanonical function: %s" % name)
+            chosen[name] = path
+
+    map_path = levels.cfg("map.tsv")
+    with open(map_path, "rb") as source:
+        baseline = source.read()
+    rows = read_map(map_path)
+    if len({row["name"] for row in rows}) != len(rows):
+        raise ValueError("baseline map contains duplicate function names")
+    for row in rows:
+        if row["file"] in selected and row["name"] not in chosen:
+            raise ValueError("removed or moved existing definition: %s" % row["name"])
+        if row["name"] in chosen and row["file"] != chosen[row["name"]]:
+            raise ValueError("existing definition belongs to another source: %s" % row["name"])
+
+    version = levels.V
+    tables = {}
+    try:
+        for native_version in sorted({"pal" if path.startswith("src/pal/") else "us" for path in selected}):
+            levels.select(native_version)
+            tables[native_version] = check_func.places()
+    finally:
+        levels.select(version)
+    replacements = {}
+    for path in sorted(selected):
+        native_version = "pal" if path.startswith("src/pal/") else "us"
+        names = [name for name, source in chosen.items() if source == path]
+        table = tables[native_version]
+        for name in names:
+            if name not in table:
+                raise ValueError("not a native %s catalogue function: %s" % (native_version, name))
+        built = {}
+        if native_version == version:
+            obj = object_of(path)
+            if not os.path.isfile(obj):
+                raise ValueError("missing compiled object for %s: %s" % (path, obj))
+            built = compiled([obj])
+        for name in names:
+            row = native_row(name, path, built, table)
+            if row[2] not in ("match", "other"):
+                raise ValueError("native bytes or object definition differ: %s" % name)
+            replacements[name] = serialize_row(row)
+
+    output = []
+    for line in baseline.splitlines(keepends=True):
+        if line.startswith(b"#") or not line.strip():
+            output.append(line)
+            continue
+        name = line.split(b"\t", 1)[0].decode("utf-8")
+        output.append(replacements.pop(name) if name in replacements else line)
+    if replacements and baseline and not baseline.endswith((b"\n", b"\r")):
+        raise ValueError("baseline map must end with a newline before appending rows")
+    output.extend(replacements[name] for name in sorted(replacements))
+    write_payload(map_path, b"".join(output), expected=baseline)
+    print("updated %d native functions in %s (baseline retained)" %
+          (len(chosen), os.path.relpath(map_path, ROOT)))
 
 
 def check():
@@ -503,12 +630,20 @@ def main():
     import levels
     levels.cli_version()
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--write", action="store_true")
+    mode = ap.add_mutually_exclusive_group()
+    mode.add_argument("--write", action="store_true")
+    mode.add_argument("--update-native", nargs="+", metavar="SOURCE",
+                      help="check selected native C sources and retain unrelated map rows")
     ap.add_argument("--check", action="store_true")
     a = ap.parse_args()
     if a.write:
         write()
-    if a.check or not a.write:
+    elif a.update_native:
+        try:
+            update_native(a.update_native)
+        except ValueError as error:
+            ap.error(str(error))
+    if a.check or not (a.write or a.update_native):
         sys.exit(check())
 
 

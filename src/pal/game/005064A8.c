@@ -1,52 +1,62 @@
 #include "common.h"
 typedef struct Object Object;
-typedef struct Vtable {
-    void *unused[3];
-    u32 (*type)(Object *);
-    void *f10;
-    s32 (*supports)(Object *, u32);
-} Vtable;
-struct Object {
-    s32 f0, f4;
-    Vtable *vtable;
-};
 typedef struct {
-    s32 f0;
-    void *context;
+    char pad[0xC];
+    u32 (*getType)(Object *);
+    s32 pad10;
+    s32 (*isType)(Object *, u32);
+} VTable;
+struct Object {
+    char pad[8];
+    VTable *vtable;
+};
+
+typedef struct {
+    s32 pad;
+    char *table;
 } Manager;
 extern Manager D_00222138[];
-extern Manager *func_00502150(void);
-extern Object *func_00501658(void *, s32);
 extern u32 D_00220B50;
-static inline Object *resolve(s32 handle)
+extern void *func_00502150(void);
+extern Object *func_00501658(void *, u32);
+typedef s32 (*Callback)(Object *, f32);
+extern void *func_00508C88(void *, u32);
+static inline Manager *getManager(void)
 {
-    Manager *m;
-    Object *obj;
-    void *world;
-    if (D_00222138[0].context)
-        m = D_00222138;
-    else
-        m = func_00502150();
-    world = 0;
-    if (m->context)
-        world = *(void **)((u32)m->context + ((u32) * (s32 *)((char *)m->context + 0x14) << 2));
-    obj = func_00501658(world, handle);
-    if (obj && obj->vtable->supports(obj, D_00220B50))
-        return obj;
+    Manager *p = D_00222138;
+    if (p->table)
+        return p;
+    return func_00502150();
+}
+static inline Object *valid(Object *p)
+{
+    if (p && p->vtable->isType(p, D_00220B50))
+        return p;
     return 0;
 }
-typedef s32 (*Callback)(Object *, float);
+static inline Object *getTyped(u32 id)
+{
+    Manager *m = getManager();
+    char *state = m->table;
+    void *table = 0;
+    if (state)
+        table = *(void **)(state + ((u32)*(s32 *)(state + 0x14) << 2));
+    return valid(func_00501658(table, id));
+}
 extern char D_00336158[];
-extern Callback func_00508C88(void *, u32);
-s32 func_005064A8(s32 handle, float value)
+static inline Callback handler(u32 kind)
+{
+    return (Callback)func_00508C88(D_00336158, kind);
+}
+/* Resolve a supported object and dispatch its registered type callback. */
+s32 func_005064A8(u32 id, f32 amount)
 {
     s32 result = 0;
-    Object *obj = resolve(handle);
-    if (obj) {
-        u32 type = obj->vtable->type(obj);
-        Callback callback = func_00508C88(D_00336158, type);
+    Object *p = getTyped(id);
+    if (p) {
+        Callback callback = handler(p->vtable->getType(p));
         if (callback)
-            result = callback(obj, value);
+            result = callback(p, amount);
     }
     return result;
 }
