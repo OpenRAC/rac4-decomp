@@ -1,4 +1,5 @@
-/* Not matching yet: SIZE ours 144 / retail 152 (tools/try_func.py func_01EB9880 --diff). Not part of the build. */
+/* Not matching yet: BYTES 84/152 (tools/try_func.py func_01EB9880 --diff). Not part of the build. */
+/* cflags: @ee296 -O2 -G0 -falign-jumps=1 -mno-split-addresses */
 #include "common.h"
 
 // Find the last entry whose type is 0xD-0xF, or the first type 1 entry.

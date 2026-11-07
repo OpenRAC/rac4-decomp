@@ -1,5 +1,5 @@
-/* Not matching yet: BYTES 51/72 (tools/try_func.py func_01EC2298 --diff). Not part of the build. */
-/* cflags: @ee296 -O2 -G0 */
+/* Not matching yet: BYTES 37/72 (tools/try_func.py func_01EC2298 --diff). Not part of the build. */
+/* cflags: -G0 */
 #include "common.h"
 
 // Copy the three words of a type 0xD record into `out`.
