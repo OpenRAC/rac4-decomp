@@ -86,8 +86,8 @@ Each distinct function counts once: frontbin's copy of the menus is the main ima
 | Resident menus (.text) | 2,408 of 4,797 | 273,772 of 1,422,048 bytes (19.25%) | 19.36% |
 | frontbin's own code | 2 of 15 | 560 of 15,448 bytes (3.63%) | 3.63% |
 | **Shared level code** | 1,977 of 5,089 | 167,312 of 2,008,632 bytes (8.33%) | 8.95% |
-| **Level-specific code** | 1,312 of 4,093 | 117,108 of 1,600,040 bytes (7.32%) | 7.88% |
-| Level 00: Multiplayer Menu | 901 of 2,834 | 78,556 of 943,896 bytes (8.32%) | 8.98% |
+| **Level-specific code** | 1,314 of 4,093 | 117,196 of 1,600,040 bytes (7.32%) | 7.88% |
+| Level 00: Multiplayer Menu | 903 of 2,834 | 78,644 of 943,896 bytes (8.33%) | 8.99% |
 | Level 01: Dreadzone Station (and 21) | 126 of 371 | 10,332 of 190,296 bytes (5.43%) | 5.43% |
 | Level 02: Catacrom Graveyard (and 22) | 7 of 29 | 328 of 21,232 bytes (1.54%) | 1.54% |
 | Level 04: Sarathos Swamp (and 24) | 5 of 19 | 600 of 11,868 bytes (5.06%) | 5.06% |
@@ -101,7 +101,7 @@ Each distinct function counts once: frontbin's copy of the menus is the main ima
 | Level 14: Ghost Station (and 34) | 7 of 23 | 1,000 of 8,884 bytes (11.26%) | 11.26% |
 | Level 15: Control Level (and 35) | 31 of 134 | 3,148 of 116,624 bytes (2.70%) | 2.70% |
 | Level 41: Battledome Tower (all 22 multiplayer maps) | 158 of 374 | 15,652 of 140,340 bytes (11.15%) | 13.01% |
-| **Total** | 7,252 of 18,134 | 677,940 of 5,810,856 bytes (11.67%) | 12.14% |
+| **Total** | 7,254 of 18,134 | 678,028 of 5,810,856 bytes (11.67%) | 12.14% |
 
 Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 393,520 bytes (6.77%) are in units with nothing left to decompile.
 <!-- progress:end -->
