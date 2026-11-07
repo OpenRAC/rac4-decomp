@@ -3,7 +3,7 @@ typedef long long s128;
 
 void func_00474368(void *object, s32 state, s32 animation);
 
-s32 func_L01_0056E400(s32);                         
+s32 func_L01_0056E400(s32);
 
 s32 func_L01_00491120(void *arg0, s32 arg1, s32 arg2) {
     u8 temp_v1;

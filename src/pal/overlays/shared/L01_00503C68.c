@@ -24,4 +24,3 @@ s32 func_L01_00503C68(void *arg0)
   }
   return var_v0;
 }
-
