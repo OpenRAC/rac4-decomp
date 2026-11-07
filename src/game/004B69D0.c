@@ -1,16 +1,14 @@
-/* cflags: -O2 -G0 -Wuninitialized */
-#include "common.h"
 #include "common.h"
 
 typedef struct {
-    u8 unk00[0x0C];
-    s32 unk0C;
-    s32 unk10;
-    u8 unk14[0x1E4];
-} Record003098F0;
-extern Record003098F0 D_003098F0[];
+    u8 pad0[0x10];
+    u32 f10;
+    u8 pad14[0x1E4];
+} Type2;
 
-void func_004B69D0(s32 index)
-{
-    D_003098F0[index].unk10 = 0;
+extern Type2 D_3098F0[];
+
+// Clears the 0x10 field of record ARG0 of the 0x1F8-byte table at D_3098F0.
+void func_004B69D0(u32 arg0) {
+    D_3098F0[arg0].f10 = 0;
 }
