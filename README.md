@@ -47,10 +47,10 @@ A function counts as matched on a version when its C, built with its file's own 
 <!-- progress:begin SCUS_974.65 (tools/progress.py --write) -->
 | | Functions (exact) | Code (exact) | Fuzzy |
 | --- | ---: | ---: | ---: |
-| **Main program** | 3,678 of 8,989 | 300,676 of 2,193,276 bytes (13.71%) | 14.00% |
+| **Main program** | 3,678 of 8,989 | 300,676 of 2,193,276 bytes (13.71%) | 13.99% |
 | Engine core (core.text) | 792 of 1,663 | 74,876 of 288,080 bytes (25.99%) | 26.50% |
 | libgcc | 26 of 33 | 6,148 of 10,836 bytes (56.74%) | 56.74% |
-| Network (net.text) | 704 of 2,441 | 31,784 of 465,620 bytes (6.83%) | 7.45% |
+| Network (net.text) | 704 of 2,441 | 31,784 of 465,620 bytes (6.83%) | 7.43% |
 | Resident menus (.text) | 2,152 of 4,827 | 187,000 of 1,416,572 bytes (13.20%) | 13.34% |
 | frontbin's own code | 4 of 25 | 868 of 12,168 bytes (7.13%) | 7.13% |
 | **Shared level code** | 1,892 of 5,096 | 149,432 of 1,980,624 bytes (7.54%) | 8.19% |
@@ -82,7 +82,7 @@ Each distinct function counts once: frontbin's copy of the menus is the main ima
 | **Main program** | 3,948 of 8,952 | 391,728 of 2,202,184 bytes (17.79%) | 18.06% |
 | Engine core (core.text) | 819 of 1,666 | 80,692 of 288,232 bytes (28.00%) | 28.50% |
 | libgcc | 26 of 33 | 6,148 of 10,836 bytes (56.74%) | 56.74% |
-| Network (net.text) | 704 of 2,441 | 31,828 of 465,620 bytes (6.84%) | 7.46% |
+| Network (net.text) | 704 of 2,441 | 31,828 of 465,620 bytes (6.84%) | 7.44% |
 | Resident menus (.text) | 2,397 of 4,797 | 272,500 of 1,422,048 bytes (19.16%) | 19.28% |
 | frontbin's own code | 2 of 15 | 560 of 15,448 bytes (3.63%) | 3.63% |
 | **Shared level code** | 1,950 of 5,089 | 165,452 of 2,008,632 bytes (8.24%) | 8.85% |
@@ -101,7 +101,7 @@ Each distinct function counts once: frontbin's copy of the menus is the main ima
 | Level 14: Ghost Station (and 34) | 7 of 23 | 1,000 of 8,884 bytes (11.26%) | 11.26% |
 | Level 15: Control Level (and 35) | 31 of 134 | 3,136 of 116,624 bytes (2.69%) | 2.69% |
 | Level 41: Battledome Tower (all 22 multiplayer maps) | 157 of 374 | 15,568 of 140,340 bytes (11.09%) | 12.95% |
-| **Total** | 7,178 of 18,134 | 670,976 of 5,810,856 bytes (11.55%) | 11.98% |
+| **Total** | 7,178 of 18,134 | 670,976 of 5,810,856 bytes (11.55%) | 11.97% |
 
 Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 391,728 bytes (6.74%) are in units with nothing left to decompile.
 <!-- progress:end -->

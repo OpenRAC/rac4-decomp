@@ -161,8 +161,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L01_005AC9D0`](shared/func_L01_005AC9D0.c) | shared | 280 | BYTES 44/280 |
 | [`func_L00_006A97A8`](shared/func_L00_006A97A8.c) | shared | 280 | BYTES 44/276 |
 | [`func_L00_004F72C0`](l00_multiplayer_menu/func_L00_004F72C0.c) | l00_multiplayer_menu | 104 | BYTES 17/104 |
-| [`func_01EB4E68`](net/func_01EB4E68.c) | net | 48 | BYTES 8/48 |
-| [`func_01EEF25C`](net/func_01EEF25C.c) | net | 48 | BYTES 8/48 |
 | [`func_L01_006B3FE8`](shared/func_L01_006B3FE8.c) | shared | 144 | BYTES 24/140 |
 | [`func_0014D058`](core/func_0014D058.c) | core | 132 | BYTES 23/132 |
 | [`func_L01_0056E200`](shared/func_L01_0056E200.c) | shared | 120 | BYTES 21/120 |
