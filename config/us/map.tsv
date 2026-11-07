@@ -1834,6 +1834,7 @@ func_004A7CB8	src/game/004A7CB8.c	match	func_004A7CB8	main:.text:004A7CB8:136,fr
 func_004A7D40	src/game/004A7D40.c	match	func_004A7D40	main:.text:004A7D40:8,frontbin:.text:004A6A30:8	100.00
 func_004A7D48	src/game/004A7D48.c	match	func_004A7D48	main:.text:004A7D48:100,frontbin:.text:004A6A38:100	100.00
 func_004A7DB0	src/game/004A7DB0.c	match	func_004A7DB0	main:.text:004A7DB0:32,frontbin:.text:004A6AA0:32	100.00
+func_004A7DD0	src/game/004A7DD0.c	match	func_004A7DD0	main:.text:004A7DD0:640,frontbin:.text:004A6AC0:640	100.00
 func_004A8050	src/game/004A8050.c	match	func_004A8050	main:.text:004A8050:160,frontbin:.text:004A6D40:160	100.00
 func_004A81D0	src/game/004A81D0.c	match	func_004A81D0	main:.text:004A81D0:164,frontbin:.text:004A6EC0:164	100.00
 func_004A83A8	src/game/004A83A8.c	match	func_004A83A8	main:.text:004A83A8:136,frontbin:.text:004A7098:136	100.00
@@ -1899,6 +1900,7 @@ func_004AE220	src/game/004AE220.c	match	func_004AE220	main:.text:004AE220:96,fro
 func_004AE260	src/pal/game/004AE260.c	other	-	-	0.00
 func_004AE280	src/game/004AE280.c	match	func_004AE280	main:.text:004AE280:32,frontbin:.text:004ACF70:32	100.00
 func_004AE2A0	src/game/004AE2A0.c	match	func_004AE2A0	main:.text:004AE2A0:424,frontbin:.text:004ACF90:424	100.00
+func_004AE448	src/game/004AE448.c	match	func_004AE448	main:.text:004AE448:656,frontbin:.text:004AD138:656	100.00
 func_004AE6D8	src/game/004AE6D8.c	match	func_004AE6D8	main:.text:004AE6D8:48,frontbin:.text:004AD3C8:48	100.00
 func_004AE708	src/game/004AE708.c	match	func_004AE708	main:.text:004AE708:108,frontbin:.text:004AD3F8:108	100.00
 func_004AE778	src/game/004AE778.c	match	func_004AE778	main:.text:004AE778:156,frontbin:.text:004AD468:156	100.00
@@ -2238,6 +2240,7 @@ func_004C74E0	src/game/004C74E0.c	match	func_004C74E0	main:.text:004C74E0:84,fro
 func_004C7670	src/game/004C7670.c	match	func_004C7670	main:.text:004C7670:56,frontbin:.text:004C6360:56	100.00
 func_004C77E8	src/game/004C77E8.c	match	func_004C77E8	main:.text:004C77E8:64,frontbin:.text:004C64D8:64	100.00
 func_004C79C8	src/pal/game/004C79C8.c	other	-	-	0.00
+func_004C7E90	src/game/004C7E90.c	match	func_004C7E90	main:.text:004C7E90:644,frontbin:.text:004C6B80:644	100.00
 func_004C7F90	src/pal/game/004C7F90.c	other	-	-	0.00
 func_004C8118	src/game/004C8118.c	match	func_004C8118	main:.text:004C8118:112,frontbin:.text:004C6E08:112	100.00
 func_004C8188	src/game/004C8188.c	match	func_004C8188	main:.text:004C8188:40,frontbin:.text:004C6E78:40	100.00
@@ -2250,7 +2253,9 @@ func_004C8350	src/game/004C8350.c	match	func_004C8350	main:.text:004C8350:56,fro
 func_004C8390	src/game/004C8390.c	match	func_004C8390	main:.text:004C8390:48,frontbin:.text:004C7080:48	100.00
 func_004C83C0	src/game/004C83C0.c	match	func_004C83C0	main:.text:004C83C0:88,frontbin:.text:004C70B0:88	100.00
 func_004C8418	src/game/004C8418.c	match	func_004C8418	main:.text:004C8418:16,frontbin:.text:004C7108:16	100.00
+func_004C8428	src/game/004C8428.c	match	func_004C8428	main:.text:004C8428:628,frontbin:.text:004C7118:628	100.00
 func_004C8768	src/game/004C8768.c	match	func_004C8768	main:.text:004C8768:200,frontbin:.text:004C7458:200	100.00
+func_004C8C70	src/game/004C8C70.c	match	func_004C8C70	main:.text:004C8C70:644,frontbin:.text:004C7960:644	100.00
 func_004C8EF8	src/game/004C8EF8.c	match	func_004C8EF8	main:.text:004C8EF8:180,frontbin:.text:004C7BE8:180	100.00
 func_004C9168	src/game/004C9168.c	match	func_004C9168	main:.text:004C9168:52,frontbin:.text:004C7E58:52	100.00
 func_004C91A0	src/game/004C91A0.c	match	func_004C91A0	main:.text:004C91A0:100,frontbin:.text:004C7E90:100	100.00
@@ -2342,6 +2347,7 @@ func_004CD890	src/game/004CD890.c	match	func_004CD890	main:.text:004CD890:40,fro
 func_004CD8A0	src/pal/game/004CD8A0.c	other	-	-	0.00
 func_004CD8B8	src/game/004CD8B8.c	match	func_004CD8B8	main:.text:004CD8B8:132,frontbin:.text:004CC5A8:132	100.00
 func_004CD940	src/game/004CD940.c	match	func_004CD940	main:.text:004CD940:56,frontbin:.text:004CC630:56	100.00
+func_004CD978	src/game/004CD978.c	match	func_004CD978	main:.text:004CD978:664,frontbin:.text:004CC668:664	100.00
 func_004CDA88	src/pal/game/004CDA88.c	other	-	-	0.00
 func_004CDC10	src/game/004CDC10.c	match	func_004CDC10	main:.text:004CDC10:184,frontbin:.text:004CC900:184	100.00
 func_004CDCC8	src/game/004CDCC8.c	match	func_004CDCC8	main:.text:004CDCC8:308,frontbin:.text:004CC9B8:308	100.00
@@ -2376,6 +2382,7 @@ func_004CF208	src/game/004CF208.c	match	func_004CF208	main:.text:004CF208:336,fr
 func_004CF358	src/game/004CF358.c	match	func_004CF358	main:.text:004CF358:40,frontbin:.text:004CE048:40	100.00
 func_004CF380	src/game/004CF380.c	match	func_004CF380	main:.text:004CF380:104,frontbin:.text:004CE070:104	100.00
 func_004CF3E8	src/game/004CF3E8.c	match	func_004CF3E8	main:.text:004CF3E8:56,frontbin:.text:004CE0D8:56	100.00
+func_004CF420	src/game/004CF420.c	match	func_004CF420	main:.text:004CF420:672,frontbin:.text:004CE110:672	100.00
 func_004CF6C0	src/game/004CF6C0.c	match	func_004CF6C0	main:.text:004CF6C0:20,frontbin:.text:004CE3B0:20	100.00
 func_004CF6D8	src/game/004CF6D8.c	match	func_004CF6D8	main:.text:004CF6D8:160,frontbin:.text:004CE3C8:160	100.00
 func_004CF778	src/game/004CF778.c	match	func_004CF778	main:.text:004CF778:232,frontbin:.text:004CE468:232	100.00
@@ -2581,6 +2588,7 @@ func_004D9D30	src/game/004D9D30.c	match	func_004D9D30	main:.text:004D9D30:136,fr
 func_004D9DC0	src/game/004D9DC0.c	match	func_004D9DC0	main:.text:004D9DC0:92,frontbin:.text:004D8AB0:92	100.00
 func_004D9E20	src/game/004D9E20.c	match	func_004D9E20	main:.text:004D9E20:40,frontbin:.text:004D8B10:40	100.00
 func_004D9E48	src/game/004D9E48.c	match	func_004D9E48	main:.text:004D9E48:104,frontbin:.text:004D8B38:104	100.00
+func_004D9EB0	src/game/004D9EB0.c	match	func_004D9EB0	main:.text:004D9EB0:652,frontbin:.text:004D8BA0:652	100.00
 func_004D9F60	src/pal/game/004D9F60.c	other	-	-	0.00
 func_004DA140	src/game/004DA140.c	match	func_004DA140	main:.text:004DA140:172,frontbin:.text:004D8E30:172	100.00
 func_004DA1F0	src/game/004DA1F0.c	match	func_004DA1F0	main:.text:004DA1F0:228,frontbin:.text:004D8EE0:228	100.00
@@ -2593,6 +2601,7 @@ func_004DAD30	src/game/004DAD30.c	match	func_004DAD30	main:.text:004DAD30:168,fr
 func_004DADC8	src/pal/game/004DADC8.c	other	-	-	0.00
 func_004DADD8	src/game/004DADD8.c	match	func_004DADD8	main:.text:004DADD8:172,frontbin:.text:004D9AC8:172	100.00
 func_004DAE88	src/game/004DAE88.c	match	func_004DAE88	main:.text:004DAE88:48,frontbin:.text:004D9B78:48	100.00
+func_004DAEB8	src/game/004DAEB8.c	match	func_004DAEB8	main:.text:004DAEB8:628,frontbin:.text:004D9BA8:628	100.00
 func_004DB130	src/game/004DB130.c	match	func_004DB130	main:.text:004DB130:28,frontbin:.text:004D9E20:28	100.00
 func_004DB150	src/game/004DB150.c	match	func_004DB150	main:.text:004DB150:132,frontbin:.text:004D9E40:132	100.00
 func_004DB1F8	src/pal/game/004DB1F8.c	other	-	-	0.00
@@ -2814,6 +2823,7 @@ func_004F3440	src/game/004F3440.c	match	func_004F3440	main:.text:004F3440:40,fro
 func_004F3538	src/game/004F3538.c	match	func_004F3538	main:.text:004F3538:116,frontbin:.text:004F21C8:116	100.00
 func_004F35B0	src/game/004F35B0.c	match	func_004F35B0	main:.text:004F35B0:84,frontbin:.text:004F2240:84	100.00
 func_004F3800	src/game/004F3800.c	match	func_004F3800	main:.text:004F3800:152,frontbin:.text:004F2490:152	100.00
+func_004F3898	src/game/004F3898.c	match	func_004F3898	main:.text:004F3898:636,frontbin:.text:004F2528:636	100.00
 func_004F3B18	src/game/004F3B18.c	match	func_004F3B18	main:.text:004F3B18:96,frontbin:.text:004F27A8:96	100.00
 func_004F4670	src/pal/game/004F4670.c	other	-	-	0.00
 func_004F4BE0	src/pal/game/004F4BE0.c	other	-	-	0.00
@@ -7807,6 +7817,7 @@ func_004C8388	nonmatching/game/func_004C8388.c	near	func_004C8388	main:.text:004
 func_004C9090	nonmatching/game/func_004C9090.c	near	func_004C9090	main:.text:004C9090:216	98.61
 func_004CB0F0	nonmatching/game/func_004CB0F0.c	near	func_004CB0F0	main:.text:004CB0F0:88	88.64
 func_004CB938	nonmatching/game/func_004CB938.c	near	func_004CB938	main:.text:004CB938:604	99.50
+func_004CBB98	nonmatching/game/func_004CBB98.c	near	func_004CBB98	main:.text:004CBB98:628	98.73
 func_004CCDC0	nonmatching/game/func_004CCDC0.c	near	func_004CCDC0	main:.text:004CCDC0:176	93.75
 func_004D3060	nonmatching/game/func_004D3060.c	near	func_004D3060	main:.text:004D3060:232	95.69
 func_004D7BC0	nonmatching/game/func_004D7BC0.c	near	func_004D7BC0	main:.text:004D7BC0:384	92.19
@@ -7833,6 +7844,7 @@ func_00516140	nonmatching/game/func_00516140.c	near	func_00516140	main:.text:005
 func_0051AFD8	nonmatching/game/func_0051AFD8.c	near	func_0051AFD8	main:.text:0051AFD8:336	96.43
 func_00522118	nonmatching/game/func_00522118.c	near	func_00522118	main:.text:00522118:616	96.43
 func_00526FD8	nonmatching/game/func_00526FD8.c	near	func_00526FD8	main:.text:00526FD8:112	99.11
+func_0053D1D0	nonmatching/game/func_0053D1D0.c	near	func_0053D1D0	main:.text:0053D1D0:636	99.37
 func_00548280	nonmatching/game/func_00548280.c	near	func_00548280	main:.text:00548280:276	94.57
 func_0054ACE8	nonmatching/game/func_0054ACE8.c	near	func_0054ACE8	main:.text:0054ACE8:224	92.41
 func_01E9D9F8	nonmatching/net/func_01E9D9F8.c	near	func_01E9D9F8	main:net.text:01E9D9F8:72	86.11
