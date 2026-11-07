@@ -80,16 +80,16 @@ Each distinct function counts once: frontbin's copy of the menus is the main ima
 <!-- progress:begin SCES_532.85 (tools/progress.py --write) -->
 | | Functions (exact) | Code (exact) | Fuzzy |
 | --- | ---: | ---: | ---: |
-| **Main program** | 3,948 of 8,952 | 391,728 of 2,202,184 bytes (17.79%) | 18.06% |
-| Engine core (core.text) | 819 of 1,666 | 80,692 of 288,232 bytes (28.00%) | 28.50% |
+| **Main program** | 3,956 of 8,952 | 393,148 of 2,202,184 bytes (17.85%) | 18.12% |
+| Engine core (core.text) | 822 of 1,666 | 81,220 of 288,232 bytes (28.18%) | 28.68% |
 | libgcc | 26 of 33 | 6,148 of 10,836 bytes (56.74%) | 56.74% |
-| Network (net.text) | 704 of 2,441 | 31,828 of 465,620 bytes (6.84%) | 7.44% |
-| Resident menus (.text) | 2,397 of 4,797 | 272,500 of 1,422,048 bytes (19.16%) | 19.28% |
+| Network (net.text) | 705 of 2,441 | 31,864 of 465,620 bytes (6.84%) | 7.45% |
+| Resident menus (.text) | 2,401 of 4,797 | 273,356 of 1,422,048 bytes (19.22%) | 19.34% |
 | frontbin's own code | 2 of 15 | 560 of 15,448 bytes (3.63%) | 3.63% |
-| **Shared level code** | 1,942 of 5,089 | 164,784 of 2,008,632 bytes (8.20%) | 8.83% |
-| **Level-specific code** | 1,276 of 4,093 | 113,572 of 1,600,040 bytes (7.10%) | 7.66% |
-| Level 00: Multiplayer Menu | 872 of 2,834 | 75,716 of 943,896 bytes (8.02%) | 8.68% |
-| Level 01: Dreadzone Station (and 21) | 124 of 371 | 10,068 of 190,296 bytes (5.29%) | 5.29% |
+| **Shared level code** | 1,957 of 5,089 | 166,000 of 2,008,632 bytes (8.26%) | 8.89% |
+| **Level-specific code** | 1,294 of 4,093 | 115,444 of 1,600,040 bytes (7.22%) | 7.77% |
+| Level 00: Multiplayer Menu | 886 of 2,834 | 77,184 of 943,896 bytes (8.18%) | 8.84% |
+| Level 01: Dreadzone Station (and 21) | 125 of 371 | 10,284 of 190,296 bytes (5.40%) | 5.40% |
 | Level 02: Catacrom Graveyard (and 22) | 7 of 29 | 328 of 21,232 bytes (1.54%) | 1.54% |
 | Level 04: Sarathos Swamp (and 24) | 5 of 19 | 600 of 11,868 bytes (5.06%) | 5.06% |
 | Level 05: Dark Cathedral (and 25) | 26 of 102 | 1,996 of 60,096 bytes (3.32%) | 3.48% |
@@ -100,11 +100,11 @@ Each distinct function counts once: frontbin's copy of the menus is the main ima
 | Level 11: Tempus Station (and 31) | 4 of 15 | 500 of 8,800 bytes (5.68%) | 5.68% |
 | Level 13: Maraxus Prison (and 33) | 12 of 33 | 1,200 of 15,872 bytes (7.56%) | 7.56% |
 | Level 14: Ghost Station (and 34) | 7 of 23 | 1,000 of 8,884 bytes (11.26%) | 11.26% |
-| Level 15: Control Level (and 35) | 30 of 134 | 3,092 of 116,624 bytes (2.65%) | 2.65% |
-| Level 41: Battledome Tower (all 22 multiplayer maps) | 156 of 374 | 15,520 of 140,340 bytes (11.06%) | 12.92% |
-| **Total** | 7,166 of 18,134 | 670,084 of 5,810,856 bytes (11.53%) | 12.00% |
+| Level 15: Control Level (and 35) | 31 of 134 | 3,148 of 116,624 bytes (2.70%) | 2.70% |
+| Level 41: Battledome Tower (all 22 multiplayer maps) | 158 of 374 | 15,652 of 140,340 bytes (11.15%) | 13.01% |
+| **Total** | 7,207 of 18,134 | 674,592 of 5,810,856 bytes (11.61%) | 12.08% |
 
-Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 391,728 bytes (6.74%) are in units with nothing left to decompile.
+Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 393,148 bytes (6.77%) are in units with nothing left to decompile.
 <!-- progress:end -->
 
 </details>
@@ -244,6 +244,7 @@ Contributions are warmly welcome! Whether you are interested in decompiling func
 
 - See [`CONTRIBUTING.md`](CONTRIBUTING.md) for contribution guidelines and rules.
 - See [`docs/WORKFLOW.md`](docs/WORKFLOW.md) for the step-by-step function matching guide.
+- Agents and contributors coordinating function scopes should read [`AGENTS.md`](AGENTS.md) and [`docs/AGENT_WORKFLOW.md`](docs/AGENT_WORKFLOW.md) before matching work.
 - Check [`docs/PAL_SIGNATURES.md`](docs/PAL_SIGNATURES.md) for reviewed PAL argument, return and output contracts before reconstructing callers.
 - Join our **[Discord Community](https://discord.gg/Sfd2B54PDG)** to discuss progress, ask questions, and collaborate!
 

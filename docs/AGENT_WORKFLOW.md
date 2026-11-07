@@ -83,6 +83,19 @@ only to compile.
 
 ## Several agents at once
 
+Before matching across separate checkouts, contributors reserve a manageable
+scope in the [function reservation issue](https://github.com/OpenRAC/rac4-decomp/issues/112).
+Follow the repository-level
+[`AGENTS.md`](../AGENTS.md): check for overlapping active reservations, edit
+only your own coordination comment, and keep each reservation to functions
+you intend to attempt next. If there is no reservation issue, create one
+before starting matching work. GitHub reservations coordinate contributors;
+they do not replace the repository as the source of truth for completed work.
+
+Within one shared checkout, `tools/claims.py` remains the atomic lock that
+prevents two workers from taking the same function. Use both layers when
+contributors work in separate checkouts but share agents or worktrees.
+
 Several agents can work in one checkout (Claude waves, another model, a
 person) through `tools/claims.py`:
 
