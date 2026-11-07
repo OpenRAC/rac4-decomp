@@ -172,7 +172,10 @@ segments:
   - [0x%X]
 """ % (i, i, path, ROOT, i, i, i, i, "\n".join(seg), end)
         (work / "splat.yaml").write_text(yaml)
-        r = subprocess.run([str(ROOT / "venv" / "bin" / "python"), "-m", "splat", "split", str(work / "splat.yaml")],
+        # sys.executable rather than venv/bin/python: the venv layout is
+        # Scripts/ on Windows and bin/ elsewhere, and this script is always run
+        # with the venv's own interpreter.
+        r = subprocess.run([sys.executable, "-m", "splat", "split", str(work / "splat.yaml")],
                            capture_output=True, text=True, cwd=ROOT)
         # keep only the functions that belong to this overlay (the others are
         # disassembled where they occur first)
