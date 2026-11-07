@@ -1,4 +1,7 @@
+/* cflags: -mno-split-addresses */
 #include "common.h"
+
+extern s32 D_0021DE3C[];
 
 void func_L00_006D4A90(void *arg0, void *arg1) {
     if ((u8) (*(u8 *)((s8 *)(arg1) + (0x54))) < 3U) {
@@ -13,7 +16,7 @@ void func_L00_006D4A90(void *arg0, void *arg1) {
         (*(u16 *)((s8 *)(arg1) + (0x34))) = (u16) ((*(u16 *)((s8 *)(arg1) + (0x34))) | 1);
         return;
     }
-    if (*(s32 *)0x21DE3C != 2) {
+    if (D_0021DE3C[0] != 2) {
         (*(s8 *)((s8 *)(arg1) + (0x31))) = 1;
         (*(u16 *)((s8 *)(arg1) + (0x34))) = (u16) ((*(u16 *)((s8 *)(arg1) + (0x34))) & 0xFFFE);
         return;

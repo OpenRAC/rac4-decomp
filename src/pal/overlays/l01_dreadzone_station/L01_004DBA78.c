@@ -24,7 +24,7 @@ void func_L01_004DBA78(void *arg0) {
             return;
         }
         if (func_00453CE8(temp_s1 + 4) != 0) {
-            *(s32 *)0x21EC5C = 2;
+            D_0021EC5C = 2;
             func_00474368(arg0, 2, -1);
         }
         func_L01_005DBFA0(0, (s32)func_0045E850(0x255D), (*(s32 *)((s8 *)(temp_s1) + (4))));
