@@ -1,4 +1,7 @@
+/* cflags: -mno-split-addresses */
 #include "common.h"
+
+extern s32 D_0021DE40[];
 
 /* Preserve native word wrapping and reloads across aliased node writes. */
 
@@ -17,7 +20,7 @@ void func_00160FE8(void *object) {
         (*(void **)((s8 *)(object) + (0xAAC))) = (void *) (*(void **)((s8 *)((*(void **)((s8 *)(object) + (0xAAC)))) + (0x98)));
         (*(s32 *)((s8 *)(object) + (0xAA0))) = remaining;
         if (remaining >= 4) {
-            now = *(s32 *)0x21DE40;
+            now = D_0021DE40[0];
             if (((s32)((u32)now - (u32)(*(s32 *)((s8 *)(object) + (0xAA4))))) >= 0x385) {
                 (*(s32 *)((s8 *)(object) + (0xAA4))) = (s32)((u32)now - 0x258U);
                 if ((*(s8 *)((s8 *)(object) + (0xAA9))) <= 0) {

@@ -276,6 +276,7 @@ func_00139A58	src/core/00139A58.c	match	func_00139A58	main:core.text:00139A58:40
 func_00139A80	src/core/00139A80.c	match	func_00139A80	main:core.text:00139A80:52	100.00
 func_00139AB8	src/core/00139AB8.c	match	func_00139AB8	main:core.text:00139AB8:40	100.00
 func_00139AE0	src/core/00139AE0.c	match	func_00139AE0	main:core.text:00139AE0:220	100.00
+func_00139DA0	src/pal/core/00139DA0.c	match	func_00139DA0	main:core.text:00139DA0:104	100.00
 func_0013A0F0	src/pal/core/0013A0F0.c	match	func_0013A0F0	main:core.text:0013A0F0:88	100.00
 func_0013A160	src/core/0013A160.c	match	func_0013A160	main:core.text:0013A160:296	100.00
 func_0013A288	src/core/0013A288.c	match	func_0013A288	main:core.text:0013A288:52	100.00
@@ -824,6 +825,7 @@ func_0015F3B8	src/core/0015F3B8.c	match	func_0015F3C8	main:core.text:0015F3C8:52
 func_00160870	src/core/00160870.c	match	func_00160880	main:core.text:00160880:92	100.00
 func_00160A70	src/core/00160A70.c	match	func_00160A80	main:core.text:00160A80:76	100.00
 func_00160AC0	src/core/00160AC0.c	match	func_00160AD0	main:core.text:00160AD0:52	100.00
+func_00160FE8	src/pal/core/00160FE8.c	match	func_00160FE8	main:core.text:00160FE8:320	100.00
 func_00161118	src/core/00161118.c	match	func_00161128	main:core.text:00161128:12	100.00
 func_00161128	src/core/00161128.c	match	func_00161138	main:core.text:00161138:12	100.00
 func_00161158	src/core/00161158.c	match	func_00161168	main:core.text:00161168:12	100.00
@@ -946,7 +948,9 @@ func_00432178	src/game/00432178.c	match	func_00432630	main:.text:00432630:88,fro
 func_00433318	src/game/00433318.c	match	func_004337F0	main:.text:004337F0:168,frontbin:.text:00433570:168	100.00
 func_00433638	src/game/00433638.c	match	func_00433B10	main:.text:00433B10:88,frontbin:.text:00433890:88	100.00
 func_00433688	src/pal/game/00433688.c	match	func_00433688	main:.text:00433688:256	100.00
+func_00433788	src/pal/game/00433788.c	match	func_00433788	main:.text:00433788:100	100.00
 func_004352F8	src/game/004352F8.c	match	func_004357E0	main:.text:004357E0:100,frontbin:.text:00435560:100	100.00
+func_004368B8	src/pal/game/004368B8.c	match	func_004368B8	main:.text:004368B8:448	100.00
 func_00436970	src/game/00436970.c	match	func_00436E58	main:.text:00436E58:64,frontbin:.text:00436BD8:64	100.00
 func_004369B0	src/game/004369B0.c	match	func_00436E98	main:.text:00436E98:64,frontbin:.text:00436C18:64	100.00
 func_004369F0	src/game/004369F0.c	match	func_00436ED8	main:.text:00436ED8:68,frontbin:.text:00436C58:68	100.00
@@ -1383,6 +1387,7 @@ func_00488E18	src/game/00488E18.c	match	func_004898D0	main:.text:004898D0:104,fr
 func_00488E80	src/game/00488E80.c	match	func_00489938	main:.text:00489938:56,frontbin:.text:004891F8:56	100.00
 func_00488EB8	src/game/00488EB8.c	match	func_00489970	main:.text:00489970:112,frontbin:.text:00489230:112	100.00
 func_00489458	src/game/00489458.c	match	func_00489F10	main:.text:00489F10:32,frontbin:.text:004897D0:32	100.00
+func_00489478	src/game/00489478.c	match	func_00489F30	main:.text:00489F30:28,frontbin:.text:004897F0:28	100.00
 func_00489498	src/game/00489498.c	match	func_00489F50	main:.text:00489F50:64,frontbin:.text:00489810:64	100.00
 func_00489550	src/pal/game/00489550.c	match	func_00489550	main:.text:00489550:304	100.00
 func_00489C28	src/game/00489C28.c	match	func_0048A6E0	main:.text:0048A6E0:92,frontbin:.text:00489FA0:92	100.00
@@ -1718,7 +1723,6 @@ func_004A2958	src/game/004A2958.c	match	func_004A36B8	main:.text:004A36B8:56,fro
 func_004A2990	src/game/004A2990.c	match	func_004A36F0	main:.text:004A36F0:132,frontbin:.text:004A2FB0:132	100.00
 func_004A2A18	src/game/004A2A18.c	match	func_004A3778	main:.text:004A3778:48,frontbin:.text:004A3038:48	100.00
 func_004A2A48	src/game/004A2A48.c	match	func_004A37A8	main:.text:004A37A8:136,frontbin:.text:004A3068:136	100.00
-func_004A2A90	src/pal/game/004A2A90.c	match	func_004A2A90	main:.text:004A2A90:48	100.00
 func_004A2AD0	src/game/004A2AD0.c	match	func_004A3830	main:.text:004A3830:52,frontbin:.text:004A30F0:52	100.00
 func_004A2B08	src/game/004A2B08.c	match	func_004A3868	main:.text:004A3868:16,frontbin:.text:004A3128:16	100.00
 func_004A2BA8	src/pal/game/004A2BA8.c	match	func_004A2BA8	main:.text:004A2BA8:280	100.00
@@ -2515,6 +2519,7 @@ func_004E34B4	src/pal/game/004E34B4.c	match	func_004E34B4	main:.text:004E34B4:16
 func_004E3C48	src/pal/game/004E3C48.c	match	func_004E3C48	main:.text:004E3C48:268	100.00
 func_004E4C50	src/game/004E4C50.c	match	func_004E5B78	main:.text:004E5B78:132,frontbin:.text:004E5478:132	100.00
 func_004E4CD8	src/game/004E4CD8.c	match	func_004E5C00	main:.text:004E5C00:92,frontbin:.text:004E5500:92	100.00
+func_004E5550	src/game/004E5550.c	match	func_004E6478	main:.text:004E6478:60,frontbin:.text:004E5D78:60	100.00
 func_004E5590	src/game/004E5590.c	match	func_004E64B8	main:.text:004E64B8:40,frontbin:.text:004E5DB8:40	100.00
 func_004E55C0	src/game/004E55C0.c	match	func_004E64E8	main:.text:004E64E8:116,frontbin:.text:004E5DE8:116	100.00
 func_004E5DE0	src/pal/game/004E5DE0.c	match	func_004E5DE0	main:.text:004E5DE0:228	100.00
@@ -2831,8 +2836,6 @@ func_00502738	src/game/00502738.c	match	func_005037A8	main:.text:005037A8:152,fr
 func_00502848	src/game/00502848.c	match	func_005038B8	main:.text:005038B8:120,frontbin:.text:005031B8:120	100.00
 func_005028C0	src/game/005028C0.c	match	func_00503930	main:.text:00503930:112,frontbin:.text:00503230:112	100.00
 func_005029D0	src/game/005029D0.c	match	func_00503A40	main:.text:00503A40:180,frontbin:.text:00503340:180	100.00
-func_00502BB8	src/pal/game/00502BB8.c	match	func_00502BB8	main:.text:00502BB8:88	100.00
-func_00502D28	src/pal/game/00502BB8.c	match	func_00502D28	main:.text:00502D28:180	100.00
 func_00502E90	src/pal/game/00502BB8.c	match	func_00502E90	main:.text:00502E90:312	100.00
 func_00503580	src/pal/game/00503580.c	match	func_00503580	main:.text:00503580:548	100.00
 func_00503920	src/game/00503920.c	match	func_005049B8	main:.text:005049B8:312,frontbin:.text:005042B8:312	100.00
@@ -3170,6 +3173,7 @@ func_0051AE08	src/game/0051AE08.c	match	func_0051BF88	main:.text:0051BF88:8,fron
 func_0051B130	src/game/0051B130.c	match	func_0051C2B0	main:.text:0051C2B0:56,frontbin:.text:0051BBB0:56	100.00
 func_0051B7B8	src/pal/game/0051B7B8.c	match	func_0051B7B8	main:.text:0051B7B8:340	100.00
 func_0051BEC0	src/game/0051BEC0.c	match	func_0051D040	main:.text:0051D040:76,frontbin:.text:0051C940:76	100.00
+func_0051C078	src/pal/game/0051C078.c	match	func_0051C078	main:.text:0051C078:224	100.00
 func_0051CCC0	src/pal/game/0051CCC0.c	match	func_0051CCC0	main:.text:0051CCC0:296	100.00
 func_0051FCA8	src/game/0051FCA8.c	match	func_00520E68	main:.text:00520E68:40,frontbin:.text:00520768:40	100.00
 func_0051FCD0	src/game/0051FCD0.c	match	func_00520E90	main:.text:00520E90:36,frontbin:.text:00520790:36	100.00
@@ -3203,6 +3207,7 @@ func_00526EA8	src/pal/game/00526EA8.c	match	func_00526EA8	main:.text:00526EA8:38
 func_005271C0	src/game/005271C0.c	match	func_005283B8	main:.text:005283B8:40,frontbin:.text:00527CB8:40	100.00
 func_00527310	src/game/00527310.c	match	func_00528508	main:.text:00528508:48,frontbin:.text:00527E08:48	100.00
 func_00527340	src/game/00527340.c	match	func_00528538	main:.text:00528538:64,frontbin:.text:00527E38:64	100.00
+func_00527380	src/game/00527380.c	match	func_00528578	main:.text:00528578:36,frontbin:.text:00527E78:36	100.00
 func_005273A8	src/game/005273A8.c	match	func_005285A0	main:.text:005285A0:8,frontbin:.text:00527EA0:8	100.00
 func_005273B0	src/game/005273B0.c	match	func_005285A8	main:.text:005285A8:8,frontbin:.text:00527EA8:8	100.00
 func_005273F0	src/game/005273F0.c	match	func_005285E8	main:.text:005285E8:8,frontbin:.text:00527EE8:8	100.00
@@ -3228,6 +3233,7 @@ func_0053F550	src/game/0053F550.c	match	func_00540958	main:.text:00540958:64,fro
 func_0053F588	src/game/0053F588.c	match	func_00549F78	main:.text:00549F78:8,frontbin:.text:00549878:8	100.00
 func_0053F590	src/game/0053F590.c	match	func_00540998	main:.text:00540998:60,frontbin:.text:00540298:60	100.00
 func_0053F9D8	src/game/0053F9D8.c	match	func_00540DD8	main:.text:00540DD8:148,frontbin:.text:005406D8:148	100.00
+func_0053FA70	src/game/0053FA70.c	match	func_00540E70	main:.text:00540E70:36,frontbin:.text:00540770:36	100.00
 func_0053FA98	src/game/0053FA98.c	match	func_00540E98	main:.text:00540E98:8,frontbin:.text:00540798:8	100.00
 func_0053FAA0	src/game/0053FAA0.c	match	func_00540EA0	main:.text:00540EA0:8,frontbin:.text:005407A0:8	100.00
 func_0053FAC8	src/game/0053FAC8.c	match	func_00540EC8	main:.text:00540EC8:160,frontbin:.text:005407C8:160	100.00
@@ -3237,6 +3243,7 @@ func_00540650	src/game/00540650.c	match	func_00541A50	main:.text:00541A50:176,fr
 func_00540700	src/game/00540700.c	match	func_00541B00	main:.text:00541B00:108,frontbin:.text:00541400:108	100.00
 func_00540770	src/game/00540770.c	match	func_00541B70	main:.text:00541B70:104,frontbin:.text:00541470:104	100.00
 func_005407D8	src/game/005407D8.c	match	func_00541BD8	main:.text:00541BD8:124,frontbin:.text:005414D8:124	100.00
+func_00540AB0	src/game/00540AB0.c	match	func_00541EB0	main:.text:00541EB0:36,frontbin:.text:005417B0:36	100.00
 func_00540AD8	src/game/00540AD8.c	match	func_00541ED8	main:.text:00541ED8:8,frontbin:.text:005417D8:8	100.00
 func_00540FA8	src/pal/game/00540FA8.c	match	func_00540FA8	main:.text:00540FA8:244	100.00
 func_00541B38	src/game/00541B38.c	match	func_00543080	main:.text:00543080:48,frontbin:.text:00542980:48	100.00
@@ -3316,6 +3323,7 @@ func_0054B280	src/game/0054B280.c	match	func_0054C7E8	main:.text:0054C7E8:52,fro
 func_0054B5A8	src/game/0054B5A8.c	match	func_0054CB10	main:.text:0054CB10:28,frontbin:.text:0054C410:28	100.00
 func_0054B628	src/pal/game/0054B628.c	match	func_0054B628	main:.text:0054B628:204	100.00
 func_0054BA08	src/pal/game/0054BA08.c	match	func_0054BA08	main:.text:0054BA08:224	100.00
+func_0054BCF0	src/pal/game/0054BCF0.c	match	func_0054BCF0	main:.text:0054BCF0:84	100.00
 func_0054C250	src/pal/game/0054C250.c	match	func_0054C250	main:.text:0054C250:224	100.00
 func_0054C330	src/pal/game/0054C330.c	match	func_0054C330	main:.text:0054C330:208	100.00
 func_0054C650	src/pal/game/0054C650.c	match	func_0054C650	main:.text:0054C650:100	100.00
@@ -3379,6 +3387,7 @@ func_01EA4940	src/net/01EA4940.c	match	func_01EA4940	main:net.text:01EA4940:48	1
 func_01EA4EE0	src/net/01EA4EE0.c	match	func_01EA4EE0	main:net.text:01EA4EE0:8	100.00
 func_01EA4EE8	src/net/01EA4EE8.c	match	func_01EA4EE8	main:net.text:01EA4EE8:32	100.00
 func_01EA4F08	src/net/01EA4F08.c	match	func_01EA4F08	main:net.text:01EA4F08:96	100.00
+func_01EA5160	src/net/01EA5160.c	match	func_01EA5160	main:net.text:01EA5160:60	100.00
 func_01EA5688	src/net/01EA5688.c	match	func_01EA5688	main:net.text:01EA5688:68	100.00
 func_01EA56D0	src/net/01EA56D0.c	match	func_01EA56D0	main:net.text:01EA56D0:44	100.00
 func_01EA5AB0	src/net/01EA5AB0.c	match	func_01EA5AB0	main:net.text:01EA5AB0:8	100.00
@@ -3829,6 +3838,7 @@ func_01EEE12C	src/net/01EEE12C.c	match	func_01EEE12C	main:net.text:01EEE12C:16	1
 func_01EEE51C	src/net/01EEE51C.c	match	func_01EEE51C	main:net.text:01EEE51C:60	100.00
 func_01EEE558	src/net/01EEE558.c	match	func_01EEE558	main:net.text:01EEE558:48	100.00
 func_01EEED28	src/net/01EEED28.c	match	func_01EEED28	main:net.text:01EEED28:36	100.00
+func_01EEEDA0	src/pal/net/01EEEDA0.c	match	func_01EEEDA0	main:net.text:01EEEDA0:36	100.00
 func_01EEEDC4	src/net/01EEEDC4.c	match	func_01EEEDC4	main:net.text:01EEEDC4:12	100.00
 func_01EEF074	src/net/01EEF074.c	match	func_01EEF074	main:net.text:01EEF074:20	100.00
 func_01EEF164	src/net/01EEF164.c	match	func_01EEF164	main:net.text:01EEF164:8	100.00
@@ -4141,6 +4151,7 @@ func_L00_00518A70	src/overlays/l00_multiplayer_menu/L00_00518A70.c	match	func_L0
 func_L00_00519040	src/overlays/l00_multiplayer_menu/L00_00519040.c	match	func_L00_00519540	level_00:.text:00519540:12	100.00
 func_L00_00519050	src/overlays/l00_multiplayer_menu/L00_00519050.c	match	func_L00_00519550	level_00:.text:00519550:132	100.00
 func_L00_00519140	src/overlays/l00_multiplayer_menu/L00_00519140.c	match	func_L00_00519640	level_00:.text:00519640:52	100.00
+func_L00_00519468	src/overlays/l00_multiplayer_menu/L00_00519468.c	match	func_L00_00519968	level_00:.text:00519968:36	100.00
 func_L00_00519578	src/overlays/l00_multiplayer_menu/L00_00519578.c	match	func_L00_00519A78	level_00:.text:00519A78:44	100.00
 func_L00_00519608	src/overlays/l00_multiplayer_menu/L00_00519608.c	match	func_L00_00519B08	level_00:.text:00519B08:76	100.00
 func_L00_00519658	src/overlays/l00_multiplayer_menu/L00_00519658.c	match	func_L00_00519B58	level_00:.text:00519B58:84	100.00
@@ -4161,6 +4172,7 @@ func_L00_0051B208	src/overlays/l00_multiplayer_menu/L00_0051B208.c	match	func_L0
 func_L00_0051B938	src/overlays/l00_multiplayer_menu/L00_0051B938.c	match	func_L00_0051BE38	level_00:.text:0051BE38:80	100.00
 func_L00_0051C768	src/overlays/l00_multiplayer_menu/L00_0051C768.c	match	func_L00_0051CC68	level_00:.text:0051CC68:28	100.00
 func_L00_0051C788	src/overlays/l00_multiplayer_menu/L00_0051C788.c	match	func_L00_0051CC88	level_00:.text:0051CC88:20	100.00
+func_L00_0051CC70	src/overlays/l00_multiplayer_menu/L00_0051CC70.c	differs	-	-	0.00
 func_L00_0051CC98	src/overlays/l00_multiplayer_menu/L00_0051CC98.c	match	func_L00_0051D198	level_00:.text:0051D198:52	100.00
 func_L00_0051CCD0	src/overlays/l00_multiplayer_menu/L00_0051CCD0.c	match	func_L00_0051D1D0	level_00:.text:0051D1D0:84	100.00
 func_L00_0051CF38	src/overlays/shared/L00_0051CF38.c	match	func_L00_0051D438	level_00:.text:0051D438:28	100.00
@@ -4205,7 +4217,9 @@ func_L00_0052D728	src/overlays/l00_multiplayer_menu/L00_0052D728.c	match	func_L0
 func_L00_0052D738	src/overlays/l00_multiplayer_menu/L00_0052D738.c	match	func_L00_0052DC38	level_00:.text:0052DC38:40	100.00
 func_L00_0052D760	src/overlays/l00_multiplayer_menu/L00_0052D760.c	match	func_L00_0052DC60	level_00:.text:0052DC60:60	100.00
 func_L00_0052DAA0	src/overlays/l00_multiplayer_menu/L00_0052DAA0.c	match	func_L00_0052DFA0	level_00:.text:0052DFA0:60	100.00
+func_L00_0052DEE0	src/overlays/l00_multiplayer_menu/L00_0052DEE0.c	match	func_L00_0052E3E0	level_00:.text:0052E3E0:52	100.00
 func_L00_0052DF18	src/overlays/l00_multiplayer_menu/L00_0052DF18.c	match	func_L00_0052E418	level_00:.text:0052E418:48	100.00
+func_L00_0052DF48	src/overlays/l00_multiplayer_menu/L00_0052DF48.c	match	func_L00_0052E448	level_00:.text:0052E448:44	100.00
 func_L00_0052F6C0	src/overlays/l00_multiplayer_menu/L00_0052F6C0.c	match	func_L00_0052FBC0	level_00:.text:0052FBC0:104	100.00
 func_L00_0052FEC8	src/overlays/l00_multiplayer_menu/L00_0052FEC8.c	match	func_L00_005303C8	level_00:.text:005303C8:72	100.00
 func_L00_00531310	src/pal/overlays/l00_multiplayer_menu/L00_00531310.c	match	func_L00_00531310	level_00:.text:00531310:48	100.00
@@ -4232,6 +4246,7 @@ func_L00_00531670	src/overlays/l00_multiplayer_menu/L00_00531670.c	match	func_L0
 func_L00_00531A20	src/overlays/shared/L00_00531A20.c	match	func_L00_00531F20	level_00:.text:00531F20:8	100.00
 func_L00_00531A40	src/overlays/l00_multiplayer_menu/L00_00531A40.c	match	func_L00_00531F40	level_00:.text:00531F40:20	100.00
 func_L00_00531AA8	src/overlays/l00_multiplayer_menu/L00_00531AA8.c	match	func_L00_00531FA8	level_00:.text:00531FA8:8	100.00
+func_L00_00531F28	src/pal/overlays/l00_multiplayer_menu/L00_00531F28.c	match	func_L00_00531F28	level_00:.text:00531F28:20	100.00
 func_L00_00532E50	src/overlays/l00_multiplayer_menu/L00_00532E50.c	match	func_L00_00533350	level_00:.text:00533350:20	100.00
 func_L00_00533128	src/overlays/l00_multiplayer_menu/L00_00533128.c	match	func_L00_00533628	level_00:.text:00533628:8	100.00
 func_L00_00533200	src/overlays/l00_multiplayer_menu/L00_00533200.c	match	func_L00_00533700	level_00:.text:00533700:32	100.00
@@ -4287,6 +4302,7 @@ func_L00_005424F8	src/overlays/l00_multiplayer_menu/L00_005424F8.c	match	func_L0
 func_L00_00542FC0	src/overlays/l00_multiplayer_menu/L00_00542FC0.c	match	func_L00_005434C0	level_00:.text:005434C0:24	100.00
 func_L00_00543218	src/overlays/l00_multiplayer_menu/L00_00543218.c	match	func_L00_00543718	level_00:.text:00543718:24	100.00
 func_L00_00546390	src/overlays/l00_multiplayer_menu/L00_00546390.c	match	func_L00_00546890	level_00:.text:00546890:28	100.00
+func_L00_005468B0	src/pal/overlays/l00_multiplayer_menu/L00_005468B0.c	match	func_L00_005468B0	level_00:.text:005468B0:72	100.00
 func_L00_00548028	src/overlays/l00_multiplayer_menu/L00_00548028.c	match	func_L00_00548528	level_00:.text:00548528:20	100.00
 func_L00_00551DD0	src/overlays/l00_multiplayer_menu/L00_00551DD0.c	match	func_L00_005522D0	level_00:.text:005522D0:32	100.00
 func_L00_00552038	src/overlays/l00_multiplayer_menu/L00_00552038.c	match	func_L00_00552538	level_00:.text:00552538:12	100.00
@@ -4313,6 +4329,7 @@ func_L00_00566370	src/overlays/l00_multiplayer_menu/L00_00566370.c	match	func_L0
 func_L00_00566488	src/overlays/shared/L00_00566488.c	match	func_L00_00566988	level_00:.text:00566988:28	100.00
 func_L00_005668D8	src/overlays/l00_multiplayer_menu/L00_005668D8.c	match	func_L00_00566DD8	level_00:.text:00566DD8:56	100.00
 func_L00_00566D00	src/overlays/l00_multiplayer_menu/L00_00566D00.c	match	func_L00_00567200	level_00:.text:00567200:44	100.00
+func_L00_00566D30	src/overlays/l00_multiplayer_menu/L00_00566D30.c	match	func_L00_00567230	level_00:.text:00567230:40	100.00
 func_L00_005684A0	src/overlays/l00_multiplayer_menu/L00_005684A0.c	match	func_L00_005689A0	level_00:.text:005689A0:28	100.00
 func_L00_00569100	src/pal/overlays/shared/L00_00569100.c	match	func_L00_00569100	level_00:.text:00569100:472	100.00
 func_L00_005736E8	src/overlays/shared/L00_005736E8.c	match	func_L00_00573E60	level_00:.text:00573E60:28	100.00
@@ -4352,6 +4369,7 @@ func_L00_00595E28	src/overlays/shared/L00_00595E28.c	match	func_L00_00596A28	lev
 func_L00_00595E48	src/overlays/shared/L00_00595E48.c	match	func_L00_00596A48	level_00:.text:00596A48:28	100.00
 func_L00_00595E68	src/overlays/shared/L00_00595E68.c	match	func_L00_00596A68	level_00:.text:00596A68:28	100.00
 func_L00_00595E88	src/overlays/shared/L00_00595E88.c	match	func_L00_00596A88	level_00:.text:00596A88:28	100.00
+func_L00_00596808	src/overlays/l00_multiplayer_menu/L00_00596808.c	match	func_L00_00597408	level_00:.text:00597408:48	100.00
 func_L00_005969A0	src/overlays/shared/L00_005969A0.c	match	func_L00_005975A0	level_00:.text:005975A0:8	100.00
 func_L00_005969A8	src/overlays/shared/L00_005969A8.c	match	func_L00_005975A8	level_00:.text:005975A8:28	100.00
 func_L00_005969C8	src/overlays/shared/L00_005969C8.c	match	func_L00_005975C8	level_00:.text:005975C8:28	100.00
@@ -4383,6 +4401,7 @@ func_L00_005AAA18	src/overlays/shared/L00_005AAA18.c	match	func_L00_005ABA00	lev
 func_L00_005AAA60	src/overlays/shared/L00_005AAA60.c	match	func_L00_005ABA48	level_00:.text:005ABA48:36	100.00
 func_L00_005AB350	src/overlays/shared/L00_005AB350.c	match	func_L00_005AC338	level_00:.text:005AC338:32	100.00
 func_L00_005AB748	src/overlays/shared/L00_005AB748.c	match	func_L00_005AC730	level_00:.text:005AC730:8	100.00
+func_L00_005AC538	src/pal/overlays/shared/L00_005AC538.c	match	func_L00_005AC538	level_00:.text:005AC538:36	100.00
 func_L00_005AD688	src/overlays/shared/L00_005AD688.c	match	func_L00_005AE670	level_00:.text:005AE670:28	100.00
 func_L00_005AE458	src/overlays/shared/L00_005AE458.c	match	func_L00_005AF458	level_00:.text:005AF458:60	100.00
 func_L00_005AF528	src/overlays/shared/L00_005AF528.c	match	func_L00_005B0528	level_00:.text:005B0528:40	100.00
@@ -4513,6 +4532,7 @@ func_L00_00607228	src/overlays/shared/L00_00607228.c	match	func_L00_00609FA8	lev
 func_L00_006085F8	src/pal/overlays/shared/L00_006085F8.c	match	func_L00_006085F8	level_00:.text:006085F8:8	100.00
 func_L00_006088B8	src/overlays/shared/L00_006088B8.c	match	func_L00_0060B668	level_00:.text:0060B668:1720	100.00
 func_L00_006091A8	src/overlays/shared/L00_006091A8.c	differs	-	-	0.00
+func_L00_00609350	src/pal/overlays/shared/L00_00609350.c	match	func_L00_00609350	level_00:.text:00609350:36	100.00
 func_L00_00609918	src/overlays/shared/L00_00609918.c	differs	-	-	0.00
 func_L00_0060A1B8	src/overlays/shared/L00_0060A1B8.c	differs	-	-	0.00
 func_L00_0060BDF8	src/overlays/shared/L00_0060BDF8.c	match	func_L00_0060EC88	level_00:.text:0060EC88:8	100.00
@@ -4839,6 +4859,7 @@ func_L00_00665218	src/overlays/shared/L00_00665218.c	match	func_L00_00668640	lev
 func_L00_00666EF8	src/overlays/shared/L00_00666EF8.c	match	func_L00_0066A320	level_00:.text:0066A320:132	100.00
 func_L00_00666F80	src/overlays/shared/L00_00666F80.c	match	func_L00_0066A3A8	level_00:.text:0066A3A8:80	100.00
 func_L00_0066D510	src/overlays/shared/L00_0066D510.c	match	func_L00_00670B18	level_00:.text:00670B18:148	100.00
+func_L00_0066D6B0	src/overlays/shared/L00_0066D6B0.c	match	func_L00_00670CB8	level_00:.text:00670CB8:56	100.00
 func_L00_0066D758	src/overlays/shared/L00_0066D758.c	match	func_L00_00670D60	level_00:.text:00670D60:8	100.00
 func_L00_006702B0	src/overlays/shared/L00_006702B0.c	match	func_L00_00673920	level_00:.text:00673920:44	100.00
 func_L00_006702E0	src/overlays/shared/L00_006702E0.c	match	func_L00_00673950	level_00:.text:00673950:192	100.00
@@ -5063,7 +5084,6 @@ func_L00_006A3598	src/overlays/shared/L00_006A3598.c	match	func_L00_006A6D78	lev
 func_L00_006A3600	src/overlays/shared/L00_006A3600.c	match	func_L00_006A6DE0	level_00:.text:006A6DE0:80	100.00
 func_L00_006A36A8	src/overlays/shared/L00_006A36A8.c	match	func_L00_006A6E88	level_00:.text:006A6E88:232	100.00
 func_L00_006A3790	src/overlays/shared/L00_006A3790.c	match	func_L00_006A6F70	level_00:.text:006A6F70:100	100.00
-func_L00_006A37D0	src/pal/overlays/shared/L00_006A37D0.c	match	func_L00_006A37D0	level_00:.text:006A37D0:112	100.00
 func_L00_006A37F8	src/overlays/shared/L00_006A37F8.c	match	func_L00_006A6FD8	level_00:.text:006A6FD8:104	100.00
 func_L00_006A3860	src/overlays/shared/L00_006A3860.c	match	func_L00_006A7040	level_00:.text:006A7040:100	100.00
 func_L00_006A38C8	src/overlays/shared/L00_006A38C8.c	match	func_L00_006A70A8	level_00:.text:006A70A8:104	100.00
@@ -5168,6 +5188,7 @@ func_L00_006D3858	src/overlays/l00_multiplayer_menu/L00_006D3858.c	match	func_L0
 func_L00_006D3860	src/overlays/shared/L00_006D3860.c	match	func_L00_006D7268	level_00:.text:006D7268:8	100.00
 func_L00_006D38A0	src/overlays/shared/L00_006D38A0.c	match	func_L00_006D72A8	level_00:.text:006D72A8:8	100.00
 func_L00_006D3930	src/overlays/shared/L00_006D3930.c	match	func_L00_006D7338	level_00:.text:006D7338:8	100.00
+func_L00_006D4A90	src/pal/overlays/shared/L00_006D4A90.c	match	func_L00_006D4A90	level_00:.text:006D4A90:84	100.00
 func_L00_006EA508	src/overlays/shared/L00_006EA508.c	match	func_L00_006EE0C8	level_00:.text:006EE0C8:28	100.00
 func_L00_006EA978	src/overlays/shared/L00_006EA978.c	match	func_L00_006EE538	level_00:.text:006EE538:52	100.00
 func_L00_006EA9B0	src/overlays/shared/L00_006EA9B0.c	match	func_L00_006EE570	level_00:.text:006EE570:8	100.00
@@ -5191,6 +5212,7 @@ func_L00_006EE7B0	src/overlays/shared/L00_006EE7B0.c	match	func_L00_006F2370	lev
 func_L00_006EE7E8	src/overlays/shared/L00_006EE7E8.c	differs	-	-	0.00
 func_L00_006EF338	src/overlays/shared/L00_006EF338.c	match	func_L00_006F2EF8	level_00:.text:006F2EF8:8	100.00
 func_L00_006F0C48	src/overlays/shared/L00_006F0C48.c	match	func_L00_006F4858	level_00:.text:006F4858:64	100.00
+func_L00_006F2330	src/pal/overlays/shared/L00_006F2330.c	match	func_L00_006F2330	level_00:.text:006F2330:64	100.00
 func_L00_006F23A8	src/pal/overlays/shared/L00_006F23A8.c	match	func_L00_006F23A8	level_00:.text:006F23A8:308	100.00
 func_L00_006F3930	src/overlays/shared/L00_006F3930.c	match	func_L00_006F7550	level_00:.text:006F7550:40	100.00
 func_L00_006F3E60	src/overlays/shared/L00_006F3E60.c	match	func_L00_006F7A78	level_00:.text:006F7A78:92	100.00
@@ -5258,6 +5280,7 @@ func_L00_007037A8	src/overlays/shared/L00_007037A8.c	match	func_L00_00707540	lev
 func_L00_007037B0	src/overlays/shared/L00_007037B0.c	match	func_L00_00707548	level_00:.text:00707548:8	100.00
 func_L00_007037B8	src/overlays/shared/L00_007037B8.c	match	func_L00_00707550	level_00:.text:00707550:8	100.00
 func_L00_00705648	src/overlays/shared/L00_00705648.c	match	func_L00_00709408	level_00:.text:00709408:28	100.00
+func_L00_007069A0	src/pal/overlays/shared/L00_007069A0.c	match	func_L00_007069A0	level_00:.text:007069A0:64	100.00
 func_L00_00707A58	src/overlays/l00_multiplayer_menu/L00_00707A58.c	match	func_L00_0070B818	level_00:.text:0070B818:60	100.00
 func_L00_00707F28	src/overlays/l00_multiplayer_menu/L00_00707F28.c	match	func_L00_0070BCE8	level_00:.text:0070BCE8:168	100.00
 func_L00_007081D8	src/overlays/l00_multiplayer_menu/L00_007081D8.c	match	func_L00_0070BF98	level_00:.text:0070BF98:60	100.00
@@ -5288,6 +5311,7 @@ func_L00_0070C990	src/overlays/l00_multiplayer_menu/L00_0070C990.c	match	func_L0
 func_L00_0070CAE8	src/overlays/l00_multiplayer_menu/L00_0070CAE8.c	match	func_L00_00710908	level_00:.text:00710908:92	100.00
 func_L00_0070CE98	src/overlays/l00_multiplayer_menu/L00_0070CE98.c	match	func_L00_00710CB8	level_00:.text:00710CB8:28	100.00
 func_L00_0070D418	src/overlays/l00_multiplayer_menu/L00_0070D418.c	match	func_L00_00711238	level_00:.text:00711238:36	100.00
+func_L00_0070D838	src/pal/overlays/l00_multiplayer_menu/L00_0070D838.c	match	func_L00_0070D838	level_00:.text:0070D838:36	100.00
 func_L00_007106A8	src/overlays/l00_multiplayer_menu/L00_007106A8.c	match	func_L00_007144C8	level_00:.text:007144C8:20	100.00
 func_L00_00710700	src/overlays/l00_multiplayer_menu/L00_00710700.c	match	func_L00_00714520	level_00:.text:00714520:72	100.00
 func_L00_007107C0	src/overlays/l00_multiplayer_menu/L00_007107C0.c	match	func_L00_007145E0	level_00:.text:007145E0:48	100.00
@@ -5511,6 +5535,7 @@ func_L00_00714DD8	src/overlays/l00_multiplayer_menu/L00_00714DD8.c	match	func_L0
 func_L00_00714DF8	src/overlays/l00_multiplayer_menu/L00_00714DF8.c	match	func_L00_00718C40	level_00:.text:00718C40:8	100.00
 func_L00_00714E00	src/overlays/l00_multiplayer_menu/L00_00714E00.c	match	func_L00_00718C48	level_00:.text:00718C48:76	100.00
 func_L00_00714E50	src/overlays/l00_multiplayer_menu/L00_00714E50.c	match	func_L00_00718C98	level_00:.text:00718C98:40	100.00
+func_L00_00714E68	src/pal/overlays/l00_multiplayer_menu/L00_00714E68.c	match	func_L00_00714E68	level_00:.text:00714E68:56	100.00
 func_L00_00714EE0	src/overlays/l00_multiplayer_menu/L00_00714EE0.c	match	func_L00_00718D28	level_00:.text:00718D28:12	100.00
 func_L00_00714EF0	src/overlays/l00_multiplayer_menu/L00_00714EF0.c	match	func_L00_00718D38	level_00:.text:00718D38:12	100.00
 func_L00_00714F00	src/overlays/shared/L00_00714F00.c	match	func_L00_00718D48	level_00:.text:00718D48:8	100.00
@@ -5536,7 +5561,9 @@ func_L00_007159C0	src/overlays/l00_multiplayer_menu/L00_007159C0.c	match	func_L0
 func_L00_007159E0	src/overlays/l00_multiplayer_menu/L00_007159E0.c	match	func_L00_00719828	level_00:.text:00719828:12	100.00
 func_L00_007159F0	src/overlays/l00_multiplayer_menu/L00_007159F0.c	match	func_L00_00719838	level_00:.text:00719838:28	100.00
 func_L00_00715B28	src/overlays/shared/L00_00715B28.c	match	func_L00_00719970	level_00:.text:00719970:8	100.00
+func_L00_00715FC0	src/pal/overlays/l00_multiplayer_menu/L00_00715FC0.c	match	func_L00_00715FC0	level_00:.text:00715FC0:128	100.00
 func_L00_00716030	src/overlays/l00_multiplayer_menu/L00_00716030.c	match	func_L00_00719E78	level_00:.text:00719E78:152	100.00
+func_L00_00716040	src/pal/overlays/l00_multiplayer_menu/L00_00716040.c	match	func_L00_00716040	level_00:.text:00716040:128	100.00
 func_L00_00716170	src/overlays/l00_multiplayer_menu/L00_00716170.c	match	func_L00_00719FB8	level_00:.text:00719FB8:148	100.00
 func_L00_00716208	src/overlays/l00_multiplayer_menu/L00_00716208.c	match	func_L00_0071A050	level_00:.text:0071A050:148	100.00
 func_L00_00716660	src/overlays/l00_multiplayer_menu/L00_00716660.c	match	func_L00_0071A4A8	level_00:.text:0071A4A8:172	100.00
@@ -5549,6 +5576,7 @@ func_L00_00716888	src/overlays/l00_multiplayer_menu/L00_00716888.c	match	func_L0
 func_L00_00716D80	src/overlays/l00_multiplayer_menu/L00_00716D80.c	match	func_L00_0071ABC8	level_00:.text:0071ABC8:12	100.00
 func_L00_00716D90	src/overlays/shared/L00_00716D90.c	match	func_L00_0071ABD8	level_00:.text:0071ABD8:8	100.00
 func_L00_00716D98	src/overlays/shared/L00_00716D98.c	match	func_L00_0071ABE0	level_00:.text:0071ABE0:8	100.00
+func_L00_00717030	src/pal/overlays/l00_multiplayer_menu/L00_00717030.c	match	func_L00_00717030	level_00:.text:00717030:36	100.00
 func_L00_007174C0	src/overlays/l00_multiplayer_menu/L00_007174C0.c	match	func_L00_0071B308	level_00:.text:0071B308:192	100.00
 func_L00_00717770	src/overlays/l00_multiplayer_menu/L00_00717770.c	match	func_L00_0071B5B8	level_00:.text:0071B5B8:60	100.00
 func_L00_007178E0	src/overlays/l00_multiplayer_menu/L00_007178E0.c	match	func_L00_0071B728	level_00:.text:0071B728:32	100.00
@@ -5559,6 +5587,7 @@ func_L00_00717A00	src/overlays/l00_multiplayer_menu/L00_00717A00.c	match	func_L0
 func_L00_00717A08	src/overlays/l00_multiplayer_menu/L00_00717A08.c	match	func_L00_0071B850	level_00:.text:0071B850:44	100.00
 func_L00_00717A38	src/overlays/l00_multiplayer_menu/L00_00717A38.c	match	func_L00_0071B880	level_00:.text:0071B880:48	100.00
 func_L00_00717C68	src/overlays/l00_multiplayer_menu/L00_00717C68.c	match	func_L00_0071BAB0	level_00:.text:0071BAB0:92	100.00
+func_L00_00718010	src/pal/overlays/l00_multiplayer_menu/L00_00718010.c	match	func_L00_00718010	level_00:.text:00718010:56	100.00
 func_L00_007180A0	src/overlays/l00_multiplayer_menu/L00_007180A0.c	match	func_L00_0071BEE8	level_00:.text:0071BEE8:88	100.00
 func_L00_007182A8	src/overlays/l00_multiplayer_menu/L00_007182A8.c	match	func_L00_0071C0F0	level_00:.text:0071C0F0:40	100.00
 func_L00_00718458	src/pal/overlays/l00_multiplayer_menu/L00_00718458.c	match	func_L00_00718458	level_00:.text:00718458:516	100.00
@@ -5567,7 +5596,9 @@ func_L00_00718C60	src/overlays/l00_multiplayer_menu/L00_00718C60.c	match	func_L0
 func_L00_00718D58	src/pal/overlays/l00_multiplayer_menu/L00_00718D58.c	match	func_L00_00718D58	level_00:.text:00718D58:380	100.00
 func_L00_00719430	src/overlays/l00_multiplayer_menu/L00_00719430.c	differs	-	-	0.00
 func_L00_00719D28	src/overlays/l00_multiplayer_menu/L00_00719D28.c	match	func_L00_0071DB90	level_00:.text:0071DB90:44	100.00
+func_L00_00719FD8	src/overlays/l00_multiplayer_menu/L00_00719FD8.c	match	func_L00_0071DE40	level_00:.text:0071DE40:56	100.00
 func_L00_0071A058	src/overlays/l00_multiplayer_menu/L00_0071A058.c	match	func_L00_0071DEC0	level_00:.text:0071DEC0:40	100.00
+func_L00_0071A1D0	src/overlays/l00_multiplayer_menu/L00_0071A1D0.c	match	func_L00_0071E038	level_00:.text:0071E038:48	100.00
 func_L00_0071A3B0	src/overlays/l00_multiplayer_menu/L00_0071A3B0.c	match	func_L00_0071E218	level_00:.text:0071E218:8	100.00
 func_L00_0071A3C8	src/overlays/l00_multiplayer_menu/L00_0071A3C8.c	match	func_L00_0071E230	level_00:.text:0071E230:28	100.00
 func_L00_0071A5B8	src/overlays/l00_multiplayer_menu/L00_0071A5B8.c	match	func_L00_0071E420	level_00:.text:0071E420:40	100.00
@@ -5580,6 +5611,10 @@ func_L00_0071ACC0	src/overlays/l00_multiplayer_menu/L00_0071ACC0.c	match	func_L0
 func_L00_0071ADF0	src/overlays/l00_multiplayer_menu/L00_0071ADF0.c	match	func_L00_0071EC58	level_00:.text:0071EC58:72	100.00
 func_L00_0071AE38	src/overlays/l00_multiplayer_menu/L00_0071AE38.c	match	func_L00_0071ECA0	level_00:.text:0071ECA0:140	100.00
 func_L00_0071AEC8	src/overlays/l00_multiplayer_menu/L00_0071AEC8.c	match	func_L00_0071ED30	level_00:.text:0071ED30:12	100.00
+func_L00_0071B3C8	src/pal/overlays/l00_multiplayer_menu/L00_0071B3C8.c	match	func_L00_0071B3C8	level_00:.text:0071B3C8:248	100.00
+func_L00_0071B4C0	src/pal/overlays/l00_multiplayer_menu/L00_0071B4C0.c	match	func_L00_0071B4C0	level_00:.text:0071B4C0:248	100.00
+func_L00_0071B5F8	src/pal/overlays/l00_multiplayer_menu/L00_0071B5F8.c	match	func_L00_0071B5F8	level_00:.text:0071B5F8:248	100.00
+func_L00_0071B6F0	src/pal/overlays/l00_multiplayer_menu/L00_0071B6F0.c	match	func_L00_0071B6F0	level_00:.text:0071B6F0:56	100.00
 func_L00_0071B768	src/overlays/l00_multiplayer_menu/L00_0071B768.c	match	func_L00_0071F5D0	level_00:.text:0071F5D0:100	100.00
 func_L00_0071B9B0	src/overlays/l00_multiplayer_menu/L00_0071B9B0.c	match	func_L00_0071F818	level_00:.text:0071F818:152	100.00
 func_L00_0071BCF8	src/overlays/shared/L00_0071BCF8.c	match	func_L00_0071FB60	level_00:.text:0071FB60:8	100.00
@@ -5748,6 +5783,7 @@ func_L00_0075FE70	src/overlays/l00_multiplayer_menu/L00_0075FE70.c	match	func_L0
 func_L00_0075FE98	src/overlays/l00_multiplayer_menu/L00_0075FE98.c	match	func_L00_00764EA8	level_00:.text:00764EA8:16	100.00
 func_L00_007600C0	src/overlays/l00_multiplayer_menu/L00_007600C0.c	match	func_L00_007650D0	level_00:.text:007650D0:76	100.00
 func_L00_00761568	src/overlays/l00_multiplayer_menu/L00_00761568.c	match	func_L00_00766578	level_00:.text:00766578:28	100.00
+func_L00_00761860	src/pal/overlays/l00_multiplayer_menu/L00_00761860.c	match	func_L00_00761860	level_00:.text:00761860:56	100.00
 func_L00_00761C88	src/pal/overlays/l00_multiplayer_menu/L00_00713A78.c	match	func_L00_00761C88	level_00:.text:00761C88:328	100.00
 func_L00_00762570	src/overlays/l00_multiplayer_menu/L00_00762570.c	match	func_L00_00767580	level_00:.text:00767580:40	100.00
 func_L00_00762780	src/overlays/l00_multiplayer_menu/L00_00762780.c	match	func_L00_00767790	level_00:.text:00767790:52	100.00
@@ -5897,6 +5933,7 @@ func_L00_00775190	src/overlays/l00_multiplayer_menu/L00_00775190.c	match	func_L0
 func_L00_007751B0	src/overlays/l00_multiplayer_menu/L00_007751B0.c	match	func_L00_0077A588	level_00:.text:0077A588:24	100.00
 func_L00_007751C8	src/overlays/l00_multiplayer_menu/L00_007751C8.c	match	func_L00_0077A5A0	level_00:.text:0077A5A0:28	100.00
 func_L00_007751E8	src/overlays/l00_multiplayer_menu/L00_007751E8.c	match	func_L00_0077A5C0	level_00:.text:0077A5C0:24	100.00
+func_L00_00775200	src/overlays/l00_multiplayer_menu/L00_00775200.c	match	func_L00_0077A5D8	level_00:.text:0077A5D8:52	100.00
 func_L00_007752B8	src/overlays/l00_multiplayer_menu/L00_007752B8.c	match	func_L00_0077A690	level_00:.text:0077A690:100	100.00
 func_L00_00775320	src/overlays/l00_multiplayer_menu/L00_00775320.c	match	func_L00_0077A6F8	level_00:.text:0077A6F8:136	100.00
 func_L00_007754D0	src/overlays/l00_multiplayer_menu/L00_007754D0.c	match	func_L00_0077A8A8	level_00:.text:0077A8A8:96	100.00
@@ -5948,6 +5985,7 @@ func_L00_0077A8C0	src/overlays/l00_multiplayer_menu/L00_0077A8C0.c	match	func_L0
 func_L00_0077AF10	src/overlays/l00_multiplayer_menu/L00_0077AF10.c	match	func_L00_007802F0	level_00:.text:007802F0:16	100.00
 func_L00_0077B8F0	src/overlays/l00_multiplayer_menu/L00_0077B8F0.c	match	func_L00_00780CD0	level_00:.text:00780CD0:100	100.00
 func_L00_0077B958	src/overlays/l00_multiplayer_menu/L00_0077B958.c	match	func_L00_00780D38	level_00:.text:00780D38:104	100.00
+func_L00_0077BA70	src/pal/overlays/l00_multiplayer_menu/L00_0077BA70.c	match	func_L00_0077BA70	level_00:.text:0077BA70:80	100.00
 func_L00_0077BB10	src/overlays/l00_multiplayer_menu/L00_0077BB10.c	match	func_L00_00780EF0	level_00:.text:00780EF0:72	100.00
 func_L00_0077BF30	src/overlays/l00_multiplayer_menu/L00_0077BF30.c	match	func_L00_00781310	level_00:.text:00781310:1076	100.00
 func_L00_0077C368	src/overlays/l00_multiplayer_menu/L00_0077C368.c	match	func_L00_00781748	level_00:.text:00781748:24	100.00
@@ -5981,6 +6019,7 @@ func_L00_0077DE38	src/overlays/shared/L00_0077DE38.c	match	func_L00_00783218	lev
 func_L00_0077DE40	src/overlays/l00_multiplayer_menu/L00_0077DE40.c	match	func_L00_00783220	level_00:.text:00783220:76	100.00
 func_L00_0077DE90	src/overlays/l00_multiplayer_menu/L00_0077DE90.c	match	func_L00_00783270	level_00:.text:00783270:48	100.00
 func_L00_0077DEC0	src/overlays/l00_multiplayer_menu/L00_0077DEC0.c	match	func_L00_007832A0	level_00:.text:007832A0:60	100.00
+func_L00_0077DF00	src/overlays/l00_multiplayer_menu/L00_0077DF00.c	match	func_L00_007832E0	level_00:.text:007832E0:44	100.00
 func_L00_0077DF30	src/overlays/l00_multiplayer_menu/L00_0077DF30.c	match	func_L00_00783310	level_00:.text:00783310:28	100.00
 func_L00_0077DF50	src/overlays/l00_multiplayer_menu/L00_0077DF50.c	match	func_L00_00783330	level_00:.text:00783330:28	100.00
 func_L00_0077DF70	src/overlays/l00_multiplayer_menu/L00_0077DF70.c	match	func_L00_00783350	level_00:.text:00783350:8	100.00
@@ -6177,6 +6216,7 @@ func_L01_0045BF60	src/pal/overlays/shared/L01_0045BF60.c	match	func_L01_0045BF60
 func_L01_0045C068	src/overlays/shared/L01_0045C068.c	match	func_L01_0045D348	level_01:.text:0045D348:16	100.00
 func_L01_0045C0C8	src/overlays/shared/L01_0045C0C8.c	match	func_L01_0045D3A8	level_01:.text:0045D3A8:40	100.00
 func_L01_0045C0F0	src/overlays/shared/L01_0045C0F0.c	match	func_L01_0045D3D0	level_01:.text:0045D3D0:72	100.00
+func_L01_0045C658	src/pal/overlays/shared/L01_0045C658.c	match	func_L01_0045C658	level_01:.text:0045C658:36	100.00
 func_L01_0045D140	src/pal/overlays/shared/L01_0045D140.c	match	func_L01_0045D140	level_01:.text:0045D140:124	100.00
 func_L01_0045D240	src/pal/overlays/shared/L01_0045D240.c	match	func_L01_0045D240	level_01:.text:0045D240:76	100.00
 func_L01_0045D4E0	src/overlays/shared/L01_0045D4E0.c	match	func_L01_0045E7C0	level_01:.text:0045E7C0:12	100.00
@@ -6209,6 +6249,7 @@ func_L01_00468B60	src/overlays/shared/L01_00468B60.c	match	func_L01_00469F48	lev
 func_L01_00468CC0	src/overlays/shared/L01_00468CC0.c	match	func_L01_0046A0A8	level_01:.text:0046A0A8:136	100.00
 func_L01_00468DA8	src/overlays/shared/L01_00468DA8.c	match	func_L01_0046A190	level_01:.text:0046A190:240	100.00
 func_L01_00468E98	src/overlays/shared/L01_00468E98.c	match	func_L01_0046A280	level_01:.text:0046A280:40	100.00
+func_L01_00468F08	src/overlays/shared/L01_00468F08.c	differs	-	-	0.00
 func_L01_00468F58	src/overlays/shared/L01_00468F58.c	match	func_L01_0046A340	level_01:.text:0046A340:84	100.00
 func_L01_00468FB0	src/overlays/shared/L01_00468FB0.c	match	func_L01_0046A398	level_01:.text:0046A398:296	100.00
 func_L01_00469288	src/overlays/shared/L01_00469288.c	match	func_L01_0046A670	level_01:.text:0046A670:140	100.00
@@ -6390,6 +6431,7 @@ func_L01_004ADAC0	src/overlays/shared/L01_004ADAC0.c	match	func_L01_004AF568	lev
 func_L01_004ADC28	src/overlays/shared/L01_004ADC28.c	match	func_L01_004AF6D0	level_01:.text:004AF6D0:12	100.00
 func_L01_004ADC80	src/overlays/shared/L01_004ADC80.c	match	func_L01_004AF728	level_01:.text:004AF728:12	100.00
 func_L01_004ADF78	src/overlays/shared/L01_004ADF78.c	match	func_L01_004AFA20	level_01:.text:004AFA20:56	100.00
+func_L01_004AE0C8	src/pal/overlays/shared/L01_004AE0C8.c	match	func_L01_004AE0C8	level_01:.text:004AE0C8:220	100.00
 func_L01_004AE490	src/overlays/shared/L01_004AE490.c	match	func_L01_004AFF80	level_01:.text:004AFF80:48	100.00
 func_L01_004AE4C0	src/overlays/shared/L01_004AE4C0.c	match	func_L01_004AFFB0	level_01:.text:004AFFB0:32	100.00
 func_L01_004AE510	src/overlays/shared/L01_004AE510.c	match	func_L01_004B0000	level_01:.text:004B0000:104	100.00
@@ -6548,6 +6590,7 @@ func_L01_004D9BB0	src/overlays/shared/L01_004D9BB0.c	match	func_L01_004DBB50	lev
 func_L01_004DA958	src/overlays/shared/L01_004DA958.c	match	func_L01_004DC8F8	level_01:.text:004DC8F8:112	100.00
 func_L01_004DAAE0	src/overlays/shared/L01_004DAAE0.c	match	func_L01_004DCA80	level_01:.text:004DCA80:120	100.00
 func_L01_004DABE0	src/pal/overlays/shared/L01_004DABE0.c	match	func_L01_004DABE0	level_01:.text:004DABE0:184	100.00
+func_L01_004DBA78	src/pal/overlays/l01_dreadzone_station/L01_004DBA78.c	match	func_L01_004DBA78	level_01:.text:004DBA78:216	100.00
 func_L01_004DC3B8	src/overlays/shared/L01_004DC3B8.c	match	func_L01_004DE358	level_01:.text:004DE358:24	100.00
 func_L01_004DC3D0	src/overlays/shared/L01_004DC3D0.c	match	func_L01_004DE370	level_01:.text:004DE370:372	100.00
 func_L01_004DC548	src/overlays/shared/L01_004DC548.c	match	func_L01_004DE4E8	level_01:.text:004DE4E8:20	100.00
@@ -6572,6 +6615,7 @@ func_L01_004E0450	src/overlays/l01_dreadzone_station/L01_004E0450.c	match	func_L
 func_L01_004E33D0	src/overlays/l01_dreadzone_station/L01_004E33D0.c	match	func_L01_004E5370	level_01:.text:004E5370:72	100.00
 func_L01_004E35D0	src/overlays/shared/L01_004E35D0.c	match	func_L01_004E5570	level_01:.text:004E5570:92	100.00
 func_L01_004E3630	src/overlays/l01_dreadzone_station/L01_004E3630.c	match	func_L01_004E55D0	level_01:.text:004E55D0:12	100.00
+func_L01_004E39B0	src/overlays/shared/L01_004E39B0.c	match	func_L01_004E5950	level_01:.text:004E5950:48	100.00
 func_L01_004E3F40	src/overlays/shared/L01_004E3F40.c	match	func_L01_004E5EE0	level_01:.text:004E5EE0:32	100.00
 func_L01_004E4960	src/overlays/l01_dreadzone_station/L01_004E4960.c	match	func_L01_004E6918	level_01:.text:004E6918:64	100.00
 func_L01_004E4AB8	src/overlays/shared/L01_004E4AB8.c	match	func_L01_004E6A70	level_01:.text:004E6A70:104	100.00
@@ -6640,6 +6684,7 @@ func_L01_004F3220	src/overlays/shared/L01_004F3220.c	match	func_L01_004F5200	lev
 func_L01_004F3258	src/overlays/shared/L01_004F3258.c	match	func_L01_004F5238	level_01:.text:004F5238:76	100.00
 func_L01_004F32A8	src/overlays/shared/L01_004F32A8.c	match	func_L01_004F5288	level_01:.text:004F5288:36	100.00
 func_L01_004F59B0	src/overlays/shared/L01_004F59B0.c	match	func_L01_004F7980	level_01:.text:004F7980:128	100.00
+func_L01_004F7940	src/pal/overlays/shared/L01_004F7940.c	match	func_L01_004F7940	level_01:.text:004F7940:64	100.00
 func_L01_004F7A80	src/overlays/shared/L01_004F7A80.c	match	func_L01_004F9AA8	level_01:.text:004F9AA8:240	100.00
 func_L01_004F7D50	src/overlays/shared/L01_004F7D50.c	match	func_L01_004F9D78	level_01:.text:004F9D78:64	100.00
 func_L01_004F890C	src/overlays/shared/L01_004F890C.c	match	func_L01_004FA934	level_01:.text:004FA934:8	100.00
@@ -6705,11 +6750,13 @@ func_L01_00514BD8	src/overlays/l01_dreadzone_station/L01_00514BD8.c	match	func_L
 func_L01_00514D38	src/overlays/l01_dreadzone_station/L01_00514D38.c	match	func_L01_00516F58	level_01:.text:00516F58:48	100.00
 func_L01_005152A8	src/overlays/shared/L01_005152A8.c	match	func_L01_005174C8	level_01:.text:005174C8:28	100.00
 func_L01_005154A0	src/overlays/shared/L01_005154A0.c	match	func_L01_005176C0	level_01:.text:005176C0:60	100.00
+func_L01_00516E28	src/overlays/shared/L01_00516E28.c	match	func_L01_00519060	level_01:.text:00519060:40	100.00
 func_L01_00516F90	src/overlays/shared/L01_00516F90.c	match	func_L01_005191C8	level_01:.text:005191C8:32	100.00
 func_L01_00516FB0	src/overlays/shared/L01_00516FB0.c	match	func_L01_005191E8	level_01:.text:005191E8:32	100.00
 func_L01_00516FD0	src/overlays/shared/L01_00516FD0.c	match	func_L01_00519208	level_01:.text:00519208:16	100.00
 func_L01_00517020	src/overlays/shared/L01_00517020.c	match	func_L01_00519258	level_01:.text:00519258:40	100.00
 func_L01_00518460	src/overlays/shared/L01_00518460.c	differs	-	-	0.00
+func_L01_00519218	src/pal/overlays/shared/L01_00519218.c	match	func_L01_00519218	level_01:.text:00519218:60	100.00
 func_L01_0051A698	src/pal/overlays/l01_dreadzone_station/L01_0051A698.c	match	func_L01_0051A698	level_01:.text:0051A698:160	100.00
 func_L01_00520938	src/overlays/shared/L01_00520938.c	match	func_L01_00522BE0	level_01:.text:00522BE0:104	100.00
 func_L01_005209A0	src/overlays/shared/L01_005209A0.c	match	func_L01_00522C48	level_01:.text:00522C48:108	100.00
@@ -6773,6 +6820,7 @@ func_L01_0056E7F8	src/overlays/shared/L01_0056E7F8.c	match	func_L01_005713D8	lev
 func_L01_0056E9D0	src/overlays/shared/L01_0056E9D0.c	match	func_L01_005715B0	level_01:.text:005715B0:100	100.00
 func_L01_0056F280	src/pal/overlays/shared/L01_0056F280.c	match	func_L01_0056F280	level_01:.text:0056F280:316	100.00
 func_L01_0056FCA0	src/pal/overlays/shared/L01_0056FCA0.c	match	func_L01_0056FCA0	level_01:.text:0056FCA0:440	100.00
+func_L01_00571E30	src/pal/overlays/shared/L01_00571E30.c	match	func_L01_00571E30	level_01:.text:00571E30:68	100.00
 func_L01_00572020	src/overlays/shared/L01_00572020.c	match	func_L01_00574C18	level_01:.text:00574C18:144	100.00
 func_L01_005720B8	src/overlays/shared/L01_005720B8.c	match	func_L01_00574CB0	level_01:.text:00574CB0:524	100.00
 func_L01_00572330	src/overlays/shared/L01_00572330.c	match	func_L01_00574F28	level_01:.text:00574F28:184	100.00
@@ -6802,6 +6850,7 @@ func_L01_005864A0	src/overlays/shared/L01_005864A0.c	match	func_L01_0058A760	lev
 func_L01_00586750	src/overlays/shared/L01_00586750.c	match	func_L01_0058AA10	level_01:.text:0058AA10:220	100.00
 func_L01_005868E0	src/overlays/shared/L01_005868E0.c	match	func_L01_0058ABA0	level_01:.text:0058ABA0:64	100.00
 func_L01_00588C68	src/overlays/shared/L01_00588C68.c	match	func_L01_0058CF48	level_01:.text:0058CF48:88	100.00
+func_L01_0058A000	src/pal/overlays/shared/L01_0058A000.c	match	func_L01_0058A000	level_01:.text:0058A000:68	100.00
 func_L01_0058FE90	src/overlays/shared/L01_0058FE90.c	match	func_L01_00594170	level_01:.text:00594170:44	100.00
 func_L01_005917A0	src/overlays/shared/L01_005917A0.c	match	func_L01_00595A80	level_01:.text:00595A80:76	100.00
 func_L01_00591BD8	src/overlays/shared/L01_00591BD8.c	match	func_00474368	level_01:.text:00595EB8:60	100.00
@@ -6829,13 +6878,17 @@ func_L01_005A4D00	src/overlays/shared/L01_005A4D00.c	match	func_L01_005A9078	lev
 func_L01_005A4D30	src/overlays/shared/L01_005A4D30.c	match	func_L01_005A90A8	level_01:.text:005A90A8:36	100.00
 func_L01_005A5850	src/overlays/shared/L01_005A5850.c	match	func_L01_005A9BC8	level_01:.text:005A9BC8:36	100.00
 func_L01_005A5878	src/overlays/shared/L01_005A5878.c	match	func_L01_005A9BF0	level_01:.text:005A9BF0:176	100.00
+func_L01_005A7B30	src/pal/overlays/shared/L01_005A7B30.c	match	func_L01_005A7B30	level_01:.text:005A7B30:124	100.00
 func_L01_005A8680	src/overlays/shared/L01_005A8680.c	match	func_L01_005AC9F8	level_01:.text:005AC9F8:64	100.00
 func_L01_005A8928	src/overlays/shared/L01_005A8928.c	match	func_L01_005ACCA0	level_01:.text:005ACCA0:256	100.00
 func_L01_005A8A28	src/overlays/shared/L01_005A8A28.c	match	func_L01_005ACDA0	level_01:.text:005ACDA0:288	100.00
 func_L01_005A8C48	src/overlays/shared/L01_005A8C48.c	match	func_0047F4F0	level_01:.text:005ACFC0:68	100.00
+func_L01_005AB318	src/overlays/shared/L01_005AB318.c	match	func_L01_005AF6A8	level_01:.text:005AF6A8:40	100.00
 func_L01_005AB480	src/overlays/shared/L01_005AB480.c	match	func_L01_005AF810	level_01:.text:005AF810:28	100.00
 func_L01_005AB590	src/overlays/shared/L01_005AB590.c	match	func_L01_005AF920	level_01:.text:005AF920:76	100.00
+func_L01_005AB5E0	src/overlays/shared/L01_005AB5E0.c	match	func_L01_005AF970	level_01:.text:005AF970:40	100.00
 func_L01_005AC6C8	src/overlays/shared/L01_005AC6C8.c	match	func_L01_005B0A58	level_01:.text:005B0A58:128	100.00
+func_L01_005B3880	src/pal/overlays/shared/L01_005B3880.c	match	func_L01_005B3880	level_01:.text:005B3880:72	100.00
 func_L01_005B4F70	src/overlays/shared/L01_005B4F70.c	match	func_L01_005B9478	level_01:.text:005B9478:76	100.00
 func_L01_005B4FC0	src/overlays/shared/L01_005B4FC0.c	match	func_L01_005B94C8	level_01:.text:005B94C8:40	100.00
 func_L01_005B4FE8	src/overlays/shared/L01_005B4FE8.c	match	func_L01_005B94F0	level_01:.text:005B94F0:580	100.00
@@ -6894,6 +6947,7 @@ func_L01_006670B0	src/overlays/shared/L01_006670B0.c	match	func_L01_0066C248	lev
 func_L01_00677E70	src/overlays/shared/L01_00677E70.c	match	func_L01_0067D0D8	level_01:.text:0067D0D8:40	100.00
 func_L01_0068E5D8	src/overlays/shared/L01_0068E5D8.c	match	func_L01_00693958	level_01:.text:00693958:600	100.00
 func_L01_0068E830	src/overlays/shared/L01_0068E830.c	match	func_L01_00693BB0	level_01:.text:00693BB0:1044	100.00
+func_L01_00690998	src/overlays/shared/L01_00690998.c	match	func_L01_00695D18	level_01:.text:00695D18:40	100.00
 func_L01_00690EF8	src/overlays/shared/L01_00690EF8.c	match	func_L01_00696278	level_01:.text:00696278:8	100.00
 func_L01_006ACB58	src/overlays/shared/L01_006ACB58.c	match	func_L01_006B2090	level_01:.text:006B2090:8	100.00
 func_L01_006ACC28	src/overlays/shared/L01_006ACC28.c	match	func_L01_006B2160	level_01:.text:006B2160:96	100.00
@@ -6910,6 +6964,7 @@ func_L01_006C1130	src/overlays/shared/L01_006C1130.c	match	func_L01_006C6878	lev
 func_L01_006C1388	src/overlays/shared/L01_006C1388.c	match	func_L01_006C6AD0	level_01:.text:006C6AD0:360	100.00
 func_L01_006C14F0	src/overlays/shared/L01_006C14F0.c	match	func_L01_006C6C38	level_01:.text:006C6C38:344	100.00
 func_L01_006C2708	src/overlays/shared/L01_006C2708.c	match	func_L01_006C7E50	level_01:.text:006C7E50:8	100.00
+func_L02_003C5BF0	src/pal/overlays/shared/L02_003C5BF0.c	match	func_L02_003C5BF0	level_02:.text:003C5BF0:92	100.00
 func_L02_003C6090	src/overlays/shared/L02_003C6090.c	match	func_L02_003C6408	level_02:.text:003C6408:128	100.00
 func_L02_003DD0A8	src/overlays/shared/L02_003DD0A8.c	match	func_L02_003DD628	level_02:.text:003DD628:16	100.00
 func_L02_0046F5E8	src/overlays/shared/L02_0046F5E8.c	match	func_L02_00470B18	level_02:.text:00470B18:28	100.00
@@ -7070,6 +7125,7 @@ func_L06_0049AFC8	src/overlays/shared/L06_0049AFC8.c	match	func_L06_0049C4E8	lev
 func_L06_0049B380	src/overlays/shared/L06_0049B380.c	match	func_L06_0049C8A0	level_06:.text:0049C8A0:52	100.00
 func_L06_0049B938	src/overlays/shared/L06_0049B938.c	match	func_L06_0049CE58	level_06:.text:0049CE58:36	100.00
 func_L06_004BF1E8	src/overlays/l06_temple_of_shaar/L06_004BF1E8.c	match	func_L06_004C09D0	level_06:.text:004C09D0:32	100.00
+func_L06_004BF570	src/overlays/shared/L06_004BF570.c	match	func_L06_004C0D58	level_06:.text:004C0D58:52	100.00
 func_L06_004C5590	src/overlays/shared/L06_004C5590.c	match	func_L06_004C6DA0	level_06:.text:004C6DA0:32	100.00
 func_L06_004C6BD0	src/overlays/l06_temple_of_shaar/L06_004C6BD0.c	match	func_L06_004C8408	level_06:.text:004C8408:36	100.00
 func_L06_004C6F18	src/overlays/shared/L06_004C6F18.c	match	func_L06_004C8750	level_06:.text:004C8750:248	100.00
@@ -7083,6 +7139,7 @@ func_L06_004C8768	src/overlays/shared/L06_004C8768.c	match	func_L06_004C9FA0	lev
 func_L06_004C8DC0	src/overlays/shared/L06_004C8DC0.c	match	func_L06_004CA5F8	level_06:.text:004CA5F8:80	100.00
 func_L06_004C97B0	src/pal/overlays/shared/L06_004C97B0.c	match	func_L06_004C97B0	level_06:.text:004C97B0:240	100.00
 func_L06_004C9C68	src/pal/overlays/shared/L06_004C9C68.c	match	func_L06_004C9C68	level_06:.text:004C9C68:20	100.00
+func_L06_00542FD8	src/pal/overlays/shared/L06_00542FD8.c	match	func_L06_00542FD8	level_06:.text:00542FD8:128	100.00
 func_L06_00565118	src/overlays/l06_temple_of_shaar/L06_00565118.c	match	func_L06_00568C30	level_06:.text:00568C30:84	100.00
 func_L07_003CAFE8	src/overlays/shared/L07_003CAFE8.c	match	func_L07_003CB360	level_07:.text:003CB360:136	100.00
 func_L07_0049A370	src/overlays/l07_valix_lighthouse/L07_0049A370.c	match	func_L07_0049B530	level_07:.text:0049B530:44	100.00
@@ -7146,6 +7203,7 @@ func_L15_004A0A10	src/overlays/l15_control_level/L15_004A0A10.c	match	func_L15_0
 func_L15_004A0DF8	src/overlays/shared/L15_004A0DF8.c	match	func_L15_004A2528	level_15:.text:004A2528:52	100.00
 func_L15_004A0E68	src/overlays/shared/L15_004A0E68.c	match	func_L15_004A2598	level_15:.text:004A2598:40	100.00
 func_L15_004A1CC8	src/overlays/l15_control_level/L15_004A1CC8.c	match	func_L15_004A33F8	level_15:.text:004A33F8:16	100.00
+func_L15_004A2560	src/pal/overlays/l15_control_level/L15_004A2560.c	match	func_L15_004A2560	level_15:.text:004A2560:56	100.00
 func_L15_004ADB18	src/overlays/shared/L15_004ADB18.c	match	func_L15_004AF290	level_15:.text:004AF290:80	100.00
 func_L15_004AF138	src/pal/overlays/l15_control_level/L15_004AF138.c	match	func_L15_004AF138	level_15:.text:004AF138:344	100.00
 func_L15_004CDDA8	src/pal/overlays/l15_control_level/L15_004CDDA8.c	match	func_L15_004CDDA8	level_15:.text:004CDDA8:96	100.00
@@ -7259,6 +7317,7 @@ func_L41_00440F00	src/overlays/shared/L41_00440F00.c	differs	-	-	0.00
 func_L41_00440F20	src/overlays/shared/L41_00440F20.c	match	func_L41_00441FB0	level_41:.text:00441FB0:20	100.00
 func_L41_00440F50	src/overlays/l41_battledome_tower/L41_00440F50.c	match	func_L41_00441FE0	level_41:.text:00441FE0:36	100.00
 func_L41_00441BC8	src/pal/overlays/l41_battledome_tower/L41_00441BC8.c	match	func_L41_00441BC8	level_41:.text:00441BC8:280	100.00
+func_L41_00441F38	src/pal/overlays/l41_battledome_tower/L41_00441F38.c	match	func_L41_00441F38	level_41:.text:00441F38:100	100.00
 func_L41_00443A68	src/overlays/shared/L41_00443A68.c	match	func_L41_00444B68	level_41:.text:00444B68:72	100.00
 func_L41_00443AB8	src/overlays/l41_battledome_tower/L41_00443AB8.c	match	func_L41_00444BB8	level_41:.text:00444BB8:36	100.00
 func_L41_00443BA0	src/overlays/shared/L41_00443BA0.c	match	func_L41_00444CA0	level_41:.text:00444CA0:116	100.00
@@ -7269,6 +7328,7 @@ func_L41_00445C30	src/overlays/shared/L41_00445C30.c	match	func_L41_00446D30	lev
 func_L41_00445D50	src/overlays/l41_battledome_tower/L41_00445D50.c	match	func_L41_00446E50	level_41:.text:00446E50:32	100.00
 func_L41_00445D70	src/overlays/shared/L41_00445D70.c	match	func_L41_00446E70	level_41:.text:00446E70:48	100.00
 func_L41_00445FA8	src/overlays/l41_battledome_tower/L41_00445FA8.c	match	func_L41_004470B0	level_41:.text:004470B0:100	100.00
+func_L41_00446000	src/pal/overlays/l41_battledome_tower/L41_00446000.c	match	func_L41_00446000	level_41:.text:00446000:32	100.00
 func_L41_00446010	src/overlays/shared/L41_00446010.c	match	func_L41_00447118	level_41:.text:00447118:32	100.00
 func_L41_00446030	src/overlays/shared/L41_00446030.c	match	func_L41_00447138	level_41:.text:00447138:220	100.00
 func_L41_00446110	src/overlays/shared/L41_00446110.c	match	func_L41_00447218	level_41:.text:00447218:64	100.00
@@ -7309,6 +7369,7 @@ func_L41_0046ECE8	src/overlays/l41_battledome_tower/L41_0046ECE8.c	match	func_L4
 func_L41_00478880	src/overlays/l41_battledome_tower/L41_00478880.c	match	func_L41_00479BF8	level_41:.text:00479BF8:60	100.00
 func_L41_0048E738	src/overlays/l41_battledome_tower/L41_0048E738.c	match	func_L41_0048FB10	level_41:.text:0048FB10:28	100.00
 func_L41_00496210	src/overlays/l41_battledome_tower/L41_00496210.c	match	func_L41_004976C8	level_41:.text:004976C8:28	100.00
+func_L41_004F7100	src/overlays/shared/L41_004F7100.c	match	func_L01_0058A760	level_41:.text:004FA5C0:40	100.00
 func_L41_0055AEB0	src/overlays/shared/L41_0055AEB0.c	match	func_L41_0055ED30	level_41:.text:0055ED30:144	100.00
 func_L41_0055AF40	src/overlays/shared/L41_0055AF40.c	match	func_L41_0055EDC0	level_41:.text:0055EDC0:180	100.00
 func_L41_0055B098	src/overlays/shared/L41_0055B098.c	match	func_L41_0055EF18	level_41:.text:0055EF18:148	100.00
@@ -7355,7 +7416,6 @@ func_004C6070	nonmatching/game/func_004C6070.c	near	func_004C6E98	main:.text:004
 func_004C8388	nonmatching/game/func_004C8388.c	near	func_004C7F48	main:.text:004C7F48:4	0.00
 func_004CB0F0	nonmatching/game/func_004CB0F0.c	near	func_004CBF90	main:.text:004CBF90:88	88.64
 func_004D7998	nonmatching/game/func_004D7998.c	near	func_004D88B0	main:.text:004D88B0:464	94.83
-func_004E5550	nonmatching/game/func_004E5550.c	near	func_004E6478	main:.text:004E6478:60	96.67
 func_004E80F8	nonmatching/game/func_004E80F8.c	near	func_004E9020	main:.text:004E9020:112	0.00
 func_004F3538	nonmatching/game/func_004F3538.c	near	func_004F45A0	main:.text:004F45A0:116	86.21
 func_004F8B60	nonmatching/game/func_004F8B60.c	near	func_004F9BE0	main:.text:004F9BE0:664	0.00
@@ -7365,11 +7425,11 @@ func_01E9DDD0	nonmatching/net/func_01E9DDD0.c	near	func_01E9DDD0	main:net.text:0
 func_01E9E3E0	nonmatching/net/func_01E9E3E0.c	near	func_01E9E3E0	main:net.text:01E9E3E0:72	94.44
 func_01E9E710	nonmatching/net/func_01E9E710.c	near	func_01E9E710	main:net.text:01E9E710:128	78.12
 func_01E9E838	nonmatching/net/func_01E9E838.c	near	func_01E9E838	main:net.text:01E9E838:92	90.22
-func_01EA5160	nonmatching/net/func_01EA5160.c	near	func_01EA5160	main:net.text:01EA5160:60	93.33
 func_01EA73A8	nonmatching/net/func_01EA73A8.c	near	func_01EA73A8	main:net.text:01EA73A8:76	85.53
 func_01EA90F0	nonmatching/net/func_01EA90F0.c	near	func_01EA90F0	main:net.text:01EA90F0:76	86.84
 func_01EA95C0	nonmatching/net/func_01EA95C0.c	near	func_01EA95C0	main:net.text:01EA95C0:88	90.91
 func_01EABFD0	nonmatching/net/func_01EABFD0.c	near	func_01EABFD0	main:net.text:01EABFD0:16	93.75
+func_01EAECF0	nonmatching/net/func_01EAECF0.c	near	func_01EAECF0	main:net.text:01EAECF0:40	77.50
 func_01EB1AD0	nonmatching/net/func_01EB1AD0.c	near	func_01EB1AD0	main:net.text:01EB1AD0:96	89.58
 func_01EB6748	nonmatching/net/func_01EB6748.c	near	func_01EB6748	main:net.text:01EB6748:64	89.06
 func_01EB6918	nonmatching/net/func_01EB6918.c	near	func_01EB6918	main:net.text:01EB6918:92	91.30
@@ -7380,6 +7440,7 @@ func_01EC52E0	nonmatching/net/func_01EC52E0.c	near	func_01EC52E0	main:net.text:0
 func_01EC6498	nonmatching/net/func_01EC6498.c	near	func_01EC6498	main:net.text:01EC6498:44	93.18
 func_01EC9060	nonmatching/net/func_01EC9060.c	near	func_01EC9060	main:net.text:01EC9060:92	97.83
 func_01EC92E8	nonmatching/net/func_01EC92E8.c	near	func_01EC92E8	main:net.text:01EC92E8:88	90.91
+func_01ECDCD8	nonmatching/net/func_01ECDCD8.c	near	func_01ECDCD8	main:net.text:01ECDCD8:36	61.11
 func_01ECF658	nonmatching/net/func_01ECF658.c	near	func_01ECF658	main:net.text:01ECF658:92	92.39
 func_01ED5F40	nonmatching/net/func_01ED5F40.c	near	func_01ED5F40	main:net.text:01ED5F40:76	89.47
 func_01ED6218	nonmatching/net/func_01ED6218.c	near	func_01ED6218	main:net.text:01ED6218:60	91.67
@@ -7395,6 +7456,7 @@ func_01EF9DD8	nonmatching/net/func_01EF9DD8.c	near	func_01EF9DD8	main:net.text:0
 func_01F03E40	nonmatching/net/func_01F03E40.c	near	func_01F03E40	main:net.text:01F03E40:108	86.11
 func_01F06988	nonmatching/net/func_01F06988.c	near	func_01F06988	main:net.text:01F06988:124	88.71
 func_01F06B6C	nonmatching/net/func_01F06B6C.c	near	func_01F06B6C	main:net.text:01F06B6C:124	88.71
+func_01F0C19C	nonmatching/net/func_01F0C19C.c	near	func_01F0C19C	main:net.text:01F0C19C:40	75.00
 func_01F0C720	nonmatching/net/func_01F0C720.c	near	func_01F0C720	main:net.text:01F0C720:104	99.04
 func_L00_004F72C0	nonmatching/l00_multiplayer_menu/func_L00_004F72C0.c	near	func_L00_004F77C0	level_00:.text:004F77C0:104	83.65
 func_L00_005190D8	nonmatching/l00_multiplayer_menu/func_L00_005190D8.c	near	func_L00_005195D8	level_00:.text:005195D8:104	96.00
@@ -7486,44 +7548,3 @@ func_L41_00445E10	nonmatching/shared/func_L41_00445E10.c	near	func_L41_00446F10	
 func_L41_00446500	nonmatching/shared/func_L41_00446500.c	near	func_L41_00447608	level_41:.text:00447608:836	94.50
 func_L41_0044C720	nonmatching/shared/func_L41_0044C720.c	near	func_L41_0044D828	level_41:.text:0044D828:272	84.56
 func_L41_0061C668	nonmatching/shared/func_L41_0061C668.c	near	func_L41_00620DE0	level_41:.text:00620DE0:148	95.27
-func_00139DA0	src/pal/core/00139DA0.c	match	func_00139DA0	main:core.text:00139DA0:104	100.00
-func_001469F8	src/pal/core/001469F8.c	match	func_001469F8	main:core.text:001469F8:104	100.00
-func_00160FE8	src/pal/core/00160FE8.c	match	func_00160FE8	main:core.text:00160FE8:320	100.00
-func_00433788	src/pal/game/00433788.c	match	func_00433788	main:.text:00433788:100	100.00
-func_004368B8	src/pal/game/004368B8.c	match	func_004368B8	main:.text:004368B8:448	100.00
-func_0051C078	src/pal/game/0051C078.c	match	func_0051C078	main:.text:0051C078:224	100.00
-func_0054BCF0	src/pal/game/0054BCF0.c	match	func_0054BCF0	main:.text:0054BCF0:84	100.00
-func_01EEEDA0	src/pal/net/01EEEDA0.c	match	func_01EEEDA0	main:net.text:01EEEDA0:36	100.00
-func_L00_00531F28	src/pal/overlays/l00_multiplayer_menu/L00_00531F28.c	match	func_L00_00531F28	level_00:.text:00531F28:20	100.00
-func_L00_005468B0	src/pal/overlays/l00_multiplayer_menu/L00_005468B0.c	match	func_L00_005468B0	level_00:.text:005468B0:72	100.00
-func_L00_005AC538	src/pal/overlays/shared/L00_005AC538.c	match	func_L00_005AC538	level_00:.text:005AC538:36	100.00
-func_L00_00609350	src/pal/overlays/shared/L00_00609350.c	match	func_L00_00609350	level_00:.text:00609350:36	100.00
-func_L00_006D4A90	src/pal/overlays/shared/L00_006D4A90.c	match	func_L00_006D4A90	level_00:.text:006D4A90:84	100.00
-func_L00_006F2330	src/pal/overlays/shared/L00_006F2330.c	match	func_L00_006F2330	level_00:.text:006F2330:64	100.00
-func_L00_007069A0	src/pal/overlays/shared/L00_007069A0.c	match	func_L00_007069A0	level_00:.text:007069A0:64	100.00
-func_L00_0070D838	src/pal/overlays/l00_multiplayer_menu/L00_0070D838.c	match	func_L00_0070D838	level_00:.text:0070D838:36	100.00
-func_L00_00714E68	src/pal/overlays/l00_multiplayer_menu/L00_00714E68.c	match	func_L00_00714E68	level_00:.text:00714E68:56	100.00
-func_L00_00715FC0	src/pal/overlays/l00_multiplayer_menu/L00_00715FC0.c	match	func_L00_00715FC0	level_00:.text:00715FC0:128	100.00
-func_L00_00716040	src/pal/overlays/l00_multiplayer_menu/L00_00716040.c	match	func_L00_00716040	level_00:.text:00716040:128	100.00
-func_L00_00717030	src/pal/overlays/l00_multiplayer_menu/L00_00717030.c	match	func_L00_00717030	level_00:.text:00717030:36	100.00
-func_L00_00718010	src/pal/overlays/l00_multiplayer_menu/L00_00718010.c	match	func_L00_00718010	level_00:.text:00718010:56	100.00
-func_L00_0071B3C8	src/pal/overlays/l00_multiplayer_menu/L00_0071B3C8.c	match	func_L00_0071B3C8	level_00:.text:0071B3C8:248	100.00
-func_L00_0071B4C0	src/pal/overlays/l00_multiplayer_menu/L00_0071B4C0.c	match	func_L00_0071B4C0	level_00:.text:0071B4C0:248	100.00
-func_L00_0071B5F8	src/pal/overlays/l00_multiplayer_menu/L00_0071B5F8.c	match	func_L00_0071B5F8	level_00:.text:0071B5F8:248	100.00
-func_L00_0071B6F0	src/pal/overlays/l00_multiplayer_menu/L00_0071B6F0.c	match	func_L00_0071B6F0	level_00:.text:0071B6F0:56	100.00
-func_L00_00761860	src/pal/overlays/l00_multiplayer_menu/L00_00761860.c	match	func_L00_00761860	level_00:.text:00761860:56	100.00
-func_L00_0077BA70	src/pal/overlays/l00_multiplayer_menu/L00_0077BA70.c	match	func_L00_0077BA70	level_00:.text:0077BA70:80	100.00
-func_L01_0045C658	src/pal/overlays/shared/L01_0045C658.c	match	func_L01_0045C658	level_01:.text:0045C658:36	100.00
-func_L01_004AE0C8	src/pal/overlays/shared/L01_004AE0C8.c	match	func_L01_004AE0C8	level_01:.text:004AE0C8:220	100.00
-func_L01_004DBA78	src/pal/overlays/l01_dreadzone_station/L01_004DBA78.c	match	func_L01_004DBA78	level_01:.text:004DBA78:216	100.00
-func_L01_004F7940	src/pal/overlays/shared/L01_004F7940.c	match	func_L01_004F7940	level_01:.text:004F7940:64	100.00
-func_L01_00519218	src/pal/overlays/shared/L01_00519218.c	match	func_L01_00519218	level_01:.text:00519218:60	100.00
-func_L01_00571E30	src/pal/overlays/shared/L01_00571E30.c	match	func_L01_00571E30	level_01:.text:00571E30:68	100.00
-func_L01_0058A000	src/pal/overlays/shared/L01_0058A000.c	match	func_L01_0058A000	level_01:.text:0058A000:68	100.00
-func_L01_005A7B30	src/pal/overlays/shared/L01_005A7B30.c	match	func_L01_005A7B30	level_01:.text:005A7B30:124	100.00
-func_L01_005B3880	src/pal/overlays/shared/L01_005B3880.c	match	func_L01_005B3880	level_01:.text:005B3880:72	100.00
-func_L02_003C5BF0	src/pal/overlays/shared/L02_003C5BF0.c	match	func_L02_003C5BF0	level_02:.text:003C5BF0:92	100.00
-func_L06_00542FD8	src/pal/overlays/shared/L06_00542FD8.c	match	func_L06_00542FD8	level_06:.text:00542FD8:128	100.00
-func_L15_004A2560	src/pal/overlays/l15_control_level/L15_004A2560.c	match	func_L15_004A2560	level_15:.text:004A2560:56	100.00
-func_L41_00441F38	src/pal/overlays/l41_battledome_tower/L41_00441F38.c	match	func_L41_00441F38	level_41:.text:00441F38:100	100.00
-func_L41_00446000	src/pal/overlays/l41_battledome_tower/L41_00446000.c	match	func_L41_00446000	level_41:.text:00446000:32	100.00

@@ -3,16 +3,8 @@
 extern void func_0049FC68(s32);
 s32 D_0021F6F8 = 1;
 
-/* Select the active mode, resetting it when requested. */
-void func_004A2A90(s32 active)
-{
-    if (active) {
-        D_0021F6F8 = 4;
-    } else {
-        func_0049FC68(0);
-        D_0021F6F8 = 1;
-    }
-}
+/* func_004A2A90 is src/game/004A1D58.c's func_004A1D58 on PAL. */
+extern void func_004A2A90(s32 active);
 
 typedef struct GameInfo {
     u8 pad00[8];
