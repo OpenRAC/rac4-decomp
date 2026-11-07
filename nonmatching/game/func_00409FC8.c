@@ -1,4 +1,5 @@
-/* Not matching yet: SIZE ours 100 / retail 104 (tools/try_func.py func_00409FC8 --diff). Not part of the build. */
+/* Not matching yet: BYTES 18/104 (tools/try_func.py func_00409FC8 --diff). Not part of the build. (tools/try_func.py func_00409FC8 --diff). Not part of the build. */
+/* cflags: @ee296 -O2 -G0 */
 #include "common.h"
 
 // Rebuild a packed value: fold the top nibble to 0..7 (5 when zero) and keep

@@ -1,4 +1,5 @@
-/* Not matching yet: SIZE ours 84 / retail 80 (tools/try_func.py func_01EA7278 --diff). Not part of the build. */
+/* Not matching yet: BYTES 41/76 (tools/try_func.py func_01EA7278 --diff). Not part of the build. (tools/try_func.py func_01EA7278 --diff). Not part of the build. */
+/* cflags: @ee296 -O2 -G0 */
 #include "common.h"
 
 // Report how far the 0x8 cursor is ahead of the 0x4 base.

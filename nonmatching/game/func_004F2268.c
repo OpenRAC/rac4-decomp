@@ -1,4 +1,5 @@
-/* Not matching yet: BYTES 26/88 (tools/try_func.py func_004F2268 --diff). Not part of the build. */
+/* Not matching yet: BYTES 21/88 (tools/try_func.py func_004F2268 --diff). Not part of the build. (tools/try_func.py func_004F2268 --diff). Not part of the build. */
+/* cflags: -fno-schedule-insns2 */
 #include "common.h"
 
 // Initialise the descriptor and clear its entry list.

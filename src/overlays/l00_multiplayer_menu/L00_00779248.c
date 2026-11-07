@@ -1,4 +1,4 @@
-/* Not matching yet: BYTES 2/52 (tools/try_func.py func_L00_00779248 --diff). Not part of the build. */
+/* cflags: -G0 */
 #include "common.h"
 
 extern u8 D_1723C1;

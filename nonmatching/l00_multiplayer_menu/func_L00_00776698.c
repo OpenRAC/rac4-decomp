@@ -1,4 +1,5 @@
-/* Not matching yet: SIZE ours 72 / retail 80 (tools/try_func.py func_L00_00776698 --diff). Not part of the build. */
+/* Not matching yet: BYTES 47/76 (tools/try_func.py func_L00_00776698 --diff). Not part of the build. (tools/try_func.py func_L00_00776698 --diff). Not part of the build. */
+/* cflags: @ee296 -O2 -G0 */
 #include "common.h"
 
 // Reset the selection slots.

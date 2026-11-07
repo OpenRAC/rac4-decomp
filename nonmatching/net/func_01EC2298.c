@@ -1,4 +1,5 @@
-/* Not matching yet: BYTES 55/68 (tools/try_func.py func_01EC2298 --diff). Not part of the build. */
+/* Not matching yet: BYTES 53/68 (tools/try_func.py func_01EC2298 --diff). Not part of the build. (tools/try_func.py func_01EC2298 --diff). Not part of the build. */
+/* cflags: -fno-schedule-insns -fno-schedule-insns2 */
 #include "common.h"
 
 // Copy the three words of a type 0xD record into `out`.
