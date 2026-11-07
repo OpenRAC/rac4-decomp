@@ -20,6 +20,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_004979A8`](game/func_004979A8.c) | game | 312 | BYTES 3/308 |
 | [`func_L00_0076F770`](l00_multiplayer_menu/func_L00_0076F770.c) | l00_multiplayer_menu | 208 | BYTES 2/204 |
 | [`func_L00_0053BFF8`](l00_multiplayer_menu/func_L00_0053BFF8.c) | l00_multiplayer_menu | 616 | BYTES 7/616 |
+| [`func_004A68D8`](game/func_004A68D8.c) | game | 464 | BYTES 6/464 |
 | [`func_L00_00715B30`](l00_multiplayer_menu/func_L00_00715B30.c) | l00_multiplayer_menu | 1160 | BYTES 15/1160 |
 | [`func_L00_0068AC58`](shared/func_L00_0068AC58.c) | shared | 688 | BYTES 9/684 |
 | [`func_L41_0040F218`](shared/func_L41_0040F218.c) | shared | 376 | BYTES 5/376 |
@@ -45,6 +46,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_005133C8`](game/func_005133C8.c) | game | 416 | BYTES 10/412 |
 | [`func_004ED688`](game/func_004ED688.c) | game | 288 | BYTES 7/288 |
 | [`func_004D9408`](game/func_004D9408.c) | game | 240 | BYTES 6/236 |
+| [`func_0050CAC0`](game/func_0050CAC0.c) | game | 472 | BYTES 13/468 |
 | [`func_L00_00535680`](l00_multiplayer_menu/func_L00_00535680.c) | l00_multiplayer_menu | 428 | BYTES 12/428 |
 | [`func_L01_00568C08`](shared/func_L01_00568C08.c) | shared | 432 | BYTES 12/428 |
 | [`func_L00_005472D0`](l00_multiplayer_menu/func_L00_005472D0.c) | l00_multiplayer_menu | 556 | BYTES 16/556 |
@@ -71,7 +73,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_004B1F38`](game/func_004B1F38.c) | game | 512 | BYTES 25/508 |
 | [`func_L00_00528178`](l00_multiplayer_menu/func_L00_00528178.c) | l00_multiplayer_menu | 464 | BYTES 23/464 |
 | [`func_004DC200`](game/func_004DC200.c) | game | 200 | BYTES 10/200 |
-| [`func_004D7998`](game/func_004D7998.c) | game | 464 | BYTES 24/464 (8 words differ) |
 | [`func_00548280`](game/func_00548280.c) | game | 280 | BYTES 15/276 |
 | [`func_L01_0047F050`](shared/func_L01_0047F050.c) | shared | 128 | BYTES 7/128 |
 | [`func_L41_00446500`](shared/func_L41_00446500.c) | shared | 840 | BYTES 46/836 |
@@ -86,6 +87,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L01_0049A8F0`](shared/func_L01_0049A8F0.c) | shared | 208 | BYTES 13/208 |
 | [`func_004B65D8`](game/func_004B65D8.c) | game | 360 | BYTES 23/356 |
 | [`func_L00_00670708`](shared/func_L00_00670708.c) | shared | 112 | BYTES 7/108 (3 words differ) |
+| [`func_004A90E8`](game/func_004A90E8.c) | game | 432 | BYTES 28/428 |
 | [`func_L01_004D0978`](shared/func_L01_004D0978.c) | shared | 136 | BYTES 9/136 |
 | [`func_004C3140`](game/func_004C3140.c) | game | 104 | BYTES 7/104 |
 | [`func_L00_00528670`](l00_multiplayer_menu/func_L00_00528670.c) | l00_multiplayer_menu | 416 | BYTES 28/416 |
@@ -152,6 +154,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L00_0065B218`](shared/func_L00_0065B218.c) | shared | 96 | BYTES 13/96 |
 | [`func_L01_00494FF0`](shared/func_L01_00494FF0.c) | shared | 96 | BYTES 13/96 |
 | [`func_01EDB3E0`](net/func_01EDB3E0.c) | net | 88 | BYTES 12/88 |
+| [`func_004DCCB8`](game/func_004DCCB8.c) | game | 472 | BYTES 65/472 |
 | [`func_L01_004C45A0`](shared/func_L01_004C45A0.c) | shared | 120 | BYTES 16/116 |
 | [`func_01E9D9F8`](net/func_01E9D9F8.c) | net | 72 | BYTES 10/72 |
 | [`func_01F03E40`](net/func_01F03E40.c) | net | 108 | BYTES 15/108 |
@@ -161,6 +164,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L00_006AAE40`](shared/func_L00_006AAE40.c) | shared | 128 | BYTES 18/124 |
 | [`func_00122020`](core/func_00122020.c) | core | 108 | BYTES 16/108 |
 | [`func_01EE1550`](net/func_01EE1550.c) | net | 128 | BYTES 19/128 |
+| [`func_004DF0F8`](game/func_004DF0F8.c) | game | 448 | BYTES 67/448 |
 | [`func_L00_00599710`](shared/func_L00_00599710.c) | shared | 520 | BYTES 78/516 |
 | [`func_00162698`](core/func_00162698.c) | core | 132 | BYTES 20/132 |
 | [`func_L41_0044C720`](shared/func_L41_0044C720.c) | shared | 272 | BYTES 42/272 |
@@ -191,6 +195,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_0013EEB0`](core/func_0013EEB0.c) | core | 140 | SIZE ours 132 / disc 140 |
 | [`func_0013EF40`](core/func_0013EF40.c) | core | 148 | SIZE ours 144 / disc 148 |
 | [`func_001559E0`](core/func_001559E0.c) | core | 36 | SIZE 60/36 (tail-call form; tools/try_func.py func_001559E0 build/try/func_001559E0/p1.c --diff) |
+| [`func_0046A360`](game/func_0046A360.c) | game | 432 | EXACT bytes, but the {2,3,4,5} initialiser constant gcc emits lands at 0x21F1B0 instead of retail's D_0021F1B8 (audit_relocs mismatch) |
 | [`func_00498730`](game/func_00498730.c) | game | 352 | EXACT bytes, but its 3 calls to libgcc fptoui (0x131850, emitted for the float-to-u32 cast) are unresolved by tools/audit_relocs.py; land once the audit maps libgcc names |
 | [`func_004C6070`](game/func_004C6070.c) | game | 328 | SIZE ours 300 / retail 328 |
 | [`func_004C8388`](game/func_004C8388.c) | game | 8 | not recorded |
