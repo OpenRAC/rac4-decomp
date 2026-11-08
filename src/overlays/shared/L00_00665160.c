@@ -1,21 +1,34 @@
 #include "common.h"
 
-typedef struct { u8 pad0[0xAC]; s32 offset; } Result;
-typedef struct { s32 base; u8 data[4]; u16 length; s16 kind; s16 a; s16 b; } Record;
-typedef struct { s32 count; Record rec[1]; } Table;
-Result *func_L00_00665120(s16, s16);
-extern void func_L00_005BCBF0(void *, void *, s32);
-/* Walk a counted record list and copy each record's data to an address resolved per record. */
-void func_L00_00665160(Table *arg0) {
+typedef struct {
+    s32 offset;
+    s32 data;
+    u16 size;
+    s16 kind;
+    s16 arg1;
+    s16 arg0;
+} Entry_4A0270;
+typedef struct {
+    s32 count;
+    Entry_4A0270 entries[1];
+} Table_4A0270;
+extern u8 *func_L00_00665120(s32 a, s32 b);
+extern void func_005BCBF0(void *dst, void *src, s32 size);
+
+/* from rac3-decomp's func_L01_004A3AD0, constants adapted */
+void func_L00_00665160(Table_4A0270 *table) {
     s32 i;
-    for (i = 0; i < arg0->count; i++) {
-        Record *r = &arg0->rec[i];
-        Result *result = func_L00_00665120(r->b, r->a);
-        if (result != 0) {
-            void *ptr;
-            if (r->kind == 1) ptr = (u8 *)r->base + (u32)result;
-            else ptr = (u8 *)r->base + result->offset;
-            func_L00_005BCBF0(ptr, r->data, r->length);
+    for (i = 0; i < table->count; i++) {
+        Entry_4A0270 *e = &table->entries[i];
+        u8 *obj = func_L00_00665120(e->arg0, e->arg1);
+        if (obj != 0) {
+            u8 *dst;
+            if (e->kind == 1) {
+                dst = (u8 *)e->offset + (s32)obj;
+            } else {
+                dst = (u8 *)e->offset + *(s32 *)(obj + 172);
+            }
+            func_005BCBF0(dst, &e->data, e->size);
         }
     }
 }

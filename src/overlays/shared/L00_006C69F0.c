@@ -1,28 +1,32 @@
 #include "common.h"
 
+extern void func_00512D50(void *self, s32 a, s32 b, s32 en, s32 t);
+extern void func_0051FCA8(void *self, s32 type, s32 arg);
+extern s32 func_00453508(s16 *timer);
 typedef struct {
-    s16 f0;
-    s16 f2;
-    s16 f4;
-    s16 f6;
-} Type1;
+    s16 active;
+    s16 type;
+    s16 timer;
+    s16 arg;
+} Slot_6379E8;
 typedef struct {
-    u8 pad0[0x43B];
-    u8 f43B;
-    u8 pad43C[0x2D20 - 0x43C];
-    Type1 f2D20[2];
-} Type2;
-s32 func_L00_005BC9B8(void *);
-void func_L00_006AD518(void *, u8, s32, s32, s32);
-void func_L00_006C68E0(void *, s16, s16);
-/* For each of the two 8-byte slots at +0x2D20 whose check returns 2, clear it and dispatch on its kind. */
-void func_L00_006C69F0(Type2 *arg0) {
+    u8 pad0[1083];
+    u8 b1083;
+    u8 pad1[11552 - 1084];
+    Slot_6379E8 slots[2];
+} Self_6379E8;
+
+/* from rac3-decomp's func_L39_0063A230 */
+void func_L00_006C69F0(Self_6379E8 *self) {
     s32 i;
     for (i = 0; i < 2; i++) {
-        if (func_L00_005BC9B8(&arg0->f2D20[i].f4) == 2) {
-            arg0->f2D20[i].f0 = 0;
-            if (arg0->f2D20[i].f2 == 0x1C) func_L00_006AD518(arg0, arg0->f43B, 1, 1, 0x32);
-            else func_L00_006C68E0(arg0, arg0->f2D20[i].f2, arg0->f2D20[i].f6);
+        if (func_00453508(&self->slots[i].timer) == 2) {
+            self->slots[i].active = 0;
+            if (self->slots[i].type == 28) {
+                func_00512D50(self, self->b1083, 1, 1, 50);
+            } else {
+                func_0051FCA8(self, self->slots[i].type, self->slots[i].arg);
+            }
         }
     }
 }

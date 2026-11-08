@@ -1,0 +1,88 @@
+/* cflags: @ee296 -O2 -G0 -falign-jumps=1 -mno-split-addresses */
+#include "common.h"
+
+typedef struct Type1 Type1;
+struct Type1 {
+    char _p0[0x8];
+    s32 f8;
+    s32 fC;
+    s32 f10;
+    s32 f14;
+    s32 f18;
+    s32 f1C;
+    s32 f20;
+    s32 f24;
+    s32 f28;
+    s32 f2C;
+    s32 f30;
+    s32 f34;
+    s32 f38;
+    s32 f3C;
+    s32 f40;
+    s32 f44;
+    s32 f48;
+    s32 f4C;
+    s32 f50;
+    s32 f54;
+    s32 f58;
+    s32 f5C;
+    s32 f60;
+    s32 f64;
+    s32 f68;
+    s32 f6C;
+    s32 f70;
+    s32 f74;
+    s32 f78;
+    s32 f7C;
+    s32 f80;
+    s32 f84;
+    s32 f88;
+    s32 f8C;
+    s32 f90;
+    s32 f94;
+    s32 f98;
+    s32 f9C;
+    s32 fA0;
+    s32 fA4;
+    s32 fA8;
+    s32 fAC;
+    s32 fB0;
+    s32 fB4;
+    s32 fB8;
+    s32 fBC;
+    s32 fC0;
+    s32 fC4;
+    s32 fC8;
+    s32 fCC;
+    s32 fD0;
+    s32 fD4;
+};
+
+void func_01EED7A8(Type1 *arg0) {
+    arg0->f70 = arg0->f8;
+    arg0->f74 = arg0->fC;
+    arg0->f78 = arg0->f10;
+    arg0->f7C = arg0->f14;
+    arg0->f80 = arg0->f18;
+    arg0->f84 = arg0->f1C;
+    arg0->f88 = arg0->f20;
+    arg0->f8C = arg0->f24;
+    arg0->f90 = arg0->f28;
+    arg0->f94 = arg0->f2C;
+    arg0->f98 = arg0->f30;
+    arg0->f9C = arg0->f34;
+    arg0->fA0 = arg0->f38;
+    arg0->fA4 = arg0->f3C;
+    arg0->fA8 = arg0->f40;
+    arg0->fAC = arg0->f44;
+    arg0->fB0 = arg0->f48;
+    arg0->fB4 = arg0->f4C;
+    arg0->fB8 = arg0->f50;
+    arg0->fBC = arg0->f54;
+    arg0->fC0 = arg0->f58;
+    arg0->fC4 = arg0->f5C;
+    arg0->fC8 = arg0->f60;
+    arg0->fCC = arg0->f64;
+    arg0->fD0 = arg0->f68;
+    arg0->fD4 = arg0->f6C;
+}
