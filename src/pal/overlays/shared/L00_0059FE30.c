@@ -1,0 +1,45 @@
+#include "common.h"
+
+extern f32 func_00454328(f32, f32);
+typedef struct {
+    u8 p0[0x10]; f32 f10; s32 f14; s32 f18; f32 f1C; u8 p20[6]; s16 h26; f32 f28; s32 f2C;
+    u8 p30[8]; f32 f38; f32 f3C;
+} S_59FE30;
+extern f32 func_00454140(f32);
+extern f32 func_00454158(f32);
+extern void func_L00_005B2D98(f32, f32, f32, f32, f32, s32, s32, s32, s32, s32, s32, s32, f32, f32);
+extern s32 func_004495D8(s32, s32);
+
+/* PAL: from rac3-decomp's func_00385778 */
+void func_L00_0059FE30(S_59FE30 *o, f32 x, f32 y) {
+    s32 tex;
+    f32 w, h, a;
+    f32 p[4], q[4];
+    s32 i;
+    if (o == 0) return;
+    w = o->f38;
+    h = o->f3C;
+    tex = func_004495D8(o->f18, 1);
+    a = o->f1C;
+    switch (o->f2C) {
+    case 0:
+        for (i = 0; i < o->h26; i++) {
+            func_L00_005B2D98(x, y, w * o->f10, h * o->f10, a, 0x3F, 0x3F, tex, 0xFFFFF3, o->f14, 0, 0, 0.0f, 0.0f);
+            a = func_00454328(a, o->f28);
+        }
+        break;
+    case 1:
+        p[0] = h * func_00454158(a) * o->f10;
+        p[1] = h * func_00454140(a) * o->f10;
+        q[0] = w * func_00454140(a) * o->f10;
+        q[1] = -w * func_00454158(a) * o->f10;
+        func_L00_005B2D98(x, y, w * o->f10, h * o->f10, a, 0x3F, 0x3F, tex, 0xFFFFF3, o->f14, 0, 0, 0.0f, 0.0f);
+        func_L00_005B2D98(x + q[0], y + q[1], w * o->f10, h * o->f10, a, 0x3F, 0x3F, tex, 0xFFFFF3, o->f14, 1, 0, 0.0f, 0.0f);
+        func_L00_005B2D98(x - p[0], y - p[1], w * o->f10, h * o->f10, a, 0x3F, 0x3F, tex, 0xFFFFF3, o->f14, 0, 1, 0.0f, 0.0f);
+        func_L00_005B2D98(x + q[0] - p[0], y + q[1] - p[1], w * o->f10, h * o->f10, a, 0x3F, 0x3F, tex, 0xFFFFF3, o->f14, 1, 1, 0.0f, 0.0f);
+        break;
+    case 2:
+        func_L00_005B2D98(x, y, w * o->f10, h * o->f10, a, 0x3F, 0x3F, tex, 0xFFFFF3, o->f14, 0, 0, 0.5f, 0.5f);
+        break;
+    }
+}
