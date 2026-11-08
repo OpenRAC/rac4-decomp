@@ -1,4 +1,3 @@
-/* Not matching yet: BYTES 8/716 (tools/try_func.py func_004DB7B8 --diff). Not part of the build. */
 #include "common.h"
 typedef struct Model {
     u8 pad[0x10];
@@ -63,8 +62,8 @@ void func_004DB7B8(void)
             }
             a->cur = i;
             a->total = o->res->models[i]->count;
-            changed = 1;
             func_0046F2B0(o, o->res->models[a->seq[i]], a->seq[i], 0.0f, a->off);
+            changed = 1;
         }
         func_0046E728(o);
         func_0046EDD8(o);

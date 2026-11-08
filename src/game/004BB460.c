@@ -1,4 +1,3 @@
-/* Not matching yet: BYTES 5/696 (tools/try_func.py func_004BB460 --diff). Not part of the build. */
 #include "common.h"
 
 typedef struct {
@@ -14,7 +13,7 @@ typedef struct {
     u8 f25;
 } Stats171B40;
 
-void func_0045DC60(s32, s32);
+s32 func_0045DC60(s32, s32);
 
 static inline s32 testBit(s32 v, s32 n) {
     return (v >> n) & 1;

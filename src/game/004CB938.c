@@ -1,4 +1,3 @@
-/* Not matching yet: BYTES 3/604 (tools/try_func.py func_004CB938 --diff). Not part of the build. */
 #include "common.h"
 
 typedef struct Type1 {
@@ -15,7 +14,7 @@ extern s32 func_004A1A60(s32 *arg0, s32 arg1);
 extern void func_004CBB98(s32 id);
 extern s32 func_004CC7A0(s32 arg0);
 extern s32 func_004CC8A8(s32 arg0);
-extern void func_00504F68(s32, s32);
+extern s32 func_00504F68(s32, s32);
 extern void func_00505328(s32, s32);
 extern s32 func_005054F8(u32 id, s32 amount);
 extern s32 func_00505B20(void);

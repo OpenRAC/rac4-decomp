@@ -1,4 +1,3 @@
-/* Not matching yet: BYTES 2/364 (tools/try_func.py func_004F3220 --diff). Not part of the build. */
 #include "common.h"
 
 extern void func_00158568(void);
@@ -41,8 +40,10 @@ void func_004F3220(s32 count, s32 *list)
         s32 idx = list[i];
         s32 off;
         s32 size;
+        s32 o4;
         D_003288D0[idx] = i;
-        off = tbl[idx];
+        o4 = idx * 4;
+        off = *(s32 *)((u8 *)tbl + o4);
         size = *(s32 *)(ents + off + 0x2C);
         func_004F2530(data + off, &D_00328890[i], dest, size);
         dest += size;

@@ -1,4 +1,3 @@
-/* Not matching yet: BYTES 6/856 (tools/try_func.py func_004A9568 --diff). Not part of the build. */
 /* cflags: -ffast-math */
 #include "common.h"
 
@@ -43,7 +42,7 @@ extern s32 func_00498158(s32, s32);
 extern u32 func_004989C0(s32 a0, s32 a1);
 extern s32 func_004A1A60(s32 *arg0, s32 arg1);
 extern s32 func_004A8600(void);
-extern void func_00505328(s32, s32);
+extern s32 func_00505328(s32, s32);
 extern s32 func_00505410(u32 id, f32 amount);
 extern s32 func_00505B20(void);
 extern void *func_00510BE8(s32 arg0);

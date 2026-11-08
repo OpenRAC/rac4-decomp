@@ -1,4 +1,5 @@
-/* Not matching yet: BYTES 8/772 (tools/try_func.py func_004BDA08 --diff). Not part of the build. */
+#include "common.h"
+
 extern s32 func_0045E038(s32);
 extern void func_0046A290(s32 arg0);
 extern void *func_0046D428(s32, s32, s32);
@@ -64,9 +65,10 @@ void func_004BDA08(void) {
         return;
     }
     idx = *(s32 *)(sub + 0x54);
-    e = 0;
-    if (idx >= 0) {
-        e = *(Type2 **)(sub + 0x34) + idx;
+    if (idx < 0) {
+        e = 0;
+    } else {
+        e = (Type2 *)(*(s32 *)(sub + 0x34) + idx * 0x18);
     }
     p = e->p;
     saved = *(s32 *)(rec + 0x240);
@@ -101,8 +103,8 @@ void func_004BDA08(void) {
     }
     if (p->b2 == 0 || (mode == 1 && p->w8 == 1 && p->w4 != 0) || mode == count % 20) {
         D_0021F934 = saved;
-        D_0021F939 = 1;
         D_0021F938 = 1;
+        D_0021F939 = 1;
         if (p->w8 == 1) {
             r = func_004BEEA0(count);
             if (mode == 1 && (D_0021F198 < 8 || D_00241B00[0] != 0)) {
