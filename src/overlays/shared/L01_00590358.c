@@ -1,4 +1,6 @@
-/* Not matching yet: BYTES 8/1144 (tools/try_func.py func_L01_00590358 --diff). Not part of the build. */
+/* cflags: -O2 -G8 */
+#include "common.h"
+
 typedef struct Type1 {
     char pad0[0x25CC];
     s32 f25CC;
@@ -23,7 +25,7 @@ extern s32 func_L00_006FF6D0(s32, s32);
 extern s32 func_L00_006FF700(s32, s32);
 extern s32 func_L00_00700708(s32, s32);
 
-static inline u8 func_inl(Type1 *p) {
+static inline s32 func_inl(Type1 *p) {
     return p->f25D4 == 0xF || p->f25CC == 0x27 || p->f25CC == 0x28 || p->f25CC == 0x29 ||
            p->f25CC == 0x2A || p->f25CC == 0x3E || p->f25CC == 0x3F;
 }
@@ -41,9 +43,12 @@ s32 func_L01_00590358(s32 arg0, s32 *arg1) {
     flag = 0;
     q = D_003660F8_[0];
     for (j = 0; j < 10; j++, q = D_003660F8_[j]) {
-        if (q != 0 && func_inl(q) && func_L00_006FF6D0(q->f26E4, 2) < func_L00_006FF700(q->f26E4, 2)) {
-            flag = 1;
-            break;
+        if (q != 0) {
+            u8 ok = func_inl(q);
+            if (ok && func_L00_006FF6D0(q->f26E4, 2) < func_L00_006FF700(q->f26E4, 2)) {
+                flag = 1;
+                break;
+            }
         }
     }
 

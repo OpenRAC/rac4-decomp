@@ -1,4 +1,6 @@
-/* Not matching yet: BYTES 4/100 (tools/try_func.py func_L00_005190D8 --diff). Not part of the build. */
+/* cflags: @ee29 */
+#include "common.h"
+
 extern s32 func_L00_005208E8(s32, s32, s32, s32, void *, s32);
 
 s32 func_L00_005190D8(s32 *arg0) {

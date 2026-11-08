@@ -1,4 +1,6 @@
-/* Not matching yet: BYTES 1/104 (tools/try_func.py func_01F0C720 --diff). Not part of the build. */
+/* cflags: @ee296 -O2 -G0 -mno-split-addresses -fno-optimize-sibling-calls */
+#include "common.h"
+
 extern s32 func_01EEE12C(void);
 extern void func_01EE6AF8(void *, s32);
 
