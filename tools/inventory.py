@@ -148,7 +148,7 @@ class Section:
         whose extent a byte-identical build of their C proves: no start inside one."""
         w, base = self.w, self.base
         proven = proven or {}
-        extra = set(extra) | set(proven) | set(proven.values()) | ({self.entry} if self.entry else set())
+        extra = set(extra) | set(proven) | ({self.entry} if self.entry else set())
         # a function pointer in the program's data (outside the dispatch tables) that points just
         # after finished code (a return or jump and its delay slot, then zero words) starts one;
         # the join below still applies to it (a jump table's case can look the same)
@@ -166,6 +166,21 @@ class Section:
                                    ((w[k] == JR_RA or w[k] >> 26 == 2) and k < (x - base) // 4 - 1)):
                         after.add(x)
         raw = split(w, base, set(extra) | after | self.vtable)
+        # A proved function end can precede linker padding. Do not turn that
+        # padding into an unaligned function containing the following remnant.
+        # Keep independently discovered entries, including entries at nops.
+        starts = {a for a, _ in raw}
+        for end in proven.values():
+            at = (end - base) // 4
+            if not 0 <= at < len(w):
+                continue
+            while at < len(w) and w[at] in (0, FILL) and at not in starts:
+                at += 1
+            if at < len(w):
+                starts.add(at)
+                extra.add(base + 4 * at)
+        ordered = sorted(starts)
+        raw = [(a, b - a) for a, b in zip(ordered, ordered[1:] + [len(w)])]
         if proven:
             spans = sorted(proven.items())
             import bisect

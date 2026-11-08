@@ -532,3 +532,18 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+## Public syscall ABI reference (`src/core/00154240.c`)
+
+The declaration of `func_00126BD0` was checked against the single-argument
+`s32 iSignalSema(s32)` interface and syscall number -0x43 in the open-source
+[ps2dev/ps2sdk kernel.h](https://github.com/ps2dev/ps2sdk/blob/master/ee/kernel/include/kernel.h)
+and [syscallnr.h](https://github.com/ps2dev/ps2sdk/blob/master/ee/kernel/include/syscallnr.h),
+licensed under the [Academic Free License 2.0](https://github.com/ps2dev/ps2sdk/blob/master/LICENSE).
+This is an ABI reference only; no implementation or header was imported.
+The RAC4 wrapper was reconstructed and verified against the retail program.
+
+The same public references establish the syscall interfaces used by
+`src/core/0012DA20.c`: a single signed status argument for exit, and no input
+arguments for the memory-size query and TLB initialization. Only interface
+facts were used; no implementation or header was imported.

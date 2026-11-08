@@ -47,10 +47,10 @@ A function counts as matched on a version when its C, built with its file's own 
 <!-- progress:begin SCUS_974.65 (tools/progress.py --write) -->
 | | Functions (exact) | Code (exact) | Fuzzy |
 | --- | ---: | ---: | ---: |
-| **Main program** | 3,815 of 8,989 | 311,384 of 2,193,276 bytes (14.20%) | 14.50% |
-| Engine core (core.text) | 833 of 1,663 | 77,044 of 288,080 bytes (26.74%) | 27.25% |
+| **Main program** | 3,855 of 8,991 | 313,220 of 2,193,268 bytes (14.28%) | 14.58% |
+| Engine core (core.text) | 849 of 1,665 | 77,792 of 288,072 bytes (27.00%) | 27.51% |
 | libgcc | 26 of 33 | 6,148 of 10,836 bytes (56.74%) | 56.74% |
-| Network (net.text) | 792 of 2,441 | 39,868 of 465,620 bytes (8.56%) | 9.22% |
+| Network (net.text) | 816 of 2,441 | 40,956 of 465,620 bytes (8.80%) | 9.45% |
 | Resident menus (.text) | 2,160 of 4,827 | 187,456 of 1,416,572 bytes (13.23%) | 13.38% |
 | frontbin's own code | 4 of 25 | 868 of 12,168 bytes (7.13%) | 7.13% |
 | **Shared level code** | 1,902 of 5,096 | 149,876 of 1,980,624 bytes (7.57%) | 8.22% |
@@ -69,9 +69,9 @@ A function counts as matched on a version when its C, built with its file's own 
 | Level 14: Ghost Station (and 34) | 6 of 29 | 444 of 14,548 bytes (3.05%) | 3.05% |
 | Level 15: Control Level (and 35) | 25 of 134 | 1,496 of 116,336 bytes (1.29%) | 1.29% |
 | Level 41: Battledome Tower (all 22 multiplayer maps) | 156 of 375 | 15,104 of 139,984 bytes (10.79%) | 12.65% |
-| **Total** | 6,971 of 18,170 | 562,536 of 5,781,432 bytes (9.73%) | 10.25% |
+| **Total** | 7,011 of 18,172 | 564,372 of 5,781,424 bytes (9.76%) | 10.29% |
 
-Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 311,384 bytes (5.39%) are in units with nothing left to decompile.
+Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 313,220 bytes (5.42%) are in units with nothing left to decompile.
 <!-- progress:end -->
 
 **PAL (`SCES_532.85`)**
