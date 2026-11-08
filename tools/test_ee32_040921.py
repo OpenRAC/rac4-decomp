@@ -9,6 +9,15 @@ import ee32_040921
 
 
 class IsolatedCompilerTests(unittest.TestCase):
+    def test_unsafe_scratch_directory_stops_before_execution(self):
+        for scratch in ('relative/path', '/', '//', '/tmp/../other'):
+            with self.subTest(scratch=scratch):
+                with patch.dict(ee32_040921.os.environ, {'RAC4_CC_TMPDIR': scratch}):
+                    with patch.object(ee32_040921.subprocess, 'run') as run:
+                        with self.assertRaisesRegex(ValueError, 'absolute Linux scratch'):
+                            ee32_040921.compile_source(Path('source.c'), Path('out.s'), [])
+                        run.assert_not_called()
+
     def test_modified_runtime_stops_before_any_execution(self):
         with tempfile.TemporaryDirectory() as temp:
             profile = Path(temp)

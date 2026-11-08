@@ -388,3 +388,9 @@ The command-route tests require Bash and Python but no retail files or proprieta
 ```
 python tools/test_cc_routes.py
 ```
+
+### Private native scratch storage
+
+The isolated Linux compiler routes normally retain native scratch directories in `/tmp`. Set `RAC4_CC_TMPDIR` to an existing writable native Linux location when that filesystem is unavailable; the route creates a private `rac4-<profile>.*` directory beneath it. Drive-backed Windows paths still do not support the old compiler's filesystem interfaces. The selected path must be absolute, must not be `/`, and must not contain parent traversal.
+
+Set `RAC4_CC_CLEAN_TEMP=1` to remove only the private directory created by each invocation after its output is copied, including on compiler failure. This is opt-in; default diagnostic retention is unchanged. Compiler input, flags and emitted instructions are unchanged. Keep Windows candidate sources, logs and copied assembly when using cleanup. In Git Bash, add `RAC4_CC_TMPDIR` to `MSYS2_ENV_CONV_EXCL` so the native Python process receives the Linux path unchanged.

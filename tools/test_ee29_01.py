@@ -8,6 +8,12 @@ import ee29_01
 
 
 class IsolatedCompilerTests(unittest.TestCase):
+    def test_scratch_label_cannot_escape_private_directory(self):
+        for label in ('../other', 'profile/other', 'profile\\other', ''):
+            with self.subTest(label=label):
+                with self.assertRaisesRegex(ValueError, 'compiler label'):
+                    ee29_01.native_scratch_commands(label)
+
     def test_docker_desktop_mount_and_spaces(self):
         self.assertEqual(ee29_01.wsl_path(r'D:\My Project\try.c', 'docker-desktop'),
                          '/mnt/host/d/My Project/try.c')

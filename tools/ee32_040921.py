@@ -12,7 +12,7 @@ import shlex
 import subprocess
 import sys
 
-from ee29_01 import wsl_path
+from ee29_01 import wsl_path, native_scratch_commands
 
 ROOT = Path(__file__).resolve().parent.parent
 VERSION = '3.2-ee-040921'
@@ -28,10 +28,11 @@ def compile_source(source: Path, output: Path, flags: list[str], *,
                    version: str = VERSION, files: dict[str, str] | None = None,
                    profile: Path | None = None, distro: str | None = None,
                    label: str | None = None) -> int:
-    profile = (profile or Path(os.environ.get('EE32_040921_ROOT', ROOT / 'build/isolated/ee-gcc3.2-040921'))).resolve()
-    files = FILES if files is None else files
     tag = version.removeprefix('3.2-ee-')
     label = label or 'ee32-' + tag
+    scratch_commands = native_scratch_commands(label)
+    profile = (profile or Path(os.environ.get('EE32_040921_ROOT', ROOT / 'build/isolated/ee-gcc3.2-040921'))).resolve()
+    files = FILES if files is None else files
     for relative, expected in files.items():
         path = profile / relative
         if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != expected:
@@ -52,7 +53,7 @@ def compile_source(source: Path, output: Path, flags: list[str], *,
     script = 'cd ' + shlex.quote(convert(ROOT)) + ' && chmod +x ' + shlex.join([driver, loader, cc1, convert(wrapper)])
     # Keep old 32-bit filesystem interfaces on native Linux storage. Copy
     # byte-identical inputs and emitted assembly; never rewrite instructions.
-    script += ' && work=$(mktemp -d /tmp/rac4-' + label + '.XXXXXXXX)'
+    script += scratch_commands
     # This driver's executable search also uses 32-bit stat(), so its
     # cc1 wrapper must live on native storage along with the inputs.
     script += ' && mkdir "$work/bin" && cp ' + shlex.quote(convert(wrapper)) + ' "$work/bin/cc1"'
