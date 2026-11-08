@@ -47,15 +47,15 @@ A function counts as matched on a version when its C, built with its file's own 
 <!-- progress:begin SCUS_974.65 (tools/progress.py --write) -->
 | | Functions (exact) | Code (exact) | Fuzzy |
 | --- | ---: | ---: | ---: |
-| **Main program** | 3,684 of 8,989 | 300,932 of 2,193,276 bytes (13.72%) | 14.00% |
-| Engine core (core.text) | 792 of 1,663 | 74,876 of 288,080 bytes (25.99%) | 26.50% |
+| **Main program** | 3,815 of 8,989 | 311,384 of 2,193,276 bytes (14.20%) | 14.50% |
+| Engine core (core.text) | 833 of 1,663 | 77,044 of 288,080 bytes (26.74%) | 27.25% |
 | libgcc | 26 of 33 | 6,148 of 10,836 bytes (56.74%) | 56.74% |
-| Network (net.text) | 705 of 2,441 | 31,844 of 465,620 bytes (6.84%) | 7.45% |
-| Resident menus (.text) | 2,157 of 4,827 | 187,196 of 1,416,572 bytes (13.21%) | 13.35% |
+| Network (net.text) | 792 of 2,441 | 39,868 of 465,620 bytes (8.56%) | 9.22% |
+| Resident menus (.text) | 2,160 of 4,827 | 187,456 of 1,416,572 bytes (13.23%) | 13.38% |
 | frontbin's own code | 4 of 25 | 868 of 12,168 bytes (7.13%) | 7.13% |
-| **Shared level code** | 1,892 of 5,096 | 149,124 of 1,980,624 bytes (7.53%) | 8.18% |
-| **Level-specific code** | 1,239 of 4,085 | 100,480 of 1,607,532 bytes (6.25%) | 6.91% |
-| Level 00: Multiplayer Menu | 865 of 2,810 | 71,488 of 942,664 bytes (7.58%) | 8.43% |
+| **Shared level code** | 1,902 of 5,096 | 149,876 of 1,980,624 bytes (7.57%) | 8.22% |
+| **Level-specific code** | 1,254 of 4,085 | 101,276 of 1,607,532 bytes (6.30%) | 6.97% |
+| Level 00: Multiplayer Menu | 877 of 2,810 | 72,140 of 942,664 bytes (7.65%) | 8.51% |
 | Level 01: Dreadzone Station (and 21) | 114 of 373 | 7,192 of 189,416 bytes (3.80%) | 3.80% |
 | Level 02: Catacrom Graveyard (and 22) | 7 of 34 | 328 of 26,572 bytes (1.23%) | 1.23% |
 | Level 04: Sarathos Swamp (and 24) | 4 of 19 | 224 of 11,708 bytes (1.91%) | 1.91% |
@@ -67,11 +67,11 @@ A function counts as matched on a version when its C, built with its file's own 
 | Level 11: Tempus Station (and 31) | 3 of 15 | 212 of 8,776 bytes (2.42%) | 2.42% |
 | Level 13: Maraxus Prison (and 33) | 10 of 33 | 556 of 15,548 bytes (3.58%) | 3.58% |
 | Level 14: Ghost Station (and 34) | 6 of 29 | 444 of 14,548 bytes (3.05%) | 3.05% |
-| Level 15: Control Level (and 35) | 23 of 134 | 1,400 of 116,336 bytes (1.20%) | 1.20% |
-| Level 41: Battledome Tower (all 22 multiplayer maps) | 155 of 375 | 15,056 of 139,984 bytes (10.76%) | 12.62% |
-| **Total** | 6,815 of 18,170 | 550,536 of 5,781,432 bytes (9.52%) | 10.04% |
+| Level 15: Control Level (and 35) | 25 of 134 | 1,496 of 116,336 bytes (1.29%) | 1.29% |
+| Level 41: Battledome Tower (all 22 multiplayer maps) | 156 of 375 | 15,104 of 139,984 bytes (10.79%) | 12.65% |
+| **Total** | 6,971 of 18,170 | 562,536 of 5,781,432 bytes (9.73%) | 10.25% |
 
-Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 300,932 bytes (5.21%) are in units with nothing left to decompile.
+Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 311,384 bytes (5.39%) are in units with nothing left to decompile.
 <!-- progress:end -->
 
 **PAL (`SCES_532.85`)**
@@ -79,16 +79,16 @@ Each distinct function counts once: frontbin's copy of the menus is the main ima
 <!-- progress:begin SCES_532.85 (tools/progress.py --write) -->
 | | Functions (exact) | Code (exact) | Fuzzy |
 | --- | ---: | ---: | ---: |
-| **Main program** | 3,963 of 8,952 | 393,520 of 2,202,184 bytes (17.87%) | 18.14% |
-| Engine core (core.text) | 821 of 1,666 | 81,116 of 288,232 bytes (28.14%) | 28.65% |
+| **Main program** | 4,094 of 8,952 | 405,140 of 2,202,184 bytes (18.40%) | 18.68% |
+| Engine core (core.text) | 862 of 1,666 | 83,284 of 288,232 bytes (28.89%) | 29.40% |
 | libgcc | 26 of 33 | 6,148 of 10,836 bytes (56.74%) | 56.74% |
-| Network (net.text) | 706 of 2,441 | 31,924 of 465,620 bytes (6.86%) | 7.47% |
-| Resident menus (.text) | 2,408 of 4,797 | 273,772 of 1,422,048 bytes (19.25%) | 19.36% |
+| Network (net.text) | 791 of 2,441 | 39,848 of 465,620 bytes (8.56%) | 9.22% |
+| Resident menus (.text) | 2,413 of 4,797 | 275,300 of 1,422,048 bytes (19.36%) | 19.48% |
 | frontbin's own code | 2 of 15 | 560 of 15,448 bytes (3.63%) | 3.63% |
-| **Shared level code** | 1,983 of 5,089 | 167,640 of 2,008,632 bytes (8.35%) | 8.97% |
-| **Level-specific code** | 1,315 of 4,093 | 117,244 of 1,600,040 bytes (7.33%) | 7.89% |
-| Level 00: Multiplayer Menu | 904 of 2,834 | 78,692 of 943,896 bytes (8.34%) | 9.00% |
-| Level 01: Dreadzone Station (and 21) | 126 of 371 | 10,332 of 190,296 bytes (5.43%) | 5.43% |
+| **Shared level code** | 2,004 of 5,089 | 172,416 of 2,008,632 bytes (8.58%) | 9.21% |
+| **Level-specific code** | 1,338 of 4,093 | 119,700 of 1,600,040 bytes (7.48%) | 8.04% |
+| Level 00: Multiplayer Menu | 923 of 2,834 | 80,348 of 943,896 bytes (8.51%) | 9.18% |
+| Level 01: Dreadzone Station (and 21) | 127 of 371 | 10,988 of 190,296 bytes (5.77%) | 5.77% |
 | Level 02: Catacrom Graveyard (and 22) | 7 of 29 | 328 of 21,232 bytes (1.54%) | 1.54% |
 | Level 04: Sarathos Swamp (and 24) | 5 of 19 | 600 of 11,868 bytes (5.06%) | 5.06% |
 | Level 05: Dark Cathedral (and 25) | 26 of 102 | 1,996 of 60,096 bytes (3.32%) | 3.48% |
@@ -99,11 +99,11 @@ Each distinct function counts once: frontbin's copy of the menus is the main ima
 | Level 11: Tempus Station (and 31) | 4 of 15 | 500 of 8,800 bytes (5.68%) | 5.68% |
 | Level 13: Maraxus Prison (and 33) | 12 of 33 | 1,200 of 15,872 bytes (7.56%) | 7.56% |
 | Level 14: Ghost Station (and 34) | 7 of 23 | 1,000 of 8,884 bytes (11.26%) | 11.26% |
-| Level 15: Control Level (and 35) | 31 of 134 | 3,148 of 116,624 bytes (2.70%) | 2.70% |
-| Level 41: Battledome Tower (all 22 multiplayer maps) | 158 of 374 | 15,652 of 140,340 bytes (11.15%) | 13.01% |
-| **Total** | 7,261 of 18,134 | 678,404 of 5,810,856 bytes (11.67%) | 12.15% |
+| Level 15: Control Level (and 35) | 33 of 134 | 3,244 of 116,624 bytes (2.78%) | 2.78% |
+| Level 41: Battledome Tower (all 22 multiplayer maps) | 159 of 374 | 15,700 of 140,340 bytes (11.19%) | 13.04% |
+| **Total** | 7,436 of 18,134 | 697,256 of 5,810,856 bytes (12.00%) | 12.48% |
 
-Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 393,520 bytes (6.77%) are in units with nothing left to decompile.
+Each distinct function counts once: frontbin's copy of the menus is the main image's, and a level function counts once however many of the 47 levels have it. 405,140 bytes (6.97%) are in units with nothing left to decompile.
 <!-- progress:end -->
 
 </details>
