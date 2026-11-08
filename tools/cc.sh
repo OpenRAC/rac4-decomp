@@ -12,16 +12,30 @@ out=$2
 shift 2
 CC=toolchain/sn-prodg-3.01/usr/local/sce/ee/gcc/bin/ee-gcc2953.exe
 export WINEDEBUG=-all
-# Git Bash runs the 32-bit EXEs natively; other hosts use Wine when available.
+# Git Bash runs the 32-bit EXEs natively; other hosts use Wine when available,
+# else wibo. $WINE names another runner (set but empty: run natively).
 WINE_CMD=()
-if command -v wine >/dev/null 2>&1; then
+if [ -n "${WINE+set}" ]; then
+    [ -n "$WINE" ] && WINE_CMD=("$WINE")
+elif command -v wine >/dev/null 2>&1; then
     WINE_CMD=(wine)
+elif command -v wibo >/dev/null 2>&1; then
+    WINE_CMD=(wibo)
+else
+    for runner in toolchain/wibo "$HOME/.local/bin/wibo"; do
+        if [ -x "$runner" ]; then
+            WINE_CMD=("$runner")
+            break
+        fi
+    done
 fi
 run_compiler() {
-    "${WINE_CMD[@]}" "$@"
+    # ${a[@]+...}: bash 3.2 (macOS) treats an empty array as unset under set -u.
+    ${WINE_CMD[@]+"${WINE_CMD[@]}"} "$@"
 }
 # The Python helpers are used only by the SN-output fixups below.
 PY=python
+command -v python >/dev/null 2>&1 || PY=python3
 [ -x venv/Scripts/python.exe ] && PY=venv/Scripts/python.exe
 mkdir -p build/tmp
 # GCC 2.95 takes its temporary directory from TMPDIR. Where it is unset, the
