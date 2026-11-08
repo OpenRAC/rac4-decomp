@@ -1,4 +1,4 @@
-/* Not matching yet: BYTES 10/40 (tools/try_func.py func_01F0C19C --diff). Not part of the build. */
+/* cflags: @ee296 -O2 -G0 -mno-split-addresses -fno-optimize-sibling-calls */
 #include "common.h"
 
 extern u8 D_0019E8D8[];
