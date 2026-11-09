@@ -1,0 +1,11 @@
+diff --git a/src/game/00541B38.c b/src/game/00541B38.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00541B38.c
+@@ -0,0 +1,6 @@
++#include "common.h"
++void func_0054AFB8(s32,s32,s32,void*);
++void func_00541B38(void) {
++    s8 data=-1;
++    func_0054AFB8(0,0,0,&data);
++}

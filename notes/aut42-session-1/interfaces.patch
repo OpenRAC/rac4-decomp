@@ -1,0 +1,418 @@
+diff --git a/src/game/00508328.c b/src/game/00508328.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00508328.c
+@@ -0,0 +1,15 @@
++#include "common.h"
++
++extern s32 D_00220B50;
++
++s32 func_00508328(void *arg0, f32 fparg0, f32 fparg1) {
++    u8 *object = arg0;
++    u8 *table = *(u8 **)(object + 8);
++    s32 (*method)(void *, s32, f32, f32) = *(s32 (**)(void *, s32, f32, f32))(table + 0x14);
++    if (method(arg0, D_00220B50, fparg0, fparg1) != 0) {
++        *(f32 *)(object + 0x14) = fparg0;
++        *(f32 *)(object + 0x18) = fparg1;
++        return 1;
++    }
++    return 0;
++}
+diff --git a/src/game/00508BC0.c b/src/game/00508BC0.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00508BC0.c
+@@ -0,0 +1,15 @@
++#include "common.h"
++
++extern s32 D_00220B60;
++
++s32 func_00508BC0(void *arg0, f32 fparg0, f32 fparg1) {
++    u8 *object = arg0;
++    u8 *table = *(u8 **)(object + 8);
++    s32 (*method)(void *, s32, f32, f32) = *(s32 (**)(void *, s32, f32, f32))(table + 0x14);
++    if (method(arg0, D_00220B60, fparg0, fparg1) != 0) {
++        *(f32 *)(object + 0x1C) = fparg0;
++        *(f32 *)(object + 0x20) = fparg1;
++        return 1;
++    }
++    return 0;
++}
+diff --git a/src/game/00509088.c b/src/game/00509088.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00509088.c
+@@ -0,0 +1,15 @@
++#include "common.h"
++
++extern s32 D_00220B60;
++
++s32 func_00509088(void *arg0, f32 fparg0, f32 fparg1) {
++    u8 *object = arg0;
++    u8 *table = *(u8 **)(object + 8);
++    s32 (*method)(void *, s32, f32, f32) = *(s32 (**)(void *, s32, f32, f32))(table + 0x14);
++    if (method(arg0, D_00220B60, fparg0, fparg1) != 0) {
++        *(f32 *)(object + 0x24) = fparg0;
++        *(f32 *)(object + 0x28) = fparg1;
++        return 1;
++    }
++    return 0;
++}
+diff --git a/src/game/00509410.c b/src/game/00509410.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00509410.c
+@@ -0,0 +1,15 @@
++#include "common.h"
++
++extern s32 D_00220B68;
++
++s32 func_00509410(void *arg0, f32 fparg0, f32 fparg1) {
++    u8 *object = arg0;
++    u8 *table = *(u8 **)(object + 8);
++    s32 (*method)(void *, s32, f32, f32) = *(s32 (**)(void *, s32, f32, f32))(table + 0x14);
++    if (method(arg0, D_00220B68, fparg0, fparg1) != 0) {
++        *(f32 *)(object + 0x14) = fparg0;
++        *(f32 *)(object + 0x18) = fparg1;
++        return 1;
++    }
++    return 0;
++}
+diff --git a/src/game/00509688.c b/src/game/00509688.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00509688.c
+@@ -0,0 +1,15 @@
++#include "common.h"
++
++extern s32 D_00220B68;
++
++s32 func_00509688(void *arg0, f32 fparg0, f32 fparg1) {
++    u8 *object = arg0;
++    u8 *table = *(u8 **)(object + 8);
++    s32 (*method)(void *, s32, f32, f32) = *(s32 (**)(void *, s32, f32, f32))(table + 0x14);
++    if (method(arg0, D_00220B68, fparg0, fparg1) != 0) {
++        *(f32 *)(object + 0x1C) = fparg0;
++        *(f32 *)(object + 0x20) = fparg1;
++        return 1;
++    }
++    return 0;
++}
+diff --git a/src/game/00509978.c b/src/game/00509978.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00509978.c
+@@ -0,0 +1,15 @@
++#include "common.h"
++
++extern s32 D_00220B68;
++
++s32 func_00509978(void *arg0, f32 fparg0, f32 fparg1) {
++    u8 *object = arg0;
++    u8 *table = *(u8 **)(object + 8);
++    s32 (*method)(void *, s32, f32, f32) = *(s32 (**)(void *, s32, f32, f32))(table + 0x14);
++    if (method(arg0, D_00220B68, fparg0, fparg1) != 0) {
++        *(f32 *)(object + 0x24) = fparg0;
++        *(f32 *)(object + 0x28) = fparg1;
++        return 1;
++    }
++    return 0;
++}
+diff --git a/src/game/00509F80.c b/src/game/00509F80.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00509F80.c
+@@ -0,0 +1,15 @@
++#include "common.h"
++
++extern s32 D_00220B5C;
++
++s32 func_00509F80(void *arg0, f32 fparg0, f32 fparg1) {
++    u8 *object = arg0;
++    u8 *table = *(u8 **)(object + 8);
++    s32 (*method)(void *, s32, f32, f32) = *(s32 (**)(void *, s32, f32, f32))(table + 0x14);
++    if (method(arg0, D_00220B5C, fparg0, fparg1) != 0) {
++        *(f32 *)(object + 0x14) = fparg0;
++        *(f32 *)(object + 0x18) = fparg1;
++        return 1;
++    }
++    return 0;
++}
+diff --git a/src/game/005085E0.c b/src/game/005085E0.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/005085E0.c
+@@ -0,0 +1,15 @@
++#include "common.h"
++
++extern s32 D_00220B50;
++
++s32 func_005085E0(void *arg0, f32 *out_a, f32 *out_b) {
++    u8 *object = arg0;
++    u8 *table = *(u8 **)(object + 8);
++    s32 (*method)(void *, s32) = *(s32 (**)(void *, s32))(table + 0x14);
++    if (method(arg0, D_00220B50) != 0) {
++        *out_a = *(f32 *)(object + 0x1C);
++        *out_b = *(f32 *)(object + 0x20);
++        return 1;
++    }
++    return 0;
++}
+diff --git a/src/game/00508A48.c b/src/game/00508A48.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00508A48.c
+@@ -0,0 +1,15 @@
++#include "common.h"
++
++extern s32 D_00220B60;
++
++s32 func_00508A48(void *arg0, f32 *out_a, f32 *out_b) {
++    u8 *object = arg0;
++    u8 *table = *(u8 **)(object + 8);
++    s32 (*method)(void *, s32) = *(s32 (**)(void *, s32))(table + 0x14);
++    if (method(arg0, D_00220B60) != 0) {
++        *out_a = *(f32 *)(object + 0x14);
++        *out_b = *(f32 *)(object + 0x18);
++        return 1;
++    }
++    return 0;
++}
+diff --git a/src/game/00508C28.c b/src/game/00508C28.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00508C28.c
+@@ -0,0 +1,15 @@
++#include "common.h"
++
++extern s32 D_00220B60;
++
++s32 func_00508C28(void *arg0, f32 *out_a, f32 *out_b) {
++    u8 *object = arg0;
++    u8 *table = *(u8 **)(object + 8);
++    s32 (*method)(void *, s32) = *(s32 (**)(void *, s32))(table + 0x14);
++    if (method(arg0, D_00220B60) != 0) {
++        *out_a = *(f32 *)(object + 0x1C);
++        *out_b = *(f32 *)(object + 0x20);
++        return 1;
++    }
++    return 0;
++}
+diff --git a/src/game/00509478.c b/src/game/00509478.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00509478.c
+@@ -0,0 +1,15 @@
++#include "common.h"
++
++extern s32 D_00220B68;
++
++s32 func_00509478(void *arg0, f32 *out_a, f32 *out_b) {
++    u8 *object = arg0;
++    u8 *table = *(u8 **)(object + 8);
++    s32 (*method)(void *, s32) = *(s32 (**)(void *, s32))(table + 0x14);
++    if (method(arg0, D_00220B68) != 0) {
++        *out_a = *(f32 *)(object + 0x14);
++        *out_b = *(f32 *)(object + 0x18);
++        return 1;
++    }
++    return 0;
++}
+diff --git a/src/game/005096F0.c b/src/game/005096F0.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/005096F0.c
+@@ -0,0 +1,15 @@
++#include "common.h"
++
++extern s32 D_00220B68;
++
++s32 func_005096F0(void *arg0, f32 *out_a, f32 *out_b) {
++    u8 *object = arg0;
++    u8 *table = *(u8 **)(object + 8);
++    s32 (*method)(void *, s32) = *(s32 (**)(void *, s32))(table + 0x14);
++    if (method(arg0, D_00220B68) != 0) {
++        *out_a = *(f32 *)(object + 0x1C);
++        *out_b = *(f32 *)(object + 0x20);
++        return 1;
++    }
++    return 0;
++}
+diff --git a/src/game/00508DC0.c b/src/game/00508DC0.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00508DC0.c
+@@ -0,0 +1,14 @@
++#include "common.h"
++
++extern s32 D_00220B60;
++
++s32 func_00508DC0(void *arg0, s32 mask, u8 *out) {
++    u8 *object = arg0;
++    u8 *table = *(u8 **)(object + 8);
++    s32 (*method)(void *, s32) = *(s32 (**)(void *, s32))(table + 0x14);
++    if (method(arg0, D_00220B60) != 0) {
++        *out = (*(u32 *)(object + 0xC) & mask) != 0;
++        return 1;
++    }
++    return 0;
++}
+diff --git a/src/game/00509830.c b/src/game/00509830.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00509830.c
+@@ -0,0 +1,14 @@
++#include "common.h"
++
++extern s32 D_00220B68;
++
++s32 func_00509830(void *arg0, s32 mask, u8 *out) {
++    u8 *object = arg0;
++    u8 *table = *(u8 **)(object + 8);
++    s32 (*method)(void *, s32) = *(s32 (**)(void *, s32))(table + 0x14);
++    if (method(arg0, D_00220B68) != 0) {
++        *out = (*(u32 *)(object + 0xC) & mask) != 0;
++        return 1;
++    }
++    return 0;
++}
+diff --git a/src/game/00508EE8.c b/src/game/00508EE8.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00508EE8.c
+@@ -0,0 +1,15 @@
++#include "common.h"
++
++extern s32 D_00220B60;
++extern void func_0050C058(void *, s32, s32);
++
++s32 func_00508EE8(void *arg0, s32 arg1, s32 arg2) {
++    u8 *object = arg0;
++    u8 *table = *(u8 **)(object + 8);
++    s32 (*method)(void *, s32) = *(s32 (**)(void *, s32))(table + 0x14);
++    if (method(arg0, D_00220B60) != 0) {
++        func_0050C058(arg0, arg1, arg2);
++        return 1;
++    }
++    return 0;
++}
+diff --git a/src/game/00509758.c b/src/game/00509758.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00509758.c
+@@ -0,0 +1,15 @@
++#include "common.h"
++
++extern s32 D_00220B68;
++extern void func_0050F030(void *, s32, s32);
++
++s32 func_00509758(void *arg0, s32 arg1, s32 arg2) {
++    u8 *object = arg0;
++    u8 *table = *(u8 **)(object + 8);
++    s32 (*method)(void *, s32) = *(s32 (**)(void *, s32))(table + 0x14);
++    if (method(arg0, D_00220B68) != 0) {
++        func_0050F030(arg0, arg1, arg2);
++        return 1;
++    }
++    return 0;
++}
+diff --git a/src/game/00509898.c b/src/game/00509898.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00509898.c
+@@ -0,0 +1,15 @@
++#include "common.h"
++
++extern s32 D_00220B68;
++extern void func_0050C058(void *, s32, s32);
++
++s32 func_00509898(void *arg0, s32 arg1, s32 arg2) {
++    u8 *object = arg0;
++    u8 *table = *(u8 **)(object + 8);
++    s32 (*method)(void *, s32) = *(s32 (**)(void *, s32))(table + 0x14);
++    if (method(arg0, D_00220B68) != 0) {
++        func_0050C058(arg0, arg1, arg2);
++        return 1;
++    }
++    return 0;
++}
+diff --git a/src/game/00509EC0.c b/src/game/00509EC0.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00509EC0.c
+@@ -0,0 +1,15 @@
++#include "common.h"
++
++extern s32 D_00220B68;
++extern void func_0050EE98(void *, s32, s32);
++
++s32 func_00509EC0(void *arg0, s32 arg1, s32 arg2) {
++    u8 *object = arg0;
++    u8 *table = *(u8 **)(object + 8);
++    s32 (*method)(void *, s32) = *(s32 (**)(void *, s32))(table + 0x14);
++    if (method(arg0, D_00220B68) != 0) {
++        func_0050EE98(arg0, arg1, arg2);
++        return 1;
++    }
++    return 0;
++}
+diff --git a/src/game/005094E0.c b/src/game/005094E0.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/005094E0.c
+@@ -0,0 +1,15 @@
++#include "common.h"
++
++extern s32 func_0050EDC8(void *, s32);
++extern s32 D_00220B68;
++
++s32 func_005094E0(void *arg0, s32 arg1) {
++    u8 *object = arg0;
++    u8 *table = *(u8 **)(object + 8);
++    s32 (*method)(void *, s32) = *(s32 (**)(void *, s32))(table + 0x14);
++    if (method(object, D_00220B68) != 0) {
++        func_0050EDC8(object, arg1);
++        return 1;
++    }
++    return 0;
++}
+diff --git a/src/game/00509F28.c b/src/game/00509F28.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00509F28.c
+@@ -0,0 +1,15 @@
++#include "common.h"
++
++extern s32 func_0050F018(void *, s32);
++extern s32 D_00220B68;
++
++s32 func_00509F28(void *arg0, s32 arg1) {
++    u8 *object = arg0;
++    u8 *table = *(u8 **)(object + 8);
++    s32 (*method)(void *, s32) = *(s32 (**)(void *, s32))(table + 0x14);
++    if (method(object, D_00220B68) != 0) {
++        func_0050F018(object, arg1);
++        return 1;
++    }
++    return 0;
++}
+diff --git a/src/game/00509D98.c b/src/game/00509D98.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00509D98.c
+@@ -0,0 +1,15 @@
++#include "common.h"
++
++extern s32 D_00220B68;
++s32 func_0050EE68(void *, f32);
++
++s32 func_00509D98(void *handle, f32 value) {
++    u8 *object = handle;
++    u8 *vtable = *(u8 **)(object + 8);
++    s32 (*method)(void *, s32) = *(s32 (**)(void *, s32))(vtable + 0x14);
++    if (method(handle, D_00220B68) == 0) goto fail;
++    func_0050EE68(handle, value);
++    return 1;
++fail:
++    return 0;
++}

@@ -1,0 +1,17 @@
+diff --git a/src/core/00160AC0.c b/src/core/00160AC0.c
+new file mode 100644
+--- /dev/null
++++ b/src/core/00160AC0.c
+@@ -0,0 +1,12 @@
++#include "common.h"
++
++s32 func_0011A370(void *, s32, s32);
++extern void *D_0021DFF0;
++extern s32 D_002126B8_[];
++#define D_002126B8 (D_002126B8_[0])
++
++s32 func_00160AC0(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
++    D_0021DFF0 = &D_002126B8;
++    func_0011A370(&D_002126B8, arg3, 0x58);
++    return 0x58;
++}

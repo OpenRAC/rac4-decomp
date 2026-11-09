@@ -1,0 +1,35 @@
+diff --git a/src/game/004B76C0.c b/src/game/004B76C0.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004B76C0.c
+@@ -0,0 +1,30 @@
++#include "common.h"
++void *func_00510BE8(s32);
++s32 func_00505B20(void);
++void func_00497980(s32);
++
++
++
++s32 func_004B59B8(s32);
++s32 func_004B5A60(s32);
++s32 func_004B5B20(s32);
++s32 func_004B5BE0(s32);
++s32 func_004B5CA0(s32);
++extern s32 D_001711D0_[];
++#define D_001711D0 (D_001711D0_[0])
++
++
++void func_004B76C0(void) {
++    s32 *temp_a1;
++    s32 temp_v0;
++
++    temp_v0 = func_00505B20();
++    temp_a1 = ((*(s32 *)((u8 *)(func_00510BE8(temp_v0)) + 0x2F10)) * 4) + (u8 *)&D_001711D0;
++    *temp_a1 = (s32) (*temp_a1 + 1) % 3;
++    func_00497980(0x10);
++    func_004B59B8(temp_v0);
++    func_004B5A60(temp_v0);
++    func_004B5B20(temp_v0);
++    func_004B5BE0(temp_v0);
++    func_004B5CA0(temp_v0);
++}

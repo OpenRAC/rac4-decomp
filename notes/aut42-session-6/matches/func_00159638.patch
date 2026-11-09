@@ -1,0 +1,15 @@
+diff --git a/src/core/00159638.c b/src/core/00159638.c
+new file mode 100644
+--- /dev/null
++++ b/src/core/00159638.c
+@@ -0,0 +1,10 @@
++#include "common.h"
++
++extern void func_00158C60(s32, s32, void *, s32, s32);
++
++void func_00159638(s32 arg0, s32 arg1) {
++    s32 buf[2];
++    buf[0] = arg0;
++    buf[1] = arg1;
++    func_00158C60(0x51, 8, buf, 0, 0);
++}

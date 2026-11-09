@@ -1,0 +1,19 @@
+diff --git a/src/game/004B5E18.c b/src/game/004B5E18.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004B5E18.c
+@@ -0,0 +1,14 @@
++#include "common.h"
++
++extern s32 D_003098F0_[];
++#define D_003098F0 (D_003098F0_[0])
++
++void func_004B5E18(s32 arg0, s32 arg1, s32 arg2, s8 arg3) {
++    void *temp_a0;
++
++    temp_a0 = (arg0 * 0x1F8) + (u8 *)&D_003098F0;
++    (*(s8 *)((u8 *)((((*(s32 *)((u8 *)(temp_a0) + 0x1F4)) * 0xC) + temp_a0)) + 0x194)) = arg3;
++    (*(s32 *)((u8 *)((((*(s32 *)((u8 *)(temp_a0) + 0x1F4)) * 0xC) + temp_a0)) + 0x19C)) = arg2;
++    (*(s32 *)((u8 *)((((*(s32 *)((u8 *)(temp_a0) + 0x1F4)) * 0xC) + temp_a0)) + 0x198)) = arg1;
++    (*(s32 *)((u8 *)(temp_a0) + 0x1F4)) = (s32) ((*(s32 *)((u8 *)(temp_a0) + 0x1F4)) + 1);
++}

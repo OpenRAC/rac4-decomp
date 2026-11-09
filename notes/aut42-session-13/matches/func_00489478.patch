@@ -1,0 +1,15 @@
+diff --git a/src/game/00489478.c b/src/game/00489478.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00489478.c
+@@ -0,0 +1,10 @@
++#include "common.h"
++
++typedef struct Type121 {char _p0[0x50];s16 f50;char _p52[0x26];s16 f78;char _p7A[0x4E];s16 fC8;} Type121;
++extern Type121 D_00206948;
++
++void func_00489478(void) {
++    D_00206948.f50 = 4;
++    D_00206948.fC8 = 4;
++    D_00206948.f78 = 4;
++}

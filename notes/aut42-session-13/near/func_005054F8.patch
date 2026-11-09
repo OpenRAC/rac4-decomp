@@ -1,0 +1,29 @@
+diff --git a/nonmatching/game/func_005054F8.c b/nonmatching/game/func_005054F8.c
+new file mode 100644
+--- /dev/null
++++ b/nonmatching/game/func_005054F8.c
+@@ -0,0 +1,24 @@
++/* Not matching yet: BYTES 6/228. Callback descriptor address setup and callback-result argument moves are scheduled in a different order. Reproduce: venv/bin/python tools/try_func.py func_005054F8 nonmatching/game/func_005054F8.c --diff. */
++#include "common.h"
++typedef struct Type2 {s32 f0[5];s32 f14;} Type2;
++typedef struct Type1 {s32 f0;Type2 *f4;} Type1;
++extern Type1 D_00222038[];
++extern Type1 *func_005010E0(void);
++typedef struct Type3 Type3;
++typedef struct Type4 {char f0[0xC];s32 (*fC)(Type3 *);s32 f10;s32 (*f14)(Type3 *,s32);} Type4;
++struct Type3 {s32 f0;s32 f4;Type4 *f8;};
++typedef s32 (*Type5)(Type3 *,s32);
++extern s32 D_00220AB8;
++extern s32 D_00336308;
++extern Type3 *func_005005E8(s32,s32);
++extern Type5 func_00507B00(s32 *,s32);
++s32 func_005054F8(s32 arg0,s32 arg1) {
++ Type1 *p;Type2 *q;Type3 *obj;Type5 cb;s32 v; s32 result=0;
++ if(D_00222038[0].f4) p=D_00222038;else p=func_005010E0();
++ q=p->f4; v=0;
++ if(q)v=q->f0[q->f14];
++ obj=func_005005E8(v,arg0);
++ if(!obj || !obj->f8->f14(obj,D_00220AB8))obj=0;
++ if(obj) {cb=func_00507B00(&D_00336308,obj->f8->fC(obj)); if(cb)result=cb(obj,arg1);}
++ return result;
++}

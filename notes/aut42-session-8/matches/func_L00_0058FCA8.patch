@@ -1,0 +1,10 @@
+diff --git a/src/overlays/shared/L00_0058FCA8.c b/src/overlays/shared/L00_0058FCA8.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L00_0058FCA8.c
+@@ -0,0 +1,5 @@
++/* cflags: -ffast-math */
++#include "common.h"
++f32 func_L00_005BCE30(f32);
++f32 func_L00_0058FCA8(f32 arg0,f32 arg1){
++f32 x=arg0/arg1;x=x<1.0f?x:1.0f;x=x> -1.0f?x:-1.0f;return func_L00_005BCE30(x);}

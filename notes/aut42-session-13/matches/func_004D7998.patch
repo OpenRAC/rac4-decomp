@@ -1,0 +1,60 @@
+diff --git a/src/game/004D7998.c b/src/game/004D7998.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004D7998.c
+@@ -0,0 +1,55 @@
++#include "common.h"
++extern void func_0011D920(void *, void *, void *, void *);
++extern s32 func_0045E038(s32);
++extern s32 func_00499CA0(void *, s32);
++extern s32 func_004A1A60(s32 *, s32);
++extern void func_00501638(s32 *, s32, s32);
++extern s32 func_00505238(s32, void *);
++extern void func_005054F8(s32, s32);
++extern s32 func_00505B20(void);
++extern void func_00505B70(s32, s32);
++extern void func_00506120(s32, s32);
++extern u8 D_0021FC18[];
++extern u8 D_001CE1A8[];
++extern s32 D_00221B08;
++extern u8 D_0031E858[];
++extern u8 D_0031E898[];
++void func_004D7998(void)
++{
++  void *temp_s2;
++  s32 text;
++  u8 *format;
++  s32 temp_s0_2;
++  s32 temp_s0_3;
++  s32 temp_s0_4;
++  s32 temp_s0_5;
++  u8 (*new_var)[];
++  s32 temp_s0_6;
++  u8 *temp_s0;
++  temp_s0 = (func_00505B20() * 0x528) + D_0031E898;
++  func_00501638(&D_00221B08, 0x35, -1);
++  func_00505B70(0xF, D_00221B08);
++  *((s32 *) (temp_s0 + 8)) = func_00499CA0(&D_001CE1A8, -1);
++  func_005054F8(func_004A1A60(&D_00221B08, 4), 1);
++  func_00506120(func_004A1A60(&D_00221B08, 4), *((s32 *) (temp_s0 + 8)));
++  temp_s0_2 = func_004A1A60(&D_00221B08, 0xB);
++  text = func_0045E038(0x31DE);
++  func_00505238(temp_s0_2, text);
++  temp_s0_3 = func_004A1A60(&D_00221B08, 0xA);
++  text = func_0045E038(0x31DB);
++  func_00505238(temp_s0_3, text);
++  temp_s0_4 = func_004A1A60(&D_00221B08, 8);
++  text = func_0045E038(0x31DC);
++  func_00505238(temp_s0_4, text);
++  temp_s0_5 = func_004A1A60(&D_00221B08, 9);
++  text = func_0045E038(0x31DD);
++  func_00505238(temp_s0_5, text);
++  temp_s0_6 = func_004A1A60(&D_00221B08, 0xD);
++  text = func_0045E038(0x3469);
++  func_00505238(temp_s0_6, text);
++  new_var = &D_0031E858;
++  format = D_0021FC18;
++  temp_s2 = func_0045E038(0x3467);
++  func_0011D920(new_var, format, temp_s2, func_0045E038(0x2350));
++  func_00505238(func_004A1A60(&D_00221B08, 0xC), &D_0031E858);
++}

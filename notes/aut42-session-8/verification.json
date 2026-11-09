@@ -1,0 +1,342 @@
+{
+  "candidates": 187,
+  "recovered": 64,
+  "new": 123,
+  "attempted_targets": 1133,
+  "retail_bytes": 7160,
+  "compiled_bytes": 6864,
+  "full_audit_exact": 3032,
+  "candidate_relocation_mismatches": 0,
+  "retained_near_misses": [
+    [
+      "func_01F03E40",
+      "BYTES 2/108",
+      "branch and field store use a0 instead of v0 after the handle-returning call"
+    ],
+    [
+      "func_00498DB0",
+      "BYTES 1/24",
+      "commutative address addition has reversed source-register order"
+    ],
+    [
+      "func_004F6498",
+      "BYTES 1/28",
+      "commutative addition has reversed source-register order"
+    ]
+  ],
+  "adopted_functions": 0,
+  "autopilot_run": "01a167c6-21da-79b0-84d1-6a3060c50249",
+  "candidate_checks": {
+    "audit_matches": {
+      "exit_code": 0,
+      "summary": "705 not in the old US lists, not audited here (tools/match_map.py --write checks them at their catalogue place)"
+    },
+    "audit_relocs": {
+      "exit_code": 1,
+      "summary": "  func_L41_003BEE28+0x54 LITERAL : ours ?, retail 0x00220CC4 (D_00220CC4)  literal value differs (cdcc4c3d vs 0000a041)"
+    },
+    "map_us_write": {
+      "exit_code": 0,
+      "summary": "wrote config/us/map.tsv: 3737 match, 32 other, 136 near, 9 none"
+    },
+    "map_pal_write": {
+      "exit_code": 1,
+      "summary": "FileNotFoundError: [Errno 2] No such file or directory: '/home/agent/projects/gitlab/skast/decomps/rac-deadlocked-decomp/baserom/pal/main.elf'"
+    },
+    "progress_us_write": {
+      "exit_code": 0,
+      "summary": "wrote progress/report.json and the README table"
+    },
+    "progress_pal_write": {
+      "exit_code": 0,
+      "summary": "wrote progress/pal/report.json and the README table"
+    },
+    "map_us_check": {
+      "exit_code": 0,
+      "summary": "config/us/map.tsv OK (3914 rows)"
+    },
+    "map_pal_check": {
+      "exit_code": 1,
+      "summary": "187 problems: rebuild (tools/build.sh, build_libgcc.sh, build_libm.sh) and run python3 tools/match_map.py --version pal --write"
+    },
+    "progress_us_check": {
+      "exit_code": 0,
+      "summary": "config/us/map.tsv OK (3914 rows)"
+    },
+    "progress_pal_check": {
+      "exit_code": 1,
+      "summary": "error: config/pal/map.tsv does not cover src/ and nonmatching/ (tools/match_map.py --write)"
+    },
+    "legacy_write": {
+      "exit_code": 0,
+      "summary": "wrote build/legacy_report.json: 3004/15056 functions, 4.851% code"
+    },
+    "legacy_check": {
+      "exit_code": 0,
+      "summary": "build/legacy_report.json OK (3004 matched functions)"
+    }
+  },
+  "restored_checks": {
+    "audit_matches": {
+      "exit_code": 0,
+      "summary": "705 not in the old US lists, not audited here (tools/match_map.py --write checks them at their catalogue place)"
+    },
+    "audit_relocs": {
+      "exit_code": 1,
+      "summary": "  func_L41_003BEE28+0x54 LITERAL : ours ?, retail 0x00220CC4 (D_00220CC4)  literal value differs (cdcc4c3d vs 0000a041)"
+    },
+    "map_us_check": {
+      "exit_code": 0,
+      "summary": "config/us/map.tsv OK (3727 rows)"
+    },
+    "map_pal_check": {
+      "exit_code": 0,
+      "summary": "config/pal/map.tsv OK (3727 rows)"
+    },
+    "progress_us_check": {
+      "exit_code": 0,
+      "summary": "config/us/map.tsv OK (3727 rows)"
+    },
+    "progress_pal_check": {
+      "exit_code": 0,
+      "summary": "config/pal/map.tsv OK (3727 rows)"
+    },
+    "legacy_write": {
+      "exit_code": 0,
+      "summary": "wrote build/legacy_report.json: 2817/15056 functions, 4.712% code"
+    },
+    "legacy_check": {
+      "exit_code": 0,
+      "summary": "build/legacy_report.json OK (2817 matched functions)"
+    }
+  },
+  "scratch_relocations": {
+    "checked": 203,
+    "mismatches": [],
+    "unresolved": []
+  },
+  "format_relocations": {
+    "checked": 9,
+    "mismatches": [],
+    "unresolved": []
+  },
+  "baseline_relocation_mismatches": [
+    {
+      "function": "func_0046A350",
+      "offset": 4,
+      "type": "GPREL16",
+      "symbol": "D_0046A350__gp",
+      "ours": 4629328,
+      "retail": 2224552
+    },
+    {
+      "function": "func_0046A358",
+      "offset": 4,
+      "type": "GPREL16",
+      "symbol": "D_0046A358__gp",
+      "ours": 4629336,
+      "retail": 2224556
+    },
+    {
+      "function": "func_0047F538",
+      "offset": 4,
+      "type": "GPREL16",
+      "symbol": "D_0047F538__gp",
+      "ours": 4715832,
+      "retail": 2224864
+    },
+    {
+      "function": "func_0047F548",
+      "offset": 4,
+      "type": "GPREL16",
+      "symbol": "D_0047F548__gp",
+      "ours": 4715848,
+      "retail": 2224868
+    },
+    {
+      "function": "func_004983E0",
+      "offset": 4,
+      "type": "GPREL16",
+      "symbol": "D_004983E0__gp",
+      "ours": 4817888,
+      "retail": 2225560
+    },
+    {
+      "function": "func_00498D10",
+      "offset": 4,
+      "type": "GPREL16",
+      "symbol": "D_00498D10__gp",
+      "ours": 4820240,
+      "retail": 2225647
+    },
+    {
+      "function": "func_004A22D8",
+      "offset": 4,
+      "type": "GPREL16",
+      "symbol": "D_004A22D8__gp",
+      "ours": 4858584,
+      "retail": 2225772
+    },
+    {
+      "function": "func_004A22E0",
+      "offset": 4,
+      "type": "GPREL16",
+      "symbol": "D_004A22E0__gp",
+      "ours": 4858592,
+      "retail": 2225772
+    },
+    {
+      "function": "func_004F2520",
+      "offset": 4,
+      "type": "GPREL16",
+      "symbol": "D_004F2520__gp",
+      "ours": 5186848,
+      "retail": 2230636
+    },
+    {
+      "function": "func_004F2528",
+      "offset": 4,
+      "type": "GPREL16",
+      "symbol": "D_004F2528__gp",
+      "ours": 5186856,
+      "retail": 2230632
+    },
+    {
+      "function": "func_004F5000",
+      "offset": 4,
+      "type": "GPREL16",
+      "symbol": "D_004F5000__gp",
+      "ours": 5197824,
+      "retail": 2230620
+    },
+    {
+      "function": "func_004F5420",
+      "offset": 4,
+      "type": "GPREL16",
+      "symbol": "D_004F5420__gp",
+      "ours": 5198880,
+      "retail": 2230645
+    },
+    {
+      "function": "func_00504228",
+      "offset": 4,
+      "type": "GPREL16",
+      "symbol": "D_00504228__gp",
+      "ours": 5259816,
+      "retail": 2231112
+    },
+    {
+      "function": "func_00504230",
+      "offset": 4,
+      "type": "GPREL16",
+      "symbol": "D_00504230__gp",
+      "ours": 5259824,
+      "retail": 2231112
+    },
+    {
+      "function": "func_0050D400",
+      "offset": 4,
+      "type": "GPREL16",
+      "symbol": "D_0050D400__gp",
+      "ours": 5297152,
+      "retail": 2231128
+    },
+    {
+      "function": "func_0050DDB8",
+      "offset": 4,
+      "type": "GPREL16",
+      "symbol": "D_0050DDB8__gp",
+      "ours": 5299640,
+      "retail": 2231132
+    },
+    {
+      "function": "func_00510660",
+      "offset": 4,
+      "type": "GPREL16",
+      "symbol": "D_00510660__gp",
+      "ours": 5310048,
+      "retail": 2231152
+    },
+    {
+      "function": "func_0053CC50",
+      "offset": 4,
+      "type": "GPREL16",
+      "symbol": "D_0053CC50__gp",
+      "ours": 5491792,
+      "retail": 2231712
+    },
+    {
+      "function": "func_L15_00518658",
+      "offset": 4,
+      "type": "GPREL16",
+      "symbol": "D_00518658__gp",
+      "ours": 5342808,
+      "retail": 2218584
+    },
+    {
+      "function": "func_L41_0059F768",
+      "offset": 4,
+      "type": "GPREL16",
+      "symbol": "D_0059F768__gp",
+      "ours": 5896040,
+      "retail": 2241164
+    },
+    {
+      "function": "func_L00_00593EC0",
+      "offset": 4,
+      "type": "GPREL16",
+      "symbol": "D_00593EC0__gp",
+      "ours": 5848768,
+      "retail": 2220504
+    },
+    {
+      "function": "func_L00_005BDB08",
+      "offset": 4,
+      "type": "GPREL16",
+      "symbol": "D_005BDB08__gp",
+      "ours": 6019848,
+      "retail": 2221486
+    },
+    {
+      "function": "func_L00_005BE048",
+      "offset": 4,
+      "type": "GPREL16",
+      "symbol": "D_005BE048__gp",
+      "ours": 6021192,
+      "retail": 2221464
+    },
+    {
+      "function": "func_L00_005C8448",
+      "offset": 4,
+      "type": "GPREL16",
+      "symbol": "D_005C8448__gp",
+      "ours": 6063176,
+      "retail": 2221680
+    },
+    {
+      "function": "func_L00_006AA088",
+      "offset": 16,
+      "type": "HI16/LO16",
+      "symbol": "D_002233A0",
+      "ours": 2241440,
+      "retail": 2241436
+    },
+    {
+      "function": "func_L00_006AA088",
+      "offset": 24,
+      "type": "GPREL16",
+      "symbol": "D_0022339C__gp",
+      "ours": 2241436,
+      "retail": 2241440
+    },
+    {
+      "function": "func_L41_003BEE28",
+      "offset": 84,
+      "type": "LITERAL",
+      "symbol": "",
+      "ours": null,
+      "retail": 2231492,
+      "note": "literal value differs (cdcc4c3d vs 0000a041)"
+    }
+  ]
+}

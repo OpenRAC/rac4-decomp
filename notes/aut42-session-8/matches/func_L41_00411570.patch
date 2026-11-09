@@ -1,0 +1,31 @@
+diff --git a/src/overlays/shared/L41_00411570.c b/src/overlays/shared/L41_00411570.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L41_00411570.c
+@@ -0,0 +1,26 @@
++#include "common.h"
++
++extern void *D_0021DFF0;
++
++typedef struct Type1 Type1;
++typedef struct Type2 Type2;
++struct Type2 {
++    char _p0[0xFC];
++    s32 fFC;
++};
++struct Type1 {
++    char _p0[0xAC];
++    Type2 *fAC;
++};
++
++s32 func_L41_00411570(Type1 *arg0) {
++    s32 temp_a0;
++    s32 var_a1;
++
++    temp_a0 = (*(s32 *)((u8 *)((*(s32 *)((u8 *)(arg0) + 0xAC))) + 0xFC));
++    var_a1 = 0;
++    if ((temp_a0 == 0) || (temp_a0 & (*(s8 *)((u8 *)(D_0021DFF0) + 0x14)))) {
++        var_a1 = 1;
++    }
++    return var_a1;
++}

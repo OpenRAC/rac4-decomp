@@ -1,0 +1,41 @@
+diff --git a/src/game/0050EDC8.c b/src/game/0050EDC8.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/0050EDC8.c
+@@ -0,0 +1,36 @@
++/* cflags: -mno-split-addresses */
++#include "common.h"
++
++typedef struct Type1 Type1;
++typedef struct Type2 Type2;
++typedef struct Type3 Type3;
++struct Type3 {
++    char _p0[0xC];
++    s32 fC;
++};
++struct Type2 {
++    char _p0[0xC];
++    s32 fC;
++    char _p10[0x30];
++    u16 f40;
++};
++struct Type1 {
++    char _p0[0x40];
++    Type3 *f40;
++    u8 f44;
++};
++
++s32 func_0050ED88(void *);
++
++void func_0050EDC8(Type1 *arg0, s32 arg1) {
++    Type2 *temp_a0;
++
++    temp_a0 = arg0->f40;
++    if (temp_a0->fC != arg1) {
++        arg0->f44 = 1;
++        if (temp_a0->f40 & 0x20) {
++            func_0050ED88(arg0);
++        }
++    }
++    arg0->f40->fC = arg1;
++}

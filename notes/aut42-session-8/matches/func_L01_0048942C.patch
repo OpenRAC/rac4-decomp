@@ -1,0 +1,15 @@
+diff --git a/src/overlays/shared/L01_0048942C.c b/src/overlays/shared/L01_0048942C.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L01_0048942C.c
+@@ -0,0 +1,10 @@
++/* cflags: -mno-split-addresses */
++#include "common.h"
++
++extern s32 D_00223C90_[];
++#define D_00223C90 (D_00223C90_[0])
++
++void *func_L01_0048942C(s32 arg0,s32 arg1,s32 *arg2) {
++    *arg2 = 0x10;
++    return &D_00223C90;
++}

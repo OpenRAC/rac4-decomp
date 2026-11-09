@@ -1,0 +1,39 @@
+diff --git a/src/overlays/shared/L00_00666CE8.c b/src/overlays/shared/L00_00666CE8.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L00_00666CE8.c
+@@ -0,0 +1,34 @@
++#include "common.h"
++
++void func_00679408();
++s32 func_L00_006688C8(s32);
++extern s32 D_0021DA30;
++extern void *D_00222D68;
++extern s32 D_00222D70;
++extern void *D_00222EE0;
++
++void func_L00_00666CE8(void) {
++    s32 temp_s0;
++    void *temp_s1;
++
++    temp_s1 = D_00222EE0;
++    D_00222EE0 = temp_s1 + 0x10;
++    (*(s32 *)((u8 *)(D_00222D68) + 0x0)) = 0x20000000;
++    (*(s32 *)((u8 *)(D_00222D68) + 0x4)) = (void *) D_00222EE0;
++    (*(s32 *)((u8 *)(D_00222D68) + 0x8)) = 0;
++    (*(s32 *)((u8 *)(D_00222D68) + 0xC)) = 0;
++    temp_s0 = func_L00_006688C8(D_0021DA30);
++    func_00679408();
++    if (D_00222D70 < temp_s0) {
++        D_00222D70 = temp_s0;
++    }
++    (*(s32 *)((u8 *)(D_00222EE0) + 0x0)) = 0x20000000;
++    (*(s32 *)((u8 *)(D_00222EE0) + 0x4)) = (void *) (D_00222D68 + 0x10);
++    (*(s32 *)((u8 *)(D_00222EE0) + 0x8)) = 0;
++    (*(s32 *)((u8 *)(D_00222EE0) + 0xC)) = 0;
++    D_00222EE0 += 0x10;
++    (*(s32 *)((u8 *)(temp_s1) + 0x0)) = 0x20000000;
++    (*(s32 *)((u8 *)(temp_s1) + 0x4)) = (void *) D_00222EE0;
++    (*(s32 *)((u8 *)(temp_s1) + 0x8)) = 0;
++    (*(s32 *)((u8 *)(temp_s1) + 0xC)) = 0;
++}

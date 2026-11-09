@@ -1,0 +1,29 @@
+diff --git a/src/game/00508760.c b/src/game/00508760.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00508760.c
+@@ -0,0 +1,24 @@
++#include "common.h"
++
++typedef struct Type1 Type1;
++typedef struct Type2 Type2;
++struct Type2 {
++    char _p0[0x14];
++    s32 (*f14)();
++};
++struct Type1 {
++    char _p0[0x8];
++    Type2 *f8;
++    char _pC[0x4];
++    f32 f10;
++};
++
++extern s32 D_00220B50;
++
++s32 func_00508760(Type1 *arg0, f32 *arg1) {
++    if (arg0->f8->f14(arg0, D_00220B50) != 0) {
++        *arg1 = arg0->f10;
++        return 1;
++    }
++    return 0;
++}

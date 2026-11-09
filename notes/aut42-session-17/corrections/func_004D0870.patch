@@ -1,0 +1,15 @@
+diff --git a/src/game/004D0870.c b/src/game/004D0870.c
+--- a/src/game/004D0870.c
++++ b/src/game/004D0870.c
+@@ -1,8 +1,8 @@
+ /* cflags: -mno-split-addresses */
+ #include "common.h"
+ 
+-s32 func_004D0038();
++void func_004D0038(void *, s32);
+ 
+-void func_004D0870(void) {
+-    func_004D0038();
++void func_004D0870(void *arg0, s32 arg1) {
++    func_004D0038(arg0, arg1);
+ }

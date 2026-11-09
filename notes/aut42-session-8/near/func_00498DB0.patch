@@ -1,0 +1,11 @@
+diff --git a/nonmatching/game/func_00498DB0.c b/nonmatching/game/func_00498DB0.c
+new file mode 100644
+--- /dev/null
++++ b/nonmatching/game/func_00498DB0.c
+@@ -0,0 +1,6 @@
++/* BYTES 1/24: commutative address addition has reversed source-register order.
++ * Reproduce with tools/try_func.py func_00498DB0 nonmatching/game/func_00498DB0.c --diff.
++ */
++#include "common.h"
++extern s32 D_002F3408[];
++s32 func_00498DB0(s32 a0){s32 p=(s32)D_002F3408;p=p+a0*4;return *(s32 *)(p+0x84);}

@@ -1,0 +1,38 @@
+diff --git a/src/game/004BBB70.c b/src/game/004BBB70.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004BBB70.c
+@@ -0,0 +1,33 @@
++/* cflags: -mno-split-addresses */
++#include "common.h"
++
++s32 func_0049B1A0(s32, s32);
++s32 func_0049B208(s32);
++s32 func_00505B20();
++extern s32 D_0021F198;
++extern s8 D_0021F938;
++extern u8 D_0021F939;
++extern s8 D_0021F93A;
++
++void func_004BBB70(void) {
++    s32 temp_a0;
++
++    temp_a0 = func_00505B20();
++    if (D_0021F198 == -1) {
++        if (D_0021F939 == 0) {
++            D_0021F938 = 1;
++            func_0049B1A0(temp_a0, 3);
++            return;
++        }
++        goto block_5;
++    }
++    if (D_0021F939 == 0) {
++        D_0021F93A = 0;
++        D_0021F938 = 0;
++        func_0049B208(temp_a0);
++        return;
++    }
++block_5:
++    D_0021F93A = 1;
++    func_0049B208(temp_a0);
++}

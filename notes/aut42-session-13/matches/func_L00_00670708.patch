@@ -1,0 +1,29 @@
+diff --git a/src/overlays/shared/L00_00670708.c b/src/overlays/shared/L00_00670708.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L00_00670708.c
+@@ -0,0 +1,24 @@
++#include "common.h"
++
++extern u8 D_00222EA8;
++extern s32 D_00222EB8;
++extern s32 D_00222EBC;
++extern void *D_0032C400[];
++
++void func_L00_00670708(void) {
++    s32 var_a1;
++    u8 *var_a2;
++    void *temp_a0;
++
++    D_00222EBC = 1;
++    var_a2 = &D_00222EA8;
++    var_a1 = 0;
++    if (D_00222EB8 > 0) {
++        do {
++            var_a1 += 1;
++            temp_a0 = D_0032C400[*var_a2];
++            (*(u16 *)((u8 *)(temp_a0) + 0x3C)) = (u16) ((*(u16 *)((u8 *)(temp_a0) + 0x3C)) | 1);
++            var_a2 = (u8 *)((u8 *)var_a2 + 1);
++        } while (var_a1 < D_00222EB8);
++    }
++}

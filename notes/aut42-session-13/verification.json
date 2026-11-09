@@ -1,0 +1,168 @@
+{
+  "candidates": 34,
+  "attempted_targets": 1496,
+  "compiled_bytes": 3420,
+  "retail_bytes": 3504,
+  "full_audit_exact": 2879,
+  "candidate_relocation_mismatches": 0,
+  "full_relocation_mismatches": 27,
+  "full_unresolved": 0,
+  "adopted_functions": 0,
+  "selection_rejected": [],
+  "candidate_checks": {
+    "audit_matches": {
+      "exit_code": 0,
+      "seconds": 3.99
+    },
+    "audit_relocs": {
+      "exit_code": 1,
+      "seconds": 7.66
+    },
+    "map_us_write": {
+      "exit_code": 0,
+      "seconds": 10.47
+    },
+    "map_pal_write": {
+      "exit_code": 1,
+      "seconds": 0.03
+    },
+    "progress_us_write": {
+      "exit_code": 0,
+      "seconds": 0.41
+    },
+    "progress_pal_write": {
+      "exit_code": 0,
+      "seconds": 0.4
+    },
+    "map_us_check": {
+      "exit_code": 0,
+      "seconds": 0.18
+    },
+    "map_pal_check": {
+      "exit_code": 1,
+      "seconds": 0.18
+    },
+    "progress_us_check": {
+      "exit_code": 0,
+      "seconds": 0.54
+    },
+    "progress_pal_check": {
+      "exit_code": 1,
+      "seconds": 0.55
+    },
+    "legacy_write": {
+      "exit_code": 0,
+      "seconds": 1.49
+    },
+    "legacy_check": {
+      "exit_code": 0,
+      "seconds": 0.22
+    }
+  },
+  "current_attempted_targets": 640,
+  "recovered_candidates": 18,
+  "newly_closed_candidates": 16,
+  "source_review": {
+    "recovered_review": {
+      "important_findings": [
+        {
+          "function": "func_004F3440",
+          "cause": "Missing incoming a0 when calling func_00464778; retail callee dereferences it.",
+          "old_source": "build/try/func_004F3440/aut42s12_final.c",
+          "corrected_source": "build/try/func_004F3440/aut42s13_refine0.c",
+          "fresh_verdict": "EXACT"
+        }
+      ],
+      "other_recovered_candidates": "No other findings across 18 reviewed candidates."
+    },
+    "new_review": {
+      "important_findings": [
+        {
+          "function": "func_00488828",
+          "cause": "Missing incoming a0 forwarded to func_004765F0",
+          "corrected_source": "build/try/func_00488828/aut42s13_abi0.c",
+          "fresh_verdict": "EXACT"
+        }
+      ],
+      "other_findings": []
+    },
+    "helper_and_near_review": {
+      "findings": [],
+      "reviewed": [
+        "func_00505B70",
+        "func_004D0038",
+        "func_0050CC98",
+        "func_005054F8"
+      ]
+    }
+  },
+  "prior_pending_argument_findings": 17,
+  "scratch_relocations_checked": 146,
+  "retained_near": [
+    {
+      "function": "func_004D0038",
+      "source": "nonmatching/game/func_004D0038.c",
+      "verdict": "BYTES 7/232"
+    },
+    {
+      "function": "func_0050CC98",
+      "source": "nonmatching/game/func_0050CC98.c",
+      "verdict": "BYTES 15/280"
+    },
+    {
+      "function": "func_005054F8",
+      "source": "nonmatching/game/func_005054F8.c",
+      "verdict": "BYTES 6/228"
+    }
+  ],
+  "candidate_build_exit_code": 0,
+  "patch_application_check": {
+    "exit_code": 0,
+    "patches": 37
+  },
+  "patch_source_hash_check": {
+    "verified": 37
+  },
+  "restored_build_exit_code": 0,
+  "restored_full_audit_exact": 2845,
+  "restored_not_exact": 0,
+  "restored_relocation_mismatches": 27,
+  "restored_unresolved": 0,
+  "restored_checks": {
+    "audit_matches": {
+      "exit_code": 0,
+      "seconds": 3.65
+    },
+    "audit_relocs": {
+      "exit_code": 1,
+      "seconds": 7.5
+    },
+    "map_us_check": {
+      "exit_code": 0,
+      "seconds": 0.18
+    },
+    "map_pal_check": {
+      "exit_code": 0,
+      "seconds": 0.18
+    },
+    "progress_us_check": {
+      "exit_code": 0,
+      "seconds": 0.53
+    },
+    "progress_pal_check": {
+      "exit_code": 0,
+      "seconds": 0.54
+    },
+    "legacy_write": {
+      "exit_code": 0,
+      "seconds": 1.72
+    },
+    "legacy_check": {
+      "exit_code": 0,
+      "seconds": 0.22
+    }
+  },
+  "baseline_relocation_failures_unchanged": true,
+  "wall_clock_minutes_through_verification": 45.9,
+  "usage_limit_interruption_this_run": false
+}

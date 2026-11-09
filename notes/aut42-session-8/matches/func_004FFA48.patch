@@ -1,0 +1,64 @@
+diff --git a/src/game/004FFA48.c b/src/game/004FFA48.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004FFA48.c
+@@ -0,0 +1,59 @@
++#include "common.h"
++
++typedef struct Type1 Type1;
++struct Type1 {
++    char _p0[0x1B4];
++    s32 f1B4;
++};
++
++s32 func_004FF8D0(void **, s32);
++s32 func_004FF8F0(void **, s32);
++void *func_004FF940(u32);
++s32 func_004FFE88(void **);
++
++s32 func_004FFA48(s32 *arg0, u32 arg1) {
++    s32 temp_a0;
++    s32 temp_v1;
++    s32 temp_v1_2;
++    s32 var_a1;
++    s32 var_a1_2;
++    s32 var_a1_3;
++    Type1 *temp_v1_3;
++
++    if (arg1 < 5U) {
++        *arg0 = func_004FF940(arg1);
++        var_a1 = 0;
++        do {
++            temp_v1 = var_a1 * 4;
++            var_a1 += 1;
++            (*(s32 *)((u8 *)((*arg0 + temp_v1)) + 0x18)) = 0;
++        } while (var_a1 < 0x10);
++        var_a1_2 = 0;
++        do {
++            temp_v1_2 = var_a1_2 * 4;
++            var_a1_2 += 1;
++            (*(s32 *)((u8 *)((temp_v1_2 + *arg0)) + 0x58)) = 0;
++        } while (var_a1_2 < 0x10);
++        var_a1_3 = 0;
++        do {
++            temp_a0 = var_a1_3 * 4;
++            (*(s32 *)((u8 *)((*arg0 + temp_a0)) + 0xE4)) = 0;
++            (*(s32 *)((u8 *)((*arg0 + temp_a0)) + 0x124)) = 0;
++            (*(s32 *)((u8 *)((*arg0 + temp_a0)) + 0x164)) = 0;
++            (*(s8 *)((u8 *)((*arg0 + var_a1_3)) + 0x1A4)) = 0;
++            temp_v1_3 = *arg0 + var_a1_3;
++            var_a1_3 += 1;
++            (*(s8 *)((u8 *)(temp_v1_3) + 0x1B4)) = 0;
++        } while (var_a1_3 < 0x10);
++        (*(s32 *)((u8 *)((*arg0)) + 0x1C4)) = 0;
++        (*(s32 *)((u8 *)((*arg0)) + 0x1C8)) = 0U;
++        (*(s32 *)((u8 *)((*arg0)) + 0x266C)) = 0;
++        (*(s32 *)((u8 *)((*arg0)) + 0x1C8)) = arg1;
++        (*(s32 *)((u8 *)((*arg0)) + 0x2670)) = 0;
++        func_004FF8F0(arg0, 0);
++        func_004FF8D0(arg0, 0);
++        func_004FFE88(arg0);
++        return 1;
++    }
++    return 0;
++}

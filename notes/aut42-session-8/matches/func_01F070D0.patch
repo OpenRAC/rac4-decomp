@@ -1,0 +1,14 @@
+diff --git a/src/net/01F070D0.c b/src/net/01F070D0.c
+new file mode 100644
+--- /dev/null
++++ b/src/net/01F070D0.c
+@@ -0,0 +1,9 @@
++/* cflags: -fno-schedule-insns2 */
++#include "common.h"
++
++s32 func_01F07100();
++s32 func_01F072C8(s32, s32);
++
++void func_01F070D0(s32 arg0) {
++    func_01F072C8(func_01F07100(), arg0);
++}

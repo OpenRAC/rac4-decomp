@@ -1,0 +1,47 @@
+diff --git a/src/overlays/l00_multiplayer_menu/L00_00722348.c b/src/overlays/l00_multiplayer_menu/L00_00722348.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/l00_multiplayer_menu/L00_00722348.c
+@@ -0,0 +1,42 @@
++#include "common.h"
++
++s32 func_L00_007647B0(s32, void *, s32, void *);
++extern void *D_00220D14;
++extern void *D_002233A4;
++
++s32 func_L00_00722348(void *arg0, void *arg1) {
++    s32 var_a2;
++    s32 var_v0;
++    void *temp_a3;
++    void *temp_v1;
++    void *var_a1;
++
++    var_a1 = arg1;
++    var_a2 = 0;
++    temp_a3 = (*(s32 *)((u8 *)(D_002233A4) + 0x3C));
++    if ((*(u8 *)((u8 *)(arg0) + 0x274)) != 0) {
++        temp_v1 = (*(s32 *)((u8 *)(D_00220D14) + 0x108));
++        var_a1 = NULL;
++        if (temp_v1 != NULL) {
++            var_a1 = (((*(u8 *)((u8 *)(temp_v1) + 0xA8)) ^ 1) == 0) ? temp_v1 : NULL;
++        }
++        if (var_a1 == NULL) {
++            (*(u8 *)((u8 *)(arg0) + 0x274)) = 0U;
++            var_a2 = 1;
++            (*(s32 *)((u8 *)(D_00220D14) + 0x118)) = 0x1B;
++        }
++    }
++    if ((*(u8 *)((u8 *)(temp_a3) + 0x30)) == 0) {
++        var_v0 = var_a2;
++        if ((*(s32 *)((u8 *)(temp_a3) + 0x0)) == -1) {
++            func_L00_007647B0(0x3B, var_a1, var_a2, temp_a3);
++            var_a2 = 1;
++            (*(s32 *)((u8 *)(D_00220D14) + 0x118)) = 7;
++            goto block_8;
++        }
++    } else {
++block_8:
++        var_v0 = var_a2;
++    }
++    return var_v0;
++}

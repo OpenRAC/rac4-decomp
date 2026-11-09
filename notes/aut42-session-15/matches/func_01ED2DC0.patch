@@ -1,0 +1,16 @@
+diff --git a/src/net/01ED2DC0.c b/src/net/01ED2DC0.c
+new file mode 100644
+--- /dev/null
++++ b/src/net/01ED2DC0.c
+@@ -0,0 +1,11 @@
++/* cflags: -fno-schedule-insns2 */
++#include "common.h"
++
++s32 func_01ED1D98(s32);
++s32 func_01ED2BB8(s32, s32);
++
++s32 func_01ED2DC0(s32 arg0) {
++    func_01ED1D98(arg0);
++    func_01ED2BB8(arg0, 0xFFFE);
++    return 1;
++}

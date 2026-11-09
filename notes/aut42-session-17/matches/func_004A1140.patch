@@ -1,0 +1,13 @@
+diff --git a/src/game/004A1140.c b/src/game/004A1140.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004A1140.c
+@@ -0,0 +1,8 @@
++#include "common.h"
++void func_004A1010(void *,void *,s32,s32);
++void func_004A1140(void *arg0,void *arg1,s32 arg2,void *arg3,s32 arg4,s32 arg5) {
++    *(void **)((u8 *)arg0+0x38)=arg3;
++    *(s32 *)((u8 *)arg0+0x48)=arg5;
++    *(s32 *)((u8 *)arg0+0x44)=0;
++    func_004A1010(arg0,arg1,arg2,arg4);
++}
