@@ -8,10 +8,10 @@ struct Type1 {
     void *fB0;
 };
 
-void func_01EF3164(s32, void *, void *);
-void func_01EF328C(s32, void *, void *);
-void func_01EF339C(s32, void *, void *);
-void func_01EF382C();
+s32 func_01EF3164(s32, void *, void *);
+s32 func_01EF328C(s32, void *, void *);
+s32 func_01EF339C(s32, void *, void *);
+void func_01EF382C(void *, s32, s32);
 void func_01EF6C68(void *);
 extern s32 D_00170270[];
 extern s32 D_0019CC60[];
@@ -20,8 +20,8 @@ extern s32 D_0019CC70[];
 extern s32 D_0019CC80[];
 extern s32 D_0019CC90[];
 
-void func_01EF6CC0(Type1 *arg0) {
-    func_01EF382C();
+void func_01EF6CC0(Type1 *arg0, s32 arg1, s32 arg2) {
+    func_01EF382C(arg0, arg1, arg2);
     arg0->fB0 = D_00170270;
     func_01EF6C68(arg0);
     func_01EF3164(arg0->f0, D_0019CC60, (void *)((u8 *)arg0 + 0xB4));

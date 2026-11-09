@@ -1,10 +1,10 @@
 /* cflags: -G0 */
 #include "common.h"
-
-extern void func_01EAB210(s32*);
-
-s32 func_01EA0BD0(void) {
-    s32 val;
+extern s32 func_01EAB210(u32 *);
+/* Reads and returns the timer value. */
+s32 func_01EA0BD0(void)
+{
+    u32 val;
     func_01EAB210(&val);
-    return val;
+    return (s32)val;
 }

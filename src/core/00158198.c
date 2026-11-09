@@ -2,7 +2,7 @@
 
 extern s32 func_0012A918(void *);
 extern void func_00127568(void *, s32);
-extern s32 func_0011D5D8(void *);
+extern s32 func_0011D5D8(const char *, ...);
 extern s32 D_0021DD20;
 extern u8 D_1BD480[];
 extern u8 D_001A4768[];
@@ -28,6 +28,6 @@ s32 func_00158198(void) {
     if (D_0021DD20 != 0) {
         return 0;
     }
-    func_0011D5D8(D_001A4768);
+    func_0011D5D8((const char *)D_001A4768);
     return 0;
 }
