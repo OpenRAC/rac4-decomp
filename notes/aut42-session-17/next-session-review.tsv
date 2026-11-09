@@ -1,0 +1,21 @@
+function	source_path	callee	required_inputs	return_notes	retail_evidence	existing_claim_owner	status
+func_01EC9A08	src/net/01EC9A08.c	func_01EC9A28	s32 index	return pointer	01EC9A3C/54/D8; caller01ECE5D8/E0		review finding only; no repair or compile this session
+func_01EF0748	src/net/01EF0748.c	func_01EF0764	void *object	not established	01EF0778/80		review finding only; no repair or compile this session
+func_01F0C53C	src/net/01F0C53C.c	func_01F0C4EC	void *object	not established	01F0C4F8/500		review finding only; no repair or compile this session
+func_00484598	src/game/00484598.c	func_0046C060	void *object	return f32; callee declaration f32	0046C060/64/CC; caller004845EC		review finding only; no repair or compile this session
+func_00497000	src/game/00497000.c	func_004B0EC0	s32 value	retain explicit current transform	004B0ECC/D4		review finding only; no repair or compile this session
+func_004A7DB0	src/game/004A7DB0.c	func_004A8C68	s32 index	retain explicit current transform	004A8C70		review finding only; no repair or compile this session
+func_004CCDA0	src/game/004CCDA0.c	func_004CCEC8	s32 selector	retain explicit current transform	004CCEE0/F8		review finding only; no repair or compile this session
+func_004EEBC8	src/game/004EEBC8.c	func_004EE6E8	void *object; s32 flags	not established	004EE6F8/700/704		review finding only; no repair or compile this session
+func_004F1BF0	src/game/004F1BF0.c	func_00146390	void *object; s32 selector; 64-bit payload; s32 payload; s32 payload	exact types still require investigation	00146390/94/A0;00146418/94/9C		review finding only; no repair or compile this session
+func_00506B70	src/game/00506B70.c	func_005040B0	s32 identifier	retain explicit current transform	005040D0/130		review finding only; no repair or compile this session
+func_00548DD8	src/game/00548DD8.c	func_00547D58	void *base; s32 index	retain explicit current transform	00547D5C/60/68		review finding only; no repair or compile this session
+func_0054AB78	src/game/0054AB78.c	func_0054A980	s32 index	retain explicit current transform; verify pointer type	0054A988; src/game/004BC970.c:18		review finding only; no repair or compile this session
+func_01EC3008	src/net/01EC3008.c	func_01EA9718	void *object	retain explicit current transform	01EA9724/30		review finding only; no repair or compile this session
+func_01EC78C8	src/net/01EC78C8.c	func_01EC7878	s32 handle	retain explicit current transform	01EC788C/A0		review finding only; no repair or compile this session
+func_01ED1570	src/net/01ED1570.c	func_01ED2458	void *object	retain explicit current transform	01ED2458/60		review finding only; no repair or compile this session
+func_01EEDFE0	src/net/01EEDFE0.c	func_0011AB04	void *text	retain explicit current transform	0011AC28		review finding only; no repair or compile this session
+func_01EF0D24	src/net/01EF0D24.c	func_01EF0D18	void *object	retain explicit current transform	01EF0D18		review finding only; no repair or compile this session
+func_01F07300	src/net/01F07300.c	func_01F07320	void *table; void *comparison_text	retain explicit current transform	01F07340/48/58/6C		review finding only; no repair or compile this session
+func_00147AB8	src/core/00147AB8.c	func_001475D0	s32 selector	retain explicit current transform; verify library/game provenance	001475DC/EC		review finding only; no repair or compile this session
+func_004A22B0	src/game/004A22B0.c	func_0049F478	s32 index	retain explicit current transform	0049F488/94		review finding only; no repair or compile this session

@@ -1,0 +1,12 @@
+diff --git a/src/overlays/shared/L15_004E38D8.c b/src/overlays/shared/L15_004E38D8.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L15_004E38D8.c
+@@ -0,0 +1,7 @@
++#include "common.h"
++
++s32 func_L00_005E99A0(f32, f32, f32);
++
++void func_L15_004E38D8(void *arg0, f32 fparg0, f32 fparg1) {
++    func_L00_005E99A0(fparg0, fparg1, (*(f32 *)((u8 *)((*(s32 *)((u8 *)(arg0) + 0xAC))) + 0x1C0)));
++}

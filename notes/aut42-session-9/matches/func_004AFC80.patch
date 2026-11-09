@@ -1,0 +1,20 @@
+diff --git a/src/game/004AFC80.c b/src/game/004AFC80.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004AFC80.c
+@@ -0,0 +1,15 @@
++#include "common.h"
++
++void func_004AFDF8(s32);
++s32 func_00505B20();
++extern s32 D_003094F8_[];
++#define D_003094F8 (D_003094F8_[0])
++
++void func_004AFC80(void) {
++    void *temp_s0;
++
++    temp_s0 = (func_00505B20() * 0x28) + (u8 *)&D_003094F8;
++    func_004AFDF8(0x28);
++    (*(s32 *)((u8 *)(temp_s0) + 0x0)) = 1;
++    (*(s32 *)((u8 *)(temp_s0) + 0x4)) = 1;
++}

@@ -1,0 +1,16 @@
+diff --git a/src/game/004D5BF0.c b/src/game/004D5BF0.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004D5BF0.c
+@@ -0,0 +1,11 @@
++#include "common.h"
++
++void func_00462080(s32);
++extern s32 D_001DFCA0_[];
++#define D_001DFCA0 (D_001DFCA0_[0])
++
++void func_004D5BF0(s32 arg0, s32 arg1) {
++    if (D_001DFCA0 != arg1) {
++        func_00462080(arg1);
++    }
++}

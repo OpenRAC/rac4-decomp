@@ -1,0 +1,12 @@
+diff --git a/src/game/0047D368.c b/src/game/0047D368.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/0047D368.c
+@@ -0,0 +1,7 @@
++#include "common.h"
++extern u8 *func_0047D4E8(void);
++extern u8 D_00171B80[];
++void func_0047D368(s32 arg0) {
++ (func_0047D4E8()+arg0)[0x1F4]=1;
++ D_00171B80[arg0]=1;
++}

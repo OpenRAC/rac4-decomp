@@ -1,0 +1,13 @@
+diff --git a/src/net/01ED4460.c b/src/net/01ED4460.c
+new file mode 100644
+--- /dev/null
++++ b/src/net/01ED4460.c
+@@ -0,0 +1,8 @@
++#include "common.h"
++
++extern s32 D_001B7648_[];
++#define D_001B7648 (D_001B7648_[0])
++
++s32 func_01ED4460(void) {
++    return (D_001B7648 != 0) ? 0 : -1;
++}

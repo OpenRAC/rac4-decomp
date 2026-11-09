@@ -1,0 +1,61 @@
+diff --git a/src/game/004C1E98.c b/src/game/004C1E98.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004C1E98.c
+@@ -0,0 +1,56 @@
++/* cflags: -fno-schedule-insns2 -fno-regmove */
++#include "common.h"
++
++typedef struct Type1 Type1;
++struct Type1 {
++    char _p0[0x8];
++    s32 f8;
++    char _pC[0x5C];
++    s32 f68;
++    s32 f6C;
++    s32 f70;
++};
++
++s32 func_0045DE00();
++s32 func_00499CE0(s32);
++s32 func_0049B0D8(s32);
++s32 func_0049C4B0(s32, s32, s32, s32);
++s32 func_004C5570();
++s32 func_00505B20();
++extern s32 D_00221880;
++extern s32 D_00221888;
++extern Type1 D_0030B7F8_[];
++
++void func_004C1E98(void) {
++    s32 temp_a0;
++    s32 temp_a0_2;
++    s32 temp_a0_3;
++    s32 temp_v0;
++    Type1 *temp_s0;
++
++    func_0045DE00();
++    temp_v0 = func_00505B20();
++    temp_s0 = temp_v0 + D_0030B7F8_;
++    temp_s0->f8 = 0;
++    func_0049C4B0(temp_v0, 0, D_00221880, 0);
++    func_0049C4B0(temp_v0, 1, D_00221880, 0);
++    func_0049C4B0(temp_v0, 2, D_00221888, 0);
++    func_0049C4B0(temp_v0, 3, D_00221888, 0);
++    func_004C5570();
++    temp_a0 = temp_s0->f70;
++    if (temp_a0 != 0) {
++        func_00499CE0(temp_a0);
++        temp_s0->f70 = 0;
++    }
++    temp_a0_2 = temp_s0->f68;
++    if (temp_a0_2 != 0) {
++        func_00499CE0(temp_a0_2);
++        temp_s0->f68 = 0;
++    }
++    temp_a0_3 = temp_s0->f6C;
++    if (temp_a0_3 != 0) {
++        func_00499CE0(temp_a0_3);
++        temp_s0->f6C = 0;
++    }
++    func_0049B0D8(temp_v0);
++}

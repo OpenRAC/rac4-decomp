@@ -1,0 +1,11 @@
+diff --git a/src/game/0046D408.c b/src/game/0046D408.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/0046D408.c
+@@ -0,0 +1,6 @@
++#include "common.h"
++
++extern s32 func_0046D428(s32,s32,s32);
++s32 func_0046D408(s32 arg0,s32 arg1) {
++    return func_0046D428(arg0,0,arg1);
++}

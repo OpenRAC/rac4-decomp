@@ -1,0 +1,20 @@
+diff --git a/src/game/004EE948.c b/src/game/004EE948.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004EE948.c
+@@ -0,0 +1,15 @@
++#include "common.h"
++
++s32 func_0015DB88();
++extern s32 D_003D3058_[];
++#define D_003D3058 (D_003D3058_[0])
++
++void func_004EE948(void **arg0, s32 arg1) {
++    s32 temp_a1;
++
++    temp_a1 = arg1 & 1;
++    *arg0 = &D_003D3058;
++    if (temp_a1 != 0) {
++        func_0015DB88();
++    }
++}

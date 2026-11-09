@@ -1,8 +1,9 @@
 #include "common.h"
 
 extern u8 D_00329550[];
-s32 func_L00_00665160();
+void func_L00_00665160(void *table);
 
-s32 func_L00_00665218(void) {
-    return func_L00_00665160((u32)D_00329550);
+/* Applies the record table at D_00329550 (func_L00_00665160 returns nothing). */
+void func_L00_00665218(void) {
+    func_L00_00665160(D_00329550);
 }

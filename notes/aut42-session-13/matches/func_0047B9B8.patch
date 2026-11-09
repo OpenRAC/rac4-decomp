@@ -1,0 +1,26 @@
+diff --git a/src/game/0047B9B8.c b/src/game/0047B9B8.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/0047B9B8.c
+@@ -0,0 +1,21 @@
++#include "common.h"
++typedef int s128 __attribute__((mode(TI)));
++typedef unsigned int u128 __attribute__((mode(TI)));
++
++void func_004706F0(void *);
++
++void func_0047B9B8(void *arg0, void *arg1) {
++    (*(s8 *)((u8 *)(arg0) + 0x31)) = 1;
++    if (arg1 != NULL) {
++        (*(s32 *)((u8 *)(arg0) + 0xB8)) = arg1;
++        (*(s8 *)((u8 *)(arg0) + 0x30)) = (u8) (*(u8 *)((u8 *)(arg1) + 0x30));
++        (*(s16 *)((u8 *)(arg0) + 0x32)) = (u16) (*(u16 *)((u8 *)(arg1) + 0x32));
++        (*(s128 *)((u8 *)(arg0) + 0x10)) = (s128) (*(s128 *)((u8 *)(arg1) + 0x10));
++        (*(s128 *)((u8 *)(arg0) + 0xF0)) = (s128) (*(s128 *)((u8 *)(arg1) + 0xF0));
++        (*(s64 *)((u8 *)(arg0) + 0x38)) = (s64) (*(s64 *)((u8 *)(arg1) + 0x38));
++        func_004706F0(arg0);
++        return;
++    }
++    (*(volatile u8 *)((u8 *)(arg0) + 0x30)) = 0xFFU;
++    (*(s16 *)((u8 *)(arg0) + 0x32)) = 0xFFU;
++}

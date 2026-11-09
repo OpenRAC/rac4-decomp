@@ -1,0 +1,76 @@
+diff --git a/src/overlays/shared/L06_004C45F8.c b/src/overlays/shared/L06_004C45F8.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L06_004C45F8.c
+@@ -0,0 +1,71 @@
++/* cflags: -mno-split-addresses */
++#include "common.h"
++
++typedef struct Type1 Type1;
++typedef struct Type2 Type2;
++typedef struct Type3 Type3;
++typedef struct Type4 Type4;
++typedef struct Type5 Type5;
++typedef struct Type6 Type6;
++struct Type2 {
++    s32 f0;
++    s32 f4;
++};
++struct Type5 {
++    char _p0[0x4];
++    s32 f4;
++};
++struct Type6 {
++    char _p0[0x4];
++    s32 f4;
++};
++struct Type3 {
++    char _p0[0xBC];
++    s32 fBC;
++};
++struct Type4 {
++    char _p0[0xBC];
++    s32 fBC;
++};
++struct Type1 {
++    char _p0[0xAC];
++    s32 fAC;
++};
++
++s32 func_L00_005C9850(s32, s32, s32);
++void *func_L00_005DEBD0(s16, s32, s32);
++extern s32 D_00222614;
++
++void func_L06_004C45F8(Type1 *arg0) {
++    s32 (*temp_v0)(void *);
++    s32 (*temp_v0_2)(void *);
++    s32 temp_a0_2;
++    s32 temp_v1;
++    Type2 *temp_a0;
++    Type5 *temp_s0;
++    Type6 *temp_s1;
++    Type3 *temp_s2;
++    Type4 *temp_s3;
++
++    temp_a0 = arg0->fAC;
++    temp_v1 = temp_a0->f0;
++    if ((temp_v1 != -1) && (temp_a0_2 = temp_a0->f4, (temp_a0_2 != -1))) {
++        temp_s2 = D_00222614 + (temp_v1 << 8);
++        temp_s3 = D_00222614 + (temp_a0_2 << 8);
++        temp_s0 = func_L00_005DEBD0(temp_s2->fBC, 0x14, 8);
++        temp_s1 = func_L00_005DEBD0(temp_s3->fBC, 0x14, 8);
++        if ((temp_s0 == NULL) || (temp_v0 = temp_s0->f4, (temp_v0 == NULL)) || (temp_v0(temp_s2) == 0)) {
++            if (temp_s1 != NULL) {
++                temp_v0_2 = temp_s1->f4;
++                if (temp_v0_2 != NULL) {
++                    if (temp_v0_2(temp_s3) != 0) {
++                        goto block_8;
++                    }
++                }
++            }
++        } else {
++block_8:
++            func_L00_005C9850(0x331F, 0x76A, 2);
++        }
++    }
++}

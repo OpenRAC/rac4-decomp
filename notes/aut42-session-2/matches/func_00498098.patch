@@ -1,0 +1,28 @@
+diff --git a/src/game/00498098.c b/src/game/00498098.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00498098.c
+@@ -0,0 +1,23 @@
++#include "common.h"
++
++typedef struct Type1 Type1;
++struct Type1 {
++    char _p0[0x1C];
++    u8 f1C;
++};
++
++s32 func_004A7958(s32);
++s32 func_004C5658(s32, s32);
++extern s32 D_002F32B8_[];
++#define D_002F32B8 (D_002F32B8_[0])
++
++void func_00498098(s32 arg0, s32 arg1) {
++    Type1 *temp_a0;
++
++    temp_a0 = (arg0 * 0x54) + (u8 *)&D_002F32B8;
++    if (temp_a0->f1C != arg1) {
++        temp_a0->f1C = arg1;
++        func_004A7958(arg0);
++        func_004C5658(arg0, arg1);
++    }
++}

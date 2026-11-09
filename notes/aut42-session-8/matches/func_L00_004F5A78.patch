@@ -1,0 +1,14 @@
+diff --git a/src/overlays/l00_multiplayer_menu/L00_004F5A78.c b/src/overlays/l00_multiplayer_menu/L00_004F5A78.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/l00_multiplayer_menu/L00_004F5A78.c
+@@ -0,0 +1,9 @@
++#include "common.h"
++
++extern s32 D_00498D88_[];
++#define D_00498D88 (D_00498D88_[0])
++
++s32 func_L00_004F5A78(s32 arg0) {
++    D_00498D88 = arg0;
++    return 0;
++}

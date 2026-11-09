@@ -1,0 +1,38 @@
+diff --git a/src/game/00476C38.c b/src/game/00476C38.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00476C38.c
+@@ -0,0 +1,33 @@
++/* cflags: -mno-split-addresses */
++#include "common.h"
++
++typedef struct Type1 Type1;
++typedef struct Type2 Type2;
++typedef struct Type3 Type3;
++struct Type3 {
++    char _p0[0x38];
++    s64 f38;
++};
++struct Type1 {
++    char _p0[0x2EF0];
++    Type3 *f2EF0;
++};
++struct Type2 {
++    char _p0[0x38];
++    s64 f38;
++};
++
++void *func_00510BE8(s32);
++
++void func_00476C38(Type2 *arg0) {
++    Type1 *temp_v0;
++    Type3 *temp_v0_2;
++
++    temp_v0 = func_00510BE8(0);
++    if (temp_v0 != NULL) {
++        temp_v0_2 = temp_v0->f2EF0;
++        if (temp_v0_2 != NULL) {
++            arg0->f38 = (s64) temp_v0_2->f38;
++        }
++    }
++}

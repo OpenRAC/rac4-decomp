@@ -1,0 +1,23 @@
+diff --git a/src/game/004970A0.c b/src/game/004970A0.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004970A0.c
+@@ -0,0 +1,18 @@
++#include "common.h"
++
++void func_004534D0(s32);
++void func_00499C80();
++extern s32 D_00221534;
++extern s32 D_002F32CC[];
++
++void func_004970A0(void) {
++    void *var_s0;
++
++    var_s0 = D_002F32CC;
++    do {
++        func_004534D0((s32) var_s0);
++        var_s0 += 0x54;
++    } while ((s32) var_s0 < (s32) ((u8 *)D_002F32CC + 0x150));
++    D_00221534 += 1;
++    func_00499C80();
++}

@@ -1,0 +1,43 @@
+diff --git a/src/game/004CEF18.c b/src/game/004CEF18.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004CEF18.c
+@@ -0,0 +1,38 @@
++#include "common.h"
++
++typedef struct Type1 Type1;
++typedef struct Type2 Type2;
++struct Type1 {
++    char _p0[0x50];
++    s32 f50;
++};
++struct Type2 {
++    char _p0[0x8];
++    s32 f8;
++};
++
++s32 func_004A1310(void *);
++s32 func_004A1358(void *);
++s32 func_004E0858();
++s32 func_004E21D8(s32, s32, s32);
++s32 func_00505B20();
++extern s32 D_0030F820_[];
++#define D_0030F820 (D_0030F820_[0])
++
++void func_004CEF18(s32 arg0) {
++    Type1 *temp_a0;
++    Type2 *temp_s0;
++
++    temp_s0 = (func_00505B20() * 0x103C) + (u8 *)&D_0030F820;
++    temp_a0 = (void *)((u8 *)temp_s0 + 0xF90);
++    if (temp_a0->f50 >= 2) {
++        if (arg0 != 0) {
++            func_004A1358(temp_a0);
++        } else {
++            func_004A1310(temp_a0);
++        }
++        func_004E21D8(0, 0, 0);
++        func_004E0858();
++        temp_s0->f8 = (s32) (temp_s0->f8 | 6);
++    }
++}

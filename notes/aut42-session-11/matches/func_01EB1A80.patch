@@ -1,0 +1,29 @@
+diff --git a/src/net/01EB1A80.c b/src/net/01EB1A80.c
+new file mode 100644
+--- /dev/null
++++ b/src/net/01EB1A80.c
+@@ -0,0 +1,24 @@
++#include "common.h"
++
++void func_01EB1A80(void *arg0, void *arg1, u32 arg2) {
++    u32 var_t0;
++    u8 temp_v0;
++    void *var_a1;
++    void *var_a3;
++
++    var_a1 = arg1;
++    var_t0 = 0;
++    if (arg2 != 0) {
++        var_a3 = arg0;
++        do {
++            var_t0 += 4;
++            (*(u8 *)((u8 *)(var_a3) + 0x0)) = (u8) (*(s32 *)((u8 *)(var_a1) + 0x0));
++            (*(s8 *)((u8 *)(var_a3) + 0x1)) = (s8) ((u32) (*(s32 *)((u8 *)(var_a1) + 0x0)) >> 8);
++            (*(u8 *)((u8 *)(var_a3) + 0x2)) = (*(volatile u16 *)((u8 *)(var_a1) + 0x2));
++            temp_v0 = (*(s32 *)((u8 *)(var_a1) + 0x3));
++            var_a1 += 4;
++            (*(u8 *)((u8 *)(var_a3) + 0x3)) = temp_v0;
++            var_a3 += 4;
++        } while (var_t0 < arg2);
++    }
++}

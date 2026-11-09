@@ -1,0 +1,18 @@
+diff --git a/src/game/004F0A08.c b/src/game/004F0A08.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004F0A08.c
+@@ -0,0 +1,13 @@
++#include "common.h"
++
++s32 func_004F0A08(void *arg0, void **arg1) {
++    s32 temp_a0;
++    s32 temp_v0;
++
++    temp_v0 = (*(s32 *)((u8 *)(arg0) + 0x50004));
++    if (temp_v0 != 0) {
++        temp_a0 = (*(s32 *)((u8 *)(arg0) + 0x50008));
++        *arg1 = arg0 + ((s32) (((*(s32 *)((u8 *)(arg0) + 0x50000)) - temp_v0) + temp_a0) % temp_a0);
++    }
++    return (*(s32 *)((u8 *)(arg0) + 0x50004));
++}

@@ -1,0 +1,15 @@
+diff --git a/src/game/004D2B40.c b/src/game/004D2B40.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004D2B40.c
+@@ -0,0 +1,10 @@
++#include "common.h"
++
++extern s32 func_00505B20(void);
++extern u8 D_0031B6B0[];
++
++void func_004D2B40(void) {
++    u8 *entry = D_0031B6B0 + func_00505B20() * 0x1C;
++    void (*fn)(s32) = *(void (**)(s32))(entry + 0x10);
++    fn(3);
++}

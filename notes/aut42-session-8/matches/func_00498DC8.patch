@@ -1,0 +1,13 @@
+diff --git a/src/game/00498DC8.c b/src/game/00498DC8.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00498DC8.c
+@@ -0,0 +1,8 @@
++#include "common.h"
++
++extern s32 D_002F34C8_[];
++#define D_002F34C8 (D_002F34C8_[0])
++
++s32 func_00498DC8(void) {
++    return D_002F34C8;
++}

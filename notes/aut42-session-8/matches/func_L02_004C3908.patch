@@ -1,0 +1,25 @@
+diff --git a/src/overlays/shared/L02_004C3908.c b/src/overlays/shared/L02_004C3908.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L02_004C3908.c
+@@ -0,0 +1,20 @@
++#include "common.h"
++
++typedef struct Type1 Type1;
++typedef struct Type2 Type2;
++struct Type2 {
++    char _p0[0x50];
++    f32 f50;
++    s32 f54;
++};
++struct Type1 {
++    char _p0[0xAC];
++    s32 fAC;
++};
++
++f32 func_L02_004C3908(Type1 *arg0) {
++    Type2 *temp_v0;
++
++    temp_v0 = arg0->fAC;
++    return 1.0f - (temp_v0->f50 / (f32) temp_v0->f54);
++}

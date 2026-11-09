@@ -1,0 +1,13 @@
+diff --git a/src/game/0054AAD8.c b/src/game/0054AAD8.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/0054AAD8.c
+@@ -0,0 +1,8 @@
++#include "common.h"
++
++extern s32 D_003DFF10_[];
++#define D_003DFF10 (D_003DFF10_[0])
++
++s32 func_0054AAD8(s32 arg0) {
++    return *(s32 *)((((s32) ((arg0 <= -1) ? 0 : arg0) % 20) * 4) + (u8 *)&D_003DFF10);
++}

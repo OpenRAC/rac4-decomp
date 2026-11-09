@@ -1,0 +1,17 @@
+diff --git a/src/game/0046EDD8.c b/src/game/0046EDD8.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/0046EDD8.c
+@@ -0,0 +1,12 @@
++#include "common.h"
++
++void func_0046E0E0(s32, u8, s32);
++s32 func_0046EBD0(s32,s32);
++
++void func_0046EDD8(void *arg0) {
++    if ((arg0 != NULL) && ((*(s32 *)((u8 *)(arg0) + 0x58)) != 0)) {
++        func_0046EBD0((s32)arg0,0x70000000);
++        func_0046E0E0((*(s32 *)((u8 *)(arg0) + 0x58)), (*(u8 *)((u8 *)(arg0) + 0x57)), 0x70000000);
++        (*(s8 *)((u8 *)(arg0) + 0x55)) = (u8) ((*(u8 *)((u8 *)(arg0) + 0x55)) & 0xDF);
++    }
++}

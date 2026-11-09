@@ -1,0 +1,61 @@
+diff --git a/src/overlays/shared/L05_004F2560.c b/src/overlays/shared/L05_004F2560.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L05_004F2560.c
+@@ -0,0 +1,56 @@
++/* cflags: -mno-split-addresses */
++#include "common.h"
++
++typedef struct Type1 Type1;
++typedef struct Type2 Type2;
++typedef struct Type3 Type3;
++typedef struct Type4 Type4;
++typedef struct Type5 Type5;
++struct Type5 {
++    char _p0[0x98];
++    s32 f98;
++};
++struct Type4 {
++    char _p0[0x34];
++    u16 f34;
++};
++struct Type2 {
++    char _p0[0x450];
++    Type5 *f450;
++};
++struct Type3 {
++    char _p0[0x34];
++    u16 f34;
++};
++struct Type1 {
++    char _p0[0xAC];
++    s32 fAC;
++};
++
++s32 func_L00_0066CCE8(void *, s32);
++s32 func_L01_0056CDB0();
++s32 func_L01_0056E7F8(void *);
++s32 func_L01_00588B08(void *);
++s32 func_L01_00591BD8(void *, s32, s32);
++s32 func_L01_005A8928(void *);
++
++void func_L05_004F2560(Type1 *arg0) {
++    Type4 *temp_a0;
++    Type2 *temp_s1;
++    Type3 *temp_v1;
++
++    temp_s1 = arg0->fAC;
++    func_L01_0056CDB0();
++    func_L01_0056E7F8(arg0);
++    func_L01_005A8928(arg0);
++    func_L01_00588B08(arg0);
++    temp_v1 = temp_s1->f450;
++    if (temp_v1 != NULL) {
++        temp_v1->f34 = (u16) (temp_v1->f34 | 0x41);
++        temp_a0 = temp_s1->f450;
++        temp_a0->f34 = (u16) (temp_a0->f34 & 0xEFFF);
++        temp_s1->f450->f98 = 0;
++        func_L00_0066CCE8(temp_s1->f450, 1);
++    }
++    func_L01_00591BD8(arg0, 7, 5);
++}

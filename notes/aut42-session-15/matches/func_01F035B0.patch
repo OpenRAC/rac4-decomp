@@ -1,0 +1,33 @@
+diff --git a/src/net/01F035B0.c b/src/net/01F035B0.c
+new file mode 100644
+--- /dev/null
++++ b/src/net/01F035B0.c
+@@ -0,0 +1,28 @@
++/* cflags: -mno-split-addresses -fno-schedule-insns */
++#include "common.h"
++
++typedef struct Type1 Type1;
++struct Type1 {
++    s32 f0;
++    char _p4[0x9C];
++    s32 fA0;
++    char _pA4[0xC];
++    s32 fB0;
++};
++
++s32 func_01EE3A18(s32, void *);
++void func_01EEDCD0(s32, void *, s32);
++void func_01EF382C(Type1 *, s32, s32);
++extern s32 D_00170A98_[];
++extern s32 D_0019DF18_[];
++extern s32 D_0019DF20_[];
++#define D_00170A98 (D_00170A98_[0])
++#define D_0019DF18 (D_0019DF18_[0])
++#define D_0019DF20 (D_0019DF20_[0])
++
++void func_01F035B0(Type1 *arg0, s32 arg1, s32 arg2) {
++    func_01EF382C(arg0, arg1, arg2);
++    arg0->fB0 = &D_00170A98;
++    func_01EEDCD0((void *)((u8 *)arg0 + 0x38), &D_0019DF20, 0x40);
++    arg0->fA0 = func_01EE3A18(arg0->f0, &D_0019DF18);
++}

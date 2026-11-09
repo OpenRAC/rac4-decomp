@@ -1,0 +1,388 @@
+diff --git a/src/game/0046A350.c b/src/game/0046A350.c
+--- a/src/game/0046A350.c
++++ b/src/game/0046A350.c
+@@ -1,7 +1,7 @@
+ #include "common.h"
+-
++
+-extern s32 D_0046A350;
++extern s32 D_0021F1A8;
+-
++
+ s32 func_0046A350(void) {
+-    return D_0046A350;
++    return D_0021F1A8;
+ }
+diff --git a/src/game/0046A358.c b/src/game/0046A358.c
+--- a/src/game/0046A358.c
++++ b/src/game/0046A358.c
+@@ -1,7 +1,7 @@
+ #include "common.h"
+-
++
+-extern s32 D_0046A358;
++extern s32 D_0021F1AC;
+-
++
+ s32 func_0046A358(void) {
+-    return D_0046A358;
++    return D_0021F1AC;
+ }
+diff --git a/src/game/0047F538.c b/src/game/0047F538.c
+--- a/src/game/0047F538.c
++++ b/src/game/0047F538.c
+@@ -1,7 +1,7 @@
+ #include "common.h"
+-
++
+-extern s32 D_0047F538;
++extern s32 D_0021F2E0;
+-
++
+ void func_0047F538(s32 arg0) {
+-    D_0047F538 = arg0;
++    D_0021F2E0 = arg0;
+ }
+diff --git a/src/game/0047F548.c b/src/game/0047F548.c
+--- a/src/game/0047F548.c
++++ b/src/game/0047F548.c
+@@ -1,7 +1,7 @@
+ #include "common.h"
+-
++
+-extern s32 D_0047F548;
++extern s32 D_0021F2E4;
+-
++
+ void func_0047F548(s32 arg0) {
+-    D_0047F548 = arg0;
++    D_0021F2E4 = arg0;
+ }
+diff --git a/src/game/004983E0.c b/src/game/004983E0.c
+--- a/src/game/004983E0.c
++++ b/src/game/004983E0.c
+@@ -1,7 +1,7 @@
+ #include "common.h"
+-
++
+-extern s32 D_004983E0;
++extern s32 D_0021F598;
+-
++
+ s32 func_004983E0(void) {
+-    return D_004983E0;
++    return D_0021F598;
+ }
+diff --git a/src/game/00498D10.c b/src/game/00498D10.c
+--- a/src/game/00498D10.c
++++ b/src/game/00498D10.c
+@@ -1,7 +1,7 @@
+ #include "common.h"
+-
++
+-extern u8 D_00498D10;
++extern u8 D_0021F5EF;
+-
++
+ u8 func_00498D10(void) {
+-    return D_00498D10;
++    return D_0021F5EF;
+ }
+diff --git a/src/game/004A22D8.c b/src/game/004A22D8.c
+--- a/src/game/004A22D8.c
++++ b/src/game/004A22D8.c
+@@ -1,7 +1,7 @@
+ #include "common.h"
+-
++
+-extern s32 D_004A22D8;
++extern s32 D_0021F66C;
+-
++
+ void func_004A22D8(s32 arg0) {
+-    D_004A22D8 = arg0;
++    D_0021F66C = arg0;
+ }
+diff --git a/src/game/004A22E0.c b/src/game/004A22E0.c
+--- a/src/game/004A22E0.c
++++ b/src/game/004A22E0.c
+@@ -1,7 +1,7 @@
+ #include "common.h"
+-
++
+-extern s32 D_004A22E0;
++extern s32 D_0021F66C;
+-
++
+ s32 func_004A22E0(void) {
+-    return D_004A22E0;
++    return D_0021F66C;
+ }
+diff --git a/src/game/004F2520.c b/src/game/004F2520.c
+--- a/src/game/004F2520.c
++++ b/src/game/004F2520.c
+@@ -1,7 +1,7 @@
+ #include "common.h"
+-
++
+-extern s32 D_004F2520;
++extern s32 D_0022096C;
+-
++
+ s32 func_004F2520(void) {
+-    return D_004F2520;
++    return D_0022096C;
+ }
+diff --git a/src/game/004F2528.c b/src/game/004F2528.c
+--- a/src/game/004F2528.c
++++ b/src/game/004F2528.c
+@@ -1,7 +1,7 @@
+ #include "common.h"
+-
++
+-extern s32 D_004F2528;
++extern s32 D_00220968;
+-
++
+ s32 func_004F2528(void) {
+-    return D_004F2528;
++    return D_00220968;
+ }
+diff --git a/src/game/004F5000.c b/src/game/004F5000.c
+--- a/src/game/004F5000.c
++++ b/src/game/004F5000.c
+@@ -1,7 +1,7 @@
+ #include "common.h"
+-
++
+-extern s32 D_004F5000;
++extern s32 D_0022095C;
+-
++
+ s32 func_004F5000(void) {
+-    return D_004F5000;
++    return D_0022095C;
+ }
+diff --git a/src/game/004F5420.c b/src/game/004F5420.c
+--- a/src/game/004F5420.c
++++ b/src/game/004F5420.c
+@@ -1,7 +1,7 @@
+ #include "common.h"
+-
++
+-extern s8 D_004F5420;
++extern s8 D_00220975;
+-
++
+ void func_004F5420(s8 arg0) {
+-    D_004F5420 = arg0;
++    D_00220975 = arg0;
+ }
+diff --git a/src/game/00504228.c b/src/game/00504228.c
+--- a/src/game/00504228.c
++++ b/src/game/00504228.c
+@@ -1,7 +1,7 @@
+ #include "common.h"
+-
++
+-extern s32 D_00504228;
++extern s32 D_00220B48;
+-
++
+ void func_00504228(s32 arg0) {
+-    D_00504228 = arg0;
++    D_00220B48 = arg0;
+ }
+diff --git a/src/game/00504230.c b/src/game/00504230.c
+--- a/src/game/00504230.c
++++ b/src/game/00504230.c
+@@ -1,7 +1,7 @@
+ #include "common.h"
+-
++
+-extern s32 D_00504230;
++extern s32 D_00220B48;
+-
++
+ s32 func_00504230(void) {
+-    return D_00504230;
++    return D_00220B48;
+ }
+diff --git a/src/game/0050D400.c b/src/game/0050D400.c
+--- a/src/game/0050D400.c
++++ b/src/game/0050D400.c
+@@ -1,7 +1,7 @@
+ #include "common.h"
+-
++
+-extern s32 D_0050D400;
++extern s32 D_00220B58;
+-
++
+ s32 func_0050D400(void) {
+-    return D_0050D400;
++    return D_00220B58;
+ }
+diff --git a/src/game/0050DDB8.c b/src/game/0050DDB8.c
+--- a/src/game/0050DDB8.c
++++ b/src/game/0050DDB8.c
+@@ -1,7 +1,7 @@
+ #include "common.h"
+-
++
+-extern s32 D_0050DDB8;
++extern s32 D_00220B5C;
+-
++
+ s32 func_0050DDB8(void) {
+-    return D_0050DDB8;
++    return D_00220B5C;
+ }
+diff --git a/src/game/00510660.c b/src/game/00510660.c
+--- a/src/game/00510660.c
++++ b/src/game/00510660.c
+@@ -1,7 +1,7 @@
+ #include "common.h"
+-
++
+-extern s32 D_00510660;
++extern s32 D_00220B70;
+-
++
+ s32 func_00510660(void) {
+-    return D_00510660;
++    return D_00220B70;
+ }
+diff --git a/src/game/0053CC50.c b/src/game/0053CC50.c
+--- a/src/game/0053CC50.c
++++ b/src/game/0053CC50.c
+@@ -1,7 +1,7 @@
+ #include "common.h"
+-
++
+-extern s32 D_0053CC50;
++extern s32 D_00220DA0;
+-
++
+ s32 func_0053CC50(void) {
+-    return D_0053CC50;
++    return D_00220DA0;
+ }
+diff --git a/src/overlays/l15_control_level/L15_00518658.c b/src/overlays/l15_control_level/L15_00518658.c
+--- a/src/overlays/l15_control_level/L15_00518658.c
++++ b/src/overlays/l15_control_level/L15_00518658.c
+@@ -1,7 +1,7 @@
+ #include "common.h"
+-
++
+-extern s64 D_00518658;
++extern s64 D_0021DA58;
+-
++
+ s64 func_L15_00518658(void) {
+-    return D_00518658;
++    return D_0021DA58;
+ }
+diff --git a/src/overlays/l41_battledome_tower/L41_0059F768.c b/src/overlays/l41_battledome_tower/L41_0059F768.c
+--- a/src/overlays/l41_battledome_tower/L41_0059F768.c
++++ b/src/overlays/l41_battledome_tower/L41_0059F768.c
+@@ -1,7 +1,7 @@
+ #include "common.h"
+-
++
+-extern f32 D_0059F768;
++extern f32 D_0022328C;
+-
++
+ f32 func_L41_0059F768(void) {
+-    return D_0059F768;
++    return D_0022328C;
+ }
+diff --git a/src/overlays/shared/L00_00593EC0.c b/src/overlays/shared/L00_00593EC0.c
+--- a/src/overlays/shared/L00_00593EC0.c
++++ b/src/overlays/shared/L00_00593EC0.c
+@@ -1,7 +1,7 @@
+ #include "common.h"
+-
++
+-extern s32 D_00593EC0;
++extern s32 D_0021E1D8;
+-
++
+ s32 func_L00_00593EC0(void) {
+-    return D_00593EC0;
++    return D_0021E1D8;
+ }
+diff --git a/src/overlays/shared/L00_005BDB08.c b/src/overlays/shared/L00_005BDB08.c
+--- a/src/overlays/shared/L00_005BDB08.c
++++ b/src/overlays/shared/L00_005BDB08.c
+@@ -1,7 +1,7 @@
+ #include "common.h"
+-
++
+-extern s8 D_005BDB08;
++extern s8 D_0021E5AE;
+-
++
+ void func_L00_005BDB08(s8 arg0) {
+-    D_005BDB08 = arg0;
++    D_0021E5AE = arg0;
+ }
+diff --git a/src/overlays/shared/L00_005BE048.c b/src/overlays/shared/L00_005BE048.c
+--- a/src/overlays/shared/L00_005BE048.c
++++ b/src/overlays/shared/L00_005BE048.c
+@@ -1,7 +1,7 @@
+ #include "common.h"
+-
++
+-extern u8 D_005BE048;
++extern u8 D_0021E598;
+-
++
+ u8 func_L00_005BE048(void) {
+-    return D_005BE048;
++    return D_0021E598;
+ }
+diff --git a/src/overlays/shared/L00_005C8448.c b/src/overlays/shared/L00_005C8448.c
+--- a/src/overlays/shared/L00_005C8448.c
++++ b/src/overlays/shared/L00_005C8448.c
+@@ -1,7 +1,7 @@
+ #include "common.h"
+-
++
+-extern s32 D_005C8448;
++extern s32 D_0021E670;
+-
++
+ void func_L00_005C8448(s32 arg0) {
+-    D_005C8448 = arg0;
++    D_0021E670 = arg0;
+ }
+diff --git a/src/overlays/shared/L00_006AA088.c b/src/overlays/shared/L00_006AA088.c
+--- a/src/overlays/shared/L00_006AA088.c
++++ b/src/overlays/shared/L00_006AA088.c
+@@ -1,6 +1,6 @@
+ #include "common.h"
+-
++
+-extern s32 D_0022339C;
++extern s32 D_002233A0;
+-
++
+ void func_L00_006AA5F8();                             /* extern */
+ void func_L00_006AA710();                             /* extern */
+@@ -8,11 +8,11 @@
+ void func_L00_006AA940();                             /* extern */
+ void func_L00_006AAA58();                             /* extern */
+ void func_L00_006AABA8();                              /* extern */
+-extern s32 D_002233A0;
++extern s32 D_0022339C;
+-
++
+ void func_L00_006AA088(void) {
++    D_002233A0 = -1;
+     D_0022339C = -1;
+-    D_002233A0 = -1;
+     func_L00_006AABA8();
+     func_L00_006AA5F8(2);
+     func_L00_006AA710(3);

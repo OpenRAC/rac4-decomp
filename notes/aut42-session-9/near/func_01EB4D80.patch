@@ -1,0 +1,19 @@
+diff --git a/nonmatching/net/func_01EB4D80.c b/nonmatching/net/func_01EB4D80.c
+new file mode 100644
+--- /dev/null
++++ b/nonmatching/net/func_01EB4D80.c
+@@ -0,0 +1,14 @@
++/* Not matching yet: BYTES 1/44. The final byte combination uses or rather than retail addu.
++ * Reproduce: tools/try_func.py func_01EB4D80 nonmatching/net/func_01EB4D80.c --diff
++ * Not part of the build.
++ */
++#include "common.h"
++
++u32 func_01EB4D80(const u8 *arg0) {
++    u32 value;
++
++    value = arg0[4];
++    value = (value << 8) + arg0[5];
++    value = (value << 8) + arg0[6];
++    return (value << 8) + arg0[7];
++}

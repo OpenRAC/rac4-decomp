@@ -1,0 +1,18 @@
+diff --git a/src/overlays/l00_multiplayer_menu/L00_00752638.c b/src/overlays/l00_multiplayer_menu/L00_00752638.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/l00_multiplayer_menu/L00_00752638.c
+@@ -0,0 +1,13 @@
++#include "common.h"
++
++s32 func_0071BE80(s32);
++void func_L00_00717C68(void);
++s32 func_L00_0071B478(s32);
++extern s32 D_002213C8;
++
++void func_L00_00752638(s32 arg0) {
++    D_002213C8 = -1;
++    func_L00_0071B478(arg0);
++    func_0071BE80(arg0);
++    func_L00_00717C68();
++}

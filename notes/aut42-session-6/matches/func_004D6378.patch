@@ -1,0 +1,47 @@
+diff --git a/src/game/004D6378.c b/src/game/004D6378.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004D6378.c
+@@ -0,0 +1,42 @@
++#include "common.h"
++
++typedef struct Type1 Type1;
++struct Type1 {
++    char _p0[0x8];
++    s32 f8;
++};
++
++s32 func_0045E038(s32);
++s32 func_00499CA0(void *, s32);
++s32 func_004A1A60(s32 *, s32);
++s32 func_00501638(s32 *, s32, s32);
++s32 func_00505238(s32, s32);
++s32 func_005054F8(s32, s32);
++s32 func_00505B20();
++s32 func_00505B70(s32, s32);
++s32 func_00506120(s32, s32);
++extern s32 D_001CDAF0_[];
++#define D_001CDAF0 (D_001CDAF0_[0])
++extern s32 D_00221AD8;
++extern s32 D_0031D100_[];
++#define D_0031D100 (D_0031D100_[0])
++
++void func_004D6378(void) {
++    s32 temp_s0;
++    s32 temp_s0_2;
++    s32 temp_s0_3;
++    Type1 *temp_s1;
++
++    temp_s1 = (func_00505B20() * 0x528) + (u8 *)&D_0031D100;
++    func_00501638(&D_00221AD8, 0x29, -1);
++    func_00505B70(0xF, D_00221AD8);
++    temp_s0 = func_004A1A60(&D_00221AD8, 0xA);
++    func_00505238(temp_s0, func_0045E038(0x2350));
++    temp_s0_2 = func_004A1A60(&D_00221AD8, 9);
++    func_00505238(temp_s0_2, func_0045E038(0x31CE));
++    temp_s0_3 = func_004A1A60(&D_00221AD8, 0xB);
++    func_00505238(temp_s0_3, func_0045E038(0x2F0B));
++    temp_s1->f8 = func_00499CA0(&D_001CDAF0, -1);
++    func_005054F8(func_004A1A60(&D_00221AD8, 4), 1);
++    func_00506120(func_004A1A60(&D_00221AD8, 4), temp_s1->f8);
++}

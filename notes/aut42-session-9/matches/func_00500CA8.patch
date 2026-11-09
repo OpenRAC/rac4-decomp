@@ -1,0 +1,14 @@
+diff --git a/src/game/00500CA8.c b/src/game/00500CA8.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00500CA8.c
+@@ -0,0 +1,9 @@
++#include "common.h"
++
++void func_00500CA8(void *arg0, void *arg1, void *arg2, f32 fparg0) {
++    f32 temp_f2;
++
++    temp_f2 = 1.0f - fparg0;
++    (*(f32 *)((u8 *)(arg0) + 0x0)) = (f32) ((temp_f2 * (*(f32 *)((u8 *)(arg1) + 0x0))) + (fparg0 * (*(f32 *)((u8 *)(arg2) + 0x0))));
++    (*(f32 *)((u8 *)(arg0) + 0x4)) = (f32) ((temp_f2 * (*(f32 *)((u8 *)(arg1) + 0x4))) + (fparg0 * (*(f32 *)((u8 *)(arg2) + 0x4))));
++}

@@ -1,0 +1,18 @@
+diff --git a/src/overlays/l00_multiplayer_menu/L00_00764B20.c b/src/overlays/l00_multiplayer_menu/L00_00764B20.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/l00_multiplayer_menu/L00_00764B20.c
+@@ -0,0 +1,13 @@
++#include "common.h"
++
++s32 func_L00_005C9F50(s32);
++extern s32 D_004EE640_[];
++#define D_004EE640 (D_004EE640_[0])
++
++void func_L00_00764B20(void) {
++    (*(s32 *)((u8 *)(&D_004EE640) + 0x0)) = func_L00_005C9F50(0x2EA1);
++    (*(s32 *)((u8 *)(&D_004EE640) + 0x4)) = func_L00_005C9F50(0x2EC7);
++    (*(s32 *)((u8 *)(&D_004EE640) + 0x8)) = func_L00_005C9F50(0x2EC8);
++    (*(s32 *)((u8 *)(&D_004EE640) + 0xC)) = func_L00_005C9F50(0x23F3);
++    (*(s32 *)((u8 *)(&D_004EE640) + 0x10)) = func_L00_005C9F50(0x2EA2);
++}

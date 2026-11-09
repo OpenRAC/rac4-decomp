@@ -1,0 +1,250 @@
+diff --git a/src/game/004B6FD0.c b/src/game/004B6FD0.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004B6FD0.c
+@@ -0,0 +1,20 @@
++#include "common.h"
++
++extern s32 func_00505B20(void);
++extern s32 func_004A0208(s32);
++extern s32 func_0049B1A0(s32, s32, s32);
++
++typedef struct {
++    s32 f0;
++    s32 f4;
++    u8 pad[0x1F0];
++} Type1;
++
++extern Type1 D_003098F0[];
++
++void func_004B6FD0(void) {
++    s32 owner = func_00505B20();
++    s32 value = func_004A0208(owner);
++    D_003098F0[owner].f4 = value;
++    func_0049B1A0(owner, 0x9, owner * 0x1F8);
++}
+diff --git a/src/game/004B70D8.c b/src/game/004B70D8.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004B70D8.c
+@@ -0,0 +1,20 @@
++#include "common.h"
++
++extern s32 func_00505B20(void);
++extern s32 func_004A0208(s32);
++extern s32 func_0049B1A0(s32, s32, s32);
++
++typedef struct {
++    s32 f0;
++    s32 f4;
++    u8 pad[0x1F0];
++} Type1;
++
++extern Type1 D_003098F0[];
++
++void func_004B70D8(void) {
++    s32 owner = func_00505B20();
++    s32 value = func_004A0208(owner);
++    D_003098F0[owner].f4 = value;
++    func_0049B1A0(owner, 0x8, owner * 0x1F8);
++}
+diff --git a/src/game/004B7290.c b/src/game/004B7290.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004B7290.c
+@@ -0,0 +1,20 @@
++#include "common.h"
++
++extern s32 func_00505B20(void);
++extern s32 func_004A0208(s32);
++extern s32 func_0049B1A0(s32, s32, s32);
++
++typedef struct {
++    u8 pad0[0x8];
++    s32 f8;
++    u8 pad1[0x1EC];
++} Type1;
++
++extern Type1 D_003098F0[];
++
++void func_004B7290(void) {
++    s32 owner = func_00505B20();
++    s32 value = func_004A0208(owner);
++    D_003098F0[owner].f8 = value;
++    func_0049B1A0(owner, 0x18, owner * 0x1F8);
++}
+diff --git a/src/game/004B72E8.c b/src/game/004B72E8.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004B72E8.c
+@@ -0,0 +1,20 @@
++#include "common.h"
++
++extern s32 func_00505B20(void);
++extern s32 func_004A0208(s32);
++extern s32 func_0049B1A0(s32, s32, s32);
++
++typedef struct {
++    u8 pad0[0xC];
++    s32 fC;
++    u8 pad1[0x1E8];
++} Type1;
++
++extern Type1 D_003098F0[];
++
++void func_004B72E8(void) {
++    s32 owner = func_00505B20();
++    s32 value = func_004A0208(owner);
++    D_003098F0[owner].fC = value;
++    func_0049B1A0(owner, 0x11, owner * 0x1F8);
++}
+diff --git a/src/game/004B7340.c b/src/game/004B7340.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004B7340.c
+@@ -0,0 +1,20 @@
++#include "common.h"
++
++extern s32 func_00505B20(void);
++extern s32 func_004A0208(s32);
++extern s32 func_0049B1A0(s32, s32, s32);
++
++typedef struct {
++    u8 pad0[0x10];
++    s32 f10;
++    u8 pad1[0x1E4];
++} Type1;
++
++extern Type1 D_003098F0[];
++
++void func_004B7340(void) {
++    s32 owner = func_00505B20();
++    s32 value = func_004A0208(owner);
++    D_003098F0[owner].f10 = value;
++    func_0049B1A0(owner, 0x13, owner * 0x1F8);
++}
+diff --git a/src/game/004B7398.c b/src/game/004B7398.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004B7398.c
+@@ -0,0 +1,20 @@
++#include "common.h"
++
++extern s32 func_00505B20(void);
++extern s32 func_004A0208(s32);
++extern s32 func_0049B1A0(s32, s32, s32);
++
++typedef struct {
++    u8 pad0[0x8];
++    s32 f8;
++    u8 pad1[0x1EC];
++} Type1;
++
++extern Type1 D_003098F0[];
++
++void func_004B7398(void) {
++    s32 owner = func_00505B20();
++    s32 value = func_004A0208(owner);
++    D_003098F0[owner].f8 = value;
++    func_0049B1A0(owner, 0x14, owner * 0x1F8);
++}
+diff --git a/src/game/004B74A0.c b/src/game/004B74A0.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004B74A0.c
+@@ -0,0 +1,20 @@
++#include "common.h"
++
++extern s32 func_00505B20(void);
++extern s32 func_004A0208(s32);
++extern s32 func_0049B1A0(s32, s32, s32);
++
++typedef struct {
++    u8 pad0[0x8];
++    s32 f8;
++    u8 pad1[0x1EC];
++} Type1;
++
++extern Type1 D_003098F0[];
++
++void func_004B74A0(void) {
++    s32 owner = func_00505B20();
++    s32 value = func_004A0208(owner);
++    D_003098F0[owner].f8 = value;
++    func_0049B1A0(owner, 0x17, owner * 0x1F8);
++}
+diff --git a/src/game/004B75B8.c b/src/game/004B75B8.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004B75B8.c
+@@ -0,0 +1,20 @@
++#include "common.h"
++
++extern s32 func_00505B20(void);
++extern s32 func_004A0208(s32);
++extern s32 func_0049B1A0(s32, s32, s32);
++
++typedef struct {
++    u8 pad0[0xC];
++    s32 fC;
++    u8 pad1[0x1E8];
++} Type1;
++
++extern Type1 D_003098F0[];
++
++void func_004B75B8(void) {
++    s32 owner = func_00505B20();
++    s32 value = func_004A0208(owner);
++    D_003098F0[owner].fC = value;
++    func_0049B1A0(owner, 0x19, owner * 0x1F8);
++}
+diff --git a/src/game/004B7610.c b/src/game/004B7610.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004B7610.c
+@@ -0,0 +1,20 @@
++#include "common.h"
++
++extern s32 func_00505B20(void);
++extern s32 func_004A0208(s32);
++extern s32 func_0049B1A0(s32, s32, s32);
++
++typedef struct {
++    u8 pad0[0xC];
++    s32 fC;
++    u8 pad1[0x1E8];
++} Type1;
++
++extern Type1 D_003098F0[];
++
++void func_004B7610(void) {
++    s32 owner = func_00505B20();
++    s32 value = func_004A0208(owner);
++    D_003098F0[owner].fC = value;
++    func_0049B1A0(owner, 0x1A, owner * 0x1F8);
++}
+diff --git a/src/game/004B7668.c b/src/game/004B7668.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004B7668.c
+@@ -0,0 +1,20 @@
++#include "common.h"
++
++extern s32 func_00505B20(void);
++extern s32 func_004A0208(s32);
++extern s32 func_0049B1A0(s32, s32, s32);
++
++typedef struct {
++    u8 pad0[0xC];
++    s32 fC;
++    u8 pad1[0x1E8];
++} Type1;
++
++extern Type1 D_003098F0[];
++
++void func_004B7668(void) {
++    s32 owner = func_00505B20();
++    s32 value = func_004A0208(owner);
++    D_003098F0[owner].fC = value;
++    func_0049B1A0(owner, 0x1B, owner * 0x1F8);
++}

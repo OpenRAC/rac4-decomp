@@ -1,0 +1,13 @@
+diff --git a/src/overlays/l00_multiplayer_menu/L00_00548028.c b/src/overlays/l00_multiplayer_menu/L00_00548028.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/l00_multiplayer_menu/L00_00548028.c
+@@ -0,0 +1,8 @@
++#include "common.h"
++
++extern s8 D_004771A8_[];
++#define D_004771A8 (D_004771A8_[0])
++
++s8 *func_L00_00548028(void) {
++    return (D_004771A8 == 0) ? NULL : &D_004771A8;
++}

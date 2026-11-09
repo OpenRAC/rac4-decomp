@@ -1,0 +1,18 @@
+diff --git a/src/overlays/shared/L01_004E35D0.c b/src/overlays/shared/L01_004E35D0.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L01_004E35D0.c
+@@ -0,0 +1,13 @@
++#include "common.h"
++void func_L01_00591BD8(void *p0,s32 p1,s32 p2);
++void func_L01_005A8A28(void *p0);
++void func_L01_005BAE58(void *p0,void *p1,void *p2,f32 p3,f32 p4);
++
++void func_004E3630(void *);
++
++void func_L01_004E35D0(void *arg0) {
++    func_004E3630(arg0);
++    func_L01_005BAE58(arg0, arg0 + 0x10, (void *)0x8000, 1.0f, 4.0f);
++    func_L01_005A8A28(arg0);
++    func_L01_00591BD8(arg0, 1, 0);
++}

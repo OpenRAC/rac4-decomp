@@ -1,0 +1,21 @@
+diff --git a/src/game/004DBC90.c b/src/game/004DBC90.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004DBC90.c
+@@ -0,0 +1,16 @@
++#include "common.h"
++typedef struct Type10 { char _p0[0x4]; s32 f4; char _p8[0x160]; } Type10;
++
++void func_0049B0D8(s32);
++void func_0049C200(s32, s32);
++void func_004DC178(s32);
++s32 func_00505B20();
++extern s32 D_00322FC8_[];
++#define D_00322FC8 (D_00322FC8_[0])
++
++void func_004DBC90(void) {
++    ((func_00505B20()) + (Type10 *)&D_00322FC8)->f4 = 0;
++    func_004DC178(0x168);
++    func_0049C200(func_00505B20(), 0);
++    func_0049B0D8(0);
++}
