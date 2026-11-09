@@ -1,6 +1,6 @@
 /* Not matching yet: SIZE ours 96 / retail 92 (tools/try_func.py func_0015E038 --diff). Not part of the build. */
 extern u8 D_00172160[];
-extern s32 D_21214C;
+extern s32 (*D_21214C)(void);
 
 /* Copy a table word into a slot, then run the current callback. */
 s32 func_0015E038(s32 arg0, s32 arg1, s32 arg2) {
@@ -11,7 +11,7 @@ s32 func_0015E038(s32 arg0, s32 arg1, s32 arg2) {
         (*(s32 *)((u8 *)D_00172160 + slot * 4 + 0x6A0)) = *(s32 *)((u8 *)D_00172160 + 0x218);
     }
     if (D_21214C != 0) {
-        result = ((s32 (*)(void))D_21214C)();
+        result = D_21214C();
     }
     return result;
 }

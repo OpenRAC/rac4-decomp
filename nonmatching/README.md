@@ -133,6 +133,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L00_004F72C0`](l00_multiplayer_menu/func_L00_004F72C0.c) | l00_multiplayer_menu | 104 | BYTES 17/104 |
 | [`func_004954E0`](game/func_004954E0.c) | game | 56 | BYTES 8/48 |
 | [`func_L01_006B3FE8`](shared/func_L01_006B3FE8.c) | shared | 144 | BYTES 24/140 |
+| [`func_01EA9950`](net/func_01EA9950.c) | net | 52 | BYTES 9/52 |
 | [`func_0014D058`](core/func_0014D058.c) | core | 132 | BYTES 23/132 |
 | [`func_L01_0056E200`](shared/func_L01_0056E200.c) | shared | 120 | BYTES 21/120 |
 | [`func_0013EEB0`](core/func_0013EEB0.c) | core | 140 | BYTES 25/140 |
@@ -147,7 +148,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L00_005E0ED0`](shared/func_L00_005E0ED0.c) | shared | 136 | BYTES 26/132 |
 | [`func_L00_0077A2F8`](l00_multiplayer_menu/func_L00_0077A2F8.c) | l00_multiplayer_menu | 40 | BYTES 8/40 |
 | [`func_01EB8B60`](net/func_01EB8B60.c) | net | 128 | BYTES 27/124 |
-| [`func_L01_0043C180`](shared/func_L01_0043C180.c) | shared | 32 | BYTES 7/32 |
 | [`func_L01_004CFEC8`](shared/func_L01_004CFEC8.c) | shared | 144 | BYTES 31/140 |
 | [`func_01EDAF98`](net/func_01EDAF98.c) | net | 56 | BYTES 13/56 |
 | [`func_004F2268`](game/func_004F2268.c) | game | 88 | BYTES 21/88 |
@@ -159,7 +159,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_01EBDE78`](net/func_01EBDE78.c) | net | 88 | BYTES 30/88 |
 | [`func_01EC9640`](net/func_01EC9640.c) | net | 128 | BYTES 44/128 |
 | [`func_0014A0B8`](core/func_0014A0B8.c) | core | 108 | BYTES 39/108 |
-| [`func_00548DA0`](game/func_00548DA0.c) | game | 56 | BYTES 19/52 |
 | [`func_L00_00538128`](l00_multiplayer_menu/func_L00_00538128.c) | l00_multiplayer_menu | 88 | BYTES 31/84 |
 | [`func_L01_00443C98`](shared/func_L01_00443C98.c) | shared | 152 | BYTES 61/152 |
 | [`func_01EA9850`](net/func_01EA9850.c) | net | 56 | BYTES 26/56 |
@@ -191,18 +190,16 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_004E80F8`](game/func_004E80F8.c) | game | 112 | SIZE ours 104 / disc 112 |
 | [`func_004F8B60`](game/func_004F8B60.c) | game | 664 | SIZE ours 580 / retail 664 |
 | [`func_00501988`](game/func_00501988.c) | game | 56 | SIZE ours 36 / retail 56 |
-| [`func_01EA8BD0`](net/func_01EA8BD0.c) | net | 56 | SIZE ours 40 / retail 56 |
 | [`func_01EA9888`](net/func_01EA9888.c) | net | 56 | SIZE ours 48 / retail 56 |
-| [`func_01EA9950`](net/func_01EA9950.c) | net | 52 | SIZE ours 56 / retail 52 |
 | [`func_01EAE4F0`](net/func_01EAE4F0.c) | net | 136 | SIZE ours 140 / retail 136 |
-| [`func_01EB2C50`](net/func_01EB2C50.c) | net | 92 | SIZE ours 128 / retail 92 |
+| [`func_01EB2C50`](net/func_01EB2C50.c) | net | 92 | SIZE ours 72 / retail 92 |
 | [`func_01EBD718`](net/func_01EBD718.c) | net | 52 | SIZE ours 40 / retail 52 |
 | [`func_01EBE1B8`](net/func_01EBE1B8.c) | net | 104 | SIZE ours 84 / retail 104 |
 | [`func_01EBF978`](net/func_01EBF978.c) | net | 88 | SIZE ours 64 / retail 88 |
 | [`func_01EC2928`](net/func_01EC2928.c) | net | 52 | SIZE ours 48 / retail 52 |
 | [`func_01ED3B08`](net/func_01ED3B08.c) | net | 88 | SIZE ours 72 / retail 88 |
 | [`func_01ED8528`](net/func_01ED8528.c) | net | 96 | SIZE ours 108 / retail 96 |
-| [`func_01F04C40`](net/func_01F04C40.c) | net | 52 | SIZE ours 44 / retail 52 |
+| [`func_01F04C40`](net/func_01F04C40.c) | net | 52 | SIZE ours 48 / retail 52 |
 | [`func_L00_0052ADF0`](l00_multiplayer_menu/func_L00_0052ADF0.c) | l00_multiplayer_menu | 40 | SIZE ours 64 / retail 40 |
 | [`func_L00_005D5CE0`](shared/func_L00_005D5CE0.c) | shared | 400 | SIZE ours 340 / retail 400 |
 | [`func_L00_0067FE68`](shared/func_L00_0067FE68.c) | shared | 184 | SIZE ours 176 / retail 184 |
