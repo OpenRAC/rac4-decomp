@@ -1,4 +1,4 @@
-/* cflags:  -Wuninitialized */
+/* cflags:  */
 #include "common.h"
 
 s32 func_L11_003FF000(s32 arg0);

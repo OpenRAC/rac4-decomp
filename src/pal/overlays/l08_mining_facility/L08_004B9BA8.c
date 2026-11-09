@@ -1,4 +1,4 @@
-/* cflags:  -Wuninitialized */
+/* cflags:  */
 #include "common.h"
 
 s32 func_00474368(s32, s32, s32);           /* extern */

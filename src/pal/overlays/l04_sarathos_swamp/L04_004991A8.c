@@ -1,4 +1,4 @@
-/* cflags:  -Wuninitialized -malign-jumps=3 */
+/* cflags:  -malign-jumps=3 */
 #include "common.h"
 
 void func_004E29B8(int, int);
