@@ -1,5 +1,15 @@
 # Third-party notices
 
+## US clock-conversion compiler reference
+
+The compiler revision used for `src/core/0012E848.c` was identified with help
+from the OpenRAC RAC3 contributors' GPL-3.0 compiler study,
+[`docs/us/compiler_matrix_i5bootn.md`](https://github.com/OpenRAC/rac3-decomp/blob/403f30a9561324342c87802960eefbaaae13b372/docs/us/compiler_matrix_i5bootn.md).
+The reference identifies the original EE-GCC `2.9-ee-991111-01` family.
+The C implementation was reconstructed independently from RAC4 NTSC-U;
+the corresponding RAC3 routine remains assembly-backed. No donor C,
+generated assembly or proprietary SDK source was imported.
+
 ## PAL video-stream control-flow adaptations
 
 The following PAL implementations adapt C control-flow structure from the
