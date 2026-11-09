@@ -387,7 +387,8 @@ def main() -> int:
     verbose = "-v" in sys.argv
     exact = set(json.loads((ROOT / "build" / "matches.json").read_text())["exact"])
     c = Checker()
-    paths = glob.glob(str(ROOT / "build" / "obj" / "*.o"))
+    # src/pal/ is C for the PAL disc under PAL names (as in audit_matches.py): not US functions.
+    paths = [p for p in glob.glob(str(ROOT / "build" / "obj" / "*.o")) if not Path(p).name.startswith("pal_")]
     if "--libs" in sys.argv:
         paths += glob.glob(str(ROOT / "build" / "libgcc" / "*.o")) + glob.glob(str(ROOT / "build" / "libm" / "*.o"))
     for path in sorted(paths):
