@@ -156,7 +156,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L01_00498698`](shared/func_L01_00498698.c) | shared | 240 | BYTES 76/240 |
 | [`func_01EBDE78`](net/func_01EBDE78.c) | net | 88 | BYTES 30/88 |
 | [`func_01EC9640`](net/func_01EC9640.c) | net | 128 | BYTES 44/128 |
-| [`func_0014A0B8`](core/func_0014A0B8.c) | core | 108 | BYTES 39/108 |
 | [`func_L00_00538128`](l00_multiplayer_menu/func_L00_00538128.c) | l00_multiplayer_menu | 88 | BYTES 31/84 |
 | [`func_L01_00443C98`](shared/func_L01_00443C98.c) | shared | 152 | BYTES 61/152 |
 | [`func_01EA9850`](net/func_01EA9850.c) | net | 56 | BYTES 26/56 |
@@ -165,7 +164,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_01EC2298`](net/func_01EC2298.c) | net | 72 | BYTES 37/72 |
 | [`func_0050E438`](game/func_0050E438.c) | game | 56 | BYTES 27/52 |
 | [`func_01EA7278`](net/func_01EA7278.c) | net | 80 | BYTES 41/76 |
-| [`func_0015F3F0`](core/func_0015F3F0.c) | core | 60 | BYTES 33/60 |
 | [`func_01EB9880`](net/func_01EB9880.c) | net | 152 | BYTES 84/152 |
 | [`func_01EC27F8`](net/func_01EC27F8.c) | net | 72 | BYTES 40/72 |
 | [`func_L00_00776698`](l00_multiplayer_menu/func_L00_00776698.c) | l00_multiplayer_menu | 80 | BYTES 47/76 |
@@ -177,10 +175,11 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_01EA8F98`](net/func_01EA8F98.c) | net | 64 | BYTES 48/60 |
 | [`func_01F072C8`](net/func_01F072C8.c) | net | 56 | BYTES 48/52 |
 | [`func_001270C0`](core/func_001270C0.c) | core | 164 | SIZE ours 152 / disc 164: retail's two sync instructions need inline asm |
-| [`func_0012E8C8`](core/func_0012E8C8.c) | core | 76 | SIZE ours 68 / retail 76 |
+| [`func_0014A0B8`](core/func_0014A0B8.c) | core | 108 | not recorded |
 | [`func_00159570`](core/func_00159570.c) | core | 56 | SIZE ours 44 / retail 56 |
 | [`func_0015DFD8`](core/func_0015DFD8.c) | core | 92 | SIZE ours 96 / retail 92 |
 | [`func_0015E038`](core/func_0015E038.c) | core | 92 | SIZE ours 96 / retail 92 |
+| [`func_0015F3F0`](core/func_0015F3F0.c) | core | 60 | not recorded |
 | [`func_004AB120`](game/func_004AB120.c) | game | 72 | SIZE ours 68 / retail 72 |
 | [`func_004C6070`](game/func_004C6070.c) | game | 328 | SIZE ours 300 / retail 328 |
 | [`func_004C8388`](game/func_004C8388.c) | game | 8 | not recorded |
@@ -212,7 +211,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L00_00774BB0`](l00_multiplayer_menu/func_L00_00774BB0.c) | l00_multiplayer_menu | 40 | SIZE ours 56 / retail 40 |
 | [`func_L01_0044BC50`](shared/func_L01_0044BC50.c) | shared | 264 | SIZE ours 260 / retail 264 |
 | [`func_L01_004BDAE8`](shared/func_L01_004BDAE8.c) | shared | 240 | SIZE ours 204 / retail 240 |
-| [`func_L01_004BDD78`](shared/func_L01_004BDD78.c) | shared | 24 | SIZE ours 20 / retail 24 |
 | [`func_L01_004CFBF0`](shared/func_L01_004CFBF0.c) | shared | 240 | SIZE ours 208 / retail 240 |
 | [`func_L01_005589E0`](shared/func_L01_005589E0.c) | shared | 304 | SIZE ours 320 / retail 304 |
 | [`func_L01_005724C8`](shared/func_L01_005724C8.c) | shared | 264 | SIZE ours 244 / retail 264 |

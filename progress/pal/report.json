@@ -1,51 +1,51 @@
 {
  "version": 2,
  "measures": {
-  "fuzzy_match_percent": 12.868531,
+  "fuzzy_match_percent": 12.870819,
   "total_code": "5810856",
-  "matched_code": "725608",
-  "matched_code_percent": 12.48711,
+  "matched_code": "725768",
+  "matched_code_percent": 12.489864,
   "total_functions": 18134,
-  "matched_functions": 7654,
-  "matched_functions_percent": 42.208007,
-  "complete_code": "420868",
-  "complete_code_percent": 7.242788,
-  "total_units": 4241,
-  "complete_units": 4183
+  "matched_functions": 7658,
+  "matched_functions_percent": 42.230065,
+  "complete_code": "420944",
+  "complete_code_percent": 7.244096,
+  "total_units": 4242,
+  "complete_units": 4184
  },
  "categories": [
   {
    "id": "core",
    "name": "Main program",
    "measures": {
-    "fuzzy_match_percent": 19.357834,
+    "fuzzy_match_percent": 19.360059,
     "total_code": "2202184",
-    "matched_code": "420868",
-    "matched_code_percent": 19.111391,
+    "matched_code": "420944",
+    "matched_code_percent": 19.114842,
     "total_functions": 8952,
-    "matched_functions": 4214,
-    "matched_functions_percent": 47.07328,
-    "complete_code": "420868",
-    "complete_code_percent": 19.111391,
-    "total_units": 4226,
-    "complete_units": 4183
+    "matched_functions": 4215,
+    "matched_functions_percent": 47.08445,
+    "complete_code": "420944",
+    "complete_code_percent": 19.114842,
+    "total_units": 4227,
+    "complete_units": 4184
    }
   },
   {
    "id": "core_text",
    "name": "Engine core (core.text)",
    "measures": {
-    "fuzzy_match_percent": 31.641873,
+    "fuzzy_match_percent": 31.658873,
     "total_code": "288232",
-    "matched_code": "89820",
-    "matched_code_percent": 31.162397,
+    "matched_code": "89896",
+    "matched_code_percent": 31.188765,
     "total_functions": 1666,
-    "matched_functions": 889,
-    "matched_functions_percent": 53.361345,
+    "matched_functions": 890,
+    "matched_functions_percent": 53.421369,
     "complete_code": "0",
     "complete_code_percent": 0.0,
-    "total_units": 893,
-    "complete_units": 887
+    "total_units": 894,
+    "complete_units": 888
    }
   },
   {
@@ -120,13 +120,13 @@
    "id": "level_code",
    "name": "Level code",
    "measures": {
-    "fuzzy_match_percent": 8.908448,
+    "fuzzy_match_percent": 8.910776,
     "total_code": "3608672",
-    "matched_code": "304740",
-    "matched_code_percent": 8.444658,
+    "matched_code": "304824",
+    "matched_code_percent": 8.446985,
     "total_functions": 9182,
-    "matched_functions": 3440,
-    "matched_functions_percent": 37.464605,
+    "matched_functions": 3443,
+    "matched_functions_percent": 37.497277,
     "complete_code": "0",
     "complete_code_percent": 0.0,
     "total_units": 15,
@@ -137,13 +137,13 @@
    "id": "common",
    "name": "Shared level code",
    "measures": {
-    "fuzzy_match_percent": 9.583367,
+    "fuzzy_match_percent": 9.586354,
     "total_code": "2008632",
-    "matched_code": "182276",
-    "matched_code_percent": 9.074634,
+    "matched_code": "182336",
+    "matched_code_percent": 9.077621,
     "total_functions": 5089,
-    "matched_functions": 2066,
-    "matched_functions_percent": 40.597367,
+    "matched_functions": 2068,
+    "matched_functions_percent": 40.636667,
     "complete_code": "0",
     "complete_code_percent": 0.0,
     "total_units": 1,
@@ -154,13 +154,13 @@
    "id": "levels",
    "name": "Level-specific code",
    "measures": {
-    "fuzzy_match_percent": 8.061178,
+    "fuzzy_match_percent": 8.062678,
     "total_code": "1600040",
-    "matched_code": "122464",
-    "matched_code_percent": 7.653809,
+    "matched_code": "122488",
+    "matched_code_percent": 7.655309,
     "total_functions": 4093,
-    "matched_functions": 1374,
-    "matched_functions_percent": 33.569509,
+    "matched_functions": 1375,
+    "matched_functions_percent": 33.593941,
     "complete_code": "0",
     "complete_code_percent": 0.0,
     "total_units": 14,
@@ -188,13 +188,13 @@
    "id": "level_01",
    "name": "Level 01: Dreadzone Station (and 21)",
    "measures": {
-    "fuzzy_match_percent": 5.965443,
+    "fuzzy_match_percent": 5.978055,
     "total_code": "190296",
-    "matched_code": "11352",
-    "matched_code_percent": 5.965443,
+    "matched_code": "11376",
+    "matched_code_percent": 5.978055,
     "total_functions": 371,
-    "matched_functions": 132,
-    "matched_functions_percent": 35.579515,
+    "matched_functions": 133,
+    "matched_functions_percent": 35.849057,
     "complete_code": "0",
     "complete_code_percent": 0.0,
     "total_units": 1,
@@ -7340,6 +7340,41 @@
    "metadata": {
     "complete": true,
     "source_path": "src/core/0012E7C8.c",
+    "progress_categories": [
+     "core",
+     "core_text"
+    ]
+   }
+  },
+  {
+   "name": "core/0012E8C8",
+   "measures": {
+    "fuzzy_match_percent": 100.0,
+    "total_code": "76",
+    "matched_code": "76",
+    "matched_code_percent": 100.0,
+    "total_functions": 1,
+    "matched_functions": 1,
+    "matched_functions_percent": 100.0,
+    "complete_code": "76",
+    "complete_code_percent": 100.0,
+    "total_units": 1,
+    "complete_units": 1
+   },
+   "functions": [
+    {
+     "name": "func_0012E8C8",
+     "size": "76",
+     "fuzzy_match_percent": 100.0,
+     "address": "0",
+     "metadata": {
+      "virtual_address": "1239240"
+     }
+    }
+   ],
+   "metadata": {
+    "complete": true,
+    "source_path": "src/core/0012E8C8.c",
     "progress_categories": [
      "core",
      "core_text"
@@ -169555,11 +169590,11 @@
   {
    "name": "main/core.text/0012xxxx",
    "measures": {
-    "fuzzy_match_percent": 0.669467,
-    "total_code": "42124",
+    "fuzzy_match_percent": 0.670677,
+    "total_code": "42048",
     "matched_code": "0",
     "matched_code_percent": 0.0,
-    "total_functions": 257,
+    "total_functions": 256,
     "matched_functions": 0,
     "matched_functions_percent": 0.0,
     "complete_code": "0",
@@ -171780,15 +171815,6 @@
      "address": "58696",
      "metadata": {
       "virtual_address": "1239224"
-     }
-    },
-    {
-     "name": "func_0012E8C8",
-     "size": "76",
-     "fuzzy_match_percent": 0.0,
-     "address": "58712",
-     "metadata": {
-      "virtual_address": "1239240"
      }
     },
     {
@@ -174270,7 +174296,7 @@
   {
    "name": "main/core.text/0015xxxx",
    "measures": {
-    "fuzzy_match_percent": 0.203052,
+    "fuzzy_match_percent": 0.147674,
     "total_code": "48756",
     "matched_code": "0",
     "matched_code_percent": 0.0,
@@ -176014,7 +176040,7 @@
     {
      "name": "func_0015F400",
      "size": "60",
-     "fuzzy_match_percent": 45.0,
+     "fuzzy_match_percent": 0.0,
      "address": "61880",
      "metadata": {
       "virtual_address": "1438720"
@@ -190856,13 +190882,13 @@
   {
    "name": "Shared level code",
    "measures": {
-    "fuzzy_match_percent": 9.583367,
+    "fuzzy_match_percent": 9.586354,
     "total_code": "2008632",
-    "matched_code": "182276",
-    "matched_code_percent": 9.074634,
+    "matched_code": "182336",
+    "matched_code_percent": 9.077621,
     "total_functions": 5089,
-    "matched_functions": 2066,
-    "matched_functions_percent": 40.597367,
+    "matched_functions": 2068,
+    "matched_functions_percent": 40.636667,
     "complete_code": "0",
     "complete_code_percent": 0.0,
     "total_units": 1,
@@ -201330,7 +201356,7 @@
     {
      "name": "func_L01_0048C410",
      "size": "28",
-     "fuzzy_match_percent": 0.0,
+     "fuzzy_match_percent": 100.0,
      "address": "815280",
      "metadata": {
       "virtual_address": "4768784"
@@ -214488,7 +214514,7 @@
     {
      "name": "func_L01_00576758",
      "size": "32",
-     "fuzzy_match_percent": 0.0,
+     "fuzzy_match_percent": 100.0,
      "address": "1774584",
      "metadata": {
       "virtual_address": "5728088"
@@ -262216,13 +262242,13 @@
   {
    "name": "Level 01: Dreadzone Station (and 21)",
    "measures": {
-    "fuzzy_match_percent": 5.965443,
+    "fuzzy_match_percent": 5.978055,
     "total_code": "190296",
-    "matched_code": "11352",
-    "matched_code_percent": 5.965443,
+    "matched_code": "11376",
+    "matched_code_percent": 5.978055,
     "total_functions": 371,
-    "matched_functions": 132,
-    "matched_functions_percent": 35.579515,
+    "matched_functions": 133,
+    "matched_functions_percent": 35.849057,
     "complete_code": "0",
     "complete_code_percent": 0.0,
     "total_units": 1,
@@ -263177,7 +263203,7 @@
     {
      "name": "func_L01_004BFA10",
      "size": "24",
-     "fuzzy_match_percent": 0.0,
+     "fuzzy_match_percent": 100.0,
      "address": "983408",
      "metadata": {
       "virtual_address": "4979216"
