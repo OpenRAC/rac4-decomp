@@ -1,7 +1,7 @@
-# Research notes
+# The packed executable
 
 How the retail executable is built, and how it is taken apart here (the
-toolchain is in [`TOOLCHAIN.md`](TOOLCHAIN.md)). Everything below was derived
+toolchain is in [`toolchain.md`](toolchain.md)). Everything below was derived
 from the retail NTSC-U executable (`SCUS_974.65`, `VER = 1.00`, SHA-1
 `aa91b1c3b9b1a244320c47580b77342ef9856e95`), the compilers and libraries that
 ship with the toolchain mirrors, and public documentation (wrench, the Up Your
@@ -54,7 +54,7 @@ segment per section) for splat. `config/sections.txt` lists them:
 Level code lives in `.text` and `.data`; those sections are overwritten when a
 level loads, and each of the 47 levels carries its own overlay on the disc
 (table of contents at sector 1001). The resident `.text` is the menus' code: 97
-percent of it is inside the multiplayer menu overlay. See `docs/OVERLAYS.md`.
+percent of it is inside the multiplayer menu overlay. See `docs/build/overlays.md`.
 
 ## Disassembly
 
@@ -72,7 +72,7 @@ and need their boundaries fixed by hand. `core.bss` and `.bss` are not split yet
 
 ## Compiler, assembler and libraries
 
-Moved to [`TOOLCHAIN.md`](TOOLCHAIN.md).
+Moved to [`toolchain.md`](toolchain.md).
 
 ## Checking matches
 
@@ -83,7 +83,7 @@ a link-time comparison, so a function that calls or reads the wrong symbol can
 still count; `tools/audit_relocs.py` checks the relocation targets of the
 exact functions against retail. `tools/diff_func.py` shows a function next to retail word by word;
 `tools/try_variants.py` tries several source forms of one function at once.
-`tools/progress.py` writes the reports (`docs/levels.md`); `tools/gen_progress_report.py` the old count
+`tools/progress.py` writes the reports (`docs/build/levels.md`); `tools/gen_progress_report.py` the old count
 from `config/functions.tsv` and the audit result.
 
 ## Open questions

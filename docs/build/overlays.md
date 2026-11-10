@@ -11,11 +11,11 @@ Every level of the game carries its own build of the level code: an overlay
 loaded over the resident image when the level starts. This page describes what
 the overlays are, how they are split here, and how they are counted. It is
 the same arrangement as in
-[rac1-decomp](https://github.com/OpenRAC/rac1-decomp)'s `docs/OVERLAYS.md`.
+[rac1-decomp](https://github.com/OpenRAC/rac1-decomp)'s `docs/build/overlays.md`.
 
 ## What an overlay is
 
-The resident image (`SCUS_974.65`, see `docs/RESEARCH.md`) holds `.vutext`,
+The resident image (`SCUS_974.65`, see `docs/build/packed-executable.md`) holds `.vutext`,
 `core.*` and `net.text`, which stay in memory, and also the sections `.lit`,
 `.bss`, `.data`, `lvl.vtbl`, `lvl.camvtbl`, `lvl.sndvtbl` and `.text`. The
 last group is overwritten when a level loads: each level has its own copy,
@@ -84,7 +84,7 @@ them (213 groups, one report unit each) and every unit is tagged with all the
 levels in its set, so a level's category adds up all the overlay code that
 level has, shared or not. Overlay code identical to a resident function is not
 included (it is counted in the resident level text). This is what the per-level
-table in the README shows.
+badges in [progress.md](progress.md) show.
 
 | Id | Level | Kind | `.text` at | `.text` size | Functions | Code |
 |---|---|---|---|---|---|---|
@@ -151,7 +151,7 @@ and boundaries from `config/overlay_functions.tsv`, plus the resident
 functions as external symbols so calls into the core code are named. The
 result is in `asm/overlays/<id>/nonmatchings/` (not tracked, 430 MB). Functions
 that contain data (a `b` jumps over it) get a splat subsegment of their own,
-as in the resident `.text` (`docs/RESEARCH.md`).
+as in the resident `.text` (`docs/build/packed-executable.md`).
 
 Result: **6,806 of 7,029** functions (every common and level-specific
 function). All 13 overlays other than `L00` are complete. In `L00` (the menu)

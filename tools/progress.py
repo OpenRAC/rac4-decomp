@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
-"""progress.py: how much of each version is matched C; its objdiff report and README table.
+"""progress.py: how much of each version is matched C; its objdiff report (ByteMatch shows it; the README has only its badges).
 
     python3 tools/progress.py [--version us|pal]            # print the counts
-    python3 tools/progress.py [--version us|pal] --write    # rewrite the report and the README table
-    python3 tools/progress.py [--version us|pal] --check    # both are current (CI)
+    python3 tools/progress.py [--version us|pal] --write    # rewrite the report
+    python3 tools/progress.py [--version us|pal] --check    # it is current (CI)
 
 The US report (SCUS_974.65, the primary target and ByteMatch's default version) is
-progress/report.json; the PAL one (SCES_532.85) progress/pal/report.json. Each has its own
-table in README.md.
+progress/report.json; the PAL one (SCES_532.85) progress/pal/report.json.
 
 Adapted from rac3-uya-decomp-pal's tools/progress.py (b20190e; rac1-decomp's units and
 categories). It needs no game data or toolchain: everything comes from src/, nonmatching/ and
@@ -59,12 +58,6 @@ def report_path():
     return os.path.join(ROOT, "progress", levels.V, "report.json")
 
 
-README = os.path.join(ROOT, "README.md")
-END = "<!-- progress:end -->"
-
-
-def begin():
-    return "<!-- progress:begin %s (tools/progress.py --write) -->" % levels.version_id()
 US_LIBGCC = (0x12EE30, 0x131A00)
 BLOCK = 0x10000
 SECTION_CATS = {("main", "core.text"): "core_text", ("main", "net.text"): "net_text",
@@ -270,32 +263,20 @@ def text_of(rep):
     return "\n".join(out)
 
 
-def readme_with(table_text):
-    readme = open(README, encoding="utf-8").read()
-    b = begin()
-    if b not in readme:
-        sys.exit("README.md has no %s ... %s block" % (b, END))
-    head, rest = readme.split(b, 1)
-    _, tail = rest.split(END, 1)
-    return readme, head + b + "\n" + table_text + "\n" + END + tail
-
-
 def main():
     levels.cli_version()
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--write", action="store_true", help="rewrite progress/report.json and the README table")
-    ap.add_argument("--check", action="store_true", help="fail if either is out of date")
+    ap.add_argument("--write", action="store_true", help="rewrite progress/report.json")
+    ap.add_argument("--check", action="store_true", help="fail if it is out of date")
     a = ap.parse_args()
     rep = report()
     text = text_of(rep)
     body = json.dumps(rep, indent=1) + "\n"
     print(text)
-    old_readme, new_readme = readme_with(text)
     if a.write:
         os.makedirs(os.path.dirname(report_path()), exist_ok=True)
         open(report_path(), "w", encoding="utf-8", newline="\n").write(body)
-        open(README, "w", encoding="utf-8", newline="\n").write(new_readme)
-        print("wrote %s and the README table" % os.path.relpath(report_path(), ROOT))
+        print("wrote %s" % os.path.relpath(report_path(), ROOT))
     if a.check:
         import match_map
         problems = []
@@ -304,8 +285,6 @@ def main():
         if not os.path.exists(report_path()) or open(report_path(), encoding="utf-8").read() != body:
             problems.append("%s is out of date (python3 tools/progress.py --version %s --write)" % (
                 os.path.relpath(report_path(), ROOT), levels.V))
-        if old_readme != new_readme:
-            problems.append("the README table is out of date (python3 tools/progress.py --version %s --write)" % levels.V)
         for p in problems:
             print("error:", p)
         sys.exit(1 if problems else 0)
