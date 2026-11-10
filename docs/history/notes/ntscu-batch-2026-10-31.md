@@ -65,7 +65,7 @@ project include files are staged on native WSL /tmp; emitted assembly is
 copied back unchanged. This transport is qualified for this self-contained
 unit, which uses no path-dependent macros or source-relative includes.
 Archive provenance, hashes, runtime requirements and transport limits are
-in `docs/TOOLCHAIN.md` and `tools/ee29_01.py`. No SDK headers, samples or source
+in `docs/build/toolchain.md` and `tools/ee29_01.py`. No SDK headers, samples or source
 were used or extracted. No compiler or runtime binaries are committed.
 
 Ten compiler-route tests and four isolated-profile tests pass. A separate

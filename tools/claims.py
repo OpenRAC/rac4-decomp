@@ -2,7 +2,7 @@
 """
 Shared claims, so several agents (Claude waves, a GPT agent, a person) can
 match and land in one checkout without doing the same function twice or
-overwriting each other's files (docs/AGENT_WORKFLOW.md, "Several agents
+overwriting each other's files (docs/agents/agent-workflow.md, "Several agents
 at once").
 
   python3 tools/claims.py claim OWNER func_X [func_Y ...]   # take them

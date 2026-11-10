@@ -1,6 +1,6 @@
 """
 Where a function lives: its catalogue row, its retail bytes, its assembly,
-its source file and its near-miss file (docs/WORKFLOW.md, docs/OVERLAYS.md).
+its source file and its near-miss file (docs/contributing/workflow.md, docs/build/overlays.md).
 Shared by tools/try_func.py, tools/wave.py, tools/nonmatching.py and
 tools/auto_structs.py, so the layout is written down once.
 
@@ -101,13 +101,13 @@ def asm_path(name: str) -> Path | None:
 
 
 def src_path(name: str) -> Path:
-    """The file a new definition of NAME goes in (docs/WORKFLOW.md, step 1)."""
+    """The file a new definition of NAME goes in (docs/contributing/workflow.md, step 1)."""
     row = info(name)
     m = OVERLAY_NAME.match(name)
     if m:
         return ROOT / "src/overlays" / row["area"] / f"{m.group(1)}_{m.group(2)}.c"
     if row["area"] in ("libgcc", "libm"):
-        raise SystemExit(f"{name} is {row['area']}: rebuilt from source, not decompiled (docs/TOOLCHAIN.md)")
+        raise SystemExit(f"{name} is {row['area']}: rebuilt from source, not decompiled (docs/build/toolchain.md)")
     return ROOT / "src" / row["area"] / ("%08X.c" % row["addr"])
 
 

@@ -1,14 +1,14 @@
 # Levers
 
 What tends to make a function match. These came out of the work so far; add
-yours here. The compiler and its flags are in [`TOOLCHAIN.md`](TOOLCHAIN.md).
+yours here. The compiler and its flags are in [`toolchain.md`](../build/toolchain.md).
 
 - **Not allowed in matched C**: `volatile`, inline assembly (`__asm__`,
   `asm`, register pins, barriers), `#define` aliases that rename a global or
   an address, and hardcoded addresses (`*(u32 *)0x1000F520`,
   `((void (*)(void))0x00123450)()`). A function that only matches with one of
   them is not matched: it stays in `nonmatching/`
-  ([`NONMATCHING.md`](NONMATCHING.md)).
+  ([`nonmatching.md`](../contributing/nonmatching.md)).
 - **Globals read with `lui`/`lw`** (not through `$gp`): declare them without a
   size so the compiler keeps them out of small data, and index them where
   they are used:

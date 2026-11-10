@@ -10,7 +10,7 @@ the resident functions of config/functions.tsv as external symbols, so calls
 into the resident code are named), runs splat, and keeps only the functions that
 belong to that overlay.
 
-Needs the unpacked disc (see docs/OVERLAYS.md) and the venv.
+Needs the unpacked disc (see docs/build/overlays.md) and the venv.
 
 Usage: venv/bin/python tools/gen_overlay_asm.py UNPACKED_DIR [LEVEL_ID ...]
 """

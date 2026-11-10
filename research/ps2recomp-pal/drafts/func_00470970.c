@@ -1,6 +1,6 @@
 /* cflags: -O1 */
 /* Unmatched PAL reconstruction; excluded from the build and progress counts.
- * See notes/pal-00470970.md. The return type models the observed v0 value;
+ * See docs/history/notes/pal-00470970.md. The return type models the observed v0 value;
  * it is not a confirmed original source-level prototype.
  */
 #include "common.h"

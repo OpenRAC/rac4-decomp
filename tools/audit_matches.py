@@ -40,7 +40,7 @@ def main() -> int:
     with open(ROOT / "baserom" / "SCUS_974.65.elf", "rb") as f:
         secs = mp.sections(ELFFile(f))
     # level overlay functions (func_L<level>_<address>): retail bytes come from the
-    # overlay ELFs of an unpacked disc (docs/OVERLAYS.md): $OVERLAYS or private/overlays
+    # overlay ELFs of an unpacked disc (docs/build/overlays.md): $OVERLAYS or private/overlays
     ovl = {}
     for l in (ROOT / "config" / "overlay_functions.tsv").read_text().splitlines():
         if l and not l.startswith("#"):
@@ -59,7 +59,7 @@ def main() -> int:
             p = ovl_root / "levels" / ovl_dirs[i] / "overlay.elf"
             if not p.exists():
                 # no wrench unpack: the level's program read from the US disc
-                # (tools/levels.py dump; its .text is the overlay's, docs/levels.md)
+                # (tools/levels.py dump; its .text is the overlay's, docs/build/levels.md)
                 import levels
                 levels.select("us")
                 p = Path(levels.elf_path(int(i[1:])))

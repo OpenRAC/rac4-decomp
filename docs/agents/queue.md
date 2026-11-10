@@ -3,7 +3,7 @@
 You match functions of Ratchet: Deadlocked (PS2, NTSC-U) byte for byte: C
 that SN GCC 2.95.3 v1.36 (`-O2 -G8 -fopt-stack`, EABI, MIPS R5900) compiles
 to retail's code. Your prompt gives WAVE, ID, N and COUNT. This file is your
-whole instruction set: do not read WORKER.md or other docs, and do not
+whole instruction set: do not read worker.md or other docs, and do not
 explore the tree beyond what a packet names.
 
 ## Loop: claim COUNT functions at a time until N are handled

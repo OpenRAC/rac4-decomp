@@ -7,9 +7,9 @@ token. The setup, the tools and the model tiers come from rac1-decomp's
 [agent workflow](https://github.com/OpenRAC/rac1-decomp/blob/main/docs/AGENT_WORKFLOW.md),
 where every setting was measured.
 
-[WORKFLOW.md](WORKFLOW.md) covers the build and the manual loop,
-[QUEUE.md](QUEUE.md) is the queue workers' protocol, [WORKER.md](WORKER.md)
-the single worker's, [OVERLAYS.md](OVERLAYS.md) the level code most waves
+[workflow.md](../contributing/workflow.md) covers the build and the manual loop,
+[queue.md](queue.md) is the queue workers' protocol, [worker.md](worker.md)
+the single worker's, [overlays.md](../build/overlays.md) the level code most waves
 draw from.
 
 ## At a glance
@@ -31,7 +31,7 @@ The worker agent is `.claude/agents/match-worker.md`. A queue worker's whole
 prompt is one line:
 
 ```
-Read docs/QUEUE.md and follow it exactly. WAVE=q1 ID=s01 N=6 COUNT=2
+Read docs/agents/queue.md and follow it exactly. WAVE=q1 ID=s01 N=6 COUNT=2
 ```
 
 `WAVE` is the wave's name, `ID` the worker's id (never reused within a
@@ -58,7 +58,7 @@ only to compile.
 ## The lead's loop
 
 1. Tools first: `tools/auto_structs.py prepare`, compile, `check`, `adopt`
-   ([WORKFLOW.md](WORKFLOW.md#automatic-drafts-toolsauto_structspy)).
+   ([workflow.md](../contributing/workflow.md#automatic-drafts-toolsauto_structspy)).
 2. Plan a wave:
    `venv/bin/python tools/wave.py plan q1 --queue --count 24 --max-size 400`
    (overlay code: `common` code first, the code most levels share first,
@@ -79,14 +79,14 @@ only to compile.
 6. Stage near misses: `wave.py stage`. The next tier starts from them:
    `wave.py plan q2 --near` gives each one's best attempt and what still
    differs; for the long ones, plan the named functions with
-   `--budget 30` and launch Opus workers with WORKER.md.
+   `--budget 30` and launch Opus workers with worker.md.
 
 ## Several agents at once
 
 Before matching across separate checkouts, contributors reserve a manageable
 scope in the [function reservation issue](https://github.com/OpenRAC/rac4-decomp/issues/112).
 Follow the repository-level
-[`AGENTS.md`](../AGENTS.md): check for overlapping active reservations, edit
+[`AGENTS.md`](../../AGENTS.md): check for overlapping active reservations, edit
 only your own coordination comment, and keep each reservation to functions
 you intend to attempt next. If there is no reservation issue, create one
 before starting matching work. GitHub reservations coordinate contributors;
@@ -125,7 +125,7 @@ python3 tools/claims.py unlock gpt    # right after
 
 ## Rules every brief carries
 
-They are in QUEUE.md, so the one-line prompt is enough:
+They are in queue.md, so the one-line prompt is enough:
 
 - plain C: no register pins, inline assembly, barriers, `volatile`,
   `#define` aliases or hardcoded addresses;
@@ -133,10 +133,10 @@ They are in QUEUE.md, so the one-line prompt is enough:
   sub-agents, no web;
 - compile only through try_func;
 - never Sony SDK source, samples or headers, or leaked material
-  ([LEGAL.md](../LEGAL.md));
+  ([LEGAL.md](../../LEGAL.md));
 - names by address only;
 - the build is fixed: no new step that edits compiler output, flags only
-  per file ([CONTRIBUTING.md](../CONTRIBUTING.md#build-fidelity)).
+  per file ([CONTRIBUTING.md](../../CONTRIBUTING.md#build-fidelity)).
 
 ## Running it on a smaller plan
 

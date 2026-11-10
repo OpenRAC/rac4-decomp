@@ -2,7 +2,7 @@
 
 What builds the code and why: the compiler and its flags, how `tools/cc.sh`
 turns a C file into an object, and how the libraries are rebuilt. How the
-retail executable itself is laid out is in [`RESEARCH.md`](RESEARCH.md).
+retail executable itself is laid out is in [`packed-executable.md`](packed-executable.md).
 
 ## Where the binaries come from
 
@@ -61,7 +61,7 @@ The Up Your Arsenal decomp reports the same compiler (its
 Source-level findings: a counter that retail reloads from memory needs a
 call or a store through a pointer between the reads (`volatile` is not allowed
 in matched C, nor are inline assembly, `#define` aliases or hardcoded
-addresses: [`LEVERS.md`](LEVERS.md)); `p = array + i` gives a different register order than
+addresses: [`levers.md`](../agents/levers.md)); `p = array + i` gives a different register order than
 `array[i].field`; an `s8` parameter compared with -1 adds sign extensions that
 retail does not have (use `s32`).
 

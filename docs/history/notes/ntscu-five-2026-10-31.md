@@ -148,7 +148,7 @@ the two executable profiles. Both passed version/scalar ABI checks using
 their original pinned inputs. The beta reproduces the older shared-status
 allocation; 030926 reproduces the newer address-renaming behavior. Neither
 profile supplied a new match. Their opt-in routes, original specs and
-private runtime handling are documented in `docs/TOOLCHAIN.md`.
+private runtime handling are documented in `docs/build/toolchain.md`.
 
 `func_01EA71C8` **matches all 36 bytes** using its original shared-status C
 and whole-file `@ee32-040921 -O2 -G0 -frename-registers`. It used 31 logged
