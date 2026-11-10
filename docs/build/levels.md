@@ -326,7 +326,7 @@ Landing new C (after `tools/build.sh`, `build_libgcc.sh`, `build_libm.sh`):
     python3 tools/progress.py --check && python3 tools/progress.py --version pal --check
 
 (The second and third lines matter only when a match moves a cut: run them until the tables stop
-changing; then commit `config/us/`, `config/pal/`, both reports and the README with the C.)
+changing; then commit `config/us/`, `config/pal/`, and both reports with the C.)
 
 For a worker (US by default; add `--version pal` for PAL):
 

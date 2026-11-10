@@ -84,7 +84,7 @@ them (213 groups, one report unit each) and every unit is tagged with all the
 levels in its set, so a level's category adds up all the overlay code that
 level has, shared or not. Overlay code identical to a resident function is not
 included (it is counted in the resident level text). This is what the per-level
-table in the README shows.
+badges in [progress.md](progress.md) show.
 
 | Id | Level | Kind | `.text` at | `.text` size | Functions | Code |
 |---|---|---|---|---|---|---|

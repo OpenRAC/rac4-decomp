@@ -1,6 +1,6 @@
 ## Contributing
 
-The full procedure is in [`docs/WORKFLOW.md`](docs/WORKFLOW.md). In short:
+The full procedure is in [`docs/contributing/workflow.md`](docs/contributing/workflow.md). In short:
 
 1. Pick a function. `config/functions.tsv` and `config/overlay_functions.tsv`
    list every function with its size; small ones without data tables are a
@@ -13,17 +13,17 @@ The full procedure is in [`docs/WORKFLOW.md`](docs/WORKFLOW.md). In short:
 3. Iterate. `venv/bin/python tools/try_func.py func_XXXXXXXX c1.c c2.c ...`
    compiles each candidate through the real pipeline and says `EXACT` or
    how many bytes are off, in seconds, without touching `src/`.
-   [`docs/LEVERS.md`](docs/LEVERS.md) lists what makes functions match.
-   For register or order near misses, [`docs/PERMUTER.md`](docs/PERMUTER.md).
+   [`docs/agents/levers.md`](docs/agents/levers.md) lists what makes functions match.
+   For register or order near misses, [`docs/contributing/permuter.md`](docs/contributing/permuter.md).
    When it matches, put the C in its file under `src/`
-   ([`docs/WORKFLOW.md`](docs/WORKFLOW.md) says which).
+   ([`docs/contributing/workflow.md`](docs/contributing/workflow.md) says which).
 4. Build (`bash tools/build.sh`) and verify with
    `venv/bin/python tools/audit_matches.py`. A function that does
    not match yet goes to `nonmatching/`
-   ([`docs/NONMATCHING.md`](docs/NONMATCHING.md)), never into `src/`.
+   ([`docs/contributing/nonmatching.md`](docs/contributing/nonmatching.md)), never into `src/`.
 5. Regenerate the progress reports (`tools/match_map.py --write` and
    `tools/progress.py --write`, each also with `--version pal`; see
-   [`docs/WORKFLOW.md`](docs/WORKFLOW.md)) and commit them together with your
+   [`docs/contributing/workflow.md`](docs/contributing/workflow.md)) and commit them together with your
    change. CI fails if a report is out of date.
 
 On macOS and Linux, prefix the build commands with `bash tools/docker/run.sh`.
@@ -37,7 +37,7 @@ git clone https://github.com/simonlindholm/asm-differ tools/ext/asm-differ
 ## Build fidelity
 
 The build uses retail's own compiler and reproduces only what SN's assembler
-did to its output ([`docs/TOOLCHAIN.md`](docs/TOOLCHAIN.md)). So:
+did to its output ([`docs/build/toolchain.md`](docs/build/toolchain.md)). So:
 
 - never add a step that changes the compiler's output to make a function
   match; a function that only matches that way is not matched;
@@ -49,7 +49,7 @@ did to its output ([`docs/TOOLCHAIN.md`](docs/TOOLCHAIN.md)). So:
   pins, barriers), no `#define` that renames a global or an address, and no
   hardcoded addresses (a number cast to a pointer, hardware registers
   included). A function that only matches with
-  one of them stays in `nonmatching/` ([`docs/LEVERS.md`](docs/LEVERS.md)).
+  one of them stays in `nonmatching/` ([`docs/agents/levers.md`](docs/agents/levers.md)).
 
 The check is not link-time yet: `tools/audit_matches.py` masks the fields the
 compiled object relocates (constants and offsets must equal retail), so a
@@ -91,5 +91,5 @@ to check a match against. Every name in `src/` is your own work
   [ByteMatch](https://bytematch.dev/OpenRAC/rac-deadlocked-decomp).
   It cannot build the game, so the report is generated on your machine.
 
-For LLM agents, [`docs/AGENT_WORKFLOW.md`](docs/AGENT_WORKFLOW.md) describes
+For LLM agents, [`docs/agents/agent-workflow.md`](docs/agents/agent-workflow.md) describes
 how work is split between models.

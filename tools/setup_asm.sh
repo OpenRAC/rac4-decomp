@@ -27,7 +27,7 @@ rm -rf asm
 "$VPY" -m splat split config/splat.yaml
 
 # Optional: the level overlays. Set OVERLAYS to a folder made by
-# `wrenchbuild unpack GAME.iso -o DIR -g dl -r us` (docs/OVERLAYS.md).
+# `wrenchbuild unpack GAME.iso -o DIR -g dl -r us` (docs/build/overlays.md).
 if [ -n "${OVERLAYS:-}" ]; then
     "$VPY" tools/gen_overlay_asm.py "$OVERLAYS"
 fi

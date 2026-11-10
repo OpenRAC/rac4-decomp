@@ -174,7 +174,7 @@ progress reports after either map update.
 
 Map searches and native code comparisons need the dumps (`tools/levels.py dump`,
 `docs/build/levels.md`). Commit the regenerated
-`config/us/map.tsv`, `config/pal/map.tsv`, both reports and the README tables together with your
+`config/us/map.tsv`, `config/pal/map.tsv`, and both reports together with your
 source. CI (`.github/workflows/progress.yml`) runs `tools/progress.py --check` for both versions
 and fails if a report disagrees with `src/`; it cannot build the game, so the report always comes from
 your machine.
