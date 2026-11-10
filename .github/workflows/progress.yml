@@ -11,7 +11,7 @@
 # from the binaries and committed (config/us/, config/pal/: inventory.tsv, frontend_pairs.tsv,
 # functions.tsv, map.tsv; names, addresses, sizes and hashes of masked code, no retail bytes), so
 # this job needs no disc: for each version it checks that map.tsv covers every function of src/
-# and nonmatching/ and that the committed report and README table are current, validates the
+# and nonmatching/ and that the committed report is current, validates the
 # report with objdiff and uploads it.
 name: Progress report
 

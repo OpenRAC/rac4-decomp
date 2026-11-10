@@ -15,9 +15,9 @@ When words differ, the first differing word of each section is written to
 asm/<version>/<program>/words.txt (the assembler did not give it back: it becomes a .word) and the
 target is rebuilt, up to --rounds times; the log says which.
 
-The toolchain is the repository's (toolchain/, docs/TOOLCHAIN.md): SN ProDG's ee-as and ee-ld
+The toolchain is the repository's (toolchain/, docs/build/toolchain.md): SN ProDG's ee-as and ee-ld
 (binutils 2.10-ee), Linux builds from toolchain/sn-prodg-24 by default; --bin DIR for others.
-C is not built into these programs yet (see docs/levels.md): they are the disc's code as
+C is not built into these programs yet (see docs/build/levels.md): they are the disc's code as
 assembly, the base that matched C replaces function by function.
 """
 import argparse

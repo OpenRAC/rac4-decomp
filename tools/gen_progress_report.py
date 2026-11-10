@@ -4,7 +4,7 @@ The NTSC-U progress report, in objdiff's report format (version 2).
 
 The old count, kept for comparison: tools/progress.py now writes both
 versions' reports (progress/report.json for SCUS_974.65, progress/pal/ for
-SCES_532.85), counting functions found from the binaries (docs/levels.md).
+SCES_532.85), counting functions found from the binaries (docs/build/levels.md).
 This one counts config/functions.tsv and config/overlay_functions.tsv (the
 15,056 entries of the earlier split) from tools/audit_matches.py's result,
 and writes build/legacy_report.json (not committed). tools/match_map.py uses

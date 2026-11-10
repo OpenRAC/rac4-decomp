@@ -4,7 +4,7 @@ For an agent working on one function. Your prompt gives FUNC and BUDGET;
 `tools/wave.py plan` wrote `build/try/<FUNC>/CONTEXT.md` (the function's
 packet) and claimed the function for you. The rules, the candidate format,
 reading the assembly, codegen and walls are those of
-[QUEUE.md](QUEUE.md): read it, then follow this file instead of its "Loop".
+[queue.md](queue.md): read it, then follow this file instead of its "Loop".
 
 ## Matching
 
@@ -15,7 +15,7 @@ reading the assembly, codegen and walls are those of
    (`best.c` when the packet shows one); don't repeat what failed.
 2. List every global and how retail reaches it (`$gp` or `lui`); that
    decides the declarations. Compare the assembly with the walls in
-   QUEUE.md. If it hits one, say which in NOTES.md and stop.
+   queue.md. If it hits one, say which in NOTES.md and stop.
 3. Write each candidate as `build/try/<FUNC>/pN.c`, starting at the number
    the packet header gives, a new file each time.
 4. Test with

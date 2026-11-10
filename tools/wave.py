@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Plans, hands out and lands waves of worker agents (docs/AGENT_WORKFLOW.md).
+Plans, hands out and lands waves of worker agents (docs/agents/agent-workflow.md).
 Ported from rac1-decomp, with the same commands and protocols
-(docs/QUEUE.md, docs/WORKER.md), on this repository's build and audit.
+(docs/agents/queue.md, docs/agents/worker.md), on this repository's build and audit.
 
   venv/bin/python tools/wave.py plan NAME [func_X ...] [--queue] [--main]
                          [--count N] [--budget N] [--min-size N] [--max-size N]
@@ -23,7 +23,7 @@ Ported from rac1-decomp, with the same commands and protocols
       not build, regenerate the report or commit: the lead runs
       tools/build.sh, tools/audit_matches.py and tools/gen_progress_report.py.
   venv/bin/python tools/wave.py stage [func_X ...] [--max F]
-      Shares near misses (docs/NONMATCHING.md): each function's closest
+      Shares near misses (docs/contributing/nonmatching.md): each function's closest
       logged attempt within --max (a fraction of its bytes; default 0.15)
       goes to nonmatching/<area>/func_X.c unless the staged one is as close.
 
@@ -216,7 +216,7 @@ def packet(name: str, budget: int, decls: dict[str, str] | None = None) -> str:
     out += ["", "## Globals"]
     for d in data:
         how = ("through $gp: a plain `extern` of up to 8 bytes" if d in gp else
-               "through lui: declare it without a size, `extern T x[];` (LEVERS.md)")
+               "through lui: declare it without a size, `extern T x[];` (levers.md)")
         out.append(f"- {decls[d]}   ({how})" if d in decls else f"- {d}: not declared anywhere yet ({how})")
     if not data:
         out.append("- none")
@@ -225,7 +225,7 @@ def packet(name: str, budget: int, decls: dict[str, str] | None = None) -> str:
     if best.exists():
         shown = diff.read_text(errors="replace").splitlines() if diff.exists() else ["(no diff written)"]
         out += ["", f"## Best earlier attempt: {shown[0]} (build/try/{name}/best.c)",
-                "A near miss (QUEUE.md, \"Near misses\"): start from this candidate and change as little "
+                "A near miss (queue.md, \"Near misses\"): start from this candidate and change as little "
                 f"as you can. Your {budget} runs are a fresh budget.",
                 best.read_text(errors="replace").rstrip(),
                 "", "## What still differs (offset, ours | retail)", *(shown[1:] or ["- nothing listed"])]
@@ -300,14 +300,14 @@ def plan(args) -> None:
     if args.queue:
         print(f"wave {args.name}: a queue of {len(names)} functions, budget {args.budget} runs each. "
               f"One prompt per worker (ID unique, N functions each, COUNT claimed at a time):\n\n"
-              f"Read docs/QUEUE.md and follow it exactly. WAVE={args.name} ID=s01 N=6 COUNT=2")
+              f"Read docs/agents/queue.md and follow it exactly. WAVE={args.name} ID=s01 N=6 COUNT=2")
         return
     print(f"wave {args.name}: {len(names)} workers, budget {args.budget} runs each\n")
     for name in names:
         if not shared.claim(f"{args.name}:{name[5:]}", name):
             print(f"{name}: taken by {shared.holder(name)}, skipped")
             continue
-        print(f"Read docs/WORKER.md and follow it exactly. FUNC={name} BUDGET={args.budget}")
+        print(f"Read docs/agents/worker.md and follow it exactly. FUNC={name} BUDGET={args.budget}")
 
 
 def claim(args) -> None:
@@ -371,7 +371,7 @@ BANNED = [
 
 
 def banned(text: str) -> str | None:
-    """Why a candidate may not land (QUEUE.md, "Rules"), or None."""
+    """Why a candidate may not land (queue.md, "Rules"), or None."""
     for pattern, why in BANNED:
         if pattern.search(text):
             return why
