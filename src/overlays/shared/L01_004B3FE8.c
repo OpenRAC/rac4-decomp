@@ -1,7 +1,7 @@
 /* cflags: -O2 -G8 -Wuninitialized */
 #include "common.h"
 
-extern s64 func_L01_0045D380(void *object);
+extern s64 func_L01_004B3D18(void *object);
 
 u32 func_L01_004B3FE8(void *object)
 {
@@ -13,7 +13,7 @@ u32 func_L01_004B3FE8(void *object)
     disabled = ((u8 *)value)[0x458];
     result = 0;
     if (disabled == 0) {
-        value = func_L01_0045D380(object) != 0;
+        value = func_L01_004B3D18(object) != 0;
         result = value;
     }
     value = result;

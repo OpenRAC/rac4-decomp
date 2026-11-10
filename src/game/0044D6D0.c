@@ -20,34 +20,34 @@ typedef struct Entry {
     u64 value;
     u8 tail[8];
 } Entry;
-extern State D_00239640;
-extern Entry D_003D7B40[];
-extern u32 *D_00221F20;
+extern State D_00239540;
+extern Entry D_003D7B00[];
+extern u32 *D_00221E20;
 void func_0044D6D0(void *unused, s32 id)
 {
-    if (D_00239640.enabled == 0) {
+    if (D_00239540.enabled == 0) {
         if (id == 0)
             return;
-        D_00221F20[0] = 0x30000002;
-        D_00221F20[1] = (u32)&D_003D7B40[id];
-        D_00221F20[2] = 0;
-        D_00221F20[3] = 0x50000002;
-        D_00221F20 += 4;
+        D_00221E20[0] = 0x30000002;
+        D_00221E20[1] = (u32)&D_003D7B00[id];
+        D_00221E20[2] = 0;
+        D_00221E20[3] = 0x50000002;
+        D_00221E20 += 4;
         return;
     }
     if (id == 0)
         return;
-    if (D_00239640.selected != id && D_00239640.current == D_003D7B40[id].value) {
-        D_00239640.selected = id;
+    if (D_00239540.selected != id && D_00239540.current == D_003D7B00[id].value) {
+        D_00239540.selected = id;
         return;
     }
-    if (D_00239640.current == D_003D7B40[id].value)
+    if (D_00239540.current == D_003D7B00[id].value)
         return;
-    D_00221F20[0] = 0x30000002;
-    D_00221F20[1] = (u32)&D_003D7B40[id];
-    D_00221F20[2] = 0;
-    D_00221F20[3] = 0x50000002;
-    D_00239640.selected = id;
-    D_00239640.current = D_003D7B40[id].value;
-    D_00221F20 += 4;
+    D_00221E20[0] = 0x30000002;
+    D_00221E20[1] = (u32)&D_003D7B00[id];
+    D_00221E20[2] = 0;
+    D_00221E20[3] = 0x50000002;
+    D_00239540.selected = id;
+    D_00239540.current = D_003D7B00[id].value;
+    D_00221E20 += 4;
 }

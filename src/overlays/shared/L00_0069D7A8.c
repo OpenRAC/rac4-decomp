@@ -16,7 +16,7 @@ typedef struct {
     char *table;
 } Manager;
 extern Manager D_00223148[];
-extern u32 D_00220B50;
+extern u32 D_002203D0;
 extern Manager *func_005010E0(void);
 extern Object *func_005005E8(void *, u32);
 typedef s32 (*Callback)(Object *, s32, s32, s32, s32);
@@ -30,7 +30,7 @@ static inline Manager *getManager(void)
 }
 static inline Object *valid(Object *p)
 {
-    if (p && p->vtable->isType(p, D_00220B50))
+    if (p && p->vtable->isType(p, D_002203D0))
         return p;
     return 0;
 }

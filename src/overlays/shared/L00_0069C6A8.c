@@ -17,7 +17,7 @@ typedef struct {
 extern Manager D_00223148[];
 extern Manager *func_005010E0(void);
 extern Object *func_005005E8(void *, s32);
-extern u32 D_00220B50;
+extern u32 D_002203D0;
 static inline Object *resolve(s32 handle)
 {
     Manager *m;
@@ -31,7 +31,7 @@ static inline Object *resolve(s32 handle)
     if (m->context)
         world = *(void **)((u32)m->context + ((u32) * (s32 *)((char *)m->context + 0x14) << 2));
     obj = func_005005E8(world, handle);
-    if (obj && obj->vtable->supports(obj, D_00220B50))
+    if (obj && obj->vtable->supports(obj, D_002203D0))
         return obj;
     return 0;
 }

@@ -5,8 +5,8 @@ typedef struct {
     s32 packed_count;
     s32 reserved[2];
 } Group;
-extern void func_00462E48(void *, const void *, s32, s32, s32, s32, s32);
-extern void func_00463150(void *, s32, s32, s32, s32, s32);
+extern void func_00462608(void *, const void *, s32, s32, s32, s32, s32);
+extern void func_00462910(void *, s32, s32, s32, s32, s32);
 void func_00462D68(Group *groups, const u8 *palette, const u8 *mapping, s32 count)
 {
     s32 i, j, group_count, offset, index;
@@ -24,10 +24,10 @@ void func_00462D68(Group *groups, const u8 *palette, const u8 *mapping, s32 coun
             if (index >= 0)
                 index = mapping[index];
             if (palette) {
-                func_00462E48(entry, (const void *)((u32)palette + (u32)(index * 16)),
+                func_00462608(entry, (const void *)((u32)palette + (u32)(index * 16)),
                               entry[0], entry[1], entry[4], entry[5], index);
             } else {
-                func_00463150(entry, entry[0], entry[1], entry[4], entry[5], index);
+                func_00462910(entry, entry[0], entry[1], entry[4], entry[5], index);
             }
             entry += 16;
         }

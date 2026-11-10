@@ -23,7 +23,7 @@ typedef struct {
     s32 limits[0];
 } HudLimits2;
 
-extern HudState D_0023F530;
+extern HudState D_0023F430;
 
 void func_0045E860(s32 bank, u32 address)
 {
@@ -33,7 +33,7 @@ void func_0045E860(s32 bank, u32 address)
     s32 limit;
     s32 i;
 
-    banks = (u32 *)(D_0023F530.header + 0x74);
+    banks = (u32 *)(D_0023F430.header + 0x74);
     slot = &banks[bank];
     if (*slot != 0) {
         return;
@@ -41,23 +41,23 @@ void func_0045E860(s32 bank, u32 address)
     address = (address + 15) & 0xFFFFFFF0;
     *slot = address;
     if (bank != 0) {
-        first = ((HudLimits1 *)D_0023F530.header)->limits[bank - 1];
+        first = ((HudLimits1 *)D_0023F430.header)->limits[bank - 1];
     } else {
         first = 0;
     }
-    limit = ((HudLimits1 *)D_0023F530.header)->limits[bank];
+    limit = ((HudLimits1 *)D_0023F430.header)->limits[bank];
     for (i = first; i < limit; i++) {
-        D_0023F530.table1[i].address &= 0x7FFFFFFF;
-        D_0023F530.table1[i].address += address;
+        D_0023F430.table1[i].address &= 0x7FFFFFFF;
+        D_0023F430.table1[i].address += address;
     }
     if (bank != 0) {
-        first = ((HudLimits2 *)D_0023F530.header)->limits[bank - 1];
+        first = ((HudLimits2 *)D_0023F430.header)->limits[bank - 1];
     } else {
         first = 0;
     }
-    limit = ((HudLimits2 *)D_0023F530.header)->limits[bank];
+    limit = ((HudLimits2 *)D_0023F430.header)->limits[bank];
     for (i = first; i < limit; i++) {
-        D_0023F530.table2[i].address &= 0x7FFFFFFF;
-        D_0023F530.table2[i].address += address;
+        D_0023F430.table2[i].address &= 0x7FFFFFFF;
+        D_0023F430.table2[i].address += address;
     }
 }

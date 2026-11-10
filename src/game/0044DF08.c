@@ -1,13 +1,13 @@
 #include "common.h"
 
-extern u8 D_00239640[];
+extern u8 D_00239540[];
 
 s32 func_0044DF08(s32 arg0, u32 arg1, s64 arg2) {
-    s32 base = (s32)D_00239640;
+    s32 base = (s32)D_00239540;
     s32 result;
     s64 value;
 
-    if (D_00239640[0] != 0) {
+    if (D_00239540[0] != 0) {
         goto dispatch;
     }
     return 1;

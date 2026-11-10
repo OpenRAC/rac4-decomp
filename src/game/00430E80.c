@@ -25,23 +25,23 @@ struct Object {
     u8 unknownC[0x50];
 };
 
-extern Manager D_00222138[];
-extern Manager *func_00502150(void);
-extern Allocator *func_00502218(Manager *, s32);
-extern void func_005052C0(s32);
-extern s32 func_005052C8(void);
-extern s32 func_00500980(void *, u32);
-extern void *func_0015DB90(u32, void *);
-extern Object *func_0050EB78(void *);
-extern s32 func_00501618(void *, Object *, u32);
+extern Manager D_00222038[];
+extern Manager *func_005010E0(void);
+extern Allocator *func_005011A8(Manager *, s32);
+extern void func_00504228(s32);
+extern s32 func_00504230(void);
+extern s32 func_004FF910(void *, u32);
+extern void *func_0015DB80(u32, void *);
+extern Object *func_0050DAE0(void *);
+extern s32 func_005005A8(void *, Object *, u32);
 
 static inline Manager *get_manager(void)
 {
-    Manager *manager = D_00222138;
+    Manager *manager = D_00222038;
     if (manager->table) {
         return manager;
     }
-    return func_00502150();
+    return func_005010E0();
 }
 
 s32 func_00430E80(u32 key)
@@ -60,17 +60,17 @@ s32 func_00430E80(u32 key)
     entry = state != NULL
                 ? *(void **)((u32)state + ((u32) * (s32 *)(state + 0x14) << 2))
                 : NULL;
-    func_005052C0(0x5C);
-    size = func_005052C8();
-    if (entry != NULL && func_00500980(entry, key) == 0) {
-        allocator = func_00502218(get_manager(), 1);
+    func_00504228(0x5C);
+    size = func_00504230();
+    if (entry != NULL && func_004FF910(entry, key) == 0) {
+        allocator = func_005011A8(get_manager(), 1);
         block = allocator->vtable->allocate(allocator, size);
         if (block != NULL) {
-            object = func_0050EB78(func_0015DB90(0x5C, block));
-            result = func_00501618(entry, object, key) != 0;
+            object = func_0050DAE0(func_0015DB80(0x5C, block));
+            result = func_005005A8(entry, object, key) != 0;
             if (!result) {
                 object->vtable->destroy(object, 2);
-                allocator = func_00502218(get_manager(), 1);
+                allocator = func_005011A8(get_manager(), 1);
                 allocator->vtable->release(allocator, block);
             }
         }

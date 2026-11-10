@@ -1,10 +1,10 @@
 #include "common.h"
 
-extern u8 *D_0022141C;
+extern u8 *D_0022131C;
 
 u8 *func_004473C0(s32 x, s32 y, s32 z)
 {
-    u8 *base = D_0022141C;
+    u8 *base = D_0022131C;
     u8 *data = base + *(s32 *)base;
     u16 *node = (u16 *)(base + 4);
     s32 iz;
