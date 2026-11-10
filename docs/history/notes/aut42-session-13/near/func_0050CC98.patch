@@ -1,0 +1,48 @@
+diff --git a/nonmatching/game/func_0050CC98.c b/nonmatching/game/func_0050CC98.c
+new file mode 100644
+--- /dev/null
++++ b/nonmatching/game/func_0050CC98.c
+@@ -0,0 +1,43 @@
++/* Not matching yet: BYTES 15/280. Independent reset stores are scheduled in a different order; byte-address arithmetic is corrected. Reproduce: venv/bin/python tools/try_func.py func_0050CC98 nonmatching/game/func_0050CC98.c --diff. */
++#include "common.h"
++typedef struct Type3 {s32 f0; s32 f4; f32 f8; f32 fC; s32 f10; s32 f14;} Type3;
++typedef struct Type2 {s32 f0[104];s32 f1A0;void *f1A4;s32 f1A8;s32 f1AC;Type3 f1B0;} Type2;
++typedef struct Type1 {s32 f0; s32 f4; void *f8; char fC[0x34];Type2 f40;} Type1;
++extern u8 D_003D3610[];
++extern void func_0050BE90(Type1 *);
++extern void func_005015C8(void *);
++extern void func_0050CE20(Type1 *,s32,s32);
++Type1 *func_0050CC98(Type1 *arg0) {
++ Type2 *p; Type3 *q; s32 *v; s32 i; void *obj;
++ func_0050BE90(arg0);
++ p=&arg0->f40;
++ arg0->f8=D_003D3610;
++ v=p->f0;
++ i=0x67;
++ do { *v=0; --i; ++v; }while(i!=-1);
++ q=&p->f1B0;
++ p->f1B0.f0=0;
++ i=0x67;
++ p->f1A4=0;
++ v=&arg0->f40.f0[103];
++ q->fC=1.0f;
++ q->f14=0;
++ q->f4=0;
++ q->f8=1.0f;
++ q->f10=0;
++ do { *v=0; --i; --v; }while(i>=0);
++ obj=arg0->f40.f1A4;
++ arg0->f40.f1B0.f8=1.0f;
++ arg0->f40.f1A0=0;
++ arg0->f40.f1B0.f4=0;
++ arg0->f40.f1B0.fC=1.0f;
++ arg0->f40.f1B0.f0=0;
++ if(obj)func_005015C8(obj);
++ arg0->f40.f1A4=0;
++ arg0->f40.f1A8=0;
++ func_0050CE20(arg0,1,0);
++ func_0050CE20(arg0,2,0);
++ func_0050CE20(arg0,4,0);
++ func_0050CE20(arg0,8,0);
++ return arg0;
++}

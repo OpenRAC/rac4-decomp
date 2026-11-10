@@ -1,0 +1,15 @@
+diff --git a/src/overlays/shared/L01_00633030.c b/src/overlays/shared/L01_00633030.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L01_00633030.c
+@@ -0,0 +1,10 @@
++#include "common.h"
++
++extern s32 D_0020FF08;
++
++void func_L01_00633030(s32 arg0) {
++    u8 *temp_a0;
++
++    temp_a0 = arg0 + (u8 *)&D_0020FF08;
++    *temp_a0 |= 1;
++}

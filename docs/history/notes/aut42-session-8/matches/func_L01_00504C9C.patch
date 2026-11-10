@@ -1,0 +1,10 @@
+diff --git a/src/overlays/shared/L01_00504C9C.c b/src/overlays/shared/L01_00504C9C.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L01_00504C9C.c
+@@ -0,0 +1,5 @@
++#include "common.h"
++
++f32 func_L01_00504C9C(void) {
++    return 0.5f;
++}

@@ -1,0 +1,21 @@
+diff --git a/src/game/0050EEB8.c b/src/game/0050EEB8.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/0050EEB8.c
+@@ -0,0 +1,16 @@
++#include "common.h"
++
++void func_0050EEB8(void *arg0, s32 arg1, f32 fparg0, f32 fparg1) {
++    void *temp_v1;
++
++    (*(f32 *)((u8 *)((*(s32 *)((u8 *)(arg0) + 0x40))) + 0x34)) = fparg0;
++    (*(f32 *)((u8 *)((*(s32 *)((u8 *)(arg0) + 0x40))) + 0x38)) = fparg1;
++    (*(s16 *)((u8 *)((*(s32 *)((u8 *)(arg0) + 0x40))) + 0x4E)) = 0;
++    temp_v1 = (*(s32 *)((u8 *)(arg0) + 0x40));
++    if (arg1 != 0) {
++        (*(s8 *)((u8 *)(temp_v1) + 0x51)) = 0;
++    } else {
++        (*(s8 *)((u8 *)(temp_v1) + 0x51)) = 1;
++    }
++    (*(s8 *)((u8 *)(arg0) + 0x44)) = 1;
++}

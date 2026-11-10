@@ -1,0 +1,15 @@
+diff --git a/src/game/0049F010.c b/src/game/0049F010.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/0049F010.c
+@@ -0,0 +1,10 @@
++#include "common.h"
++typedef struct Type1 {char f0[0x1C]; u8 f1C;char f1D[0x1E3];} Type1;
++extern Type1 D_00307074;
++extern Type1 D_00307220[];
++s32 func_0049F010(s32 arg0) {
++    Type1 *p;
++    if(arg0 == 4) p=&D_00307074;
++    else p=&D_00307220[arg0];
++    return p->f1C;
++}

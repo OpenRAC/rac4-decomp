@@ -1,0 +1,286 @@
+diff --git a/src/game/0049B378.c b/src/game/0049B378.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/0049B378.c
+@@ -0,0 +1,17 @@
++#include "common.h"
++
++extern void *func_00501458(void *, void *, void *, void *, void *, void *);
++extern char D_00306EB0[];
++extern void func_0049B808(void);
++extern void func_0049B8A0(void);
++extern void func_0049B8A8(void);
++
++s32 D_002215A8 = 0;
++
++void *func_0049B378(void) {
++    if (D_002215A8 == 0) {
++        func_00501458(D_00306EB0, func_0049B808, func_0049B8A0, func_0049B8A8, 0, 0);
++        D_002215A8 = 1;
++    }
++    return D_00306EB0;
++}
+diff --git a/src/game/004A1A78.c b/src/game/004A1A78.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004A1A78.c
+@@ -0,0 +1,17 @@
++#include "common.h"
++
++extern void *func_00501458(void *, void *, void *, void *, void *, void *);
++extern char D_003078D8[];
++extern void func_004A1B40(void);
++extern void func_004A1D50(void);
++extern void func_004A1B48(void);
++
++s32 D_002215BC = 0;
++
++void *func_004A1A78(void) {
++    if (D_002215BC == 0) {
++        func_00501458(D_003078D8, func_004A1B40, func_004A1D50, func_004A1B48, 0, 0);
++        D_002215BC = 1;
++    }
++    return D_003078D8;
++}
+diff --git a/src/game/004A2358.c b/src/game/004A2358.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004A2358.c
+@@ -0,0 +1,17 @@
++#include "common.h"
++
++extern void *func_00501458(void *, void *, void *, void *, void *, void *);
++extern char D_00307908[];
++extern void func_004A2440(void);
++extern void func_004A2680(void);
++extern void func_004A2448(void);
++
++s32 D_002215C4 = 0;
++
++void *func_004A2358(void) {
++    if (D_002215C4 == 0) {
++        func_00501458(D_00307908, func_004A2440, func_004A2680, func_004A2448, 0, 0);
++        D_002215C4 = 1;
++    }
++    return D_00307908;
++}
+diff --git a/src/game/004A2E48.c b/src/game/004A2E48.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004A2E48.c
+@@ -0,0 +1,17 @@
++#include "common.h"
++
++extern void *func_00501458(void *, void *, void *, void *, void *, void *);
++extern char D_003079F0[];
++extern void func_004A2EA8(void);
++extern void func_004A32C0(void);
++extern void func_004A3310(void);
++
++s32 D_002215F8 = 0;
++
++void *func_004A2E48(void) {
++    if (D_002215F8 == 0) {
++        func_00501458(D_003079F0, func_004A2EA8, func_004A32C0, func_004A3310, 0, 0);
++        D_002215F8 = 1;
++    }
++    return D_003079F0;
++}
+diff --git a/src/game/004A9C30.c b/src/game/004A9C30.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004A9C30.c
+@@ -0,0 +1,17 @@
++#include "common.h"
++
++extern void *func_00501458(void *, void *, void *, void *, void *, void *);
++extern char D_003083E8[];
++extern void func_004A9C90(void);
++extern void func_004A9C98(void);
++extern void func_004A9CD0(void);
++
++s32 D_0022165C = 0;
++
++void *func_004A9C30(void) {
++    if (D_0022165C == 0) {
++        func_00501458(D_003083E8, func_004A9C90, func_004A9C98, func_004A9CD0, 0, 0);
++        D_0022165C = 1;
++    }
++    return D_003083E8;
++}
+diff --git a/src/game/004AFE50.c b/src/game/004AFE50.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004AFE50.c
+@@ -0,0 +1,17 @@
++#include "common.h"
++
++extern void *func_00501458(void *, void *, void *, void *, void *, void *);
++extern char D_00309598[];
++extern void func_004B0020(void);
++extern void func_004B0068(void);
++extern void func_004B00D0(void);
++
++s32 D_00221714 = 0;
++
++void *func_004AFE50(void) {
++    if (D_00221714 == 0) {
++        func_00501458(D_00309598, func_004B0020, func_004B0068, func_004B00D0, 0, 0);
++        D_00221714 = 1;
++    }
++    return D_00309598;
++}
+diff --git a/src/game/004B0F08.c b/src/game/004B0F08.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004B0F08.c
+@@ -0,0 +1,17 @@
++#include "common.h"
++
++extern void *func_00501458(void *, void *, void *, void *, void *, void *);
++extern char D_00309638[];
++extern void func_004B1090(void);
++extern void func_004B10D0(void);
++extern void func_004B1138(void);
++
++s32 D_00221724 = 0;
++
++void *func_004B0F08(void) {
++    if (D_00221724 == 0) {
++        func_00501458(D_00309638, func_004B1090, func_004B10D0, func_004B1138, 0, 0);
++        D_00221724 = 1;
++    }
++    return D_00309638;
++}
+diff --git a/src/game/004B2160.c b/src/game/004B2160.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004B2160.c
+@@ -0,0 +1,17 @@
++#include "common.h"
++
++extern void *func_00501458(void *, void *, void *, void *, void *, void *);
++extern char D_00309690[];
++extern void func_004B22A0(void);
++extern void func_004B22D8(void);
++extern void func_004B2348(void);
++
++s32 D_00221734 = 0;
++
++void *func_004B2160(void) {
++    if (D_00221734 == 0) {
++        func_00501458(D_00309690, func_004B22A0, func_004B22D8, func_004B2348, 0, 0);
++        D_00221734 = 1;
++    }
++    return D_00309690;
++}
+diff --git a/src/game/004B4C90.c b/src/game/004B4C90.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004B4C90.c
+@@ -0,0 +1,17 @@
++#include "common.h"
++
++extern void *func_00501458(void *, void *, void *, void *, void *, void *);
++extern char D_00309828[];
++extern void func_004B4E48(void);
++extern void func_004B4ED8(void);
++extern void func_004B4F40(void);
++
++s32 D_00221754 = 0;
++
++void *func_004B4C90(void) {
++    if (D_00221754 == 0) {
++        func_00501458(D_00309828, func_004B4E48, func_004B4ED8, func_004B4F40, 0, 0);
++        D_00221754 = 1;
++    }
++    return D_00309828;
++}
+diff --git a/src/game/004C82C8.c b/src/game/004C82C8.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004C82C8.c
+@@ -0,0 +1,17 @@
++#include "common.h"
++
++extern void *func_00501458(void *, void *, void *, void *, void *, void *);
++extern char D_0030D140[];
++extern void func_004C8428(void);
++extern void func_004C86A0(void);
++extern void func_004C8768(void);
++
++s32 D_002218D4 = 0;
++
++void *func_004C82C8(void) {
++    if (D_002218D4 == 0) {
++        func_00501458(D_0030D140, func_004C8428, func_004C86A0, func_004C8768, 0, 0);
++        D_002218D4 = 1;
++    }
++    return D_0030D140;
++}
+diff --git a/src/game/004D4710.c b/src/game/004D4710.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004D4710.c
+@@ -0,0 +1,17 @@
++#include "common.h"
++
++extern void *func_00501458(void *, void *, void *, void *, void *, void *);
++extern char D_0031B970[];
++extern void func_004D49A8(void);
++extern void func_004D4BA8(void);
++extern void func_004D4C58(void);
++
++s32 D_002219F4 = 0;
++
++void *func_004D4710(void) {
++    if (D_002219F4 == 0) {
++        func_00501458(D_0031B970, func_004D49A8, func_004D4BA8, func_004D4C58, 0, 0);
++        D_002219F4 = 1;
++    }
++    return D_0031B970;
++}
+diff --git a/src/game/004D9DC0.c b/src/game/004D9DC0.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004D9DC0.c
+@@ -0,0 +1,17 @@
++#include "common.h"
++
++extern void *func_00501458(void *, void *, void *, void *, void *, void *);
++extern char D_00321B00[];
++extern void func_004D9EB0(void);
++extern void func_004DA140(void);
++extern void func_004DA1F0(void);
++
++s32 D_00221B74 = 0;
++
++void *func_004D9DC0(void) {
++    if (D_00221B74 == 0) {
++        func_00501458(D_00321B00, func_004D9EB0, func_004DA140, func_004DA1F0, 0, 0);
++        D_00221B74 = 1;
++    }
++    return D_00321B00;
++}
+diff --git a/src/game/004DBA98.c b/src/game/004DBA98.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004DBA98.c
+@@ -0,0 +1,17 @@
++#include "common.h"
++
++extern void *func_00501458(void *, void *, void *, void *, void *, void *);
++extern char D_00322F80[];
++extern void func_004DBBC8(void);
++extern void func_004DBC90(void);
++extern void func_004DBCE8(void);
++
++s32 D_00221B84 = 0;
++
++void *func_004DBA98(void) {
++    if (D_00221B84 == 0) {
++        func_00501458(D_00322F80, func_004DBBC8, func_004DBC90, func_004DBCE8, 0, 0);
++        D_00221B84 = 1;
++    }
++    return D_00322F80;
++}

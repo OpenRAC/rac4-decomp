@@ -1,0 +1,11 @@
+diff --git a/src/game/0050C740.c b/src/game/0050C740.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/0050C740.c
+@@ -0,0 +1,6 @@
++#include "common.h"
++
++extern void func_0050CAC0(void *,s32,s32);
++void func_0050C740(u8 *arg0,s32 arg1) {
++    func_0050CAC0(arg0,arg1,*(s32 *)(arg0+0x1E8));
++}

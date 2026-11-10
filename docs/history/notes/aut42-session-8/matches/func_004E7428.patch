@@ -1,0 +1,13 @@
+diff --git a/src/game/004E7428.c b/src/game/004E7428.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004E7428.c
+@@ -0,0 +1,8 @@
++#include "common.h"
++
++extern s32 D_0020FF20_[];
++#define D_0020FF20 (D_0020FF20_[0])
++
++s32 func_004E7428(s32 arg0) {
++    return *(arg0 + (u8 *)&D_0020FF20) != 0;
++}

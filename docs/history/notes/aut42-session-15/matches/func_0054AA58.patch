@@ -1,0 +1,15 @@
+diff --git a/src/game/0054AA58.c b/src/game/0054AA58.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/0054AA58.c
+@@ -0,0 +1,10 @@
++#include "common.h"
++
++extern void *func_0054A980(s32);
++
++s32 func_0054AA58(s32 arg0) {
++    void *temp_s1;
++
++    temp_s1 = func_0054A980(arg0);
++    return ((*(s32 *)((u8 *)(temp_s1) + 0x14)) - (*(s32 *)((u8 *)(func_0054A980(arg0)) + 0x10))) + 1;
++}

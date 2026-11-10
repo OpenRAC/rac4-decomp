@@ -1,0 +1,15 @@
+diff --git a/src/overlays/shared/L01_0040A600.c b/src/overlays/shared/L01_0040A600.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L01_0040A600.c
+@@ -0,0 +1,10 @@
++#include "common.h"
++
++s32 func_L01_00409B20(f32, f32);
++
++void func_L01_0040A600(void *arg0) {
++    f32 temp_f12;
++
++    temp_f12 = (f32) (*(u8 *)((u8 *)((*(s32 *)((u8 *)(arg0) + 0xAC))) + 0xF2)) / 25.0f;
++    func_L01_00409B20(temp_f12, temp_f12);
++}

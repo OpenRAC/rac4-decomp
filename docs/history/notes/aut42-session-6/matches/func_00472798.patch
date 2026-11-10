@@ -1,0 +1,23 @@
+diff --git a/src/game/00472798.c b/src/game/00472798.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00472798.c
+@@ -0,0 +1,18 @@
++/* cflags: -mno-split-addresses */
++#include "common.h"
++typedef int s128 __attribute__((mode(TI)));
++typedef unsigned int u128 __attribute__((mode(TI)));
++
++f32 func_004725D8(f32, f32);
++f32 func_00472690();
++s128 func_004FE850(void *, f32, f32, f32);
++extern s32 D_00222010;
++
++void func_00472798(s128 *arg0, f32 fparg0, f32 fparg1) {
++    f32 temp_f22;
++    f32 temp_f23;
++
++    temp_f23 = func_00472690();
++    temp_f22 = func_00472690();
++    *arg0 = func_004FE850(&D_00222010, func_004725D8(fparg0, fparg1), temp_f23, temp_f22);
++}

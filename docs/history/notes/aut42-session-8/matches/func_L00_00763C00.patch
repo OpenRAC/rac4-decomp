@@ -1,0 +1,32 @@
+diff --git a/src/overlays/l00_multiplayer_menu/L00_00763C00.c b/src/overlays/l00_multiplayer_menu/L00_00763C00.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/l00_multiplayer_menu/L00_00763C00.c
+@@ -0,0 +1,27 @@
++/* cflags: -fno-schedule-insns */
++#include "common.h"
++
++typedef struct Type1 Type1;
++struct Type1 {
++    char _p0[0x260];
++    s32 f260;
++    s32 f264;
++    s32 f268;
++};
++
++void func_L00_00717C68();
++void func_L00_0071B478();
++void func_L00_0071BB58(void *);
++void func_L00_0071BC68(void *);
++extern s32 D_002213C8;
++
++void func_L00_00763C00(Type1 *arg0) {
++    func_L00_0071B478();
++    func_L00_0071BC68(arg0);
++    func_L00_0071BB58(arg0);
++    D_002213C8 = -1;
++    arg0->f264 = 0;
++    arg0->f268 = 0;
++    arg0->f260 = 0;
++    func_L00_00717C68();
++}

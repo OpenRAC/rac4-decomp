@@ -1,0 +1,12 @@
+diff --git a/src/game/00511298.c b/src/game/00511298.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00511298.c
+@@ -0,0 +1,7 @@
++#include "common.h"
++s32 *func_005112C8(void *);
++u32 func_00511298(void *arg0) {
++    s32 *p=func_005112C8(arg0);
++    if(p) return *p;
++    return 0xFFFFFFFF;
++}

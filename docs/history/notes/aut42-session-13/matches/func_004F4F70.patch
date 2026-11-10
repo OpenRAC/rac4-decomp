@@ -1,0 +1,18 @@
+diff --git a/src/game/004F4F70.c b/src/game/004F4F70.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004F4F70.c
+@@ -0,0 +1,13 @@
++#include "common.h"
++
++s32 func_00464038(s32);
++void func_004F3468(s32);
++typedef struct Type1 {char f0[0x14];s32 f14;s32 f18;} Type1;
++extern Type1 D_001DFC40;
++
++void func_004F4F70(s32 arg0) {
++    func_004F3468(arg0);
++    D_001DFC40.f14 = arg0;
++    D_001DFC40.f18 = 0;
++    func_00464038(0);
++}

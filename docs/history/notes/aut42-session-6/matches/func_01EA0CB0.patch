@@ -1,0 +1,38 @@
+diff --git a/src/net/01EA0CB0.c b/src/net/01EA0CB0.c
+new file mode 100644
+--- /dev/null
++++ b/src/net/01EA0CB0.c
+@@ -0,0 +1,33 @@
++#include "common.h"
++
++typedef struct Type1 Type1;
++struct Type1 {
++    char _p0[0x20];
++    s32 f20;
++};
++
++s32 func_01EA0CB0(s32 *arg0, void **arg1) {
++    s32 var_v0;
++    u32 var_v1;
++    void **var_a1;
++    Type1 *temp_v0;
++
++    var_a1 = arg1;
++    var_v1 = 0;
++    var_v0 = 0x17;
++    if (arg0 != NULL) {
++        *arg0 = 0;
++        if (var_a1 != NULL) {
++            do {
++                temp_v0 = *var_a1;
++                var_a1 += 1;
++                if ((temp_v0 != NULL) && (temp_v0->f20 != 0)) {
++                    *arg0 += 1;
++                }
++                var_v1 += 1;
++            } while (var_v1 < 0x100U);
++            var_v0 = 0;
++        }
++    }
++    return var_v0;
++}

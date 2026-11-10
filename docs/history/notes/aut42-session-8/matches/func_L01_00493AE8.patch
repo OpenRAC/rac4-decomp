@@ -1,0 +1,27 @@
+diff --git a/src/overlays/shared/L01_00493AE8.c b/src/overlays/shared/L01_00493AE8.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L01_00493AE8.c
+@@ -0,0 +1,22 @@
++#include "common.h"
++
++typedef struct Type1 Type1;
++typedef struct Type2 Type2;
++struct Type2 {
++    char _p0[0x64];
++    f32 f64;
++};
++struct Type1 {
++    char _p0[0xAC];
++    Type2 *fAC;
++};
++
++s32 func_L01_00493AE8(Type1 *arg0) {
++    s32 var_v1;
++
++    var_v1 = 1;
++    if (!(arg0->fAC->f64 >= 1.0f)) {
++        var_v1 = 0;
++    }
++    return var_v1;
++}

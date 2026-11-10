@@ -1,0 +1,21 @@
+diff --git a/src/game/0051B130.c b/src/game/0051B130.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/0051B130.c
+@@ -0,0 +1,16 @@
++#include "common.h"
++
++s32 func_0051B130(void *arg0, f32 fparg0) {
++    f32 temp_f1;
++    s32 var_v0;
++
++    temp_f1 = (*(f32 *)((u8 *)(arg0) + 0x658));
++    var_v0 = 0;
++    if (fparg0 < temp_f1) {
++        var_v0 = 1;
++        if (!((temp_f1 - fparg0) <= (*(f32 *)((u8 *)(arg0) + 0x65C)))) {
++            var_v0 = 0;
++        }
++    }
++    return var_v0;
++}

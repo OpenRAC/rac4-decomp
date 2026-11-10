@@ -1,0 +1,32 @@
+diff --git a/nonmatching/l00_multiplayer_menu/func_L00_00518878.c b/nonmatching/l00_multiplayer_menu/func_L00_00518878.c
+new file mode 100644
+--- /dev/null
++++ b/nonmatching/l00_multiplayer_menu/func_L00_00518878.c
+@@ -0,0 +1,19 @@
++/* Not matching yet: BYTES 4/52. Retail reserves a 32-byte frame and places ra at +0x10; this draft uses a 16-byte frame and ra at +0x08. Reproduce: venv/bin/python tools/try_func.py func_L00_00518878 nonmatching/l00_multiplayer_menu/func_L00_00518878.c --diff. */
++#include "common.h"
++extern void *func_L00_0051EB20(void);
++
++
++typedef struct Type1 Type1;
++struct Type1 {
++    char _p0[0x1C];
++    s32 f1C;
++};
++
++
++s32 func_L00_00518878(Type1 *arg0) {
++    void *temp_v0;
++
++    temp_v0 = func_L00_0051EB20();
++    arg0->f1C = temp_v0;
++    return (temp_v0 != NULL) ? 0 : 0x2715;
++}
+diff --git a/nonmatching/README.md b/nonmatching/README.md
+--- a/nonmatching/README.md
++++ b/nonmatching/README.md
+@@ -150,3 +150,4 @@
+ | [`func_L04_00536020`](shared/func_L04_00536020.c) | shared | 32 | NOT IN US (PAL-mapped address; US 0x00536020 holds other code and no US overlay function has these bytes) |
+ | [`func_L05_004DF3B8`](shared/func_L05_004DF3B8.c) | shared | 280 | SIZE ours 296 / retail 280 |
+ | [`func_L06_004013F0`](shared/func_L06_004013F0.c) | shared | 112 | SIZE ours 120 / retail 112 |
++| [`func_L00_00518878`](l00_multiplayer_menu/func_L00_00518878.c) | l00_multiplayer_menu | 56 | BYTES 4/52 (stack frame and ra slot) |

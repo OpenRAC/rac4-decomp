@@ -1,0 +1,13 @@
+diff --git a/src/game/00510C18.c b/src/game/00510C18.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00510C18.c
+@@ -0,0 +1,8 @@
++/* cflags: -G0 */
++#include "common.h"
++
++extern s32 D_003367B8[];
++
++s32 func_00510C18(s32 a0) {
++    return D_003367B8[a0];
++}

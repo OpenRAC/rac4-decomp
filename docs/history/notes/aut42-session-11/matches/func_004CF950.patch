@@ -1,0 +1,62 @@
+diff --git a/src/game/004CF950.c b/src/game/004CF950.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004CF950.c
+@@ -0,0 +1,57 @@
++#include "common.h"
++
++typedef struct Type1 Type1;
++typedef struct Type2 Type2;
++typedef struct Type3 Type3;
++typedef struct Type4 Type4;
++struct Type3 {
++    char _p0[0x30];
++    s32 f30;
++};
++struct Type4 {
++    char _p0[0x8];
++    s32 f8;
++    char _pC[0x9D4];
++};
++struct Type1 {
++    char _p0[0x34];
++    s32 f34;
++    char _p38[0x18];
++    s32 f50;
++    s32 f54;
++};
++struct Type2 {
++    char _p0[0x8];
++    s32 f8;
++};
++
++s32 func_0045E038(s32);
++s32 func_004A1A60(void *, s32);
++s32 func_00504F68(s32, s32);
++s32 func_00505238(s32, s32);
++s32 func_00505B20();
++extern s32 D_00221980;
++extern Type4 D_00316D00_[];
++
++void func_004CF950(void) {
++    s32 temp_a0;
++    s32 temp_s0;
++    Type3 *temp_s1;
++    Type4 *temp_s2;
++    Type1 *temp_v1;
++    Type2 *var_v0;
++
++    temp_s2 = func_00505B20() + D_00316D00_;
++    temp_v1 = (u8 *)temp_s2 + 0x974;
++    if (temp_v1->f50 > 0) {
++        temp_a0 = temp_v1->f54;
++        if (temp_a0 < 0) { var_v0=0; } else { var_v0=temp_v1->f34 + (temp_a0 * 0x18); }
++        temp_s1 = var_v0->f8;
++        temp_s0 = func_004A1A60(&D_00221980, 0xD);
++        func_00505238(temp_s0, func_0045E038(temp_s1->f30));
++        func_00504F68(func_004A1A60(&D_00221980, 0xD), 1);
++    } else {
++        func_00504F68(func_004A1A60(&D_00221980, 0xD), 0);
++    }
++    temp_s2->f8 = (s32) (temp_s2->f8 & ~2);
++}

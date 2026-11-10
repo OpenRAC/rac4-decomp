@@ -1,0 +1,38 @@
+diff --git a/nonmatching/game/func_004E6FA0.c b/nonmatching/game/func_004E6FA0.c
+new file mode 100644
+--- /dev/null
++++ b/nonmatching/game/func_004E6FA0.c
+@@ -0,0 +1,33 @@
++/* BYTES 3/96: identical control flow, sizes, symbols and constants; the global
++ * comparison uses v0/v1 in the opposite roles from retail.
++ * Reproduce after applying this pending patch:
++ * venv/bin/python tools/try_func.py func_004E6FA0 nonmatching/game/func_004E6FA0.c --diff
++ * Tried array/plain globals and split/no-split addressing; no compiler-output edits.
++ */
++#include "common.h"
++
++typedef struct Type1 Type1;
++struct Type1 {
++    s32 f0;
++    char _p4[0x4];
++    s32 f8;
++};
++
++s32 func_004FC650();
++extern s32 D_00171B40_[];
++#define D_00171B40 (D_00171B40_[0])
++
++
++s32 func_004E6FA0(Type1 *arg0) {
++    s32 var_v0;
++
++    if (arg0 == NULL) {
++        return 0;
++    }
++    if (arg0->f0 != 0xC) {
++        var_v0 = D_00171B40 < arg0->f8;
++    } else {
++        var_v0 = func_004FC650() < arg0->f8;
++    }
++    return var_v0 ^ 1;
++}

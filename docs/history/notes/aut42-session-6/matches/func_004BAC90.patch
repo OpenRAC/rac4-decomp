@@ -1,0 +1,22 @@
+diff --git a/src/game/004BAC90.c b/src/game/004BAC90.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004BAC90.c
+@@ -0,0 +1,17 @@
++/* cflags: -mno-split-addresses */
++#include "common.h"
++
++s32 func_00497980(s32);
++extern s8 D_0021F8D9;
++s8 D_0021F8DA = 0;
++
++void func_004BAC90(s32 arg0) {
++    if (arg0 != 0) {
++        D_0021F8D9 = 1;
++        func_00497980(0xE);
++        D_0021F8DA = 1;
++        return;
++    }
++    func_00497980(0xC);
++    D_0021F8DA = 0;
++}

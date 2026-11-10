@@ -1,0 +1,26 @@
+diff --git a/src/net/01ED90B8.c b/src/net/01ED90B8.c
+new file mode 100644
+--- /dev/null
++++ b/src/net/01ED90B8.c
+@@ -0,0 +1,21 @@
++#include "common.h"
++
++typedef struct Type1 Type1;
++struct Type1 {
++    char _p0[0x10];
++    s32 f10;
++};
++
++s32 func_01ED90B8(void **arg0) {
++    s32 var_v0;
++    Type1 *temp_a0;
++
++    var_v0 = 0;
++    if (arg0 != NULL) {
++        temp_a0 = *arg0;
++        if (temp_a0 != NULL) {
++            var_v0 = temp_a0->f10;
++        }
++    }
++    return var_v0;
++}

@@ -1,0 +1,11 @@
+diff --git a/src/game/0050EE80.c b/src/game/0050EE80.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/0050EE80.c
+@@ -0,0 +1,6 @@
++#include "common.h"
++
++s32 func_0050EE80(void *arg0, f32 *arg1) {
++    *arg1 = (*(f32 *)((u8 *)((*(s32 *)((u8 *)(arg0) + 0x40))) + 0x3C));
++    return 1;
++}
