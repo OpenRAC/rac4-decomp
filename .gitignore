@@ -2,7 +2,7 @@
 baserom*/
 
 # Third-party toolchain mirrors (e.g. SN Systems ProDG) - local tooling only,
-# never committed. See docs/TOOLCHAIN.md.
+# never committed. See docs/build/toolchain.md.
 toolchain/
 *.iso
 *.bin
@@ -48,6 +48,7 @@ ctx.c.m2c
 asm/
 # Assets splat extracts from the executable.
 assets/
+!docs/assets/
 .aider*
 
 # One-off scratch / helper scripts created during a session.
