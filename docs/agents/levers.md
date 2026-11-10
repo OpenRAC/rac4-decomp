@@ -51,3 +51,16 @@ yours here. The compiler and its flags are in [`toolchain.md`](../build/toolchai
   `div` means the file kept the default `-mcheck-zero-division`; the build passes
   `-mno-check-zero-division`, so add `/* cflags: -mcheck-zero-division */`.
   59 of the functions still in `asm/nonmatchings/` have that pair.
+- **Empty delay slots**: retail's `...; sw $x, 0x36($a0); jr $ra; nop` — the
+  last instruction before the jump, with a `nop` in its slot — means the file was
+  built with `-fno-delayed-branch`; add `/* cflags: -fno-delayed-branch */`.
+  Only where retail fills **no** slot anywhere in the function: with a loop the
+  flag nops every back edge and regresses.
+- **Address materialisation**: `lui $s0,%hi` + `addiu $s0,$s0,%lo` (the
+  destination as its own temporary) is the non-split form and needs
+  `-mno-split-addresses`; the default splits it (`lui $v1,%hi` +
+  `addiu $a2,$v1,%lo`). When both appear, go by the register **reused across a
+  call**. Related: byte-offset stores into a global (`*(s32 *)(G + 0x8)`) make
+  GCC split the base and re-add `%lo` at the tail — a local `s32 *` into an
+  `s32[]` (`p[2] = 0;`) keeps it in one register.
+
