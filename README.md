@@ -17,8 +17,8 @@
 </p>
 
 <p align="center">
-  A work-in-progress, matching decompilation of <i>Ratchet: Deadlocked</i> (<i>Ratchet: Gladiator</i> in PAL regions, 2005) for PlayStation 2.<br>
-  The main program, the front end and 47 level programs, rebuilt as C that compiles back to the same bytes as retail.
+  A matching decompilation of <i>Ratchet: Deadlocked</i> (2005) for PlayStation 2.<br>
+  The main program, front end and 47 levels, rebuilt as C matching retail byte for byte.
 </p>
 
 > [!WARNING]
