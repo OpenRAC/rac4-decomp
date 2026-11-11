@@ -1,6 +1,6 @@
 #include "common.h"
 
-extern void func_0011D5D8(s32 arg0, ...);
+extern s32 func_0011D5D8(const char *, ...);
 extern void func_00126E20(s32);
 extern s32 func_00137FB0(void);
 extern s32 func_001593C8(s32 arg0, s32 arg1, s32 arg2, void *arg3);
@@ -24,7 +24,7 @@ s32 func_004F0AB0(s32 *arg0, s32 arg1, s32 arg2) {
                 ret = v << 11;
                 arg0[2] += v;
             } else {
-                func_0011D5D8((s32)D_003D31E8);
+                func_0011D5D8(D_003D31E8);
             }
         }
         goto end;
@@ -36,7 +36,7 @@ s32 func_004F0AB0(s32 *arg0, s32 arg1, s32 arg2) {
         if (func_001593C8(arg0[2], arg2 >> 11, arg1, buf) != 0) {
             D_00220910 = 1;
         } else {
-            func_0011D5D8((s32)D_003D3200);
+            func_0011D5D8(D_003D3200);
         }
         ret = 0;
     }
