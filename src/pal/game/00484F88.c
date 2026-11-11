@@ -1,0 +1,22 @@
+#include "common.h"
+
+extern f32 func_L00_005FCB68(u8 *);
+
+s32 func_00484F88(u8 *moby, f32 value) {
+    f32 cur = func_L00_005FCB68(moby);
+    f32 len = *(f32 *)(moby + 0x48);
+    s32 v = (s32)(value * 4096.0f + 0.5f);
+    s32 lo = (s32)(cur * 4096.0f + 0.5f);
+    s32 hi = (s32)((cur - len * 1.2f * 0.5f) * 4096.0f + 0.5f);
+
+    if (len < 0.0f) {
+        if (v >= lo && v < hi) {
+            return 1;
+        }
+        return 0;
+    }
+    if (v <= lo && v > hi) {
+        return 1;
+    }
+    return 0;
+}

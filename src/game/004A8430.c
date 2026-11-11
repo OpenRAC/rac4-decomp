@@ -1,0 +1,34 @@
+#include "common.h"
+
+extern s32 D_0021DDB4;
+extern f32 func_004539F0(f32, f32);
+
+f32 func_004A8430(const void *arg0)
+{
+    const u8 *arg1;
+    const u8 *object;
+    f32 result;
+    f32 distance;
+    f32 x;
+    f32 y;
+
+    result = 360.0f;
+    arg1 = *(const u8 **)((const u8 *)arg0 + 0x2F00);
+    distance = *(f32 *)(arg1 + 0x140) * *(f32 *)(arg1 + 0x140) +
+               *(f32 *)(arg1 + 0x144) * *(f32 *)(arg1 + 0x144);
+    if (D_0021DDB4 == 4 || (*(s32 *)(arg1 + 0x1A0) & 0x10) != 0) {
+        distance += *(f32 *)(arg1 + 0x148) * *(f32 *)(arg1 + 0x148) +
+                    *(f32 *)(arg1 + 0x14C) * *(f32 *)(arg1 + 0x14C);
+    }
+    if (0.95f < distance) {
+        object = *(const u8 **)((const u8 *)arg0 + 0x2F00);
+        x = *(f32 *)(object + 0x140);
+        y = *(f32 *)(object + 0x144);
+        if (D_0021DDB4 == 4 || (*(s32 *)(object + 0x1A0) & 0x10) != 0) {
+            x += *(f32 *)(object + 0x148);
+            y += *(f32 *)(object + 0x14C);
+        }
+        result = func_004539F0(x, y) * 180.0f / 3.1415927f;
+    }
+    return result;
+}
