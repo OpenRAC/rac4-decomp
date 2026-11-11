@@ -86,3 +86,6 @@ config/ghidra_*.json
 
 # Local-only helpers and reference material
 private/
+
+# CodeGraph's local index (rebuilt on demand by `codegraph index`)
+.codegraph/
