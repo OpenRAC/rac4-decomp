@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Compile with SN 1.36 by default; standalone profile markers opt a whole
-# translation unit into an original compiler described in docs/TOOLCHAIN.md.
+# translation unit into an original compiler described in docs/build/toolchain.md.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 if [ "$#" -lt 2 ]; then

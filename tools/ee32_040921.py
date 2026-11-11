@@ -1,7 +1,7 @@
 """Run the isolated EE-GCC 3.2-ee-040921 C compiler without output edits.
 
 Windows uses headless WSL with a private, hash-checked 32-bit runtime.
-See docs/TOOLCHAIN.md for profile inputs and proof boundaries.
+See docs/build/toolchain.md for profile inputs and proof boundaries.
 """
 from __future__ import annotations
 
@@ -35,7 +35,7 @@ def compile_source(source: Path, output: Path, flags: list[str], *,
     for relative, expected in files.items():
         path = profile / relative
         if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != expected:
-            raise ValueError(f'@{label} missing or unverified profile file: {path} (docs/TOOLCHAIN.md)')
+            raise ValueError(f'@{label} missing or unverified profile file: {path} (docs/build/toolchain.md)')
 
     distro = distro or os.environ.get('EE32_040921_WSL_DISTRO', 'docker-desktop')
     convert = (lambda path: wsl_path(str(path.resolve()), distro)) if os.name == 'nt' else (lambda path: str(path.resolve()))
