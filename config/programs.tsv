@@ -1,0 +1,6 @@
+# The PAL disc's other programs (tools/levels.py config): name, dump, SHA-1 of the dump, SHA-1 of the
+# program as the disc stores it (main: as the loader's WAD unpacks it), entry, sections
+# (name:address:size:type). The loader SCES_532.85 itself: see the `loader` row.
+loader	baserom/SCES_532.85	2ca8d367f625001a4da12fcf466b7d218431bfd0	2ca8d367f625001a4da12fcf466b7d218431bfd0	-	-
+main	baserom/SCES_532.85.elf	6134918e8b2373e3ef6b18d4b35157760af2a605	dcfac0aab50b16d64f7c921888258a82afcab53a	001574E8	.reginfo:00100000:18:70000006,.vutext:00100080:1A0E0:1,core.text:0011A180:49A38:1,core.data:00163C00:2E310:1,core.rdata:00191F80:13248:1,core.bss:001A5200:78AB8:8,core.lit:0021DD00:4C0:1,.lit:0021E200:2F10:1,.bss:00221180:1A4808:8,.data:003C5A00:2B44C:1,lvl.vtbl:003F0E80:C:1,lvl.camvtbl:003F0F00:14:1,lvl.sndvtbl:003F0F80:8:1,.text:003F1000:15DC40:1,patch.data:0054EC80:18:70000006,net.text:01E9A000:97330:1,net.nostomp:01F31380:6C20:1
+frontbin	baserom/pal/frontbin.elf	b659b191580af7ddc298c2a7394dbd0d2fcc105d	da501734355880aa3c2b6f9afbac1630e24d3d0e	004381F0	.lit:0021E200:2ED0:1,.bss:00221100:1A4608:8,.data:003C5780:2B40C:1,lvl.vtbl:003F0C00:C:1,lvl.camvtbl:003F0C80:14:1,lvl.sndvtbl:003F0D00:8:1,.text:003F0D80:15D7C0:1,net.text:01E9A000:97330:1
