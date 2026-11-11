@@ -1,0 +1,9 @@
+diff --git a/nonmatching/README.md b/nonmatching/README.md
+--- a/nonmatching/README.md
++++ b/nonmatching/README.md
+@@ -150,3 +150,5 @@
+ | [`func_L04_00536020`](shared/func_L04_00536020.c) | shared | 32 | NOT IN US (PAL-mapped address; US 0x00536020 holds other code and no US overlay function has these bytes) |
+ | [`func_L05_004DF3B8`](shared/func_L05_004DF3B8.c) | shared | 280 | SIZE ours 296 / retail 280 |
+ | [`func_L06_004013F0`](shared/func_L06_004013F0.c) | shared | 112 | SIZE ours 120 / retail 112 |
++| [`func_004BEF80`](game/func_004BEF80.c) | game | 80 | BYTES 1/76 (logical versus arithmetic right shift) |
++| [`func_004BEFD0`](game/func_004BEFD0.c) | game | 80 | BYTES 1/76 (logical versus arithmetic right shift) |

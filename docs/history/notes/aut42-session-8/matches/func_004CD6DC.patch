@@ -1,0 +1,24 @@
+diff --git a/src/game/004CD6DC.c b/src/game/004CD6DC.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004CD6DC.c
+@@ -0,0 +1,19 @@
++#include "common.h"
++
++typedef struct Type1 Type1;
++typedef struct Type2 Type2;
++struct Type1 {
++    char _p0[0x74];
++    s16 f74;
++};
++struct Type2 {
++    char _p0[0x74];
++    s16 f74;
++};
++
++void func_004CD6DC(Type1 *arg0, Type2 *arg1, u32 arg2) {
++    if (arg2 < 3U) {
++        arg0->f74 = 0;
++        arg1->f74 = (s16) (1 << arg2);
++    }
++}

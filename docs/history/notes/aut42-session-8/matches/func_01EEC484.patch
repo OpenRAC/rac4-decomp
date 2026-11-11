@@ -1,0 +1,17 @@
+diff --git a/src/net/01EEC484.c b/src/net/01EEC484.c
+new file mode 100644
+--- /dev/null
++++ b/src/net/01EEC484.c
+@@ -0,0 +1,12 @@
++/* cflags: -mno-split-addresses */
++#include "common.h"
++
++typedef struct Type1 Type1;
++struct Type1 {
++    char _p0[0x8AB8];
++    s32 f8AB8;
++};
++
++void func_01EEC484(Type1 *arg0, s32 arg1) {
++    arg0->f8AB8 = arg1;
++}

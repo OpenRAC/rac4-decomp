@@ -1,0 +1,28 @@
+diff --git a/nonmatching/net/func_01EF2D88.c b/nonmatching/net/func_01EF2D88.c
+new file mode 100644
+--- /dev/null
++++ b/nonmatching/net/func_01EF2D88.c
+@@ -0,0 +1,23 @@
++/* BYTES 1/48: ordinary branch instead of the retail likely branch.
++ * Reproduce with tools/try_func.py func_01EF2D88 nonmatching/net/func_01EF2D88.c --diff.
++ */
++#include "common.h"
++
++s32 func_01EF2D88(s32 *arg0, s32 arg1) {
++    s32 *var_a0;
++    s32 var_v1;
++
++    var_a0 = arg0;
++    var_v1 = 0;
++loop_1:
++    if (*var_a0 != 0) {
++        var_v1 += 1;
++        var_a0 += 1;
++        if (var_v1 >= 0x80) {
++            return 0;
++        }
++        goto loop_1;
++    }
++    *var_a0 = arg1;
++    return 1;
++}

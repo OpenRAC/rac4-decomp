@@ -1,0 +1,21 @@
+diff --git a/src/overlays/shared/L15_00500480.c b/src/overlays/shared/L15_00500480.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L15_00500480.c
+@@ -0,0 +1,16 @@
++#include "common.h"
++
++s32 func_L01_0052F490();
++s32 func_L15_00501770();
++extern s32 D_0023C170_[];
++#define D_0023C170 (D_0023C170_[0])
++
++void func_L15_00500480(void) {
++    if (D_0023C170 != 1) {
++        if (D_0023C170 == 2) {
++            func_L15_00501770();
++        }
++    } else {
++        func_L01_0052F490();
++    }
++}

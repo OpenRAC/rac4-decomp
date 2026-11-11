@@ -1,0 +1,19 @@
+diff --git a/src/overlays/l00_multiplayer_menu/L00_00709A50.c b/src/overlays/l00_multiplayer_menu/L00_00709A50.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/l00_multiplayer_menu/L00_00709A50.c
+@@ -0,0 +1,14 @@
++#include "common.h"
++
++extern s32 D_003E4F00_[];
++#define D_003E4F00 (D_003E4F00_[0])
++
++void *func_L00_00709A50(u32 arg0) {
++    void *var_v1;
++
++    var_v1 = NULL;
++    if (arg0 < 0x39U) {
++        var_v1 = (arg0 * 0x10) + (u8 *)&D_003E4F00;
++    }
++    return var_v1;
++}

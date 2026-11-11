@@ -1,0 +1,15 @@
+{
+  "recovered_and_existing": {
+    "scope": "45 recovered pending candidates, 9 recovered existing corrections, and 18 new wrapper corrections",
+    "important_findings_fixed": ["func_00496D20: explicit Boolean return", "func_00496D40: explicit Boolean return"],
+    "remaining_important_findings": 0,
+    "vector_verified": "func_L01_0064F680: TI-mode a2/v0, integer a3, floats f12/f13"
+  },
+  "new_candidates": {
+    "scope": "7 new candidates, manifests in scratch; calls, globals, parameter positions, field widths, pointer scaling, and returns reviewed",
+    "remaining_important_findings": 0,
+    "minor_findings_fixed": ["func_L01_00633070: declare byte-setting callee void"],
+    "additional_parent_review": "func_L00_005C4AC0 is resident func_004593D8 copy; ELF instructions consume exactly three scalar arguments and store a packed global word"
+  },
+  "limits": "Read-only independent review. Compilers, official audits, and metadata gates are run separately by the lead. No PAL verification."
+}

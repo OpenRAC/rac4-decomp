@@ -1,0 +1,37 @@
+diff --git a/src/game/0049A760.c b/src/game/0049A760.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/0049A760.c
+@@ -0,0 +1,32 @@
++#include "common.h"
++
++extern s32 D_003D8DE0_[];
++extern s32 D_00306D20_[];
++#define D_003D8DE0 (D_003D8DE0_[0])
++#define D_00306D20 (D_00306D20_[0])
++
++void func_0049A760(s32 arg0) {
++    s32 (*temp_v0)(s32);
++    void *var_s2;
++    s32 var_s1;
++    void *temp_s0;
++
++    temp_s0 = (arg0 * 0x10) + (u8 *)&D_00306D20;
++    if ((*(u8 *)((u8 *)(temp_s0) + 0x0)) == 0) {
++        (*(u8 *)((u8 *)(temp_s0) + 0x0)) = 1U;
++        var_s2 = &D_003D8DE0;
++        var_s1 = 0;
++        do {
++            if (((s32) (*(s32 *)((u8 *)(temp_s0) + 0x4)) >> var_s1) & 1) {
++                temp_v0 = (*(s32 *)((u8 *)(var_s2) + 0x4));
++                if (temp_v0 != NULL) {
++                    temp_v0(arg0);
++                }
++            }
++            var_s1 += 1;
++            var_s2 += 0xC;
++        } while (var_s1 < 0xB);
++        (*(s32 *)((u8 *)(temp_s0) + 0xC)) = 0;
++        (*(s32 *)((u8 *)(temp_s0) + 0x8)) = (s32) (*(s32 *)((u8 *)(temp_s0) + 0x4));
++    }
++}

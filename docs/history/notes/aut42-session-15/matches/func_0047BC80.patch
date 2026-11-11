@@ -1,0 +1,38 @@
+diff --git a/src/game/0047BC80.c b/src/game/0047BC80.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/0047BC80.c
+@@ -0,0 +1,33 @@
++#include "common.h"
++
++void *func_00476690(s32);
++void *func_0047BBD8(s32);
++
++void func_0047BC80(s32 arg0) {
++    s32 *var_v1;
++    s32 temp_a0;
++    s32 var_a0;
++    void *temp_v0;
++    void *temp_v0_2;
++
++    temp_v0 = func_0047BBD8(arg0);
++    if (temp_v0 != NULL) {
++        temp_a0 = (*(s32 *)((u8 *)(temp_v0) + 0x10));
++        if ((temp_a0 != 0) && ((*(s16 *)((u8 *)(temp_v0) + 0x16)) == 2)) {
++            (*(s16 *)((u8 *)(temp_v0) + 0x16)) = 1;
++            temp_v0_2 = func_00476690(temp_a0);
++            var_v1 = temp_v0_2 + 0x50;
++            if (temp_v0_2 != NULL) {
++                var_a0 = 7;
++                do {
++                    if (*var_v1 == arg0) {
++                        *var_v1 = 0;
++                    }
++                    var_a0 -= 1;
++                    var_v1 = (s32 *)((u8 *)var_v1 + 4);
++                } while (var_a0 >= 0);
++                (*(s32 *)((u8 *)(temp_v0_2) + 0x4C)) = (s32) ((*(s32 *)((u8 *)(temp_v0_2) + 0x4C)) - (*(s32 *)((u8 *)(temp_v0) + 0x40)));
++            }
++        }
++    }
++}

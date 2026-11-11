@@ -1,0 +1,15 @@
+diff --git a/src/game/00479580.c b/src/game/00479580.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/00479580.c
+@@ -0,0 +1,10 @@
++#include "common.h"
++
++void func_004700B0(s32, s32, s32, s32);
++
++void func_00479580(s32 arg0, s32 arg1) {
++    s32 hi = arg1 >> 16;
++    s32 mid = arg1 >> 8;
++
++    func_004700B0(arg0, arg1 & 255, mid & 255, hi & 255);
++}

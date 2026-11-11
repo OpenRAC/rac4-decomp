@@ -1,0 +1,21 @@
+diff --git a/src/overlays/shared/L01_00585DB0.c b/src/overlays/shared/L01_00585DB0.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L01_00585DB0.c
+@@ -0,0 +1,16 @@
++/* cflags: -fno-opt-stack */
++#include "common.h"
++
++extern s32 D_00269EC0_[];
++#define D_00269EC0 (D_00269EC0_[0])
++
++void func_L01_00585DB0(void) {
++    void *var_v1;
++
++    var_v1 = &D_00269EC0;
++    do {
++        (*(s32 *)((u8 *)(var_v1) + 0x104)) = 0;
++        (*(s32 *)((u8 *)(var_v1) + 0x100)) = 0;
++        var_v1 += 0x110;
++    } while ((s32) var_v1 < (s32) ((u8 *)&D_00269EC0 + 0x220));
++}

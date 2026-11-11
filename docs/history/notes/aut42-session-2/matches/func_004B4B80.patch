@@ -1,0 +1,32 @@
+diff --git a/src/game/004B4B80.c b/src/game/004B4B80.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004B4B80.c
+@@ -0,0 +1,27 @@
++/* cflags: -mno-split-addresses */
++#include "common.h"
++
++s32 func_0045E038(s32);
++s32 func_004A1A60(s32 *, s32);
++s32 func_00501638(s32 *, s32, s32);
++s32 func_00504F68(s32, s32);
++s32 func_00505238(s32, s32);
++s32 func_00505410(s32, f32);
++s32 func_005055E0(s32, s32);
++s32 func_00505B70(s32, s32);
++extern s32 D_00221748;
++
++void func_004B4B80(void) {
++    s32 temp_s0;
++    s32 temp_s0_2;
++
++    func_00501638(&D_00221748, 0x17, -1);
++    func_00505B70(0xC, D_00221748);
++    func_005055E0(func_004A1A60(&D_00221748, 0xE), 1);
++    temp_s0 = func_004A1A60(&D_00221748, 0x2D);
++    func_00505238(temp_s0, func_0045E038(0x2F0B));
++    temp_s0_2 = func_004A1A60(&D_00221748, 6);
++    func_00505238(temp_s0_2, func_0045E038(0x2F12));
++    func_00504F68(func_004A1A60(&D_00221748, 0x35), 1);
++    func_00505410(func_004A1A60(&D_00221748, 0x35), 0.0f);
++}

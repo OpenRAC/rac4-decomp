@@ -1,0 +1,36 @@
+diff --git a/src/core/00148698.c b/src/core/00148698.c
+new file mode 100644
+--- /dev/null
++++ b/src/core/00148698.c
+@@ -0,0 +1,31 @@
++#include "common.h"
++
++extern f32 D_001A0078_[];
++#define D_001A0078 (D_001A0078_[0])
++
++s32 func_00148698(f32 fparg0) {
++    f32 *var_a0;
++    f32 temp_f0;
++    f32 temp_f0_2;
++    f32 temp_f1;
++    f32 var_f1;
++    s32 var_a1;
++    s32 var_v1;
++
++    var_a1 = 0;
++    var_v1 = 1;
++    var_f1 = fparg0 - D_001A0078;
++    var_a0 = &D_001A0078 + 1;
++    var_f1 = var_f1 * var_f1;
++    do {
++        temp_f0 = fparg0 - *var_a0;
++        temp_f0_2 = temp_f0 * temp_f0;
++        if (temp_f0_2 < var_f1) {
++            var_f1 = temp_f0_2;
++            var_a1 = var_v1;
++        }
++        var_v1 += 1;
++        var_a0++;
++    } while (var_v1 < 0x40);
++    return var_a1;
++}

@@ -1,0 +1,14 @@
+diff --git a/src/overlays/shared/L01_0043C180.c b/src/overlays/shared/L01_0043C180.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L01_0043C180.c
+@@ -0,0 +1,9 @@
++#include "common.h"
++typedef int s128 __attribute__((mode(TI)));
++typedef unsigned int u128 __attribute__((mode(TI)));
++
++extern s32 D_00222D14;
++
++s128 func_L01_0043C180(void *arg0) {
++    return (*(s128 *)((u8 *)((D_00222D14 + ((*(s32 *)((u8 *)((*(s32 *)((u8 *)(arg0) + 0xAC))) + 0x68)) << 8))) + 0x10));
++}

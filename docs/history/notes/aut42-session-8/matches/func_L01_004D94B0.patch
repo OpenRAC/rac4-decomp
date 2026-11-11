@@ -1,0 +1,11 @@
+diff --git a/src/overlays/shared/L01_004D94B0.c b/src/overlays/shared/L01_004D94B0.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L01_004D94B0.c
+@@ -0,0 +1,6 @@
++/* cflags: -ffast-math */
++#include "common.h"
++
++f32 func_L01_004D94B0(u8 *arg0) {
++f32 x=*(f32 *)((u8 *)*(void **)(arg0+0xAC)+0x3C);x=x<1.0f?x:1.0f;return x>0.0f?x:0.0f;
++}

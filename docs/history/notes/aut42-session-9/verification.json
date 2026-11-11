@@ -1,0 +1,112 @@
+{
+  "candidates": 70,
+  "attempted_targets": 2060,
+  "compiled_bytes": 3548,
+  "retail_bytes": 3668,
+  "full_audit_exact": 2915,
+  "candidate_relocation_mismatches": 0,
+  "full_relocation_mismatches": 27,
+  "full_unresolved": 0,
+  "adopted_functions": 0,
+  "selection_rejected": [],
+  "candidate_checks": {
+    "audit_matches": {
+      "exit_code": 0,
+      "seconds": 4.58
+    },
+    "audit_relocs": {
+      "exit_code": 1,
+      "seconds": 9.16
+    },
+    "map_us_write": {
+      "exit_code": 0,
+      "seconds": 11.86
+    },
+    "map_pal_write": {
+      "exit_code": 1,
+      "seconds": 0.03
+    },
+    "progress_us_write": {
+      "exit_code": 0,
+      "seconds": 0.43
+    },
+    "progress_pal_write": {
+      "exit_code": 0,
+      "seconds": 0.43
+    },
+    "map_us_check": {
+      "exit_code": 0,
+      "seconds": 0.22
+    },
+    "map_pal_check": {
+      "exit_code": 1,
+      "seconds": 0.2
+    },
+    "progress_us_check": {
+      "exit_code": 0,
+      "seconds": 0.62
+    },
+    "progress_pal_check": {
+      "exit_code": 1,
+      "seconds": 0.61
+    },
+    "legacy_write": {
+      "exit_code": 0,
+      "seconds": 1.63
+    },
+    "legacy_check": {
+      "exit_code": 0,
+      "seconds": 0.25
+    }
+  },
+  "baseline_exact": 2845,
+  "baseline_relocation_mismatches": 27,
+  "baseline_unresolved": 0,
+  "restored_checks": {
+    "audit_matches": {
+      "exit_code": 0,
+      "seconds": 4.11
+    },
+    "audit_relocs": {
+      "exit_code": 1,
+      "seconds": 8.37
+    },
+    "map_us_check": {
+      "exit_code": 0,
+      "seconds": 0.19
+    },
+    "map_pal_check": {
+      "exit_code": 0,
+      "seconds": 0.18
+    },
+    "progress_us_check": {
+      "exit_code": 0,
+      "seconds": 0.56
+    },
+    "progress_pal_check": {
+      "exit_code": 0,
+      "seconds": 0.6
+    },
+    "legacy_write": {
+      "exit_code": 0,
+      "seconds": 1.64
+    },
+    "legacy_check": {
+      "exit_code": 0,
+      "seconds": 0.24
+    }
+  },
+  "adopted_near_misses": 0,
+  "retained_near_misses": [
+    {
+      "function": "func_01EB4D80",
+      "patch": "near/func_01EB4D80.patch",
+      "target": "nonmatching/net/func_01EB4D80.c",
+      "verdict": "BYTES 1/44",
+      "difference": "final byte combination uses or instead of addu"
+    }
+  ],
+  "released_unsuccessful_claims": 850,
+  "wall_minutes_through_verification": 46.0,
+  "usage_limit_interruption": false
+}

@@ -1,0 +1,12 @@
+diff --git a/src/overlays/l00_multiplayer_menu/L00_0070B52C.c b/src/overlays/l00_multiplayer_menu/L00_0070B52C.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/l00_multiplayer_menu/L00_0070B52C.c
+@@ -0,0 +1,7 @@
++#include "common.h"
++
++extern s32 D_00220A94;
++
++void func_L00_0070B52C(s32 arg0) {
++    D_00220A94 = arg0;
++}

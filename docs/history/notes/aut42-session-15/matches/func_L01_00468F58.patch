@@ -1,0 +1,20 @@
+diff --git a/src/overlays/shared/L01_00468F58.c b/src/overlays/shared/L01_00468F58.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L01_00468F58.c
+@@ -0,0 +1,15 @@
++#include "common.h"
++
++s32 func_L01_00468FB0(void *, s16);
++s16 func_L01_004690D8(void *);
++
++void func_L01_00468F58(void *arg0) {
++    void *temp_s0;
++
++    temp_s0 = (*(s32 *)((u8 *)(arg0) + 0xAC));
++    (*(s8 *)((u8 *)(temp_s0) + 0x504)) = 0;
++    if ((*(s16 *)((u8 *)(temp_s0) + 0x4FE)) == -1) {
++        (*(s16 *)((u8 *)(temp_s0) + 0x4FE)) = func_L01_004690D8(arg0);
++    }
++    func_L01_00468FB0(arg0, (*(s16 *)((u8 *)(temp_s0) + 0x4FE)));
++}

@@ -1,8 +1,8 @@
 # Instructions for agents
 
 Read this file before changing anything, then read `README.md`,
-`CONTRIBUTING.md`, `docs/WORKFLOW.md` and `docs/AGENT_WORKFLOW.md`. For a
-function match, follow `docs/QUEUE.md` or `docs/WORKER.md` as applicable.
+`CONTRIBUTING.md`, `docs/contributing/workflow.md` and `docs/agents/agent-workflow.md`. For a
+function match, follow `docs/agents/queue.md` or `docs/agents/worker.md` as applicable.
 
 ## Coordinate function work
 
@@ -46,13 +46,13 @@ does this itself. Wave planning and queue workers already share these claims.
   `nonmatching/README.md` and retained notes before retrying prior work.
 - Use `tools/try_func.py` for candidate checks. Only exact results accepted by
   the repository's audit and build belong in `src/`; near misses go in
-  `nonmatching/` according to `docs/NONMATCHING.md`.
+  `nonmatching/` according to `docs/contributing/nonmatching.md`.
 - Follow the sourcing and build-fidelity rules in `CONTRIBUTING.md`. Never use
   Sony SDK source, samples or headers, or leaked material. Do not change the
   compiler output with per-function tricks.
 - Do not commit game data, disassembly, build output or proprietary tools.
-  Follow the report-generation procedure in `docs/WORKFLOW.md`.
+  Follow the report-generation procedure in `docs/contributing/workflow.md`.
 
-For wave workers, the packet protocol in `docs/QUEUE.md` is the complete
+For wave workers, the packet protocol in `docs/agents/queue.md` is the complete
 function-level instruction set. Do not work on a function outside the assigned
 packet or reservation.

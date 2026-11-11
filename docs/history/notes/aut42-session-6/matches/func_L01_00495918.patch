@@ -1,0 +1,15 @@
+diff --git a/src/overlays/shared/L01_00495918.c b/src/overlays/shared/L01_00495918.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L01_00495918.c
+@@ -0,0 +1,10 @@
++#include "common.h"
++
++s32 func_L01_00591BD8(s32, s32, s32);
++
++s32 func_L01_00495918(s32 arg0, s32 arg1) {
++    if (arg1 == 4) {
++        func_L01_00591BD8(arg0, 2, 2);
++    }
++    return 1;
++}

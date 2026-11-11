@@ -1,0 +1,32 @@
+diff --git a/src/overlays/shared/L01_004E7A20.c b/src/overlays/shared/L01_004E7A20.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L01_004E7A20.c
+@@ -0,0 +1,27 @@
++/* cflags: -mno-split-addresses */
++#include "common.h"
++
++typedef struct Type1 Type1;
++typedef struct Type2 Type2;
++struct Type2 {
++    char _p0[0x2F4];
++    s32 f2F4;
++};
++struct Type1 {
++    char _p0[0xAC];
++    s32 fAC;
++};
++
++s32 func_L01_004EF8F8(s32);
++
++void func_L01_004E7A20(Type1 *arg0) {
++    s32 temp_a0;
++    Type2 *temp_s0;
++
++    temp_s0 = arg0->fAC;
++    temp_a0 = temp_s0->f2F4;
++    if (temp_a0 != 0) {
++        func_L01_004EF8F8(temp_a0);
++        temp_s0->f2F4 = 0;
++    }
++}

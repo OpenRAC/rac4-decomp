@@ -1,0 +1,36 @@
+diff --git a/src/game/0049E3E8.c b/src/game/0049E3E8.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/0049E3E8.c
+@@ -0,0 +1,31 @@
++#include "common.h"
++
++void func_0049EF30(s32);
++s32 func_004E0858();
++extern s32 D_00307074_[];
++extern s32 D_00307220_[];
++#define D_00307074 (D_00307074_[0])
++#define D_00307220 (D_00307220_[0])
++
++void func_0049E3E8(s32 arg0) {
++    s32 (*temp_v0)(s32);
++    void *var_s0;
++
++    if (arg0 == 4) {
++        var_s0 = &D_00307074;
++    } else {
++        var_s0 = (arg0 << 9) + (u8 *)&D_00307220;
++    }
++    func_0049EF30(arg0);
++    if ((*(s32 *)((u8 *)(var_s0) + 0x14)) == 0) {
++        func_004E0858();
++        func_004E0858();
++    } else {
++        func_004E0858();
++        func_004E0858();
++    }
++    temp_v0 = (*(s32 *)((u8 *)(var_s0) + 0x18));
++    if (temp_v0 != NULL) {
++        temp_v0((*(s32 *)((u8 *)(var_s0) + 0x14)));
++    }
++}

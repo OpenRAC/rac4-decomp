@@ -1,0 +1,16 @@
+diff --git a/nonmatching/game/func_004BEF80.c b/nonmatching/game/func_004BEF80.c
+new file mode 100644
+--- /dev/null
++++ b/nonmatching/game/func_004BEF80.c
+@@ -0,0 +1,11 @@
++/* Not matching: BYTES 1/76 (80 retail bytes including padding). The byte load and bit mask agree; GCC emits srl where retail uses sra. Reproduce with tools/try_func.py func_004BEF80 this_file.c --diff. */
++#include "common.h"
++s32 func_004BEF28(s32);
++typedef struct __attribute__((packed)) Type1 {char f0[8]; unsigned int f8_0:1; unsigned int f8_1:1; unsigned int f8_2:6; char f9[3];} Type1;
++extern Type1 D_001F87F0[];
++s32 func_004BEF80(s32 arg0) {
++ s32 i=func_004BEF28(arg0);
++ s32 r=1;
++ if (i >= 0) r=D_001F87F0[i].f8_1 ^ 1;
++ return r;
++}

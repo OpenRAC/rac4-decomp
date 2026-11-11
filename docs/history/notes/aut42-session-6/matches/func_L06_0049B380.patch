@@ -1,0 +1,32 @@
+diff --git a/src/overlays/shared/L06_0049B380.c b/src/overlays/shared/L06_0049B380.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L06_0049B380.c
+@@ -0,0 +1,27 @@
++#include "common.h"
++typedef int s128 __attribute__((mode(TI)));
++typedef unsigned int u128 __attribute__((mode(TI)));
++
++typedef struct Type1 Type1;
++typedef struct Type2 Type2;
++struct Type2 {
++    s32 f0;
++    char _p4[0x10];
++    u8 f14;
++};
++struct Type1 {
++    char _p0[0xAC];
++    s32 fAC;
++};
++
++s32 func_L00_005F1208(s128, s32);
++
++s32 func_L06_0049B380(Type1 *arg0, s128 *arg1) {
++    Type2 *temp_v1;
++
++    temp_v1 = arg0->fAC;
++    if (temp_v1->f14 == 0) {
++        return 0;
++    }
++    return func_L00_005F1208(*arg1, temp_v1->f0) == 0;
++}

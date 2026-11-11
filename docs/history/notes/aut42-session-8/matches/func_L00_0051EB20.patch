@@ -1,0 +1,34 @@
+diff --git a/src/overlays/l00_multiplayer_menu/L00_0051EB20.c b/src/overlays/l00_multiplayer_menu/L00_0051EB20.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/l00_multiplayer_menu/L00_0051EB20.c
+@@ -0,0 +1,29 @@
++#include "common.h"
++
++typedef struct Type1 Type1;
++struct Type1 {
++    s32 f0;
++    s32 f4;
++    s32 f8;
++    s32 fC;
++};
++
++void *func_L00_004FACD8(s32);
++extern s32 D_004A18B0_[];
++#define D_004A18B0 (D_004A18B0_[0])
++
++void *func_L00_0051EB20(void) {
++    Type1 *temp_v0;
++    void *var_v0;
++
++    temp_v0 = func_L00_004FACD8(0x10);
++    var_v0 = NULL;
++    if (temp_v0 != NULL) {
++        temp_v0->fC = 1;
++        temp_v0->f0 = &D_004A18B0;
++        temp_v0->f4 = 0;
++        temp_v0->f8 = 0;
++        var_v0 = temp_v0;
++    }
++    return var_v0;
++}

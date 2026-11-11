@@ -1,0 +1,16 @@
+diff --git a/src/overlays/shared/L01_004E5860.c b/src/overlays/shared/L01_004E5860.c
+new file mode 100644
+--- /dev/null
++++ b/src/overlays/shared/L01_004E5860.c
+@@ -0,0 +1,11 @@
++#include "common.h"
++
++f32 func_L01_004E5860(void *arg0) {
++    f32 var_f0;
++
++    var_f0 = 0.0f;
++    if ((*(u8 *)((u8 *)((*(s32 *)((u8 *)(arg0) + 0xAC))) + 0x5)) != 0) {
++        var_f0 = 1.0f;
++    }
++    return var_f0;
++}

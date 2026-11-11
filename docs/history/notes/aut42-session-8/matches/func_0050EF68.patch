@@ -1,0 +1,21 @@
+diff --git a/src/game/0050EF68.c b/src/game/0050EF68.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/0050EF68.c
+@@ -0,0 +1,16 @@
++#include "common.h"
++
++typedef struct Type1 Type1;
++typedef struct Type2 Type2;
++struct Type2 {
++    char _p0[0x40];
++    u16 f40;
++};
++struct Type1 {
++    char _p0[0x40];
++    Type2 *f40;
++};
++
++s32 func_0050EF68(Type1 *arg0, s32 arg1) {
++    return (arg0->f40->f40 & arg1) != 0;
++}

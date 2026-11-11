@@ -1,0 +1,25 @@
+diff --git a/src/core/00148790.c b/src/core/00148790.c
+new file mode 100644
+--- /dev/null
++++ b/src/core/00148790.c
+@@ -0,0 +1,20 @@
++/* cflags: -fno-opt-stack */
++#include "common.h"
++
++f32 func_0014A0A0(void *, s32, s32);
++extern s32 D_001A0178_[];
++#define D_001A0178 (D_001A0178_[0])
++
++void func_00148790(s32 arg0, f32 *arg1, f32 *arg2, f32 fparg0) {
++    f32 temp_f0;
++    s32 temp_s0;
++
++    temp_s0 = arg0 & 8;
++    temp_f0 = func_0014A0A0(&D_001A0178, 8, arg0 - temp_s0);
++    *arg2 = temp_f0;
++    if (temp_s0 == 0) {
++        *arg1 = fparg0;
++        return;
++    }
++    *arg1 = temp_f0;
++}

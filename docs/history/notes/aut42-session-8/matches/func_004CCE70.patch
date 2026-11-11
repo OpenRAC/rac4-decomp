@@ -1,0 +1,11 @@
+diff --git a/src/game/004CCE70.c b/src/game/004CCE70.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004CCE70.c
+@@ -0,0 +1,6 @@
++#include "common.h"
++
++s32 func_004CCE70(s32 arg0) {
++s32 r=10; switch(arg0) {
++    case 0:r=9;break;case 1:r=5;break;case 2:r=6;break;case 3:r=7;break;case 4:r=8;break;
++} return r;}

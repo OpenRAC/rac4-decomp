@@ -1,0 +1,15 @@
+diff --git a/src/game/004B0EC0.c b/src/game/004B0EC0.c
+new file mode 100644
+--- /dev/null
++++ b/src/game/004B0EC0.c
+@@ -0,0 +1,10 @@
++#include "common.h"
++typedef struct Type1 {char f0[8];s8 f8;char f9[7];s32 f10;
++} Type1;
++extern Type1 D_003095B0[];
++void func_004B0EC0(s32 arg0) {
++ if(D_003095B0[0].f10!=arg0){
++ D_003095B0[0].f10=arg0;
++ D_003095B0[0].f8=1;
++}
++}
