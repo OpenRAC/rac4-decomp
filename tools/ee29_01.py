@@ -7,7 +7,8 @@ from __future__ import annotations
 
 import hashlib
 import os
-from pathlib import Path, PureWindowsPath
+from pathlib import Path, PurePosixPath, PureWindowsPath
+import re
 import shlex
 import subprocess
 import sys
@@ -31,7 +32,26 @@ def wsl_path(path: str, distro: str) -> str:
     return '/'.join([mount, p.drive[0].lower(), *p.parts[1:]])
 
 
+def native_scratch_commands(label: str) -> str:
+    """Create private native storage; optionally clean only that invocation."""
+    scratch = PurePosixPath(os.environ.get('RAC4_CC_TMPDIR', '/tmp'))
+    if not scratch.is_absolute() or '..' in scratch.parts or len(scratch.parts) == 1:
+        raise ValueError('RAC4_CC_TMPDIR must be an absolute Linux scratch directory without parent traversal')
+    if not re.fullmatch(r'[A-Za-z0-9_-]+', label):
+        raise ValueError('invalid isolated compiler label')
+    prefix = str(scratch) + '/rac4-' + label + '.'
+    script = ' && mkdir -p ' + shlex.quote(str(scratch))
+    script += ' && work=$(mktemp -d ' + shlex.quote(prefix + 'XXXXXXXX') + ')'
+    if os.environ.get('RAC4_CC_CLEAN_TEMP') == '1':
+        cleanup = ('case "$work" in ' + shlex.quote(prefix) + '*) '
+                   'if [ -d "$work" ] && [ ! -L "$work" ]; then rm -rf -- "$work"; fi;; '
+                   '*) exit 1;; esac')
+        script += ' && trap ' + shlex.quote(cleanup) + ' EXIT'
+    return script
+
+
 def compile_source(source: Path, output: Path, flags: list[str]) -> int:
+    scratch_commands = native_scratch_commands('ee29-01')
     profile = Path(os.environ.get('EE29_01_ROOT', ROOT / 'build/isolated/ee-gcc2.9-991111-01')).resolve()
     for relative, expected in FILES.items():
         p = profile / relative
@@ -59,7 +79,7 @@ def compile_source(source: Path, output: Path, flags: list[str]) -> int:
     # Old 32-bit glibc stat() cannot represent the large inode numbers of
     # WSL's Windows mounts. Compile byte-identical inputs on native /tmp,
     # then copy the emitted assembly back without altering it.
-    script += ' && work=$(mktemp -d /tmp/rac4-ee29-01.XXXXXXXX)'
+    script += scratch_commands
     script += ' && cp ' + shlex.quote(convert(source)) + ' "$work/source.c"'
     script += ' && cp -R ' + shlex.quote(convert(ROOT / 'include')) + ' "$work/include"'
     script += ' && export TMPDIR="$work"'

@@ -9,7 +9,7 @@ s32 func_0012D7B8();
 s32 func_0012DAB8();
 s32 func_0012DC30(s32);
 s32 func_0012DD90();
-s32 func_0012EC40();
+void func_0012EC40(void);
 
 void func_0012D690(void) {
     func_0012D488();
