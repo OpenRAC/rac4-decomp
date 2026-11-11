@@ -21,7 +21,7 @@ struct Type1 {
 };
 
 s32 func_01EF0550(s32, s32);
-s32 func_01EF0B14(s32, s32);
+void func_01EF0B14(s32, s32);
 s32 func_01EF3748(void *);
 extern s32 D_0016FF60[];
 extern s32 D_00170F90[];

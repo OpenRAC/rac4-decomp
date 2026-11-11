@@ -25,7 +25,7 @@ def compile_source(source: Path, output: Path, flags: list[str]) -> int:
     for relative, expected in FILES.items():
         path = profile / relative
         if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != expected:
-            raise ValueError(f'@ee32-030210 missing or unverified profile file: {path} (docs/TOOLCHAIN.md)')
+            raise ValueError(f'@ee32-030210 missing or unverified profile file: {path} (docs/build/toolchain.md)')
     if os.name != 'nt':
         raise ValueError('@ee32-030210 currently requires native Windows; no alternate runtime is selected')
     import ctypes

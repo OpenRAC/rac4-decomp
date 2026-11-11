@@ -1,7 +1,7 @@
 """Run the pinned, isolated Linux EE-GCC 2.9-ee-991111-01 C compiler.
 
 This transports compiler execution only; it never edits compiler output.
-Windows uses headless WSL. See docs/TOOLCHAIN.md for the required profile.
+Windows uses headless WSL. See docs/build/toolchain.md for the required profile.
 """
 from __future__ import annotations
 
@@ -56,7 +56,7 @@ def compile_source(source: Path, output: Path, flags: list[str]) -> int:
     for relative, expected in FILES.items():
         p = profile / relative
         if not p.is_file() or hashlib.sha256(p.read_bytes()).hexdigest() != expected:
-            raise ValueError(f'@ee29-01 missing or unverified profile file: {p} (docs/TOOLCHAIN.md)')
+            raise ValueError(f'@ee29-01 missing or unverified profile file: {p} (docs/build/toolchain.md)')
 
     distro = os.environ.get('EE29_01_WSL_DISTRO', 'docker-desktop')
     convert = (lambda p: wsl_path(str(p.resolve()), distro)) if os.name == 'nt' else (lambda p: str(p.resolve()))
