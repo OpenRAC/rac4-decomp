@@ -1,51 +1,51 @@
 {
  "version": 2,
  "measures": {
-  "fuzzy_match_percent": 16.404056,
+  "fuzzy_match_percent": 16.411559,
   "total_code": "5810856",
-  "matched_code": "909648",
-  "matched_code_percent": 15.654286,
+  "matched_code": "910084",
+  "matched_code_percent": 15.661789,
   "total_functions": 18134,
-  "matched_functions": 8391,
-  "matched_functions_percent": 46.272196,
-  "complete_code": "502484",
-  "complete_code_percent": 8.647332,
-  "total_units": 4610,
-  "complete_units": 4552
+  "matched_functions": 8394,
+  "matched_functions_percent": 46.288739,
+  "complete_code": "502636",
+  "complete_code_percent": 8.649948,
+  "total_units": 4611,
+  "complete_units": 4553
  },
  "categories": [
   {
    "id": "core",
    "name": "Main program",
    "measures": {
-    "fuzzy_match_percent": 23.880171,
+    "fuzzy_match_percent": 23.887073,
     "total_code": "2202184",
-    "matched_code": "502484",
-    "matched_code_percent": 22.81753,
+    "matched_code": "502636",
+    "matched_code_percent": 22.824432,
     "total_functions": 8952,
-    "matched_functions": 4581,
-    "matched_functions_percent": 51.172922,
-    "complete_code": "502484",
-    "complete_code_percent": 22.81753,
-    "total_units": 4595,
-    "complete_units": 4552
+    "matched_functions": 4582,
+    "matched_functions_percent": 51.184093,
+    "complete_code": "502636",
+    "complete_code_percent": 22.824432,
+    "total_units": 4596,
+    "complete_units": 4553
    }
   },
   {
    "id": "core_text",
    "name": "Engine core (core.text)",
    "measures": {
-    "fuzzy_match_percent": 33.446933,
+    "fuzzy_match_percent": 33.501119,
     "total_code": "280516",
-    "matched_code": "92772",
-    "matched_code_percent": 33.07191,
+    "matched_code": "92924",
+    "matched_code_percent": 33.126096,
     "total_functions": 1640,
-    "matched_functions": 919,
-    "matched_functions_percent": 56.036585,
+    "matched_functions": 920,
+    "matched_functions_percent": 56.097561,
     "complete_code": "0",
     "complete_code_percent": 0.0,
-    "total_units": 923,
-    "complete_units": 917
+    "total_units": 924,
+    "complete_units": 918
    }
   },
   {
@@ -137,13 +137,13 @@
    "id": "level_code",
    "name": "Level code",
    "measures": {
-    "fuzzy_match_percent": 11.841774,
+    "fuzzy_match_percent": 11.849643,
     "total_code": "3608672",
-    "matched_code": "407164",
-    "matched_code_percent": 11.282932,
+    "matched_code": "407448",
+    "matched_code_percent": 11.290802,
     "total_functions": 9182,
-    "matched_functions": 3810,
-    "matched_functions_percent": 41.494228,
+    "matched_functions": 3812,
+    "matched_functions_percent": 41.51601,
     "complete_code": "0",
     "complete_code_percent": 0.0,
     "total_units": 15,
@@ -154,13 +154,13 @@
    "id": "common",
    "name": "Shared level code",
    "measures": {
-    "fuzzy_match_percent": 10.668169,
+    "fuzzy_match_percent": 10.682308,
     "total_code": "2008632",
-    "matched_code": "206008",
-    "matched_code_percent": 10.256135,
+    "matched_code": "206292",
+    "matched_code_percent": 10.270273,
     "total_functions": 5089,
-    "matched_functions": 2149,
-    "matched_functions_percent": 42.228336,
+    "matched_functions": 2151,
+    "matched_functions_percent": 42.267636,
     "complete_code": "0",
     "complete_code_percent": 0.0,
     "total_units": 1,
@@ -156742,6 +156742,41 @@
    }
   },
   {
+   "name": "pal/core/001486F8",
+   "measures": {
+    "fuzzy_match_percent": 100.0,
+    "total_code": "152",
+    "matched_code": "152",
+    "matched_code_percent": 100.0,
+    "total_functions": 1,
+    "matched_functions": 1,
+    "matched_functions_percent": 100.0,
+    "complete_code": "152",
+    "complete_code_percent": 100.0,
+    "total_units": 1,
+    "complete_units": 1
+   },
+   "functions": [
+    {
+     "name": "func_001486F8",
+     "size": "152",
+     "fuzzy_match_percent": 100.0,
+     "address": "0",
+     "metadata": {
+      "virtual_address": "1345272"
+     }
+    }
+   ],
+   "metadata": {
+    "complete": true,
+    "source_path": "src/pal/core/001486F8.c",
+    "progress_categories": [
+     "core",
+     "core_text"
+    ]
+   }
+  },
+  {
    "name": "pal/core/0014D450",
    "measures": {
     "fuzzy_match_percent": 100.0,
@@ -184242,11 +184277,11 @@
   {
    "name": "main/core.text/0014xxxx",
    "measures": {
-    "fuzzy_match_percent": 1.03215,
-    "total_code": "46020",
+    "fuzzy_match_percent": 1.035571,
+    "total_code": "45868",
     "matched_code": "0",
     "matched_code_percent": 0.0,
-    "total_functions": 136,
+    "total_functions": 135,
     "matched_functions": 0,
     "matched_functions_percent": 0.0,
     "complete_code": "0",
@@ -184793,15 +184828,6 @@
      "address": "32760",
      "metadata": {
       "virtual_address": "1345096"
-     }
-    },
-    {
-     "name": "func_001486F8",
-     "size": "152",
-     "fuzzy_match_percent": 0.0,
-     "address": "32936",
-     "metadata": {
-      "virtual_address": "1345272"
      }
     },
     {
@@ -200467,13 +200493,13 @@
   {
    "name": "Shared level code",
    "measures": {
-    "fuzzy_match_percent": 10.668169,
+    "fuzzy_match_percent": 10.682308,
     "total_code": "2008632",
-    "matched_code": "206008",
-    "matched_code_percent": 10.256135,
+    "matched_code": "206292",
+    "matched_code_percent": 10.270273,
     "total_functions": 5089,
-    "matched_functions": 2149,
-    "matched_functions_percent": 42.228336,
+    "matched_functions": 2151,
+    "matched_functions_percent": 42.267636,
     "complete_code": "0",
     "complete_code_percent": 0.0,
     "total_units": 1,
@@ -226925,7 +226951,7 @@
     {
      "name": "func_L01_005A93D8",
      "size": "216",
-     "fuzzy_match_percent": 0.0,
+     "fuzzy_match_percent": 100.0,
      "address": "1982584",
      "metadata": {
       "virtual_address": "5936088"
@@ -226952,7 +226978,7 @@
     {
      "name": "func_L01_005A9868",
      "size": "68",
-     "fuzzy_match_percent": 0.0,
+     "fuzzy_match_percent": 100.0,
      "address": "1983752",
      "metadata": {
       "virtual_address": "5937256"
