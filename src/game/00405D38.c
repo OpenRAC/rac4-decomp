@@ -1,6 +1,9 @@
 /* cflags: @ee296 -O2 -G0 */
 #include "common.h"
 
+// Rebuild a packed value: fold the top nibble to 0..7 (5 when zero) and keep
+// the seven 3-bit fields below it. The mask is held in a variable: that is what
+// makes the register allocation match retail.
 u32 func_00405D38(s32 value) {
     u32 out;
     s32 top;
