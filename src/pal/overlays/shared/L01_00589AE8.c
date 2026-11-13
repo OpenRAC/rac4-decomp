@@ -37,7 +37,8 @@ typedef struct Stats {
 extern u8 D_001F8878[];
 extern Stats D_00171BC0;
 extern s32 D_0021DE98;
-s32 D_0021EC58 = 0;
+// Initial value from level 01; the other levels sharing this code hold 0 at this address.
+s32 D_0021EC58 = -1;
 
 extern s32 func_0054C070(s32 a, s32 b);
 extern Inf *func_0054BF00(s32 a);

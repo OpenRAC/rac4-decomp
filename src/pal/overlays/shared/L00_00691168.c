@@ -18,7 +18,9 @@ typedef struct Cam {
     u8 x20[1];
 } Cam;
 
-Obj *D_002203B4 = 0;
+extern Obj D_004CD750;
+// Initial value from level 00; each level sharing this code holds its own pointer here.
+Obj *D_002203B4 = &D_004CD750;
 extern u8 *D_00222FE0;
 extern Cam D_0022CAC0;
 extern s32 D_00223184;
