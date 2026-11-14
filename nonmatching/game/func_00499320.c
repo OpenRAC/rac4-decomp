@@ -1,4 +1,4 @@
-/* Not matching yet: BYTES 22/176 (tools/try_func.py func_00499320 --diff). Not part of the build. */
+/* Not matching yet: BYTES 21/176 (tools/try_func.py func_00499320 --diff). Not part of the build. */
 /* cflags: -fno-gcse */
 typedef struct {
     u8 unk0;
@@ -14,9 +14,9 @@ extern s32 D_0021DDB4;
 Spot *func_00499320(s32 arg0, s32 arg1)
 {
     Spot *spot = D_2F3750;
-    Spot *end = spot + 32;
     Spot *best = 0;
     s32 threshold = (arg0 - 1) / 0x4C00 + 1;
+    Spot *end = D_2F3750 + 32;
 
     do {
         if (spot->unk0 == 0
@@ -26,7 +26,7 @@ Spot *func_00499320(s32 arg0, s32 arg1)
             best = spot;
         }
         spot++;
-    } while (spot < end);
+    } while ((s32)spot < (s32)end);
 
     if (best != 0) {
         best->unk0 = 1;
