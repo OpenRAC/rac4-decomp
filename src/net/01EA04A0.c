@@ -1,4 +1,3 @@
-/* Not matching yet: BYTES 1/184 (tools/try_func.py func_01EA04A0 --diff). Not part of the build. */
 /* cflags: @ee296 -O2 -G0 */
 #include "common.h"
 
@@ -17,7 +16,7 @@ s32 func_01EA04A0(s32 *out, s32 arg1) {
     if (src == NULL) return 0x16;
     i = 0;
     do {
-        arr[i] = src[i];
+        arr[i] = *(u32 *)((char *)src + (i << 2));
         i++;
     } while (i < 100);
     for (i = 99; i > 0; i--) {
