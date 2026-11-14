@@ -19,5 +19,3 @@ void func_L05_004F4180(void *arg0) {
         func_00449A28(&D_0022299C, cb, arg0);
     }
 }
-
-

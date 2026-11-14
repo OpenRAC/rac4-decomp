@@ -25,8 +25,3 @@ s32 func_0014A0B8(f32 *arg0, f32 *arg1, s32 arg2) {
     }
     return result;
 }
-
-
-
-
-

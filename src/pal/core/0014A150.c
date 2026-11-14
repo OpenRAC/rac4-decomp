@@ -36,5 +36,3 @@ void func_0014A150(f32 *arg0, f32 *arg1, f32 *arg2, s32 arg3) {
         *arg2 = *arg0 * *arg1;
     }
 }
-
-
