@@ -1,6 +1,6 @@
 #include "common.h"
+#include "pal/record_001F1480.h"
 
-extern s32 func_0045E288();
 extern s32 func_L00_00621580();
 extern s32 func_L00_006B52D0();
 extern s32 func_00516810();
