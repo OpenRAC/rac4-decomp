@@ -1,4 +1,3 @@
-/* Not matching yet: BYTES 4/168 (tools/try_func.py func_0015B2C8 --diff). Not part of the build. */
 /* cflags: -fno-gcse */
 #include "common.h"
 
@@ -22,7 +21,7 @@ void func_0015B2C8(s32 *arg0) {
     }
     *(s32 *)(q - 0x10) = 0xA;
     base[0x265] = 1;
-    *(s32 *)(q + *(s32 *)(base + 0x1C) * 4 + 0x218) = *(s32 *)(base + 0x10);
-    q[*(s32 *)(base + 0x10) + 0x6B9] = base[0x1C];
+    *(s32 *)(*(s32 *)(base + 0x1C) * 4 + 0x218 + (s32)D_00172170) = *(s32 *)(base + 0x10);
+    *(u8 *)(*(s32 *)(base + 0x10) + 0x6B9 + (s32)D_00172170) = base[0x1C];
     *(s32 *)(base + 0x1C) = *(s32 *)(base + 0x1C) + 1;
 }
