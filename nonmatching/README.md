@@ -5,6 +5,11 @@ Best attempts at functions that do not match yet. They are not built; see
 
 | Function | Directory | Size | What differs |
 |---|---|---|---|
+| [`func_01EECCF4`](pal/net/func_01EECCF4.c) | pal/net | 68 | 14/17 (82.35%) relocation-masked positional words; 68/68 candidate/target bytes. Indirect method prototype and return type remain hypotheses. |
+| [`func_L00_005381E8`](pal/l00_multiplayer_menu/func_L00_005381E8.c) | pal/l00_multiplayer_menu | 56 | 13/14 (92.86%) relocation-masked positional words; 52/56 candidate/target bytes. Trailing word after return omitted; argument and callee types remain hypotheses. |
+| [`func_L00_005414C8`](pal/l00_multiplayer_menu/func_L00_005414C8.c) | pal/l00_multiplayer_menu | 56 | 8/14 (57.14%) relocation-masked positional words; 36/56 candidate/target bytes. One call delay slot differs and five words after return are omitted. |
+| [`func_00413B10`](pal/game/func_00413B10.c) | pal/game | 60 | 2/15 (13.33%) relocation-masked positional words; 56/60 candidate/target bytes. Recorded extent includes bytes from a separately declared function; callback prototype is hypothetical. |
+| [`func_L00_00531B80`](pal/l00_multiplayer_menu/func_L00_00531B80.c) | pal/l00_multiplayer_menu | 76 | 13/19 (68.42%) relocation-masked positional words; 76/76 candidate/target bytes. Branch scheduling differs; the callee declaration follows the existing source. |
 | [`func_L01_004E64A0`](pal/l01_dreadzone_station/func_L01_004E64A0.c) | pal/l01_dreadzone_station | 72 | 14/18 (77.78%) relocation-masked positional words; 72/72 candidate/target bytes. Callee return and pointer types are hypotheses. |
 | [`func_L01_0046AA98`](pal/l01_dreadzone_station/func_L01_0046AA98.c) | pal/l01_dreadzone_station | 60 | 12/15 (80.00%) relocation-masked positional words; 60/60 candidate/target bytes. Parameter and callee types are hypotheses. |
 | [`func_L00_005212C8`](pal/l00_multiplayer_menu/func_L00_005212C8.c) | pal/l00_multiplayer_menu | 60 | 13/15 (86.67%) relocation-masked positional words; 52/60 candidate/target bytes. Two words after return are omitted; callback ABI is unknown. |
