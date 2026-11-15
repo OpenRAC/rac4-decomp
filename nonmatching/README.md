@@ -254,7 +254,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_01EAE4F0`](net/func_01EAE4F0.c) | net | 136 | SIZE ours 140 / retail 136 |
 | [`func_01EB2C50`](net/func_01EB2C50.c) | net | 92 | SIZE ours 72 / retail 92 |
 | [`func_01EBD718`](net/func_01EBD718.c) | net | 52 | SIZE ours 40 / retail 52 |
-| [`func_01EBE1B8`](net/func_01EBE1B8.c) | net | 104 | SIZE ours 84 / retail 104 |
 | [`func_01EBF978`](net/func_01EBF978.c) | net | 88 | SIZE ours 64 / retail 88 |
 | [`func_01EC2928`](net/func_01EC2928.c) | net | 52 | SIZE ours 48 / retail 52 |
 | [`func_01ED3B08`](net/func_01ED3B08.c) | net | 88 | SIZE ours 72 / retail 88 |
