@@ -334,7 +334,7 @@ The current `tools/nonmatching.py` generator covers the legacy table above, not 
 | [`func_L00_006FAC10`](pal/shared/func_L00_006FAC10.c) | pal/shared | 300 | BYTES 38/300 (18 words differ); bindings/semantics unapproved |
 | [`func_L00_0070DDF8`](pal/l00_multiplayer_menu/func_L00_0070DDF8.c) | pal/l00_multiplayer_menu | 184 | SIZE ours 200 / disc 184; bindings/semantics unapproved |
 | [`func_L00_00727320`](pal/l00_multiplayer_menu/func_L00_00727320.c) | pal/l00_multiplayer_menu | 144 | SIZE ours 140 / disc 144; bindings/semantics unapproved |
-| [`func_L00_0074C440`](pal/l00_multiplayer_menu/func_L00_0074C440.c) | pal/l00_multiplayer_menu | 120 | BYTES 21/120 (8 words differ); bindings/semantics unapproved |
+| [`func_L00_0074C440`](pal/l00_multiplayer_menu/func_L00_0074C440.c) | pal/l00_multiplayer_menu | 120 | BYTES 14/120 (6 words differ); continuation schedule and field-address folding unresolved |
 | [`func_L01_003CC778`](pal/shared/func_L01_003CC778.c) | pal/shared | 112 | SIZE ours 124 / disc 112; bindings/semantics unapproved |
 | [`func_L01_003CD2D8`](pal/shared/func_L01_003CD2D8.c) | pal/shared | 40 | SIZE ours 44 / disc 40; bindings/semantics unapproved |
 | [`func_L01_003D7D00`](pal/shared/func_L01_003D7D00.c) | pal/shared | 40 | BYTES 10/40 (4 words differ); bindings/semantics unapproved |
