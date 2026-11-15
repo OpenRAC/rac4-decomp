@@ -1,48 +1,36 @@
 /* Not matched: PAL SCES_532.85.
- * Stored-object comparison: SIZE ours 148 / disc 152.
- * Function text: 148 B; native catalogue: 152 B; 15 placement(s).
- * Instruction/size differences remain; symbol bindings, ownership and semantics also need review.
- * Relocated instruction fields are masked in this comparison, not certified targets.
- * Reproduce with the original compiler setup:
- * python3 tools/check_func.py --version pal func_004889C0 nonmatching/pal/game/func_004889C0.c --diff
+ * SIZE ours 144 / disc 152 at all fifteen actual placements; no relocations.
+ * 115/152 bytes agree positionally, including an eight-byte size deficit;
+ * this is a comparison heuristic, not semantic correctness or a match.
+ * Native has two pre-divide NOPs absent from the default-profile output;
+ * branch displacements and shifted tail instructions consequently differ.
+ * Preserve ordered/unordered gates, operand order, and the shared return join.
+ * No latency padding, profile change, or finite-input assumption is introduced.
+ * Reproduce: python3 tools/check_func.py --version pal func_004889C0 nonmatching/pal/game/func_004889C0.c --diff
  */
 #include "common.h"
-/* Automatischer m2c-Grobentwurf, kein geprüfter Match.
- * Unbekannte M2C_* und saved_reg_* müssen manuell aufgelöst werden.
- * Signaturen, Datenbesitz und Funktionsgrenzen prüfen.
- */
-/* Duplicate return node #3. Try simplifying control flow for better match */
-/* Duplicate return node #8. Try simplifying control flow for better match */
-/* Duplicate return node #8. Try simplifying control flow for better match */
 
 s32 func_004889C0(f32 fparg0, f32 fparg1, f32 fparg2)
 {
-  s32 var_v0;
-  if (fparg0 <= 0.0f)
-  {
-    var_v0 = 0;
-    if (!((fparg2 <= 0.0f) && (fparg1 > 0.0f)))
-    {
+    s32 var_v0;
+
+    if (fparg0 <= 0.0f) {
+        var_v0 = 0;
+        if (!((fparg2 <= 0.0f) && (fparg1 > 0.0f))) {
+        } else {
+            return 1;
+        }
+        return var_v0;
     }
-    else
-    {
-      return 1;
+    var_v0 = 0;
+    if (fparg2 > 0.0f) {
+        if (fparg1 <= 0.0f) {
+            return 1;
+        }
+        var_v0 = 1;
+        if (!(((fparg0 - fparg2) / (fparg1 - fparg2)) < 0.5f)) {
+            var_v0 = 0;
+        }
     }
     return var_v0;
-  }
-  var_v0 = 0;
-  if (fparg2 > 0.0f)
-  {
-    if (!(fparg1 <= 0.0f))
-    {
-      var_v0 = 1;
-      if (!(((fparg0 - fparg2) / (fparg1 - fparg2)) < 0.5f))
-      {
-        var_v0 = 0;
-      }
-      return var_v0;
-    }
-    return 1;
-  }
-  return var_v0;
 }

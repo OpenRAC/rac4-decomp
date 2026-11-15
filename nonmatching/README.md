@@ -304,7 +304,7 @@ The current `tools/nonmatching.py` generator covers the legacy table above, not 
 | [`func_00476548`](pal/game/func_00476548.c) | pal/game | 176 | BYTES 10/176 (5 words differ); bindings/semantics unapproved |
 | [`func_00477FA8`](pal/game/func_00477FA8.c) | pal/game | 64 | SIZE ours 72 / disc 64; bindings/semantics unapproved |
 | [`func_00479920`](pal/game/func_00479920.c) | pal/game | 200 | BYTES 3/200 (3 words differ); bindings/semantics unapproved |
-| [`func_004889C0`](pal/game/func_004889C0.c) | pal/game | 152 | SIZE ours 148 / disc 152; bindings/semantics unapproved |
+| [`func_004889C0`](pal/game/func_004889C0.c) | pal/game | 152 | SIZE ours 144 / disc 152; two native pre-divide NOPs and consequent branch/tail differences |
 | [`func_0048A890`](pal/game/func_0048A890.c) | pal/game | 80 | BYTES 14/80 (4 words differ); bindings/semantics unapproved |
 | [`func_0048BAB0`](pal/game/func_0048BAB0.c) | pal/game | 168 | SIZE ours 152 / disc 168; bindings/semantics unapproved |
 | [`func_004AEC70`](pal/game/func_004AEC70.c) | pal/game | 116 | SIZE ours 112 / disc 116; bindings/semantics unapproved |
