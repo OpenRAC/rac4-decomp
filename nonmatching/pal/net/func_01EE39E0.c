@@ -1,32 +1,25 @@
 /* Not matched: PAL SCES_532.85.
- * Stored-object comparison: SIZE ours 52 / disc 56.
- * Function text: 52 B; native catalogue: 56 B; 1 placement(s).
- * Instruction/size differences remain; symbol bindings, ownership and semantics also need review.
- * Relocated instruction fields are masked in this comparison, not certified targets.
- * Reproduce with the original compiler setup:
- * python3 tools/check_func.py --version pal func_01EE39E0 nonmatching/pal/net/func_01EE39E0.c --diff
+ * SIZE ours 52 / disc 56. 1 actual placement(s).
+ * Forwarded object/name parameters and pointer return follow the actual target/callee/caller chain. Native retains an extra traversal copy and distinct plain-branch delay scheduling; still SIZE52/56.
+ * Reproduce: python3 tools/check_func.py --version pal func_01EE39E0 nonmatching/pal/net/func_01EE39E0.c --diff
  */
 #include "common.h"
 
-/* Automatischer m2c-Grobentwurf, kein geprüfter Match.
- * Unbekannte M2C_* und saved_reg_* müssen manuell aufgelöst werden.
- * Signaturen, Datenbesitz und Funktionsgrenzen prüfen.
- */
+void *func_01EE3974(void *object, const char *name);
 
+/* Keep the lookup result for a null exit while following a separate link local. */
+void *func_01EE39E0(void *object, const char *name) {
+    void *result;
+    void *link;
 
-void *func_01EE3974();                              /* extern */
-
-void *func_01EE39E0(void) {
-    void *temp_v1;
-    void *var_v0;
-
-    var_v0 = func_01EE3974();
-    if (var_v0 != NULL) {
-        temp_v1 = (*(void **)((s8 *)(var_v0) + (8)));
-        var_v0 = NULL;
-        if (temp_v1 != NULL) {
-            var_v0 = (*(void **)((s8 *)(temp_v1) + (0x28)));
+    result = func_01EE3974(object, name);
+    link = result;
+    if (link != NULL) {
+        link = *(void **)((s8 *)link + 8);
+        result = NULL;
+        if (link != NULL) {
+            return *(void **)((s8 *)link + 0x28);
         }
     }
-    return var_v0;
+    return result;
 }

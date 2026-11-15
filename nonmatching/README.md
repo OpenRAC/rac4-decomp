@@ -317,7 +317,7 @@ The current `tools/nonmatching.py` generator covers the legacy table above, not 
 | [`func_00540A00`](pal/game/func_00540A00.c) | pal/game | 176 | BYTES 3/176 (1 words differ); bindings/semantics unapproved |
 | [`func_0054C408`](pal/game/func_0054C408.c) | pal/game | 168 | SIZE ours 164 / disc 168; bindings/semantics unapproved |
 | [`func_01EBF978`](pal/net/func_01EBF978.c) | pal/net | 88 | SIZE ours 84 / disc 88; bindings/semantics unapproved |
-| [`func_01EE39E0`](pal/net/func_01EE39E0.c) | pal/net | 56 | SIZE ours 52 / disc 56; bindings/semantics unapproved |
+| [`func_01EE39E0`](pal/net/func_01EE39E0.c) | pal/net | 56 | SIZE ours 52 / disc 56; object/name forwarding clarified; traversal and branch scheduling differ |
 | [`func_01EF2E24`](pal/net/func_01EF2E24.c) | pal/net | 616 | BYTES 174/616 (58 words differ); bindings/semantics unapproved |
 | [`func_01EF9E18`](pal/net/func_01EF9E18.c) | pal/net | 120 | BYTES 25/120 (13 words differ); bindings/semantics unapproved |
 | [`func_01F07320`](pal/net/func_01F07320.c) | pal/net | 140 | SIZE ours 136 / disc 140; bindings/semantics unapproved |
@@ -344,7 +344,7 @@ The current `tools/nonmatching.py` generator covers the legacy table above, not 
 | [`func_L01_00444D00`](pal/shared/func_L01_00444D00.c) | pal/shared | 152 | BYTES 35/152 (19 words differ); bindings/semantics unapproved |
 | [`func_L01_0044B170`](pal/shared/func_L01_0044B170.c) | pal/shared | 168 | BYTES 39/168 (12 words differ); bindings/semantics unapproved |
 | [`func_L01_0044B218`](pal/shared/func_L01_0044B218.c) | pal/shared | 140 | MATCH (masked text only); bindings/semantics unapproved |
-| [`func_L01_0045D318`](pal/shared/func_L01_0045D318.c) | pal/shared | 44 | SIZE ours 40 / disc 44; bindings/semantics unapproved |
+| [`func_L01_0045D318`](pal/shared/func_L01_0045D318.c) | pal/shared | 44 | BYTES 10/44 (4 words differ); common-result scheduling versus dual returns |
 | [`func_L01_0045D358`](pal/shared/func_L01_0045D358.c) | pal/shared | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
 | [`func_L01_0046AB60`](pal/shared/func_L01_0046AB60.c) | pal/shared | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
 | [`func_L01_00489F08`](pal/shared/func_L01_00489F08.c) | pal/shared | 40 | BYTES 10/40 (4 words differ); bindings/semantics unapproved |
