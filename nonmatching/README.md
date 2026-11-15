@@ -280,3 +280,103 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L04_00536020`](shared/func_L04_00536020.c) | shared | 32 | NOT IN US (PAL-mapped address; US 0x00536020 holds other code and no US overlay function has these bytes) |
 | [`func_L05_004DF3B8`](shared/func_L05_004DF3B8.c) | shared | 280 | SIZE ours 296 / retail 280 |
 | [`func_L06_004013F0`](shared/func_L06_004013F0.c) | shared | 112 | SIZE ours 120 / retail 112 |
+
+## PAL drafts (not counted by the current tools)
+
+These PAL-native drafts are preserved for follow-up work and are not built. The verdicts below were recomputed from the retained compiler objects at every catalogue placement, masking object relocation fields. They do not certify actual relocation targets, data ownership, initial values, ABI or semantics. A search score is a ranking heuristic and is not the byte comparison reported here. Existing whole-file compiler directives are retained, including experimental directives in older drafts; they are not promoted build settings. Each source carries its PAL reproduction command and unresolved questions.
+
+The current `tools/nonmatching.py` generator covers the legacy table above, not these nested PAL paths; retain this section when regenerating that table.
+
+| Function | Directory | Native size (bytes) | What differs |
+|---|---|---|---|
+| [`func_00149FD8`](pal/core/func_00149FD8.c) | pal/core | 116 | BYTES 31/116 (20 words differ); bindings/semantics unapproved |
+| [`func_0014B380`](pal/core/func_0014B380.c) | pal/core | 272 | SIZE ours 260 / disc 272; bindings/semantics unapproved |
+| [`func_0014C6B0`](pal/core/func_0014C6B0.c) | pal/core | 156 | SIZE ours 152 / disc 156; bindings/semantics unapproved |
+| [`func_0014CBD0`](pal/core/func_0014CBD0.c) | pal/core | 208 | SIZE ours 204 / disc 208; bindings/semantics unapproved |
+| [`func_0014D0E0`](pal/core/func_0014D0E0.c) | pal/core | 244 | SIZE ours 200 / disc 244; bindings/semantics unapproved |
+| [`func_0014EAA0`](pal/core/func_0014EAA0.c) | pal/core | 140 | SIZE ours 136 / disc 140; bindings/semantics unapproved |
+| [`func_001505B0`](pal/core/func_001505B0.c) | pal/core | 140 | SIZE ours 132 / disc 140; bindings/semantics unapproved |
+| [`func_00159580`](pal/core/func_00159580.c) | pal/core | 56 | BYTES 16/56 (6 words differ); bindings/semantics unapproved |
+| [`func_001614D0`](pal/core/func_001614D0.c) | pal/core | 104 | BYTES 10/104 (8 words differ); bindings/semantics unapproved |
+| [`func_003FE788`](pal/game/func_003FE788.c) | pal/game | 68 | SIZE ours 72 / disc 68; bindings/semantics unapproved |
+| [`func_0040EA30`](pal/game/func_0040EA30.c) | pal/game | 64 | SIZE ours 56 / disc 64; bindings/semantics unapproved |
+| [`func_0046C940`](pal/game/func_0046C940.c) | pal/game | 112 | BYTES 25/112 (10 words differ); bindings/semantics unapproved |
+| [`func_00476548`](pal/game/func_00476548.c) | pal/game | 176 | BYTES 10/176 (5 words differ); bindings/semantics unapproved |
+| [`func_00477FA8`](pal/game/func_00477FA8.c) | pal/game | 64 | SIZE ours 72 / disc 64; bindings/semantics unapproved |
+| [`func_00479920`](pal/game/func_00479920.c) | pal/game | 200 | BYTES 3/200 (3 words differ); bindings/semantics unapproved |
+| [`func_004889C0`](pal/game/func_004889C0.c) | pal/game | 152 | SIZE ours 148 / disc 152; bindings/semantics unapproved |
+| [`func_0048A890`](pal/game/func_0048A890.c) | pal/game | 80 | BYTES 14/80 (4 words differ); bindings/semantics unapproved |
+| [`func_0048BAB0`](pal/game/func_0048BAB0.c) | pal/game | 168 | SIZE ours 152 / disc 168; bindings/semantics unapproved |
+| [`func_004AEC70`](pal/game/func_004AEC70.c) | pal/game | 116 | SIZE ours 112 / disc 116; bindings/semantics unapproved |
+| [`func_004BD990`](pal/game/func_004BD990.c) | pal/game | 176 | BYTES 52/176 (20 words differ); BYTES 53/176 (20 words differ); BYTES 54/176 (20 words differ); bindings/semantics unapproved |
+| [`func_004C01D0`](pal/game/func_004C01D0.c) | pal/game | 328 | SIZE ours 316 / disc 328; bindings/semantics unapproved |
+| [`func_004C7AE8`](pal/game/func_004C7AE8.c) | pal/game | 272 | SIZE ours 264 / disc 272; bindings/semantics unapproved |
+| [`func_004CB780`](pal/game/func_004CB780.c) | pal/game | 92 | BYTES 58/92 (18 words differ); BYTES 59/92 (18 words differ); bindings/semantics unapproved |
+| [`func_004EF820`](pal/game/func_004EF820.c) | pal/game | 360 | SIZE ours 344 / disc 360; bindings/semantics unapproved |
+| [`func_004F60A8`](pal/game/func_004F60A8.c) | pal/game | 164 | SIZE ours 168 / disc 164; bindings/semantics unapproved |
+| [`func_00540A00`](pal/game/func_00540A00.c) | pal/game | 176 | BYTES 3/176 (1 words differ); bindings/semantics unapproved |
+| [`func_0054C408`](pal/game/func_0054C408.c) | pal/game | 168 | SIZE ours 164 / disc 168; bindings/semantics unapproved |
+| [`func_01EBF978`](pal/net/func_01EBF978.c) | pal/net | 88 | SIZE ours 84 / disc 88; bindings/semantics unapproved |
+| [`func_01EE39E0`](pal/net/func_01EE39E0.c) | pal/net | 56 | SIZE ours 52 / disc 56; bindings/semantics unapproved |
+| [`func_01EF2E24`](pal/net/func_01EF2E24.c) | pal/net | 616 | BYTES 174/616 (58 words differ); bindings/semantics unapproved |
+| [`func_01EF9E18`](pal/net/func_01EF9E18.c) | pal/net | 120 | BYTES 25/120 (13 words differ); bindings/semantics unapproved |
+| [`func_01F07320`](pal/net/func_01F07320.c) | pal/net | 140 | SIZE ours 136 / disc 140; bindings/semantics unapproved |
+| [`func_L00_0050BA20`](pal/l00_multiplayer_menu/func_L00_0050BA20.c) | pal/l00_multiplayer_menu | 52 | SIZE ours 48 / disc 52; bindings/semantics unapproved |
+| [`func_L00_00533318`](pal/l00_multiplayer_menu/func_L00_00533318.c) | pal/l00_multiplayer_menu | 56 | BYTES 3/56 (3 words differ); bindings/semantics unapproved |
+| [`func_L00_005339D0`](pal/l00_multiplayer_menu/func_L00_005339D0.c) | pal/l00_multiplayer_menu | 52 | SIZE ours 48 / disc 52; bindings/semantics unapproved |
+| [`func_L00_00533A88`](pal/l00_multiplayer_menu/func_L00_00533A88.c) | pal/l00_multiplayer_menu | 52 | SIZE ours 48 / disc 52; bindings/semantics unapproved |
+| [`func_L00_005C2078`](pal/l00_multiplayer_menu/func_L00_005C2078.c) | pal/l00_multiplayer_menu | 428 | SIZE ours 424 / disc 428; bindings/semantics unapproved |
+| [`func_L00_005C48C8`](pal/shared/func_L00_005C48C8.c) | pal/shared | 356 | SIZE ours 352 / disc 356; bindings/semantics unapproved |
+| [`func_L00_005F0BD8`](pal/shared/func_L00_005F0BD8.c) | pal/shared | 200 | BYTES 3/200 (3 words differ); bindings/semantics unapproved |
+| [`func_L00_006969F0`](pal/shared/func_L00_006969F0.c) | pal/shared | 120 | SIZE ours 124 / disc 120; bindings/semantics unapproved |
+| [`func_L00_006BED98`](pal/shared/func_L00_006BED98.c) | pal/shared | 52 | SIZE ours 56 / disc 52; bindings/semantics unapproved |
+| [`func_L00_006F2158`](pal/shared/func_L00_006F2158.c) | pal/shared | 364 | SIZE ours 360 / disc 364; bindings/semantics unapproved |
+| [`func_L00_006FAC10`](pal/shared/func_L00_006FAC10.c) | pal/shared | 300 | BYTES 38/300 (18 words differ); bindings/semantics unapproved |
+| [`func_L00_0070DDF8`](pal/l00_multiplayer_menu/func_L00_0070DDF8.c) | pal/l00_multiplayer_menu | 184 | SIZE ours 200 / disc 184; bindings/semantics unapproved |
+| [`func_L00_00727320`](pal/l00_multiplayer_menu/func_L00_00727320.c) | pal/l00_multiplayer_menu | 144 | SIZE ours 140 / disc 144; bindings/semantics unapproved |
+| [`func_L00_0074C440`](pal/l00_multiplayer_menu/func_L00_0074C440.c) | pal/l00_multiplayer_menu | 120 | BYTES 21/120 (8 words differ); bindings/semantics unapproved |
+| [`func_L01_003CC778`](pal/shared/func_L01_003CC778.c) | pal/shared | 112 | SIZE ours 124 / disc 112; bindings/semantics unapproved |
+| [`func_L01_003CD2D8`](pal/shared/func_L01_003CD2D8.c) | pal/shared | 40 | SIZE ours 44 / disc 40; bindings/semantics unapproved |
+| [`func_L01_003D7D00`](pal/shared/func_L01_003D7D00.c) | pal/shared | 40 | BYTES 10/40 (4 words differ); bindings/semantics unapproved |
+| [`func_L01_00427B10`](pal/shared/func_L01_00427B10.c) | pal/shared | 364 | SIZE ours 360 / disc 364; bindings/semantics unapproved |
+| [`func_L01_00427C80`](pal/shared/func_L01_00427C80.c) | pal/shared | 308 | BYTES 86/308 (41 words differ); bindings/semantics unapproved |
+| [`func_L01_0043C4F0`](pal/shared/func_L01_0043C4F0.c) | pal/shared | 40 | BYTES 10/40 (4 words differ); bindings/semantics unapproved |
+| [`func_L01_00444D00`](pal/shared/func_L01_00444D00.c) | pal/shared | 152 | BYTES 35/152 (19 words differ); bindings/semantics unapproved |
+| [`func_L01_0044B170`](pal/shared/func_L01_0044B170.c) | pal/shared | 168 | BYTES 39/168 (12 words differ); bindings/semantics unapproved |
+| [`func_L01_0044B218`](pal/shared/func_L01_0044B218.c) | pal/shared | 140 | MATCH (masked text only); bindings/semantics unapproved |
+| [`func_L01_0045D318`](pal/shared/func_L01_0045D318.c) | pal/shared | 44 | SIZE ours 40 / disc 44; bindings/semantics unapproved |
+| [`func_L01_0045D358`](pal/shared/func_L01_0045D358.c) | pal/shared | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
+| [`func_L01_0046AB60`](pal/shared/func_L01_0046AB60.c) | pal/shared | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
+| [`func_L01_00489F08`](pal/shared/func_L01_00489F08.c) | pal/shared | 40 | BYTES 10/40 (4 words differ); bindings/semantics unapproved |
+| [`func_L01_00493F30`](pal/shared/func_L01_00493F30.c) | pal/shared | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
+| [`func_L01_004970E8`](pal/shared/func_L01_004970E8.c) | pal/shared | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
+| [`func_L01_0049CCA8`](pal/shared/func_L01_0049CCA8.c) | pal/shared | 60 | SIZE ours 64 / disc 60; bindings/semantics unapproved |
+| [`func_L01_004B0758`](pal/shared/func_L01_004B0758.c) | pal/shared | 152 | SIZE ours 144 / disc 152; bindings/semantics unapproved |
+| [`func_L01_004BDD90`](pal/shared/func_L01_004BDD90.c) | pal/shared | 40 | BYTES 10/40 (4 words differ); bindings/semantics unapproved |
+| [`func_L01_004C4550`](pal/shared/func_L01_004C4550.c) | pal/shared | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
+| [`func_L01_004C5CB8`](pal/shared/func_L01_004C5CB8.c) | pal/shared | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
+| [`func_L01_004C6828`](pal/shared/func_L01_004C6828.c) | pal/shared | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
+| [`func_L01_004E5630`](pal/l01_dreadzone_station/func_L01_004E5630.c) | pal/l01_dreadzone_station | 52 | BYTES 4/52 (1 words differ); bindings/semantics unapproved |
+| [`func_L01_004E56E8`](pal/l01_dreadzone_station/func_L01_004E56E8.c) | pal/l01_dreadzone_station | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
+| [`func_L01_004ED100`](pal/shared/func_L01_004ED100.c) | pal/shared | 124 | SIZE ours 120 / disc 124; bindings/semantics unapproved |
+| [`func_L01_004EF0A0`](pal/shared/func_L01_004EF0A0.c) | pal/shared | 52 | BYTES 9/52 (3 words differ); bindings/semantics unapproved |
+| [`func_L01_004EF0D8`](pal/shared/func_L01_004EF0D8.c) | pal/shared | 36 | BYTES 3/36 (3 words differ); bindings/semantics unapproved |
+| [`func_L01_004F5108`](pal/shared/func_L01_004F5108.c) | pal/shared | 180 | SIZE ours 188 / disc 180; bindings/semantics unapproved |
+| [`func_L01_004FF540`](pal/shared/func_L01_004FF540.c) | pal/shared | 132 | SIZE ours 128 / disc 132; bindings/semantics unapproved |
+| [`func_L01_0050E110`](pal/l01_dreadzone_station/func_L01_0050E110.c) | pal/l01_dreadzone_station | 236 | BYTES 101/236 (30 words differ); bindings/semantics unapproved |
+| [`func_L01_005270B0`](pal/shared/func_L01_005270B0.c) | pal/shared | 136 | BYTES 22/136 (8 words differ); bindings/semantics unapproved |
+| [`func_L01_00527138`](pal/shared/func_L01_00527138.c) | pal/shared | 100 | SIZE ours 96 / disc 100; bindings/semantics unapproved |
+| [`func_L01_005DCBD0`](pal/shared/func_L01_005DCBD0.c) | pal/shared | 44 | BYTES 10/44 (5 words differ); BYTES 9/44 (5 words differ); bindings/semantics unapproved |
+| [`func_L01_0067CF48`](pal/shared/func_L01_0067CF48.c) | pal/shared | 400 | BYTES 241/400 (72 words differ); BYTES 242/400 (72 words differ); BYTES 243/400 (72 words differ); bindings/semantics unapproved |
+| [`func_L02_003C5B40`](pal/shared/func_L02_003C5B40.c) | pal/shared | 176 | SIZE ours 160 / disc 176; bindings/semantics unapproved |
+| [`func_L02_004050F8`](pal/shared/func_L02_004050F8.c) | pal/shared | 80 | BYTES 2/80 (2 words differ); MATCH; bindings/semantics unapproved |
+| [`func_L02_004CDEF8`](pal/shared/func_L02_004CDEF8.c) | pal/shared | 96 | BYTES 7/96 (6 words differ); bindings/semantics unapproved |
+| [`func_L02_004D1630`](pal/l02_catacrom_graveyard/func_L02_004D1630.c) | pal/l02_catacrom_graveyard | 36 | SIZE ours 32 / disc 36; bindings/semantics unapproved |
+| [`func_L05_00468540`](pal/shared/func_L05_00468540.c) | pal/shared | 44 | BYTES 16/44 (4 words differ); bindings/semantics unapproved |
+| [`func_L05_00494290`](pal/shared/func_L05_00494290.c) | pal/shared | 40 | BYTES 10/40 (4 words differ); bindings/semantics unapproved |
+| [`func_L05_004C3860`](pal/l05_dark_cathedral/func_L05_004C3860.c) | pal/l05_dark_cathedral | 36 | SIZE ours 32 / disc 36; bindings/semantics unapproved |
+| [`func_L05_004DD4D0`](pal/l05_dark_cathedral/func_L05_004DD4D0.c) | pal/l05_dark_cathedral | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
+| [`func_L05_004F4FB0`](pal/l05_dark_cathedral/func_L05_004F4FB0.c) | pal/l05_dark_cathedral | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
+| [`func_L10_004D6DB8`](pal/l10_torval_ruins/func_L10_004D6DB8.c) | pal/l10_torval_ruins | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
+| [`func_L41_003BDF18`](pal/l41_battledome_tower/func_L41_003BDF18.c) | pal/l41_battledome_tower | 56 | BYTES 3/56 (3 words differ); bindings/semantics unapproved |
+| [`func_L41_004475C0`](pal/l41_battledome_tower/func_L41_004475C0.c) | pal/l41_battledome_tower | 72 | BYTES 5/72 (3 words differ); bindings/semantics unapproved |
