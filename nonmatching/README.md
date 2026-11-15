@@ -358,7 +358,7 @@ The current `tools/nonmatching.py` generator covers the legacy table above, not 
 | [`func_L01_004C6828`](pal/shared/func_L01_004C6828.c) | pal/shared | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
 | [`func_L01_004E5630`](pal/l01_dreadzone_station/func_L01_004E5630.c) | pal/l01_dreadzone_station | 52 | BYTES 4/52 (1 words differ); bindings/semantics unapproved |
 | [`func_L01_004E56E8`](pal/l01_dreadzone_station/func_L01_004E56E8.c) | pal/l01_dreadzone_station | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
-| [`func_L01_004ED100`](pal/shared/func_L01_004ED100.c) | pal/shared | 124 | SIZE ours 120 / disc 124; bindings/semantics unapproved |
+| [`func_L01_004ED100`](pal/shared/func_L01_004ED100.c) | pal/shared | 124 | BYTES 9/124 (5 tail words differ); fallback allocation and return/store scheduling |
 | [`func_L01_004EF0A0`](pal/shared/func_L01_004EF0A0.c) | pal/shared | 52 | BYTES 9/52 (3 words differ); bindings/semantics unapproved |
 | [`func_L01_004EF0D8`](pal/shared/func_L01_004EF0D8.c) | pal/shared | 36 | BYTES 3/36 (3 words differ); bindings/semantics unapproved |
 | [`func_L01_004F5108`](pal/shared/func_L01_004F5108.c) | pal/shared | 180 | SIZE ours 188 / disc 180; bindings/semantics unapproved |
