@@ -5,6 +5,11 @@ Best attempts at functions that do not match yet. They are not built; see
 
 | Function | Directory | Size | What differs |
 |---|---|---|---|
+| [`func_L01_004E64A0`](pal/l01_dreadzone_station/func_L01_004E64A0.c) | pal/l01_dreadzone_station | 72 | 14/18 (77.78%) relocation-masked positional words; 72/72 candidate/target bytes. Callee return and pointer types are hypotheses. |
+| [`func_L01_0046AA98`](pal/l01_dreadzone_station/func_L01_0046AA98.c) | pal/l01_dreadzone_station | 60 | 12/15 (80.00%) relocation-masked positional words; 60/60 candidate/target bytes. Parameter and callee types are hypotheses. |
+| [`func_L00_005212C8`](pal/l00_multiplayer_menu/func_L00_005212C8.c) | pal/l00_multiplayer_menu | 60 | 13/15 (86.67%) relocation-masked positional words; 52/60 candidate/target bytes. Two words after return are omitted; callback ABI is unknown. |
+| [`func_00404C70`](pal/game/func_00404C70.c) | pal/game | 48 | 7/12 (58.33%) relocation-masked positional words; 28/48 candidate/target bytes. Five words after return are omitted; boundary and argument types remain uncertain. |
+| [`func_L41_003E3370`](pal/l41_battledome_tower/func_L41_003E3370.c) | pal/l41_battledome_tower | 92 | 13/23 (56.52%) relocation-masked positional words; 96/92 candidate/target bytes. Global and argument types are hypotheses. |
 | [`func_L01_00570278`](pal/l01_dreadzone_station/func_L01_00570278.c) | pal/l01_dreadzone_station | 44 | 10/11 (90.91%) relocation-masked positional instructions; 44/44 bytes; addu operand order differs. |
 | [`func_L01_0045D318`](pal/l01_dreadzone_station/func_L01_0045D318.c) | pal/l01_dreadzone_station | 44 | 7/11 (63.64%) relocation-masked positional instructions; 44/44 bytes; branch scheduling differs. |
 | [`func_L00_00541DF8`](pal/l00_multiplayer_menu/func_L00_00541DF8.c) | pal/l00_multiplayer_menu | 208 | 51/52 (98.08%) relocation-masked positional words; 204/208 bytes; trailing word after return omitted; callee types remain hypotheses. |
