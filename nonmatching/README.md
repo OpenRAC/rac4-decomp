@@ -5,6 +5,9 @@ Best attempts at functions that do not match yet. They are not built; see
 
 | Function | Directory | Size | What differs |
 |---|---|---|---|
+| [`func_L01_0045C538`](pal/l01_dreadzone_station/func_L01_0045C538.c) | pal/l01_dreadzone_station | 104 | 15/26 (57.69%) relocation-masked positional words; 104/104 candidate/target bytes. Pointee bounds, alignment and return usage remain unproved. |
+| [`func_L01_005767F8`](pal/l01_dreadzone_station/func_L01_005767F8.c) | pal/l01_dreadzone_station | 84 | 11/21 (52.38%) relocation-masked positional words; 84/84 candidate/target bytes. Global ownership, output alignment, counter lower bound and argument/return types remain unproved. |
+| [`func_L01_00428B58`](pal/l01_dreadzone_station/func_L01_00428B58.c) | pal/l01_dreadzone_station | 120 | 20/30 (66.67%) relocation-masked positional words; 124/120 candidate/target bytes, one extra word. Pointee bounds and return usage remain unproved. |
 | [`func_L00_004FBDD0`](pal/l00_multiplayer_menu/func_L00_004FBDD0.c) | pal/l00_multiplayer_menu | 72 | 14/18 (77.78%) relocation-masked positional words; 56/72 candidate/target bytes. Two post-return instruction pairs are omitted; their entry ownership and wrapper return ABI are unproved. |
 | [`func_L01_004B8B90`](pal/l01_dreadzone_station/func_L01_004B8B90.c) | pal/l01_dreadzone_station | 104 | 23/26 (88.46%) relocation-masked positional words; 104/104 candidate/target bytes. Callee return declaration conflicts with existing PAL callers and remains unproved. |
 | [`func_L00_004F81B8`](pal/l00_multiplayer_menu/func_L00_004F81B8.c) | pal/l00_multiplayer_menu | 76 | 18/19 (94.74%) relocation-masked positional words; 72/76 candidate/target bytes. One post-return instruction is omitted; entry ownership and callback ABI remain unproved. |
