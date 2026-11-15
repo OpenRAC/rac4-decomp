@@ -5,6 +5,16 @@ Best attempts at functions that do not match yet. They are not built; see
 
 | Function | Directory | Size | What differs |
 |---|---|---|---|
+| [`func_003FE980`](pal/game/func_003FE980.c) | pal/game | 104 | 14/26 (53.85%) relocation-masked positional words; 104/104 candidate/target bytes. The matched callees forward eight registers; remaining call inputs are unspecified. |
+| [`func_00503850`](pal/game/func_00503850.c) | pal/game | 104 | 24/26 (92.31%) relocation-masked positional words; 104/104 candidate/target bytes. Two scheduling/register words differ; mapped callee signatures are used. |
+| [`func_01EC8F00`](pal/net/func_01EC8F00.c) | pal/net | 100 | 13/25 (52.00%) relocation-masked positional words; 100/100 candidate/target bytes. Existing caller prototype conflicts; the returned pointer needs a readable +12 word. |
+| [`func_01F09B50`](pal/net/func_01F09B50.c) | pal/net | 108 | 25/27 (92.59%) relocation-masked positional words; 108/108 candidate/target bytes. Branch-likely instructions differ; return declaration, global allocation and input bounds remain unproved. |
+| [`func_003FF720`](pal/game/func_003FF720.c) | pal/game | 104 | 21/26 (80.77%) relocation-masked positional words; 104/104 candidate/target bytes. The D_003CCEC0 pointee and owner are unknown. |
+| [`func_L00_0051F2C0`](pal/l00_multiplayer_menu/func_L00_0051F2C0.c) | pal/l00_multiplayer_menu | 64 | 15/16 (93.75%) relocation-masked positional words; 60/64 candidate/target bytes. One trailing word after return omitted; callback ABI remains unproved. |
+| [`func_004F2EA0`](pal/game/func_004F2EA0.c) | pal/game | 100 | 19/25 (76.00%) relocation-masked positional words; 100/100 candidate/target bytes. The draft reloads the global while the target polls a cached pointer; polling semantics remain unresolved. |
+| [`func_01F0C22C`](pal/net/func_01F0C22C.c) | pal/net | 96 | 21/24 (87.50%) relocation-masked positional words; 96/96 candidate/target bytes. Global storage and the indirect method ABI remain unknown. |
+| [`func_01ECCCD8`](pal/net/func_01ECCCD8.c) | pal/net | 108 | 14/27 (51.85%) relocation-masked positional words; 108/108 candidate/target bytes. Callee interfaces, global ownership and pointer extents remain unproved. |
+| [`func_01F0BF70`](pal/net/func_01F0BF70.c) | pal/net | 108 | 17/27 (62.96%) relocation-masked positional words; 108/108 candidate/target bytes. Wrapper return ABI and -O1 recipe remain unproved. |
 | [`func_01EE94F8`](pal/net/func_01EE94F8.c) | pal/net | 100 | 20/25 (80.00%) relocation-masked positional words; 100/100 candidate/target bytes. Callee func_01EF0748 argument contract conflicts with its published void prototype; requires reconciliation. |
 | [`func_L01_00653F88`](pal/l01_dreadzone_station/func_L01_00653F88.c) | pal/l01_dreadzone_station | 76 | 15/19 (78.95%) relocation-masked positional words; 76/76 candidate/target bytes. Integer-array global declaration conflicts with existing pointer-array declarations; return ABI is unproved. |
 | [`func_L00_004EF400`](pal/l00_multiplayer_menu/func_L00_004EF400.c) | pal/l00_multiplayer_menu | 92 | 12/23 (52.17%) relocation-masked positional words; 92/92 candidate/target bytes. Callee signatures and stack-buffer contract remain hypotheses. |
