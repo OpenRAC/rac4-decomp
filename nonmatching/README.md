@@ -308,7 +308,7 @@ The current `tools/nonmatching.py` generator covers the legacy table above, not 
 | [`func_0048A890`](pal/game/func_0048A890.c) | pal/game | 80 | BYTES 14/80 (4 words differ); bindings/semantics unapproved |
 | [`func_0048BAB0`](pal/game/func_0048BAB0.c) | pal/game | 168 | SIZE ours 152 / disc 168; bindings/semantics unapproved |
 | [`func_004AEC70`](pal/game/func_004AEC70.c) | pal/game | 116 | SIZE ours 112 / disc 116; bindings/semantics unapproved |
-| [`func_004BD990`](pal/game/func_004BD990.c) | pal/game | 176 | BYTES 52/176 (20 words differ); BYTES 53/176 (20 words differ); BYTES 54/176 (20 words differ); bindings/semantics unapproved |
+| [`func_004BD990`](pal/game/func_004BD990.c) | pal/game | 176 | BYTES 50/176 (18 words differ), all16 program bindings checked; symbolic table and pointer correction; scheduling unresolved |
 | [`func_004C01D0`](pal/game/func_004C01D0.c) | pal/game | 328 | SIZE ours 316 / disc 328; bindings/semantics unapproved |
 | [`func_004C7AE8`](pal/game/func_004C7AE8.c) | pal/game | 272 | SIZE ours 264 / disc 272; bindings/semantics unapproved |
 | [`func_004CB780`](pal/game/func_004CB780.c) | pal/game | 92 | BYTES 58/92 (18 words differ); BYTES 59/92 (18 words differ); bindings/semantics unapproved |
