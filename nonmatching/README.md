@@ -5,6 +5,9 @@ Best attempts at functions that do not match yet. They are not built; see
 
 | Function | Directory | Size | What differs |
 |---|---|---|---|
+| [`func_L00_004FBDD0`](pal/l00_multiplayer_menu/func_L00_004FBDD0.c) | pal/l00_multiplayer_menu | 72 | 14/18 (77.78%) relocation-masked positional words; 56/72 candidate/target bytes. Two post-return instruction pairs are omitted; their entry ownership and wrapper return ABI are unproved. |
+| [`func_L01_004B8B90`](pal/l01_dreadzone_station/func_L01_004B8B90.c) | pal/l01_dreadzone_station | 104 | 23/26 (88.46%) relocation-masked positional words; 104/104 candidate/target bytes. Callee return declaration conflicts with existing PAL callers and remains unproved. |
+| [`func_L00_004F81B8`](pal/l00_multiplayer_menu/func_L00_004F81B8.c) | pal/l00_multiplayer_menu | 76 | 18/19 (94.74%) relocation-masked positional words; 72/76 candidate/target bytes. One post-return instruction is omitted; entry ownership and callback ABI remain unproved. |
 | [`func_003FE980`](pal/game/func_003FE980.c) | pal/game | 104 | 14/26 (53.85%) relocation-masked positional words; 104/104 candidate/target bytes. The matched callees forward eight registers; remaining call inputs are unspecified. |
 | [`func_00503850`](pal/game/func_00503850.c) | pal/game | 104 | 24/26 (92.31%) relocation-masked positional words; 104/104 candidate/target bytes. Two scheduling/register words differ; mapped callee signatures are used. |
 | [`func_01EC8F00`](pal/net/func_01EC8F00.c) | pal/net | 100 | 13/25 (52.00%) relocation-masked positional words; 100/100 candidate/target bytes. Existing caller prototype conflicts; the returned pointer needs a readable +12 word. |
