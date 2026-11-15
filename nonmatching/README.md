@@ -5,6 +5,13 @@ Best attempts at functions that do not match yet. They are not built; see
 
 | Function | Directory | Size | What differs |
 |---|---|---|---|
+| [`func_L00_00531F58`](pal/l00_multiplayer_menu/func_L00_00531F58.c) | pal/l00_multiplayer_menu | 76 | 7/19 (36.84%) relocation-masked positional words; 80/76 candidate/target bytes. One extra word; callee argument contract remains unresolved. |
+| [`func_L00_00533318`](pal/l00_multiplayer_menu/func_L00_00533318.c) | pal/l00_multiplayer_menu | 56 | 12/14 (85.71%) relocation-masked positional words; 56/56 candidate/target bytes. Branch-likely scheduling differs; data owner remains unproved. |
+| [`func_004D1A70`](pal/game/func_004D1A70.c) | pal/game | 68 | 12/17 (70.59%) relocation-masked positional words; 68/68 candidate/target bytes. Table extent and overlapping byte views remain unproved. |
+| [`func_01EEF83C`](pal/net/func_01EEF83C.c) | pal/net | 104 | 7/26 (26.92%) relocation-masked positional words; 108/104 candidate/target bytes. One extra word; return type remains a hypothesis. |
+| [`func_L00_0071BBE0`](pal/l00_multiplayer_menu/func_L00_0071BBE0.c) | pal/l00_multiplayer_menu | 84 | 7/21 (33.33%) relocation-masked positional words; 88/84 candidate/target bytes. One extra word; four-slot data view and index domain require review. |
+| [`func_L01_00598DF8`](pal/l01_dreadzone_station/func_L01_00598DF8.c) | pal/l01_dreadzone_station | 68 | 13/17 (76.47%) relocation-masked positional words; 68/68 candidate/target bytes. Absolute-value sequence and store order differ; caller ABI is unproved. |
+| [`func_L01_004BE7C0`](pal/l01_dreadzone_station/func_L01_004BE7C0.c) | pal/l01_dreadzone_station | 80 | 15/20 (75.00%) relocation-masked positional words; 80/80 candidate/target bytes. Global ownership and return ABI remain unproved. |
 | [`func_004F9260`](pal/game/func_004F9260.c) | pal/game | 68 | 2/17 (11.76%) relocation-masked positional words; 72/68 candidate/target bytes. One extra word is emitted; existing global owner is referenced by extern. |
 | [`func_01EECC40`](pal/net/func_01EECC40.c) | pal/net | 72 | 10/18 (55.56%) relocation-masked positional words; 72/72 candidate/target bytes. Indirect callee and float/return ABI remain hypotheses. |
 | [`func_L00_0050BA20`](pal/l00_multiplayer_menu/func_L00_0050BA20.c) | pal/l00_multiplayer_menu | 52 | 8/13 (61.54%) relocation-masked positional words; 52/52 candidate/target bytes. Branch-likely delay slot differs; source must be terminated. |
