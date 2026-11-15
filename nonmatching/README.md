@@ -5,6 +5,8 @@ Best attempts at functions that do not match yet. They are not built; see
 
 | Function | Directory | Size | What differs |
 |---|---|---|---|
+| [`func_004A30F8`](pal/game/func_004A30F8.c) | pal/game | 92 | 10/23 (43.48%) relocation-masked positional words; 100/92 candidate/target bytes. Two extra words; aggregate layout and callee contracts remain hypotheses. |
+| [`func_L01_004F1D78`](pal/l01_dreadzone_station/func_L01_004F1D78.c) | pal/l01_dreadzone_station | 88 | 13/22 (59.09%) relocation-masked positional words; 92/88 candidate/target bytes. One extra word; global extent and indirect callee ABI remain unproved. |
 | [`func_L00_00531F58`](pal/l00_multiplayer_menu/func_L00_00531F58.c) | pal/l00_multiplayer_menu | 76 | 7/19 (36.84%) relocation-masked positional words; 80/76 candidate/target bytes. One extra word; callee argument contract remains unresolved. |
 | [`func_L00_00533318`](pal/l00_multiplayer_menu/func_L00_00533318.c) | pal/l00_multiplayer_menu | 56 | 12/14 (85.71%) relocation-masked positional words; 56/56 candidate/target bytes. Branch-likely scheduling differs; data owner remains unproved. |
 | [`func_004D1A70`](pal/game/func_004D1A70.c) | pal/game | 68 | 12/17 (70.59%) relocation-masked positional words; 68/68 candidate/target bytes. Table extent and overlapping byte views remain unproved. |
