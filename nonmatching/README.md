@@ -298,7 +298,7 @@ The current `tools/nonmatching.py` generator covers the legacy table above, not 
 | [`func_001505B0`](pal/core/func_001505B0.c) | pal/core | 140 | SIZE ours 132 / disc 140; bindings/semantics unapproved |
 | [`func_00159580`](pal/core/func_00159580.c) | pal/core | 56 | BYTES 16/56 (6 words differ); bindings/semantics unapproved |
 | [`func_001614D0`](pal/core/func_001614D0.c) | pal/core | 104 | BYTES 10/104 (8 words differ); bindings/semantics unapproved |
-| [`func_003FE788`](pal/game/func_003FE788.c) | pal/game | 68 | SIZE ours 72 / disc 68; bindings/semantics unapproved |
+| [`func_003FE788`](pal/game/func_003FE788.c) | pal/game | 68 | SIZE 64/68; typed pointer-entry loop; native internal NOP and branch layout remain |
 | [`func_0040EA30`](pal/game/func_0040EA30.c) | pal/game | 64 | SIZE ours 56 / disc 64; bindings/semantics unapproved |
 | [`func_0046C940`](pal/game/func_0046C940.c) | pal/game | 112 | BYTES 25/112 (10 words differ); bindings/semantics unapproved |
 | [`func_00476548`](pal/game/func_00476548.c) | pal/game | 176 | BYTES 10/176 (5 words differ); bindings/semantics unapproved |
