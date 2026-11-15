@@ -1,11 +1,6 @@
 #include "common.h"
 
-typedef struct {
-    s32 a;
-    s32 b;
-} Pair;
-
-extern Pair D_003982C8[];
+#include "pal/table_003982C8.h"
 
 extern s32 func_00454480(s32, s32, f32);
 extern void func_L01_005A45A0(u8 *, u8 *, s32, s32, f32);

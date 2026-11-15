@@ -5,6 +5,9 @@ Best attempts at functions that do not match yet. They are not built; see
 
 | Function | Directory | Size | What differs |
 |---|---|---|---|
+| [`func_L01_00570278`](pal/l01_dreadzone_station/func_L01_00570278.c) | pal/l01_dreadzone_station | 44 | 10/11 (90.91%) relocation-masked positional instructions; 44/44 bytes; addu operand order differs. |
+| [`func_L01_0045D318`](pal/l01_dreadzone_station/func_L01_0045D318.c) | pal/l01_dreadzone_station | 44 | 7/11 (63.64%) relocation-masked positional instructions; 44/44 bytes; branch scheduling differs. |
+| [`func_L00_00541DF8`](pal/l00_multiplayer_menu/func_L00_00541DF8.c) | pal/l00_multiplayer_menu | 208 | 51/52 (98.08%) relocation-masked positional words; 204/208 bytes; trailing word after return omitted; callee types remain hypotheses. |
 | [`func_L00_00769F08`](l00_multiplayer_menu/func_L00_00769F08.c) | l00_multiplayer_menu | 960 | BYTES 5/956 |
 | [`func_L00_0076A2C8`](l00_multiplayer_menu/func_L00_0076A2C8.c) | l00_multiplayer_menu | 912 | BYTES 5/908 (2 words differ) |
 | [`func_L00_0053F170`](l00_multiplayer_menu/func_L00_0053F170.c) | l00_multiplayer_menu | 1984 | BYTES 12/1980 |
