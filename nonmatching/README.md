@@ -5,6 +5,7 @@ Best attempts at functions that do not match yet. They are not built; see
 
 | Function | Directory | Size | What differs |
 |---|---|---|---|
+| [`func_01EE94F8`](pal/net/func_01EE94F8.c) | pal/net | 100 | 20/25 (80.00%) relocation-masked positional words; 100/100 candidate/target bytes. Callee func_01EF0748 argument contract conflicts with its published void prototype; requires reconciliation. |
 | [`func_L01_00653F88`](pal/l01_dreadzone_station/func_L01_00653F88.c) | pal/l01_dreadzone_station | 76 | 15/19 (78.95%) relocation-masked positional words; 76/76 candidate/target bytes. Integer-array global declaration conflicts with existing pointer-array declarations; return ABI is unproved. |
 | [`func_L00_004EF400`](pal/l00_multiplayer_menu/func_L00_004EF400.c) | pal/l00_multiplayer_menu | 92 | 12/23 (52.17%) relocation-masked positional words; 92/92 candidate/target bytes. Callee signatures and stack-buffer contract remain hypotheses. |
 | [`func_L00_006CF328`](pal/l00_multiplayer_menu/func_L00_006CF328.c) | pal/l00_multiplayer_menu | 84 | 16/21 (76.19%) relocation-masked positional words; 84/84 candidate/target bytes. The s64 local is a code-generation hypothesis. |
