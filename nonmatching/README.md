@@ -5,6 +5,11 @@ Best attempts at functions that do not match yet. They are not built; see
 
 | Function | Directory | Size | What differs |
 |---|---|---|---|
+| [`func_L01_004EF0A0`](pal/l01_dreadzone_station/func_L01_004EF0A0.c) | pal/l01_dreadzone_station | 52 | 10/13 (76.92%) relocation-masked positional words; 52/52 candidate/target bytes. Fallback instruction scheduling differs; field types are hypotheses. |
+| [`func_L01_005883D8`](pal/l01_dreadzone_station/func_L01_005883D8.c) | pal/l01_dreadzone_station | 72 | 16/18 (88.89%) relocation-masked positional words; 72/72 candidate/target bytes. Global store addressing differs; forwarded callback interface remains uncertain. |
+| [`func_L01_0046AA20`](pal/l01_dreadzone_station/func_L01_0046AA20.c) | pal/l01_dreadzone_station | 60 | 12/15 (80.00%) relocation-masked positional words; 60/60 candidate/target bytes. Constant load scheduling differs; caller return contract remains unproved. |
+| [`func_L41_00441E90`](pal/l41_battledome_tower/func_L41_00441E90.c) | pal/l41_battledome_tower | 152 | 34/38 (89.47%) relocation-masked positional words; 152/152 candidate/target bytes. Global ownership and return type remain unproved. |
+| [`func_L00_0070D7D8`](pal/l00_multiplayer_menu/func_L00_0070D7D8.c) | pal/l00_multiplayer_menu | 48 | 0/12 (0.00%) relocation-masked positional words; 64/48 candidate/target bytes. All 12 target positions differ and four extra words are emitted; pointer validity is assumed. |
 | [`func_01EECCF4`](pal/net/func_01EECCF4.c) | pal/net | 68 | 14/17 (82.35%) relocation-masked positional words; 68/68 candidate/target bytes. Indirect method prototype and return type remain hypotheses. |
 | [`func_L00_005381E8`](pal/l00_multiplayer_menu/func_L00_005381E8.c) | pal/l00_multiplayer_menu | 56 | 13/14 (92.86%) relocation-masked positional words; 52/56 candidate/target bytes. Trailing word after return omitted; argument and callee types remain hypotheses. |
 | [`func_L00_005414C8`](pal/l00_multiplayer_menu/func_L00_005414C8.c) | pal/l00_multiplayer_menu | 56 | 8/14 (57.14%) relocation-masked positional words; 36/56 candidate/target bytes. One call delay slot differs and five words after return are omitted. |
