@@ -5,6 +5,10 @@ Best attempts at functions that do not match yet. They are not built; see
 
 | Function | Directory | Size | What differs |
 |---|---|---|---|
+| [`func_L00_004EF400`](pal/l00_multiplayer_menu/func_L00_004EF400.c) | pal/l00_multiplayer_menu | 92 | 12/23 (52.17%) relocation-masked positional words; 92/92 candidate/target bytes. Callee signatures and stack-buffer contract remain hypotheses. |
+| [`func_L00_006CF328`](pal/l00_multiplayer_menu/func_L00_006CF328.c) | pal/l00_multiplayer_menu | 84 | 16/21 (76.19%) relocation-masked positional words; 84/84 candidate/target bytes. The s64 local is a code-generation hypothesis. |
+| [`func_L00_00773D98`](pal/l00_multiplayer_menu/func_L00_00773D98.c) | pal/l00_multiplayer_menu | 80 | 13/20 (65.00%) relocation-masked positional words; 80/80 candidate/target bytes. Indirect callback and return ABI remain unproved. |
+| [`func_L01_0055D1C8`](pal/l01_dreadzone_station/func_L01_0055D1C8.c) | pal/l01_dreadzone_station | 76 | 15/19 (78.95%) relocation-masked positional words; 72/76 candidate/target bytes. One target word is missing; return ABI remains unproved. |
 | [`func_004A30F8`](pal/game/func_004A30F8.c) | pal/game | 92 | 10/23 (43.48%) relocation-masked positional words; 100/92 candidate/target bytes. Two extra words; aggregate layout and callee contracts remain hypotheses. |
 | [`func_L01_004F1D78`](pal/l01_dreadzone_station/func_L01_004F1D78.c) | pal/l01_dreadzone_station | 88 | 13/22 (59.09%) relocation-masked positional words; 92/88 candidate/target bytes. One extra word; global extent and indirect callee ABI remain unproved. |
 | [`func_L00_00531F58`](pal/l00_multiplayer_menu/func_L00_00531F58.c) | pal/l00_multiplayer_menu | 76 | 7/19 (36.84%) relocation-masked positional words; 80/76 candidate/target bytes. One extra word; callee argument contract remains unresolved. |
