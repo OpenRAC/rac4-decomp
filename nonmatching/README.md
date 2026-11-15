@@ -5,6 +5,11 @@ Best attempts at functions that do not match yet. They are not built; see
 
 | Function | Directory | Size | What differs |
 |---|---|---|---|
+| [`func_L00_0050BA20`](pal/l00_multiplayer_menu/func_L00_0050BA20.c) | pal/l00_multiplayer_menu | 52 | 8/13 (61.54%) relocation-masked positional words; 52/52 candidate/target bytes. Branch-likely delay slot differs; source must be terminated. |
+| [`func_L00_005339D0`](pal/l00_multiplayer_menu/func_L00_005339D0.c) | pal/l00_multiplayer_menu | 52 | 8/13 (61.54%) relocation-masked positional words; 52/52 candidate/target bytes. Branch-likely scheduling differs; source must be terminated. |
+| [`func_L00_00533A88`](pal/l00_multiplayer_menu/func_L00_00533A88.c) | pal/l00_multiplayer_menu | 52 | 11/13 (84.62%) relocation-masked positional words; 52/52 candidate/target bytes. Delay-slot scheduling differs; nonnegative count and valid buffers are assumed. |
+| [`func_L01_0048CCA8`](pal/l01_dreadzone_station/func_L01_0048CCA8.c) | pal/l01_dreadzone_station | 72 | 11/18 (61.11%) relocation-masked positional words; 72/72 candidate/target bytes. Float-register caller/callee contract remains unresolved. |
+| [`func_L01_00434608`](pal/l01_dreadzone_station/func_L01_00434608.c) | pal/l01_dreadzone_station | 80 | 8/20 (40.00%) relocation-masked positional words; 76/80 candidate/target bytes. Shared context type needs reconciliation across existing callers. |
 | [`func_L01_004EF0A0`](pal/l01_dreadzone_station/func_L01_004EF0A0.c) | pal/l01_dreadzone_station | 52 | 10/13 (76.92%) relocation-masked positional words; 52/52 candidate/target bytes. Fallback instruction scheduling differs; field types are hypotheses. |
 | [`func_L01_005883D8`](pal/l01_dreadzone_station/func_L01_005883D8.c) | pal/l01_dreadzone_station | 72 | 16/18 (88.89%) relocation-masked positional words; 72/72 candidate/target bytes. Global store addressing differs; forwarded callback interface remains uncertain. |
 | [`func_L01_0046AA20`](pal/l01_dreadzone_station/func_L01_0046AA20.c) | pal/l01_dreadzone_station | 60 | 12/15 (80.00%) relocation-masked positional words; 60/60 candidate/target bytes. Constant load scheduling differs; caller return contract remains unproved. |
