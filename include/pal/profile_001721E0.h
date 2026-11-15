@@ -5,7 +5,7 @@
 union Type4Region20 {
     u8 bytes[0x208];
     struct {
-        u8 opaque20[0x104];
+        u8 opaque20[8]; s32 f28; u8 opaque2C[0xF8];
         s32 f124, f128;
         u8 opaque12c[0xEC];
         u32 f218;

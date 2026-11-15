@@ -1,8 +1,9 @@
+/* cflags: -O2 -G8 -Wuninitialized */
 #include "common.h"
 
 typedef void (*Handler)(void *, void *);
 
-extern Handler *func_0046DD08(s32, s32, s32);
+#include "pal/l01_0046DD08.h"
 extern void func_00474368(void *, s32, s32);
 extern void func_004E29B8(void *, s32);
 extern void func_L01_0058CDE8(void *);
