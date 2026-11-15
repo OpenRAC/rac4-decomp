@@ -5,6 +5,8 @@ Best attempts at functions that do not match yet. They are not built; see
 
 | Function | Directory | Size | What differs |
 |---|---|---|---|
+| [`func_004F9260`](pal/game/func_004F9260.c) | pal/game | 68 | 2/17 (11.76%) relocation-masked positional words; 72/68 candidate/target bytes. One extra word is emitted; existing global owner is referenced by extern. |
+| [`func_01EECC40`](pal/net/func_01EECC40.c) | pal/net | 72 | 10/18 (55.56%) relocation-masked positional words; 72/72 candidate/target bytes. Indirect callee and float/return ABI remain hypotheses. |
 | [`func_L00_0050BA20`](pal/l00_multiplayer_menu/func_L00_0050BA20.c) | pal/l00_multiplayer_menu | 52 | 8/13 (61.54%) relocation-masked positional words; 52/52 candidate/target bytes. Branch-likely delay slot differs; source must be terminated. |
 | [`func_L00_005339D0`](pal/l00_multiplayer_menu/func_L00_005339D0.c) | pal/l00_multiplayer_menu | 52 | 8/13 (61.54%) relocation-masked positional words; 52/52 candidate/target bytes. Branch-likely scheduling differs; source must be terminated. |
 | [`func_L00_00533A88`](pal/l00_multiplayer_menu/func_L00_00533A88.c) | pal/l00_multiplayer_menu | 52 | 11/13 (84.62%) relocation-masked positional words; 52/52 candidate/target bytes. Delay-slot scheduling differs; nonnegative count and valid buffers are assumed. |
