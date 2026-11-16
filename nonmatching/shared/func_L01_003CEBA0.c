@@ -1,4 +1,5 @@
-/* Not matching yet: SIZE ours 212 / retail 200 (tools/try_func.py func_L01_003CEBA0 --diff) (tools/try_func.py func_L01_003CEBA0 --diff). Not part of the build. */
+/* Not matching yet: BYTES 77/200 (tools/try_func.py func_L01_003CEBA0 --diff) (tools/try_func.py func_L01_003CEBA0 --diff). Not part of the build. */
+/* cflags: @ee296 -O2 -G8 */
 #include "common.h"
 
 typedef struct {
