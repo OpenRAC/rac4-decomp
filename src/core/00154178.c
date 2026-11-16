@@ -1,4 +1,3 @@
-/* Not matching yet: BYTES 4/196 (tools/try_func.py func_00154178 --diff). Not part of the build. */
 /* cflags: @ee296 -O2 -G0 */
 #include "common.h"
 
@@ -23,6 +22,7 @@ extern s32 func_0012A538(Cd_12A538 *cd, s32 rno, s32 mode);
 s32 func_00154178(void)
 {
     s32 i;
+    s32 end;
 
     func_00129D90(0);
     func_0011A518(&D_1BCC28, 0, 0x28);
@@ -33,8 +33,9 @@ s32 func_00154178(void)
         }
         if (D_1BCC28.server != 0)
             break;
+        end = -1;
         i = 0xFFFF;
-        while (i != -1)
+        while (i != end)
             i -= 4;
     }
     return 0;
