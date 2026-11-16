@@ -1,5 +1,5 @@
-/* Not matching yet: BYTES 77/200 (tools/try_func.py func_L01_003CEBA0 --diff) (tools/try_func.py func_L01_003CEBA0 --diff). Not part of the build. */
-/* cflags: @ee296 -O2 -G8 */
+/* Not matching yet: BYTES 44/200 (tools/try_func.py func_L01_003CEBA0 --diff) (tools/try_func.py func_L01_003CEBA0 --diff). Not part of the build. */
+/* cflags: @ee296 -O2 -G8 -mno-split-addresses */
 #include "common.h"
 
 typedef struct {
@@ -13,23 +13,17 @@ typedef struct {
     Inner *unkAC;
 } Outer;
 
-typedef void (*ActFn)(u8, s32, Inner *, f32, f32, f32);
-
-typedef struct {
-    ActFn unk0;
-} Callback;
+typedef s32 (*ActionCallback)(u8, s32, Inner *, f32, f32, f32);
 
 extern Outer *D_0055A000;
 extern u8 D_0055A100;
-extern s32 D_0021DE10;
+extern s32 D_0021DE10[];
 
-extern Callback *func_L00_005DEBD0(s32, s32, s32);
+extern ActionCallback *func_L00_005DEBD0(s32, s32, s32);
 
 void func_L01_003CEBA0(s32 arg0, f32 f0, f32 f1) {
+    ActionCallback *cb;
     Outer *obj;
-    Callback *cb;
-    Callback *cb2;
-    Inner *in;
     u8 t;
 
     cb = func_L00_005DEBD0(0x2620, 0, 8);
@@ -40,9 +34,8 @@ void func_L01_003CEBA0(s32 arg0, f32 f0, f32 f1) {
     if (obj == NULL) {
         return;
     }
-    in = obj->unkAC;
-    cb->unk0(in->unk9, arg0, in, (f32)in->unkA, f0, f1);
-    if (D_0021DE10 != 0xB) {
+    (*cb)(obj->unkAC->unk9, arg0, obj->unkAC, (f32)obj->unkAC->unkA, f0, f1);
+    if (D_0021DE10[0] != 0xB) {
         return;
     }
     t = D_0055A100 ^ 1;
@@ -50,9 +43,9 @@ void func_L01_003CEBA0(s32 arg0, f32 f0, f32 f1) {
     if (t == 0) {
         return;
     }
-    cb2 = func_L00_005DEBD0(0x26EE, 0, 4);
-    if (cb2 == NULL) {
+    cb = func_L00_005DEBD0(0x26EE, 0, 4);
+    if (cb == NULL) {
         return;
     }
-    ((void (*)(void))cb2->unk0)();
+    ((void (*)(void))(*cb))();
 }

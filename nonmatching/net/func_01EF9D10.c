@@ -1,4 +1,5 @@
-/* Not matching yet: BYTES 89/200 (tools/try_func.py func_01EF9D10 --diff) (tools/try_func.py func_01EF9D10 --diff). Not part of the build. */
+/* Not matching yet: BYTES 88/200 (tools/try_func.py func_01EF9D10 --diff) (tools/try_func.py func_01EF9D10 --diff). Not part of the build. */
+/* cflags: -fno-schedule-insns -fno-schedule-insns2 */
 extern void func_0011A518(void *, s32, s32);
 extern void func_01EF9E18(void *);
 extern void func_01F0C090(const char *, s32);

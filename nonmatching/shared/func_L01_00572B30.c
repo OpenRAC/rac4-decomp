@@ -1,4 +1,4 @@
-/* Not matching yet: BYTES 83/180 (tools/try_func.py func_L01_00572B30 --diff) (tools/try_func.py func_L01_00572B30 --diff). Not part of the build. */
+/* Not matching yet: BYTES 75/180 (tools/try_func.py func_L01_00572B30 --diff) (tools/try_func.py func_L01_00572B30 --diff). Not part of the build. */
 typedef struct {
     f32 unk0;
     f32 unk4;
@@ -17,7 +17,7 @@ typedef struct {
 extern s32 func_L01_00572BE8(void *a0, s32 a1, f32 a, f32 b, f32 c, f32 d);
 extern s32 func_L01_00572EC8(void *a0, s32 a1, f32 a, f32 b, f32 c, f32 d, f32 e, f32 f);
 
-s32 func_L01_00572B30(S0 *arg0, S1 *arg1, s32 arg2, f32 fparg0) {
+s32 func_L01_00572B30(S0 *arg0, S1 *arg1, f32 fparg0, s32 arg2) {
     if (arg0 != 0) {
         if ((u32)(arg0->unk1C - 1) < 3U) {
             if (arg1 != 0) {
