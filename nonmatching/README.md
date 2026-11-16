@@ -311,7 +311,7 @@ The current `tools/nonmatching.py` generator covers the legacy table above, not 
 | [`func_004BD990`](pal/game/func_004BD990.c) | pal/game | 176 | BYTES 50/176 (18 words differ), all16 program bindings checked; symbolic table and pointer correction; scheduling unresolved |
 | [`func_004C01D0`](pal/game/func_004C01D0.c) | pal/game | 328 | SIZE ours 316 / disc 328; bindings/semantics unapproved |
 | [`func_004C7AE8`](pal/game/func_004C7AE8.c) | pal/game | 272 | SIZE 264/272; symbolic table and loaded entry pointers, all16 program bindings checked; allocation and branch layout unresolved |
-| [`func_004CB780`](pal/game/func_004CB780.c) | pal/game | 92 | BYTES 58/92 (18 words differ); BYTES 59/92 (18 words differ); bindings/semantics unapproved |
+| [`func_004CB780`](pal/game/func_004CB780.c) | pal/game | 92 | SIZE 88/92; three scalar bindings checked unmasked at all49 callable copies; result-copy/common-return join unresolved |
 | [`func_004EF820`](pal/game/func_004EF820.c) | pal/game | 360 | SIZE ours 344 / disc 360; bindings/semantics unapproved |
 | [`func_004F60A8`](pal/game/func_004F60A8.c) | pal/game | 164 | SIZE ours 168 / disc 164; bindings/semantics unapproved |
 | [`func_00540A00`](pal/game/func_00540A00.c) | pal/game | 176 | BYTES 3/176 (1 words differ); bindings/semantics unapproved |
