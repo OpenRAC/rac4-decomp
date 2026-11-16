@@ -65,6 +65,31 @@ import rabbitizer as rz
 from elftools.elf.elffile import ELFFile
 from elf_layout import functions
 
+def label_index(lines, j):
+    """The index of a label that DIRECTLY follows the FP compare before branch J, else J.
+
+    A label binds to the next emitted instruction, so a nop written just below the label lands
+    AT the label's address -- retail's assembler did that for the hazard nop (func_001492B8's
+    `b` targets the nop and falls through into `bc1tl`). Only when the label directly follows
+    the compare: if the compare's delay slot sits between them, the assembler's own placement
+    is already right (func_004DC9A8 regressed when this rule fired there).
+    """
+    k, saw_label = j - 1, None
+    while k >= 0:
+        stripped = lines[k].split("#")[0].strip()
+        if stripped.endswith(":") and stripped:
+            saw_label = k
+            k -= 1
+            continue
+        if stripped == "" or stripped.startswith("."):
+            k -= 1
+            continue
+        break
+    if saw_label is None or k < 0:
+        return j
+    return saw_label if lines[k].split("#")[0].strip().startswith("c.") else j
+
+
 MIN_SPAN = 5   # target through the branch, not counting its own delay slot (6 with it)
 # Objects whose retail code is hand-written noreorder assembly: none known here yet.
 NOREORDER_OBJECTS = set()
@@ -301,8 +326,15 @@ def main() -> None:
                      f"{len(src_back)}, {len(src_bc1)}, {len(src_moves)} -- refusing to guess")
         fp_nops = [addr for addr, needs in obj_fp if needs] + obj_moves
         for (addr, needs), j in zip(obj_fp, src_bc1):
-            if needs:
-                inserts[j] = inserts.get(j, 0) + 1
+            k = label_index(lines, j)
+            k = j if k == j else k + 1
+            if needs or k != j:
+                # The hazard nop goes between the compare and the branch. In retail that is the
+                # address the join label names (func_001492B8's `b` targets the nop and falls
+                # through into `bc1tl`). GNU as binds a label after the nop it inserts for the
+                # compare, so the nop has to be written BELOW the label, directly before the
+                # branch: the label then names the nop. 18 retail functions have this shape.
+                inserts[k] = inserts.get(k, 0) + 1
                 fps += 1
         for j in src_moves:
             inserts[j] = inserts.get(j, 0) + 1
