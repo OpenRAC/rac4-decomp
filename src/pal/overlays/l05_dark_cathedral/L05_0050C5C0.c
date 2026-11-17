@@ -11,7 +11,7 @@ typedef struct {
 } Arena;
 
 extern Arena D_0023C640;
-extern u8 *D_00363038[];
+#include "pal/l05_00363038.h"
 extern s32 D_0021DE98;
 extern void func_L00_00597628(s32, s32, s32, s32);
 extern void func_L00_00598D18(s32);

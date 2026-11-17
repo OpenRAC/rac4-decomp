@@ -5,7 +5,7 @@ extern void func_0053DED0(s32 *, void *, s32);
 extern void func_L41_003E0838();
 extern void func_L41_005F7410(void *, void *, void *, s32, f32);
 typedef struct { u8 pad0[0x70]; s32 f70[10]; s32 f98[10]; } Type1;
-extern u8 *D_00222894;
+#include "pal/global_00222894.h"
 extern u8 *D_00344C38[];
 
 // Read a network message and update an object's per-slot timers.

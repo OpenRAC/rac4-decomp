@@ -1,7 +1,7 @@
 /* cflags: -O2 -G8 -Wuninitialized */
 #include "common.h"
 
-extern s32 D_00222894;
+#include "pal/global_00222894.h"
 
 s32 func_L02_004CF080(s32 arg0) {
     u8 temp_3;
@@ -13,7 +13,7 @@ s32 func_L02_004CF080(s32 arg0) {
 block_1:
     return 1;
 block_2:
-    temp_2 = D_00222894 + (arg0 << 8);
+    temp_2 = D_00222894 + ((u32)arg0 << 8);
     if (temp_2 == NULL) {
         goto block_1;
     }

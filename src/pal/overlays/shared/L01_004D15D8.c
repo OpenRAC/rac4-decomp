@@ -1,7 +1,8 @@
+/* cflags: -O2 -G8 -Wuninitialized */
 #include "common.h"
 
 extern void func_L01_004D14E8(void *, s32);
-extern void **func_0046DD08(s32, s32, s32);
+#include "pal/l01_0046DD08.h"
 extern void func_L01_004D10B0(void *, s32);
 
 // When the linked object's +0x2DD flag is set run func_L01_004D10B0 and stop.

@@ -1,12 +1,4 @@
-#include "common.h"
-
-typedef struct Display {
-    u8 fields[0x150];
-    s16 width;
-    s16 height;
-} Display;
-
-extern Display D_00206AC0;
+#include "pal/display_00206AC0.h"
 extern char *func_00449060(s32 index);
 
 void func_00449180(s32 index, s32 *left, s32 *top, s32 *right, s32 *bottom)
