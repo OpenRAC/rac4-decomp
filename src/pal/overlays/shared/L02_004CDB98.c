@@ -23,7 +23,7 @@ extern u16 D_001F6808[];
 extern s32 D_0021E774;
 extern s32 D_0021E778;
 
-extern s32 func_L01_0058A000(void);
+extern s32 func_L01_0058A000(void *);
 extern void func_L02_004CDD50(Moby *m);
 extern s32 func_00453D20(s16 *p);
 extern void func_004E2EF0(s32 a, s32 b, Moby *m);
@@ -40,7 +40,7 @@ void func_L02_004CDB98(Moby *m) {
     if (D_0021DE3C == 2) {
         return;
     }
-    if (func_L01_0058A000() != 0) {
+    if (func_L01_0058A000(m) != 0) {
         return;
     }
     if (m->x20 == 0) {
