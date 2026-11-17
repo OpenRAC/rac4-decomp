@@ -1,11 +1,5 @@
 #include "common.h"
-
-typedef struct Ent {
-    u16 x0;
-    u8 pad2[2];
-    u32 x4;
-    u32 x8;
-} Ent;
+#include "pal/record_001F1480.h"
 
 typedef struct Tbl {
     u8 pad0[0xC];
@@ -25,7 +19,6 @@ extern s32 D_00222468;
 extern Tbl *D_00222464;
 s32 D_00222460 = 0;
 extern s32 D_002226C4;
-extern Ent D_001F1480[];
 
 extern s32 func_0048ACE8(Q *q, s32 a, void *buf);
 extern s32 func_0048ABD8(Q *q, s32 a, s32 b, s32 c, s32 d);
@@ -34,7 +27,7 @@ extern s32 func_0045EB78(s32 a);
 // Queues a request for entry b of the table at D_001F1480 when the queue at D_00222648 is free, then updates that entry's counters.
 s32 func_0045E478(s16 a, s16 b) {
     u8 buf[4];
-    Ent *e;
+    Type001F1480 *e;
     s32 f;
     s32 r;
     u32 g;
@@ -47,7 +40,7 @@ s32 func_0045E478(s16 a, s16 b) {
             return 0;
         }
         e = &D_001F1480[b];
-        if (e->x0 != 0) {
+        if (e->f0 != 0) {
             return 0;
         }
         f = D_00222464[func_0045EB78(a)].xC & 0x7FFF;
@@ -56,14 +49,14 @@ s32 func_0045E478(s16 a, s16 b) {
         if (func_0048ACE8(&D_00222648, r, buf) != 0) {
             D_00222460 = D_002226C4;
             if (b >= 0) {
-                if (e->x0 < 0xFFFF) {
-                    e->x0 = e->x0 + 1;
+                if (e->f0 < 0xFFFF) {
+                    e->f0 = e->f0 + 1;
                 }
                 g = D_0021DAF0;
-                if (e->x4 < g) {
-                    e->x4 = g;
+                if (e->f4 < g) {
+                    e->f4 = g;
                 }
-                e->x8 = e->x8 | (1 << ((D_0021E298 - 1) % 20)) | 0x80000000;
+                e->f8 = e->f8 | (1 << ((D_0021E298 - 1) % 20)) | 0x80000000;
             }
             return 1;
         }

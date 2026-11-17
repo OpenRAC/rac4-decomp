@@ -1,4 +1,5 @@
 #include "common.h"
+#include "pal/record_001F1480.h"
 typedef struct { s32 a; s32 b; u8 c; u8 pad[3]; } Entry;
 typedef struct { s32 a; s32 b; } Pair;
 typedef struct { s32 pad[10]; s32 active[4]; s32 pad2[4]; s32 timer[4]; } State;
@@ -9,14 +10,11 @@ extern s32 D_0021EE58;
 extern s32 D_0021DE98;
 extern s32 D_002217C0;
 extern s32 D_00221318;
-extern s32 D_001F1480[];
 extern u32 D_0021DAF0;
 s32 D_0021F73C = 0;
 extern void func_00449A28(s32 *a, void (*b)(void *), s32 c);
 extern s32 func_00453CE8(s32 *arg0);
 extern void func_0045E168(s32, s32, s32);
-extern void func_0045E288(s32, s32, s32, s32);
-extern void func_0045E2D8(s32, s32, s32, s32);
 extern s32 func_0047CD08(Pair *out, s32 i, s32 b);
 extern void func_0047CA28(void *);
 extern u8 *func_0047DE20(void);
@@ -40,11 +38,11 @@ void func_004AF7A0(void)
                         func_0045E288(0x3460, 0x7F1, 0x3E8, 2);
                         break;
                     case 10:
-                        if ((u32)D_001F1480[0x4ED0 / 4] < D_0021DAF0)
-                            D_001F1480[0x4ED0 / 4] = D_0021DAF0;
+                        if ((u32)D_001F1480[1681].f4 < D_0021DAF0)
+                            D_001F1480[1681].f4 = D_0021DAF0;
                         break;
                     case 11:
-                        if (D_0021DAF0 - D_001F1480[0x4ED0 / 4] < 0x1388)
+                        if (D_0021DAF0 - D_001F1480[1681].f4 < 0x1388)
                             func_0045E168(0x333A, 0x785, 2);
                         break;
                     case 5:
