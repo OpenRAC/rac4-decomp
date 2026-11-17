@@ -12,7 +12,7 @@ typedef struct Type1 {
 
 extern void func_0011AFC8(char *arg0, char *arg1, s32 arg2);
 
-void func_L00_0071ADF0(Type1 *arg0, s32 arg1, s32 arg2, char *arg3) {
+void func_L00_0071ADF0(Type1 *arg0, u32 arg1, s32 arg2, char *arg3) {
     arg0->f4 = arg1;
     arg0->f8 = arg2;
     if (arg3 != 0) {
