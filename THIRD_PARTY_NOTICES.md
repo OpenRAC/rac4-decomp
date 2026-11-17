@@ -57,6 +57,15 @@ preserved." Other files carry the notices of their respective authors in their
 headers. They are built unchanged to reproduce the library that Sony's
 toolchain linked into the game.
 
+## MD5 (`src/net/01EF0D88.c`, `src/net/01EF1E4C.c`, `src/net/01EF1F70.c`)
+
+The network code links Christophe Devine's `md5.c` (RFC 1321 MD5, "Copyright (C) 2001-2003
+Christophe Devine", GNU General Public License version 2 or, at your option, any later version).
+Its `md5_process`, `md5_update` and `md5_finish` are written here in that file's form (its
+`GET_UINT32`/`PUT_UINT32` and `P` macros, with `uint32` as `unsigned long`, 64 bits on the EE) and
+checked against this game's code; each file says so in its comment. Code under GPL-2.0-or-later is
+used here under this repository's GPL-3.0.
+
 ## Other public decompilations (`src/core/`, `src/net/`, `src/game/`)
 
 The C of 183 functions started from the matching C of the equivalent functions in
