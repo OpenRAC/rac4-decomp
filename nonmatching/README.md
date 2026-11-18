@@ -229,7 +229,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L01_004CFEC8`](shared/func_L01_004CFEC8.c) | shared | 144 | BYTES 31/140 |
 | [`func_004F2268`](game/func_004F2268.c) | game | 88 | BYTES 21/88 |
 | [`func_L00_00554030`](l00_multiplayer_menu/func_L00_00554030.c) | l00_multiplayer_menu | 32 | BYTES 8/32 |
-| [`func_L00_007092B0`](l00_multiplayer_menu/func_L00_007092B0.c) | l00_multiplayer_menu | 104 | BYTES 27/104 (permuter --legal 900 s; best body) |
 | [`func_L00_006F6FE0`](shared/func_L00_006F6FE0.c) | shared | 304 | BYTES 78/300 |
 | [`func_L00_004F7168`](l00_multiplayer_menu/func_L00_004F7168.c) | l00_multiplayer_menu | 128 | BYTES 33/124 |
 | [`func_01EB5540`](net/func_01EB5540.c) | net | 124 | BYTES 38/124 (@ee32-030210, was 51/124) |
