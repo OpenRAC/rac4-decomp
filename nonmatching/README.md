@@ -5,6 +5,9 @@ Best attempts at functions that do not match yet. They are not built; see
 
 | Function | Directory | Size | What differs |
 |---|---|---|---|
+| [`func_00159718`](pal/core/func_00159718.c) | pal/core | 36 | PAL code and relocations match all 36 bytes. The native source name is already owned by src/core/00159718.c. |
+| [`func_01EED598`](pal/net/func_01EED598.c) | pal/net | 16 | PAL code and relocations match all 16 bytes. The native source name is already owned by src/net/01EED598.c. |
+| [`func_01EF587C`](pal/net/func_01EF587C.c) | pal/net | 16 | PAL code and relocations match all 16 bytes. The native source name is already owned by src/net/01EF587C.c. |
 | [`func_L01_0045C538`](pal/l01_dreadzone_station/func_L01_0045C538.c) | pal/l01_dreadzone_station | 104 | 15/26 (57.69%) relocation-masked positional words; 104/104 candidate/target bytes. Pointee bounds, alignment and return usage remain unproved. |
 | [`func_L01_005767F8`](pal/l01_dreadzone_station/func_L01_005767F8.c) | pal/l01_dreadzone_station | 84 | 11/21 (52.38%) relocation-masked positional words; 84/84 candidate/target bytes. Global ownership, output alignment, counter lower bound and argument/return types remain unproved. |
 | [`func_L01_00428B58`](pal/l01_dreadzone_station/func_L01_00428B58.c) | pal/l01_dreadzone_station | 120 | 20/30 (66.67%) relocation-masked positional words; 124/120 candidate/target bytes, one extra word. Pointee bounds and return usage remain unproved. |
@@ -45,7 +48,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L01_00434608`](pal/l01_dreadzone_station/func_L01_00434608.c) | pal/l01_dreadzone_station | 80 | 8/20 (40.00%) relocation-masked positional words; 76/80 candidate/target bytes. Shared context type needs reconciliation across existing callers. |
 | [`func_L01_004EF0A0`](pal/l01_dreadzone_station/func_L01_004EF0A0.c) | pal/l01_dreadzone_station | 52 | 10/13 (76.92%) relocation-masked positional words; 52/52 candidate/target bytes. Fallback instruction scheduling differs; field types are hypotheses. |
 | [`func_L01_005883D8`](pal/l01_dreadzone_station/func_L01_005883D8.c) | pal/l01_dreadzone_station | 72 | 16/18 (88.89%) relocation-masked positional words; 72/72 candidate/target bytes. Global store addressing differs; forwarded callback interface remains uncertain. |
-| [`func_L01_0046AA20`](pal/l01_dreadzone_station/func_L01_0046AA20.c) | pal/l01_dreadzone_station | 60 | 12/15 (80.00%) relocation-masked positional words; 60/60 candidate/target bytes. Constant load scheduling differs; caller return contract remains unproved. |
 | [`func_L41_00441E90`](pal/l41_battledome_tower/func_L41_00441E90.c) | pal/l41_battledome_tower | 152 | 34/38 (89.47%) relocation-masked positional words; 152/152 candidate/target bytes. Global ownership and return type remain unproved. |
 | [`func_L00_0070D7D8`](pal/l00_multiplayer_menu/func_L00_0070D7D8.c) | pal/l00_multiplayer_menu | 48 | 0/12 (0.00%) relocation-masked positional words; 64/48 candidate/target bytes. All 12 target positions differ and four extra words are emitted; pointer validity is assumed. |
 | [`func_01EECCF4`](pal/net/func_01EECCF4.c) | pal/net | 68 | 14/17 (82.35%) relocation-masked positional words; 68/68 candidate/target bytes. Indirect method prototype and return type remain hypotheses. |
@@ -357,33 +359,20 @@ The current `tools/nonmatching.py` generator covers the legacy table above, not 
 | [`func_L00_0074C440`](pal/l00_multiplayer_menu/func_L00_0074C440.c) | pal/l00_multiplayer_menu | 120 | BYTES 14/120 (6 words differ); continuation schedule and field-address folding unresolved |
 | [`func_L01_003CC778`](pal/shared/func_L01_003CC778.c) | pal/shared | 112 | SIZE ours 124 / disc 112; bindings/semantics unapproved |
 | [`func_L01_003CD2D8`](pal/shared/func_L01_003CD2D8.c) | pal/shared | 40 | SIZE ours 44 / disc 40; bindings/semantics unapproved |
-| [`func_L01_003D7D00`](pal/shared/func_L01_003D7D00.c) | pal/shared | 40 | BYTES 10/40 (4 words differ); bindings/semantics unapproved |
 | [`func_L01_00427B10`](pal/shared/func_L01_00427B10.c) | pal/shared | 364 | SIZE ours 360 / disc 364; bindings/semantics unapproved |
 | [`func_L01_00427C80`](pal/shared/func_L01_00427C80.c) | pal/shared | 308 | BYTES 86/308 (41 words differ); bindings/semantics unapproved |
-| [`func_L01_0043C4F0`](pal/shared/func_L01_0043C4F0.c) | pal/shared | 40 | BYTES 10/40 (4 words differ); bindings/semantics unapproved |
 | [`func_L01_00444D00`](pal/shared/func_L01_00444D00.c) | pal/shared | 152 | BYTES 35/152 (19 words differ); bindings/semantics unapproved |
 | [`func_L01_0044B170`](pal/shared/func_L01_0044B170.c) | pal/shared | 168 | BYTES 39/168 (12 words differ); bindings/semantics unapproved |
 | [`func_L01_0044B218`](pal/shared/func_L01_0044B218.c) | pal/shared | 140 | MATCH (masked text only); bindings/semantics unapproved |
 | [`func_L01_0045D318`](pal/shared/func_L01_0045D318.c) | pal/shared | 44 | BYTES 10/44 (4 words differ); common-result scheduling versus dual returns |
 | [`func_L01_0045D358`](pal/shared/func_L01_0045D358.c) | pal/shared | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
-| [`func_L01_0046AB60`](pal/shared/func_L01_0046AB60.c) | pal/shared | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
-| [`func_L01_00489F08`](pal/shared/func_L01_00489F08.c) | pal/shared | 40 | BYTES 10/40 (4 words differ); bindings/semantics unapproved |
-| [`func_L01_00493F30`](pal/shared/func_L01_00493F30.c) | pal/shared | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
-| [`func_L01_004970E8`](pal/shared/func_L01_004970E8.c) | pal/shared | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
 | [`func_L01_0049CCA8`](pal/shared/func_L01_0049CCA8.c) | pal/shared | 60 | SIZE ours 64 / disc 60; bindings/semantics unapproved |
 | [`func_L01_004B0758`](pal/shared/func_L01_004B0758.c) | pal/shared | 152 | SIZE ours 144 / disc 152; bindings/semantics unapproved |
-| [`func_L01_004BDD90`](pal/shared/func_L01_004BDD90.c) | pal/shared | 40 | BYTES 10/40 (4 words differ); bindings/semantics unapproved |
-| [`func_L01_004C4550`](pal/shared/func_L01_004C4550.c) | pal/shared | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
-| [`func_L01_004C5CB8`](pal/shared/func_L01_004C5CB8.c) | pal/shared | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
-| [`func_L01_004C6828`](pal/shared/func_L01_004C6828.c) | pal/shared | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
-| [`func_L01_004E5630`](pal/l01_dreadzone_station/func_L01_004E5630.c) | pal/l01_dreadzone_station | 52 | BYTES 4/52 (1 words differ); bindings/semantics unapproved |
-| [`func_L01_004E56E8`](pal/l01_dreadzone_station/func_L01_004E56E8.c) | pal/l01_dreadzone_station | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
 | [`func_L01_004ED100`](pal/shared/func_L01_004ED100.c) | pal/shared | 124 | BYTES 9/124 (5 tail words differ); fallback allocation and return/store scheduling |
 | [`func_L01_004EF0A0`](pal/shared/func_L01_004EF0A0.c) | pal/shared | 52 | BYTES 9/52 (3 words differ); bindings/semantics unapproved |
 | [`func_L01_004EF0D8`](pal/shared/func_L01_004EF0D8.c) | pal/shared | 36 | BYTES 3/36 (3 words differ); bindings/semantics unapproved |
 | [`func_L01_004F5108`](pal/shared/func_L01_004F5108.c) | pal/shared | 180 | SIZE ours 188 / disc 180; bindings/semantics unapproved |
 | [`func_L01_004FF540`](pal/shared/func_L01_004FF540.c) | pal/shared | 132 | SIZE ours 128 / disc 132; bindings/semantics unapproved |
-| [`func_L01_0050E110`](pal/l01_dreadzone_station/func_L01_0050E110.c) | pal/l01_dreadzone_station | 236 | BYTES 101/236 (30 words differ); bindings/semantics unapproved |
 | [`func_L01_005270B0`](pal/shared/func_L01_005270B0.c) | pal/shared | 136 | BYTES 22/136 (8 words differ); bindings/semantics unapproved |
 | [`func_L01_00527138`](pal/shared/func_L01_00527138.c) | pal/shared | 100 | SIZE ours 96 / disc 100; bindings/semantics unapproved |
 | [`func_L01_005DCBD0`](pal/shared/func_L01_005DCBD0.c) | pal/shared | 44 | BYTES 10/44 (5 words differ); BYTES 9/44 (5 words differ); bindings/semantics unapproved |
@@ -393,10 +382,6 @@ The current `tools/nonmatching.py` generator covers the legacy table above, not 
 | [`func_L02_004CDEF8`](pal/shared/func_L02_004CDEF8.c) | pal/shared | 96 | BYTES 7/96 (6 words differ); bindings/semantics unapproved |
 | [`func_L02_004D1630`](pal/l02_catacrom_graveyard/func_L02_004D1630.c) | pal/l02_catacrom_graveyard | 36 | SIZE ours 32 / disc 36; bindings/semantics unapproved |
 | [`func_L05_00468540`](pal/shared/func_L05_00468540.c) | pal/shared | 44 | BYTES 16/44 (4 words differ); bindings/semantics unapproved |
-| [`func_L05_00494290`](pal/shared/func_L05_00494290.c) | pal/shared | 40 | BYTES 10/40 (4 words differ); bindings/semantics unapproved |
 | [`func_L05_004C3860`](pal/l05_dark_cathedral/func_L05_004C3860.c) | pal/l05_dark_cathedral | 36 | SIZE ours 32 / disc 36; bindings/semantics unapproved |
-| [`func_L05_004DD4D0`](pal/l05_dark_cathedral/func_L05_004DD4D0.c) | pal/l05_dark_cathedral | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
-| [`func_L05_004F4FB0`](pal/l05_dark_cathedral/func_L05_004F4FB0.c) | pal/l05_dark_cathedral | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
-| [`func_L10_004D6DB8`](pal/l10_torval_ruins/func_L10_004D6DB8.c) | pal/l10_torval_ruins | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
 | [`func_L41_003BDF18`](pal/l41_battledome_tower/func_L41_003BDF18.c) | pal/l41_battledome_tower | 56 | BYTES 3/56 (3 words differ); bindings/semantics unapproved |
 | [`func_L41_004475C0`](pal/l41_battledome_tower/func_L41_004475C0.c) | pal/l41_battledome_tower | 72 | BYTES 5/72 (3 words differ); bindings/semantics unapproved |
