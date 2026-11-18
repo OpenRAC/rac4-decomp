@@ -1,4 +1,4 @@
-/* Not matching yet: BYTES 16/200 (tools/try_func.py func_L00_00766300 --diff). Not part of the build. */
+/* Not matching yet: BYTES 9/196 (tools/try_func.py func_L00_00766300 --diff). Not part of the build. */
 typedef struct {
     s32 f0;
     s32 f4;
@@ -60,7 +60,7 @@ void func_L00_00766300(Outer *arg0) {
                 }
             }
         }
-        arg0->slot[0].f4 = 0;
-        arg0->slot[1].f4 = 0;
     }
+    arg0->slot[0].f4 = 0;
+    arg0->slot[1].f4 = 0;
 }

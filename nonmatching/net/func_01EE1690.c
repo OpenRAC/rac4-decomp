@@ -1,4 +1,4 @@
-/* Not matching yet: BYTES 20/200 (tools/try_func.py func_01EE1690 --diff). Not part of the build. */
+/* Not matching yet: BYTES 16/200 (tools/try_func.py func_01EE1690 --diff). Not part of the build. */
 /* cflags: @ee296 -O2 -G0 */
 #include "common.h"
 
@@ -7,23 +7,20 @@ extern Node *D_0016AC18;
 extern Node *D_0016AC1C;
 
 Node *func_01EE1690(Node *o) {
-    Node *n;
     Node *p;
 
     if (o == 0) {
         return 0;
     }
     if (o == D_0016AC1C) {
-        n = o->f4;
-        D_0016AC1C = n;
-        if (n == o) {
+        D_0016AC1C = o->f4;
+        if (o->f4 == o) {
             D_0016AC1C = 0;
         }
         p = o;
     } else if (o == D_0016AC18) {
-        n = o->f4;
-        D_0016AC18 = n;
-        if (n == o) {
+        D_0016AC18 = o->f4;
+        if (o->f4 == o) {
             D_0016AC18 = 0;
         }
         p = o;
