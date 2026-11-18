@@ -5,6 +5,7 @@ Best attempts at functions that do not match yet. They are not built; see
 
 | Function | Directory | Size | What differs |
 |---|---|---|---|
+| [`func_L00_00533D30`](pal/l00_multiplayer_menu/func_L00_00533D30.c) | pal/l00_multiplayer_menu | 216 | BYTES 13/216 (10 words differ). The loop allocates v0/v1 in the opposite order; signed nibble extraction, calls and size agree. |
 | [`func_00159718`](pal/core/func_00159718.c) | pal/core | 36 | PAL code and relocations match all 36 bytes. The native source name is already owned by src/core/00159718.c. |
 | [`func_01EED598`](pal/net/func_01EED598.c) | pal/net | 16 | PAL code and relocations match all 16 bytes. The native source name is already owned by src/net/01EED598.c. |
 | [`func_01EF587C`](pal/net/func_01EF587C.c) | pal/net | 16 | PAL code and relocations match all 16 bytes. The native source name is already owned by src/net/01EF587C.c. |
