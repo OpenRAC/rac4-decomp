@@ -78,7 +78,11 @@ to check a match against. Every name in `src/` is your own work
 
 ## Commits and pull requests
 
-- Small, focused commits: one function or one tool change.
+- One open match pull request per contributor at a time: keep adding commits to it rather than
+  opening one per small set of matches (AGENTS.md, "Pull requests: batch your matches").
+- Commits cluster related matches (a family of twins, one file, one level), 10 or more functions
+  each where possible; a tool change is its own commit. Prioritise clusters of 10+ when choosing
+  what to match.
 - Run the build, the audit and `tools/progress.py --check` (and `--version pal --check`) before
   pushing.
 - Commit messages: a short summary line, then an optional body. Add
