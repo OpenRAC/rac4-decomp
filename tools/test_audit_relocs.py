@@ -21,7 +21,7 @@ def words(*values):
 
 def checker(placements):
     result = audit.Checker.__new__(audit.Checker)
-    result.alias, result.ovl, result.lib_syms = {}, {}, {}
+    result.alias, result.ovl, result.lib_syms, result.main_copies = {}, {}, {}, {}
     result.mismatches, result.unresolved, result.checked = [], [], 0
     result.by_code = {"unique": 0, "twin": 0}
     result.place = placements.get
@@ -63,6 +63,9 @@ def shared_marker_object(*, split=True, wrong_callee=False, marker=MARKER):
 
 
 class FunctionSectionRelocationTests(unittest.TestCase):
+    def test_frontbin_function_name_resolves_to_its_address(self):
+        self.assertEqual(audit.name_addr("func_FB_00469328"), 0x00469328)
+
     def check(self, payload, placements):
         result = checker(placements)
         result.check_elf(ELFFile(BytesIO(payload)), Path("synthetic.o"), set(placements), set())

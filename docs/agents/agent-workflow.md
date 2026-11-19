@@ -75,7 +75,9 @@ only to compile.
    `tools/audit_relocs.py` (0 mismatches: it catches the wrong callees and
    globals the review missed) and `tools/match_map.py --write` plus
    `tools/progress.py --write` (each also `--version pal`), once, after
-   every worker has finished.
+   every worker has finished. For PAL-native `src/pal/` matches, run
+   `tools/audit_pal_relocs.py` after the PAL map update; the US relocation
+   audit skips those objects.
 6. Stage near misses: `wave.py stage`. The next tier starts from them:
    `wave.py plan q2 --near` gives each one's best attempt and what still
    differs; for the long ones, plan the named functions with

@@ -145,6 +145,28 @@ it and compares that with the address retail's instruction encodes. Fix every
 mismatch it reports in the C (the right `D_XXXXXXXX`, callee or case label)
 and build again. An overlay function counts in every level that contains it.
 
+The two audit scripts above check US source functions. For exact PAL-native C
+in `src/pal/`, update its PAL map row after compiling, then check the masked
+relocation targets separately:
+
+```
+venv/bin/python tools/match_map.py --version pal --update-native src/pal/.../SOURCE.c --check
+venv/bin/python tools/audit_pal_relocs.py func_LNN_XXXXXXXX
+```
+
+`tools/audit_pal_relocs.py` reads the exact `src/pal/` places from the PAL map,
+resolves calls to shared functions in the caller's level, and checks calls,
+global addresses, `$gp` accesses, literals and jump tables against the PAL
+dump. It reads PAL's `$gp` from the main ELF's `.reginfo` (PAL uses
+`0x2259FF`, versus US's `0x22597F`). It fails on a wrong target, an
+unresolved reference or a missing object.
+With no function names it checks every exact PAL-native function and requires
+the full `tools/build.sh` build. The PAL 49/49 assembly reference build does
+not compile the C sources, so it does not replace this check. Existing PAL
+sources may have masked reference mismatches; a full run reports those too.
+For a new batch, pass its function names and resolve every reported mismatch
+before landing it.
+
 If it does not match yet, keep it out of `src/`: see
 [`nonmatching.md`](nonmatching.md).
 
