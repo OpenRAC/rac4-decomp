@@ -1,4 +1,5 @@
-/* Not matching yet: SIZE ours 144 / retail 128 (tools/try_func.py func_L02_00405428 --diff). Not part of the build. */
+/* Not matching yet: BYTES 76/128 (tools/try_func.py func_L02_00405428 --diff). Not part of the build. */
+/* cflags: @ee296 -O2 -G8 */
 extern u8 D_0039D730[];
 extern u8 D_0039D748[];
 extern u8 D_0039D760[];

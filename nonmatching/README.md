@@ -100,6 +100,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L00_00541CF8`](l00_multiplayer_menu/func_L00_00541CF8.c) | l00_multiplayer_menu | 160 | BYTES 6/160 |
 | [`func_01F0B7E4`](net/func_01F0B7E4.c) | net | 180 | BYTES 7/180 |
 | [`func_L01_00432D58`](shared/func_L01_00432D58.c) | shared | 528 | BYTES 21/524 |
+| [`func_01EF09DC`](net/func_01EF09DC.c) | net | 124 | BYTES 5/124 |
 | [`func_L01_004414B0`](shared/func_L01_004414B0.c) | shared | 216 | BYTES 9/216 |
 | [`func_L00_00596268`](shared/func_L00_00596268.c) | shared | 144 | BYTES 6/140 |
 | [`func_004B0A00`](game/func_004B0A00.c) | game | 232 | BYTES 10/232 |
@@ -129,10 +130,12 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_004D2D30`](game/func_004D2D30.c) | game | 712 | BYTES 40/712 |
 | [`func_00476548`](pal/game/func_00476548.c) | pal/game | 176 | BYTES 10/176 (5 words differ); bindings/semantics unapproved |
 | [`func_L00_00774F80`](l00_multiplayer_menu/func_L00_00774F80.c) | l00_multiplayer_menu | 144 | BYTES 8/140 (default profile -- which is what every neighbour of this |
+| [`func_L01_004FDD30`](shared/func_L01_004FDD30.c) | shared | 144 | BYTES 8/140 |
 | [`func_0046EAC8`](game/func_0046EAC8.c) | game | 264 | BYTES 15/260 |
 | [`func_L00_00533D30`](pal/l00_multiplayer_menu/func_L00_00533D30.c) | pal/l00_multiplayer_menu | 216 | BYTES 13/216 (10 words differ). The loop allocates v0/v1 in the opposite order; signed nibble extraction, calls and size agree. |
 | [`func_004CCDC0`](game/func_004CCDC0.c) | game | 176 | BYTES 11/176 |
 | [`func_01EBF9D0`](net/func_01EBF9D0.c) | net | 128 | BYTES 8/128 |
+| [`func_01EEDF50`](net/func_01EEDF50.c) | net | 144 | BYTES 9/144 |
 | [`func_L00_006EE740`](shared/func_L00_006EE740.c) | shared | 48 | BYTES 3/48 |
 | [`func_L01_0049A8F0`](shared/func_L01_0049A8F0.c) | shared | 208 | BYTES 13/208 |
 | [`func_01EF73F0`](net/func_01EF73F0.c) | net | 156 | BYTES 10/156 |
@@ -169,6 +172,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L01_003CF4F0`](shared/func_L01_003CF4F0.c) | shared | 144 | BYTES 12/144 |
 | [`func_L01_004EF0D8`](pal/shared/func_L01_004EF0D8.c) | pal/shared | 36 | BYTES 3/36 (3 words differ); bindings/semantics unapproved |
 | [`func_L01_004330A8`](shared/func_L01_004330A8.c) | shared | 528 | BYTES 45/524 |
+| [`func_004B8B20`](game/func_004B8B20.c) | game | 104 | BYTES 9/104 |
 | [`func_L05_004F24B0`](shared/func_L05_004F24B0.c) | shared | 104 | BYTES 9/104 |
 | [`func_01E9A590`](net/func_01E9A590.c) | net | 136 | BYTES 12/136 |
 | [`func_01EE676C`](net/func_01EE676C.c) | net | 112 | BYTES 10/112 |
@@ -189,6 +193,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_01EF0ADC`](net/func_01EF0ADC.c) | net | 56 | BYTES 6/56 |
 | [`func_004C34D8`](game/func_004C34D8.c) | game | 712 | BYTES 77/712 |
 | [`func_0012E918`](core/func_0012E918.c) | core | 92 | BYTES 10/92 |
+| [`func_0012E4A8`](core/func_0012E4A8.c) | core | 160 | BYTES 18/160 |
 | [`func_004CB0F0`](game/func_004CB0F0.c) | game | 88 | BYTES 10/88 |
 | [`func_L00_0075CC38`](l00_multiplayer_menu/func_L00_0075CC38.c) | l00_multiplayer_menu | 176 | BYTES 20/176 |
 | [`func_L00_0074C440`](pal/l00_multiplayer_menu/func_L00_0074C440.c) | pal/l00_multiplayer_menu | 120 | BYTES 14/120 (6 words differ); continuation schedule and field-address folding unresolved |
@@ -204,6 +209,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L00_006FAC10`](pal/shared/func_L00_006FAC10.c) | pal/shared | 300 | BYTES 38/300 (18 words differ); bindings/semantics unapproved |
 | [`func_L01_00591730`](shared/func_L01_00591730.c) | shared | 112 | BYTES 14/108 |
 | [`func_L00_0067FB70`](shared/func_L00_0067FB70.c) | shared | 512 | BYTES 67/508 |
+| [`func_L00_007034B8`](shared/func_L00_007034B8.c) | shared | 136 | BYTES 18/136 |
 | [`func_001614C0`](core/func_001614C0.c) | core | 104 | BYTES 14/104 |
 | [`func_L01_00494FF0`](shared/func_L01_00494FF0.c) | shared | 96 | BYTES 13/96 |
 | [`func_L01_004EF298`](shared/func_L01_004EF298.c) | shared | 496 | BYTES 68/496. Both 68 (p33) and 85 (p18) need -fno-thread-jumps, which |
@@ -221,7 +227,9 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_01EFB098`](net/func_01EFB098.c) | net | 144 | BYTES 22/144 |
 | [`func_01EBCFD8`](net/func_01EBCFD8.c) | net | 140 | BYTES 21/136 |
 | [`func_L41_0044C720`](shared/func_L41_0044C720.c) | shared | 272 | BYTES 42/272 |
+| [`func_01ECFE78`](net/func_01ECFE78.c) | net | 148 | BYTES 23/148 |
 | [`func_L01_005AC9D0`](shared/func_L01_005AC9D0.c) | shared | 280 | BYTES 44/280 |
+| [`func_01F087F8`](net/func_01F087F8.c) | net | 144 | BYTES 23/144 |
 | [`func_L01_005270B0`](pal/shared/func_L01_005270B0.c) | pal/shared | 136 | BYTES 22/136 (8 words differ); bindings/semantics unapproved |
 | [`func_L01_004EFF68`](shared/func_L01_004EFF68.c) | shared | 120 | BYTES 19/116 |
 | [`func_004954E0`](game/func_004954E0.c) | game | 56 | BYTES 8/48 |
@@ -233,10 +241,12 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L00_0071BEB8`](l00_multiplayer_menu/func_L00_0071BEB8.c) | l00_multiplayer_menu | 328 | BYTES 59/328 (24 words differ) |
 | [`func_L00_0051C9C8`](l00_multiplayer_menu/func_L00_0051C9C8.c) | l00_multiplayer_menu | 192 | BYTES 35/192 (@ee29, first at retail size; was SIZE 176/192) |
 | [`func_L01_005BAEC0`](shared/func_L01_005BAEC0.c) | shared | 168 | BYTES 30/164 |
+| [`func_L01_0054D320`](shared/func_L01_0054D320.c) | shared | 128 | BYTES 24/128 |
 | [`func_L41_004463A8`](shared/func_L41_004463A8.c) | shared | 112 | BYTES 21/112 |
 | [`func_L00_0053C320`](l00_multiplayer_menu/func_L00_0053C320.c) | l00_multiplayer_menu | 88 | BYTES 16/84 |
 | [`func_L01_0045BA88`](shared/func_L01_0045BA88.c) | shared | 168 | BYTES 32/168 |
 | [`func_L00_006F7E18`](shared/func_L00_006F7E18.c) | shared | 1440 | BYTES 276/1440 |
+| [`func_01EFB300`](net/func_01EFB300.c) | net | 140 | BYTES 27/140 |
 | [`func_00128310`](core/func_00128310.c) | core | 56 | BYTES 11/56 (@ee29, MMIO SIO poll; excluded by policy) |
 | [`func_0014A150`](core/func_0014A150.c) | core | 132 | BYTES 26/132 |
 | [`func_L00_005E0ED0`](shared/func_L00_005E0ED0.c) | shared | 136 | BYTES 26/132 |
@@ -252,6 +262,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L01_005DCBD0`](pal/shared/func_L01_005DCBD0.c) | pal/shared | 44 | BYTES 10/44 (5 words differ); BYTES 9/44 (5 words differ); bindings/semantics unapproved |
 | [`func_L01_00444D00`](pal/shared/func_L01_00444D00.c) | pal/shared | 152 | BYTES 35/152 (19 words differ); bindings/semantics unapproved |
 | [`func_L01_0044B170`](pal/shared/func_L01_0044B170.c) | pal/shared | 168 | BYTES 39/168 (12 words differ); bindings/semantics unapproved |
+| [`func_L01_0056D748`](shared/func_L01_0056D748.c) | shared | 144 | BYTES 33/140 |
 | [`func_004F2268`](game/func_004F2268.c) | game | 88 | BYTES 21/88 |
 | [`func_01F0B3D0`](net/func_01F0B3D0.c) | net | 168 | BYTES 41/168 |
 | [`func_L00_00554030`](l00_multiplayer_menu/func_L00_00554030.c) | l00_multiplayer_menu | 32 | BYTES 8/32 |
@@ -304,6 +315,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_00128250`](core/func_00128250.c) | core | 188 | SIZE ours 192 / retail 188 |
 | [`func_0012D4E8`](core/func_0012D4E8.c) | core | 64 | SIZE ours 56 / retail 64 |
 | [`func_0012E370`](core/func_0012E370.c) | core | 124 | SIZE ours 160 / retail 124 (@ee29, MMIO EE timer; excluded by policy) |
+| [`func_0012EB98`](core/func_0012EB98.c) | core | 168 | SIZE ours 160 / retail 168 |
 | [`func_00137178`](core/func_00137178.c) | core | 84 | SIZE ours 64 / retail 84 |
 | [`func_0013EEB0`](core/func_0013EEB0.c) | core | 140 | SIZE ours 132 / disc 140 |
 | [`func_0013EF40`](core/func_0013EF40.c) | core | 148 | SIZE ours 144 / disc 148 |
@@ -318,6 +330,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_001559E0`](core/func_001559E0.c) | core | 36 | SIZE 60/36 (tail-call form; tools/try_func.py func_001559E0 build/try/func_001559E0/p1.c --diff) |
 | [`func_00159570`](core/func_00159570.c) | core | 56 | SIZE ours 44 / retail 56 |
 | [`func_00159718`](pal/core/func_00159718.c) | pal/core | 36 | PAL code and relocations match all 36 bytes. The native source name is already owned by src/core/00159718.c. |
+| [`func_0015E718`](core/func_0015E718.c) | core | 144 | SIZE ours 136 / retail 144 |
 | [`func_003FE788`](pal/game/func_003FE788.c) | pal/game | 68 | SIZE 64/68; typed pointer-entry loop; native internal NOP and branch layout remain |
 | [`func_003FE980`](pal/game/func_003FE980.c) | pal/game | 104 | 14/26 (53.85%) relocation-masked positional words; 104/104 candidate/target bytes. The matched callees forward eight registers; remaining call inputs are unspecified. |
 | [`func_003FF720`](pal/game/func_003FF720.c) | pal/game | 104 | 21/26 (80.77%) relocation-masked positional words; 104/104 candidate/target bytes. The D_003CCEC0 pointee and owner are unknown. |
@@ -377,6 +390,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_01F04BF0`](net/func_01F04BF0.c) | net | 60 | SIZE ours 56 / retail 60 |
 | [`func_01F04C40`](net/func_01F04C40.c) | net | 52 | SIZE ours 48 / retail 52 |
 | [`func_01F07320`](pal/net/func_01F07320.c) | pal/net | 140 | SIZE ours 136 / disc 140; bindings/semantics unapproved |
+| [`func_01F073AC`](net/func_01F073AC.c) | net | 172 | SIZE ours 164 / retail 172 |
 | [`func_01F09B50`](pal/net/func_01F09B50.c) | pal/net | 108 | 25/27 (92.59%) relocation-masked positional words; 108/108 candidate/target bytes. Branch-likely instructions differ; return declaration, global allocation and input bounds remain unproved. |
 | [`func_01F0BF70`](pal/net/func_01F0BF70.c) | pal/net | 108 | 17/27 (62.96%) relocation-masked positional words; 108/108 candidate/target bytes. Wrapper return ABI and -O1 recipe remain unproved. |
 | [`func_01F0C22C`](pal/net/func_01F0C22C.c) | pal/net | 96 | 21/24 (87.50%) relocation-masked positional words; 96/96 candidate/target bytes. Global storage and the indirect method ABI remain unknown. |
@@ -450,6 +464,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L05_004C3860`](pal/l05_dark_cathedral/func_L05_004C3860.c) | pal/l05_dark_cathedral | 36 | SIZE ours 32 / disc 36; bindings/semantics unapproved |
 | [`func_L05_004DF3B8`](shared/func_L05_004DF3B8.c) | shared | 280 | SIZE ours 296 / retail 280 |
 | [`func_L06_004013F0`](shared/func_L06_004013F0.c) | shared | 112 | SIZE ours 120 / retail 112 |
+| [`func_L08_003E74D0`](shared/func_L08_003E74D0.c) | shared | 168 | SIZE ours 164 / retail 168 |
 | [`func_L15_004DD590`](shared/func_L15_004DD590.c) | shared | 200 | SIZE ours 192 / retail 200 |
 | [`func_L41_003E3370`](pal/l41_battledome_tower/func_L41_003E3370.c) | pal/l41_battledome_tower | 92 | 13/23 (56.52%) relocation-masked positional words; 96/92 candidate/target bytes. Global and argument types are hypotheses. |
 | [`func_L41_00441E90`](pal/l41_battledome_tower/func_L41_00441E90.c) | pal/l41_battledome_tower | 152 | 34/38 (89.47%) relocation-masked positional words; 152/152 candidate/target bytes. Global ownership and return type remain unproved. |
