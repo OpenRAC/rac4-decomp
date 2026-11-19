@@ -1,4 +1,5 @@
-/* Not matching yet: SIZE ours 128 / retail 136 (tools/try_func.py func_0049A218 --diff). Not part of the build. */
+/* Not matching yet: BYTES 20/136 (tools/try_func.py func_0049A218 --diff). Not part of the build. */
+/* cflags: -malign-loops=4 */
 #include "common.h"
 
 typedef struct Entry {
@@ -22,9 +23,7 @@ void func_0049A218(void)
 
     func_00453608(D_306D20, 0, 0x40);
     func_00453608(D_221578, 0, 0xC);
-    base = (s32)D_003D8DE0;
-    p = base;
-    end = base + 0x84;
+    base = (s32)D_003D8DE0; end = base + 0x84; p = base;
     do {
         fn = *(void (**)(void))p;
         if (fn != NULL) {
