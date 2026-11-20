@@ -1,4 +1,3 @@
-/* Not matching yet: BYTES 14/168 (tools/try_func.py func_L08_003E74D0 --diff). Not part of the build. */
 /* cflags: -O2 -G8 */
 #include "common.h"
 
@@ -19,7 +18,7 @@ s32 func_L08_003E74D0(u8 *arg0) {
         if (temp_a0 != -1) {
             goto state1;
         }
-        if (temp_v1[3] != (s32) arg0) {
+        if (temp_v1[3] != temp_a0) {
             goto state1;
         }
     }

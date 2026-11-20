@@ -1,14 +1,15 @@
-/* Not matching yet: BYTES 8/140 (tools/try_func.py func_L01_004FDD30 --diff). Not part of the build. */
+#include "common.h"
+
 extern void func_L00_005B0038(void *, void *, s32);
-extern s32 func_L01_004FDCE0(void);
+extern s32 func_L01_004FDCE0();
 extern void func_L01_004FDE88(void);
 extern s32 D_222A98;
 
 void func_L01_004FDD30(s32 arg0, u8 *arg1) {
-    u8 *p;
     u8 v;
+    u8 *p;
 
-    if (func_L01_004FDCE0() != 0) {
+    if (func_L01_004FDCE0(arg0) != 0) {
         if (arg1[0x26E] != 0) {
             arg1[0x26E]--;
             p = arg1 + 0x282;

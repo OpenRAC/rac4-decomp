@@ -1,5 +1,5 @@
-/* Not matching yet: BYTES 62/100 (tools/try_func.py func_L10_004D5430 --diff). Not part of the build. */
-extern void func_L00_005B0038(void *, void *, s32);
+/* Not matching yet: BYTES 57/100 (tools/try_func.py func_L10_004D5430 --diff). Not part of the build. */
+/* cflags: -fno-schedule-insns2 */
 extern void func_L10_004D4CF0(void);
 extern u8 D_222698[];
 

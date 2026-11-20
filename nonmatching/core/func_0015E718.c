@@ -1,4 +1,4 @@
-/* Not matching yet: BYTES 17/144 (tools/try_func.py func_0015E718 --diff). Not part of the build. */
+/* Not matching yet: BYTES 8/144 (tools/try_func.py func_0015E718 --diff). Not part of the build. */
 #include "common.h"
 
 typedef struct {
@@ -44,8 +44,8 @@ void func_0015E718(void) {
         D_0021DFF0 = 0;
     }
     func_0011A518(D_2124F0, 0, 0x1C4);
-    i = 9;
     base = D_01F31380;
+    i = 9;
     p = &base[9].f4;
     do {
         *p = 0;
@@ -53,8 +53,8 @@ void func_0015E718(void) {
         p = (s32 *)((u8 *)p - 0xAD0);
     } while (i >= 0);
     D_0021DFEC = 0;
-    D_00172160.f640 = 0;
     D_00172160.f48C = 0;
     D_00172160.f484 = 0;
     D_00172160.f195 = 0;
+    D_00172160.f640 = 0;
 }
