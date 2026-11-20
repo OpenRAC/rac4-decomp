@@ -1,4 +1,4 @@
-/* Not matching yet: BYTES 23/144 (tools/try_func.py func_01F087F8 --diff). Not part of the build. */
+/* Not matching yet: BYTES 22/144 (tools/try_func.py func_01F087F8 --diff). Not part of the build. */
 /* cflags: -fno-strength-reduce */
 extern void func_01EEA034(s32);
 extern s32 func_01EEE13C(void);
@@ -16,7 +16,7 @@ void func_01F087F8(s32 arg0, s32 arg1) {
         var_s2 = 1;
         func_01F088BC(arg0, 0);
         do {
-            temp_s0 = (s32 *)(arg0 + 8 + var_s3);
+            temp_s0 = (s32 *)(var_s3 + (s32)(arg0 + 8));
             var_s3 += 0x18;
             if (*temp_s0 != 0) {
                 func_01EF0550(func_01EEE13C(), *temp_s0);

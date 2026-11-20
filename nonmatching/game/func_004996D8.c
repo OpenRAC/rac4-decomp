@@ -1,4 +1,5 @@
-/* Not matching yet: BYTES 30/184 (tools/try_func.py func_004996D8 --diff). Not part of the build. */
+/* Not matching yet: BYTES 18/184 (tools/try_func.py func_004996D8 --diff). Not part of the build. */
+/* cflags: -fno-schedule-insns2 -O3 */
 #include "common.h"
 
 typedef struct Type2 {
@@ -39,7 +40,7 @@ void func_004996D8(s32 arg0, s32 arg1) {
             }
         }
         D_0021F5F0 = 0;
-        D_002F3BD0.count--;
         D_002F3BD0.head = (D_002F3BD0.head + 1) % 8;
+        D_002F3BD0.count--;
     }
 }

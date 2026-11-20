@@ -1,4 +1,4 @@
-/* Not matching yet: SIZE ours 188 / retail 200 (tools/try_func.py func_L00_007105E0 --diff). Not part of the build. */
+/* Not matching yet: BYTES 9/196 (tools/try_func.py func_L00_007105E0 --diff). Not part of the build. */
 /* cflags: -G0 */
 #include "common.h"
 
@@ -16,31 +16,21 @@ extern s32 D_00220B60[];
 extern Type1 D_003B1738[];
 extern s32 D_003F41B8[];
 
-s32 func_L00_007105E0(s32 arg0, s32 arg1) {
-    s32 var_s0;
-    s32 *var_s2;
-    s32 *var_s3;
+s32 func_L00_007105E0(s32 arg0, u8 *arg1) {
     s32 var_s1;
     s32 var_s4;
     s32 buf;
 
-    var_s0 = arg1 + 0x1B;
     var_s1 = 0;
     var_s4 = 1;
     func_L00_007106C0();
-    var_s3 = D_003F41B8;
-    var_s2 = (s32 *)((char *)D_003B1738 + 0xC);
-    do {
-        if (func_0011D9A8((void *)var_s0, (const char *)D_00220B60, &buf) == 1) {
-            var_s0 += 9;
-            *var_s3 = buf;
-            *var_s2 = buf;
+    for (; var_s4 != 0 && var_s1 < 5; var_s1++) {
+        if (func_0011D9A8((void *)&arg1[0x1B + var_s1 * 9], (const char *)D_00220B60, &buf) == 1) {
+            D_003F41B8[var_s1] = buf;
+            D_003B1738[var_s1].fC = buf;
         } else {
             var_s4 = 0;
         }
-        var_s3++;
-        var_s2 = (s32 *)((char *)var_s2 + 0x2C);
-        var_s1++;
-    } while (var_s4 != 0 && var_s1 < 5);
+    }
     return 2;
 }

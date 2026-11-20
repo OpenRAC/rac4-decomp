@@ -1,5 +1,5 @@
-/* Not matching yet: SIZE ours 172 / retail 160 (tools/try_func.py func_01ED8338 --diff). Not part of the build. */
-/* cflags: -O3 -G0 */
+/* Not matching yet: BYTES 45/160 (tools/try_func.py func_01ED8338 --diff). Not part of the build. */
+/* cflags: @ee296 -O2 -G8 -mno-split-addresses */
 extern void func_0011A518(void *, s32, s32);
 extern s32 func_01ED78C8(void *, s32, void *);
 extern void func_01ED8278(void *, s32, s32, s32);
