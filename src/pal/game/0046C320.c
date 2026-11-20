@@ -91,11 +91,11 @@ typedef struct Moby {
     s16 xBC;
 } Moby;
 
-extern u8 D_00249450[];
-extern s16 D_00249170[];
-extern s32 D_0024BC50[];
-extern s32 D_00248CC0[];
-extern Cls *D_00248900[];
+extern u8 D_00243850[];
+extern s16 D_00243570[];
+extern s32 D_00246050[];
+extern s32 D_002430C0[];
+extern Cls *D_00242D00[];
 
 void func_004701A8(void);
 void func_0046FD28(Moby *m);
@@ -126,7 +126,7 @@ void func_0046C320(Moby *m, s32 id, s32 flag) {
     keep = m->x2D;
     func_00453E20(m, 0, 0x100);
     m->x2D = keep;
-    t = D_00249450[id];
+    t = D_00243850[id];
     m->xBC = id;
     m->x2C = ff;
     m->x21 = ff;
@@ -145,21 +145,21 @@ void func_0046C320(Moby *m, s32 id, s32 flag) {
     m->xA4 = 0x7F;
     m->xA5 = 0x7F;
     func_0046E380(m);
-    if (D_00249170[m->x22] != id) {
+    if (D_00243570[m->x22] != id) {
         m->x24 = 0;
         m->x34 |= 0x45;
         m->x98 = 0;
-        m->xA8 = D_0024BC50[m->x22];
+        m->xA8 = D_00246050[m->x22];
         if (m->xA8 == 0) {
             m->x34 |= 2;
         }
         return;
     }
-    m->xA8 = D_00248CC0[m->x22];
+    m->xA8 = D_002430C0[m->x22];
     if (m->xA8 == 0) {
         m->x34 |= 2;
     }
-    c = D_00248900[m->x22];
+    c = D_00242D00[m->x22];
     m->x24 = c;
     e = c->xE;
     m->x64 = e;

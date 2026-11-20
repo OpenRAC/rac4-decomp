@@ -20,9 +20,9 @@ typedef struct {
     Type1 f2D7C[4];
 } Type2;
 
-extern f32 func_004725D8(f32 a0, f32 a1);
-extern s32 func_00512610(Type2 *p);
-extern s32 D_0021EDD4;
+extern f32 func_00472EB8(f32 a0, f32 a1);
+extern s32 func_005136E8(Type2 *p);
+extern s32 D_0021EE54;
 
 s32 func_005230A8(Type2 *p, s32 *out)
 {
@@ -42,8 +42,8 @@ s32 func_005230A8(Type2 *p, s32 *out)
     if (p->f2318 == 2) {
         return 0;
     }
-    if (D_0021EDD4 != 1) {
-        if (func_00512610(p) != 0) {
+    if (D_0021EE54 != 1) {
+        if (func_005136E8(p) != 0) {
             *out = 3;
             if (p->f2D7C[3].f8 != 0) {
                 return 0;
@@ -51,7 +51,7 @@ s32 func_005230A8(Type2 *p, s32 *out)
             if (!(p->f648 & 2)) {
                 return 0;
             }
-            return func_004725D8(0.0f, 1.0f) < 0.33f;
+            return func_00472EB8(0.0f, 1.0f) < 0.33f;
         }
     }
     for (i = 0; i < 4; i++) {
@@ -66,7 +66,7 @@ s32 func_005230A8(Type2 *p, s32 *out)
     for (i = 0; i < n; i++) {
         sum += 1.0f / (f32)(s32)(p->f2D7C[idx[i]].f0 * 50.0f);
     }
-    lim = func_004725D8(0.0f, 1.0f);
+    lim = func_00472EB8(0.0f, 1.0f);
     if (lim < sum) {
         for (i = 0; i < n; i++) {
             *out = idx[i];
