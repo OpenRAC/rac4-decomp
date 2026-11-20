@@ -62,7 +62,7 @@ from elftools.elf.elffile import ELFFile  # noqa: E402
 ROOT = mp.ROOT
 GP = 0x22597F
 R_32, R_26, R_HI16, R_LO16, R_GPREL16, R_LITERAL = 2, 4, 5, 6, 7, 8
-NAME = re.compile(r"(?:func|D|jtbl)_(?:L\d\d_)?([0-9A-Fa-f]{6,8})(?:_|__gp|__lui)?")
+NAME = re.compile(r"(?:func|D|jtbl)_(?:L\d\d_|FB_)?([0-9A-Fa-f]{6,8})(?:_|__gp|__lui)?")
 
 
 def sext16(v):
@@ -186,6 +186,7 @@ class Checker:
 
     def check_elf(self, elf, path, exact, only):
         """Check a relocatable object, keeping section-relative offsets distinct."""
+        gp = getattr(self, "gp", GP)
         symtab = elf.get_section_by_name(".symtab")
         sec_names = [s.name for s in elf.iter_sections()]
         syms = list(symtab.iter_symbols())
@@ -302,14 +303,14 @@ class Checker:
                     report(f, off, "HI16/LO16", sym, resolve(sym, a), ret)
                 elif typ == R_GPREL16:
                     a = sext16(w & 0xFFFF) + (gp0 if isinstance(sym["st_shndx"], int) else 0)
-                    report(f, off, "GPREL16", sym, resolve(sym, a), (GP + sext16(rw & 0xFFFF)) & 0xFFFFFFFF)
+                    report(f, off, "GPREL16", sym, resolve(sym, a), (gp + sext16(rw & 0xFFFF)) & 0xFFFFFFFF)
                 elif typ == R_LITERAL:
                     # GNU as places li.s/li.d constants in a local literal pool.
                     # Check the value, as well as consistent placement of that pool.
                     shn = sym["st_shndx"]
                     width = {0x31: 4, 0x35: 8}.get(w >> 26)  # lwc1, ldc1
                     a = sext16(w & 0xFFFF) + gp0
-                    ret = (GP + sext16(rw & 0xFFFF)) & 0xFFFFFFFF
+                    ret = (gp + sext16(rw & 0xFFFF)) & 0xFFFFFFFF
                     if (width is None or not isinstance(shn, int)
                             or sym["st_info"]["type"] != "STT_SECTION"):
                         report(f, off, "LITERAL", sym, None, ret)
