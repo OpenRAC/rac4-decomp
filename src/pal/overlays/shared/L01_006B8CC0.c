@@ -29,7 +29,7 @@ typedef struct Type1 {
 } Type1;
 
 extern s32 D_0021DE3C;
-extern s32 D_0021E824;
+extern s32 D_0021E8A4;
 extern s32 D_0021E8A8;
 extern Type3 *D_003660F8[];
 s32 func_L00_005A1078(void);
@@ -62,7 +62,7 @@ s32 func_L01_006B8CC0(Type1 *arg0, s32 arg1, s32 arg2) {
         return 0;
     }
     obj = func_0053E038(arg0);
-    mode = D_0021E824;
+    mode = D_0021E8A4;
     if (!obj) {
         return 0;
     }

@@ -1,9 +1,9 @@
 #include "common.h"
 
-extern f32 func_L00_005FCB68(u8 *);
+extern f32 func_00484F68(u8 *);
 
 s32 func_00484F88(u8 *moby, f32 value) {
-    f32 cur = func_L00_005FCB68(moby);
+    f32 cur = func_00484F68(moby);
     f32 len = *(f32 *)(moby + 0x48);
     s32 v = (s32)(value * 4096.0f + 0.5f);
     s32 lo = (s32)(cur * 4096.0f + 0.5f);

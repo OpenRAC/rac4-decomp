@@ -2,7 +2,7 @@
 typedef struct { char a[0x20]; unsigned char state; char b[0x8b]; void *data; char c[0xe]; unsigned char flags; } Obj;
 typedef struct { char a[0x128]; int count; float rate; float value; } Data;
 extern int func_L05_003E6D78(Obj *);
-extern int func_L00_005DF8D8(Obj *);
+extern int func_L05_003E6DC0(Obj *);
 extern int func_L05_003E70D0(Obj *);
 extern void func_004E2EF0(int,int,Obj *);
 extern int func_00453CE8(int *);
@@ -15,7 +15,7 @@ static inline int enter(Obj *o) { if ((o->flags ^ 1) & 1) { o->flags |= 1; retur
 void func_L05_003E6AE0(Obj *o) {
  Data *d = (Data *)o->data;
  if (func_L05_003E6D78(o)) return;
- if (func_L00_005DF8D8(o)) return;
+ if (func_L05_003E6DC0(o)) return;
  switch(o->state) {
  case 1:
   if (enter(o)) d->value=0.0f;

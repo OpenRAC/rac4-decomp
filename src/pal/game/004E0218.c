@@ -21,7 +21,7 @@ typedef struct Dat {
     s32 x0;
 } Dat;
 
-extern u32 *D_00222FE0;
+extern u32 *D_00221F20;
 extern u8 D_00171760[];
 typedef struct B { s32 x0; s32 x4; s32 x8; } B;
 extern B D_001DFD70[];
@@ -51,11 +51,11 @@ void func_004E0218(Hdr *h) {
     func_004E07A8();
     e = h->e;
     flags = (u8 *)0x70003F00;
-    D_00222FE0[0] = 0x30000007;
-    D_00222FE0[1] = (u32)D_00171760;
-    D_00222FE0[2] = 0;
-    D_00222FE0[3] = 0x50000007;
-    D_00222FE0 += 4;
+    D_00221F20[0] = 0x30000007;
+    D_00221F20[1] = (u32)D_00171760;
+    D_00221F20[2] = 0;
+    D_00221F20[3] = 0x50000007;
+    D_00221F20 += 4;
     for (i = 0; i < *(s16 *)h; i++, e++, flags++) {
         if (*flags == 0) {
             b = e->x10 + e->x1C;

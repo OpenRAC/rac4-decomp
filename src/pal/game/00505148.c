@@ -32,7 +32,7 @@ extern void func_005052C0(s32);
 extern s32 func_005052C8(void);
 extern s32 func_00500980(void *, u32);
 extern void *func_0015DB90(u32, void *);
-extern Object *func_0050EB78(void *);
+extern Object *func_0050DD30(void *);
 extern s32 func_00501618(void *, Object *, u32);
 
 static inline Manager *get_manager(void)
@@ -66,7 +66,7 @@ s32 func_00505148(u32 key)
         allocator = func_00502218(get_manager(), 0x4);
         block = allocator->vtable->allocate(allocator, size);
         if (block != NULL) {
-            object = func_0050EB78(func_0015DB90(0x208, block));
+            object = func_0050DD30(func_0015DB90(0x208, block));
             result = func_00501618(entry, object, key) != 0;
             if (!result) {
                 object->vtable->destroy(object, 2);
