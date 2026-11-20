@@ -5,6 +5,9 @@ Best attempts at functions that do not match yet. They are not built; see
 
 | Function | Directory | Size | What differs |
 |---|---|---|---|
+| [`func_L00_00521470`](pal/l00_multiplayer_menu/func_L00_00521470.c) | pal/l00_multiplayer_menu | 60 | 13/15 (86.67%) relocation-masked positional words; 52/60 candidate/target bytes. Trailing words and callback contract remain unresolved. |
+| [`func_L00_005214C0`](pal/l00_multiplayer_menu/func_L00_005214C0.c) | pal/l00_multiplayer_menu | 60 | 13/15 (86.67%) relocation-masked positional words; 52/60 candidate/target bytes. Trailing words and callback contract remain unresolved. |
+| [`func_L00_00521510`](pal/l00_multiplayer_menu/func_L00_00521510.c) | pal/l00_multiplayer_menu | 60 | 13/15 (86.67%) relocation-masked positional words; 52/60 candidate/target bytes. Trailing words and callback contract remain unresolved. |
 | [`func_01EE99A0`](pal/net/func_01EE99A0.c) | pal/net | 208 | 42/52 (80.77%) relocation-masked positional words; 208/208 candidate/target bytes. Scheduling, registers, signatures and layouts remain unresolved. |
 | [`func_L00_00715F50`](pal/l00_multiplayer_menu/func_L00_00715F50.c) | pal/l00_multiplayer_menu | 108 | 12/27 (44.44%) relocation-masked positional words; 108/108 candidate/target bytes. Instruction order, registers, signature and layouts remain unresolved. |
 | [`func_01EF28AC`](pal/net/func_01EF28AC.c) | pal/net | 400 | 94/100 (94.00%) relocation-masked positional words; 400/400 candidate/target bytes. Register allocation, signatures and layouts remain unresolved. |
