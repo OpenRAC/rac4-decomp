@@ -1,4 +1,4 @@
-/* Not matching yet: SIZE ours 136 / retail 144 (tools/try_func.py func_0015E718 --diff). Not part of the build. */
+/* Not matching yet: BYTES 17/144 (tools/try_func.py func_0015E718 --diff). Not part of the build. */
 #include "common.h"
 
 typedef struct {
@@ -34,6 +34,7 @@ s32 D_0021DFF0 = 0;
 s32 D_0021DFEC = 0;
 
 void func_0015E718(void) {
+    S1 *base;
     s32 *p;
     s32 i;
 
@@ -44,7 +45,8 @@ void func_0015E718(void) {
     }
     func_0011A518(D_2124F0, 0, 0x1C4);
     i = 9;
-    p = &D_01F31380[9].f4;
+    base = D_01F31380;
+    p = &base[9].f4;
     do {
         *p = 0;
         i--;

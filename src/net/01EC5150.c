@@ -1,5 +1,6 @@
-/* Not matching yet: SIZE ours 172 / retail 168 (tools/try_func.py func_01EC5150 --diff). Not part of the build. */
 /* cflags: @ee32-040921 -O2 -G0 */
+#include "common.h"
+
 typedef struct Node_s {
     s32 unk0;
     s32 pad4;
@@ -12,19 +13,20 @@ typedef struct Node_s {
 extern s32 func_01EC52B8(s32 arg0);
 
 s32 func_01EC5150(Node *arg0) {
-    u32 i = 0;
-    void **p;
+    u32 i;
     void *temp;
 
-    if (arg0 == 0 || (u32)arg0->unk8 < 2) {
+    if (arg0 == 0) {
+        return 0;
+    }
+    if ((u32)arg0->unk8 < 2) {
         return 0;
     }
     if (func_01EC52B8(arg0->unk9C) == 0) {
         return 0;
     }
-    p = arg0->unk94;
-    while (1) {
-        temp = *p++;
+    for (i = 0; i < 2; i++) {
+        temp = arg0->unk94[i];
         if (temp != 0) {
             if (arg0->unk0 != ((Node *)temp)->unk8) {
                 return 0;
@@ -32,9 +34,6 @@ s32 func_01EC5150(Node *arg0) {
             if (func_01EC52B8(temp) == 0) {
                 return 0;
             }
-        }
-        if (++i >= 2) {
-            break;
         }
     }
     return 1;

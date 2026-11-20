@@ -1,4 +1,4 @@
-/* Not matching yet: BYTES 6/96 (tools/try_func.py func_0015F298 --diff). Not part of the build. */
+/* cflags: -O2 -G8 -fno-schedule-insns */
 #include "common.h"
 
 typedef struct {
