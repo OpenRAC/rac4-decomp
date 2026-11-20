@@ -5,6 +5,8 @@ Best attempts at functions that do not match yet. They are not built; see
 
 | Function | Directory | Size | What differs |
 |---|---|---|---|
+| [`func_01EF28AC`](pal/net/func_01EF28AC.c) | pal/net | 400 | 94/100 (94.00%) relocation-masked positional words; 400/400 candidate/target bytes. Register allocation, signatures and layouts remain unresolved. |
+| [`func_L05_004C3700`](pal/l05_dark_cathedral/func_L05_004C3700.c) | pal/l05_dark_cathedral | 68 | 14/17 (82.35%) relocation-masked positional words; 68/68 candidate/target bytes. Store order and inferred layouts remain unresolved. |
 | [`func_L00_00769F08`](l00_multiplayer_menu/func_L00_00769F08.c) | l00_multiplayer_menu | 960 | BYTES 5/956 |
 | [`func_L00_0076A2C8`](l00_multiplayer_menu/func_L00_0076A2C8.c) | l00_multiplayer_menu | 912 | BYTES 5/908 (2 words differ) |
 | [`func_L00_0053F170`](l00_multiplayer_menu/func_L00_0053F170.c) | l00_multiplayer_menu | 1984 | BYTES 12/1980 |
