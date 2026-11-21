@@ -74,7 +74,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L00_0053C490`](l00_multiplayer_menu/func_L00_0053C490.c) | l00_multiplayer_menu | 712 | BYTES 16/712 |
 | [`func_004C6DD0`](game/func_004C6DD0.c) | game | 752 | BYTES 17/752 |
 | [`func_004AB220`](game/func_004AB220.c) | game | 488 | BYTES 11/484 |
-| [`func_L00_0051C498`](l00_multiplayer_menu/func_L00_0051C498.c) | l00_multiplayer_menu | 176 | BYTES 4/176 |
 | [`func_L00_0053A138`](l00_multiplayer_menu/func_L00_0053A138.c) | l00_multiplayer_menu | 736 | BYTES 17/736 |
 | [`func_005133C8`](game/func_005133C8.c) | game | 416 | BYTES 10/412 |
 | [`func_004ED688`](game/func_004ED688.c) | game | 288 | BYTES 7/288 |
@@ -128,7 +127,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L00_0068A9B8`](shared/func_L00_0068A9B8.c) | shared | 664 | BYTES 37/664 |
 | [`func_004D2D30`](game/func_004D2D30.c) | game | 712 | BYTES 40/712 |
 | [`func_00476548`](pal/game/func_00476548.c) | pal/game | 176 | BYTES 10/176 (5 words differ); bindings/semantics unapproved |
-| [`func_L00_00774F80`](l00_multiplayer_menu/func_L00_00774F80.c) | l00_multiplayer_menu | 144 | BYTES 8/140 (default profile -- which is what every neighbour of this |
 | [`func_0046EAC8`](game/func_0046EAC8.c) | game | 264 | BYTES 15/260 |
 | [`func_L00_00533D30`](pal/l00_multiplayer_menu/func_L00_00533D30.c) | pal/l00_multiplayer_menu | 216 | BYTES 13/216 (10 words differ). The loop allocates v0/v1 in the opposite order; signed nibble extraction, calls and size agree. |
 | [`func_004CCDC0`](game/func_004CCDC0.c) | game | 176 | BYTES 11/176 |
@@ -252,7 +250,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_01F0B3D0`](net/func_01F0B3D0.c) | net | 168 | BYTES 41/168 |
 | [`func_L00_00554030`](l00_multiplayer_menu/func_L00_00554030.c) | l00_multiplayer_menu | 32 | BYTES 8/32 |
 | [`func_L00_006F6FE0`](shared/func_L00_006F6FE0.c) | shared | 304 | BYTES 78/300 |
-| [`func_L00_004F7168`](l00_multiplayer_menu/func_L00_004F7168.c) | l00_multiplayer_menu | 128 | BYTES 33/124 |
 | [`func_00149FD8`](pal/core/func_00149FD8.c) | pal/core | 116 | BYTES 31/116 (20 words differ); bindings/semantics unapproved |
 | [`func_L05_004C2008`](shared/func_L05_004C2008.c) | shared | 40 | BYTES 10/36 |
 | [`func_L01_00427C80`](pal/shared/func_L01_00427C80.c) | pal/shared | 308 | BYTES 86/308 (41 words differ); bindings/semantics unapproved |
@@ -269,7 +266,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_01F06034`](net/func_01F06034.c) | net | 192 | BYTES 74/192 |
 | [`func_L01_005888C0`](shared/func_L01_005888C0.c) | shared | 56 | BYTES 22/56; mask coalesces to dying $a0, index stuck in $a2 |
 | [`func_L01_00443C98`](shared/func_L01_00443C98.c) | shared | 152 | BYTES 61/152 |
-| [`func_L01_00572B30`](shared/func_L01_00572B30.c) | shared | 184 | BYTES 75/180 |
 | [`func_01EF9D10`](net/func_01EF9D10.c) | net | 200 | BYTES 88/200 |
 | [`func_004B8928`](game/func_004B8928.c) | game | 184 | BYTES 89/184 |
 | [`func_L01_005A0CE8`](shared/func_L01_005A0CE8.c) | shared | 16 | BYTES 6/12 |
