@@ -128,7 +128,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L00_0068A9B8`](shared/func_L00_0068A9B8.c) | shared | 664 | BYTES 37/664 |
 | [`func_004D2D30`](game/func_004D2D30.c) | game | 712 | BYTES 40/712 |
 | [`func_00476548`](pal/game/func_00476548.c) | pal/game | 176 | BYTES 10/176 (5 words differ); bindings/semantics unapproved |
-| [`func_L00_00774F80`](l00_multiplayer_menu/func_L00_00774F80.c) | l00_multiplayer_menu | 144 | BYTES 8/140 (default profile -- which is what every neighbour of this |
 | [`func_0046EAC8`](game/func_0046EAC8.c) | game | 264 | BYTES 15/260 |
 | [`func_L00_00533D30`](pal/l00_multiplayer_menu/func_L00_00533D30.c) | pal/l00_multiplayer_menu | 216 | BYTES 13/216 (10 words differ). The loop allocates v0/v1 in the opposite order; signed nibble extraction, calls and size agree. |
 | [`func_004CCDC0`](game/func_004CCDC0.c) | game | 176 | BYTES 11/176 |
