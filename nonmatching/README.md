@@ -5,6 +5,16 @@ Best attempts at functions that do not match yet. They are not built; see
 
 | Function | Directory | Size | What differs |
 |---|---|---|---|
+| [`func_00461570`](game/func_00461570.c) | game | 284 | BYTES 0/284, exact only with inline asm (plzcw), which matched C may not use |
+| [`func_00461690`](game/func_00461690.c) | game | 176 | BYTES 0/176, exact only with inline asm (plzcw and blezl/sub abs), which matched C may not use |
+| [`func_00461740`](game/func_00461740.c) | game | 588 | BYTES 0/588, exact only with inline asm (plzcw), which matched C may not use |
+| [`func_00461EA0`](game/func_00461EA0.c) | game | 476 | BYTES 0/476, exact only with inline asm (plzcw), which matched C may not use |
+| [`func_004979A8`](game/func_004979A8.c) | game | 312 | BYTES 0/308, exact only with inline asm (blezl/sub abs), which matched C may not use |
+| [`func_004E7E58`](game/func_004E7E58.c) | game | 528 | BYTES 0/528, exact only with inline asm (plzcw), which matched C may not use |
+| [`func_004F6EF8`](game/func_004F6EF8.c) | game | 272 | BYTES 0/272, exact only with inline asm (plzcw), which matched C may not use |
+| [`func_004F7008`](game/func_004F7008.c) | game | 1048 | BYTES 0/1048, exact only with inline asm (plzcw), which matched C may not use |
+| [`func_004F7420`](game/func_004F7420.c) | game | 928 | BYTES 0/924, exact only with inline asm (plzcw), which matched C may not use |
+| [`func_004F77C0`](game/func_004F77C0.c) | game | 640 | BYTES 0/636, exact only with inline asm (plzcw), which matched C may not use |
 | [`func_L00_00769F08`](l00_multiplayer_menu/func_L00_00769F08.c) | l00_multiplayer_menu | 960 | BYTES 5/956 |
 | [`func_L00_0076A2C8`](l00_multiplayer_menu/func_L00_0076A2C8.c) | l00_multiplayer_menu | 912 | BYTES 5/908 (2 words differ) |
 | [`func_L00_0053F170`](l00_multiplayer_menu/func_L00_0053F170.c) | l00_multiplayer_menu | 1984 | BYTES 12/1980 |
@@ -17,7 +27,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L00_005466E8`](l00_multiplayer_menu/func_L00_005466E8.c) | l00_multiplayer_menu | 1672 | BYTES 13/1672 |
 | [`func_01EB3628`](net/func_01EB3628.c) | net | 116 | BYTES 1/116 |
 | [`func_L00_0053F930`](l00_multiplayer_menu/func_L00_0053F930.c) | l00_multiplayer_menu | 2004 | BYTES 18/2004 |
-| [`func_004979A8`](game/func_004979A8.c) | game | 312 | BYTES 3/308 |
 | [`func_L00_0076F770`](l00_multiplayer_menu/func_L00_0076F770.c) | l00_multiplayer_menu | 208 | BYTES 2/204 |
 | [`func_01F06188`](net/func_01F06188.c) | net | 192 | BYTES 2/192 |
 | [`func_004BA620`](game/func_004BA620.c) | game | 184 | BYTES 2/184 |
