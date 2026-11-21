@@ -5,6 +5,8 @@ Best attempts at functions that do not match yet. They are not built; see
 
 | Function | Directory | Size | What differs |
 |---|---|---|---|
+| [`func_L01_00526630`](pal/l01_dreadzone_station/func_L01_00526630.c) | pal/l01_dreadzone_station | 88 | 22/22 (100.00%) relocation-masked positional words; 88/88 bytes. Data owner declarations conflict and indexed access extent is unproved. |
+| [`func_L01_0059FC18`](pal/l01_dreadzone_station/func_L01_0059FC18.c) | pal/l01_dreadzone_station | 104 | 16/26 (61.54%) relocation-masked positional words; 108/104 candidate/target bytes. Instruction order, callee signature and layout remain unresolved. |
 | [`func_L00_00583A10`](pal/l00_multiplayer_menu/func_L00_00583A10.c) | pal/l00_multiplayer_menu | 80 | 20/20 (100.00%) relocation-masked positional words; 80/80 bytes. PAL data name conflicts with an existing logical owner; callee signatures remain unresolved. |
 | [`func_L00_00739470`](pal/l00_multiplayer_menu/func_L00_00739470.c) | pal/l00_multiplayer_menu | 92 | 23/23 (100.00%) relocation-masked positional words; 92/92 bytes. Data declaration and callee prototypes conflict with existing sources. |
 | [`func_L00_00521470`](pal/l00_multiplayer_menu/func_L00_00521470.c) | pal/l00_multiplayer_menu | 60 | 13/15 (86.67%) relocation-masked positional words; 52/60 candidate/target bytes. Trailing words and callback contract remain unresolved. |
