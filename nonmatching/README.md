@@ -5,6 +5,8 @@ Best attempts at functions that do not match yet. They are not built; see
 
 | Function | Directory | Size | What differs |
 |---|---|---|---|
+| [`func_L00_00734A88`](pal/l00_multiplayer_menu/func_L00_00734A88.c) | pal/l00_multiplayer_menu | 72 | 18/18 (100.00%) relocation-masked positional words; 72/72 bytes. PAL data name collides with existing logical owners. |
+| [`func_L00_0075A8E8`](pal/l00_multiplayer_menu/func_L00_0075A8E8.c) | pal/l00_multiplayer_menu | 92 | 19/23 (82.61%) relocation-masked positional words; 96/92 candidate/target bytes. Data ownership and callback target remain unverified. |
 | [`func_L00_0050D780`](pal/l00_multiplayer_menu/func_L00_0050D780.c) | pal/l00_multiplayer_menu | 72 | 13/18 (72.22%) relocation-masked positional words; 72/72 bytes. Callee and buffer contracts remain unproved. |
 | [`func_L00_0050DEB8`](pal/l00_multiplayer_menu/func_L00_0050DEB8.c) | pal/l00_multiplayer_menu | 72 | 13/18 (72.22%) relocation-masked positional words; 72/72 bytes. Callee and buffer contracts remain unproved. |
 | [`func_L00_0055ACF8`](pal/l00_multiplayer_menu/func_L00_0055ACF8.c) | pal/l00_multiplayer_menu | 72 | 13/18 (72.22%) relocation-masked positional words; 72/72 bytes. Callee and buffer contracts remain unproved. |
