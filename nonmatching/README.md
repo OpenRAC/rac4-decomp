@@ -74,7 +74,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L00_0053C490`](l00_multiplayer_menu/func_L00_0053C490.c) | l00_multiplayer_menu | 712 | BYTES 16/712 |
 | [`func_004C6DD0`](game/func_004C6DD0.c) | game | 752 | BYTES 17/752 |
 | [`func_004AB220`](game/func_004AB220.c) | game | 488 | BYTES 11/484 |
-| [`func_L00_0051C498`](l00_multiplayer_menu/func_L00_0051C498.c) | l00_multiplayer_menu | 176 | BYTES 4/176 |
 | [`func_L00_0053A138`](l00_multiplayer_menu/func_L00_0053A138.c) | l00_multiplayer_menu | 736 | BYTES 17/736 |
 | [`func_005133C8`](game/func_005133C8.c) | game | 416 | BYTES 10/412 |
 | [`func_004ED688`](game/func_004ED688.c) | game | 288 | BYTES 7/288 |
