@@ -252,7 +252,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_01F0B3D0`](net/func_01F0B3D0.c) | net | 168 | BYTES 41/168 |
 | [`func_L00_00554030`](l00_multiplayer_menu/func_L00_00554030.c) | l00_multiplayer_menu | 32 | BYTES 8/32 |
 | [`func_L00_006F6FE0`](shared/func_L00_006F6FE0.c) | shared | 304 | BYTES 78/300 |
-| [`func_L00_004F7168`](l00_multiplayer_menu/func_L00_004F7168.c) | l00_multiplayer_menu | 128 | BYTES 33/124 |
 | [`func_00149FD8`](pal/core/func_00149FD8.c) | pal/core | 116 | BYTES 31/116 (20 words differ); bindings/semantics unapproved |
 | [`func_L05_004C2008`](shared/func_L05_004C2008.c) | shared | 40 | BYTES 10/36 |
 | [`func_L01_00427C80`](pal/shared/func_L01_00427C80.c) | pal/shared | 308 | BYTES 86/308 (41 words differ); bindings/semantics unapproved |
