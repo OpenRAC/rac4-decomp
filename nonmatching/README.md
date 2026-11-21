@@ -269,7 +269,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_01F06034`](net/func_01F06034.c) | net | 192 | BYTES 74/192 |
 | [`func_L01_005888C0`](shared/func_L01_005888C0.c) | shared | 56 | BYTES 22/56; mask coalesces to dying $a0, index stuck in $a2 |
 | [`func_L01_00443C98`](shared/func_L01_00443C98.c) | shared | 152 | BYTES 61/152 |
-| [`func_L01_00572B30`](shared/func_L01_00572B30.c) | shared | 184 | BYTES 75/180 |
 | [`func_01EF9D10`](net/func_01EF9D10.c) | net | 200 | BYTES 88/200 |
 | [`func_004B8928`](game/func_004B8928.c) | game | 184 | BYTES 89/184 |
 | [`func_L01_005A0CE8`](shared/func_L01_005A0CE8.c) | shared | 16 | BYTES 6/12 |
