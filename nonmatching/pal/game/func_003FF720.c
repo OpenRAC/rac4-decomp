@@ -1,43 +1,37 @@
-/* Not matching yet: 21/26 (80.77%) relocation-masked positional words; 104/104 candidate/target bytes. The D_003CCEC0 pointee and owner are unknown. Reproduce: python tools/check_func.py --version pal func_003FF720 nonmatching/pal/game/func_003FF720.c --diff. Not part of the build. */
-/* cflags:  -Wuninitialized */
+/* Not matching yet: PAL WIP; main .text 0x003FF720, 104B. Not part of the build. */
+/*
+ * Symbolic descriptor and allocated-bytepointer repair emits104B but retains twelve nativeword
+ * differences at all3placements. After resolving newandold ordinarycalls toMain and
+ * newdescriptorpair to3CCEC0, exactlytwo words differ from retainedbest: old LUI3C/ORI CEC0 versus
+ * newLUI3D/ADDIU CEC0 at+60/+68. Every otherbyte is unchanged;
+ * output/null/call-delay/result-register residual is fixed for this source/dataflow disti
+ * No match, masked-score, source-ABI or binding approval is implied.
+ * Retained source SHA256: 6846d9df6298a6c2f1866d9a1657eed523bb5686ce355f46ebf804dd982e8e66
+ * Reproduce when separately authorized: python3 tools/check_func.py --version pal
+ *   func_003FF720 nonmatching/pal/game/func_003FF720.c --diff
+ */
 #include "common.h"
 
-/* 21/26 target words match (80.77%) under relocation-masked positional
- * comparison; 104/104 bytes. Branch, delay slot and register choices differ.
- * Callees use their matched PAL signatures; the extent and owner of the
- * D_003CCEC0 pointee remain unknown. Verify with
- * tools/diff_func.py --version pal func_003FF720. */
-typedef s32 M2C_UNK; typedef s8 M2C_UNK8; typedef s16 M2C_UNK16;
-typedef s32 M2C_UNK32; typedef s64 M2C_UNK64;
-typedef long long s128; typedef unsigned long long u128;
-#define M2C_FIELD(base, kind, offset) (*(kind)((u8 *)(base) + (offset)))
-#define M2C_R5900_PAND(a,b) __builtin_pand((u128)(a),(u128)(b))
-#define M2C_R5900_POR(a,b) __builtin_por((u128)(a),(u128)(b))
-#define M2C_R5900_PCPYLD(a,b) __builtin_pcpyld((u128)(a),(u128)(b))
-#define M2C_R5900_PEXTLW(a,b) __builtin_pextlw((u128)(a),(u128)(b))
-#define M2C_R5900_PEXTUW(a,b) __builtin_pextuw((u128)(a),(u128)(b))
-#define M2C_R5900_PROT3W(a) __builtin_prot3w((u128)(a))
+extern u8 D_003CCEC0[];
+s32 func_004033B0(s32 value);
+s32 func_003FE6C0(u8 *object);
+void func_003FD508(u8 *object);
 
-void func_003FD508(u8 *);                      /* extern */
-s32 func_003FE6C0(u8 *);                      /* extern */
-s32 func_004033B0(s32);                       /* extern */
-extern M2C_UNK D_003CCEC0;
+/* Allocate and initialize the object before publishing its identity fields. */
+s32 func_003FF720(s32 *output)
+{
+    u8 *object;
+    s32 result;
 
-s32 func_003FF720(void **arg0) {
-  void *temp_2;
-  temp_2 = (void *)func_004033B0(0x30);
-  *arg0 = temp_2;
-  if (temp_2 != ((void *) 0))
-  {
-    func_003FE6C0(temp_2);
-    func_003FD508((u8 *)temp_2 + 0x14);
-    *((void **) (((u8 *) temp_2) + 0x2C)) = temp_2;
-    *((M2C_UNK **) (((u8 *) temp_2) + 0x28)) = &D_003CCEC0;
-    return 0;
-  }
-  else
-  {
-    return 0x206;
-  }
+    object = (u8 *)func_004033B0(0x30);
+    result = 0x206;
+    *output = (s32)object;
+    if (object != 0) {
+        func_003FE6C0(object);
+        func_003FD508(object + 0x14);
+        *(u8 **)(object + 0x2C) = object;
+        *(u8 **)(object + 0x28) = D_003CCEC0;
+        result = 0;
+    }
+    return result;
 }
-

@@ -1,7 +1,7 @@
 #include "common.h"
 
 extern s32 func_00472E70(s32, s32);
-extern s32 func_L01_0044A2A8(void);
+extern s32 func_L01_0044A2A8(void *object);
 extern void func_00474368(void *, s32, s32);
 
 // PAL version of func_L01_0044AA78: initialize the timer and state for the selected
@@ -12,7 +12,7 @@ void func_L01_0044BBA0(void *object, s32 value, f32 timer) {
 
     if (*(s16 *)((u8 *)object + 0xBC) != 0x20F0) return;
     linked = *(u8 **)((u8 *)object + 0xAC);
-    func_L01_0044A2A8();
+    func_L01_0044A2A8(object);
     state = *(s16 *)(linked + 0xF2);
     if (state != 0) return;
     *(f32 *)(linked + 0x108) = 0.0f;
