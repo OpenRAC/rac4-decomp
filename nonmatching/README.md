@@ -289,7 +289,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L00_0070EC08`](l00_multiplayer_menu/func_L00_0070EC08.c) | l00_multiplayer_menu | 160 | BYTES 67/160 |
 | [`func_01EF9D10`](net/func_01EF9D10.c) | net | 200 | BYTES 88/200 |
 | [`func_004B8928`](game/func_004B8928.c) | game | 184 | BYTES 89/184 |
-| [`func_01ED5428`](net/func_01ED5428.c) | net | 124 | BYTES 60/124 |
+| [`func_01ED5428`](net/func_01ED5428.c) | net | 124 | BYTES 33/124 with @ee296 -O2 -G0 -fno-schedule-insns |
 | [`func_L01_005A0CE8`](shared/func_L01_005A0CE8.c) | shared | 16 | BYTES 6/12 |
 | [`func_0050E438`](game/func_0050E438.c) | game | 56 | BYTES 27/52 |
 | [`func_01ECFB68`](net/func_01ECFB68.c) | net | 112 | BYTES 59/112 (@ee32-030210, was 85/108) |
@@ -299,7 +299,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_004700C8`](game/func_004700C8.c) | game | 40 | BYTES 22/40 (@ee296 -O3 -G8) |
 | [`func_01EB9880`](net/func_01EB9880.c) | net | 152 | BYTES 84/152 |
 | [`func_001633D0`](core/func_001633D0.c) | core | 56 | BYTES 31/56 |
-| [`func_01EBA388`](net/func_01EBA388.c) | net | 152 | BYTES 85/152 |
+| [`func_01EBA388`](net/func_01EBA388.c) | net | 152 | BYTES 70/152: structure decoded from retail (packed packet, u16 index at +2, key at +4, 0x50-stride record); residual is arg0 parked in $a3 |
 | [`func_L10_004D5430`](shared/func_L10_004D5430.c) | shared | 104 | BYTES 57/100 |
 | [`func_004EA6D0`](game/func_004EA6D0.c) | game | 192 | BYTES 112/192 |
 | [`func_00522928`](game/func_00522928.c) | game | 120 | BYTES 71/120 |

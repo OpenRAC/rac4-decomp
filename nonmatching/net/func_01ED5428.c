@@ -1,4 +1,5 @@
-/* Not matching yet: BYTES 60/124 (tools/try_func.py func_01ED5428 --diff). Not part of the build. */
+/* Not matching yet: BYTES 33/124 with @ee296 -O2 -G0 -fno-schedule-insns (tools/try_func.py func_01ED5428 --diff) (tools/try_func.py func_01ED5428 --diff). Not part of the build. */
+/* cflags: @ee296 -O2 -G0 -fno-schedule-insns */
 extern s32 D_00169CD0;
 extern s32 D_00169CD4;
 extern s32 D_1BC9C4;
