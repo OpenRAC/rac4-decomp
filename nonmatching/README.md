@@ -99,6 +99,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_0051AFD8`](game/func_0051AFD8.c) | game | 336 | BYTES 12/336 |
 | [`func_00522118`](game/func_00522118.c) | game | 616 | BYTES 22/616 |
 | [`func_L01_0044A0F0`](shared/func_L01_0044A0F0.c) | shared | 144 | BYTES 5/140 |
+| [`func_L01_00626740`](shared/func_L01_00626740.c) | shared | 88 | BYTES 5/84 |
 | [`func_004D4E80`](game/func_004D4E80.c) | game | 832 | BYTES 30/828 |
 | [`func_L00_00541CF8`](l00_multiplayer_menu/func_L00_00541CF8.c) | l00_multiplayer_menu | 160 | BYTES 6/160 |
 | [`func_01F0B7E4`](net/func_01F0B7E4.c) | net | 180 | BYTES 7/180 |
