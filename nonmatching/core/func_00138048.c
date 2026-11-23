@@ -1,0 +1,28 @@
+/* Not matching yet: EXACT only with volatile, which matched C forbids; without it SIZE ours 180 / retail 184 (tools/try_func.py func_00138048 --diff). Not part of the build. */
+/* cflags: @ee29 -O2 -G0 */
+#include "common.h"
+extern u8 D_00167B40[];
+extern s32 D_001671C0[];
+extern volatile s32 D_00165FEC;
+extern volatile s32 D_00166020;
+extern s32 func_00137558(s32 command);
+extern s32 func_00126BC0(s32 semaphore);
+extern s32 func_0012A718(void *client, s32 command, u32 mode,
+                         const void *send, s32 send_size, void *receive, s32 receive_size,
+                         void (*complete)(void *), void *argument);
+s32 func_00138048(void)
+{
+    s32 result;
+    if (!func_00137558(0x1E))
+        return 0;
+    D_00166020 = 8;
+    if (func_0012A718(D_00167B40, 0x16, 0, 0, 0, D_001671C0, 4, 0, 0) < 0) {
+        func_00126BC0(D_00165FEC);
+        D_00166020 = 0;
+        return 0;
+    }
+    D_00166020 = 0;
+    result = *(s32 *)((u32)D_001671C0 | 0x20000000u);
+    func_00126BC0(D_00165FEC);
+    return result;
+}
