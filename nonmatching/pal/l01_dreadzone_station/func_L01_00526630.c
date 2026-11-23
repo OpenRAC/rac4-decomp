@@ -1,23 +1,46 @@
-/* Not matching yet on PAL: 22/22 positional words match (100.00%); 0 differ, size 88/88 bytes (delta 0). */
-/* cflags:  -Wuninitialized */
-/* Relocation fields are masked. Reproduce: tools/check_func.py --version pal func_L01_00526630 nonmatching/pal/l01_dreadzone_station/func_L01_00526630.c --diff
- * The D_00222A90 owner has conflicting declarations; indexed storage and access extent remain unproved. */
+/* Not matching yet on PAL: 88B/native88B; 14 real-bound bytes
+ * (12 register-field words) differ. Not part of the build. */
+/* Primary L01 bindings: canonical D_00222990 is the PAL222A90 pointer cell;
+ * canonical byte carrier D_00230280 + 0x50 selects pointer word PAL2303D0.
+ * Actual HI/LO and full GP2259FF displacement -0x2F6F are valid. This object
+ * retains the unconditional class-rejection table read and conditional ordered
+ * slot/104/105/106 reads; no extra/missing primary read, helper, store, FP work
+ * or allocated nontext data. Register allocation remains nonexact.
+ * Primary-only evidence: mixed nominal source-linkage, complete source-ABI,
+ * all-carrier and whole-link certification remain unresolved. No aggregate,
+ * extent, null/range/nonalias guarantee or historical compiler flags added.
+ * Retired/timeout source/CompiledSource/final artifacts remain UNKNOWN.
+ * Recheck: tools/check_func.py --version pal func_L01_00526630
+ * nonmatching/pal/l01_dreadzone_station/func_L01_00526630.c --diff
+ * The repository comparison masks relocation fields; real bindings still
+ * require independent review. No exactness or semantic acceptance is claimed.
+ */
 #include "common.h"
-#define M2C_FIELD(base, kind, offset) (*(kind)((u8 *)(base) + (offset)))
 
-extern int D_00222A90;
-extern int D_002303D0[];
-s32 func_L01_00526630(s32 arg0) {
-    s32 var_4;
-    void *temp_3;
+extern u8 *D_00222990;
+extern u8 D_00230280[];
 
-    if (M2C_FIELD(D_002303D0[0], s16 *, 0x86) != 0x13) {
+/* Test the ordered record status bytes for the selected class. */
+s32 func_L01_00526630(s32 indexWord)
+{
+    u8 *context;
+    u8 *table;
+    u8 *record;
+    s32 classValue;
+    s32 result;
+    u32 recordAddress;
+
+    context = *(u8 **)(D_00230280 + 0x50);
+    classValue = *(s16 *)(context + 0x86);
+    table = D_00222990;
+    if (classValue != 0x13) {
         return 0;
     }
-    temp_3 = M2C_FIELD(((arg0 << 5) + D_00222A90), void **, 0x1C);
-    var_4 = 0;
-    if ((M2C_FIELD(temp_3, u8 *, 0x104) != 0) && (M2C_FIELD(temp_3, u8 *, 0x105) != 0)) {
-        var_4 = M2C_FIELD(temp_3, u8 *, 0x106) == 0;
+    recordAddress = (u32)table + ((u32)indexWord << 5);
+    record = *(u8 **)(recordAddress + 0x1C);
+    result = 0;
+    if (record[0x104] != 0 && record[0x105] != 0) {
+        result = record[0x106] == 0;
     }
-    return var_4;
+    return result;
 }

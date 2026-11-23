@@ -1,67 +1,71 @@
-/* Not matched: PAL SCES_532.85.
- * Stored-object comparison: SIZE ours 424 / disc 428.
- * Function text: 424 B; native catalogue: 428 B; 1 placement(s).
- * Instruction/size differences remain; symbol bindings, ownership and semantics also need review.
- * Relocated instruction fields are masked in this comparison, not certified targets.
- * Reproduce with the original compiler setup:
- * python3 tools/check_func.py --version pal func_L00_005C2078 nonmatching/pal/l00_multiplayer_menu/func_L00_005C2078.c --diff
+/* Not matching yet: PAL WIP; level_00 .text 0x005C2078, 428B. Not part of the build. */
+/*
+ * Still424B versus native428B. Output/masked-value registers, branch-delay constant allocation,
+ * final branch extent and six-byte arm store scheduling differ. Unsigned byte representation is
+ * not the sole mismatch; no new supported distinction justifies another trial.
+ * No match, masked-score, source-ABI or binding approval is implied.
+ * Retained source SHA256: d13f2cf27bcf9482eafd6cb4b08fbcdc56e194ffee8fe6d015c8db92c1229de0
+ * Reproduce when separately authorized: python3 tools/check_func.py --version pal
+ *   func_L00_005C2078 nonmatching/pal/l00_multiplayer_menu/func_L00_005C2078.c --diff
  */
 #include "common.h"
 
-/* Automatischer m2c-Grobentwurf, kein geprüfter Match.
- * Unbekannte M2C_* und saved_reg_* müssen manuell aufgelöst werden.
- * Signaturen, Datenbesitz und Funktionsgrenzen prüfen.
- */
+/* Encode the captured two source bytes into a terminated byte sequence. */
+void func_L00_005C2078(void *arg0, void *arg1)
+{
+    u8 *input = arg0;
+    u8 *output = arg1;
+    u8 high;
+    u8 low;
+    s32 value;
+    u32 masked;
 
-
-void func_L00_005C2078(void *arg0, void *arg1) {
-    s32 temp_a1;
-    u32 temp_a4;
-
-    temp_a1 = ((*(u8 *)((s8 *)(arg0) + (0))) << 8) | (*(u8 *)((s8 *)(arg0) + (1)));
-    temp_a4 = temp_a1 & 0xFFFF;
-    if (temp_a4 < 0x80U) {
-        (*(s8 *)((s8 *)(arg1) + (1))) = 0;
-        (*(s8 *)((s8 *)(arg1) + (0))) = (s8) (temp_a1 & 0x7F);
+    high = input[0];
+    low = input[1];
+    value = (high << 8) | low;
+    masked = value & 0xFFFF;
+    if (masked < 0x80U) {
+        output[1] = 0;
+        output[0] = (u8)(value & 0x7F);
         return;
     }
-    if ((u32) (temp_a4 - 0x80) < 0x780U) {
-        (*(s8 *)((s8 *)(arg1) + (1))) = (s8) ((temp_a1 & 0x3F) | 0x80);
-        (*(s8 *)((s8 *)(arg1) + (0))) = (s8) (((temp_a4 >> 6) & 0x1F) | 0xC0);
-        (*(s8 *)((s8 *)(arg1) + (2))) = 0;
+    if ((u32)(masked - 0x80) < 0x780U) {
+        output[1] = (u8)((value & 0x3F) | 0x80);
+        output[0] = (u8)(((masked >> 6) & 0x1F) | 0xC0);
+        output[2] = 0;
         return;
     }
-    if ((u32) (temp_a4 - 0x800) <= 0xF7FFU) {
-        (*(s8 *)((s8 *)(arg1) + (0))) = (s8) ((temp_a4 >> 0xC) | 0xE0);
-        (*(s8 *)((s8 *)(arg1) + (1))) = (s8) (((temp_a4 >> 6) & 0x3F) | 0x80);
-        (*(s8 *)((s8 *)(arg1) + (2))) = (s8) ((temp_a1 & 0x3F) | 0x80);
-        (*(s8 *)((s8 *)(arg1) + (3))) = 0;
+    if ((u32)(masked - 0x800) <= 0xF7FFU) {
+        output[0] = (u8)((masked >> 0xC) | 0xE0);
+        output[1] = (u8)(((masked >> 6) & 0x3F) | 0x80);
+        output[2] = (u8)((value & 0x3F) | 0x80);
+        output[3] = 0;
         return;
     }
-    if ((u32) (temp_a4 + 0xFFFF0000) <= 0x1EFFFFU) {
-        (*(s8 *)((s8 *)(arg1) + (0))) = 0xF0;
-        (*(s8 *)((s8 *)(arg1) + (1))) = (s8) ((temp_a4 >> 0xC) | 0x80);
-        (*(s8 *)((s8 *)(arg1) + (2))) = (s8) (((temp_a4 >> 6) & 0x3F) | 0x80);
-        (*(s8 *)((s8 *)(arg1) + (3))) = (s8) ((temp_a1 & 0x3F) | 0x80);
-        (*(s8 *)((s8 *)(arg1) + (4))) = 0;
+    if ((u32)(masked + 0xFFFF0000U) <= 0x1EFFFFU) {
+        output[0] = 0xF0;
+        output[1] = (u8)((masked >> 0xC) | 0x80);
+        output[2] = (u8)(((masked >> 6) & 0x3F) | 0x80);
+        output[3] = (u8)((value & 0x3F) | 0x80);
+        output[4] = 0;
         return;
     }
-    if ((u32) (temp_a4 + 0xFFE00000) <= 0x03DFFFFFU) {
-        (*(s8 *)((s8 *)(arg1) + (0))) = 0xF8;
-        (*(s8 *)((s8 *)(arg1) + (1))) = 0x80;
-        (*(s8 *)((s8 *)(arg1) + (2))) = (s8) ((temp_a4 >> 0xC) | 0x80);
-        (*(s8 *)((s8 *)(arg1) + (3))) = (s8) (((temp_a4 >> 6) & 0x3F) | 0x80);
-        (*(s8 *)((s8 *)(arg1) + (4))) = (s8) ((temp_a1 & 0x3F) | 0x80);
-        (*(s8 *)((s8 *)(arg1) + (5))) = 0;
+    if ((u32)(masked + 0xFFE00000U) <= 0x03DFFFFFU) {
+        output[0] = 0xF8;
+        output[1] = 0x80;
+        output[2] = (u8)((masked >> 0xC) | 0x80);
+        output[3] = (u8)(((masked >> 6) & 0x3F) | 0x80);
+        output[4] = (u8)((value & 0x3F) | 0x80);
+        output[5] = 0;
         return;
     }
-    if ((u32) (temp_a4 + 0xFC000000) <= 0x7BFFFFFFU) {
-        (*(s8 *)((s8 *)(arg1) + (0))) = 0xFC;
-        (*(s8 *)((s8 *)(arg1) + (1))) = 0x80;
-        (*(s8 *)((s8 *)(arg1) + (2))) = 0x80;
-        (*(s8 *)((s8 *)(arg1) + (3))) = (s8) ((temp_a4 >> 0xC) | 0x80);
-        (*(s8 *)((s8 *)(arg1) + (4))) = (s8) (((temp_a4 >> 6) & 0x3F) | 0x80);
-        (*(s8 *)((s8 *)(arg1) + (5))) = (s8) ((temp_a1 & 0x3F) | 0x80);
-        (*(s8 *)((s8 *)(arg1) + (6))) = 0;
+    if ((u32)(masked + 0xFC000000U) <= 0x7BFFFFFFU) {
+        output[0] = 0xFC;
+        output[1] = 0x80;
+        output[2] = 0x80;
+        output[3] = (u8)((masked >> 0xC) | 0x80);
+        output[4] = (u8)(((masked >> 6) & 0x3F) | 0x80);
+        output[5] = (u8)((value & 0x3F) | 0x80);
+        output[6] = 0;
     }
 }

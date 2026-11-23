@@ -1,30 +1,25 @@
-/* cflags: @ee29-01 -O2 -G0 -Wa,-G0 */
-/* Not matched: PAL SCES_532.85.
- * Stored-object comparison: BYTES 31/116 (20 words differ).
- * Function text: 116 B; native catalogue: 116 B; 1 placement(s).
- * Instruction/size differences remain; symbol bindings, ownership and semantics also need review.
- * Relocated instruction fields are masked in this comparison, not certified targets.
- * Reproduce with the original compiler setup:
- * python3 tools/check_func.py --version pal func_00149FD8 nonmatching/pal/core/func_00149FD8.c --diff
+/* Not matching yet: PAL WIP; main core.text 0x00149FD8, 116B. Not part of the build. */
+/*
+ * Stored as all 25 actual differing/positionally shifted words in trials.jsonl, including the
+ * final absent JR/store positions.
+ * No match, masked-score, source-ABI or binding approval is implied.
+ * Retained source SHA256: 56d4cc5aeafaa9bef296160b5636c72fb23ca3dbb96778982cc71f2227000361
+ * Reproduce when separately authorized: python3 tools/check_func.py --version pal
+ *   func_00149FD8 nonmatching/pal/core/func_00149FD8.c --diff
  */
 #include "common.h"
 
-/* Automatischer m2c-Grobentwurf, kein geprüfter Match.
- * Unbekannte M2C_* und saved_reg_* müssen manuell aufgelöst werden.
- * Signaturen, Datenbesitz und Funktionsgrenzen prüfen.
- */
+/* Applies the selected coefficient pair to an input float pair. */
+void func_00149FD8(void *arg0, void *arg1, s32 arg2, void *arg3) {
+    f32 *input = (f32 *)arg0;
+    f32 *coefficient = (f32 *)arg1 + arg2 * 2;
+    f32 *out = (f32 *)arg3;
+    f32 coefficient0 = coefficient[0];
+    f32 coefficient1 = coefficient[1];
+    f32 square_sum = coefficient0 * coefficient0 + coefficient1 * coefficient1;
+    f32 first = input[0] * coefficient0 - input[1] * coefficient1;
+    f32 scale = 1.0f / square_sum;
 
-
-void func_00149FD8(void *arg0, s32 arg1, s32 arg2, void *arg3) {
-    f32 temp_f1;
-    f32 temp_f2;
-    f32 temp_f4;
-    void *temp_a1;
-
-    temp_a1 = arg1 + (arg2 * 8);
-    temp_f4 = (*(f32 *)((s8 *)(temp_a1) + (0)));
-    temp_f2 = (*(f32 *)((s8 *)(temp_a1) + (4)));
-    temp_f1 = 1.0f / ((temp_f4 * temp_f4) + (temp_f2 * temp_f2));
-    (*(f32 *)((s8 *)(arg3) + (0))) = (f32) (temp_f1 * (((*(f32 *)((s8 *)(arg0) + (0))) * temp_f4) - ((*(f32 *)((s8 *)(arg0) + (4))) * temp_f2)));
-    (*(f32 *)((s8 *)(arg3) + (4))) = (f32) (temp_f1 * (((*(f32 *)((s8 *)(arg0) + (4))) * (*(f32 *)((s8 *)(temp_a1) + (0)))) + ((*(f32 *)((s8 *)(arg0) + (0))) * (*(f32 *)((s8 *)(temp_a1) + (4))))));
+    out[0] = scale * first;
+    out[1] = scale * (input[1] * coefficient[0] + input[0] * coefficient[1]);
 }
