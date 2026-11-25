@@ -4324,6 +4324,7 @@ func_01EA75C8	src/net/01EA75C8.c	match	func_01EA75C8	main:net.text:01EA75C8:48	1
 func_01EA76E8	src/net/01EA76E8.c	match	func_01EA76E8	main:net.text:01EA76E8:88	100.00
 func_01EA7740	src/net/01EA7740.c	match	func_01EA7740	main:net.text:01EA7740:236	100.00
 func_01EA7920	src/net/01EA7920.c	match	func_01EA7920	main:net.text:01EA7920:212	100.00
+func_01EA79F8	src/net/01EA79F8.c	match	func_01EA79F8	main:net.text:01EA79F8:208	100.00
 func_01EA7AC8	src/net/01EA7AC8.c	match	func_01EA7AC8	main:net.text:01EA7AC8:252	100.00
 func_01EA7C98	src/net/01EA7C98.c	match	func_01EA7C98	main:net.text:01EA7C98:172	100.00
 func_01EA7D48	src/net/01EA7D48.c	match	func_01EA7D48	main:net.text:01EA7D48:40	100.00
@@ -8205,6 +8206,7 @@ func_L00_00754DA0	src/overlays/l00_multiplayer_menu/L00_00753C68.c	match	func_L0
 func_L00_00754E10	src/overlays/shared/L00_00754E10.c	match	func_L00_00759C70	level_00:.text:00759C70:8	100.00
 func_L00_00755A20	src/overlays/l00_multiplayer_menu/L00_00755A20.c	match	func_L00_0075A8B8	level_00:.text:0075A8B8:48	100.00
 func_L00_00755AB0	src/overlays/l00_multiplayer_menu/L00_00755AB0.c	match	func_L00_0075A948	level_00:.text:0075A948:40	100.00
+func_L00_00755B60	src/overlays/l00_multiplayer_menu/L00_00755B60.c	match	func_L00_0075A9F8	level_00:.text:0075A9F8:208	100.00
 func_L00_00756560	src/pal/overlays/l00_multiplayer_menu/L00_00756560.c	match	func_L00_00756560	level_00:.text:00756560:56	100.00
 func_L00_007568E8	src/pal/overlays/l00_multiplayer_menu/L00_007568E8.c	match	func_L00_007568E8	level_00:.text:007568E8:44	100.00
 func_L00_00756A48	src/overlays/l00_multiplayer_menu/L00_00756A48.c	match	func_L00_0075B8C0	level_00:.text:0075B8C0:40	100.00
@@ -9271,6 +9273,7 @@ func_L01_004AF160	src/overlays/l01_dreadzone_station/L01_004AF160.c	match	func_L
 func_L01_004AF1D0	src/overlays/shared/L01_004AF1D0.c	match	func_L01_004B0CC0	level_01:.text:004B0CC0:32	100.00
 func_L01_004AF1F0	src/overlays/shared/L01_004AF1F0.c	match	func_L01_004B0CE0	level_01:.text:004B0CE0:360	100.00
 func_L01_004AF6E0	src/pal/overlays/l01_dreadzone_station/L01_004AF6E0.c	match	func_L01_004AF6E0	level_01:.text:004AF6E0:56	100.00
+func_L01_004AF7E0	src/overlays/shared/L01_004AF7E0.c	match	func_L01_004B12D0	level_01:.text:004B12D0:212	100.00
 func_L01_004AF8B8	src/overlays/shared/L01_004AF8B8.c	match	func_L01_004B13A8	level_01:.text:004B13A8:32	100.00
 func_L01_004AFA58	src/pal/overlays/shared/L01_004AFA58.c	match	func_L01_004AFA58	level_01:.text:004AFA58:40	100.00
 func_L01_004AFD28	src/overlays/shared/L01_004AFD28.c	differs	-	-	0.00
@@ -10223,6 +10226,7 @@ func_L05_004DB540	src/overlays/l05_dark_cathedral/L05_004DB540.c	match	func_L05_
 func_L05_004DB658	src/overlays/shared/L05_004DB658.c	match	func_L05_004DD1E0	level_05:.text:004DD1E0:116	100.00
 func_L05_004DB948	src/overlays/shared/L05_004DB948.c	match	func_L05_004DD4D0	level_05:.text:004DD4D0:40	100.00
 func_L05_004DBA68	src/overlays/shared/L05_004DBA68.c	differs	-	-	0.00
+func_L05_004DBBB0	src/overlays/shared/L05_004DBBB0.c	match	func_L05_004DD738	level_05:.text:004DD738:212	100.00
 func_L05_004DC928	src/overlays/shared/L05_004DC928.c	match	func_L05_004DE4B0	level_05:.text:004DE4B0:212	100.00
 func_L05_004DD440	src/overlays/shared/L05_004DD440.c	match	func_L05_004DEFC8	level_05:.text:004DEFC8:132	100.00
 func_L05_004DD4D0	src/pal/overlays/l05_dark_cathedral/L05_004DD4D0.c	match	func_L05_004DD4D0	level_05:.text:004DD4D0:40	100.00
@@ -10409,6 +10413,7 @@ func_L15_004A0E68	src/overlays/shared/L15_004A0E68.c	match	func_L15_004A2598	lev
 func_L15_004A1CC8	src/overlays/l15_control_level/L15_004A1CC8.c	match	func_L15_004A33F8	level_15:.text:004A33F8:16	100.00
 func_L15_004A2560	src/pal/overlays/l15_control_level/L15_004A2560.c	match	func_L15_004A2560	level_15:.text:004A2560:56	100.00
 func_L15_004ADB18	src/overlays/shared/L15_004ADB18.c	match	func_L15_004AF290	level_15:.text:004AF290:80	100.00
+func_L15_004ADB68	src/overlays/shared/L15_004ADB68.c	match	func_L15_004AF2E0	level_15:.text:004AF2E0:168	100.00
 func_L15_004AF138	src/pal/overlays/l15_control_level/L15_004AF138.c	match	func_L15_004AF138	level_15:.text:004AF138:344	100.00
 func_L15_004CDDA8	src/pal/overlays/l15_control_level/L15_004CDDA8.c	match	func_L15_004CDDA8	level_15:.text:004CDDA8:96	100.00
 func_L15_004D6800	src/overlays/shared/L15_004D6800.c	match	func_L15_004D8480	level_15:.text:004D8480:204	100.00
