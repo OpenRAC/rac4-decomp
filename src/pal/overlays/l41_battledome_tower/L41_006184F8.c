@@ -1,9 +1,9 @@
 /* cflags: -O2 -G8 -Wuninitialized */
 #include "common.h"
+#include "pal/callback_queue.h"
 #include "pal/profile_001721E0.h"
 void func_L00_007031C0(u8 *, s32);
 void func_L00_007031F0(u8 *, s32);
-void *func_L00_007043E8(void *);
 void func_L00_00706160(s32);
 void func_L41_006184F8(void *arg0) {
     u8 *p;
