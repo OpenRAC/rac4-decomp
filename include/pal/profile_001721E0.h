@@ -20,7 +20,8 @@ union Type4Region20 {
 };
 typedef struct Type4 {
     s32 f0;
-    u8 opaque04[0xC];
+    u8 opaque04[8];
+    u32 fC;
     s32 f10, f14;
     u8 opaque18[4];
     s32 f1C;
@@ -29,7 +30,9 @@ typedef struct Type4 {
     u8 pad22C[0x258 - 0x22C];
     s32 f258, f25C;
     u8 f260;
-    u8 pad261[0x6A0 - 0x261];
+    u8 pad261[0x2D5 - 0x261];
+    u8 f2D5, f2D6;
+    u8 pad2D7[0x6A0 - 0x2D7];
     s32 f6A0[10];
     u8 pad6C8;
     u8 f6C9[16];
