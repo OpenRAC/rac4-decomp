@@ -1,15 +1,8 @@
-#include "common.h"
-
-typedef struct {
-    u32 state;
-    u8 pad4[0x78];
-    s32 timer;
-} Flow;
+#include "pal/menu_flow.h"
+#include "pal/record_003D6498.h"
 
 extern u8 *D_003367B8[10];
 extern s32 *D_0021DE2C;
-extern Flow D_003097A8;
-extern void func_00439550(s32, s32);
 extern u8 *func_00511CC0(s32);
 extern void func_00498090(s32, s32, s32);
 extern void func_004B5210(void);
@@ -39,7 +32,7 @@ void func_004B31D8(u8 *arg) {
 
     for (i = 0, p = D_003367B8[0]; i < 10; p = D_003367B8[++i]) {
         if (p != NULL) {
-            func_00439550(i, *(s32 *)(p + 0x2F00));
+            func_00439550(i, *(u8 **)(p + 0x2F00));
         }
     }
     for (i = 0; i < *D_0021DE2C; i++) {

@@ -1,14 +1,7 @@
-#include "common.h"
+#include "pal/menu_selection_0030A260.h"
 
 typedef void (*Action)(s32 direction);
 typedef s32 (*Predicate)(s32 index);
-typedef struct State {
-    s32 phase;
-    s32 selected;
-    s32 first;
-    s32 second;
-} State;
-extern u8 D_0030A260[];
 extern u8 D_001CDB20[];
 extern u8 D_003D93F8[];
 extern s32 D_00221890;
@@ -30,7 +23,7 @@ extern void func_004B98D0(void);
 void func_004B8D68(void)
 {
     s32 context = func_00506BB8();
-    State *state = (State *)((u32)D_0030A260 + (u32)context * sizeof(State));
+    PalResidentOptionState *state = pal_resident_option_state(context);
     u32 descriptor;
     Action action;
     s32 group;

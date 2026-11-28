@@ -1,5 +1,6 @@
 #include "common.h"
 #include "pal/global_002234A4.h"
+#include "pal/multiplayer_menu.h"
 #include "pal/profile_001721E0.h"
 
 extern s32 func_L00_00774F28(u8 *);

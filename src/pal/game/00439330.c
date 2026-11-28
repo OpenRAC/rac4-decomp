@@ -1,22 +1,7 @@
 #include "common.h"
+#include "pal/record_003D6498.h"
 
-typedef struct {
-    u8 f0;
-    u8 f1;
-    u8 f2;
-    u8 f3;
-    u16 f4;
-    u16 f6;
-    u16 f8;
-    u16 fA;
-    u16 fC;
-    u8 fE;
-    u8 fF;
-} Entry;
-
-extern Entry D_003D6498[][8];
-
-s32 func_00439330(Entry *src, u8 *state)
+s32 func_00439330(PalRecord003D6498 *src, u8 *state)
 {
     s32 index = 0;
     s32 count;

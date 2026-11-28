@@ -1,13 +1,4 @@
-#include "common.h"
-
-typedef struct Roster {
-    u8 pad0[0x1C];
-    s32 x1C;
-    u8 pad20[0x3F0];
-    u8 names[10][16];
-    u8 pad4B0[0x360];
-    s32 ids[10];
-} Roster;
+#include "pal/l00_roster_001E0DF8.h"
 
 typedef struct List {
     u8 pad0[0x260];
@@ -16,7 +7,6 @@ typedef struct List {
     s32 order[10];
 } List;
 
-extern Roster D_001E0DF8;
 extern char *func_0011A9EC(char *, u8 *);
 extern s32 func_L00_0073FA30(List *, s32, s32);
 

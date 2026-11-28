@@ -1,21 +1,40 @@
-/* cflags: -Wuninitialized */
+/* cflags: -Wuninitialized -mno-split-addresses */
 #include "common.h"
-#define __int128 long long
-#define __int64 long
-#define __int16 short
-#define __int8 char
-typedef int bool;
-typedef u8 _BYTE; typedef u16 _WORD; typedef u32 _DWORD; typedef u64 _QWORD; typedef unsigned long long _OWORD;
-typedef u8 _BOOL1; typedef u16 _BOOL2; typedef u32 _BOOL4; typedef u64 _BOOL8;
-int D_00221A10 = 0;
-__int64 func_L41_004469F8()
-{
-  int result; // $v0
+#include "pal/l41_descriptor_state.h"
 
-  if ( !D_00221A10 )
-    return 0;
-  result = 144;
-  if ( *(int *)(*(_DWORD *)(D_00221A10 + 172) + 128) < 0 )
-    return 0;
-  return result;
+L41DescriptorObject *D_L41_00221A10 = NULL;
+
+s64 func_L41_004469F8(void)
+{
+    s32 result;
+
+    if (D_L41_00221A10 == NULL)
+        return 0;
+    result = 144;
+    if (D_L41_00221A10->state->status80 < 0)
+        return 0;
+    return result;
+}
+
+s32 func_L41_00446900(void)
+{
+    if (D_L41_00221A10 == NULL)
+        return 0;
+    return D_L41_00221A10->state->value68;
+}
+extern u8 D_L41_002226A8[];
+extern s32 func_004535C0(void *context, const f32 *position, f32 radius, f32 value);
+
+s32 func_L41_00446748(void)
+{
+    L41DescriptorObject *object = D_L41_00221A10;
+    L41DescriptorState *state;
+
+    if (object == NULL)
+        return 0;
+    state = object->state;
+    if (state->status80 < 0)
+        return 0;
+
+    return func_004535C0(D_L41_002226A8, object->position, 40.0f, state->value78) != -1;
 }

@@ -1,6 +1,5 @@
 #include "common.h"
-
-extern void func_L00_0071FD20(void *, s32, s32, s32, s32);
+#include "pal/multiplayer_menu.h"
 
 // Maps a direction (-1, 0, 1) to a message id and submits it with a second fixed message.
 void func_L00_0074AE60(void *arg0, s32 arg1) {

@@ -15,22 +15,17 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_004F7008`](game/func_004F7008.c) | game | 1048 | BYTES 0/1048, exact only with inline asm (plzcw), which matched C may not use |
 | [`func_004F7420`](game/func_004F7420.c) | game | 928 | BYTES 0/924, exact only with inline asm (plzcw), which matched C may not use |
 | [`func_004F77C0`](game/func_004F77C0.c) | game | 640 | BYTES 0/636, exact only with inline asm (plzcw), which matched C may not use |
-| [`func_L00_00734A88`](pal/l00_multiplayer_menu/func_L00_00734A88.c) | pal/l00_multiplayer_menu | 72 | 18/18 (100.00%) relocation-masked positional words; 72/72 bytes. PAL data name collides with existing logical owners. |
 | [`func_L00_0075A8E8`](pal/l00_multiplayer_menu/func_L00_0075A8E8.c) | pal/l00_multiplayer_menu | 92 | 19/23 (82.61%) relocation-masked positional words; 96/92 candidate/target bytes. Data ownership and callback target remain unverified. |
 | [`func_L00_0050D780`](pal/l00_multiplayer_menu/func_L00_0050D780.c) | pal/l00_multiplayer_menu | 72 | 13/18 (72.22%) relocation-masked positional words; 72/72 bytes. Callee and buffer contracts remain unproved. |
 | [`func_L00_0050DEB8`](pal/l00_multiplayer_menu/func_L00_0050DEB8.c) | pal/l00_multiplayer_menu | 72 | 13/18 (72.22%) relocation-masked positional words; 72/72 bytes. Callee and buffer contracts remain unproved. |
 | [`func_L00_0055ACF8`](pal/l00_multiplayer_menu/func_L00_0055ACF8.c) | pal/l00_multiplayer_menu | 72 | 13/18 (72.22%) relocation-masked positional words; 72/72 bytes. Callee and buffer contracts remain unproved. |
-| [`func_L01_00526630`](pal/l01_dreadzone_station/func_L01_00526630.c) | pal/l01_dreadzone_station | 88 | 22/22 (100.00%) relocation-masked positional words; 88/88 bytes. Data owner declarations conflict and indexed access extent is unproved. |
 | [`func_L01_0059FC18`](pal/l01_dreadzone_station/func_L01_0059FC18.c) | pal/l01_dreadzone_station | 104 | 16/26 (61.54%) relocation-masked positional words; 108/104 candidate/target bytes. Instruction order, callee signature and layout remain unresolved. |
-| [`func_L00_00583A10`](pal/l00_multiplayer_menu/func_L00_00583A10.c) | pal/l00_multiplayer_menu | 80 | 20/20 (100.00%) relocation-masked positional words; 80/80 bytes. PAL data name conflicts with an existing logical owner; callee signatures remain unresolved. |
-| [`func_L00_00739470`](pal/l00_multiplayer_menu/func_L00_00739470.c) | pal/l00_multiplayer_menu | 92 | 23/23 (100.00%) relocation-masked positional words; 92/92 bytes. Data declaration and callee prototypes conflict with existing sources. |
 | [`func_L00_00521470`](pal/l00_multiplayer_menu/func_L00_00521470.c) | pal/l00_multiplayer_menu | 60 | 13/15 (86.67%) relocation-masked positional words; 52/60 candidate/target bytes. Trailing words and callback contract remain unresolved. |
 | [`func_L00_005214C0`](pal/l00_multiplayer_menu/func_L00_005214C0.c) | pal/l00_multiplayer_menu | 60 | 13/15 (86.67%) relocation-masked positional words; 52/60 candidate/target bytes. Trailing words and callback contract remain unresolved. |
 | [`func_L00_00521510`](pal/l00_multiplayer_menu/func_L00_00521510.c) | pal/l00_multiplayer_menu | 60 | 13/15 (86.67%) relocation-masked positional words; 52/60 candidate/target bytes. Trailing words and callback contract remain unresolved. |
 | [`func_01EE99A0`](pal/net/func_01EE99A0.c) | pal/net | 208 | 42/52 (80.77%) relocation-masked positional words; 208/208 candidate/target bytes. Scheduling, registers, signatures and layouts remain unresolved. |
 | [`func_L00_00715F50`](pal/l00_multiplayer_menu/func_L00_00715F50.c) | pal/l00_multiplayer_menu | 108 | 12/27 (44.44%) relocation-masked positional words; 108/108 candidate/target bytes. Instruction order, registers, signature and layouts remain unresolved. |
 | [`func_01EF28AC`](pal/net/func_01EF28AC.c) | pal/net | 400 | 94/100 (94.00%) relocation-masked positional words; 400/400 candidate/target bytes. Register allocation, signatures and layouts remain unresolved. |
-| [`func_L05_004C3700`](pal/l05_dark_cathedral/func_L05_004C3700.c) | pal/l05_dark_cathedral | 68 | 14/17 (82.35%) relocation-masked positional words; 68/68 candidate/target bytes. Store order and inferred layouts remain unresolved. |
 | [`func_L00_00769F08`](l00_multiplayer_menu/func_L00_00769F08.c) | l00_multiplayer_menu | 960 | BYTES 5/956 |
 | [`func_L00_0076A2C8`](l00_multiplayer_menu/func_L00_0076A2C8.c) | l00_multiplayer_menu | 912 | BYTES 5/908 (2 words differ) |
 | [`func_L00_0053F170`](l00_multiplayer_menu/func_L00_0053F170.c) | l00_multiplayer_menu | 1984 | BYTES 12/1980 |
@@ -149,7 +144,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L41_004447E8`](shared/func_L41_004447E8.c) | shared | 168 | BYTES 12/168 |
 | [`func_L41_0043A718`](shared/func_L41_0043A718.c) | shared | 320 | BYTES 23/320 |
 | [`func_L00_0071C498`](l00_multiplayer_menu/func_L00_0071C498.c) | l00_multiplayer_menu | 472 | BYTES 34/472 |
-| [`func_L01_004ED100`](pal/shared/func_L01_004ED100.c) | pal/shared | 124 | BYTES 9/124 (5 tail words differ); fallback allocation and return/store scheduling |
 | [`func_L02_004CDEF8`](pal/shared/func_L02_004CDEF8.c) | pal/shared | 96 | BYTES 7/96 (6 words differ); bindings/semantics unapproved |
 | [`func_L00_0051F4B0`](l00_multiplayer_menu/func_L00_0051F4B0.c) | l00_multiplayer_menu | 148 | BYTES 11/148 |
 | [`func_L00_006ED020`](shared/func_L00_006ED020.c) | shared | 200 | BYTES 15/200 |
@@ -244,7 +238,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L01_003CEBA0`](shared/func_L01_003CEBA0.c) | shared | 200 | BYTES 44/200 |
 | [`func_L01_004CFEC8`](shared/func_L01_004CFEC8.c) | shared | 144 | BYTES 31/140 |
 | [`func_0046C940`](pal/game/func_0046C940.c) | pal/game | 112 | BYTES 25/112 (10 words differ); bindings/semantics unapproved |
-| [`func_L01_0045D318`](pal/shared/func_L01_0045D318.c) | pal/shared | 44 | BYTES 10/44 (4 words differ); common-result scheduling versus dual returns |
 | [`func_L01_005DCBD0`](pal/shared/func_L01_005DCBD0.c) | pal/shared | 44 | BYTES 10/44 (5 words differ); BYTES 9/44 (5 words differ); bindings/semantics unapproved |
 | [`func_L01_00444D00`](pal/shared/func_L01_00444D00.c) | pal/shared | 152 | BYTES 35/152 (19 words differ); bindings/semantics unapproved |
 | [`func_L01_0044B170`](pal/shared/func_L01_0044B170.c) | pal/shared | 168 | BYTES 39/168 (12 words differ); bindings/semantics unapproved |
@@ -288,10 +281,7 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L00_00520AB4`](l00_multiplayer_menu/func_L00_00520AB4.c) | l00_multiplayer_menu | 92 | BYTES 61/92 |
 | [`func_00128430`](core/func_00128430.c) | core | 144 | BYTES 115/144 |
 | [`func_01F072C8`](net/func_01F072C8.c) | net | 56 | BYTES 48/52 |
-| [`func_L00_0050BA20`](pal/l00_multiplayer_menu/func_L00_0050BA20.c) | pal/l00_multiplayer_menu | 52 | BYTES 52/52 size, 8/13 masked words; branch-likely delay slot differs (draft from #167) |
 | [`func_L00_00533318`](pal/l00_multiplayer_menu/func_L00_00533318.c) | pal/l00_multiplayer_menu | 56 | BYTES 56/56 size, 12/14 masked words; branch-likely scheduling differs (draft from #167) |
-| [`func_L00_005339D0`](pal/l00_multiplayer_menu/func_L00_005339D0.c) | pal/l00_multiplayer_menu | 52 | BYTES 52/52 size, 8/13 masked words; branch-likely scheduling differs (draft from #167) |
-| [`func_L00_00533A88`](pal/l00_multiplayer_menu/func_L00_00533A88.c) | pal/l00_multiplayer_menu | 52 | BYTES 52/52 size, 11/13 masked words; delay-slot scheduling differs (draft from #167) |
 | [`func_001270C0`](core/func_001270C0.c) | core | 164 | SIZE ours 152 / disc 164: retail's two sync instructions need inline asm |
 | [`func_00128250`](core/func_00128250.c) | core | 188 | SIZE ours 192 / retail 188 |
 | [`func_0012D4E8`](core/func_0012D4E8.c) | core | 64 | SIZE ours 56 / retail 64 |
@@ -377,7 +367,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L00_0051F2C0`](pal/l00_multiplayer_menu/func_L00_0051F2C0.c) | pal/l00_multiplayer_menu | 64 | 15/16 (93.75%) relocation-masked positional words; 60/64 candidate/target bytes. One trailing word after return omitted; callback ABI remains unproved. |
 | [`func_L00_005212C8`](pal/l00_multiplayer_menu/func_L00_005212C8.c) | pal/l00_multiplayer_menu | 60 | 13/15 (86.67%) relocation-masked positional words; 52/60 candidate/target bytes. Two words after return are omitted; callback ABI is unknown. |
 | [`func_L00_0052ADF0`](l00_multiplayer_menu/func_L00_0052ADF0.c) | l00_multiplayer_menu | 40 | SIZE ours 64 / retail 40 |
-| [`func_L00_00531B80`](pal/l00_multiplayer_menu/func_L00_00531B80.c) | pal/l00_multiplayer_menu | 76 | 13/19 (68.42%) relocation-masked positional words; 76/76 candidate/target bytes. Branch scheduling differs; the callee declaration follows the existing source. |
 | [`func_L00_00531F58`](pal/l00_multiplayer_menu/func_L00_00531F58.c) | pal/l00_multiplayer_menu | 76 | 7/19 (36.84%) relocation-masked positional words; 80/76 candidate/target bytes. One extra word; callee argument contract remains unresolved. |
 | [`func_L00_005381E8`](pal/l00_multiplayer_menu/func_L00_005381E8.c) | pal/l00_multiplayer_menu | 56 | 13/14 (92.86%) relocation-masked positional words; 52/56 candidate/target bytes. Trailing word after return omitted; argument and callee types remain hypotheses. |
 | [`func_L00_005414C8`](pal/l00_multiplayer_menu/func_L00_005414C8.c) | pal/l00_multiplayer_menu | 56 | 8/14 (57.14%) relocation-masked positional words; 36/56 candidate/target bytes. One call delay slot differs and five words after return are omitted. |
@@ -408,7 +397,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L01_0044B218`](pal/shared/func_L01_0044B218.c) | pal/shared | 140 | MATCH (masked text only); bindings/semantics unapproved |
 | [`func_L01_0044BC50`](shared/func_L01_0044BC50.c) | shared | 264 | SIZE ours 260 / retail 264 |
 | [`func_L01_0045C538`](pal/l01_dreadzone_station/func_L01_0045C538.c) | pal/l01_dreadzone_station | 104 | 15/26 (57.69%) relocation-masked positional words; 104/104 candidate/target bytes. Pointee bounds, alignment and return usage remain unproved. |
-| [`func_L01_0045D318`](pal/l01_dreadzone_station/func_L01_0045D318.c) | pal/l01_dreadzone_station | 44 | 7/11 (63.64%) relocation-masked positional instructions; 44/44 bytes; branch scheduling differs. |
 | [`func_L01_0045D358`](pal/shared/func_L01_0045D358.c) | pal/shared | 40 | SIZE ours 36 / disc 40; bindings/semantics unapproved |
 | [`func_L01_0046AA98`](pal/l01_dreadzone_station/func_L01_0046AA98.c) | pal/l01_dreadzone_station | 60 | 12/15 (80.00%) relocation-masked positional words; 60/60 candidate/target bytes. Parameter and callee types are hypotheses. |
 | [`func_L01_0048CCA8`](pal/l01_dreadzone_station/func_L01_0048CCA8.c) | pal/l01_dreadzone_station | 72 | 11/18 (61.11%) relocation-masked positional words; 72/72 candidate/target bytes. Float-register caller/callee contract remains unresolved. |
@@ -416,7 +404,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L01_004B0758`](pal/shared/func_L01_004B0758.c) | pal/shared | 152 | SIZE ours 144 / disc 152; bindings/semantics unapproved |
 | [`func_L01_004B8B90`](pal/l01_dreadzone_station/func_L01_004B8B90.c) | pal/l01_dreadzone_station | 104 | 23/26 (88.46%) relocation-masked positional words; 104/104 candidate/target bytes. Callee return declaration conflicts with existing PAL callers and remains unproved. |
 | [`func_L01_004BDAE8`](shared/func_L01_004BDAE8.c) | shared | 240 | SIZE ours 204 / retail 240 |
-| [`func_L01_004BE7C0`](pal/l01_dreadzone_station/func_L01_004BE7C0.c) | pal/l01_dreadzone_station | 80 | 15/20 (75.00%) relocation-masked positional words; 80/80 candidate/target bytes. Global ownership and return ABI remain unproved. |
 | [`func_L01_004C80A8`](shared/func_L01_004C80A8.c) | shared | 40 | SIZE ours 36 / retail 40 |
 | [`func_L01_004CA294`](shared/func_L01_004CA294.c) | shared | 164 | SIZE ours 156 / retail 164 |
 | [`func_L01_004CFBF0`](shared/func_L01_004CFBF0.c) | shared | 240 | SIZE ours 208 / retail 240 |
