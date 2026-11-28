@@ -2,8 +2,6 @@
 #include "common.h"
 #include "pal/multiplayer_menu.h"
 
-extern void *D_00220DD4;
-
 void func_L00_0074EFF8(PalMultiplayerMenu *menu)
 {
     ((u8 *)D_00220DD4)[0x114] = ((u8 *)menu)[0x260];
