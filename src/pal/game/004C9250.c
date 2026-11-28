@@ -1,39 +1,19 @@
-#include "common.h"
+#include "pal/resident_selection_menu.h"
 
-typedef struct Row {
-    u8 bytes[24];
-} Row;
-typedef struct List {
-    u8 prefix[0x2C];
-    s32 handle;
-    u8 rest[0x3C];
-} List;
-typedef struct State {
-    s32 phase, dirty;
-    u8 prefix[0xD04];
-    Row rows[64];
-    List list;
-    char text[16];
-    s32 value, unused138C;
-    s32 resources[4];
-    u8 rest[10];
-    u8 flag;
-} State;
-typedef void (*Renderer)(List *, Row *, s32);
+typedef void (*Renderer)(PalSelectionMenuList *, PalSelectionMenuRow *, s32);
 typedef s32 (*Predicate)(s32);
-extern State D_0030D188;
 extern s32 D_002219D8;
 extern s32 D_00171BC0[];
 extern u8 D_001CDB40[];
 extern void func_004CA168(void);
 extern s32 func_004A2798(s32 *, s32);
 extern s32 func_00506590(s32, u32);
-extern void func_004A1E78(List *, Row *, s32, Renderer, s32, s32);
-extern void func_004C9658(List *, Row *, s32);
-extern void func_004A1F28(List *, Predicate);
+extern void func_004A1E78(PalSelectionMenuList *, PalSelectionMenuRow *, s32, Renderer, s32, s32);
+extern void func_004C9658(PalSelectionMenuList *, PalSelectionMenuRow *, s32);
+extern void func_004A1F28(PalSelectionMenuList *, Predicate);
 extern s32 func_004CA030(s32);
-extern void func_004A1928(List *, s32, s32);
-extern void func_004A1920(List *, s32);
+extern void func_004A1928(PalSelectionMenuList *, s32, s32);
+extern void func_004A1920(PalSelectionMenuList *, s32);
 extern s32 func_00506E68(s32, s32);
 extern void func_0049DEA8(s32, s32, s32);
 extern void func_0049DFB8(s32, s32);
@@ -44,8 +24,8 @@ extern s32 func_005071B8(u32, u32);
 
 void func_004C9250(void)
 {
-    State *state = &D_0030D188;
-    List *list = &state->list;
+    PalSelectionMenu *state = &D_0030D188;
+    PalSelectionMenuList *list = &state->list;
     s32 group;
     u32 descriptor, endDescriptor;
     state->phase = 0;
