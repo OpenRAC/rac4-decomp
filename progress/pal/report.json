@@ -1,34 +1,34 @@
 {
  "version": 2,
  "measures": {
-  "fuzzy_match_percent": 21.289043,
+  "fuzzy_match_percent": 21.302397,
   "total_code": "5810792",
-  "matched_code": "1185684",
-  "matched_code_percent": 20.40486,
+  "matched_code": "1186460",
+  "matched_code_percent": 20.418215,
   "total_functions": 18136,
-  "matched_functions": 9978,
-  "matched_functions_percent": 55.017644,
-  "complete_code": "634576",
-  "complete_code_percent": 10.920646,
-  "total_units": 5379,
-  "complete_units": 5321
+  "matched_functions": 9983,
+  "matched_functions_percent": 55.045214,
+  "complete_code": "634680",
+  "complete_code_percent": 10.922435,
+  "total_units": 5380,
+  "complete_units": 5322
  },
  "categories": [
   {
    "id": "core",
    "name": "Main program",
    "measures": {
-    "fuzzy_match_percent": 30.094197,
+    "fuzzy_match_percent": 30.09892,
     "total_code": "2202184",
-    "matched_code": "634576",
-    "matched_code_percent": 28.815757,
+    "matched_code": "634680",
+    "matched_code_percent": 28.82048,
     "total_functions": 8952,
-    "matched_functions": 5353,
-    "matched_functions_percent": 59.796693,
-    "complete_code": "634576",
-    "complete_code_percent": 28.815757,
-    "total_units": 5364,
-    "complete_units": 5321
+    "matched_functions": 5354,
+    "matched_functions_percent": 59.807864,
+    "complete_code": "634680",
+    "complete_code_percent": 28.82048,
+    "total_units": 5365,
+    "complete_units": 5322
    }
   },
   {
@@ -103,17 +103,17 @@
    "id": "menu_text",
    "name": "Resident menus (.text)",
    "measures": {
-    "fuzzy_match_percent": 27.421648,
+    "fuzzy_match_percent": 27.428961,
     "total_code": "1422048",
-    "matched_code": "368312",
-    "matched_code_percent": 25.90011,
+    "matched_code": "368416",
+    "matched_code_percent": 25.907424,
     "total_functions": 4797,
-    "matched_functions": 2764,
-    "matched_functions_percent": 57.619345,
+    "matched_functions": 2765,
+    "matched_functions_percent": 57.640192,
     "complete_code": "0",
     "complete_code_percent": 0.0,
-    "total_units": 2776,
-    "complete_units": 2754
+    "total_units": 2777,
+    "complete_units": 2755
    }
   },
   {
@@ -137,13 +137,13 @@
    "id": "level_code",
    "name": "Level code",
    "measures": {
-    "fuzzy_match_percent": 15.915621,
+    "fuzzy_match_percent": 15.934244,
     "total_code": "3608608",
-    "matched_code": "551108",
-    "matched_code_percent": 15.272038,
+    "matched_code": "551780",
+    "matched_code_percent": 15.290661,
     "total_functions": 9184,
-    "matched_functions": 4625,
-    "matched_functions_percent": 50.359321,
+    "matched_functions": 4629,
+    "matched_functions_percent": 50.402875,
     "complete_code": "0",
     "complete_code_percent": 0.0,
     "total_units": 15,
@@ -171,13 +171,13 @@
    "id": "levels",
    "name": "Level-specific code",
    "measures": {
-    "fuzzy_match_percent": 20.383625,
+    "fuzzy_match_percent": 20.425626,
     "total_code": "1599976",
-    "matched_code": "312164",
-    "matched_code_percent": 19.510543,
+    "matched_code": "312836",
+    "matched_code_percent": 19.552543,
     "total_functions": 4096,
-    "matched_functions": 2238,
-    "matched_functions_percent": 54.638672,
+    "matched_functions": 2242,
+    "matched_functions_percent": 54.736328,
     "complete_code": "0",
     "complete_code_percent": 0.0,
     "total_units": 14,
@@ -409,13 +409,13 @@
    "id": "level_41",
    "name": "Level 41: Battledome Tower (all 22 multiplayer maps)",
    "measures": {
-    "fuzzy_match_percent": 16.73795,
+    "fuzzy_match_percent": 17.216787,
     "total_code": "140340",
-    "matched_code": "21092",
-    "matched_code_percent": 15.029215,
+    "matched_code": "21764",
+    "matched_code_percent": 15.508052,
     "total_functions": 374,
-    "matched_functions": 205,
-    "matched_functions_percent": 54.812834,
+    "matched_functions": 209,
+    "matched_functions_percent": 55.882353,
     "complete_code": "0",
     "complete_code_percent": 0.0,
     "total_units": 1,
@@ -185049,6 +185049,41 @@
    }
   },
   {
+   "name": "pal/game/004B9A10",
+   "measures": {
+    "fuzzy_match_percent": 100.0,
+    "total_code": "104",
+    "matched_code": "104",
+    "matched_code_percent": 100.0,
+    "total_functions": 1,
+    "matched_functions": 1,
+    "matched_functions_percent": 100.0,
+    "complete_code": "104",
+    "complete_code_percent": 100.0,
+    "total_units": 1,
+    "complete_units": 1
+   },
+   "functions": [
+    {
+     "name": "func_004B9A10",
+     "size": "104",
+     "fuzzy_match_percent": 100.0,
+     "address": "0",
+     "metadata": {
+      "virtual_address": "4954640"
+     }
+    }
+   ],
+   "metadata": {
+    "complete": true,
+    "source_path": "src/pal/game/004B9A10.c",
+    "progress_categories": [
+     "core",
+     "menu_text"
+    ]
+   }
+  },
+  {
    "name": "pal/game/004BA220",
    "measures": {
     "fuzzy_match_percent": 100.0,
@@ -198910,11 +198945,11 @@
   {
    "name": "main/.text/004Bxxxx",
    "measures": {
-    "fuzzy_match_percent": 8.872908,
-    "total_code": "24952",
+    "fuzzy_match_percent": 8.910045,
+    "total_code": "24848",
     "matched_code": "0",
     "matched_code_percent": 0.0,
-    "total_functions": 50,
+    "total_functions": 49,
     "matched_functions": 0,
     "matched_functions_percent": 0.0,
     "complete_code": "0",
@@ -199146,15 +199181,6 @@
      "address": "38848",
      "metadata": {
       "virtual_address": "4954320"
-     }
-    },
-    {
-     "name": "func_004B9A10",
-     "size": "104",
-     "fuzzy_match_percent": 0.0,
-     "address": "39168",
-     "metadata": {
-      "virtual_address": "4954640"
      }
     },
     {
@@ -300128,13 +300154,13 @@
   {
    "name": "Level 41: Battledome Tower (all 22 multiplayer maps)",
    "measures": {
-    "fuzzy_match_percent": 16.73795,
+    "fuzzy_match_percent": 17.216787,
     "total_code": "140340",
-    "matched_code": "21092",
-    "matched_code_percent": 15.029215,
+    "matched_code": "21764",
+    "matched_code_percent": 15.508052,
     "total_functions": 374,
-    "matched_functions": 205,
-    "matched_functions_percent": 54.812834,
+    "matched_functions": 209,
+    "matched_functions_percent": 55.882353,
     "complete_code": "0",
     "complete_code_percent": 0.0,
     "total_units": 1,
@@ -300819,7 +300845,7 @@
     {
      "name": "func_L41_0040E7C0",
      "size": "196",
-     "fuzzy_match_percent": 0.0,
+     "fuzzy_match_percent": 100.0,
      "address": "338192",
      "metadata": {
       "virtual_address": "4253632"
@@ -301512,7 +301538,7 @@
     {
      "name": "func_L41_00417EE8",
      "size": "204",
-     "fuzzy_match_percent": 0.0,
+     "fuzzy_match_percent": 100.0,
      "address": "376888",
      "metadata": {
       "virtual_address": "4292328"
@@ -302853,7 +302879,7 @@
     {
      "name": "func_L41_0044F798",
      "size": "132",
-     "fuzzy_match_percent": 0.0,
+     "fuzzy_match_percent": 100.0,
      "address": "604392",
      "metadata": {
       "virtual_address": "4519832"
@@ -302862,7 +302888,7 @@
     {
      "name": "func_L41_0044F820",
      "size": "140",
-     "fuzzy_match_percent": 0.0,
+     "fuzzy_match_percent": 100.0,
      "address": "604528",
      "metadata": {
       "virtual_address": "4519968"
