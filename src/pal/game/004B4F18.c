@@ -1,4 +1,4 @@
-#include "common.h"
+#include "pal/menu_flow.h"
 
 typedef struct {
     s32 caption, icon, image;
@@ -15,7 +15,6 @@ typedef struct {
 } Resource;
 extern Row D_003D1CE8[];
 extern s32 D_00221848;
-extern u8 D_003097A8[];
 extern Resource D_001CE158[];
 extern s32 func_004A2798(s32 *, s32);
 extern s32 func_00506000(u32, s32);
@@ -50,7 +49,7 @@ void func_004B4F18(s32 index, Item *item)
     func_00506590(func_004A2798(&D_00221848, *icon), item->icon);
     image = (s32 *)address(offset, address((u32)D_003D1CE8, 8));
     func_00506000(func_004A2798(&D_00221848, *image), 1);
-    cache = (s32 *)address((u32)index << 2, address((u32)D_003097A8, 0x168));
+    cache = (s32 *)address((u32)index << 2, address((u32)&D_003097A8, 0x168));
     if (*cache)
         func_0049AA18(*cache);
     *cache = func_0049A9D8((Resource *)((u32)D_001CE158 + ((u32)item->image << 3)), -1);

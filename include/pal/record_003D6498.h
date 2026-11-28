@@ -10,5 +10,6 @@ typedef struct {
 } PalRecord003D6498;
 
 extern PalRecord003D6498 D_003D6498[][8];
+void func_00439550(s32 unused, const u8 *state);
 
 #endif
