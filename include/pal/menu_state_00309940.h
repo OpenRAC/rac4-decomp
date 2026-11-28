@@ -8,7 +8,7 @@ typedef struct {
     s32 phase;
     f32 current;
     f32 target;
-    u8 pad10[4];
+    s32 f10;
     s32 color;
     u8 pad18[8];
     f32 progress;
@@ -17,7 +17,8 @@ typedef struct {
     u8 pad26[2];
     s32 f28;
     u8 update;
-    u8 pad2D[7];
+    u8 pad2D[3];
+    f32 accumulator;
     s32 f34;
 } PalMenuState00309940;
 
