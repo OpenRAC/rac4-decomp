@@ -11,7 +11,13 @@ union Type4Region20 {
         s32 f34;
         u8 opaque38[0xA0];
         s32 fD8;
-        u8 opaqueDC[0x48];
+        u8 fDC;
+        u8 opaqueDD[0x20];
+        u8 fFD, fFE;
+        u8 opaqueFF[0x1D];
+        s32 f11C;
+        u8 f120;
+        u8 opaque121[3];
         s32 f124, f128;
         u8 opaque12c[0xEC];
         u32 f218;
