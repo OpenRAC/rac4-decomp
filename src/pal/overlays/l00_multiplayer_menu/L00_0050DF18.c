@@ -5,6 +5,8 @@ typedef struct Request Request;
 
 typedef s32 (*PrepareRequest)(u32 source, Request **request);
 typedef s32 (*PrepareRequestWithOptions)(u32 source, u32 options, Request **request);
+typedef s32 (*PrepareRequestFromFields)(const void *field0, const void *field8,
+                                        const void *field10, u32 options, Request **request);
 typedef s32 (*TransferRequest)(Request *request, void *buffer, u32 position, u32 count);
 typedef s32 (*FinishRequest)(Request *request);
 
@@ -25,6 +27,16 @@ extern s32 func_L00_0055ACF8(Request *request);
 extern s32 func_003F66F0(u32 source, u32 options, Request **request);
 extern s32 func_003F6978(Request *request, void *buffer, u32 position, u32 count);
 extern s32 func_003F69F0(Request *request);
+
+extern s32 func_L00_0050D568(const void *field0, const void *field8,
+                             const void *field10, u32 options, Request **request);
+extern s32 func_L00_0050D760(Request *request, void *buffer, u32 position, u32 count);
+extern s32 func_L00_0050D7C8(Request *request);
+
+extern s32 func_L00_0050DCA0(const void *field0, const void *field8,
+                             const void *field10, u32 options, Request **request);
+extern s32 func_L00_0050DE98(Request *request, void *buffer, u32 position, u32 count);
+extern s32 func_L00_0050DF00(Request *request);
 
 static inline s32 transfer_and_finish(s32 status, Request **request, void *buffer,
                                       u32 position, u32 count, TransferRequest transfer,
@@ -52,6 +64,29 @@ static inline s32 run_transfer_with_options(void *buffer, u32 source, u32 positi
     Request *request;
     return transfer_and_finish(prepare(source, options, &request), &request, buffer,
                                position, count, transfer, finish);
+}
+
+static inline s32 run_transfer_from_fields(void *buffer, const void *field0,
+                                            const void *field8, const void *field10,
+                                            u32 position, u32 options, u32 count,
+                                            PrepareRequestFromFields prepare,
+                                            TransferRequest transfer, FinishRequest finish)
+{
+    Request *request;
+    return transfer_and_finish(prepare(field0, field8, field10, options, &request),
+                               &request, buffer, position, count, transfer, finish);
+}
+
+s32 func_L00_0050E0C8(void *buffer, const void *field0, const void *field8, const void *field10, u32 position, u32 options, u32 count)
+{
+    return run_transfer_from_fields(buffer, field0, field8, field10, position, options, count,
+                                    func_L00_0050D568, func_L00_0050D760, func_L00_0050D7C8);
+}
+
+s32 func_L00_0050E158(void *buffer, const void *field0, const void *field8, const void *field10, u32 position, u32 options, u32 count)
+{
+    return run_transfer_from_fields(buffer, field0, field8, field10, position, options, count,
+                                    func_L00_0050DCA0, func_L00_0050DE98, func_L00_0050DF00);
 }
 
 s32 func_L00_0050DF18(void *buffer, u32 source, u32 position, u32 count)
