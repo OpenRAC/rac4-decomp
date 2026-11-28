@@ -404,7 +404,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_L01_004B0758`](pal/shared/func_L01_004B0758.c) | pal/shared | 152 | SIZE ours 144 / disc 152; bindings/semantics unapproved |
 | [`func_L01_004B8B90`](pal/l01_dreadzone_station/func_L01_004B8B90.c) | pal/l01_dreadzone_station | 104 | 23/26 (88.46%) relocation-masked positional words; 104/104 candidate/target bytes. Callee return declaration conflicts with existing PAL callers and remains unproved. |
 | [`func_L01_004BDAE8`](shared/func_L01_004BDAE8.c) | shared | 240 | SIZE ours 204 / retail 240 |
-| [`func_L01_004BE7C0`](pal/l01_dreadzone_station/func_L01_004BE7C0.c) | pal/l01_dreadzone_station | 80 | 15/20 (75.00%) relocation-masked positional words; 80/80 candidate/target bytes. Global ownership and return ABI remain unproved. |
 | [`func_L01_004C80A8`](shared/func_L01_004C80A8.c) | shared | 40 | SIZE ours 36 / retail 40 |
 | [`func_L01_004CA294`](shared/func_L01_004CA294.c) | shared | 164 | SIZE ours 156 / retail 164 |
 | [`func_L01_004CFBF0`](shared/func_L01_004CFBF0.c) | shared | 240 | SIZE ours 208 / retail 240 |
