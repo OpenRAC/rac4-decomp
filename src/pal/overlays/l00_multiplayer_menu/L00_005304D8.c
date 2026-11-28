@@ -1,31 +1,18 @@
 /* cflags: @ee29 -O2 -G0 */
 #include "common.h"
-
-typedef struct {
-    u8 *p;
-    s32 eos;
-    s32 error;
-    s32 inf;
-    s32 tag;
-    s32 xclass;
-    s64 slen;
-    u8 *max;
-    u8 *q;
-    u8 **pp;
-    s32 line;
-} Type1;
+#include "pal/parser_context.h"
 
 extern void func_L00_004F89C8(int, int, int, int, int);
 extern void *func_L00_00530690(void);
 extern void func_L00_00530710(void *);
-extern s32 func_L00_00536538(Type1 *);
-extern s32 func_L00_005365B8(Type1 *, s64 *);
+extern s32 func_L00_00536538(PalParserContext *);
+extern s32 func_L00_005365B8(PalParserContext *, s64 *);
 extern void func_L00_00536848(u8 *, s32);
 extern void *func_L00_00535E68(void *, u8 **, s64);
 extern void *func_L00_00535E68(void *, u8 **, s64);
 
 void *func_L00_005304D8(void **a, u8 **pp, s64 length) {
-    Type1 c;
+    PalParserContext c;
     void **ret;
 
     c.pp = pp;

@@ -1,31 +1,26 @@
 /* cflags: @ee29 -O2 -G0 -fno-strict-aliasing */
 #include "common.h"
+#include "pal/menu_session.h"
 
 typedef struct Type1 Type1;
-typedef struct Type2 Type2;
 typedef struct HashTable HashTable;
 
 struct Type1 {
     u8 pad[0x1C];
     HashTable *f1C;
     u8 pad20[0x24];
-    void (*f44)(Type1 *, Type2 *);
-};
-
-struct Type2 {
-    u8 pad[0x8C];
-    s32 f8C;
+    void (*f44)(Type1 *, PalMenuSession *);
 };
 
 extern void *func_L00_004F9028(HashTable *, void *);
-extern void func_L00_00508168(Type1 *, Type2 *);
-extern void func_L00_00507E38(Type2 *);
+extern void func_L00_00508168(Type1 *, PalMenuSession *);
+extern void func_L00_00507E38(PalMenuSession *);
 
 // Removes a node from the lookup table and list, notifies a callback, and releases it.
-s32 func_L00_00507DA8(Type1 *arg0, Type2 *arg1)
+s32 func_L00_00507DA8(Type1 *arg0, PalMenuSession *arg1)
 {
     s32 removed = 0;
-    Type2 *node = func_L00_004F9028(arg0->f1C, arg1);
+    PalMenuSession *node = func_L00_004F9028(arg0->f1C, arg1);
 
     if (node != NULL) {
         removed = 1;
