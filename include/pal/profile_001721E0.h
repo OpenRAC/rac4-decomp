@@ -5,7 +5,13 @@
 union Type4Region20 {
     u8 bytes[0x208];
     struct {
-        u8 opaque20[8]; s32 f28; u8 opaque2C[0xF8];
+        u8 opaque20[8];
+        s32 f28;
+        u8 opaque2C[8];
+        s32 f34;
+        u8 opaque38[0xA0];
+        s32 fD8;
+        u8 opaqueDC[0x48];
         s32 f124, f128;
         u8 opaque12c[0xEC];
         u32 f218;
@@ -27,8 +33,12 @@ typedef struct Type4 {
     s32 f6A0[10];
     u8 pad6C8;
     u8 f6C9[16];
+    u8 pad6D9[0x120];
+    u8 slotState[10];
+    u8 slotNames[10][16];
+    u8 slotTeams[10];
 } Type4;
 typedef char Type4RegionSizeCheck[(sizeof(union Type4Region20) == 0x208) ? 1 : -1];
-typedef char Type4ViewSizeCheck[(sizeof(Type4) == 0x6DC) ? 1 : -1];
+typedef char Type4ViewSizeCheck[(sizeof(Type4) == 0x8B0) ? 1 : -1];
 extern Type4 D_001721E0;
 #endif

@@ -1,15 +1,15 @@
 /* cflags: -Wuninitialized */
-#include "common.h"
+#include "pal/l00_menu_queue.h"
 
-int D_00220ABC = 0;
+MenuQueueNode *D_00220ABC = NULL;
 
-s32 func_L00_0070D768(void) {
-    s32 temp_3;
+MenuQueueNode *func_L00_0070D768(void)
+{
+    MenuQueueNode *node = D_00220ABC;
 
-    temp_3 = D_00220ABC;
-    if (temp_3 != 0) {
-        D_00220ABC = *(s32 *)((u8 *)temp_3 + 0x19C);
-        *(s32 *)((u8 *)temp_3 + 0x19C) = 0;
+    if (node != NULL) {
+        D_00220ABC = node->next;
+        node->next = NULL;
     }
-    return temp_3;
+    return node;
 }

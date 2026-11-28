@@ -284,8 +284,6 @@ Best attempts at functions that do not match yet. They are not built; see
 | [`func_01F072C8`](net/func_01F072C8.c) | net | 56 | BYTES 48/52 |
 | [`func_L00_0050BA20`](pal/l00_multiplayer_menu/func_L00_0050BA20.c) | pal/l00_multiplayer_menu | 52 | BYTES 52/52 size, 8/13 masked words; branch-likely delay slot differs (draft from #167) |
 | [`func_L00_00533318`](pal/l00_multiplayer_menu/func_L00_00533318.c) | pal/l00_multiplayer_menu | 56 | BYTES 56/56 size, 12/14 masked words; branch-likely scheduling differs (draft from #167) |
-| [`func_L00_005339D0`](pal/l00_multiplayer_menu/func_L00_005339D0.c) | pal/l00_multiplayer_menu | 52 | BYTES 52/52 size, 8/13 masked words; branch-likely scheduling differs (draft from #167) |
-| [`func_L00_00533A88`](pal/l00_multiplayer_menu/func_L00_00533A88.c) | pal/l00_multiplayer_menu | 52 | BYTES 52/52 size, 11/13 masked words; delay-slot scheduling differs (draft from #167) |
 | [`func_001270C0`](core/func_001270C0.c) | core | 164 | SIZE ours 152 / disc 164: retail's two sync instructions need inline asm |
 | [`func_00128250`](core/func_00128250.c) | core | 188 | SIZE ours 192 / retail 188 |
 | [`func_0012D4E8`](core/func_0012D4E8.c) | core | 64 | SIZE ours 56 / retail 64 |
